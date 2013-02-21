@@ -1,7 +1,28 @@
 #!/usr/bin/python
 
+import re
+
 def do_headers(text_in):
 	print "headers"
+	#We're going to handle each header individually then once we have a list of original/TRAC headers and new/Redmine headers, we'll use re.sub('r...) to replace the old with the new.
+
+	whole_header_pattern = re.compile('^(=+) [\w]+ (=+)$') #TODO: modify this regex to make sure starts(^) and ends($) the line 
+	all_headers = whole_header_pattern.findall(text_in)
+	
+	header_text = re.compile('[\w\s]+') #we'll use this to extract header text
+	count_eq = re.compile('=+') #we'll use this to count equal signs
+
+	for header in all_headers:
+		cur_hd_txt = header_text.search(header) #should only be one set of text per header
+		#verify there was a match
+		cur_eq_list = count_eq.findall(header)
+		#verify they're of same length, else, syntax error from input :(
+		eq_num1 = len(cur_eq_list[0])
+		eq_num2 = len(cur_eq_list[1])
+		if eq_num1 != eq_num2:
+			print "Equal signs don't match in current header: '"+header+"'"#throw error
+		new_hd = "h"+str(eq_num1)+"."+cur_hd_txt.group() #this string should include spacing
+#what is this?	whole_header_pattern.finditer(text_in)
 	text_out=""
 	return text_out
 
