@@ -3,7 +3,6 @@
 import re
 
 def do_headers(text_in):
-	print "headers"
 	#We're going to handle each header individually then once we have a list of original/TRAC headers and new/Redmine headers, we'll use re.sub('r...) to replace the old with the new.
 
 	whole_header_pattern = re.compile('^(=+) [\w]+ (=+)$') #TODO: modify this regex to make sure starts(^) and ends($) the line 
@@ -21,33 +20,29 @@ def do_headers(text_in):
 		eq_num2 = len(cur_eq_list[1])
 		if eq_num1 != eq_num2:
 			print "Equal signs don't match in current header: '"+header+"'"#throw error
+			continue #just ignore current header, don't translate
 		new_hd = "h"+str(eq_num1)+"."+cur_hd_txt.group() #this string should include spacing
 #what is this?	whole_header_pattern.finditer(text_in)
 	text_out=""
 	return text_out
 
 def do_stylings(text_in):
-	print "stylings"
 	text_out=""
 	return text_out
 
 def do_paragraph_formatting(text_in):
-	print "paragraphs"
 	text_out=""
 	return text_out
 
 def do_links(text_in):
-	print "links"
 	text_out=""
 	return text_out
 
 def do_images(text_in):
-	print "images"
 	text_out=""
 	return text_out
 
 def do_misc(text_in):
-	print "misc"
 	text_out=""
 	return text_out
 
@@ -60,15 +55,15 @@ def translate(trac_text):
 	trac_text = do_misc(trac_text)
 	return trac_text
 
-def get_file_loc():
-	print "Enter file location or 'no file' to exit program."
-	return raw_input()
-
 file_loc = "default"
 while (file_loc!="no file"):
 	#Get file contents
-	file_loc = get_file_loc()
-	input_file = open(file_loc,'r').read()
+	print "Enter file location or 'no file' to exit program."
+	file_loc = raw_input()
+	if file_loc=="no file":
+		break
+	else:
+		input_file = open(file_loc,'r').read()
 
 	#Translate from trac wikiformatting to redmine wiki formatting
 	output_text = translate(input_file)
