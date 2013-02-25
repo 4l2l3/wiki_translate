@@ -62,15 +62,11 @@ def translate(trac_text):
 	trac_text = do_misc(trac_text)
 	return trac_text
 
-file_loc = "default"
+print "Enter file location or 'no file' to exit program."
+file_loc = raw_input()
 while (file_loc!="no file"):
 	#Get file contents
-	print "Enter file location or 'no file' to exit program."
-	file_loc = raw_input()
-	if file_loc=="no file":
-		break
-	else:
-		input_file = open(file_loc,'r').read()
+	input_file = open(file_loc,'r').read()
 
 	#Translate from trac wikiformatting to redmine wiki formatting
 	output_text = translate(input_file)
@@ -78,5 +74,9 @@ while (file_loc!="no file"):
 	#Put redmine version in new file <filename>.redmine
 	output_file = open(file_loc+'.redmine','w')
 	output_file.write(output_text)
+
+	#Get next file or break loop
+	print "Enter file location or 'no file' to exit program."
+	file_loc = raw_input()
 
 print "Normal program termination."
