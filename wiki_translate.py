@@ -33,8 +33,31 @@ def do_headers(text_in):
 
 	return text_out
 
+def stylings_replace( pattern, text_in, trac_style, redmine_style ):
+	matches = pattern.finditer(text_in)
+	#also need to extract nested stylings/inside text
+	for match in matches:
+		text_in.replace(match.group(), redmine_style)
+	return text_in
+
 def do_stylings(text_in):
+	#build a function that takes in a SRE pattern object [*_pattern], text_out, and replacement text otherwise i'll have 7 for loops here
+
 	text_out = text_in
+
+	bold_pattern = re.compile('\'{3}.+\'{3}')#We'll be performing these staggeredly. Because bold requires more apostrophes, it will always take precedence and can never be mistaken for italics, which can consume apostrophes intended for bolding.
+	stylings_replace(bold_pattern, text_out, "'''", "*")
+
+	#bold replacement code
+
+	ital_pattern = re.compile('\'{2}.+\'{2}') #we're using the dot instead of an alphanumeric match since we have to allow nested stylings
+	ital_match = ital_pattern.finditer(text_out)
+	#italic replacement code
+
+	undl_pattern = re.compile('_{2}.+_{2}')
+	undl_match = undl_pattern.finditer(text_out)
+	#underline replacement code
+
 	return text_out
 
 def do_paragraph_formatting(text_in):

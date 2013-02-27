@@ -1,0 +1,15 @@
+'''bold'''
+
+''italic''
+
+'''''bold italic'''''
+
+__underline__
+
+{{{mono space}}} or `mono space` or regular space
+
+~~strike through~~
+
+abc ^superscript^ 
+
+abc,,subscript,,
