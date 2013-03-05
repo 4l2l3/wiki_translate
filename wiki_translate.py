@@ -34,9 +34,7 @@ def do_headers(text_in):
 	return text_out
 
 def stylings_replace( pattern, text_in, trac_style, redmine_style ):
-	matches = pattern.finditer(text_in)
-
-	#also need to extract nested stylings/inside text
+	matches = pattern.findall(text_in)
 	for match in matches:
 		if(trac_style.count('\'')==3):	#bold
 			nested_text = match[3:(len(match)-3)]
@@ -46,30 +44,31 @@ def stylings_replace( pattern, text_in, trac_style, redmine_style ):
 			inner_pattern = re.compile('[^'+trac_style+']+')
 			nested_text = inner_pattern.search(match).group()
 
-		text_out = text_in.replace(match, (redmine_style+ nested_text +redmine_style) )
-	return text_out
+		text_in = text_in.replace(match, (redmine_style+ nested_text +redmine_style) )
+	return text_in
 
 def do_stylings(text_in):
 	#build a function that takes in a SRE pattern object [*_pattern], text_out, and replacement text otherwise i'll have 7 for loops here
 	text_out = text_in
 	bold_pattern = re.compile('\'{3}.+\'{3}')#We'll be performing these staggeredly. Because bold requires more apostrophes, it will always take precedence and can never be mistaken for italics, which can consume apostrophes intended for bolding.
-	stylings_replace(bold_pattern, text_out, "'''", "*")
+	text_out = stylings_replace(bold_pattern, text_out, "'''", "*")
 
-	#bold replacement code
+	#Because Redmine's italics format uses underlines, I figured it would be best to prioritize removing TRAC's underlines first to prevent any sort of confusion.
+	undl_pattern = re.compile('_{2}.+_{2}')
+	text_out = stylings_replace(undl_pattern, text_out, "__", "+")
+
+	strk_pattern = re.compile('~~.+~~') #needs to be done before subscript
+	text_out = stylings_replace(strk_pattern, text_out, "~~", "-") 
 
 	ital_pattern = re.compile('\'{2}.+\'{2}') #we're using the dot instead of an alphanumeric match since we have to allow nested stylings
-	ital_match = ital_pattern.finditer(text_out)
-	#italic replacement code
+	text_out = stylings_replace(ital_pattern, text_out, "''", "_")
 
-	undl_pattern = re.compile('_{2}.+_{2}')
-	undl_match = undl_pattern.finditer(text_out)
-	#underline replacement code
-	#underline = ('__[a-zA-Z]+__')
-	#superscript = ('\^[a-zA-Z]+\^')
-	#subscript = (',,[a-zA-Z]+,,')	
-	#strikethrough = ('\~~[a-z A-Z]+\~~')
-	#monospace = ('(\{{3}[a-z A-Z]+\}{3}|\`[a-z ]+\`)')
+	#superscript = ('\^.+\^')   Redmine uses same format, we can probably skip this step.
+	subs_pattern = re.compile(',,.+,,')	
+	text_out = stylings_replace(subs_pattern, text_out, ",,", "~")
 
+	mono_pattern = re.compile('(\{{3}.+\}{3}|`.+`)')
+	text_out = stylings_replace(mono_pattern, text_out, "`{}", "@")
 
 	return text_out
 
