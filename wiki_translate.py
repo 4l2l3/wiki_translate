@@ -84,7 +84,7 @@ def do_links(text_in):
 	email_pat = re.compile('mailto:.+@[A-Za-z0-9.-]+\.[a-z]{2,}')
 	all_mailto = email_pat.findall(text_out)
 	for mailto in all_mailto:
-		text_out = text_out.replace(mailto,mailto[len("mailto:"):]
+		text_out = text_out.replace(mailto,mailto[len("mailto:"):])
 		#REDMINE	someone@foo.bar
 
 	#TRAC		[mailto:someone@foo.bar "Email someone"]
@@ -97,7 +97,7 @@ def do_links(text_in):
 
 		email_addr = single[len("[mailto:"):hd-1] #instead of 8, I put in len(...) for clarity
 		#REDMINE	"Email someone":mailto:someone@foo.bar
-		new_mailto = single[hd:tl]+":mailto:"+email_addr
+		new_mailto = email_someone.group()+":mailto:"+email_addr
 		text_out = text_out.replace(single, new_mailto)
 
 	#TRAC		[http://whatever.com/ "Title"]
@@ -107,9 +107,9 @@ def do_links(text_in):
 		title = re.compile('".+"').search(turl)
 		hd = title.start()
 		tl = title.end()
-		url = page[1:hd-1] #first one cuts off leading "["
+		url = turl[1:hd-1] #first one cuts off leading "["
 		#REDMINE	"Title":http://whatever.com
-		new_turl = title + ":" + url
+		new_turl = title.group() + ":" + url
 		text_out = text_out.replace(turl,new_turl)
 
 	#TRAC		WikiPageName
@@ -120,14 +120,14 @@ def do_links(text_in):
 	#REDMINE	[[WikiPageName]]
 
 	#TRAC		[wiki:WikiPageName "Title"]
-	titled_wiki = re.compile('\[wiki:[A-Za-z0-9.- ]+ ".+"\]')
+	titled_wiki = re.compile('\[wiki:[A-Za-z0-9.-]+ ".+"\]')
 	all_twiki = titled_wiki.findall(text_out)
 	for twiki in all_twiki:
 		title = re.compile('".+"').search(twiki)
 		hd = title.start()
 		page_name = twiki[len("[wiki:"):hd-1]
 		#REDMINE	[[WikiPageName|Title]]
-		new_twiki = "[["+page_name+"|"+title+"]]"
+		new_twiki = "[["+page_name+"|"+title.group()+"]]"
 		text_out = text_out.replace(twiki,new_twiki)
 	return text_out
 
