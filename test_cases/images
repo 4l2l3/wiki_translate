@@ -1,0 +1,17 @@
+[[Image( image_url)]]
+!image_url! 
+
+[[Image(photo.jpg, key=value)]]
+!{key: value}attached_image.png!
+
+[[Image(photo.jpg, align=right)]]
+!>image_url! 
+
+[[Image(photo.jpg, alt='Image title')]]
+!image_url(Image title)!
+
+[[Image(attached_image.png)]]
+!attached_image.png!
+
+[[Image(photo.jpg, 120px)]] 
+!{width: 100%}attached_image.png!
