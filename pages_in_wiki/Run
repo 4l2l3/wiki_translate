@@ -1,0 +1,450 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  <head>
+    <title>
+      Run (edit) – Research Computing Documentation
+    </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link rel="search" href="/trac/doc/search" />
+        <link rel="help" href="/trac/doc/wiki/TracGuide" />
+        <link rel="start" href="/trac/doc/wiki" />
+        <link rel="stylesheet" href="/trac/doc/chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="/trac/doc/chrome/common/css/wiki.css" type="text/css" />
+        <link rel="shortcut icon" href="/trac/doc/chrome/common/trac.ico" type="image/x-icon" />
+        <link rel="icon" href="/trac/doc/chrome/common/trac.ico" type="image/x-icon" />
+    <script type="text/javascript">
+      var auto_preview_timeout=2.0;
+      var form_token="f237668d71f45094cfd61076";
+    </script>
+    <script type="text/javascript" src="/trac/doc/chrome/common/js/jquery.js"></script><script type="text/javascript" src="/trac/doc/chrome/common/js/babel.js"></script><script type="text/javascript" src="/trac/doc/chrome/common/js/trac.js"></script><script type="text/javascript" src="/trac/doc/chrome/common/js/search.js"></script><script type="text/javascript" src="/trac/doc/chrome/common/js/wikitoolbar.js"></script><script type="text/javascript" src="/trac/doc/chrome/common/js/resizer.js"></script><script type="text/javascript" src="/trac/doc/chrome/common/js/auto_preview.js"></script>
+    <!--[if lt IE 7]>
+    <script type="text/javascript" src="/trac/doc/chrome/common/js/ie_pre7_hacks.js"></script>
+    <![endif]-->
+    <meta name="ROBOTS" content="NOINDEX, NOFOLLOW" /><script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("#text").blur(function() {
+          $("#scroll_bar_pos").val(this.scrollTop);
+        }).get(0).scrollTop = $("#scroll_bar_pos").val();
+        $("#editrows").change(function() {
+          resizeTextArea("text", this.options[this.selectedIndex].value);
+        });
+      });
+    </script>
+<link rel="stylesheet" type="text/css" media="screen, print" href="/includes/style.css" />
+<link rel="stylesheet" type="text/css" media="screen, print" href="/includes/homepage.css" />
+<link rel="icon" type="image/ico" href="/favicon.ico" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="stylesheet" href="/includes/menu2.css" type="text/css" />
+<link rel="stylesheet" type="text/css" href="/trac/doc/chrome/site/style.css" />
+</head>
+  <body>
+<div id="siteheader">
+    <!-- Get rid of the old headers -->
+    <div id="container">
+        <div id="header2">
+            <div id="banner2" valign="top">
+                <div id="usf-logo" valign="top">
+                    <img src="http://www.usf.edu/imagery/USF-Master-BANNER-art.jpg" width="600" height="86" border="0" usemap="#Map" />
+                    <map name="Map" id="Map">
+                        <area shape="rect" coords="12,11,347,75" href="/" />
+                    </map>
+                </div>
+                <div id="container_search">
+                    <ul>
+                        <li id="header_atoz_index"><a style="font-size:11px" href="http://assistive.usablenet.com/tt/referrer"> Text-Only</a> | </li>
+                        <li id="header_maps_item"><a style="font-size:11px" href="https://my.usf.edu/webapps/login/custom/bb_bb60/login.jsp?flag=1"> myUSF </a> | </li>
+                        <li id="header_maps_item"><a style="font-size:11px" href="http://www.usf.edu/About-USF/azindex/index.asp"> A-Z Index </a> | </li>
+                        <li id="header_atoz_index"><a style="font-size:11px" href="http://directory.acomp.usf.edu/?logo=1"> Directory</a></li>
+                    </ul>
+                    <form id="form1" value="Search" method="get" action="http://search.usf.edu/search" style="font-size:12px">
+                        <input type="text" name="q" size="20" maxlength="256" value="" />
+                        <input type="submit" name="btng" style="font-size:12px" value="Go" />
+                        <input type="hidden" name="client" style="font-size:12px" value="tampa" />
+                        <input type="hidden" name="proxystylesheet" style="font-size:12px" value="tampa" />
+                        <input type="hidden" name="site" style="font-size:12px" value="tampa" />
+                        <input type="hidden" name="output" style="font-size:12px" value="xml_no_dtd" />
+                        <input type="hidden" name="numgm" style="font-size:12px" value="5" />
+                    </form>
+                </div>
+            </div>
+            <div id="nav_topic">
+                <ul id="nav_topic">
+                    <li><a id="about" href="http://www.usf.edu/About-USF/index.asp">About USF</a></li>
+                    <li><a id="academics" href="http://www.usf.edu/Academics/index.asp">Academics</a></li>
+                    <li><a id="admissions" href="http://www.usf.edu/Admission/index.asp">Admissions</a></li>
+                    <li><a id="campuslife" href="http://www.usf.edu/Campus-Life/index.asp">Campus Life</a></li>
+                    <li><a id="research" href="http://www.usf.edu//Research/index.asp">Research</a></li>
+                    <li><a href="http://system.usf.edu/">USF System</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<script language="JavaScript" src="/includes/jscripts.js"></script>
+<script language="JavaScript" src="/includes/jscripts2.js"></script>
+<br /><br />
+<table align="center" width="1000px" border="0" cellpadding="0" cellspacing="0">
+<tr><td valign="top" align="left" height="100%" width="20%" bgcolor="#FFFFFF" style="border-right:solid 1px #BBBBBB;">
+<div class="buttonscontainer">
+    <div class="buttons_blog_title">
+        <a href="http://www.rc.usf.edu">Research Computing</a>
+    </div>
+    <div class="buttons_blog_item">
+        <a href="http://www.rc.usf.edu/trac/doc/wiki">Getting Started</a>
+    </div>
+    <div class="buttons_blog_item">
+        <a href="/circe.php">CIRCE</a>
+    </div>
+    <div class="buttons_blog_item">
+        <a href="/contact.php">Support &amp; Contacts</a>
+    </div>
+    <div class="buttons_blog_item">
+        <a href="http://www.rc.usf.edu/trac/doc/wiki/SoftwarePortal">Available Software</a>
+    </div>
+    <div class="buttons_blog_item">
+        <a href="http://www.rc.usf.edu/trac/doc/wiki">Documentation</a>
+    </div>
+    <div class="buttons_blog_item">
+        <a href="http://www.rc.usf.edu/signup/account.php">Get Account</a>
+    </div>
+    <div class="buttons_blog_item">
+        <a href="http://www.rc.usf.edu/licensing/licenserequest.php">Request Licensed Software</a>
+    </div>
+    <div class="buttons_blog_item">
+        <a href="http://itrc-adm1.rc.usf.edu/ganglia">System Status</a>
+    </div>
+    <div class="buttons_blog_item">
+        <a href="http://forum.rc.usf.edu">User Forum</a>
+    </div>
+     <div class="buttons_blog_item">
+        <a href="http://www.rc.usf.edu/rcac.php">Research Computing Advisory Committee</a>
+    </div>
+    <br /><br />
+    <!-- SiteSearch Google -->
+    <FORM method="GET" action="http://www.google.com/search">
+        <input type="hidden" name="ie" value="UTF-8" />
+        <input type="hidden" name="oe" value="UTF-8" />
+        <TABLE bgcolor="#FFFFFF"><tr><td>
+            Search this site
+            <INPUT TYPE="text" name="q" size="10" maxlength="100" value=""></INPUT>
+            <INPUT type="submit" name="btng" VALUE="Go"></INPUT>
+            <input type="hidden" name="domains" value="www.rc.usf.edu" />
+            <input type="hidden" name="sitesearch" value="www.rc.usf.edu" />
+        </td></tr></TABLE>
+    </FORM>
+    <br /><br />
+</div>
+</td>
+<td valign="top" height="100%" align="center" style="padding-left:20px;">
+<div id="wiki_content">
+    <div></div>
+    <div></div>
+    <div id="main">
+      <div></div>
+    <div id="content" class="wiki">
+      <h1>Editing Run</h1>
+      
+  <form id="edit" action="/trac/doc/wiki/Run" method="post"><div><input type="hidden" name="__FORM_TOKEN" value="f237668d71f45094cfd61076" /></div>
+    <fieldset class="iefix">
+      <input type="hidden" name="from_editor" value="1" />
+      <input type="hidden" name="action" value="edit" />
+      <input type="hidden" name="version" value="11" />
+      <input type="hidden" id="scroll_bar_pos" name="scroll_bar_pos" value="" />
+      <div id="rows">
+          <label for="editrows">Adjust edit area height:</label>
+          <select size="1" name="editrows" id="editrows" tabindex="43">
+            <option value="8">
+              8
+            </option><option value="12">
+              12
+            </option><option value="16">
+              16
+            </option><option value="20">
+              20
+            </option><option value="24">
+              24
+            </option><option value="28">
+              28
+            </option><option value="32">
+              32
+            </option><option value="36">
+              36
+            </option><option value="40" selected="selected">
+              40
+            </option>
+          </select>
+        <label for="sidebyside" title="Selecting and pressing 'Preview' enters a two-column [edit|preview] mode">
+          Edit side-by-side
+        </label>
+        <input type="checkbox" name="sidebyside" id="sidebyside" />
+      </div>
+      <p><textarea id="text" class="wikitext trac-resizable" name="text" cols="80" rows="40">
+= The !GridEngine `Run` Utility =
+[[PageOutline]]
+
+
+`run` is a utility that allows users to abandon the practice of writing or dealing with submit scripts.  It is tightly-integrated with Modules so that users can forget about which type of parallel library they use (OpenMPI, MVAPICH, DDI, Linda, Threads, etc.), what cryptic options they need to pass to the scheduler (`-j y -R y -l h_rt=10:00:00,h_vmem=16G`... etc, etc.), and transparently handles interactive graphical applications that need to make use of HPC resources.  `run` was written by Brian Smith for the University of South Florida.  It is licensed under the GPL and will be available on this site for download soon.
+
+== Example: Running Matlab through Module Integration ==
+Let's say you want to get a graphical Matlab session up and running.  First, ensure that your Workstation is correctly configured for displaying X11 applications by following our guide [wiki:XWin32Install here].
+
+Once you log into the system and have XWin32 (or your preferred X server) running, issue the following command:
+{{{
+[user@host ~]$ run matlab/r2009a
+}}}
+
+This will transparently start an interactive session with the scheduler and subsequently launch Matlab.
+
+== Example: Running VASP ==
+VASP is an Electronic Structure package that normally is run as a batch job submitted to the queue via a job script.  With `run`, we no longer need to know any of this (well, at least the batch job/script aspect...):
+{{{
+[user@host ~]$ run -n 16 -t 10:00:00 vasp/4.6.34
+Your job 30709 ("vasp/4.6.34-user-9408cf7") has been submitted
+[user@host ~]$
+}}}
+
+This will automatically submit a VASP job to the queue in batch mode, using your current directory as its search path for its INCAR file.  The anticipated runtime of 10 hours is reported with the -t directive.  That we require 16 processors is expressed with the -n directive.  Knowledge of what MPI library VASP was compiled with, what options should be passed to OpenMPI for optimal execution, and other details are taken care of behind the scenes.
+
+== run Command Options ==
+From the `--help` option, we get a nice manual on how to use the command.  I'll reproduce below:
+
+run [OPTIONS] [[COMMAND] [ARGUMENTS]] | [APP_PROFILE]
+
+where [[COMMAND] [ARGUMENTS]] signify the command you wish to execute.  If you are using pipes or redirects, the command must be enclosed in quotes.  You do not specify these if you are also specifying an Application Profile (described below).
+
+The following are command options to modify the behavior of 'run'.  By default, 'run' will execute your application interactively with no parallel features enabled.  More often than not, this is not what you want.
+
+ -p [parallel_configuration] | --parallel[=&lt;parallel_configuration&gt;]
+    By itself, this option enables the default Parallel Configuration,
+    "openmpi".  This option is only required to run parallel jobs that
+    are not defined by an application profile.  You can select from 
+    the following Parallel Configurations:
+
+      * ansys
+      * ddi
+      * hpmpi
+      * intelmpi
+      * linda
+      * matlab
+      * mpich2
+      * mpich
+      * mvapich2
+      * mvapich
+      * openmpi
+      * pgmpich
+      * smp
+
+ -n &lt;int&gt; | --num-cpus=&lt;int&gt;
+    Specify the number of CPUs required for your parallel job.  Required if 
+    specifying -p.
+
+ -c &lt;int&gt; | --num-cpus-per-node=&lt;int&gt;
+    Specify the number of CPUs to use per node.  Useful for MPI/OpenMP 
+    applications.
+
+ -t &lt;time_val&gt; | --time=&lt;time_val&gt;
+    Specify the time required to execute your job.  Default for BATCH jobs 
+    is 10 minutes.  &lt;time_val&gt; takes the format &lt;HH...&gt;HH:MM:SS
+
+ -m &lt;memory&gt; | --memreq=&lt;memory&gt;
+    Specify the total amount of memory in Gigabytes that this job will use.
+    &lt;memory&gt; takes the form of e.g. 16G or 0.2G for values less than 1G.
+
+ -a &lt;array_spec&gt; | --array=&lt;array_spec&gt;
+    Specify that this job is an array job (which spawns multiple copies of 
+    the same job).  Within each copy of the job, the variable SGE_TASK_ID is 
+    defined as a value within the range defined by &lt;array_spec&gt;.
+    &lt;array_spec&gt; takes the form of n-m, where n is a positive integer
+    denoting the first task and m is a positive integer denoting the last 
+    task.
+
+ -f &lt;features&gt; | --feature=&lt;features&gt;
+    A comma-separated list of features that should be requested for this job.
+    Consult system documentation for list of features and their meaning.
+
+ -M &lt;email_addr&gt; | --mail=&lt;email_addr&gt;
+    Send job status updates to the email address defined by &lt;email_addr&gt;
+
+ -N &lt;name&gt; | --name=&lt;name&gt;
+    Assign a name for this job.  If this option is not specified, one will be 
+    generated.
+
+ -e &lt;env_vars&gt; | --environment=&lt;env_vars&gt;
+    A comma-separated list of environment variables and assigned values that 
+    will be set during job execution.
+
+ -h | --help     - Display this help page.
+
+ -b | --batch    - This job should run in batch-mode (in the background).
+
+ -i | --inter    - This job should run in interactive-mode (in the foreground).
+                   NOTE: If no resources are available, job will not start.
+                   This mode is the DEFAULT unless defined by your application
+                   profile.
+
+ -l | --list     - List available application profiles.
+
+ -d | --debug    - Enable extra output during job run to diagnose problems.
+
+ -D | --devel    - Specify that this job should run in the development queue.
+                   30 minute limit applies.
+
+ -v | --verbose  - See what is really going on.
+
+=== Example Usage: ===
+
+ 1. Run "Matlab" in an interactive session:
+     
+    [user@host ~]$ run matlab
+
+    and run Matlab with more available memory:
+
+    [user@host ~]$ run -m 2G matlab
+
+ 2. Run a parallel application with 16 processors that needs 10 hours to 
+    complete.  Notify you when complete and submit to the queue:
+
+    [user@host ~]$ run -b -p -n 16 -t 10:00:00 -m myemail@mydomain.com myapp
+
+ 3. Run an application from a profile that includes parallel support. In
+    this case, we choose ANSYS 12 defined by the module 'apps/ansys/12':
+    We see here that the command argument can be a valid executable OR 
+    an 'apps' module:
+
+    [user@host ~]$ run -n 4 ansys/12
+
+ 4. Run an application from a profile that requires environment options and 
+    four processors per node:
+
+    [user@host ~]$ run -n 16 -c 4 -e INPUT_DB=mydb.gdb gromacs/4.0.5
+
+ 5. Run an application in parallel that is tuned for a specific processor
+    feature:
+
+    [user@host ~]$ run -p -n 32 -f sse4e -t 4:00:00 myapp
+
+=== Defining an Application Profile ===
+On Circe, generally every module defined in apps/ is an application profile for `run`.  This is easily accomplished by adding a few simple environment variable definitions to the module itself.  Let's look at NAMD for example:
+
+'''apps/namd/2.7b2'''
+{{{
+#%Module1.0#####################################################################
+##
+## dot modulefile
+##
+## modulefiles/dotpath.  Generated from dot.in by configure.
+##
+proc ModulesHelp { } {
+	global namdversion
+
+	puts stderr "\tAdds namd 2.7b2 to your environment"
+}
+
+module-whatis	"adds  to namd your PATH environment variable"
+
+# for Tcl script use only
+set		namdversion		2.7b2
+append-path 	PATH			/opt/apps/namd/2.7b2
+append-path	LD_LIBRARY_PATH		/opt/lib/tcl8.3/lib
+setenv		PAR_MODE		openmpi
+setenv		BATCH_MODE		true
+setenv		EXEC			"parallel_exec namd2 *.conf"
+
+module rm openmpi compilers
+module add compilers/intel/10.1.018.x86_64 openmpi/1.4.1-x86_64-intel-10.1.018
+}}}
+
+In this file, you should be conscious of the following 3 variables:
+ * PAR_MODE
+ * BATCH_MODE
+ * EXEC
+
+These three variables help glue the module with the run command so that the best options are set as defaults when referencing the application as a profile.  So, we know that when we run
+{{{
+[user@circe ~]$ run -n 8 -t 1:00:00 namd/2.7b2
+}}}
+we're actually running 
+{{{
+[user@circe apoa1]$ run -b -p openmpi -n 8 -t 1:00:00 parallel_exec namd2 *.conf
+}}}
+
+The other nice thing about application profiles is the ability to tightly integrate resource requests with the execution parameters.  Let's look at HFSS, for instance.  When running !ConfigureSoftware.bash, prior to execution, you can define upper level memory limits and the number of CPUs to use for the simulation.  Let's see how we use these values within an application profile:
+
+{{{
+#%Module1.0#####################################################################
+##
+## dot modulefile
+##
+## modulefiles/dotpath.  Generated from dot.in by configure.
+##
+proc ModulesHelp { } {
+	global hfssversion
+
+	puts stderr "\tAdds HFSS v.11 to your environment"
+}
+
+module-whatis	"adds HFSS to your PATH environment variable"
+
+# for Tcl script use only
+set		hfssversion 		11.0
+#append-path 	PATH			/opt/apps/ansoft/hfss11
+append-path 	PATH			/opt/apps/HFSS-11_2/hfss11
+if { [ module-info mode load ] } {
+	system	/opt/bin/hfss_config
+}
+setenv		PAR_MODE		smp
+setenv		EXEC			"ConfigureSoftware.bash --SetNumProcs=\$NSLOTS \
+            --SetTempDirectory=/tmp --SetMaximumRAMLimit=\$(((\$MEMREQ*1024)-64)); hfss"
+}}}
+
+Look at that!  We even managed to incorporate a little shell arithmetic in order to scale the memory value to the units expected by the commandline for the application.  You can see here that we are setting the memory limit to that defined by 
+
+{{{
+[user@circe ~]$ run -n 4 -m 32G -t 12:00:00 ansoft/hfss-11
+}}}
+
+This particular application module defaults to interactive mode (meaning, a GUI will pop up on your workstation).
+</textarea>
+      </p>
+      <div id="help"><b>Note:</b> See <a href="/trac/doc/wiki/WikiFormatting">WikiFormatting</a> and
+        <a href="/trac/doc/wiki/TracWiki">TracWiki</a> for help on editing wiki content.</div>
+    </fieldset>
+    <fieldset id="changeinfo">
+      <legend>Change information</legend>
+      <div id="changeinfo1">
+        <div class="field">
+          <label>Comment about this change (optional):<br />
+            <input id="comment" type="text" name="comment" size="60" value="" />
+          </label>
+        </div>
+      </div>
+      <div id="changeinfo2" class="options">
+        <label><input type="checkbox" name="readonly" id="readonly" />
+          Page is read-only
+        </label>
+      </div>
+    </fieldset>
+    <div class="buttons">
+        <input type="submit" name="preview" value="Preview Page" /> 
+        <input type="submit" name="diff" value="Review Changes" /> 
+        <input type="submit" id="save" name="save" value="Submit changes" /> 
+      <input type="submit" name="cancel" value="Cancel" />
+    </div>
+  </form>
+
+    </div>
+    </div>
+    <div></div>
+</div>
+</td></tr>
+</table>
+<div id="sitefooter">
+    <br /><br />
+</div>
+</body>
+</html>
