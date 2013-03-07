@@ -1,0 +1,377 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  <head>
+    <title>
+      MapleUser (edit) – Research Computing Documentation
+    </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link rel="search" href="/trac/doc/search" />
+        <link rel="help" href="/trac/doc/wiki/TracGuide" />
+        <link rel="start" href="/trac/doc/wiki" />
+        <link rel="stylesheet" href="/trac/doc/chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="/trac/doc/chrome/common/css/wiki.css" type="text/css" />
+        <link rel="shortcut icon" href="/trac/doc/chrome/common/trac.ico" type="image/x-icon" />
+        <link rel="icon" href="/trac/doc/chrome/common/trac.ico" type="image/x-icon" />
+    <script type="text/javascript">
+      var auto_preview_timeout=2.0;
+      var form_token="f237668d71f45094cfd61076";
+    </script>
+    <script type="text/javascript" src="/trac/doc/chrome/common/js/jquery.js"></script><script type="text/javascript" src="/trac/doc/chrome/common/js/babel.js"></script><script type="text/javascript" src="/trac/doc/chrome/common/js/trac.js"></script><script type="text/javascript" src="/trac/doc/chrome/common/js/search.js"></script><script type="text/javascript" src="/trac/doc/chrome/common/js/wikitoolbar.js"></script><script type="text/javascript" src="/trac/doc/chrome/common/js/resizer.js"></script><script type="text/javascript" src="/trac/doc/chrome/common/js/auto_preview.js"></script>
+    <!--[if lt IE 7]>
+    <script type="text/javascript" src="/trac/doc/chrome/common/js/ie_pre7_hacks.js"></script>
+    <![endif]-->
+    <meta name="ROBOTS" content="NOINDEX, NOFOLLOW" /><script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("#text").blur(function() {
+          $("#scroll_bar_pos").val(this.scrollTop);
+        }).get(0).scrollTop = $("#scroll_bar_pos").val();
+        $("#editrows").change(function() {
+          resizeTextArea("text", this.options[this.selectedIndex].value);
+        });
+      });
+    </script>
+<link rel="stylesheet" type="text/css" media="screen, print" href="/includes/style.css" />
+<link rel="stylesheet" type="text/css" media="screen, print" href="/includes/homepage.css" />
+<link rel="icon" type="image/ico" href="/favicon.ico" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="stylesheet" href="/includes/menu2.css" type="text/css" />
+<link rel="stylesheet" type="text/css" href="/trac/doc/chrome/site/style.css" />
+</head>
+  <body>
+<div id="siteheader">
+    <!-- Get rid of the old headers -->
+    <div id="container">
+        <div id="header2">
+            <div id="banner2" valign="top">
+                <div id="usf-logo" valign="top">
+                    <img src="http://www.usf.edu/imagery/USF-Master-BANNER-art.jpg" width="600" height="86" border="0" usemap="#Map" />
+                    <map name="Map" id="Map">
+                        <area shape="rect" coords="12,11,347,75" href="/" />
+                    </map>
+                </div>
+                <div id="container_search">
+                    <ul>
+                        <li id="header_atoz_index"><a style="font-size:11px" href="http://assistive.usablenet.com/tt/referrer"> Text-Only</a> | </li>
+                        <li id="header_maps_item"><a style="font-size:11px" href="https://my.usf.edu/webapps/login/custom/bb_bb60/login.jsp?flag=1"> myUSF </a> | </li>
+                        <li id="header_maps_item"><a style="font-size:11px" href="http://www.usf.edu/About-USF/azindex/index.asp"> A-Z Index </a> | </li>
+                        <li id="header_atoz_index"><a style="font-size:11px" href="http://directory.acomp.usf.edu/?logo=1"> Directory</a></li>
+                    </ul>
+                    <form id="form1" value="Search" method="get" action="http://search.usf.edu/search" style="font-size:12px">
+                        <input type="text" name="q" size="20" maxlength="256" value="" />
+                        <input type="submit" name="btng" style="font-size:12px" value="Go" />
+                        <input type="hidden" name="client" style="font-size:12px" value="tampa" />
+                        <input type="hidden" name="proxystylesheet" style="font-size:12px" value="tampa" />
+                        <input type="hidden" name="site" style="font-size:12px" value="tampa" />
+                        <input type="hidden" name="output" style="font-size:12px" value="xml_no_dtd" />
+                        <input type="hidden" name="numgm" style="font-size:12px" value="5" />
+                    </form>
+                </div>
+            </div>
+            <div id="nav_topic">
+                <ul id="nav_topic">
+                    <li><a id="about" href="http://www.usf.edu/About-USF/index.asp">About USF</a></li>
+                    <li><a id="academics" href="http://www.usf.edu/Academics/index.asp">Academics</a></li>
+                    <li><a id="admissions" href="http://www.usf.edu/Admission/index.asp">Admissions</a></li>
+                    <li><a id="campuslife" href="http://www.usf.edu/Campus-Life/index.asp">Campus Life</a></li>
+                    <li><a id="research" href="http://www.usf.edu//Research/index.asp">Research</a></li>
+                    <li><a href="http://system.usf.edu/">USF System</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<script language="JavaScript" src="/includes/jscripts.js"></script>
+<script language="JavaScript" src="/includes/jscripts2.js"></script>
+<br /><br />
+<table align="center" width="1000px" border="0" cellpadding="0" cellspacing="0">
+<tr><td valign="top" align="left" height="100%" width="20%" bgcolor="#FFFFFF" style="border-right:solid 1px #BBBBBB;">
+<div class="buttonscontainer">
+    <div class="buttons_blog_title">
+        <a href="http://www.rc.usf.edu">Research Computing</a>
+    </div>
+    <div class="buttons_blog_item">
+        <a href="http://www.rc.usf.edu/trac/doc/wiki">Getting Started</a>
+    </div>
+    <div class="buttons_blog_item">
+        <a href="/circe.php">CIRCE</a>
+    </div>
+    <div class="buttons_blog_item">
+        <a href="/contact.php">Support &amp; Contacts</a>
+    </div>
+    <div class="buttons_blog_item">
+        <a href="http://www.rc.usf.edu/trac/doc/wiki/SoftwarePortal">Available Software</a>
+    </div>
+    <div class="buttons_blog_item">
+        <a href="http://www.rc.usf.edu/trac/doc/wiki">Documentation</a>
+    </div>
+    <div class="buttons_blog_item">
+        <a href="http://www.rc.usf.edu/signup/account.php">Get Account</a>
+    </div>
+    <div class="buttons_blog_item">
+        <a href="http://www.rc.usf.edu/licensing/licenserequest.php">Request Licensed Software</a>
+    </div>
+    <div class="buttons_blog_item">
+        <a href="http://itrc-adm1.rc.usf.edu/ganglia">System Status</a>
+    </div>
+    <div class="buttons_blog_item">
+        <a href="http://forum.rc.usf.edu">User Forum</a>
+    </div>
+     <div class="buttons_blog_item">
+        <a href="http://www.rc.usf.edu/rcac.php">Research Computing Advisory Committee</a>
+    </div>
+    <br /><br />
+    <!-- SiteSearch Google -->
+    <FORM method="GET" action="http://www.google.com/search">
+        <input type="hidden" name="ie" value="UTF-8" />
+        <input type="hidden" name="oe" value="UTF-8" />
+        <TABLE bgcolor="#FFFFFF"><tr><td>
+            Search this site
+            <INPUT TYPE="text" name="q" size="10" maxlength="100" value=""></INPUT>
+            <INPUT type="submit" name="btng" VALUE="Go"></INPUT>
+            <input type="hidden" name="domains" value="www.rc.usf.edu" />
+            <input type="hidden" name="sitesearch" value="www.rc.usf.edu" />
+        </td></tr></TABLE>
+    </FORM>
+    <br /><br />
+</div>
+</td>
+<td valign="top" height="100%" align="center" style="padding-left:20px;">
+<div id="wiki_content">
+    <div></div>
+    <div></div>
+    <div id="main">
+      <div></div>
+    <div id="content" class="wiki">
+      <h1>Editing MapleUser</h1>
+      
+  <form id="edit" action="/trac/doc/wiki/MapleUser" method="post"><div><input type="hidden" name="__FORM_TOKEN" value="f237668d71f45094cfd61076" /></div>
+    <fieldset class="iefix">
+      <input type="hidden" name="from_editor" value="1" />
+      <input type="hidden" name="action" value="edit" />
+      <input type="hidden" name="version" value="15" />
+      <input type="hidden" id="scroll_bar_pos" name="scroll_bar_pos" value="" />
+      <div id="rows">
+          <label for="editrows">Adjust edit area height:</label>
+          <select size="1" name="editrows" id="editrows" tabindex="43">
+            <option value="8">
+              8
+            </option><option value="12">
+              12
+            </option><option value="16">
+              16
+            </option><option value="20">
+              20
+            </option><option value="24">
+              24
+            </option><option value="28">
+              28
+            </option><option value="32">
+              32
+            </option><option value="36">
+              36
+            </option><option value="40" selected="selected">
+              40
+            </option>
+          </select>
+        <label for="sidebyside" title="Selecting and pressing 'Preview' enters a two-column [edit|preview] mode">
+          Edit side-by-side
+        </label>
+        <input type="checkbox" name="sidebyside" id="sidebyside" />
+      </div>
+      <p><textarea id="text" class="wikitext trac-resizable" name="text" cols="80" rows="40">
+= Maple =
+----
+
+[[PageOutline]]
+
+== Description == 
+
+Maple is a software tool for mathematical computation. It has many features that are useful for students and research scientists as well as mathematicians. It has powerful tools for symbolic mathematics and algebraic computing. It can also do numerical computations and graphing.
+
+== Current Version ==
+
+ * '''16'''
+
+== Authorized Users ==
+
+ * Students doing research
+ * Faculty
+ * `circe` account holders
+
+== Platforms ==
+
+ * Workstation/PC
+ * `circe` cluster
+
+== Installation ==
+
+'''IMPORTANT: Before You Begin'''[[BR]]
+Make sure you've applied for and received the Maple 16 License information.  You will need to go here to apply: https://rc.usf.edu/licensing/licenserequest.php
+
+  '''''Contents'''''
+
+  [MapleUser#Maple15WindowsInstallation Maple 16 Windows Installation][[BR]]
+  [MapleUser#Maple15LinuxSingleUserInstallation Maple 16 Linux Single User Installation][[BR]]
+  [MapleUser#Maple15MacOSXSingleUserInstallation Maple 16 Mac OS X Single User Installation][[BR]]
+
+-----
+
+=== Maple 16 Windows Installation ===
+
+Before starting the installation:
+
+    * Get the installation executable from https://rc.usf.edu/isos/Maple/.  Log into the server using your NetID and password. If your computer is a 64-bit machine, download Maple16WindowsX86_64Installer.exe. Otherwise, download Maple16WindowsInstaller.exe. 
+    * Exit all programs especially Maple and Excel
+    * Ensure that you have administrator privileges. 
+
+----
+
+   1. Double-click on the Maple installation executable to start it.
+   2. At the Introduction page, click Next.
+   3. Accept the License Agreement, then click Next.
+   4. Specify where you would like Maple to be installed, then click Next.
+   5. Specify whether or not you would like a shortcut installed on your desktop, then click Next.
+   6. For the license type, Choose Network License and click Next.
+   7. Type in the license information provided in the email you received from us when requesting access to Maple, then click Next.
+   8. Confirm the installation details displayed, then click Install.
+   9. Once the installation exits, it should give you a set of instructions on how to start Maple in graphical and console modes. Click Next.
+   10. Click "Done" to exit the installer.
+
+----
+
+=== Maple 16 Linux Single User Installation ===
+
+Disclaimer: This procedure was tested on a Fedora machine. Your mileage may vary.
+
+   1. Get the installation executable from https://rc.usf.edu/isos/Maple/.  Log into the server using your NetID and password. If your computer is a 64-bit machine, download Maple16LinuxX86_64Installer.bin. Otherwise, download Maple16Linux32Installer.bin.
+   2. Open a terminal and become root on your machine via 'su -' or 'sudo su -'.
+   3. Run the installation wizard by:
+{{{
+sh /path/to/installer.bin
+}}}
+   4. At the Introduction page, click Next.
+   5. Accept the License Agreement, then click Next.
+   6. Specify where you would like Maple to be installed, then click Next. We recommend /usr/local/maple16.
+   7. Specify whether or not you would like a shortcut installed on your desktop, then click Next.
+   8. For the license type, Choose Network License and click Next.
+   9. Type in the license information provided in the email you received from us when requesting access to Maple, then click Next.
+   10. Confirm the installation details displayed, then click Install.
+   11. Once the installation exits, it should give you a set of instructions on how to start Maple in graphical and console modes. Click Next.
+   12. Click "Done" to exit the installer.
+   13. Be sure the directory $MAPLE/bin is added to your path. Where $MAPLE is the installation directory from step 6). 
+
+You should be able to start xmaple or maple from the command line.
+
+----
+
+=== Maple 16 Mac OS X Single User Installation ===
+
+Disclaimer: These are the standard instructions for a Mac OS X machine. Your mileage may vary.
+
+   1. Get the Mac installation executable from https://rc.usf.edu/isos/Maple/maple16/.  Log in using your NetID and password.
+   2. Double-click on the installer. Supply the administrative password if asked.
+   3. At the Introduction page, click Next.
+   4. Accept the License Agreement, then click Next.
+   5. Specify where you would like Maple to be installed, then click Next.
+   6. Specify whether or not you would like a shortcut installed on your desktop, then click Next.
+   7. For the license type, Choose Network License and click Next.
+   8. Type in the license information provided in the email you received from us when requesting access to Maple, then click Next.
+   9. Confirm the installation details displayed, then click Install.
+   10. Once the installation exits, it should give you a set of instructions on how to start Maple in graphical and console modes. Click Next.
+   11. Click "Done" to exit the installer.
+   
+You should be able to launch Maple by double clicking on the Maple 16 icon in the !Applications/Maple 16 directory.
+----
+== Running Maple on Circe ==
+
+=== Modules ===
+
+Maple requires the following module file and some prerequisites to run:
+ * `apps/maple/16`
+To run Maple on the cluster, ensure that you use 'module add' prior to using any Maple executables.  See [wiki:Modules] for more information.
+
+=== Submitting a Job ===
+
+There are two ways to run Maple on Circe depending on the runtime of your particular job.
+
+==== Jobs Shorter than 20 Minutes in Length (most jobs) ====
+Simply type {{{ xmaple }}} at the command line. If you have properly configured an X11 session, you should see the full Maple interface.  If you haven't configured X11, you will be able to use the console interface by running {{{ maple }}} at the prompt.  For users wishing to use the graphical interface over X11, please see our [wiki:XWin32Install "XWin32 Installation"] documentation.
+
+Maple can also be launched through the NX environment using the Applications menu.  For more information about the NX environment, please see our [wiki:CirceDesktop "Circe NX Desktop"] documentation.
+
+==== Jobs Longer than 20 Minutes in Length ====
+To run Maple jobs on the Circe cluster, users will need to submit their jobs to the scheduling environment if their jobs take more than 20 minutes to run on a standard PC.
+
+If, for example, you have a Maple script file named test.mpl with all your functions defined in it, you would set up a submit script to use the Maple kernel like this:
+
+{{{
+#!/bin/bash
+#$ -cwd
+#$ -N maple_test
+#$ -l h_rt=00:30:00,mps=1.0G
+#$ -j y
+#$ -o output.$JOB_ID
+
+module load apps/maple/16
+maple &lt; test.mpl&gt; output.txt
+}}}
+
+Maple script files can either be created using a standard text editor or by exporting an existing worksheet from Standard Maple in .mpl format.
+
+==== Guides ====
+Use the following links for the Maple User Manual and Programming Guide.  A PDF reader is required.
+ * http://www.maplesoft.com/view.aspx?SF=131922/432650/UserManual.pdf
+ * http://www.maplesoft.com/view.aspx?SF=131923/432652/ProgrammingGuide.pdf
+
+==== More Job Information ====
+See the following for more detailed job submission information:
+ * [wiki:gridEngineUsers "SGE User's Guide"]
+ * [wiki:gridEnginePolicy "Scheduling and Dispatch Policies"]
+ * [wiki:gridEngineTechn "Advanced Submit Techniques"]
+
+=== Reporting Bugs ===
+Report bugs to the IT Help Desk: mailto:help@usf.edu
+</textarea>
+      </p>
+      <div id="help"><b>Note:</b> See <a href="/trac/doc/wiki/WikiFormatting">WikiFormatting</a> and
+        <a href="/trac/doc/wiki/TracWiki">TracWiki</a> for help on editing wiki content.</div>
+    </fieldset>
+    <fieldset id="changeinfo">
+      <legend>Change information</legend>
+      <div id="changeinfo1">
+        <div class="field">
+          <label>Comment about this change (optional):<br />
+            <input id="comment" type="text" name="comment" size="60" value="" />
+          </label>
+        </div>
+      </div>
+      <div id="changeinfo2" class="options">
+        <label><input type="checkbox" name="readonly" id="readonly" />
+          Page is read-only
+        </label>
+      </div>
+    </fieldset>
+    <div class="buttons">
+        <input type="submit" name="preview" value="Preview Page" /> 
+        <input type="submit" name="diff" value="Review Changes" /> 
+        <input type="submit" id="save" name="save" value="Submit changes" /> 
+      <input type="submit" name="cancel" value="Cancel" />
+    </div>
+  </form>
+
+    </div>
+    </div>
+    <div></div>
+</div>
+</td></tr>
+</table>
+<div id="sitefooter">
+    <br /><br />
+</div>
+</body>
+</html>

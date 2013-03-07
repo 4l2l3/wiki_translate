@@ -1,0 +1,301 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  <head>
+    <title>
+      SoftwarePortal (edit) – Research Computing Documentation
+    </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link rel="search" href="/trac/doc/search" />
+        <link rel="help" href="/trac/doc/wiki/TracGuide" />
+        <link rel="start" href="/trac/doc/wiki" />
+        <link rel="stylesheet" href="/trac/doc/chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="/trac/doc/chrome/common/css/wiki.css" type="text/css" />
+        <link rel="shortcut icon" href="/trac/doc/chrome/common/trac.ico" type="image/x-icon" />
+        <link rel="icon" href="/trac/doc/chrome/common/trac.ico" type="image/x-icon" />
+    <script type="text/javascript">
+      var auto_preview_timeout=2.0;
+      var form_token="f237668d71f45094cfd61076";
+    </script>
+    <script type="text/javascript" src="/trac/doc/chrome/common/js/jquery.js"></script><script type="text/javascript" src="/trac/doc/chrome/common/js/babel.js"></script><script type="text/javascript" src="/trac/doc/chrome/common/js/trac.js"></script><script type="text/javascript" src="/trac/doc/chrome/common/js/search.js"></script><script type="text/javascript" src="/trac/doc/chrome/common/js/wikitoolbar.js"></script><script type="text/javascript" src="/trac/doc/chrome/common/js/resizer.js"></script><script type="text/javascript" src="/trac/doc/chrome/common/js/auto_preview.js"></script>
+    <!--[if lt IE 7]>
+    <script type="text/javascript" src="/trac/doc/chrome/common/js/ie_pre7_hacks.js"></script>
+    <![endif]-->
+    <meta name="ROBOTS" content="NOINDEX, NOFOLLOW" /><script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("#text").blur(function() {
+          $("#scroll_bar_pos").val(this.scrollTop);
+        }).get(0).scrollTop = $("#scroll_bar_pos").val();
+        $("#editrows").change(function() {
+          resizeTextArea("text", this.options[this.selectedIndex].value);
+        });
+      });
+    </script>
+<link rel="stylesheet" type="text/css" media="screen, print" href="/includes/style.css" />
+<link rel="stylesheet" type="text/css" media="screen, print" href="/includes/homepage.css" />
+<link rel="icon" type="image/ico" href="/favicon.ico" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="stylesheet" href="/includes/menu2.css" type="text/css" />
+<link rel="stylesheet" type="text/css" href="/trac/doc/chrome/site/style.css" />
+</head>
+  <body>
+<div id="siteheader">
+    <!-- Get rid of the old headers -->
+    <div id="container">
+        <div id="header2">
+            <div id="banner2" valign="top">
+                <div id="usf-logo" valign="top">
+                    <img src="http://www.usf.edu/imagery/USF-Master-BANNER-art.jpg" width="600" height="86" border="0" usemap="#Map" />
+                    <map name="Map" id="Map">
+                        <area shape="rect" coords="12,11,347,75" href="/" />
+                    </map>
+                </div>
+                <div id="container_search">
+                    <ul>
+                        <li id="header_atoz_index"><a style="font-size:11px" href="http://assistive.usablenet.com/tt/referrer"> Text-Only</a> | </li>
+                        <li id="header_maps_item"><a style="font-size:11px" href="https://my.usf.edu/webapps/login/custom/bb_bb60/login.jsp?flag=1"> myUSF </a> | </li>
+                        <li id="header_maps_item"><a style="font-size:11px" href="http://www.usf.edu/About-USF/azindex/index.asp"> A-Z Index </a> | </li>
+                        <li id="header_atoz_index"><a style="font-size:11px" href="http://directory.acomp.usf.edu/?logo=1"> Directory</a></li>
+                    </ul>
+                    <form id="form1" value="Search" method="get" action="http://search.usf.edu/search" style="font-size:12px">
+                        <input type="text" name="q" size="20" maxlength="256" value="" />
+                        <input type="submit" name="btng" style="font-size:12px" value="Go" />
+                        <input type="hidden" name="client" style="font-size:12px" value="tampa" />
+                        <input type="hidden" name="proxystylesheet" style="font-size:12px" value="tampa" />
+                        <input type="hidden" name="site" style="font-size:12px" value="tampa" />
+                        <input type="hidden" name="output" style="font-size:12px" value="xml_no_dtd" />
+                        <input type="hidden" name="numgm" style="font-size:12px" value="5" />
+                    </form>
+                </div>
+            </div>
+            <div id="nav_topic">
+                <ul id="nav_topic">
+                    <li><a id="about" href="http://www.usf.edu/About-USF/index.asp">About USF</a></li>
+                    <li><a id="academics" href="http://www.usf.edu/Academics/index.asp">Academics</a></li>
+                    <li><a id="admissions" href="http://www.usf.edu/Admission/index.asp">Admissions</a></li>
+                    <li><a id="campuslife" href="http://www.usf.edu/Campus-Life/index.asp">Campus Life</a></li>
+                    <li><a id="research" href="http://www.usf.edu//Research/index.asp">Research</a></li>
+                    <li><a href="http://system.usf.edu/">USF System</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<script language="JavaScript" src="/includes/jscripts.js"></script>
+<script language="JavaScript" src="/includes/jscripts2.js"></script>
+<br /><br />
+<table align="center" width="1000px" border="0" cellpadding="0" cellspacing="0">
+<tr><td valign="top" align="left" height="100%" width="20%" bgcolor="#FFFFFF" style="border-right:solid 1px #BBBBBB;">
+<div class="buttonscontainer">
+    <div class="buttons_blog_title">
+        <a href="http://www.rc.usf.edu">Research Computing</a>
+    </div>
+    <div class="buttons_blog_item">
+        <a href="http://www.rc.usf.edu/trac/doc/wiki">Getting Started</a>
+    </div>
+    <div class="buttons_blog_item">
+        <a href="/circe.php">CIRCE</a>
+    </div>
+    <div class="buttons_blog_item">
+        <a href="/contact.php">Support &amp; Contacts</a>
+    </div>
+    <div class="buttons_blog_item">
+        <a href="http://www.rc.usf.edu/trac/doc/wiki/SoftwarePortal">Available Software</a>
+    </div>
+    <div class="buttons_blog_item">
+        <a href="http://www.rc.usf.edu/trac/doc/wiki">Documentation</a>
+    </div>
+    <div class="buttons_blog_item">
+        <a href="http://www.rc.usf.edu/signup/account.php">Get Account</a>
+    </div>
+    <div class="buttons_blog_item">
+        <a href="http://www.rc.usf.edu/licensing/licenserequest.php">Request Licensed Software</a>
+    </div>
+    <div class="buttons_blog_item">
+        <a href="http://itrc-adm1.rc.usf.edu/ganglia">System Status</a>
+    </div>
+    <div class="buttons_blog_item">
+        <a href="http://forum.rc.usf.edu">User Forum</a>
+    </div>
+     <div class="buttons_blog_item">
+        <a href="http://www.rc.usf.edu/rcac.php">Research Computing Advisory Committee</a>
+    </div>
+    <br /><br />
+    <!-- SiteSearch Google -->
+    <FORM method="GET" action="http://www.google.com/search">
+        <input type="hidden" name="ie" value="UTF-8" />
+        <input type="hidden" name="oe" value="UTF-8" />
+        <TABLE bgcolor="#FFFFFF"><tr><td>
+            Search this site
+            <INPUT TYPE="text" name="q" size="10" maxlength="100" value=""></INPUT>
+            <INPUT type="submit" name="btng" VALUE="Go"></INPUT>
+            <input type="hidden" name="domains" value="www.rc.usf.edu" />
+            <input type="hidden" name="sitesearch" value="www.rc.usf.edu" />
+        </td></tr></TABLE>
+    </FORM>
+    <br /><br />
+</div>
+</td>
+<td valign="top" height="100%" align="center" style="padding-left:20px;">
+<div id="wiki_content">
+    <div></div>
+    <div></div>
+    <div id="main">
+      <div></div>
+    <div id="content" class="wiki">
+      <h1>Editing SoftwarePortal</h1>
+      
+  <form id="edit" action="/trac/doc/wiki/SoftwarePortal" method="post"><div><input type="hidden" name="__FORM_TOKEN" value="f237668d71f45094cfd61076" /></div>
+    <fieldset class="iefix">
+      <input type="hidden" name="from_editor" value="1" />
+      <input type="hidden" name="action" value="edit" />
+      <input type="hidden" name="version" value="165" />
+      <input type="hidden" id="scroll_bar_pos" name="scroll_bar_pos" value="" />
+      <div id="rows">
+          <label for="editrows">Adjust edit area height:</label>
+          <select size="1" name="editrows" id="editrows" tabindex="43">
+            <option value="8">
+              8
+            </option><option value="12">
+              12
+            </option><option value="16">
+              16
+            </option><option value="20">
+              20
+            </option><option value="24">
+              24
+            </option><option value="28">
+              28
+            </option><option value="32">
+              32
+            </option><option value="36">
+              36
+            </option><option value="40" selected="selected">
+              40
+            </option>
+          </select>
+        <label for="sidebyside" title="Selecting and pressing 'Preview' enters a two-column [edit|preview] mode">
+          Edit side-by-side
+        </label>
+        <input type="checkbox" name="sidebyside" id="sidebyside" />
+      </div>
+      <p><textarea id="text" class="wikitext trac-resizable" name="text" cols="80" rows="40">
+= Available Software =
+----
+This is a list of currently available software with links to respective documentation.  Software listed here is currently supported by Research Computing.  New software may be added as per user requests.
+
+|| ''' Application''' || '''Latest Installed Version''' ||
+|| [wiki:abinit "ABINIT"] || 6.12.3 ||
+|| [wiki:ABySS "ABySS"] || 1.2.7 ||
+|| [wiki:ADS "ADS"] || 2009u1 ||
+|| [wiki:Ansys "Ansys"] || 14.0 || 
+|| [wiki:AutoDock "AutoDock"] || 4.2.3 ||
+|| [wiki:Blast "Blast"] || 2.2.22 || 
+|| [wiki:Cadence "Cadence"] || 04/25/2012 ||
+|| [wiki:CMAQ-4.7 CMAQ ] || 4.7 || 
+|| [wiki:FemlabUser "Comsol"] || 4.3a || 
+|| [wiki:cp2k "cp2k"] || 2.3.43 || 
+|| [wiki:dalton "Dalton"] || 2.0 || 
+|| [wiki:desnex "Designer"] || 6.0 || 
+|| [wiki:dlpoly  "DL_POLY"] || 2.16, 3.06 || 
+|| [wiki:dock6 "DOCK"] || 6.5 || 
+|| [wiki:esmf "ESMF"] || 5.2.0 || 
+|| [wiki:ESPRIT "ESPRIT"] || 20090715 || 
+|| [wiki:fastxToolkit "FASTX Toolkit"] || 0.0.13 || 
+|| [wiki:feram "feram"] || 0.19.06 ||
+|| [wiki:Fidap "FIDAP"] || 8.7.4 ||
+|| [wiki:Fidap "GAMBIT"] || 2.3.16 ||
+|| [wiki:Gaussian "Gaussian"] || 09b01 || 
+|| [wiki:GaussView "GaussView"] || 5.0 || 
+|| [wiki:GMT "GMT"] || 4.5.5 || 
+|| [wiki:GrADS  "GrADS"] || 2.0.1 || 
+|| [wiki:Grass  "Grass GIS"] || 6.4.0 || 
+|| [wiki:Gromacs "Gromacs"] || 4.5.5 || 
+|| [wiki:Gulp "Gulp"] || 4.0 || 
+|| [wiki:Hadoop "Hadoop"] || 0.20.2 || 
+|| [wiki:HFSS "HFSS"] || 13.0.2, 14.0, 15.0 || 
+|| [wiki:IDLUser "IDL"] || 8.2 || 
+|| [wiki:Iso2Mesh "iso2mesh"] || 0.8.0 ||
+|| [wiki:jmol "Jmol"] || 11.6.24 || 
+|| [wiki:LAMMPS "LAMMPS"] || 2Nov10 ||
+|| [wiki:fdtd "Lumerical FDTD"] || 7.5.2 ||
+|| [wiki:MapleUser "Maple"] || 16 || 
+|| [wiki:MathemUser "Mathematica"] || 9.0 || 
+|| [wiki:MatlabUser "Matlab"] || R2012b || 
+|| [wiki:Maya "Maya"] || 2013 ||
+|| [wiki:Meep "Meep"] || 1.1.1 || 
+|| [wiki:MEGA "MEGA"] || 4.02 || 
+|| [wiki:Meme "Meme"] || 3.5.7 ||
+|| [wiki:molden "Molden"] || 4.9 ||
+|| [wiki:MOVES "MOVES"] || 2010b ||
+|| [wiki:MPIBlast "MPI BLAST"] || 1.6.0 || 
+|| [wiki:MPP "MassProfilerPro (MPP)"] || 1.4.4 ||
+|| [wiki:MrBayes "MrBayes"] || 3.1.2 || 
+|| [wiki:MSModeling "MS Modeling"] || 3.2 || 
+|| [wiki:namd "NAMD"] || 2.7 || 
+|| [wiki:nwchem "NWChem"] || 6.1.1 ||
+|| [wiki:oases "Oases"] || 0.1.22 ||
+|| [wiki:openfoam "OpenFOAM"] || 2.0.1 ||
+|| [wiki:openmm "OpenMM"] || 4.0 ||
+|| [wiki:PGIInstall "PGI Compilers"] || 7.x, 11.9 || 
+|| [wiki:proj "PROJ.4"] || 4.7.1 ||
+|| [wiki:qe "Quantum Espresso"] || 5.0 ||
+|| [wiki:Rmpi "R and RMPI"] || 2.11.1, 0.5-8 || 
+|| [wiki:SAS "SAS"] || 9.3 ||
+|| [wiki:siesta "SIESTA"] || 3.1 ||
+|| [wiki:Synopsys "Synopsys"] || 04/25/2012 ||
+|| [wiki:TeraChem "TeraChem"] || 1.0 ||
+|| [wiki:titan2d "TITAN2D"] || 2.0.1 ||
+|| [wiki:transabyss "Trans-ABySS"] || 1.4.4 || 
+|| [wiki:vapor "Vapor"] || 2.1.0 || 
+|| [wiki:vasp "VASP"] || 5.2.8 || 
+|| [wiki:velvet "Velvet"] || 1.1.05 || 
+|| [wiki:vmd "VMD"] || 1.9 || 
+|| [wiki:vnc-class "vnc-class"] || 1.0 ||
+|| [wiki:WEKA "WEKA"] || 3.6.2 || 
+|| [wiki:wrf "WRF"] || 3.3 ||
+|| [wiki:XWin32Install "X-Win32"] || 2012 ||
+
+,,Please click the package name to access the documentation,,</textarea>
+      </p>
+      <div id="help"><b>Note:</b> See <a href="/trac/doc/wiki/WikiFormatting">WikiFormatting</a> and
+        <a href="/trac/doc/wiki/TracWiki">TracWiki</a> for help on editing wiki content.</div>
+    </fieldset>
+    <fieldset id="changeinfo">
+      <legend>Change information</legend>
+      <div id="changeinfo1">
+        <div class="field">
+          <label>Comment about this change (optional):<br />
+            <input id="comment" type="text" name="comment" size="60" value="" />
+          </label>
+        </div>
+      </div>
+      <div id="changeinfo2" class="options">
+        <label><input type="checkbox" name="readonly" id="readonly" />
+          Page is read-only
+        </label>
+      </div>
+    </fieldset>
+    <div class="buttons">
+        <input type="submit" name="preview" value="Preview Page" /> 
+        <input type="submit" name="diff" value="Review Changes" /> 
+        <input type="submit" id="save" name="save" value="Submit changes" /> 
+      <input type="submit" name="cancel" value="Cancel" />
+    </div>
+  </form>
+
+    </div>
+    </div>
+    <div></div>
+</div>
+</td></tr>
+</table>
+<div id="sitefooter">
+    <br /><br />
+</div>
+</body>
+</html>

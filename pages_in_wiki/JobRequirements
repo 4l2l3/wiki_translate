@@ -1,0 +1,300 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  <head>
+    <title>
+      JobRequirements (edit) – Research Computing Documentation
+    </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link rel="search" href="/trac/doc/search" />
+        <link rel="help" href="/trac/doc/wiki/TracGuide" />
+        <link rel="start" href="/trac/doc/wiki" />
+        <link rel="stylesheet" href="/trac/doc/chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="/trac/doc/chrome/common/css/wiki.css" type="text/css" />
+        <link rel="shortcut icon" href="/trac/doc/chrome/common/trac.ico" type="image/x-icon" />
+        <link rel="icon" href="/trac/doc/chrome/common/trac.ico" type="image/x-icon" />
+    <script type="text/javascript">
+      var auto_preview_timeout=2.0;
+      var form_token="f237668d71f45094cfd61076";
+    </script>
+    <script type="text/javascript" src="/trac/doc/chrome/common/js/jquery.js"></script><script type="text/javascript" src="/trac/doc/chrome/common/js/babel.js"></script><script type="text/javascript" src="/trac/doc/chrome/common/js/trac.js"></script><script type="text/javascript" src="/trac/doc/chrome/common/js/search.js"></script><script type="text/javascript" src="/trac/doc/chrome/common/js/wikitoolbar.js"></script><script type="text/javascript" src="/trac/doc/chrome/common/js/resizer.js"></script><script type="text/javascript" src="/trac/doc/chrome/common/js/auto_preview.js"></script>
+    <!--[if lt IE 7]>
+    <script type="text/javascript" src="/trac/doc/chrome/common/js/ie_pre7_hacks.js"></script>
+    <![endif]-->
+    <meta name="ROBOTS" content="NOINDEX, NOFOLLOW" /><script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("#text").blur(function() {
+          $("#scroll_bar_pos").val(this.scrollTop);
+        }).get(0).scrollTop = $("#scroll_bar_pos").val();
+        $("#editrows").change(function() {
+          resizeTextArea("text", this.options[this.selectedIndex].value);
+        });
+      });
+    </script>
+<link rel="stylesheet" type="text/css" media="screen, print" href="/includes/style.css" />
+<link rel="stylesheet" type="text/css" media="screen, print" href="/includes/homepage.css" />
+<link rel="icon" type="image/ico" href="/favicon.ico" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="stylesheet" href="/includes/menu2.css" type="text/css" />
+<link rel="stylesheet" type="text/css" href="/trac/doc/chrome/site/style.css" />
+</head>
+  <body>
+<div id="siteheader">
+    <!-- Get rid of the old headers -->
+    <div id="container">
+        <div id="header2">
+            <div id="banner2" valign="top">
+                <div id="usf-logo" valign="top">
+                    <img src="http://www.usf.edu/imagery/USF-Master-BANNER-art.jpg" width="600" height="86" border="0" usemap="#Map" />
+                    <map name="Map" id="Map">
+                        <area shape="rect" coords="12,11,347,75" href="/" />
+                    </map>
+                </div>
+                <div id="container_search">
+                    <ul>
+                        <li id="header_atoz_index"><a style="font-size:11px" href="http://assistive.usablenet.com/tt/referrer"> Text-Only</a> | </li>
+                        <li id="header_maps_item"><a style="font-size:11px" href="https://my.usf.edu/webapps/login/custom/bb_bb60/login.jsp?flag=1"> myUSF </a> | </li>
+                        <li id="header_maps_item"><a style="font-size:11px" href="http://www.usf.edu/About-USF/azindex/index.asp"> A-Z Index </a> | </li>
+                        <li id="header_atoz_index"><a style="font-size:11px" href="http://directory.acomp.usf.edu/?logo=1"> Directory</a></li>
+                    </ul>
+                    <form id="form1" value="Search" method="get" action="http://search.usf.edu/search" style="font-size:12px">
+                        <input type="text" name="q" size="20" maxlength="256" value="" />
+                        <input type="submit" name="btng" style="font-size:12px" value="Go" />
+                        <input type="hidden" name="client" style="font-size:12px" value="tampa" />
+                        <input type="hidden" name="proxystylesheet" style="font-size:12px" value="tampa" />
+                        <input type="hidden" name="site" style="font-size:12px" value="tampa" />
+                        <input type="hidden" name="output" style="font-size:12px" value="xml_no_dtd" />
+                        <input type="hidden" name="numgm" style="font-size:12px" value="5" />
+                    </form>
+                </div>
+            </div>
+            <div id="nav_topic">
+                <ul id="nav_topic">
+                    <li><a id="about" href="http://www.usf.edu/About-USF/index.asp">About USF</a></li>
+                    <li><a id="academics" href="http://www.usf.edu/Academics/index.asp">Academics</a></li>
+                    <li><a id="admissions" href="http://www.usf.edu/Admission/index.asp">Admissions</a></li>
+                    <li><a id="campuslife" href="http://www.usf.edu/Campus-Life/index.asp">Campus Life</a></li>
+                    <li><a id="research" href="http://www.usf.edu//Research/index.asp">Research</a></li>
+                    <li><a href="http://system.usf.edu/">USF System</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<script language="JavaScript" src="/includes/jscripts.js"></script>
+<script language="JavaScript" src="/includes/jscripts2.js"></script>
+<br /><br />
+<table align="center" width="1000px" border="0" cellpadding="0" cellspacing="0">
+<tr><td valign="top" align="left" height="100%" width="20%" bgcolor="#FFFFFF" style="border-right:solid 1px #BBBBBB;">
+<div class="buttonscontainer">
+    <div class="buttons_blog_title">
+        <a href="http://www.rc.usf.edu">Research Computing</a>
+    </div>
+    <div class="buttons_blog_item">
+        <a href="http://www.rc.usf.edu/trac/doc/wiki">Getting Started</a>
+    </div>
+    <div class="buttons_blog_item">
+        <a href="/circe.php">CIRCE</a>
+    </div>
+    <div class="buttons_blog_item">
+        <a href="/contact.php">Support &amp; Contacts</a>
+    </div>
+    <div class="buttons_blog_item">
+        <a href="http://www.rc.usf.edu/trac/doc/wiki/SoftwarePortal">Available Software</a>
+    </div>
+    <div class="buttons_blog_item">
+        <a href="http://www.rc.usf.edu/trac/doc/wiki">Documentation</a>
+    </div>
+    <div class="buttons_blog_item">
+        <a href="http://www.rc.usf.edu/signup/account.php">Get Account</a>
+    </div>
+    <div class="buttons_blog_item">
+        <a href="http://www.rc.usf.edu/licensing/licenserequest.php">Request Licensed Software</a>
+    </div>
+    <div class="buttons_blog_item">
+        <a href="http://itrc-adm1.rc.usf.edu/ganglia">System Status</a>
+    </div>
+    <div class="buttons_blog_item">
+        <a href="http://forum.rc.usf.edu">User Forum</a>
+    </div>
+     <div class="buttons_blog_item">
+        <a href="http://www.rc.usf.edu/rcac.php">Research Computing Advisory Committee</a>
+    </div>
+    <br /><br />
+    <!-- SiteSearch Google -->
+    <FORM method="GET" action="http://www.google.com/search">
+        <input type="hidden" name="ie" value="UTF-8" />
+        <input type="hidden" name="oe" value="UTF-8" />
+        <TABLE bgcolor="#FFFFFF"><tr><td>
+            Search this site
+            <INPUT TYPE="text" name="q" size="10" maxlength="100" value=""></INPUT>
+            <INPUT type="submit" name="btng" VALUE="Go"></INPUT>
+            <input type="hidden" name="domains" value="www.rc.usf.edu" />
+            <input type="hidden" name="sitesearch" value="www.rc.usf.edu" />
+        </td></tr></TABLE>
+    </FORM>
+    <br /><br />
+</div>
+</td>
+<td valign="top" height="100%" align="center" style="padding-left:20px;">
+<div id="wiki_content">
+    <div></div>
+    <div></div>
+    <div id="main">
+      <div></div>
+    <div id="content" class="wiki">
+      <h1>Editing JobRequirements</h1>
+      
+  <form id="edit" action="/trac/doc/wiki/JobRequirements" method="post"><div><input type="hidden" name="__FORM_TOKEN" value="f237668d71f45094cfd61076" /></div>
+    <fieldset class="iefix">
+      <input type="hidden" name="from_editor" value="1" />
+      <input type="hidden" name="action" value="edit" />
+      <input type="hidden" name="version" value="12" />
+      <input type="hidden" id="scroll_bar_pos" name="scroll_bar_pos" value="" />
+      <div id="rows">
+          <label for="editrows">Adjust edit area height:</label>
+          <select size="1" name="editrows" id="editrows" tabindex="43">
+            <option value="8">
+              8
+            </option><option value="12">
+              12
+            </option><option value="16">
+              16
+            </option><option value="20">
+              20
+            </option><option value="24">
+              24
+            </option><option value="28">
+              28
+            </option><option value="32">
+              32
+            </option><option value="36">
+              36
+            </option><option value="40" selected="selected">
+              40
+            </option>
+          </select>
+        <label for="sidebyside" title="Selecting and pressing 'Preview' enters a two-column [edit|preview] mode">
+          Edit side-by-side
+        </label>
+        <input type="checkbox" name="sidebyside" id="sidebyside" />
+      </div>
+      <p><textarea id="text" class="wikitext trac-resizable" name="text" cols="80" rows="40">
+= Job Requirements =
+The most important part of the job submission process, from a performance perspective, is understanding your job's requirements i.e. your memory requirements, memory bandwidth requirements, disk and I/O requirements, interconnect requirements, etc.  Based on this understanding, you need to tell the scheduler what it is you need for your job in order for it to run as efficiently as possible.
+
+== Discovering Your Job Requirements ==
+Many pieces of code available today come with sufficient documentation that explains the requirements of the program given certain input parameters and how those requirements change as the size of your problem changes.  You can usually fudge these rough estimates into working resource requests that will, for the most part, ensure ample resources are provided to your job.  What if the documentation does not provide such information or is unclear?  There are a couple of methods at your disposal for revealing your job's requirements:
+
+ 1. Brute force methods would involve benchmarking the code under various conditions and analyzing the results to determine the best mix of memory, CPU and interconnect.  
+ 2. A more analytic method would include the use of compiler and code tools such as system monitors to watch resource utilization during runtime and code profilers to determine performance intensive areas of code and how they utilize the system.  Using the data gathered from these tools with a general understanding of the code will yield very accurate predictions as to the code's behavior given various input parameters.
+
+Obviously, having good documentation is always preferred, but is often a luxury not always available.  A brute-force method is good if your use of a code will not constitute an appreciable portion of your research time or if the code is something you will only use for a short period.  The best method, in any case, is an analytic method.
+
+== Tools for Profiling Code ==
+=== The Profiler ===
+A good code profiler is a must-have in any programmer's toolbox, but its also useful for researchers running HPC codes.  Three profiling tools that are available on Circe are
+
+ 1. '''pgprof''': Portland Group's (PGI) graphical code profiler
+ 2. '''gprof''': GNU Profiler, a command-line, GNU-compatible profiler
+ 3. '''vtune''': Vtune Performance analyzer, Intel's code profiler
+
+Profilers insert code into your application that write out valuable statistics about the run-time of individual function calls and even individual lines of code.  This allows you to track down which functions are taking up the largest share of run-time during the execution of your program.  By adjusting input parameters that affect these functions, you can get an idea of how your simulations may affect the performance of the application.  For the budding Computational Scientist, the tool provides a means to track down inefficient code that may be tuned or re-factored for greater efficiency.
+
+=== Monitor Programs: Using 'top' to Solve Swap Issues ===
+Programs like 'top' [man (1) top] allow you to take periodic snapshots of a process during execution (usually every second) to continuously monitor CPU utilization, memory usage, and the process state (running, sleeping, waiting for disk, writing to disk, etc.)  To run top and view the details of your application, you'll need to know what node your process is running on.  For a serial process, this is pretty straight forward:
+{{{
+[user@login0 ~]$ qstat -u user -t
+job-ID  prior   name       user         state submit/start at     queue
+------------------------------------------------------------------------------------
+   1000 1.00000 my_job     user         r     10/09/2007 13:31:29 ib_volatile1.q@svc-3024-1-1
+}}}
+
+In this case, the job is running on svc-3024-1-1.  You can ssh into the host and run 'top' like so:
+{{{
+[user@login0 ~]$ ssh svc-3024-1-1
+[user@rcn-mx-0008]$ top
+top - 22:09:06 up 36 days,  6:05, 18 users,  load average: 0.99, 0.08, 0.03
+Tasks: 158 total,   1 running, 156 sleeping,   0 stopped,   1 zombie
+Cpu(s):  1.5%us,  0.1%sy,  97.8%ni, 1.2%id,  0.1%wa,  0.0%hi,  0.0%si,  0.0%st
+Mem:   8247676k total,  4968872k used,  3278804k free,   197448k buffers
+Swap:  1048568k total,        0k used,   838572k free,  4214904k cached
+
+  PID USER      PR  NI  VIRT   RES  SHR S %CPU %MEM    TIME+  COMMAND
+ 2859 user      15   0 19408 43632  844 R   99  1.1   0:03.91 myprocess
+...
+}}}
+Here, you can see that your process is particularly CPU-bound.  It is in a running state, consuming 99% of the system's CPU resources while using only 1% of the system's memory.  The requirements for this sort of process would be relatively straight forward.
+
+How about when things get a little bit more intense?
+{{{
+[user@login0 ~]$ ssh svc-3024-1-1
+[user@svc-3024-1-1]$ top
+top - 22:09:06 up 36 days,  6:05, 18 users,  load average: 0.99, 0.08, 0.03
+Tasks: 158 total,   1 running, 156 sleeping,   0 stopped,   1 zombie
+Cpu(s):  1.5%us,  0.1%sy,  97.8%ni, 1.2%id,  0.1%wa,  0.0%hi,  0.0%si,  0.0%st
+Mem:   8247676k total,  4118651k used,  3118424k free,   197448k buffers
+Swap:  1048568k total,  1209996k used,   838572k free,  4214904k cached
+
+  PID USER      PR  NI  VIRT   RES  SHR S %CPU %MEM    TIME+  COMMAND
+ 2859 user      15   0 9112m 8912m  844 D   10 96.1   0:05.21 myprocess2
+...
+}}}
+
+Here, we have a problem.  You can see the state (the column 'S') is 'D'.  This indicates that the process is waiting for either a read or a write to or from the disk.  If we look at the %MEM column, we see that 96.1% of the system's main memory has been utilized by the application.  And to top things off, nearly 1GB of swap space is being used.  Essentially, this program is using so much memory that
+
+ a. It is having to use disk swap to store temporary data needed for execution
+or
+ b. It is causing the rest of the system (kernel, services, etc.) to swap in order to make room for the application and its dataset
+
+In either case, this is bad news for our application and its performance.  We need a system with more memory.
+
+Since the current system has 8GB of RAM and the process is apparently using &gt;= 9GB of RAM, then we have a good basis for making a resource request:
+{{{
+#$ -l mpj=10G
+}}}
+This tells the scheduler to only run your job where at least 10GB of RAM is free to be used by your process.  Your job will not run unless there are hardware resources available to satisfy the request.  When the resources are found, say a node with 16GB of RAM, this particular job will run many orders of magnitude faster than on a swapped-out machine as in the example.
+
+ * '''Note''': More information to come.</textarea>
+      </p>
+      <div id="help"><b>Note:</b> See <a href="/trac/doc/wiki/WikiFormatting">WikiFormatting</a> and
+        <a href="/trac/doc/wiki/TracWiki">TracWiki</a> for help on editing wiki content.</div>
+    </fieldset>
+    <fieldset id="changeinfo">
+      <legend>Change information</legend>
+      <div id="changeinfo1">
+        <div class="field">
+          <label>Comment about this change (optional):<br />
+            <input id="comment" type="text" name="comment" size="60" value="" />
+          </label>
+        </div>
+      </div>
+      <div id="changeinfo2" class="options">
+        <label><input type="checkbox" name="readonly" id="readonly" />
+          Page is read-only
+        </label>
+      </div>
+    </fieldset>
+    <div class="buttons">
+        <input type="submit" name="preview" value="Preview Page" /> 
+        <input type="submit" name="diff" value="Review Changes" /> 
+        <input type="submit" id="save" name="save" value="Submit changes" /> 
+      <input type="submit" name="cancel" value="Cancel" />
+    </div>
+  </form>
+
+    </div>
+    </div>
+    <div></div>
+</div>
+</td></tr>
+</table>
+<div id="sitefooter">
+    <br /><br />
+</div>
+</body>
+</html>

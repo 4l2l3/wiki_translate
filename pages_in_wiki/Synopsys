@@ -1,0 +1,318 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  <head>
+    <title>
+      Synopsys (edit) – Research Computing Documentation
+    </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link rel="search" href="/trac/doc/search" />
+        <link rel="help" href="/trac/doc/wiki/TracGuide" />
+        <link rel="start" href="/trac/doc/wiki" />
+        <link rel="stylesheet" href="/trac/doc/chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="/trac/doc/chrome/common/css/wiki.css" type="text/css" />
+        <link rel="shortcut icon" href="/trac/doc/chrome/common/trac.ico" type="image/x-icon" />
+        <link rel="icon" href="/trac/doc/chrome/common/trac.ico" type="image/x-icon" />
+    <script type="text/javascript">
+      var auto_preview_timeout=2.0;
+      var form_token="f237668d71f45094cfd61076";
+    </script>
+    <script type="text/javascript" src="/trac/doc/chrome/common/js/jquery.js"></script><script type="text/javascript" src="/trac/doc/chrome/common/js/babel.js"></script><script type="text/javascript" src="/trac/doc/chrome/common/js/trac.js"></script><script type="text/javascript" src="/trac/doc/chrome/common/js/search.js"></script><script type="text/javascript" src="/trac/doc/chrome/common/js/wikitoolbar.js"></script><script type="text/javascript" src="/trac/doc/chrome/common/js/resizer.js"></script><script type="text/javascript" src="/trac/doc/chrome/common/js/auto_preview.js"></script>
+    <!--[if lt IE 7]>
+    <script type="text/javascript" src="/trac/doc/chrome/common/js/ie_pre7_hacks.js"></script>
+    <![endif]-->
+    <meta name="ROBOTS" content="NOINDEX, NOFOLLOW" /><script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("#text").blur(function() {
+          $("#scroll_bar_pos").val(this.scrollTop);
+        }).get(0).scrollTop = $("#scroll_bar_pos").val();
+        $("#editrows").change(function() {
+          resizeTextArea("text", this.options[this.selectedIndex].value);
+        });
+      });
+    </script>
+<link rel="stylesheet" type="text/css" media="screen, print" href="/includes/style.css" />
+<link rel="stylesheet" type="text/css" media="screen, print" href="/includes/homepage.css" />
+<link rel="icon" type="image/ico" href="/favicon.ico" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="stylesheet" href="/includes/menu2.css" type="text/css" />
+<link rel="stylesheet" type="text/css" href="/trac/doc/chrome/site/style.css" />
+</head>
+  <body>
+<div id="siteheader">
+    <!-- Get rid of the old headers -->
+    <div id="container">
+        <div id="header2">
+            <div id="banner2" valign="top">
+                <div id="usf-logo" valign="top">
+                    <img src="http://www.usf.edu/imagery/USF-Master-BANNER-art.jpg" width="600" height="86" border="0" usemap="#Map" />
+                    <map name="Map" id="Map">
+                        <area shape="rect" coords="12,11,347,75" href="/" />
+                    </map>
+                </div>
+                <div id="container_search">
+                    <ul>
+                        <li id="header_atoz_index"><a style="font-size:11px" href="http://assistive.usablenet.com/tt/referrer"> Text-Only</a> | </li>
+                        <li id="header_maps_item"><a style="font-size:11px" href="https://my.usf.edu/webapps/login/custom/bb_bb60/login.jsp?flag=1"> myUSF </a> | </li>
+                        <li id="header_maps_item"><a style="font-size:11px" href="http://www.usf.edu/About-USF/azindex/index.asp"> A-Z Index </a> | </li>
+                        <li id="header_atoz_index"><a style="font-size:11px" href="http://directory.acomp.usf.edu/?logo=1"> Directory</a></li>
+                    </ul>
+                    <form id="form1" value="Search" method="get" action="http://search.usf.edu/search" style="font-size:12px">
+                        <input type="text" name="q" size="20" maxlength="256" value="" />
+                        <input type="submit" name="btng" style="font-size:12px" value="Go" />
+                        <input type="hidden" name="client" style="font-size:12px" value="tampa" />
+                        <input type="hidden" name="proxystylesheet" style="font-size:12px" value="tampa" />
+                        <input type="hidden" name="site" style="font-size:12px" value="tampa" />
+                        <input type="hidden" name="output" style="font-size:12px" value="xml_no_dtd" />
+                        <input type="hidden" name="numgm" style="font-size:12px" value="5" />
+                    </form>
+                </div>
+            </div>
+            <div id="nav_topic">
+                <ul id="nav_topic">
+                    <li><a id="about" href="http://www.usf.edu/About-USF/index.asp">About USF</a></li>
+                    <li><a id="academics" href="http://www.usf.edu/Academics/index.asp">Academics</a></li>
+                    <li><a id="admissions" href="http://www.usf.edu/Admission/index.asp">Admissions</a></li>
+                    <li><a id="campuslife" href="http://www.usf.edu/Campus-Life/index.asp">Campus Life</a></li>
+                    <li><a id="research" href="http://www.usf.edu//Research/index.asp">Research</a></li>
+                    <li><a href="http://system.usf.edu/">USF System</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<script language="JavaScript" src="/includes/jscripts.js"></script>
+<script language="JavaScript" src="/includes/jscripts2.js"></script>
+<br /><br />
+<table align="center" width="1000px" border="0" cellpadding="0" cellspacing="0">
+<tr><td valign="top" align="left" height="100%" width="20%" bgcolor="#FFFFFF" style="border-right:solid 1px #BBBBBB;">
+<div class="buttonscontainer">
+    <div class="buttons_blog_title">
+        <a href="http://www.rc.usf.edu">Research Computing</a>
+    </div>
+    <div class="buttons_blog_item">
+        <a href="http://www.rc.usf.edu/trac/doc/wiki">Getting Started</a>
+    </div>
+    <div class="buttons_blog_item">
+        <a href="/circe.php">CIRCE</a>
+    </div>
+    <div class="buttons_blog_item">
+        <a href="/contact.php">Support &amp; Contacts</a>
+    </div>
+    <div class="buttons_blog_item">
+        <a href="http://www.rc.usf.edu/trac/doc/wiki/SoftwarePortal">Available Software</a>
+    </div>
+    <div class="buttons_blog_item">
+        <a href="http://www.rc.usf.edu/trac/doc/wiki">Documentation</a>
+    </div>
+    <div class="buttons_blog_item">
+        <a href="http://www.rc.usf.edu/signup/account.php">Get Account</a>
+    </div>
+    <div class="buttons_blog_item">
+        <a href="http://www.rc.usf.edu/licensing/licenserequest.php">Request Licensed Software</a>
+    </div>
+    <div class="buttons_blog_item">
+        <a href="http://itrc-adm1.rc.usf.edu/ganglia">System Status</a>
+    </div>
+    <div class="buttons_blog_item">
+        <a href="http://forum.rc.usf.edu">User Forum</a>
+    </div>
+     <div class="buttons_blog_item">
+        <a href="http://www.rc.usf.edu/rcac.php">Research Computing Advisory Committee</a>
+    </div>
+    <br /><br />
+    <!-- SiteSearch Google -->
+    <FORM method="GET" action="http://www.google.com/search">
+        <input type="hidden" name="ie" value="UTF-8" />
+        <input type="hidden" name="oe" value="UTF-8" />
+        <TABLE bgcolor="#FFFFFF"><tr><td>
+            Search this site
+            <INPUT TYPE="text" name="q" size="10" maxlength="100" value=""></INPUT>
+            <INPUT type="submit" name="btng" VALUE="Go"></INPUT>
+            <input type="hidden" name="domains" value="www.rc.usf.edu" />
+            <input type="hidden" name="sitesearch" value="www.rc.usf.edu" />
+        </td></tr></TABLE>
+    </FORM>
+    <br /><br />
+</div>
+</td>
+<td valign="top" height="100%" align="center" style="padding-left:20px;">
+<div id="wiki_content">
+    <div></div>
+    <div></div>
+    <div id="main">
+      <div></div>
+    <div id="content" class="wiki">
+      <h1>Editing Synopsys</h1>
+      
+  <form id="edit" action="/trac/doc/wiki/Synopsys" method="post"><div><input type="hidden" name="__FORM_TOKEN" value="f237668d71f45094cfd61076" /></div>
+    <fieldset class="iefix">
+      <input type="hidden" name="from_editor" value="1" />
+      <input type="hidden" name="action" value="edit" />
+      <input type="hidden" name="version" value="4" />
+      <input type="hidden" id="scroll_bar_pos" name="scroll_bar_pos" value="" />
+      <div id="rows">
+          <label for="editrows">Adjust edit area height:</label>
+          <select size="1" name="editrows" id="editrows" tabindex="43">
+            <option value="8">
+              8
+            </option><option value="12">
+              12
+            </option><option value="16">
+              16
+            </option><option value="20">
+              20
+            </option><option value="24">
+              24
+            </option><option value="28">
+              28
+            </option><option value="32">
+              32
+            </option><option value="36">
+              36
+            </option><option value="40" selected="selected">
+              40
+            </option>
+          </select>
+        <label for="sidebyside" title="Selecting and pressing 'Preview' enters a two-column [edit|preview] mode">
+          Edit side-by-side
+        </label>
+        <input type="checkbox" name="sidebyside" id="sidebyside" />
+      </div>
+      <p><textarea id="text" class="wikitext trac-resizable" name="text" cols="80" rows="40">
+= Synopsys Tools =
+[[PageOutline]]
+
+== Description == 
+
+Synopsys provides a comprehensive portfolio of tools for digital and mixed-signal IC design, implementation, signoff, verification, test, and design for manufacturability (DFM)
+
+ * From: http://www.synopsys.com/tools/pages/default.aspx
+
+== Version ==
+
+ * Various versions of tools, most current as of 4/2012
+
+== Authorized Users ==
+
+ * `circe` account holders
+
+== Platforms ==
+
+ * `circe` login nodes
+ * `circe` cluster
+
+== Running on Circe ==
+
+Running Synopsys tools on Circe requires modules to be properly set as described below.  Graphical tools will need to be run via the NX environment, documented here: http://www.rc.usf.edu/trac/doc/wiki/CirceDesktop
+
+=== Modules ===
+
+Individual tools, grouped by tool and specified by version.
+{{{ 
+#!html
+&lt;table border=1 width=98% cellpadding=2 cellspacing=0&gt;
+&lt;tr&gt;&lt;th colspan=1 width=50%&gt;Tool&lt;/th&gt;&lt;th colspan=1 width=50%&gt;Module Choices&lt;/th&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Certify&lt;/td&gt;&lt;td&gt;apps/synopsys/certify/F-2012.03&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;CHIPit Manager&lt;/td&gt;&lt;td&gt;apps/synopsys/chipitpro/E-2011.03-SP4&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;coretools (coreAssembler, coreBuilder, coreConsultant)&lt;/td&gt;&lt;td&gt;apps/synopsys/coretools/F-2011.12-SP1-1&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;CosmosScope&lt;/td&gt;&lt;td&gt;apps/synopsys/cosmosscope/F-2011.09&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;System Studio&lt;/td&gt;&lt;td&gt;apps/synopsys/css/G-2012.03&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Custom Designer&lt;/td&gt;&lt;td&gt;apps/synopsys/customdesigner/F-2011.09-SP2-1&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;ESP-CV, Formality ESP&lt;/td&gt;&lt;td&gt;apps/synopsys/esp/F-2011.12-SP1&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Formality&lt;/td&gt;&lt;td&gt;apps/synopsys/fm/F-2011.09-SP4&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Synplify (Synplify FPGA)&lt;/td&gt;&lt;td&gt;apps/synopsys/fpga/F-2012.03&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Hercules&lt;/td&gt;&lt;td&gt;apps/synopsys/hercules/B-2008.09-SP4&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;HSpice&lt;/td&gt;&lt;td&gt;apps/synopsys/hspice/F-2011.09-SP2&lt;/br&gt;
+                apps/synopsys/hspice/C-2009.09&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;IC Compiler&lt;/td&gt;&lt;td&gt;apps/synopsys/icc/F-2011.09-SP4&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;IC WorkBench EV Plus&lt;/td&gt;&lt;td&gt;apps/synopsys/icwbev_plus/D-2010.06-14&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Identify&lt;/td&gt;&lt;td&gt;apps/synopsys/identify/F-2012.03&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;TetraMAX ATPG (iqd)&lt;/td&gt;&lt;td&gt;apps/synopsys/idq/F-2011.09-SP5&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;TetraMAX ATPG (tws)&lt;/td&gt;&lt;td&gt;apps/synopsys/txs/F-2011.09-SP5&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Leda&lt;/td&gt;&lt;td&gt;apps/synopsys/leda/F-2011.09&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Taurus Medici&lt;/td&gt;&lt;td&gt;apps/synopsys/medici/F_2011.09&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;MVtools&lt;/td&gt;&lt;td&gt;apps/synopsys/mvtools/F-2011.12&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Milkyway Environment&lt;/td&gt;&lt;td&gt;apps/synopsys/mw/F-2011.09-SP4&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;NanoSim&lt;/td&gt;&lt;td&gt;apps/synopsys/nanosim/F-2011.09-SP2&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Liberty NCX&lt;/td&gt;&lt;td&gt;apps/synopsys/ncx/F-2011.12-SP2&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;TCAD Sentaurus PCM Studio&lt;/td&gt;&lt;td&gt;apps/synopsys/pcm_studio/G-2012.03&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Processor Designe&lt;/td&gt;&lt;td&gt;apps/synopsys/pd/F-2011.06-SP3&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;PrimeRail&lt;/td&gt;&lt;td&gt;apps/synopsys/primerail/F-2011.12-SP1&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;PrimeTime Suite&lt;/td&gt;&lt;td&gt;apps/synopsys/pts/F-2011.06-SP3-4&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Raphael&lt;/td&gt;&lt;td&gt;apps/synopsys/raphael/F_2011.12&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Saber&lt;/td&gt;&lt;td&gt;apps/synopsys/saber/F-2011.09&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Synphony C Compiler&lt;/td&gt;&lt;td&gt;apps/synopsys/scc/G-2012.03&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;TCAD Sentaurus&lt;/td&gt;&lt;td&gt;apps/synopsys/sentaurus/F_2011.09-SP1&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;SimIF&lt;/td&gt;&lt;td&gt;apps/synopsys/simif/F-2011.09-SP2&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;SPW&lt;/td&gt;&lt;td&gt;apps/synopsys/spw/F-2011.06-SP1&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;StarRC&lt;/td&gt;&lt;td&gt;apps/synopsys/starrc/F-2011.12-SP2&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Spice Explorer&lt;/td&gt;&lt;td&gt;apps/synopsys/sx/C-2009.03-SP1&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Taurus TSUPREM-4&lt;/td&gt;&lt;td&gt;apps/synopsys/tsuprem4/F_2011.09&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;VCS (VCS VCSi)&lt;/td&gt;&lt;td&gt;apps/synopsys/vcs/F-2011.12&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Scirocco (VCS MX):&lt;/td&gt;&lt;td&gt;apps/synopsys/vcs-mx/F-2011.12&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Vera&lt;/td&gt;&lt;td&gt;apps/synopsys/vera/D-2009.12-15&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;VCS Verification Library&lt;/td&gt;&lt;td&gt;apps/synopsys/vip/G-2012.03&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;CustomSim. (XA)&lt;/td&gt;&lt;td&gt;apps/synopsys/xa/F-2011.09-SP2&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+}}} 
+
+To run any Synopsys tools on the cluster, ensure that you use `module add` prior to using any Synopsys executables.  See [wiki:Modules] for more information.
+
+=== Examples ===
+==== hspice ====
+{{{
+module add apps/synopsys/hspice/F-2011.09-SP2
+hspice &lt;inputfile&gt;
+}}}
+
+=== More Job Information ===
+See the following for more detailed job submission information:
+ * [wiki:gridEngineUsers "SGE User's Guide"]
+ * [wiki:gridEnginePolicy "Scheduling and Dispatch Policies"]
+ * [wiki:gridEngineTechn "Advanced Submit Techniques"]
+
+=== Reporting Bugs ===
+Report bugs to the IT Help Desk: mailto:help@usf.edu</textarea>
+      </p>
+      <div id="help"><b>Note:</b> See <a href="/trac/doc/wiki/WikiFormatting">WikiFormatting</a> and
+        <a href="/trac/doc/wiki/TracWiki">TracWiki</a> for help on editing wiki content.</div>
+    </fieldset>
+    <fieldset id="changeinfo">
+      <legend>Change information</legend>
+      <div id="changeinfo1">
+        <div class="field">
+          <label>Comment about this change (optional):<br />
+            <input id="comment" type="text" name="comment" size="60" value="" />
+          </label>
+        </div>
+      </div>
+      <div id="changeinfo2" class="options">
+        <label><input type="checkbox" name="readonly" id="readonly" />
+          Page is read-only
+        </label>
+      </div>
+    </fieldset>
+    <div class="buttons">
+        <input type="submit" name="preview" value="Preview Page" /> 
+        <input type="submit" name="diff" value="Review Changes" /> 
+        <input type="submit" id="save" name="save" value="Submit changes" /> 
+      <input type="submit" name="cancel" value="Cancel" />
+    </div>
+  </form>
+
+    </div>
+    </div>
+    <div></div>
+</div>
+</td></tr>
+</table>
+<div id="sitefooter">
+    <br /><br />
+</div>
+</body>
+</html>
