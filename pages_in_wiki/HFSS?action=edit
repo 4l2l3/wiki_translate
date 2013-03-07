@@ -1,0 +1,378 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  <head>
+    <title>
+      HFSS (edit) – Research Computing Documentation
+    </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link rel="search" href="/trac/doc/search" />
+        <link rel="help" href="/trac/doc/wiki/TracGuide" />
+        <link rel="start" href="/trac/doc/wiki" />
+        <link rel="stylesheet" href="/trac/doc/chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="/trac/doc/chrome/common/css/wiki.css" type="text/css" />
+        <link rel="shortcut icon" href="/trac/doc/chrome/common/trac.ico" type="image/x-icon" />
+        <link rel="icon" href="/trac/doc/chrome/common/trac.ico" type="image/x-icon" />
+    <script type="text/javascript">
+      var auto_preview_timeout=2.0;
+      var form_token="f237668d71f45094cfd61076";
+    </script>
+    <script type="text/javascript" src="/trac/doc/chrome/common/js/jquery.js"></script><script type="text/javascript" src="/trac/doc/chrome/common/js/babel.js"></script><script type="text/javascript" src="/trac/doc/chrome/common/js/trac.js"></script><script type="text/javascript" src="/trac/doc/chrome/common/js/search.js"></script><script type="text/javascript" src="/trac/doc/chrome/common/js/wikitoolbar.js"></script><script type="text/javascript" src="/trac/doc/chrome/common/js/resizer.js"></script><script type="text/javascript" src="/trac/doc/chrome/common/js/auto_preview.js"></script>
+    <!--[if lt IE 7]>
+    <script type="text/javascript" src="/trac/doc/chrome/common/js/ie_pre7_hacks.js"></script>
+    <![endif]-->
+    <meta name="ROBOTS" content="NOINDEX, NOFOLLOW" /><script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("#text").blur(function() {
+          $("#scroll_bar_pos").val(this.scrollTop);
+        }).get(0).scrollTop = $("#scroll_bar_pos").val();
+        $("#editrows").change(function() {
+          resizeTextArea("text", this.options[this.selectedIndex].value);
+        });
+      });
+    </script>
+<link rel="stylesheet" type="text/css" media="screen, print" href="/includes/style.css" />
+<link rel="stylesheet" type="text/css" media="screen, print" href="/includes/homepage.css" />
+<link rel="icon" type="image/ico" href="/favicon.ico" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="stylesheet" href="/includes/menu2.css" type="text/css" />
+<link rel="stylesheet" type="text/css" href="/trac/doc/chrome/site/style.css" />
+</head>
+  <body>
+<div id="siteheader">
+    <!-- Get rid of the old headers -->
+    <div id="container">
+        <div id="header2">
+            <div id="banner2" valign="top">
+                <div id="usf-logo" valign="top">
+                    <img src="http://www.usf.edu/imagery/USF-Master-BANNER-art.jpg" width="600" height="86" border="0" usemap="#Map" />
+                    <map name="Map" id="Map">
+                        <area shape="rect" coords="12,11,347,75" href="/" />
+                    </map>
+                </div>
+                <div id="container_search">
+                    <ul>
+                        <li id="header_atoz_index"><a style="font-size:11px" href="http://assistive.usablenet.com/tt/referrer"> Text-Only</a> | </li>
+                        <li id="header_maps_item"><a style="font-size:11px" href="https://my.usf.edu/webapps/login/custom/bb_bb60/login.jsp?flag=1"> myUSF </a> | </li>
+                        <li id="header_maps_item"><a style="font-size:11px" href="http://www.usf.edu/About-USF/azindex/index.asp"> A-Z Index </a> | </li>
+                        <li id="header_atoz_index"><a style="font-size:11px" href="http://directory.acomp.usf.edu/?logo=1"> Directory</a></li>
+                    </ul>
+                    <form id="form1" value="Search" method="get" action="http://search.usf.edu/search" style="font-size:12px">
+                        <input type="text" name="q" size="20" maxlength="256" value="" />
+                        <input type="submit" name="btng" style="font-size:12px" value="Go" />
+                        <input type="hidden" name="client" style="font-size:12px" value="tampa" />
+                        <input type="hidden" name="proxystylesheet" style="font-size:12px" value="tampa" />
+                        <input type="hidden" name="site" style="font-size:12px" value="tampa" />
+                        <input type="hidden" name="output" style="font-size:12px" value="xml_no_dtd" />
+                        <input type="hidden" name="numgm" style="font-size:12px" value="5" />
+                    </form>
+                </div>
+            </div>
+            <div id="nav_topic">
+                <ul id="nav_topic">
+                    <li><a id="about" href="http://www.usf.edu/About-USF/index.asp">About USF</a></li>
+                    <li><a id="academics" href="http://www.usf.edu/Academics/index.asp">Academics</a></li>
+                    <li><a id="admissions" href="http://www.usf.edu/Admission/index.asp">Admissions</a></li>
+                    <li><a id="campuslife" href="http://www.usf.edu/Campus-Life/index.asp">Campus Life</a></li>
+                    <li><a id="research" href="http://www.usf.edu//Research/index.asp">Research</a></li>
+                    <li><a href="http://system.usf.edu/">USF System</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<script language="JavaScript" src="/includes/jscripts.js"></script>
+<script language="JavaScript" src="/includes/jscripts2.js"></script>
+<br /><br />
+<table align="center" width="1000px" border="0" cellpadding="0" cellspacing="0">
+<tr><td valign="top" align="left" height="100%" width="20%" bgcolor="#FFFFFF" style="border-right:solid 1px #BBBBBB;">
+<div class="buttonscontainer">
+    <div class="buttons_blog_title">
+        <a href="http://www.rc.usf.edu">Research Computing</a>
+    </div>
+    <div class="buttons_blog_item">
+        <a href="http://www.rc.usf.edu/trac/doc/wiki">Getting Started</a>
+    </div>
+    <div class="buttons_blog_item">
+        <a href="/circe.php">CIRCE</a>
+    </div>
+    <div class="buttons_blog_item">
+        <a href="/contact.php">Support &amp; Contacts</a>
+    </div>
+    <div class="buttons_blog_item">
+        <a href="http://www.rc.usf.edu/trac/doc/wiki/SoftwarePortal">Available Software</a>
+    </div>
+    <div class="buttons_blog_item">
+        <a href="http://www.rc.usf.edu/trac/doc/wiki">Documentation</a>
+    </div>
+    <div class="buttons_blog_item">
+        <a href="http://www.rc.usf.edu/signup/account.php">Get Account</a>
+    </div>
+    <div class="buttons_blog_item">
+        <a href="http://www.rc.usf.edu/licensing/licenserequest.php">Request Licensed Software</a>
+    </div>
+    <div class="buttons_blog_item">
+        <a href="http://itrc-adm1.rc.usf.edu/ganglia">System Status</a>
+    </div>
+    <div class="buttons_blog_item">
+        <a href="http://forum.rc.usf.edu">User Forum</a>
+    </div>
+     <div class="buttons_blog_item">
+        <a href="http://www.rc.usf.edu/rcac.php">Research Computing Advisory Committee</a>
+    </div>
+    <br /><br />
+    <!-- SiteSearch Google -->
+    <FORM method="GET" action="http://www.google.com/search">
+        <input type="hidden" name="ie" value="UTF-8" />
+        <input type="hidden" name="oe" value="UTF-8" />
+        <TABLE bgcolor="#FFFFFF"><tr><td>
+            Search this site
+            <INPUT TYPE="text" name="q" size="10" maxlength="100" value=""></INPUT>
+            <INPUT type="submit" name="btng" VALUE="Go"></INPUT>
+            <input type="hidden" name="domains" value="www.rc.usf.edu" />
+            <input type="hidden" name="sitesearch" value="www.rc.usf.edu" />
+        </td></tr></TABLE>
+    </FORM>
+    <br /><br />
+</div>
+</td>
+<td valign="top" height="100%" align="center" style="padding-left:20px;">
+<div id="wiki_content">
+    <div></div>
+    <div></div>
+    <div id="main">
+      <div></div>
+    <div id="content" class="wiki">
+      <h1>Editing HFSS</h1>
+      
+  <form id="edit" action="/trac/doc/wiki/HFSS" method="post"><div><input type="hidden" name="__FORM_TOKEN" value="f237668d71f45094cfd61076" /></div>
+    <fieldset class="iefix">
+      <input type="hidden" name="from_editor" value="1" />
+      <input type="hidden" name="action" value="edit" />
+      <input type="hidden" name="version" value="73" />
+      <input type="hidden" id="scroll_bar_pos" name="scroll_bar_pos" value="" />
+      <div id="rows">
+          <label for="editrows">Adjust edit area height:</label>
+          <select size="1" name="editrows" id="editrows" tabindex="43">
+            <option value="8">
+              8
+            </option><option value="12">
+              12
+            </option><option value="16">
+              16
+            </option><option value="20">
+              20
+            </option><option value="24">
+              24
+            </option><option value="28">
+              28
+            </option><option value="32">
+              32
+            </option><option value="36">
+              36
+            </option><option value="40" selected="selected">
+              40
+            </option>
+          </select>
+        <label for="sidebyside" title="Selecting and pressing 'Preview' enters a two-column [edit|preview] mode">
+          Edit side-by-side
+        </label>
+        <input type="checkbox" name="sidebyside" id="sidebyside" />
+      </div>
+      <p><textarea id="text" class="wikitext trac-resizable" name="text" cols="80" rows="40">
+= HFSS =
+----
+[[PageOutline]]
+
+== Description == 
+
+''From Wikipedia:'' HFSS is a commercial finite element method solver for electromagnetic structures from Ansoft Corporation.
+
+== Versions ==
+
+ * '''13.0.2''', '''14.0''', '''15.0'''
+
+== Authorized Users ==
+
+ * Students doing research in the WAMI research group
+ * WAMI Faculty
+
+== Platforms ==
+
+ * Circe HPC Cluster
+ * Windows HPC Cluster
+ * Desktop PC
+
+== Installation on Desktop PC ==
+Installation media for HFSS can be downloaded from our site at https://rc.usf.edu/isos using your USF NetID and password.  After version 14, the install media is distributed as Zip files and should easily open within the Windows file manager.
+
+== Batch Execution on Circe HPC (v15) ==
+ 1. Ensure that your project file resides on your !UStoreFiles drive, preferably under the '''Ansoft''' folder.  The example below assumes that my project file exists under 
+
+  * '''/home/b/brs/Ansoft/!ExampleModel''' on Circe
+  * '''S:\Ansoft\!ExampleModel''' for UStoreFiles
+  * '''!\\ustorefiles.usf.edu\homes\Ansoft\!ExampleModel''' for UStoreFiles
+ 
+ These paths are all equivalent and point to the same storage.  (Note: your UStoreFiles drive may be mapped to another drive letter besides 'S')
+ 2. Using '''Remote Desktop''', connect to '''circe.rc.usf.edu''' and log in with your USF NetID credentials.
+ 3. Go to '''Applications'''-&gt;'''System Tools'''-&gt;'''Terminal''' to start a command-line session.
+ 4. Load the HFSS module:
+{{{
+[user@host ~]$ module add apps/hfss
+}}}
+ 5. Change to the directory in which your model resides:
+{{{
+[user@host ~]$ cd Ansoft/ExampleModel
+[user@host ExampleModel]$
+}}}
+ 6. Submit the job using the '''qsub''' command:
+{{{
+[user@host ~]$ qsub -N MyModel.hfss -l nodes=1,ppn=4,h_rt=01:00:00 $hfss_submit
+}}}
+
+In the example above, we are submitting a job to analyse the designs in !MyModel.hfss using 4 processors on a single server with a maximum runtime of 1 hour.
+
+=== qsub Execution Options ===
+Submitting your job to Circe allows for several modes of operation, depending on how your analysis settings are configured.  For jobs using the direct sequential solver as in the first example, we can utilize multiple processors on a single server to facilitate speed-up of the application.  Here's example of submitting such a job:
+
+{{{
+[user@host ~]$ qsub -N MyModel.hfss -l nodes=1,ppn=4,h_rt=01:00:00 $hfss_submit
+}}}
+
+The key option for using the sequential solver is to set '''nodes''' equal to 1 and to have '''ppn''' be less than or equal to 16.
+
+For jobs configured to use Solver Domains, we can use the Distributed analysis type.  Distributed analysis allows us to not only utilize multiple processors on a server, but to utilize multiple servers together in order to reach a solution even more quickly.  Here's an example submission below:
+
+The key options for using the distributed (DSO) solver are:
+
+1. Ensure that in your analysis settings, '''Enable the use of Solver Domains''' is selected
+2. Ensure that '''nodes''' &gt;= 2
+3. Ensure that '''ppn''' &gt;= 16
+
+You must specify your job run-time using the '''h_rt''' option if your job will run for longer than 1 hour.  The time format is in HH:MM:SS.
+
+=== Job Status and Progress Information ===
+You can view the state of your job in the scheduler by running
+{{{
+[user@host ~]$ qstat
+job-ID  prior   name       user         state submit/start at     queue                          slots ja-task-ID 
+-----------------------------------------------------------------------------------------------------------------
+ 294322 1.18231 MyModel.hf user         qw    12/18/2012 09:44:13                                   16
+}}}
+
+This will provide basic information on the job.  The 'state' field will tell you whether the job is running or waiting to be executed.  A state of 'r' indicates the simulation has started.  A state of 'qw' indicates the system is waiting for resources to become available.
+
+You can also watch the HFSS job log, once the job has started (entered the 'r' state), in order to see the progress of the analysis.  This can be done by 'tailing' the output file.  Using the command below, output that is generated by HFSS is automatically printed to your screen as it arrives.  The log file name is &lt;!MyProjectFile&gt;.hfss.out.&lt;!JobIdNumber&gt; where &lt;!MyProjectFile&gt; is the file name submitted for analysis and &lt;!JobIdNumber&gt; is the Job ID number as shown in the first column of the '''qstat''' output.  This is illustrated below:
+{{{
+[user@host ExampleModel]$ tail -f MyExample.hfss.out.294322
+[progress:  2%] (2) helical_antenna - HFSSDesign1 - Setup1: Solving Ports on Local Machine - RUNNING: Building matrix (9:42:03 AM  Dec 18, 2012)
+[progress:  8%] (2) helical_antenna - HFSSDesign1 - Setup1: Solving Ports on Local Machine - RUNNING: Building matrix (9:42:06 AM  Dec 18, 2012)
+[progress: 20%] (2) helical_antenna - HFSSDesign1 - Setup1: Solving Ports on Local Machine - RUNNING: Building matrix (9:42:08 AM  Dec 18, 2012)
+[progress:  0%] (2) helical_antenna - HFSSDesign1 - Setup1: Port-Refining Mesh on Local Machine - RUNNING:   (9:42:10 AM  Dec 18, 2012)
+[progress: 15%] (2) helical_antenna - HFSSDesign1 - Setup1: Port-Refining Mesh on Local Machine - RUNNING: Reading the mesh stats. (9:42:32 AM  Dec 18, 2012)
+[progress: 50%] (2) helical_antenna - HFSSDesign1 - Setup1: Port-Refining Mesh on Local Machine - RUNNING: Reading the mesh stats. (9:42:46 AM  Dec 18, 2012)
+[progress: 75%] (2) helical_antenna - HFSSDesign1 - Setup1: Port-Refining Mesh on Local Machine - RUNNING: Morphing the mesh for curved surfaces (9:42:58 AM  Dec 18, 2012)
+}}}
+
+== Batch Execution on Windows HPC (v14) ==
+Using Windows HPC Server 2008 R2, we can easily dispatch jobs that require more resources than a desktop system can provide.  Configuring your desktop installation to work with the Windows HPC scheduler is a simple process.
+
+=== First-time Steps ===
+The configuration steps below are required to be performed only once, when setting up HFSS to use the Windows HPC cluster:
+
+ 1. Install the HPC Pack 2008 R2 Client Utilities.  Directions for doing so are [wiki:HPCPack2008R2Client here].
+ 
+ 2. Start the Windows HPC Job manager at '''Start'''-&gt;'''All Programs'''-&gt;'''Microsoft HPC Pack 2008 R2'''-&gt;'''HPC Job Manager'''.
+ 
+ 3. Select "File" and then click on "Select Head Node". You will be prompted to enter the name of a head node.  Enter '''rcwhpc-master.forest.usf.edu''' and click '''Ok'''.  
+
+If you receive a permissions error stating that your account doesn't have access, please email help@usf.edu and ask to be added to the Windows HPC user group on rcwhpc-master.forest.usf.edu.
+
+=== Submitting Jobs ===
+To submit jobs, you'll need to utilize a job description XML file.  To do this, follow these directions:
+
+ 1. After starting the '''HPC Job Manager''', go to the '''Actions''' panel on the right side of the HPC Job Manager window and select '''New Job from XML File'''
+ 
+  [[Image(http://rc.usf.edu/images/hfss_xml_1.png)]]
+
+ 2. Select the XML file name by entering '''!\\ustorefiles.usf.edu\whpcapps\hfss\&lt;version&gt;\hfss_whpc.xml''', where '''&lt;version&gt;''' is either version 13 or 14:
+    
+  [[Image(http://rc.usf.edu/images/hfss_xml_2.png)]]
+
+ 3. You'll want to ensure that your Project file is accessible to the cluster, so we recommend placing it in your UStoreFiles directory or '''S:\''' drive (or, Circe home directory).  From there, it can be accessed as a simple UNC, e.g. '''!\\ustorefiles.usf.edu\&lt;username&gt;\Ansoft\!MyProject.hfss'''
+
+ 4. Set the Job name in the '''Job details''' section shown below.  This can be whatever name you want to identify the job:
+    
+  [[Image(http://rc.usf.edu/images/hfss_xml_3.png)]]
+
+ 5. Go to  '''Edit Tasks''', select the '''HFSS Execute''' task, and click '''Edit...''':
+
+  [[Image(http://rc.usf.edu/images/hfss_xml_4.png)]]
+
+ 6. In the '''Task Details''' window, set your '''Working Directory''' to the directory in which your HFSS project file resides (the UNC path mentioned above), and specify the minimum and maximum number of processors you would like your job to use, then click '''Ok''':
+
+  [[Image(http://rc.usf.edu/images/hfss_xml_5.png)]]
+
+ 7. Select '''Environment Variables''' in the '''New Job''' window.  Then click the '''PROJECT_FILE''' entry and '''Edit...''':
+
+  [[Image(http://rc.usf.edu/images/hfss_xml_6.png)]]
+
+ 8. Set the value in the '''Edit Environment Variable''' window to the name of your HFSS project file and click '''Ok''':
+
+  [[Image(http://rc.usf.edu/images/hfss_xml_7.png)]]
+
+ 9.  Click the '''Submit''' button in the '''New Job''' window:
+
+  [[Image(http://rc.usf.edu/images/hfss_xml_8.png)]]
+
+10.  You should now see your job in the Active jobs list in the main '''Job Manager''' window:
+
+  [[Image(http://rc.usf.edu/images/hfss_xml_9.png)]]
+
+=== Job Status and Progress Information ===
+Please see our [wiki:WinHPCJobStatus "Windows HPC Job Information page"] for information on managing your jobs, viewing status, and tracking output.
+
+== Getting Help ==
+Please report any issue to the USF IT Helpdesk by sending an e-mail to mailto:help@usf.edu</textarea>
+      </p>
+      <div id="help"><b>Note:</b> See <a href="/trac/doc/wiki/WikiFormatting">WikiFormatting</a> and
+        <a href="/trac/doc/wiki/TracWiki">TracWiki</a> for help on editing wiki content.</div>
+    </fieldset>
+    <fieldset id="changeinfo">
+      <legend>Change information</legend>
+      <div id="changeinfo1">
+        <div class="field">
+          <label>Comment about this change (optional):<br />
+            <input id="comment" type="text" name="comment" size="60" value="" />
+          </label>
+        </div>
+      </div>
+      <div id="changeinfo2" class="options">
+        <label><input type="checkbox" name="readonly" id="readonly" />
+          Page is read-only
+        </label>
+      </div>
+    </fieldset>
+    <div class="buttons">
+        <input type="submit" name="preview" value="Preview Page" /> 
+        <input type="submit" name="diff" value="Review Changes" /> 
+        <input type="submit" id="save" name="save" value="Submit changes" /> 
+      <input type="submit" name="cancel" value="Cancel" />
+    </div>
+  </form>
+
+    </div>
+    </div>
+    <div></div>
+</div>
+</td></tr>
+</table>
+<div id="sitefooter">
+    <br /><br />
+</div>
+</body>
+</html>

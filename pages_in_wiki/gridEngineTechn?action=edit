@@ -1,0 +1,328 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  <head>
+    <title>
+      gridEngineTechn (edit) – Research Computing Documentation
+    </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link rel="search" href="/trac/doc/search" />
+        <link rel="help" href="/trac/doc/wiki/TracGuide" />
+        <link rel="start" href="/trac/doc/wiki" />
+        <link rel="stylesheet" href="/trac/doc/chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="/trac/doc/chrome/common/css/wiki.css" type="text/css" />
+        <link rel="shortcut icon" href="/trac/doc/chrome/common/trac.ico" type="image/x-icon" />
+        <link rel="icon" href="/trac/doc/chrome/common/trac.ico" type="image/x-icon" />
+    <script type="text/javascript">
+      var auto_preview_timeout=2.0;
+      var form_token="f237668d71f45094cfd61076";
+    </script>
+    <script type="text/javascript" src="/trac/doc/chrome/common/js/jquery.js"></script><script type="text/javascript" src="/trac/doc/chrome/common/js/babel.js"></script><script type="text/javascript" src="/trac/doc/chrome/common/js/trac.js"></script><script type="text/javascript" src="/trac/doc/chrome/common/js/search.js"></script><script type="text/javascript" src="/trac/doc/chrome/common/js/wikitoolbar.js"></script><script type="text/javascript" src="/trac/doc/chrome/common/js/resizer.js"></script><script type="text/javascript" src="/trac/doc/chrome/common/js/auto_preview.js"></script>
+    <!--[if lt IE 7]>
+    <script type="text/javascript" src="/trac/doc/chrome/common/js/ie_pre7_hacks.js"></script>
+    <![endif]-->
+    <meta name="ROBOTS" content="NOINDEX, NOFOLLOW" /><script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("#text").blur(function() {
+          $("#scroll_bar_pos").val(this.scrollTop);
+        }).get(0).scrollTop = $("#scroll_bar_pos").val();
+        $("#editrows").change(function() {
+          resizeTextArea("text", this.options[this.selectedIndex].value);
+        });
+      });
+    </script>
+<link rel="stylesheet" type="text/css" media="screen, print" href="/includes/style.css" />
+<link rel="stylesheet" type="text/css" media="screen, print" href="/includes/homepage.css" />
+<link rel="icon" type="image/ico" href="/favicon.ico" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="stylesheet" href="/includes/menu2.css" type="text/css" />
+<link rel="stylesheet" type="text/css" href="/trac/doc/chrome/site/style.css" />
+</head>
+  <body>
+<div id="siteheader">
+    <!-- Get rid of the old headers -->
+    <div id="container">
+        <div id="header2">
+            <div id="banner2" valign="top">
+                <div id="usf-logo" valign="top">
+                    <img src="http://www.usf.edu/imagery/USF-Master-BANNER-art.jpg" width="600" height="86" border="0" usemap="#Map" />
+                    <map name="Map" id="Map">
+                        <area shape="rect" coords="12,11,347,75" href="/" />
+                    </map>
+                </div>
+                <div id="container_search">
+                    <ul>
+                        <li id="header_atoz_index"><a style="font-size:11px" href="http://assistive.usablenet.com/tt/referrer"> Text-Only</a> | </li>
+                        <li id="header_maps_item"><a style="font-size:11px" href="https://my.usf.edu/webapps/login/custom/bb_bb60/login.jsp?flag=1"> myUSF </a> | </li>
+                        <li id="header_maps_item"><a style="font-size:11px" href="http://www.usf.edu/About-USF/azindex/index.asp"> A-Z Index </a> | </li>
+                        <li id="header_atoz_index"><a style="font-size:11px" href="http://directory.acomp.usf.edu/?logo=1"> Directory</a></li>
+                    </ul>
+                    <form id="form1" value="Search" method="get" action="http://search.usf.edu/search" style="font-size:12px">
+                        <input type="text" name="q" size="20" maxlength="256" value="" />
+                        <input type="submit" name="btng" style="font-size:12px" value="Go" />
+                        <input type="hidden" name="client" style="font-size:12px" value="tampa" />
+                        <input type="hidden" name="proxystylesheet" style="font-size:12px" value="tampa" />
+                        <input type="hidden" name="site" style="font-size:12px" value="tampa" />
+                        <input type="hidden" name="output" style="font-size:12px" value="xml_no_dtd" />
+                        <input type="hidden" name="numgm" style="font-size:12px" value="5" />
+                    </form>
+                </div>
+            </div>
+            <div id="nav_topic">
+                <ul id="nav_topic">
+                    <li><a id="about" href="http://www.usf.edu/About-USF/index.asp">About USF</a></li>
+                    <li><a id="academics" href="http://www.usf.edu/Academics/index.asp">Academics</a></li>
+                    <li><a id="admissions" href="http://www.usf.edu/Admission/index.asp">Admissions</a></li>
+                    <li><a id="campuslife" href="http://www.usf.edu/Campus-Life/index.asp">Campus Life</a></li>
+                    <li><a id="research" href="http://www.usf.edu//Research/index.asp">Research</a></li>
+                    <li><a href="http://system.usf.edu/">USF System</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<script language="JavaScript" src="/includes/jscripts.js"></script>
+<script language="JavaScript" src="/includes/jscripts2.js"></script>
+<br /><br />
+<table align="center" width="1000px" border="0" cellpadding="0" cellspacing="0">
+<tr><td valign="top" align="left" height="100%" width="20%" bgcolor="#FFFFFF" style="border-right:solid 1px #BBBBBB;">
+<div class="buttonscontainer">
+    <div class="buttons_blog_title">
+        <a href="http://www.rc.usf.edu">Research Computing</a>
+    </div>
+    <div class="buttons_blog_item">
+        <a href="http://www.rc.usf.edu/trac/doc/wiki">Getting Started</a>
+    </div>
+    <div class="buttons_blog_item">
+        <a href="/circe.php">CIRCE</a>
+    </div>
+    <div class="buttons_blog_item">
+        <a href="/contact.php">Support &amp; Contacts</a>
+    </div>
+    <div class="buttons_blog_item">
+        <a href="http://www.rc.usf.edu/trac/doc/wiki/SoftwarePortal">Available Software</a>
+    </div>
+    <div class="buttons_blog_item">
+        <a href="http://www.rc.usf.edu/trac/doc/wiki">Documentation</a>
+    </div>
+    <div class="buttons_blog_item">
+        <a href="http://www.rc.usf.edu/signup/account.php">Get Account</a>
+    </div>
+    <div class="buttons_blog_item">
+        <a href="http://www.rc.usf.edu/licensing/licenserequest.php">Request Licensed Software</a>
+    </div>
+    <div class="buttons_blog_item">
+        <a href="http://itrc-adm1.rc.usf.edu/ganglia">System Status</a>
+    </div>
+    <div class="buttons_blog_item">
+        <a href="http://forum.rc.usf.edu">User Forum</a>
+    </div>
+     <div class="buttons_blog_item">
+        <a href="http://www.rc.usf.edu/rcac.php">Research Computing Advisory Committee</a>
+    </div>
+    <br /><br />
+    <!-- SiteSearch Google -->
+    <FORM method="GET" action="http://www.google.com/search">
+        <input type="hidden" name="ie" value="UTF-8" />
+        <input type="hidden" name="oe" value="UTF-8" />
+        <TABLE bgcolor="#FFFFFF"><tr><td>
+            Search this site
+            <INPUT TYPE="text" name="q" size="10" maxlength="100" value=""></INPUT>
+            <INPUT type="submit" name="btng" VALUE="Go"></INPUT>
+            <input type="hidden" name="domains" value="www.rc.usf.edu" />
+            <input type="hidden" name="sitesearch" value="www.rc.usf.edu" />
+        </td></tr></TABLE>
+    </FORM>
+    <br /><br />
+</div>
+</td>
+<td valign="top" height="100%" align="center" style="padding-left:20px;">
+<div id="wiki_content">
+    <div></div>
+    <div></div>
+    <div id="main">
+      <div></div>
+    <div id="content" class="wiki">
+      <h1>Editing gridEngineTechn</h1>
+      
+  <form id="edit" action="/trac/doc/wiki/gridEngineTechn" method="post"><div><input type="hidden" name="__FORM_TOKEN" value="f237668d71f45094cfd61076" /></div>
+    <fieldset class="iefix">
+      <input type="hidden" name="from_editor" value="1" />
+      <input type="hidden" name="action" value="edit" />
+      <input type="hidden" name="version" value="30" />
+      <input type="hidden" id="scroll_bar_pos" name="scroll_bar_pos" value="" />
+      <div id="rows">
+          <label for="editrows">Adjust edit area height:</label>
+          <select size="1" name="editrows" id="editrows" tabindex="43">
+            <option value="8">
+              8
+            </option><option value="12">
+              12
+            </option><option value="16">
+              16
+            </option><option value="20">
+              20
+            </option><option value="24">
+              24
+            </option><option value="28">
+              28
+            </option><option value="32">
+              32
+            </option><option value="36">
+              36
+            </option><option value="40" selected="selected">
+              40
+            </option>
+          </select>
+        <label for="sidebyside" title="Selecting and pressing 'Preview' enters a two-column [edit|preview] mode">
+          Edit side-by-side
+        </label>
+        <input type="checkbox" name="sidebyside" id="sidebyside" />
+      </div>
+      <p><textarea id="text" class="wikitext trac-resizable" name="text" cols="80" rows="40">
+= Advanced Submit Techniques =
+----
+[[PageOutline]]
+
+
+This document provides information on job submission techniques that do not fall into the standard serial/parallel model and need additional considerations.  If you know of any other techniques that can be helpful, please let us know so we can include them here.
+
+== SGE Array Tasks ==
+!GridEngine provides a mechanism to allow users to submit a single job which will be spawned as a range of tasks.  Lets say you have a problem such as the following:
+ * You are using a parallel application that runs best on 8 processors
+ * You have 48 different data sets you need to run with this application
+ * You cannot iterate the execution of the parallel job within your submit script, like
+{{{
+#$ -N my_app
+#$ -cwd
+#$ -l h_rt=10:00:00,pcpus=8
+
+for i in {1..48}; do
+      mpirun -np $NSLOTS ./my_app inputfile.$i
+done
+}}}
+because the scheduler will not permit such behavior.  You are allowed one and only one parallel run per job.
+
+With !GridEngine, you can tell the scheduler that your job is an array task.  To do this, you'll need to add the '''-t''' option to your submit script.  Here's and example:
+{{{
+#$ -N my_app_array_run
+#$ -cwd
+#$ -l h_rt=00:45:00,pcpus=8
+#$ -t 1-48
+
+mpirun -np $NSLOTS ./my_app inputfile.$SGE_TASK_ID
+}}}
+
+You can now arrange your input files, inputfile, as inputfile.[1-48].  With the -t option, !GridEngine will execute your submit script 48 times.  The only difference between these jobs will be the value of $SGE_TASK_ID which you can use to direct your application to the correct data sets.
+
+A slightly more complex example uses $SGE_TASK_ID as an index variable to define, for example, a temperature range.  Say you want to calculate some property of a system at various temperatures.  It is unnecessary to generate all of the input files before hand if you are incrementing through a temperature range.  This can be done on the fly with a little shell scripting and regular expressions:
+
+{{{
+#$ -N my_app_array_run
+#$ -cwd
+#$ -l h_rt=00:45:00,pcpus=8
+#$ -t 1-10
+
+# Set the new temperature
+BASE_TEMP=100
+TEMP=`bc -q &lt;&lt;EOF
+scale=2
+$BASE_TEMP+($SGE_TASK_ID/10)
+EOF`
+sed -r "s/TEMP(\s)+\=(\s)+([0-9])+\.([0-9])+/TEMP = $TEMP" inputfile.template &gt; inputfile.$SGE_TASK_ID
+
+mpirun -np $NSLOTS ./my_app inputfile.$SGE_TASK_ID
+}}}
+
+This will allow you to automatically generate your input file for every run by substituting a line in the template input file with a new line declaring the temperature you wish to work with.
+
+== Iterative Parallel Jobs ==
+The Iterative Parallel job is similar to the job described above, but each iteration must be run in sequence because each subsequent run of your application depends upon some data element generated by the previous run.  As before, since the scheduler cannot do something like this:
+
+{{{
+#$ -N my_app
+#$ -cwd
+#$ -l h_rt=10:00:00,pcpus=8
+
+for i in {1..48}; do
+      mpirun -np $NSLOTS ./my_app inputfile.$i
+done
+}}}
+
+we are stuck with a problem: How do we run an iterative parallel job without having to modify inputs and resubmit a new job after each iteration?
+
+=== Job Dependencies ===
+With creative use of !GridEngine's array task throttling facility, we can ensure a sort of "blocking" behavior between each run of your job.  As you can see in the example below, we have created a submit script which extracts necessary data from previous runs in order to create the parameters for our subsequent runs.  This script is for a hypothetical example and will need to be modified to suit your needs:
+
+{{{
+#$ -cwd
+#$ -l h_rt=00:45:00,pcpus=8
+#$ -N myjob
+#$ -t 1-10
+#$ -tc 1
+
+# Lets take a specific result from the previous run and the first run
+# to form the basis of the next run
+if [ $ITR -gt 1 ]; then
+     NEW_PARAM_1=`awk '/^RESULT.*\=.*[0-9]+\.[0-9]+$/ { print $NF}' output.$NAME.$((SGE_TASK_ID - 1))
+     NEW_PARAM_2=`awk '/^RESULT.*\=.*[0-9]+\.[0-9]+$/ { print $NF}' output.$NAME.1 | \
+
+     # Generate our new input file
+     sed -r "s/PARAMETER1(\s)+\=(\s)+([0-9])+\.([0-9])+/PARAMETER1 = $NEW_PARAM_1/" \
+                inputfile.template &gt; inputfile.$JOB_NAME.$SGE_TASK_ID
+     # Do the replacement 'inline' to the existing inputfile
+     sed -ri "s/PARAMETER2(\s)+\=(\s)+([0-9])+\.([0-9])+/PARAMETER2 = $NEW_PARAM_2/" \
+                inputfile.$JOB_NAME.$SGE_TASK_ID
+fi
+
+mpirun -np $NSLOTS ./my_app inputfile.$JOB_NAME.$SGE_TASK_ID
+}}}
+
+We can submit the following like so, to run 10 steps:
+{{{
+[user@host ~]$ qsub myjob.sh
+}}}
+
+In this example, we parse out a particular figure from the previous run's output (defined as `output.$JOB_NAME.$((SGE_TASK_ID - 1))` and we use that value as a parameter in our next run.  </textarea>
+      </p>
+      <div id="help"><b>Note:</b> See <a href="/trac/doc/wiki/WikiFormatting">WikiFormatting</a> and
+        <a href="/trac/doc/wiki/TracWiki">TracWiki</a> for help on editing wiki content.</div>
+    </fieldset>
+    <fieldset id="changeinfo">
+      <legend>Change information</legend>
+      <div id="changeinfo1">
+        <div class="field">
+          <label>Comment about this change (optional):<br />
+            <input id="comment" type="text" name="comment" size="60" value="" />
+          </label>
+        </div>
+      </div>
+      <div id="changeinfo2" class="options">
+        <label><input type="checkbox" name="readonly" id="readonly" />
+          Page is read-only
+        </label>
+      </div>
+    </fieldset>
+    <div class="buttons">
+        <input type="submit" name="preview" value="Preview Page" /> 
+        <input type="submit" name="diff" value="Review Changes" /> 
+        <input type="submit" id="save" name="save" value="Submit changes" /> 
+      <input type="submit" name="cancel" value="Cancel" />
+    </div>
+  </form>
+
+    </div>
+    </div>
+    <div></div>
+</div>
+</td></tr>
+</table>
+<div id="sitefooter">
+    <br /><br />
+</div>
+</body>
+</html>

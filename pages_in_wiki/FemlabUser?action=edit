@@ -1,0 +1,379 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  
+  
+
+  
+
+
+  <head>
+    <title>
+      FemlabUser (edit) – Research Computing Documentation
+    </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link rel="search" href="/trac/doc/search" />
+        <link rel="help" href="/trac/doc/wiki/TracGuide" />
+        <link rel="start" href="/trac/doc/wiki" />
+        <link rel="stylesheet" href="/trac/doc/chrome/common/css/trac.css" type="text/css" /><link rel="stylesheet" href="/trac/doc/chrome/common/css/wiki.css" type="text/css" />
+        <link rel="shortcut icon" href="/trac/doc/chrome/common/trac.ico" type="image/x-icon" />
+        <link rel="icon" href="/trac/doc/chrome/common/trac.ico" type="image/x-icon" />
+    <script type="text/javascript">
+      var auto_preview_timeout=2.0;
+      var form_token="f237668d71f45094cfd61076";
+    </script>
+    <script type="text/javascript" src="/trac/doc/chrome/common/js/jquery.js"></script><script type="text/javascript" src="/trac/doc/chrome/common/js/babel.js"></script><script type="text/javascript" src="/trac/doc/chrome/common/js/trac.js"></script><script type="text/javascript" src="/trac/doc/chrome/common/js/search.js"></script><script type="text/javascript" src="/trac/doc/chrome/common/js/wikitoolbar.js"></script><script type="text/javascript" src="/trac/doc/chrome/common/js/resizer.js"></script><script type="text/javascript" src="/trac/doc/chrome/common/js/auto_preview.js"></script>
+    <!--[if lt IE 7]>
+    <script type="text/javascript" src="/trac/doc/chrome/common/js/ie_pre7_hacks.js"></script>
+    <![endif]-->
+    <meta name="ROBOTS" content="NOINDEX, NOFOLLOW" /><script type="text/javascript">
+      jQuery(document).ready(function($) {
+        $("#text").blur(function() {
+          $("#scroll_bar_pos").val(this.scrollTop);
+        }).get(0).scrollTop = $("#scroll_bar_pos").val();
+        $("#editrows").change(function() {
+          resizeTextArea("text", this.options[this.selectedIndex].value);
+        });
+      });
+    </script>
+<link rel="stylesheet" type="text/css" media="screen, print" href="/includes/style.css" />
+<link rel="stylesheet" type="text/css" media="screen, print" href="/includes/homepage.css" />
+<link rel="icon" type="image/ico" href="/favicon.ico" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="stylesheet" href="/includes/menu2.css" type="text/css" />
+<link rel="stylesheet" type="text/css" href="/trac/doc/chrome/site/style.css" />
+</head>
+  <body>
+<div id="siteheader">
+    <!-- Get rid of the old headers -->
+    <div id="container">
+        <div id="header2">
+            <div id="banner2" valign="top">
+                <div id="usf-logo" valign="top">
+                    <img src="http://www.usf.edu/imagery/USF-Master-BANNER-art.jpg" width="600" height="86" border="0" usemap="#Map" />
+                    <map name="Map" id="Map">
+                        <area shape="rect" coords="12,11,347,75" href="/" />
+                    </map>
+                </div>
+                <div id="container_search">
+                    <ul>
+                        <li id="header_atoz_index"><a style="font-size:11px" href="http://assistive.usablenet.com/tt/referrer"> Text-Only</a> | </li>
+                        <li id="header_maps_item"><a style="font-size:11px" href="https://my.usf.edu/webapps/login/custom/bb_bb60/login.jsp?flag=1"> myUSF </a> | </li>
+                        <li id="header_maps_item"><a style="font-size:11px" href="http://www.usf.edu/About-USF/azindex/index.asp"> A-Z Index </a> | </li>
+                        <li id="header_atoz_index"><a style="font-size:11px" href="http://directory.acomp.usf.edu/?logo=1"> Directory</a></li>
+                    </ul>
+                    <form id="form1" value="Search" method="get" action="http://search.usf.edu/search" style="font-size:12px">
+                        <input type="text" name="q" size="20" maxlength="256" value="" />
+                        <input type="submit" name="btng" style="font-size:12px" value="Go" />
+                        <input type="hidden" name="client" style="font-size:12px" value="tampa" />
+                        <input type="hidden" name="proxystylesheet" style="font-size:12px" value="tampa" />
+                        <input type="hidden" name="site" style="font-size:12px" value="tampa" />
+                        <input type="hidden" name="output" style="font-size:12px" value="xml_no_dtd" />
+                        <input type="hidden" name="numgm" style="font-size:12px" value="5" />
+                    </form>
+                </div>
+            </div>
+            <div id="nav_topic">
+                <ul id="nav_topic">
+                    <li><a id="about" href="http://www.usf.edu/About-USF/index.asp">About USF</a></li>
+                    <li><a id="academics" href="http://www.usf.edu/Academics/index.asp">Academics</a></li>
+                    <li><a id="admissions" href="http://www.usf.edu/Admission/index.asp">Admissions</a></li>
+                    <li><a id="campuslife" href="http://www.usf.edu/Campus-Life/index.asp">Campus Life</a></li>
+                    <li><a id="research" href="http://www.usf.edu//Research/index.asp">Research</a></li>
+                    <li><a href="http://system.usf.edu/">USF System</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<script language="JavaScript" src="/includes/jscripts.js"></script>
+<script language="JavaScript" src="/includes/jscripts2.js"></script>
+<br /><br />
+<table align="center" width="1000px" border="0" cellpadding="0" cellspacing="0">
+<tr><td valign="top" align="left" height="100%" width="20%" bgcolor="#FFFFFF" style="border-right:solid 1px #BBBBBB;">
+<div class="buttonscontainer">
+    <div class="buttons_blog_title">
+        <a href="http://www.rc.usf.edu">Research Computing</a>
+    </div>
+    <div class="buttons_blog_item">
+        <a href="http://www.rc.usf.edu/trac/doc/wiki">Getting Started</a>
+    </div>
+    <div class="buttons_blog_item">
+        <a href="/circe.php">CIRCE</a>
+    </div>
+    <div class="buttons_blog_item">
+        <a href="/contact.php">Support &amp; Contacts</a>
+    </div>
+    <div class="buttons_blog_item">
+        <a href="http://www.rc.usf.edu/trac/doc/wiki/SoftwarePortal">Available Software</a>
+    </div>
+    <div class="buttons_blog_item">
+        <a href="http://www.rc.usf.edu/trac/doc/wiki">Documentation</a>
+    </div>
+    <div class="buttons_blog_item">
+        <a href="http://www.rc.usf.edu/signup/account.php">Get Account</a>
+    </div>
+    <div class="buttons_blog_item">
+        <a href="http://www.rc.usf.edu/licensing/licenserequest.php">Request Licensed Software</a>
+    </div>
+    <div class="buttons_blog_item">
+        <a href="http://itrc-adm1.rc.usf.edu/ganglia">System Status</a>
+    </div>
+    <div class="buttons_blog_item">
+        <a href="http://forum.rc.usf.edu">User Forum</a>
+    </div>
+     <div class="buttons_blog_item">
+        <a href="http://www.rc.usf.edu/rcac.php">Research Computing Advisory Committee</a>
+    </div>
+    <br /><br />
+    <!-- SiteSearch Google -->
+    <FORM method="GET" action="http://www.google.com/search">
+        <input type="hidden" name="ie" value="UTF-8" />
+        <input type="hidden" name="oe" value="UTF-8" />
+        <TABLE bgcolor="#FFFFFF"><tr><td>
+            Search this site
+            <INPUT TYPE="text" name="q" size="10" maxlength="100" value=""></INPUT>
+            <INPUT type="submit" name="btng" VALUE="Go"></INPUT>
+            <input type="hidden" name="domains" value="www.rc.usf.edu" />
+            <input type="hidden" name="sitesearch" value="www.rc.usf.edu" />
+        </td></tr></TABLE>
+    </FORM>
+    <br /><br />
+</div>
+</td>
+<td valign="top" height="100%" align="center" style="padding-left:20px;">
+<div id="wiki_content">
+    <div></div>
+    <div></div>
+    <div id="main">
+      <div></div>
+    <div id="content" class="wiki">
+      <h1>Editing FemlabUser</h1>
+      
+  <form id="edit" action="/trac/doc/wiki/FemlabUser" method="post"><div><input type="hidden" name="__FORM_TOKEN" value="f237668d71f45094cfd61076" /></div>
+    <fieldset class="iefix">
+      <input type="hidden" name="from_editor" value="1" />
+      <input type="hidden" name="action" value="edit" />
+      <input type="hidden" name="version" value="45" />
+      <input type="hidden" id="scroll_bar_pos" name="scroll_bar_pos" value="" />
+      <div id="rows">
+          <label for="editrows">Adjust edit area height:</label>
+          <select size="1" name="editrows" id="editrows" tabindex="43">
+            <option value="8">
+              8
+            </option><option value="12">
+              12
+            </option><option value="16">
+              16
+            </option><option value="20">
+              20
+            </option><option value="24">
+              24
+            </option><option value="28">
+              28
+            </option><option value="32">
+              32
+            </option><option value="36">
+              36
+            </option><option value="40" selected="selected">
+              40
+            </option>
+          </select>
+        <label for="sidebyside" title="Selecting and pressing 'Preview' enters a two-column [edit|preview] mode">
+          Edit side-by-side
+        </label>
+        <input type="checkbox" name="sidebyside" id="sidebyside" />
+      </div>
+      <p><textarea id="text" class="wikitext trac-resizable" name="text" cols="80" rows="40">
+= COMSOL =
+----
+[[PageOutline]]
+
+== Description ==
+
+''From Wikipedia:'' COMSOL Multiphysics (formerly FEMLAB) is a finite element analysis, solver and Simulation software / FEA Software package for various physics and engineering applications, especially coupled phenomena, or multiphysics.  COMSOL also offers an extensive interface to MATLAB and its toolboxes for a large variety of programming, preprocessing and postprocessing possibilities.  In addition to conventional physics-based user-interfaces, COMSOL Multiphysics also allows for entering coupled systems of partial differential equations (PDEs). The PDEs can be entered directly or using the so called weak form (see finite element method for a description of weak formulation).
+
+== Version ==
+ * '''4.3a'''
+
+== Authorized Users == 
+ * Students doing research
+ * Faculty
+ * `circe` users
+
+== Platforms ==
+ * Workstation/PC, Cluster
+
+== Installation == 
+
+'''''Contents'''''[[BR]]
+
+[FemlabUser#InstallingonLinux Installing on Linux][[BR]]
+[FemlabUser#InstallingonWindows Installing on Windows][[BR]]
+[FemlabUser#RunningonCirce Running on Circe][[BR]]
+----
+
+== Installing on Linux ==
+
+   1. Connect to https://rc.usf.edu/isos and login with your NetID and password. Change to the directory Comsol/v4.3a and download the ISO file. Once you have downloaded the ISO, disconnect from the ftp server.
+
+   2. Next, become root and issue the following commands.
+
+           `root@host&gt; mkdir -p /tmp/comsol`
+           `root@host&gt; mount -o loop comsol-4.3a.iso /tmp/comsol`
+
+   Please note that /tmp/comsol could be any temporary directory you wish. These commands will create a directory and then mount the ISO DVD image to that temporary directory. This saves you the trouble of having to actually burn a DVD for Comsol.
+
+   3. Next you will need to start the installer by issuing the following command as root:
+
+           `root@host&gt; sh /tmp/comsol/setup`
+
+   After a few moments the graphical installer will be displayed.
+
+   4. Click on the New Installation Button to continue.
+
+   5. Read through the license agreement, agree to the terms and then click on the Agree button to proceed.
+
+   6. In the License Section change License format to License file.
+
+   7. Click on the "Browse ..." button to browse and select the license file you have been provided. If you need this file please go [http://rc.usf.edu/licensing/licenserequest.php here]. When you have selected the license file click Next to continue.
+
+   8. Follow the next on-screen instructions, select Linux as your platform and make sure the other two platforms are not selected. Be sure you choose the typical install set. If you have MATLAB 7.1 or higher installed on your computer you can choose to install the Comsol interface for use with MATLAB. Click on the "Choose ..." button and select the directory where MATLAB is installed.
+
+   9. When prompted for the directory for Comsol to install to we recommend the default directory.
+
+   * Follow the on-screen instructions to complete the installation process.
+
+   * Once the installer is done you may wish to create a link to the Comsol binary under a directory that is in your path. You can do this by issuing the following command as root:
+
+           `root@host&gt; ln -s /usr/local/comsol43a/bin/comsol /usr/local/bin`
+
+   Note: !Comsol/Femlab has changed names to comsol, you can make the link above be any name you wish. 
+
+   Please note that you can use a directory other than /usr/local/bin if you wish.
+
+   Now that you have installed Comsol and created a link to the executable you can run Comsol with either of the two commands, the first starts Comsol without MATLAB and the second starts with MATLAB:
+
+           `user@host&gt; comsol`
+           `or user@host&gt; comsol matlab`
+
+== Installing on Windows ==
+
+Follow the steps below to download and install Comsol for Windows.
+
+   1. Connect to https://rc.usf.edu/isos and login with your NetID and password. Change to the directory Comsol/v4.3a and download the ISO file. Once you have downloaded the ISO, disconnect from the ftp server record the ISOs to a blank DVD-R under your favorite DVD recording software. If you need help with recording DVDs please see our guide at [wiki:CDBurning].
+
+   Alternatively, you could mount the ISO without burning a DVD. Read our guide at [wiki:WindowsISO].
+
+   2. To begin the installation click on the installer on the newly created DVD located in the directory &lt;cdrom&gt;:\Windows\VM\setup.exe.
+
+   3. Click the New Installation button on the Introduction screen to continue.
+
+   4. Read through the license agreement, agree to the terms and then click the I Agree button to proceed.
+
+   5. In the licence section change the License format to License file. Click on the "Browse ..." button to browse and select the license file you have been provided. If you need this file please go [http://rc.usf.edu/licensing/licenserequest.php here]. When you have selected the license file click Next to continue.
+
+   6. Follow the next on-screen instructions, be sure you choose the typical install set. If you have MATLAB 7.1 or higher installed on your computer you should choose to install the Comsol interface for use with MATLAB. Click on the "Choose ..." button and select the directory where MATLAB is installed.
+
+   7. When prompted for the directory for Comsol to install to we recommend the default directory.
+
+   8. Follow the on-screen instructions to complete the installation process, inserting the other CDs when prompted.
+
+   9. When Comsol is finished installing you should have an icon on the desktop and in your Programs on the Start Menu. If you installed the MATLAB interface, you will also have an icon for starting Comsol with the interface.
+
+== Running on Circe ==
+
+Running Comsol on `circe` is quite trivial.  When you are ready to run the solver against your model, save the model and copy the `.mph` file to Circe via which ever method you prefer and run:
+{{{
+qsub -N mymodel.mph runcomsol.sh
+}}}
+
+You will need to add the following information in a script file and reference it in the qsub command argument:
+
+{{{
+#$ -l h_rt=04:00:00,mps=2.0G,pcpus=8
+#$ -cwd
+
+module purge
+module add apps/comsol/4.3a
+
+comsol -clustersimple batch -inputfile ${JOB_NAME} -outputfile ${JOB_NAME//\.mph/}.out.mph \
+       -batchlog b.log -tmpdir $TMPDIR
+}}}
+
+This will start an 8 processor Comsol job with a limit of 2 GB of RAM per slot running against the file `mymodel.mph`.  It is necessary to include `.mph` in the model name.  Please be advised that `.mph` files created by earlier versions of Comsol may not work as expected!  Please ensure that in your `Solver Parameters` that `Plot while solving` is unchecked so that you do not run into errors during the solution.
+
+For non-distributed, SMP jobs, the following script will work:
+
+{{{
+#$ -l h_rt=24:00:00,mpj=16.0G,nodes=1,ppn=12
+#$ -cwd
+
+module purge
+module add apps/comsol/4.3a
+
+comsol batch -np ${NSLOTS} -inputfile ${JOB_NAME} \
+        -outputfile ${JOB_NAME}.${JOB_ID} \
+        -batchlog ${JOB_NAME}.${JOB_ID}.comsol_log -tmpdir $TMPDIR
+}}}
+
+This script will request 16GB of memory for the job and 12 processor cores.
+
+Solution data will be stored within the `.mph` file and can be viewed on your local machine simply by copying the file back once you are done.  A preferred way to deal with this is to [wiki:CirceDataAccess "use your home directory share"] to map your Circe home directory as a network drive.  Then, you can simply save the file to the network drive, move it to your /work directory, and run the simulation on Circe.  When the simulation is complete, copy the file back to your home on Circe, and re-open the file to review the results on your desktop.
+
+If you plan to use Comsol 4.3a interactively, please follow the following procedures first:
+ * In the toolbar, click 'Options' then 'Preferences'. 
+ * In this new window, click 'Show' on the menu to the left. 
+ * Check the box for 'Advanced study options'. Failure to complete this step will prevent visibility of 'Cluster computing' for the following steps.
+ * Select 'Cluster computing' on the menu to the left.
+ * Change 'Queue Name' to 'pe*hg'
+ * Change 'Batch directory' and 'External COMSOL batch directory path' from your home directory to '$WORK/Comsol'. (e.g., /home/b/brs becomes /work/b/brs/Comsol)
+ * Change 'External COMSOL installation directory path' to refect the version of Comsol that you are using (e.g. /apps/comsol/4.3 or /apps/comsol/4.3a)
+
+[[Image(http://www.rc.usf.edu/trac/doc/raw-attachment/wiki/FemlabUser/Screenshot%20from%202012-09-28%2014_27_05.png)]]
+
+=== More Job Information ===
+See the following for more detailed job submission information:
+ * [wiki:gridEngineUsers "SGE User's Guide"]
+ * [wiki:gridEnginePolicy "Scheduling and Dispatch Policies"]
+ * [wiki:gridEngineTechn "Advanced Submit Techniques"]
+
+=== Reporting Bugs ===
+Report bugs to the IT Help Desk: mailto:help@usf.edu</textarea>
+      </p>
+      <div id="help"><b>Note:</b> See <a href="/trac/doc/wiki/WikiFormatting">WikiFormatting</a> and
+        <a href="/trac/doc/wiki/TracWiki">TracWiki</a> for help on editing wiki content.</div>
+    </fieldset>
+    <fieldset id="changeinfo">
+      <legend>Change information</legend>
+      <div id="changeinfo1">
+        <div class="field">
+          <label>Comment about this change (optional):<br />
+            <input id="comment" type="text" name="comment" size="60" value="" />
+          </label>
+        </div>
+      </div>
+      <div id="changeinfo2" class="options">
+        <label><input type="checkbox" name="readonly" id="readonly" />
+          Page is read-only
+        </label>
+      </div>
+    </fieldset>
+    <div class="buttons">
+        <input type="submit" name="preview" value="Preview Page" /> 
+        <input type="submit" name="diff" value="Review Changes" /> 
+        <input type="submit" id="save" name="save" value="Submit changes" /> 
+      <input type="submit" name="cancel" value="Cancel" />
+    </div>
+  </form>
+
+    </div>
+    </div>
+    <div></div>
+</div>
+</td></tr>
+</table>
+<div id="sitefooter">
+    <br /><br />
+</div>
+</body>
+</html>
