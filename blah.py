@@ -5,29 +5,53 @@ wiki_pages = ['ABySS', 'ACLs', 'ADS', 'Ab-Init', 'Ansys', 'ApacheNutch', 'AutoDo
 
 text_in = open("wiki_translate/links",'r').read()
 text_out = text_in
+#TRAC		mailto:someone@foo.bar
+email_pat = re.compile('mailto:.+@[A-Za-z0-9.-]+\.[a-z]{2,}')
+all_mailto = email_pat.findall(text_out)
+for mailto in all_mailto:
+	text_out = text_out.replace(mailto,mailto[len("mailto:"):]
+	#REDMINE	someone@foo.bar
 
 #TRAC		[mailto:someone@foo.bar "Email someone"]
-mailto_pat = re.compile('\[mailto:[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[a-z]{2,} ".+"\]')
+mailto_pat = re.compile('\[mailto:.+@[A-Za-z0-9.-]+\.[a-z]{2,} ".+"\]')
 all_mailtos = mailto_pat.findall(text_out)
 for single in all_mailtos:
-	email_someone = re.compile('".+"').search(single)
+	email_someone = re.compile('".+"').search(single) #var name refers to quoted text
 	hd = email_someone.start()
 	tl = email_someone.end()
+
+	email_addr = single[len("[mailto:"):hd-1] #instead of 8, I put in len(...) for clarity
+	#REDMINE	"Email someone":mailto:someone@foo.bar
 	new_mailto = single[hd:tl]+":mailto:"+email_addr
-	
-	
-#REDMINE	"Email someone":mailto:someone@foo.bar
+	text_out = text_out.replace(single, new_mailto)
 
 #TRAC		[http://whatever.com/ "Title"]
-titled_page = re.compile('\[https?://[a-zA-Z0-9./]{4,} "[A-Za-z0-9 ]+"\]')
-#REDMINE	"Title":http://whatever.com
-
-#TRAC		[wiki:WikiPageName "Title"]
-titled_wiki = re.compile('\[wiki:[A-Za-z0-9 ]+ "[A-Za-z0-9 ]+"\]')
-#REDMINE	[[WikiPageName|Title]]
+titled_url = re.compile('\[https?://.{4,} ".+"\]') #went the lax route and allowed URLs and titles to be of any format
+all_turls = titled_url.findall(text_out)
+for turl in all_turls:
+	title = re.compile('".+"').search(turl)
+	hd = title.start()
+	tl = title.end()
+	url = page[1:hd-1] #first one cuts off leading "["
+	#REDMINE	"Title":http://whatever.com
+	new_turl = title + ":" + url
+	text_out = text_out.replace(turl,new_turl)
 
 #TRAC		WikiPageName
-if wiki_pages.count(inputty)!=0:
-	#we're good and we link it
+words = text_out.split() 
+for word in words:
+	if wiki_pages.count(word)!=0:#we're good and we link it
+		text_out = text_out.replace(word, "[["+ word +"]]")
 #REDMINE	[[WikiPageName]]
+
+#TRAC		[wiki:WikiPageName "Title"]
+titled_wiki = re.compile('\[wiki:[A-Za-z0-9.- ]+ ".+"\]')
+all_twiki = titled_wiki.findall(text_out)
+for twiki in all_twiki:
+	title = re.compile('".+"').search(twiki)
+	hd = title.start()
+	page_name = twiki[len("[wiki:"):hd-1]
+	#REDMINE	[[WikiPageName|Title]]
+	new_twiki = "[["+page_name+"|"+title+"]]"
+	text_out = text_out.replace(twiki,new_twiki)
 print text_out
