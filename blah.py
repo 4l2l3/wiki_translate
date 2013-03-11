@@ -28,10 +28,9 @@ for img in imgs:
 	#REDMINE	!>image_url! 
 	if (img[prefix_num:len(img)-3] =="align=right" ):
 		text_out = text_out.replace(img,"!>"+img_name+"!"
-	#TRAC		[[Image(photo.jpg, alt='Image title')]]
-	#REDMINE	!image_url(Image title)! displays an image with an alt/title attribute	
-	elif ((img[prefix_num:prefix_num+4])=="alt="):
-		alt_txt = img[ prefix_num+4 : len(img)-3]
+	
+	elif ((img[prefix_num:prefix_num+4])=="alt="):#TRAC		[[Image(photo.jpg, alt='Image title')]]
+		alt_txt = img[ prefix_num+4 : len(img)-3]#REDMINE	!image_url(Image title)! displays an image with an alt/title attribute	
 		text_out = text_out.replace(img, "!"+img_name+"("+alt_txt+")!"
 
 	#TRAC		[[Image(photo.jpg, 120px)]]               
