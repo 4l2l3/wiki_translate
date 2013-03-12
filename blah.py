@@ -1,7 +1,7 @@
 #!/usr/bin/python
 import re
 
-text_in = open("test_cases/lists",'r').read()
+text_in = open("test_cases/tables",'r').read()
 text_out = text_in
 
 #TRAC		any number of indents then * text
