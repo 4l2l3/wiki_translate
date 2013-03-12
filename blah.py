@@ -1,27 +1,38 @@
 #!/usr/bin/python
 import re
 
-text_in = open("test_cases/paragraphs_code",'r').read()
+text_in = open("test_cases/lists",'r').read()
 text_out = text_in
 
-#TRAC		{{{\n#!language\ncode\n}}}
-#REDMINE	<pre><code class="language">\ncode\n</code></pre>
-code_pat = re.compile('\{{3}\n#!.+\n[^}]+\n\}{3}')
-code_blocks = code_pat.findall(text_out)
-for block in code_blocks:
-	lang = re.compile('\n#!.+\n').search(block).group().strip("\n")[2:]
-	code = block[len("{{{\n#!")+len(lang)+len('\n') : len(block)-3]
-	text_out = text_out.replace(block,'<pre><code class="'+lang+'">\n'+code+'</code></pre>')
-
-#TRAC		number of spaces then paragraph text begins
-#REDMINE	p((((((((. text       ##the left paren is equivalent to number of spaces
-par_pat = re.compile('\n +')
-pars = par_pat.findall(text_out)
-for x in range(len(pars)):
-	par = par_pat.search(text_out) #this will keep the positioning the same
-	hd = par.start()
-	tl = par.end()
-	num_of_spaces = par.group().count(' ')
-	text_out = text_out[:hd+1]+"p"+"("*num_of_spaces+". "+text_out[tl:] #+1 for newline
+#TRAC		any number of indents then * text
+#REDMINE	any number of *
+#e.g.		'  *'  == '***'
+list_pat = re.compile('\n *\*+ .+')
+lists = list_pat.findall(text_out)
+for line in lists:
+	space_count = line.count(' ')
+	list_item = line[space_count+1:]
+	redmine_line = '\n*'+('*'*space_count)+list_item
+	text_out = text_out.replace(line, redmine_line)
 	
+#trac		1. item1
+#		 a. item1.a
+#		  i. item1.a.i
+#		1. item2
+
+#redmine	# item1
+#		## item 1.1
+#		# item2
+#nlist_pat = re.compile('(\n[0-9]+\. [^\n]+\n( [a-z]\. [^\n]+\n(  [xivlcdm]+\. [^\n]+)?)?)+')
+
+nlist_pat = re.compile(' *([0-9]+|[a-z]+)\. [a-z:\'( ]+\n')
+nlists = nlist_pat.finditer(text_out)
+for nlist in nlists:
+	aline = nlist.group()
+	prefix = re.compile(' *[^ ]+').search(aline).group()
+	space_count = prefix.count(' ')
+	list_text = aline[len(prefix):]
+	redmine_nlist = '#'+('#'*space_count)+list_text
+	text_out = text_out.replace(aline, redmine_nlist)
 print text_out
+

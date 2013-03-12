@@ -210,17 +210,48 @@ def do_images(text_in):
 			text_out = text_out.replace(img,"!{"+ ", ".join([str(x) for x in new_keypairs])+"}"+img_name+"!")
 	return text_out
 
-def do_misc(text_in):
+def do_lists_tables(text_in):
 	text_out = text_in
+	#TRAC		any number of indents then * text
+	#REDMINE	any number of *
+	#e.g.		'  *'  == '***'
+	list_pat = re.compile('\n *\*+ .+')
+	lists = list_pat.findall(text_out)
+	for line in lists:
+		space_count = line.count(' ')
+		list_item = line[space_count+1:]
+		redmine_line = '\n*'+('*'*space_count)+list_item
+		text_out = text_out.replace(line, redmine_line)
+	
+	#trac		1. item1
+	#		 a. item1.a
+	#		  i. item1.a.i
+	#		1. item2
+
+	#redmine	# item1
+	#		## item 1.1
+	#		# item2
+	#nlist_pat = re.compile('(\n[0-9]+\. [^\n]+\n( [a-z]\. [^\n]+\n(  [xivlcdm]+\. [^\n]+)?)?)+')
+
+	nlist_pat = re.compile(' *([0-9]+|[a-z]+)\. [a-z:\'( ]+\n')
+	nlists = nlist_pat.finditer(text_out)
+	for nlist in nlists:
+		aline = nlist.group()
+		prefix = re.compile(' *[^ ]+').search(aline).group()
+		space_count = prefix.count(' ')
+		list_text = aline[len(prefix):]
+		redmine_nlist = '#'+('#'*space_count)+list_text
+		text_out = text_out.replace(aline, redmine_nlist)
 	return text_out
 
 def translate(trac_text):
+	#this order is important to account for '{{{' (monospace/code) and indentation(paragraph/lists)
 	trac_text = do_headers(trac_text)
-	trac_text = do_stylings(trac_text)
+	trac_text = do_lists_tables(trac_text)
 	trac_text = do_paragraph_formatting(trac_text)
+	trac_text = do_stylings(trac_text)
 	trac_text = do_links(trac_text)
 	trac_text = do_images(trac_text)
-	trac_text = do_misc(trac_text)
 	return trac_text
 
 print "Enter file location or 'no file' to exit program."
