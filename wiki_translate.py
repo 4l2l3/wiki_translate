@@ -212,6 +212,11 @@ def do_images(text_in):
 
 def do_lists_tables(text_in):
 	text_out = text_in
+
+	#TRAC		||TABLE1||TABLE2||
+	#REDMINE	|TABLE1|TABLE2|
+	text_out = text_out.replace("||","|")
+
 	#TRAC		any number of indents then * text
 	#REDMINE	any number of *
 	#e.g.		'  *'  == '***'
@@ -244,6 +249,15 @@ def do_lists_tables(text_in):
 		text_out = text_out.replace(aline, redmine_nlist)
 	return text_out
 
+def do_definitions(text_in):
+	text_out = text_in
+	#TRAC		term::\n  definition
+	#REDMINE	*term*\n  definition
+	defs = re.compile('[a-zA-Z]+::\n  [^\n]+').findall(text_out)
+	for defn in defs:
+		colon_pos = defn.index('::')
+		text_out = text_out.replace(defn, "*"+defn[:colon_pos]+"*"+defn[colon_pos+2:]
+
 def translate(trac_text):
 	#this order is important to account for '{{{' (monospace/code) and indentation(paragraph/lists)
 	trac_text = do_headers(trac_text)
@@ -252,6 +266,7 @@ def translate(trac_text):
 	trac_text = do_stylings(trac_text)
 	trac_text = do_links(trac_text)
 	trac_text = do_images(trac_text)
+	trac_text = do_definitions(trac_text)
 	return trac_text
 
 print "Enter file location or 'no file' to exit program."
