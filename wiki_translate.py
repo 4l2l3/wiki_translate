@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-import re
+import re, sys
 
 def do_headers(text_in):
 	#We're going to handle each header individually then once we have a list of original/TRAC headers and new/Redmine headers, we'll use re.sub('r...) to replace the old with the new.
@@ -50,6 +50,7 @@ def stylings_replace( pattern, text_in, trac_style, redmine_style ):
 def do_stylings(text_in):
 	#build a function that takes in a SRE pattern object [*_pattern], text_out, and replacement text otherwise i'll have 7 for loops here
 	text_out = text_in
+
 	bold_pattern = re.compile('\'{3}.+\'{3}')#We'll be performing these staggeredly. Because bold requires more apostrophes, it will always take precedence and can never be mistaken for italics, which can consume apostrophes intended for bolding.
 	text_out = stylings_replace(bold_pattern, text_out, "'''", "*")
 
@@ -153,22 +154,22 @@ def do_links(text_in):
 	return text_out
 
 def do_images(text_in):
-	text_out = text_in
 	#TRAC		[[Image(image_url)]]
 	#REDMINE	!image_url! 
 	#TRAC		[[Image(attached_image.png)]]	
 	#REDMINE	!attached_image.png!	
-	image_loc = re.compile('\[\[Image\(.{4,}\]\]\)')
+	image_loc = re.compile('\[\[Image\([^, ]{4,}\)\]\]')
 	images = image_loc.findall(text_out)
 	for image in images:
-		loc = image[len("[[Image("):]
+		loc = image[len("[[Image("):len(image)-3]
 		text_out = text_out.replace(image, "!"+loc+"!")
 
 	#SPECIAL ATTRIBUTES
-	img_r = re.compile('\[\[Image\(.{4,}, [a-z\-]+=.+\]\]\)')
+	img_r = re.compile('\[\[Image\([^, ]{4,}, .+\)\]\]')
 	imgs = img_r.findall(text_out)
+
 	for img in imgs:
-		#search only finds first occurence
+		#search only finds first occurrence
 		img_name = re.compile('[^, ]+').search(img[len("[[Image("):]).group()
 
 		#slicing after "[[Image(name, ", +2 is for space and comma 
@@ -189,7 +190,7 @@ def do_images(text_in):
 		elif (img[len(img)-5:len(img)-3]=="px"): 
 			pixel_size = img[prefix_num:len(img)-5]
 			text_out = text_out.replace(img, "!{width: "+pixel_size+"%}"+img_name+"!")
-		
+
 		elif (img[len(img)-4:len(img)-3]=="%"):
 			pixel_size = img[prefix_num:len(img)-4]
 			text_out = text_out.replace(img, "!{width: "+pixel_size+"px}"+img_name+"!")
@@ -197,7 +198,7 @@ def do_images(text_in):
 		#TRAC		[[Image(photo.jpg, key=value)]]
 		#REDMINE	!{key: value}attached_image.png!
 		else: 	
-			keypairs = re.compile('[A-Za-z]+=[^,]+').findall(img[prefix_num:])
+			keypairs = re.compile('[A-Za-z]+=[^,\]\)]+').findall(img[prefix_num:])
 			new_keypairs = []
 			for keypair in keypairs:
 				match = re.compile('[a-zA-Z]+=').search(keypair)
@@ -256,16 +257,17 @@ def do_definitions(text_in):
 	defs = re.compile('[a-zA-Z]+::\n  [^\n]+').findall(text_out)
 	for defn in defs:
 		colon_pos = defn.index('::')
-		text_out = text_out.replace(defn, "*"+defn[:colon_pos]+"*"+defn[colon_pos+2:]
+		text_out = text_out.replace(defn, "*"+defn[:colon_pos]+"*"+defn[colon_pos+2:])
+	return text_out
 
 def translate(trac_text):
 	#this order is important to account for '{{{' (monospace/code) and indentation(paragraph/lists)
-	trac_text = do_headers(trac_text)
+	trac_text = do_headers(trac_text)	
 	trac_text = do_lists_tables(trac_text)
-	trac_text = do_paragraph_formatting(trac_text)
+	trac_text = do_paragraph_formatting(trac_text) #no-indents not converted
 	trac_text = do_stylings(trac_text)
-	trac_text = do_links(trac_text)
-	trac_text = do_images(trac_text)
+	trac_text = do_links(trac_text) #email fail, titled wiki
+	trac_text = do_images(trac_text) #no translation occuring
 	trac_text = do_definitions(trac_text)
 	return trac_text
 
@@ -277,7 +279,7 @@ while (file_loc!="no file"):
 
 	#Translate from trac wikiformatting to redmine wiki formatting
 	output_text = translate(input_file)
-
+	print output_text
 	#Put redmine version in new file <filename>.redmine
 	output_file = open(file_loc+'.redmine','w')
 	output_file.write(output_text)

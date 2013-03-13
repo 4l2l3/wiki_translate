@@ -1,0 +1,78 @@
+= head1 =
+content
+== head2 ==
+content
+=== head3 ===
+content
+========== head5 ==========
+[[Image( image_url)]]
+
+[[Image(photo.jpg, key=value)]]
+
+[[Image(photo.jpg, align=right)]]
+
+[[Image(photo.jpg, alt='Image title')]]
+
+[[Image(attached_image.png)]]
+
+[[Image(photo.jpg, 120px)]] 
+
+[mailto:someone@foo.bar "Email someone"]
+
+[http://whatever.com/ "Title"]
+
+[wiki:WikiPageName "Title"]
+
+WikiPageName
+
+https://whatever.com
+
+1. who
+ a. the
+ d. whaa
+ z. really
+  i. test
+  x. asdf
+  i. test
+  i. test
+   1. asdf
+   1. asdff 
+    a. no
+    a. way :'(                                                   
+
+
+* a
+ * b
+  * c
+ * d
+* e
+left aligned paragraph
+ left aligned paragraph, one indentation //note the leading space
+  two indents, two spaces
+
+{{{
+#!html
+<h1 style="text-align: right">HTML Test</h1>
+}}}
+
+{{{
+#!ruby
+code goes here
+}}}
+'''bold'''
+
+''italic''
+
+'''''bold italic'''''
+
+__underline__
+
+{{{mono space}}} or `mono space` or regular space
+
+~~strike through~~
+
+abc ^superscript^ 
+
+abc,,subscript,,
+
+'''abc,,s^a__^,,rteib__on''b'''3{{{ave''}}}
