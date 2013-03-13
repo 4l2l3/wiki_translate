@@ -1,0 +1,76 @@
+h1. head1
+content
+h2. head2
+content
+h3. head3
+content
+h10. head5
+[[Image( image_url)]]
+
+!{key: value}photo.jpg!
+
+!>photo.jpg!
+
+!photo.jpg('Image title')!
+
+!attached_image.png!
+
+!{width: 120%}photo.jpg! 
+
+"Email someone":someone@foo.bar
+
+"Title":http://whatever.com/
+
+[[WikiPageName|Title]]
+
+WikiPageName
+
+https://whatever.com
+
+# who
+## the
+## whaa
+## really
+### test
+### asdf
+### test
+### test
+#### asdf
+#### asdff 
+##### no
+##### way :'(                                                   
+
+
+** a
+*** b
+**** c
+*** d
+** e
+left aligned paragraph
+p(. left aligned paragraph, one indentation //note the leading space
+p((. two indents, two spaces
+
+<pre><code class="html">
+<h1 style="text-align: right">HTML Test</h1>
+</code></pre>
+
+<pre><code class="ruby">
+code goes [[here]]
+</code></pre>
+*bold*
+
+_italic_
+
+*_bold italic_*
+
++underline+
+
+@mono space@ or @mono space@ or regular space
+
+-strike through-
+
+abc ^superscript^ 
+
+abc~subscript~
+
+*abc~s^a+^~rteib+on_b*3@ave_@

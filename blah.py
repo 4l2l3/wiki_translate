@@ -1,102 +1,58 @@
 #!/usr/bin/python
-import re, sys
-def do_headers(text_in):
-	#We're going to handle each header individually then once we have a list of original/TRAC headers and new/Redmine headers, we'll use re.sub('r...) to replace the old with the new.
-	text_out = text_in #just in-case, let's not destroy our original text_in
+import re
 
-	whole_header_pattern = re.compile('(=+) [\w]+ (=+)\n') #TODO: modify this regex to make sure starts(^) and ends($) the line?? Because python treats the entire file as one line, this match only works for single-line files. I've modified the regex to just use the trailing newline.
-	all_headers = whole_header_pattern.finditer(text_out)
-	
-	header_text = re.compile('[\w\s]+') #we'll use this to extract header text
-	count_eq = re.compile('=+') #we'll use this to count equal signs
+wiki_pages = ['ABySS', 'ACLs', 'ADS', 'Ab-Init', 'Ansys', 'ApacheNutch', 'AutoDock', 'Blast', 'CDBurning', 'CMAQ-4.5.1', 'CMAQ-4.6', 'CMAQ-4.7', 'Cadence', 'CamelCase', 'CirceConnect', 'CirceDataAccess', 'CirceDataManagement', 'CirceDesktop', 'CirceHardware', 'CirceLayout', 'Cubit', 'DataBackup', 'DeveloperPortal', 'DevelopmentTools', 'Downtime2008', 'Downtime2009', 'ESPRIT', 'FAQ', 'FemlabUser', 'Fidap', 'GMT', 'GaussView', 'Gaussian', 'GibsonSpecs', 'GrADS', 'Grass', 'Gromacs', 'Gulp', 'HFSS', 'HPCPack2008R2Client', 'HPlatforms', 'Hadoop', 'HesiodConnect', 'IDLUser', 'InfiniBand', 'InterMapTxt', 'InterTrac', 'InterWiki', 'Iso2Mesh', 'JobRequirements', 'LAMMPS', 'MEGA', 'MM5', 'MM5OnIrce', 'MOVES', 'MPB', 'MPIBlast', 'MPP', 'MSModeling', 'MapleUser', 'MathemCluster', 'MathemUser', 'MatlabCluster', 'MatlabUser', 'Maya', 'Meep', 'Meme', 'Modules', 'MrBayes', 'MyriExp', 'NeedHPC', 'PGIInstall', 'PageTemplates', 'ParallelEnvironments', 'Quotas', 'RecentChanges', 'RestoreUtility', 'Rmpi', 'Run', 'SAS', 'SandBox', 'SoftPortalMockup', 'SoftwarePortal', 'SunblastData', 'Synopsys', 'TeraChem', 'TitleIndex', 'TracAccessibility', 'TracAdmin', 'TracBackup', 'TracBrowser', 'TracCgi', 'TracChangeset', 'TracEnvironment', 'TracFastCgi', 'TracFineGrainedPermissions', 'TracGuide', 'TracImport', 'TracIni', 'TracInstall', 'TracInterfaceCustomization', 'TracLinks', 'TracLogging', 'TracModPython', 'TracModWSGI', 'TracNavigation', 'TracNotification', 'TracPermissions', 'TracPlugins', 'TracQuery', 'TracReports', 'TracRepositoryAdmin', 'TracRevisionLog', 'TracRoadmap', 'TracRss', 'TracSearch', 'TracStandalone', 'TracSupport', 'TracSyntaxColoring', 'TracTickets', 'TracTicketsCustomFields', 'TracTimeline', 'TracUnicode', 'TracUpgrade', 'TracWiki', 'TracWorkflow', 'UsingComplexes', 'WEKA', 'Webdav', 'WhatIsHPC', 'WhatSoftware', 'WhoResources', 'WikiDeletePage', 'WikiFormatting', 'WikiHtml', 'WikiMacros', 'WikiNewPage', 'WikiPageNames', 'WikiProcessors', 'WikiRestructuredText', 'WikiRestructuredTextLinks', 'WikiStart', 'WinHPCJobStatus', 'WindowsISO', 'XWin32Install', 'XmingInstall', 'abinit', 'accountInfo', 'cp2k', 'dalton', 'desnex', 'devenv', 'dlpoly', 'dock6', 'esmf', 'fastxToolkit', 'fdtd', 'feram', 'gpuJobs', 'gridEngineInter', 'gridEngineIntro', 'gridEnginePolicy', 'gridEngineQueue', 'gridEngineRuntime', 'gridEngineStatus', 'gridEngineTechn', 'gridEngineUsers', 'here', 'jmol', 'libNuma', 'molden', 'namd', 'nwchem', 'oases', 'openfoam', 'openmm', 'proj', 'qe', 'siesta', 'testpage', 'titan2d', 'transabyss', 'vapor', 'vasp', 'velvet', 'vmd', 'vnc-class', 'vpnClient', 'websites', 'wrf']
 
-	for header in all_headers:
-		cur_hd_txt = header_text.search(header.group()) #should only be one set of text per header
-		#verify there was a match
-		cur_eq_list = count_eq.findall(header.group())
-		#verify they're of same length, else, syntax error from input :(
-		eq_num1 = len(cur_eq_list[0])
-		eq_num2 = len(cur_eq_list[1])
-		if eq_num1 != eq_num2:
-			print "Equal signs don't match in current header: '"+header+"'"#throw error
-			continue #just ignore current header, don't translate
-		new_hd = "h"+str(eq_num1)+"."+cur_hd_txt.group().rstrip()+"\n"#rstrip gets rid of our trailing space
-		#It appears there's a glitch with header.start(), it's matching '= header_text ===' instead of '=== header_text ===' and therefore .start() returns 2 spaces before our full match begins. Also does the same with 4 equal signs.
-		#before = text_in[:(header.span()[0])]
-		#after = text_in[(header.span()[1]):]
-		#text_in = before+new_hd+after #replacing
-		
-		#The following line is a hacky band-aid for it.
-		text_out = text_out.replace(header.group(),new_hd) 
+text_in = open("test_cases/links",'r').read()
+text_out = text_in
 
-	return text_out
-def do_lists_tables(text_in):
-	text_out = text_in
+#TRAC		[mailto:someone@foo.bar "Email someone"]
+mailto_pat = re.compile('\[mailto:.+@[A-Za-z0-9.-]+\.[a-z]{2,} ".+"\]')
+all_mailtos = mailto_pat.findall(text_out)
+for single in all_mailtos:
+	email_someone = re.compile('".+"').search(single) #var name refers to quoted text
+	hd = email_someone.start()
+	tl = email_someone.end()
 
-	#TRAC		||TABLE1||TABLE2||
-	#REDMINE	|TABLE1|TABLE2|
-	text_out = text_out.replace("||","|")
+	email_addr = single[len("[mailto:"):hd-1] #instead of 8, I put in len(...) for clarity
+	#REDMINE	"Email someone":mailto:someone@foo.bar
+	new_mailto = email_someone.group()+":mailto:"+email_addr
+	text_out = text_out.replace(single, new_mailto)
 
-	#TRAC		any number of indents then * text
-	#REDMINE	any number of *
-	#e.g.		'  *'  == '***'
-	list_pat = re.compile('\n *\*+ .+')
-	lists = list_pat.findall(text_out)
-	for line in lists:
-		space_count = line.count(' ')
-		list_item = line[space_count+1:]
-		redmine_line = '\n*'+('*'*space_count)+list_item
-		text_out = text_out.replace(line, redmine_line)
-	
-	#trac		1. item1
-	#		 a. item1.a
-	#		  i. item1.a.i
-	#		1. item2
+#TRAC		mailto:someone@foo.bar
+email_pat = re.compile('mailto:.+@[A-Za-z0-9.-]+\.[a-z]{2,}')
+all_mailto = email_pat.findall(text_out)
+for mailto in all_mailto:
+	text_out = text_out.replace(mailto,mailto[len("mailto:"):])
+	#REDMINE	someone@foo.bar
 
-	#redmine	# item1
-	#		## item 1.1
-	#		# item2
-	#nlist_pat = re.compile('(\n[0-9]+\. [^\n]+\n( [a-z]\. [^\n]+\n(  [xivlcdm]+\. [^\n]+)?)?)+')
+#TRAC		[http://whatever.com/ "Title"]
+titled_url = re.compile('\[https?://.{4,} ".+"\]') #went the lax route and allowed URLs and titles to be of any format
+all_turls = titled_url.findall(text_out)
+for turl in all_turls:
+	title = re.compile('".+"').search(turl)
+	hd = title.start()
+	tl = title.end()
+	url = turl[1:hd-1] #first one cuts off leading "["
+	#REDMINE	"Title":http://whatever.com
+	new_turl = title.group() + ":" + url
+	text_out = text_out.replace(turl,new_turl)
 
-	nlist_pat = re.compile(' *([0-9]+|[a-z]+)\. [a-z:\'( ]+\n')
-	nlists = nlist_pat.finditer(text_out)
-	for nlist in nlists:
-		aline = nlist.group()
-		prefix = re.compile(' *[^ ]+').search(aline).group()
-		space_count = prefix.count(' ')
-		list_text = aline[len(prefix):]
-		redmine_nlist = '#'+('#'*space_count)+list_text
-		text_out = text_out.replace(aline, redmine_nlist)
-	return text_out
+#TRAC		WikiPageName
+words = text_out.split() 
+for word in words:
+	if wiki_pages.count(word)!=0:#we're good and we link it
+		text_out = text_out.replace(word, "[["+ word +"]]")
+#REDMINE	[[WikiPageName]]
 
-def translate(trac_text):
-	#this order is important to account for '{{{' (monospace/code) and indentation(paragraph/lists)
-	trac_text = do_headers(trac_text)
-
-	
-	trac_text = do_lists_tables(trac_text)
-#	trac_text = do_paragraph_formatting(trac_text)
-#	trac_text = do_stylings(trac_text)
-#	trac_text = do_links(trac_text)
-#	trac_text = do_images(trac_text)
-#	trac_text = do_definitions(trac_text)
-	return trac_text
-
-print "Enter file location or 'no file' to exit program."
-file_loc = raw_input()
-while (file_loc!="no file"):
-	#Get file contents
-	input_file = open(file_loc,'r').read()
-
-	#Translate from trac wikiformatting to redmine wiki formatting
-	output_text = translate(input_file)
-	print output_text
-	#Put redmine version in new file <filename>.redmine
-	output_file = open(file_loc+'.redmine','w')
-	output_file.write(output_text)
-
-	#Get next file or break loop
-	print "Enter file location or 'no file' to exit program."
-	file_loc = raw_input()
-
-print "Normal program termination."
+#TRAC		[wiki:WikiPageName "Title"]
+titled_wiki = re.compile('\[wiki:[A-Za-z0-9.-]+ ".+"\]')
+all_twiki = titled_wiki.findall(text_out)
+for twiki in all_twiki:
+	title = re.compile('".+"').search(twiki)
+	hd = title.start()
+	page_name = twiki[len("[wiki:"):hd-1]
+	#REDMINE	[[WikiPageName|Title]]
+	new_twiki = "[["+page_name+"|"+title.group()+"]]"
+	text_out = text_out.replace(twiki,new_twiki)
+print text_out
