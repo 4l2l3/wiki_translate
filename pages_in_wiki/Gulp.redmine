@@ -1,0 +1,46 @@
+= GULP =
+[[PageOutline]]
+
+== Description ==
+
+_From the GULP homepage:_ GULP is a program for performing a variety of types of simulation on materials using boundary conditions of 0-D (molecules and clusters), 1-D (polymers), 2-D (surfaces, slabs and grain boundaries), or 3-D (periodic solids). The focus of the code is on analytical solutions, through the use of lattice dynamics, where possible, rather than on molecular dynamics. A variety of force fields can be used within GULP spanning the shell model for ionic materials, molecular mechanics for organic systems, the embedded atom model for metals and the reactive REBO potential for hydrocarbons. Analytic derivatives are included up to at least second order for most force fields, and to third order for many. 
+
+== Version ==
+
+*** *4.0*
+
+== Authorized Users ==
+
+*****ll Circe Users
+
+== Platform ==
+
+****@circe@ cluster
+
+== Running GULP on the Cluster ==
+
+p. The GULP documentation is essential to understanding the application and making the most of it.  This page should be all you need to get started with your simulations.
+*****ULP Documentation: https://www.ivec.org/gulp/help/
+
+p. To run GULP, simply execute the following within your job directory:
+{{{
+[user@host ~]$ run -n 16 -m 1.0G -t 1:00:00 -e INPUT=&lt;inputfile&gt; gulp/4.0
+}}}
+
+p. This will request 16 processors via MPI, 1 Gigabyte of memory per slot (for 16 GB total), and a 1 hour run-time.
+
+==== Tutorials ====
+p. The following folders contain input parameters for GULP examples and tutorials:
+*** /apps/gulp/4.0/examples
+
+==== Other Data ====
+p. Library sets are included in /apps/gulp/4.0/libraries.
+
+==== More Job Information ====
+p. See the following for more detailed job submission information:
+******iki:gridEngineUsers "SGE User's Guide"]
+*******ki:gridEnginePolicy "Scheduling and Dispatch Policies"]
+******iki:gridEngineTechn "Advanced Submit Techniques"]
+
+==== Reporting Bugs ====
+p. Report bugs directly to the IT Helpdesk: help@usf.edu

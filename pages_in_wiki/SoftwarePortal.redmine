@@ -1,0 +1,77 @@
+= Available Software =
+----
+p. This is a list of currently available software with links to respective documentation.  Software listed [[here]] is currently supported by Research Computing.  New software may be added as per user requests.
+
+| * Application_' | '_Latest Installed Version* |
+| [[abinit|ABINIT]] | 6.12.3 |
+| [[ABySS|ABySS]] | 1.2.7 |
+| [[ADS|ADS]] | 2009u1 |
+| [[Ansys|Ansys]] | 14.0 | 
+| [[AutoDock|AutoDock]] | 4.2.3 |
+| [[Blast|Blast]] | 2.2.22 | 
+| [[Cadence|Cadence]] | 04/25/2012 |
+| [wiki:CMAQ-4.7 CMAQ ] | 4.7 | 
+| [[FemlabUser|Comsol]] | 4.3a | 
+| [[cp2k|cp2k]] | 2.3.43 | 
+| [[dalton|Dalton]] | 2.0 | 
+| [[desnex|Designer]] | 6.0 | 
+| [wiki:dlpoly  "DL_POLY"] | 2.16, 3.06 | 
+| [[dock6|DOCK]] | 6.5 | 
+| [[esmf|ESMF]] | 5.2.0 | 
+| [[ESPRIT|ESPRIT]] | 20090715 | 
+| [[fastxToolkit|FASTX Toolkit]] | 0.0.13 | 
+| [[feram|feram]] | 0.19.06 |
+| [[Fidap|FIDAP]] | 8.7.4 |
+| [[Fidap|GAMBIT]] | 2.3.16 |
+| [[Gaussian|Gaussian]] | 09b01 | 
+| [[GaussView|GaussView]] | 5.0 | 
+| [[GMT|GMT]] | 4.5.5 | 
+| [wiki:GrADS  "GrADS"] | 2.0.1 | 
+| [wiki:Grass  "Grass GIS"] | 6.4.0 | 
+| [[Gromacs|Gromacs]] | 4.5.5 | 
+| [[Gulp|Gulp]] | 4.0 | 
+| [[Hadoop|Hadoop]] | 0.20.2 | 
+| [[HFSS|HFSS]] | 13.0.2, 14.0, 15.0 | 
+| [[IDLUser|IDL]] | 8.2 | 
+| [[Iso2Mesh|iso2mesh]] | 0.8.0 |
+| [[jmol|Jmol]] | 11.6.24 | 
+| [[LAMMPS|LAMMPS]] | 2Nov10 |
+| [[fdtd|Lumerical FDTD]] | 7.5.2 |
+| [[MapleUser|Maple]] | 16 | 
+| [[MathemUser|Mathematica]] | 9.0 | 
+| [[MatlabUser|Matlab]] | R2012b | 
+| [[Maya|Maya]] | 2013 |
+| [[Meep|Meep]] | 1.1.1 | 
+| [[MEGA|MEGA]] | 4.02 | 
+| [[Meme|Meme]] | 3.5.7 |
+| [[molden|Molden]] | 4.9 |
+| [[MOVES|MOVES]] | 2010b |
+| [[MPIBlast|MPI BLAST]] | 1.6.0 | 
+| [[MPP|MassProfilerPro (MPP)]] | 1.4.4 |
+| [[MrBayes|MrBayes]] | 3.1.2 | 
+| [[MSModeling|MS Modeling]] | 3.2 | 
+| [[namd|NAMD]] | 2.7 | 
+| [[nwchem|NWChem]] | 6.1.1 |
+| [[oases|Oases]] | 0.1.22 |
+| [[openfoam|OpenFOAM]] | 2.0.1 |
+| [[openmm|OpenMM]] | 4.0 |
+| [[PGIInstall|PGI Compilers]] | 7.x, 11.9 | 
+| [[proj|PROJ.4]] | 4.7.1 |
+| [[qe|Quantum Espresso]] | 5.0 |
+| [[Rmpi|R and RMPI]] | 2.11.1, 0.5-8 | 
+| [[SAS|SAS]] | 9.3 |
+| [[siesta|SIESTA]] | 3.1 |
+| [[Synopsys|Synopsys]] | 04/25/2012 |
+| [[TeraChem|TeraChem]] | 1.0 |
+| [[titan2d|TITAN2D]] | 2.0.1 |
+| [[transabyss|Trans-ABySS]] | 1.4.4 | 
+| [[vapor|Vapor]] | 2.1.0 | 
+| [[vasp|VASP]] | 5.2.8 | 
+| [[velvet|Velvet]] | 1.1.05 | 
+| [[vmd|VMD]] | 1.9 | 
+| [[vnc-class|vnc-class]] | 1.0 |
+| [[WEKA|WEKA]] | 3.6.2 | 
+| [[wrf|WRF]] | 3.3 |
+| [[XWin32Install|X-Win32]] | 2012 |
+
+~Please click the package name to access the documentation~

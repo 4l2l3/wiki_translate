@@ -1,0 +1,86 @@
+= ![[[[[[Fidap]]]]]]/Gambit =
+----
+[[PageOutline]]
+
+
+== Description ==
+
+p. FIDAP is the flow modeling tool of choice for applications such as polymer processing, thin film coating, biomedical, semiconductor crystal growth, metallurgy, glass processing and related fields. Based on the finite element method, FIDAP offers complete mesh flexibility and robust and efficient calculations. It is available for UNIX and Windows/NT workstations and is optimized for parallel processing.
+
+== Version ==
+
+p. FIDAP: *8.7.4*[[BR]]
+p. Gambit: *2.3.16*
+
+== Authorized Users ==
+
+*****circe` account holders
+
+== Platforms ==
+
+****@circe@ cluster
+
+== Local Documentation ==
+
+=== [[Modules]] ===
+
+p. [[[[[[Fidap]]]]]] requires the following module file and some prerequisites to run:
+*** @apps/fidap/8.7.4@
+
+p. Gambit requires the following module file and some prerequisites to run:
+*** @apps/gambit/2.3.16@
+
+p(. See [wiki:[[Modules]]] for more information.
+
+=== Submitting Jobs ===
+p. Users can use the following SGE script to run [[[[[[Fidap]]]]]] jobs with fisol over SGE:
+{{{
+#!/bin/bash
+##
+## FISOLV Submit script for SGE
+##
+#$ -cwd
+#$ -l arch=lx24-amd64
+#$ -j y
+#$ -o sge_output.$JOB_NAME.$JOB_ID
+#$ -N &lt;job_name&gt;
+
+p. INPUT_FILE=input.txt
+
+p. PATH=$PATH:/opt/apps/Fluent.Inc/bin
+
+function return_error(){
+p((((((((. case "$1" in
+p((((((((((((((((. ENVERR) STR="Incorrect environment parameters" ;;
+p((((((((((((((((. FPATHERR) STR="'fidap' executable not fount in PATH" ;;
+p((((((((((((((((. *) STR="Invalid error specifier" ;;
+p((((((((. esac
+p((((((((. echo $STR
+p((((((((. exit 1
+}
+
+[ -z "$JOB_NAME" ] | 
+[ -z "$JOB_ID" ]   | 
+[ -z "$TMPDIR" ]   &amp;&amp; return_error ENVERR
+
+## Check for 'fidap' in path, evaluate exit code $?
+which fidap &amp;&gt; /dev/null
+[ $? -ne 0 ] &amp;&amp; return_error FPATHERR
+
+## Specify scratch directory for working files
+p. SCRATCH=/tmp/$USER/$JOB_NAME.$JOB_ID
+
+## If SCRATCH directory does not exist, create it
+[ ! -d "$SCRATCH" ] &amp;&amp; mkdir -p $SCRATCH
+
+## Time and run fidap with specified SCRATCH location in FISOLV mode
+time fidap -fidapscr $SCRATCH $JOB_NAME -in $INPUT_FILE
+
+rm -rf $SCRATCH
+
+# end script
+}}}
+*Note:* This page is a place holder until more documentation is written.  The [[[[[[Fidap]]]]]] and Gambit user guides are located at the following links:
+
+******dap User Documentation: https://rc.usf.edu/soft/fidap/fidapdoc/index.htm
+******mbit User Documentation: https://rc.usf.edu/soft/fidap/gambitdoc/index.htm

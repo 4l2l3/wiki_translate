@@ -1,0 +1,64 @@
+= [[[[[[[[[[[[[[[[[[[[[[[[ADS]]]]]]]]]]]]]]]]]]]]]]]] =
+[[PageOutline]]
+
+== Description == 
+
+p. Advanced Design System ([[[[[[[[[[[[[[[[[[[[[[[[ADS]]]]]]]]]]]]]]]]]]]]]]]]) is the leading electronic design automation software for RF, microwave, and high speed digital applications. [[[[[[[[[[[[[[[[[[[[[[[[ADS]]]]]]]]]]]]]]]]]]]]]]]] pioneers the most innovative and commercially successful technologies, such as X-parameters and 3D EM simulators, used by leading companies in the wireless communication &amp; networking and aerospace &amp; defense industries. For WiMAX™, LTE, multi-gigabit per second data links, radar, &amp; satellite applications, [[[[[[[[[[[[[[[[[[[[[[[[ADS]]]]]]]]]]]]]]]]]]]]]]]] provides full, standards-based design and verification with Wireless Libraries and circuit-system-EM co-simulation in an integrated platform.
+
+****From: http://www.home.agilent.com/agilent/product.jspx?nid=-34346.0.00&amp;cc=US&amp;lc=eng
+
+== Version ==
+
+*** *2009u1*
+
+== Authorized Users ==
+
+*****circe` account holders
+
+== Platforms ==
+
+****@circe@ cluster
+
+== Running [[[[[[[[[[[[[[[[[[[[[[[[ADS]]]]]]]]]]]]]]]]]]]]]]]] on the Cluster ==
+
+=== [[Modules]] ===
+
+p. Before running a job, you must first set up your environment properly. Here are the required module files:
+
+*** apps/ads/2009u1
+
+p. To run [[[[[[[[[[[[[[[[[[[[[[[[ADS]]]]]]]]]]]]]]]]]]]]]]]] on the cluster, ensure that you use @module add@ prior to using any [[[[[[[[[[[[[[[[[[[[[[[[ADS]]]]]]]]]]]]]]]]]]]]]]]] executables.  See [wiki:[[Modules]]] for more information.
+
+=== Multiprocessor Graphical [[[[[[[[[[[[[[[[[[[[[[[[ADS]]]]]]]]]]]]]]]]]]]]]]]] ===
+
+p. [[[[[[[[[[[[[[[[[[[[[[[[ADS]]]]]]]]]]]]]]]]]]]]]]]] can be run on Circe either using the run command from a terminal window or through the NX environment using the Applications menu. For more information about the NX environment, please see our [[CirceDesktop|Circe NX Desktop]] documentation.  Below is an example for using the run command.
+
+{{{ 
+run -i -n 2 -m 2.0G -t 04:00:00 ads/2009u1
+}}}
+
+p. This will start an interactive 2 processor [[[[[[[[[[[[[[[[[[[[[[[[ADS]]]]]]]]]]]]]]]]]]]]]]]] session with a limit of 2 GB of RAM for 4 hours.  If you have a properly configured X11 session, you should see the full [[[[[[[[[[[[[[[[[[[[[[[[ADS]]]]]]]]]]]]]]]]]]]]]]]] interface.  For users wishing to use the graphical interface over X11 on Windows, please see our [[XWin32Install|XWin32 Installation]] documentation.
+
+=== Using Design Kits ===
+
+p. To load currently installed design kits, click !DesignKit-&gt;List Design Kits, and enable the ones you would like to use.
+
+p. To load you own design kits, follow the instructions below.
+
+1. Start [[[[[[[[[[[[[[[[[[[[[[[[ADS]]]]]]]]]]]]]]]]]]]]]]]] and install the design kit:
+p(((((. a. From the [[[[[[[[[[[[[[[[[[[[[[[[ADS]]]]]]]]]]]]]]]]]]]]]]]] main window, click !DesignKit-&gt;Install Design Kits;
+p(((((. b. Click Browse (next to Path) and locate the design kit library folder;
+p(((((. c. The rest of the information will fill in automatically;
+p(((((. d. Select USER LEVEL;
+p(((((. e. Click OK and the design kit will be installed.
+
+2. The new library design kit can now be run; the components can be selected from either the component pallet or component library.
+
+=== More Job Information ===
+p. See the following for more detailed job submission information:
+******iki:gridEngineUsers "SGE User's Guide"]
+*******ki:gridEnginePolicy "Scheduling and Dispatch Policies"]
+******iki:gridEngineTechn "Advanced Submit Techniques"]
+
+=== Reporting Bugs ===
+p. Report bugs to the IT Help Desk: help@usf.edu

@@ -1,0 +1,138 @@
+= ANSYS =
+[[PageOutline]]
+
+== Description == 
+p. ANSYS is an engineering package and support routine for general-purpose, finite-element analysis:  statics, mode frequency, stability analysis, heat transfer, magnetostatics, coupled field analysis, modeling, etc. ANSYS was developed and is supported by ANSYS, Inc.
+
+******ttp://www.ansys.com/Products "ANSYS Software Products"]
+
+== Version ==
+*** *14.0*
+
+== Authorized Users ==
+*****circe` account holders
+
+== Platforms ==
+****@circe@ cluster
+
+== [[Run]]ning [[[[[[[[[[[[[[[[Ansys]]]]]]]]]]]]]]]] Jobs on the Cluster ==
+
+=== [[Modules]] ===
+p. Before running a job, you must first set up your environment properly. Here are the required module files:
+
+*** apps/ansys/14.0
+
+p. To run ANSYS on the cluster, ensure that you use @module add@ prior to using any [[[[[[[[[[[[[[[[Ansys]]]]]]]]]]]]]]]] executables.  See [wiki:[[Modules]]] for more information.
+
+=== Interactive Execution via NX ===
+p. [[Run]] the following to get a 4 processor session for [[[[[[[[[[[[[[[[Ansys]]]]]]]]]]]]]]]] using the interactive GUI (NOTE: you must be logged into Circe via the NX client for this to work):
+
+{{{
+qrsh -l ppn=4,nodes=1 -display "$(hostname)${DISPLAY}" $(which ansysdis140) -g
+}}}
+
+p. To run [[[[[[[[[[[[[[[[Ansys]]]]]]]]]]]]]]]] Workbench using the GUI, use the following updated command:
+
+{{{
+qrsh -l ppn=4,nodes=1 -display "$(hostname)${DISPLAY}" $(which runwb2)
+}}}
+
+p. To run [[[[[[[[[[[[[[[[Ansys]]]]]]]]]]]]]]]] Fluent using the GUI, a few more steps must be taken, in addition to using another command sequence.
+
+1.  You must take note of the CIRCE login node that you're presently logged into.  You should see something like *[user@wh-520-5-24 ~]$*.  The current valid hosts are wh-520-5-24, wh-520-5-25, wh-520-5-26, and wh-520-5-27.
+
+2.  You must take note of the current X display that you're using so that it can be properly exported.  To do this, you'll run the command below and what you should expect to see on the shell:
+
+{{{
+[user@wh-520-5-27 ~]$ echo $DISPLAY
+:7009.0
+}}}
+
+3.  You now have your display variables necessary to use the [[[[[[[[[[[[[[[[Ansys]]]]]]]]]]]]]]]] GUI on a compute node within the cluster.  You now need to run the command below:
+
+{{{
+qlogin -l ppn=4,nodes=1 
+}}}
+
+4.  If all goes well, you should see a message that states your session was established on a compute node:
+
+{{{
+qlogin -l ppn=4,nodes=1
+p. Your job 290804 ("QLOGIN") has been submitted
+waiting for interactive job to be scheduled ...
+p. Your interactive job 290804 has been successfully scheduled.
+p. Establishing builtin session to host wh-520-3-7 ...
+}}}
+
+5.  You'll now need to export the display variables taken from steps 1 and 2 above.  You'll run the following command:
+
+{{{
+export DISPLAY=wh-520-5-27:7009
+}}}
+
+6.)  The last step is to load the [[[[[[[[[[[[[[[[Ansys]]]]]]]]]]]]]]]] module as described above and then start [[[[[[[[[[[[[[[[Ansys]]]]]]]]]]]]]]]] Fluent by typing "fluent" on the console:
+
+{{{
+fluent
+}}}
+
+
+=== How to Submit Jobs ===
+p. Provided are batch scripts for running ANSYS as a single processor and multi-processor job.  Most existing ANSYS scripts will run in parallel mode with no modification.  These scripts can be copied into your work directory (the folder with your input files and database files) so that you can submit batch processes to the queue.  For help on submitting jobs to the queue, see our [[gridEngineUsers|GridEngine User's Guide]]
+
+=== Serial Submit Script ===
+{{{
+#$ -N ansys_job_name
+#$ -l h_rt=hh:mm:ss,aa_r=1
+#$ -cwd
+
+module add apps/ansys/14.0
+p. ANSYS_OPTS="-p aa_r -dir @pwd@ -b"
+time ansysdis130 $ANSYS_OPTS &lt; $JOB_NAME
+}}}
+
+=== Multi-Threaded Parallel Submit Script ===
+{{{
+#$ -N ansys_job_name
+#$ -l h_rt=hh:mm:ss,aa_r=1,aa_r_hpc=2,nodes=1,ppn=4
+#$ -cwd
+
+module add apps/ansys/14.0
+p. ANSYS_OPTS="-p aa_r -dir @pwd@ -b -np $NSLOTS"
+time ansysdis140 $ANSYS_OPTS &lt; $JOB_NAME
+}}}
+
+=== Distributed Parallel (MPI) Submit Script ===
+{{{
+#$ -N ansys_job_name
+#$ -l h_rt=hh:mm:ss,aa_r=2,aa_r_hpc=6,pcpus=8
+#$ -cwd
+
+module add apps/ansys/14.0
+p. ANSYS_OPTS="-p aa_r -dir @pwd@ -b -dis -machines $(cat $TMPDIR/machines.ansys)"
+time ansysdis140 $ANSYS_OPTS &lt; $JOB_NAME
+}}}
+
+p. Where @$JOB_NAME@ and is the name of the input file you are using.  
+
+== Licensing ==
+p. Since we have a limited number of ANSYS licenses, you'll need to specify some options when running your job.  You can see how these options are set in the above sample scripts.
+
+*For 1-2 processor ANSYS jobs*, the option @aa_r@ is all you need to be concerned with.  You can set this to one in either case.  This will insure that your job does not try to run when there are no licenses available and thus failing (potentially after waiting for some time in the queue... this can be aggravating).
+
+*For 3-8 processor ANSYS jobs*, you'll need to set @aa_r@ to 2. You'll also need to set `aa_r_hpc` to `($NSLOTS-2)` or the number of processors minus two.  That figure, unfortunately, must be calculated and included before submitting your job as there is no automatic way to accomplish this.  This will be fixed in the next release of !GridEngine.  You can determine `feature` from this table:
+
+==== Figure 1.a: ANSYS License Features ====
+|*Feature_'|'_Description* |
+| aa_mcad     | Academic Research |
+| aa_r        | Academic Research * |
+| aa_r_hpc    | HPC License |
+
+=== More Job Information ===
+p. See the following for more detailed job submission information:
+******iki:gridEngineUsers "SGE User's Guide"]
+*******ki:gridEnginePolicy "Scheduling and Dispatch Policies"]
+******iki:gridEngineTechn "Advanced Submit Techniques"]
+
+=== Reporting Bugs ===
+p. Report bugs to the IT Help Desk: help@usf.edu

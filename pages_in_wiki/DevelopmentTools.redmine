@@ -1,0 +1,59 @@
+= Software Development Tools =
+----
+[[PageOutline]]
+
+p. Research Computing provides a number of software development tools, compilers, libraries, debuggers, IDEs, interpreters, etc. on the CIRCE environment.  Many of these are accessible via the [[Modules|Environment Modules]] system.
+
+== Compilers ==
+p. The following compilers are available on CIRCE for C, C++, Fortran, and Java:
+
+| *Vendor_' | '''Version_' | '_C_' | '_C++_' | '_Fortran_' | '_Java''' | '_Module* |
+| GNU Compiler Collection (GCC) | 4.4.6 | gcc | g++ | gfortran | gcj | compilers/gcc/4.4.6 |
+| Intel Compiler Suite | 12.1.0 | icc | icpc | ifort | n/a | compilers/intel/12.1.0 |
+| Pathscale !EkoPath | 4.0.11 | pathcc | pathCC | pathf90/pathf77 | n/a | compilers/pathscale/4.0.11 |
+| Portland Group PGI | 11.9 | pgcc | pgCC | pgf77/pgf90 | n/a | compilers/pgi/11.9 |
+
+== MPI Libraries ==
+p. Many numerical codes now have support for compiling and linking against MPI or Message Passing Interface libraries.  Research Computing supports the use of the OpenMPI libraries.  Several other MPI versions are available for compatibility purposes, but OpenMPI receives the best support from our group.  Prior to using an MPI library, you will wish to load a module for a compiler suite, as shown in the table above.
+
+| *Vendor_' | '''Version_' | '_Supported Compilers''' | '_Module* |
+| OpenMPI | 1.4.4 | GCC. Intel, PGI, Pathscale | mpi/openmpi/1.4.4 |
+| MVAPICH2 | 1.6 | GCC, Intel, PGI, Pathscale | mpi/mvapich2/1.6 |
+
+=== Stable &amp; Tested Compiler/MPI Version Combinations ===
+p. Other combinations have been tested and shown to be stable, but these are the combinations we recommend and will be better able to support:
+
+| *Compiler Module_' | '_MPI Module* |
+| compilers/gcc/4.4.2   | mpi/openmpi/1.4.4 |
+| compilers/intel/12.1.0 | mpi/openmpi/1.4.4 |
+| compilers/pgi/11.9   | mpi/openmpi/1.4.4 |
+| compilers/pathscale/4.0.11   | mpi/openmpi/1.4.4 |
+
+== Numerical Libraries ==
+p. The following numerical libraries for BLAS, LAPACK, FFTW, GSL, etc. are available and supported on the system:
+
+| *Name_' | '_Provides_' | '_Vendor_' | '_Version_' | '_Linker Flags* | 
+| ACML       | BLAS/LAPACK | AMD | 4.4.0 | -L/opt/lib/acml/4.4.0/gfortran64/lib -lacml_mv -lacml | 
+| | | | | -L/opt/lib/acml/4.4.0/gfortran64_mp/lib -lacml_mv -lacml |
+| MKL | BLAS/LAPACK/BLACS | Intel | 12.1.0 | -mkl=sequential | 
+| | SCALAPACK/FFT | | | -mkl=&lt;parallel|cluster&gt; |
+
+== Scripting Languages ==
+p. The systems support a number of scripting languages.  The table below provides further information:
+
+| *!Shell/Language_' | '_Version_' | '_Location * |
+| bash | 3.2 | /bin/bash |
+| tcsh | 6.14 | /bin/tcsh |
+| perl | 5.8.8 | /usr/bin/perl |
+| python | 2.4.3 | /usr/bin/python |
+| ruby | 1.8.5 | /usr/bin/ruby |
+
+== IDEs ==
+p. Integrated Development Environments are available via the [[CirceDesktop|NX desktop environment]] Applications menu.  The following are installed:
+
+| *Name_' | '_Version* |
+| Eclipse | Ganymede |
+| Netbeans | 6.5 |
+
+== Debugging and Profiling ==
+p. Numerous debuggers and profiling tools are installed.  Please consult the documentation for your selected compiler for more information.  

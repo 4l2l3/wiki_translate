@@ -1,0 +1,37 @@
+= [[[[[[[[MOVES]]]]]]]] =
+----
+[[PageOutline]]
+
+== Description == 
+
+_From Q&amp;A:_ MOtor Vehicle Emission Simulator ([[[[[[[[MOVES]]]]]]]]) is U.S. Environmental Protection Agency’s (EPA’s) state-of-the-art tool for estimating emissions from highway vehicles. The model is based on analyses of millions of emission test results and considerable advances in the Agency’s understanding of vehicle emissions.
+
+*******tp://www.epa.gov/otaq/models/moves/index.htm "US EPA [[[[[[[[MOVES]]]]]]]] Website"]
+
+== Versions ==
+
+*** *2010b*
+
+== Authorized Users ==
+
+****WHPC-Login Users
+p. If you receive a permissions error stating that your account doesn't have access, please email help@usf.edu and ask to be added to the Windows HPC user group on whpc-login.rc.usf.edu
+
+== Platforms ==
+
+*** whpc-login.rc.usf.edu
+
+==== Logging On ====
+p(. To log onto whpc-login.rc.usf.edu, you will need to use a remote desktop client. 
+**************************** it is recommended to use "rdesktop -u 'FOREST\&lt;username&gt;' whpc-login.rc.usf.edu" from the terminal. To view more options for rdesktop, view the manual page. 
+
+****************s machine, launch "Remote Desktop Connection" and specify "whpc-login.rc.usf.edu" for the 'Computer' field.
+
+=== Submitting Jobs ===
+p. Once logged onto the machine, double-click the desktop shortcut for [[[[[[[[MOVES]]]]]]]] master to open the graphical user interface to begin working with the [[[[[[[[MOVES]]]]]]]] software.
+
+=== Getting Job Status and Progress Information ===
+p. Please see our [[WinHPCJobStatus|Windows HPC Job Information page]] for information on managing your jobs, viewing status, and tracking output.
+
+== Getting Help ==
+p. Please report any issue to the USF IT Helpdesk by sending an e-mail to help@usf.edu

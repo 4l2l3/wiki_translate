@@ -1,0 +1,69 @@
+= Lumerical FDTD Solutions =
+----
+[[PageOutline]]
+
+=== Description ===
+
+_From the FDTD Solutions web site:_ Employing the industry proven finite-difference time-domain (FDTD) method, FDTD Solutions empowers designers to confront the most challenging optical design problems.  http://www.lumerical.com/fdtd.php
+
+=== Version ===
+
+*** *7.5.2*
+
+=== Authorized Users ===
+
+*********rized students from Venkat Bhethanabotla's research group
+
+=== Platform ===
+
+****@circe@ cluster
+****Desktop Workstation
+-----
+== Install FDTD Solutions on Windows XP/Vista/7 Workstation ==
+********** product CD and follow prompts for installation
+**********rompted for *MPICH2_' subsystem, '_do not install*
+***********e Installation and start FDTD Solutions from start menu
+*******************cense key configuration will appear.  Click the link to "Check HASP key status..."
+************r window will appear with the HASP license configuration
+********* on 'Configuration'-&gt;'Access to Remote License Managers'
+***********he box for 'Aggressive search of remote licenses'
+*********e 'Specify search parameters' box, enter
+p(((. {{{
+itrc-adm1.rc.usf.edu
+}}}
+**********on 'Submit' and close the browser window
+************************ious license dialog and close FDTD Solutions (A few errors may pop up here, which can be ignored)
+*******************************************g that there are no license keys configured may appear.  If it does, go to the configuration and under the 'HASP Key ID' select the numerical license key that appears in the drop-down dialog.
+
+=== Mapped Network Drive Configuration ===
+p. It is HIGHLY RECOMMENDED that you map your Circe home directory to your S: drive and save all FDTD solution work to it.  This way, it is available on the cluster when you decide its time to run a distributed analysis.  For information on performing this process, see the following guide: [[CirceDataAccess|Accessing Your Data]]
+-----
+== [[Run]]ning FDTD Solutions on the Cluster ==
+p. Below is an example of how to run FDTD Solutions on Circe using your S: drive and locally-installed FDTD Solutions software.
+
+*********** workstation, I've saved my project to @S:\nanowire\nanowire_1.fsp@
+***************************ia SSH and change my directory to ~/nanowire, which is the same directory that appears on my S: drive: 
+p(((. {{{
+[user@host ~]$ cd ~/nanowire
+[user@host nanowire]$
+}}}
+*****************olutions, I submit a job to the scheduler, specifying my project file:
+p(((. {{{
+[user@host nanowire]$ run -n 8 -t 1:00:00 -e FSPFILE=nanowire_1.fsp fdtd/7.5.2
+}}}
+****************he status of my job with the @qstat@ command.  
+*********************on is complete, I can open S:\nanowire\nanowire_1.fsp from FDTD Solutions on my workstation to view the results.
+
+p. For more information on using the @run@ command, see [wiki:[[Run]] "The GridEngine [[Run]] Utility"].
+
+==== Benchmarks &amp; Tutorials ====
+p. The following folder contains example projects for FDTD Solutions :
+****C:\Program Files\Lumerical\FDTD\examples
+
+==== More Job Information ====
+p. See the following for more detailed job submission information:
+******iki:gridEngineUsers "SGE User's Guide"]
+*******ki:gridEnginePolicy "Scheduling and Dispatch Policies"]
+-----
+== Reporting Bugs ==
+p. Report bugs directly to the IT Help Desk: help@usf.edu

@@ -1,0 +1,29 @@
+= Interactive Jobs =
+----
+
+
+p. The !GridEngine system on Circe allows users to run applications on available compute nodes while in a full shell session.  This allows users to run applications that require direct user input and full graphical applications that require more extensive compute resources.
+
+p. Interactive jobs can be run within a scheduled shell using the @qlogin@.  You'll want to see the [[gridEngineUsers|User's Guide]] for more information about these options.  Here is an example:
+{{{
+[user@login0 ~]$ qlogin
+p. Last login: Wed Oct 31 15:26:22 from login1
+[user@lib-618p-1-1 ~]$ 
+}}}
+p. You can now run any compute-intensive task interactively.
+
+p. Let us say that you require a minimum of 4GB of RAM for your interactive task.  We can ask the scheduler to put us on a node with &gt;4GB of RAM by requesting the @mem_free@ complex like so:
+{{{
+[user@login0 ~]$ qlogin -l mps=4G,h_rt=01:00:00
+p. Last login: Wed Oct 31 15:26:22 from login1
+[user@clib-618p-2-4 ~]$ free
+p(((((((((((((. total       used       free     shared    buffers     cached
+p. Mem:       8234748     272780    7961968          0      35120     123192
+-/+ buffers/cache:     114468    8120280
+p. Swap:      2096440      42972    2053468
+}}}
+
+p. You can specify a wide variety of complexes.  See [[UsingComplexes|Using Complexes]]
+
+== Graphical Jobs ==
+p. The same rules apply for graphical jobs.  Your X11 connection will be forwarded from the remote compute node so that your application will appear on your desktop.  We highly recommend using the [[CirceDesktop|Circe Desktop Environment]] if you plan to utilize any graphical applications on the cluster.

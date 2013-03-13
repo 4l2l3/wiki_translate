@@ -1,0 +1,89 @@
+= Velvet =
+[[PageOutline]]
+
+== Description == 
+
+_From the Velvet web site'': Velvet is a ''de novo_ genomic assembler specially designed for short read sequencing technologies, such as Solexa or 454 or SOLiD.  Velvet currently takes in short read sequences, removes errors then produces high quality unique contigs. It then uses paired-end read and long read information, when available, to retrieve the repeated areas between contigs.
+
+*** http://www.ebi.ac.uk/~zerbino/[[velvet]]/
+
+== Version ==
+
+*** *1.1.05*
+
+== Authorized Users ==
+
+*****circe` account holders
+
+== Platforms ==
+
+****@circe@ cluster
+
+== Running Velvet Jobs on the Cluster ==
+
+=== [[Modules]] ===
+
+p. Before running a job, you must first set up your environment properly.  Here are the required module files:
+
+*** apps/[[velvet]]/1.1.05
+
+p. To run Velvet on the cluster, ensure that you use @module add@ prior to using any executables.  See [wiki:[[Modules]]] for more information.
+
+=== How to Submit Jobs ===
+
+p. Provided are batch scripts for running Velvet executables on the cluster.  These scripts can be copied into your work directory (the folder with your input files and database files) so that you can submit batch processes to the queue.  For help on submitting jobs to the queue, see our [[gridEngineUsers|GridEngine User's Guide]].  These scripts are provided as examples only.  Your SGE and Velvet options will vary.  View the product manual or this site (http://seqanswers.com/wiki/Velvet) for more about Velvet runtime options.
+
+=== Serial Submit Script ===
+**********************onstruct the dataset for the following program, [[velvet]]g, and indicate to the system what each sequence ﬁle represents.
+
+{{{
+#$ -N [[velvet]]_job_name
+#$ -l h_rt=hh:mm:ss
+#$ -cwd
+#$ -j y
+#$ -o output.$JOB_ID
+
+module add apps/[[velvet]]/1.1.05
+
+[[velvet]]h output_directory hash_length {[-file_format] [-read_type] filename} [options]
+}}}
+
+*Note:*  The k-mer length and categories values have a maximum of 57.  See the Velvet Manual for more information about [[velvet]]h options and syntax.
+
+=== Distributed Parallel (MPI) Submit Script ===
+***************** core of Velvet where the de Bruijn graph is built then manipulated. 
+
+p. Although [[velvet]]g saves some ﬁles during the process to avoid useless recalculations, the parameters are not saved from one run to the next.
+
+{{{
+#$ -N [[velvet]]_job_name
+#$ -l h_rt=hh:mm:ss, pcpus=4
+#$ -cwd
+#$ -j y
+#$ -o output.$JOB_ID
+
+module add apps/[[velvet]]/1.1.05
+
+[[velvet]]g output_directory [options]
+}}}
+
+p. See the Velvet Manual for more information about [[velvet]]g options and syntax.
+
+p. Colorspace versions of the Velvet executables are also available as '[[velvet]]h_de' and '[[velvet]]g_de'.  Beware that color- and sequence space are incompatible, hence separate sets of executables.  In other words, don’t try to hash sequence ﬁles with colorspace [[velvet]] or vice-versa, under penalty of meaningless results!
+
+=== Manuals and Test Data ===
+p. Velvet Program Manual
+*** http://www.ebi.ac.uk/~zerbino/[[velvet]]/Manual.pdf
+*** /opt/apps/[[velvet]]/1.1.05/Maunual.pdf
+
+p. The following folder contains input parameters for known Velvet tests:
+*** /opt/apps/[[velvet]]/1.1.05/data
+
+=== More Job Information ===
+p. See the following for more detailed job submission information:
+******iki:gridEngineUsers "SGE User's Guide"]
+*******ki:gridEnginePolicy "Scheduling and Dispatch Policies"]
+******iki:gridEngineTechn "Advanced Submit Techniques"]
+
+=== Reporting Bugs ===
+iReport bugs to the IT Help Desk: help@usf.edu

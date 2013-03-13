@@ -1,0 +1,63 @@
+= Trans-[[ABySS]] =
+[[PageOutline]]
+
+== Description == 
+
+_From the Trans-[[ABySS]] web site_:  Trans-[[ABySS]] is a software pipeline for analyzing [[ABySS]]-assembled contigs from shotgun transcriptome data. The pipeline accepts assemblies that were generated across a wide range of k values in order to address variable transcript expression levels. It first filters and merges the multi-k assemblies, generating a much smaller set of nonredundant contigs. It contains scripts that map assembled contigs to known transcripts, currently supporting the Blat contig-to-genome aligner. It identifies novel splicing events like exon-skipping, novel exons, retained introns, novel introns, and alternative splicing. Its scripts can also identify candidate gene-fusions, single-nucleotide variants, insertions, deletions, and inversions.
+
+*** http://www.bcgsc.ca/platform/bioinfo/software/trans-abyss
+
+== Version ==
+
+*** *1.4.4*
+
+== Authorized Users ==
+
+*****circe` account holders
+
+== Platforms ==
+
+****@circe@ cluster
+
+== Running Trans-[[ABySS]] Jobs on the Cluster ==
+
+=== [[Modules]] ===
+
+p. Before running a job, you must first set up your environment properly.  Here are the required module files:
+
+*** apps/trans-abyss/1.4.4
+
+p. To run Trans-[[ABySS]] on the cluster, ensure that you use @module add@ prior to using any executables.  See [wiki:[[Modules]]] for more information.
+
+=== How to Submit Jobs ===
+p. Make sure to run your job from your $WORK directory. Use the a submit script like the following to run Trans-[[ABySS]]:
+
+{{{
+#$ -N &lt;job_name&gt;
+#$ -l h_rt=HH:MM:SS,pcpus=&lt;#_of_processors&gt;
+#$ -cwd
+#$ -j y
+#$ -o output.$JOB_ID
+
+module purge
+module load apps/trans-abyss/1.4.4
+
+python wrappers/trans_abyss.py &lt;arguments&gt; &lt;input_file(s)&gt;
+}}}
+
+p. Your submit scripts will vary depending on your individual needs.
+
+p. For help on submitting jobs to the queue, see our [[gridEngineUsers|GridEngine User's Guide]].  These scripts are provided as examples only.  Your SGE and [[ABySS]] options will vary.  View the user's guide (link and location provided below) for more about Trans-[[ABySS]] options.
+
+=== Documentation ===
+*** /apps/trans-abyss/1.4.4/trans-abyss-manual-v1.4.4.pdf
+*****http://www.bcgsc.ca/platform/bioinfo/software/trans-abyss/releases/1.4.4 "User's Guide"]
+
+=== More Job Information ===
+p. See the following for more detailed job submission information:
+******iki:gridEngineUsers "SGE User's Guide"]
+*******ki:gridEnginePolicy "Scheduling and Dispatch Policies"]
+******iki:gridEngineTechn "Advanced Submit Techniques"]
+
+== Reporting Bugs ==
+p. Report bugs to the IT Help Desk: help@usf.edu

@@ -1,0 +1,56 @@
+= VASP =
+----
+[[PageOutline]]
+
+== Description ==
+
+_From the VASP homepage:_ VAMP/VASP is a package for performing ab-initio quantum-mechanical molecular dynamics (MD) using pseudopotentials and a plane wave basis set. The approach implemented in VAMP/VASP is based on a finite-temperature local-density approximation (with the free energy as variational quantity) and an exact evaluation of the instantaneous electronic ground state at each MD-step using efficient matrix diagonalization schemes and an efficient Pulay mixing. These techniques avoid all problems occurring in the original Car-Parrinello method which is based on the simultaneous integration of electronic and ionic equations of motion. The interaction between ions and electrons is described using ultrasoft Vanderbilt pseudopotentials (US-PP) or the projector augmented wave method (PAW). Both techniques allow a considerable reduction of the necessary number of plane-waves per atom for transition metals and first row elements. Forces and stress can be easily calculated with VAMP/VASP and used to relax atoms into their instantaneous groundstate.
+
+== Version ==
+
+*** *5.2.8*
+
+== Authorized Users ==
+
+**********boratory for the Study of Band Structures
+
+== Platform ==
+
+****@circe@ cluster
+
+== [[Run]]ning VASP on the Cluster ==
+
+p. The VASP guide is essential to understanding the application and making the most of it.  The guide and this page should be all you need to get started with your simulations.
+*****ASP Guide: http://cms.mpi.univie.ac.at/vasp/vasp/vasp.html
+
+p. VASP runs reasonably well on most types of hardware but its performance depends greatly upon the number of atoms in the system, the k-point configuration specified in the KPOINTS file, and the number of ionic or relaxation steps you specify in INCAR.  For smaller systems with a small set of atoms and k-point configuration, Gigabit Ethernet is sufficient for communications, but for anything more involved, you will definitely want to use Myrinet or ![[InfiniBand]] for an interconnect.  In certain cases, VASP may even benefit from running on a large, shared memory multi-processor machine.
+
+p. To run VASP, simply execute the following within your job directory:
+{{{
+[user@host ~]$ run -n 16 -f i_ib -t 1:00:00 vasp/5.2.8
+}}}
+
+p. This will request 16 processors via MPI, [[InfiniBand]] interconnect (@-f i_ib@) and a 1 hour run-time.
+
+p. For more information on [[Run]], see [wiki:[[Run]] "The GridEngine [[Run]] Utility"].
+
+==== Benchmarks &amp; Tutorials ====
+p. The following folders contain input parameters for known VASP benchmarks and tutorials:
+*** /opt/apps/vasp/Hg
+*** /opt/apps/vasp/benchmark
+*** /opt/apps/vasp/tutor/diamant
+
+==== Other Data ====
+p. Pseudo-Potential sets are included in /opt/apps/vasp in the pot directories.
+
+==== More Job Information ====
+p. See the following for more detailed job submission information:
+******iki:gridEngineUsers "SGE User's Guide"]
+*******ki:gridEnginePolicy "Scheduling and Dispatch Policies"]
+******iki:gridEngineTechn "Advanced Submit Techniques"]
+
+==== Reporting Bugs ====
+p. Report bugs directly to Research Computing: support@rc.usf.edu
+*******IMPORTANT INFORMATION''': Please read carefully
+p(. 1. This program is only available to members of the *USF Laboratory for the study of Band Structures*.  
+p(. 2. Only certain members of the Band Structure Lab are authorized to contact VASP developers for assistance with problems.  HENCE, ALL SUPPORT REQUESTS MUST GO THROUGH RESEARCH COMPUTING unless you know you are one of these members.

@@ -1,0 +1,78 @@
+= [[[[[[[[[[[[Gromacs]]]]]]]]]]]] =
+----
+[[PageOutline]]
+
+== Description == 
+
+_From the [[[[[[[[[[[[Gromacs]]]]]]]]]]]] web site:_ GROMACS is a versatile package to perform molecular dynamics and energy minimization, i.e. simulate the Newtonian equations of motion for systems with hundreds to millions of particles.  It is primarily designed for biochemical molecules like proteins, lipids and nucleic acids that have a lot of complicated bonded interactions, but since GROMACS is extremely fast at calculating the nonbonded interactions (that usually dominate simulations) many groups are also using it for research on non-biological systems, e.g. polymers.  GROMACS supports all the usual algorithms you expect from a modern molecular dynamics implementation, (check the online reference or manual for details), but there are also quite a few features that make it stand out from the competition.
+
+******ttp://www.gromacs.org "[[[[[[[[[[[[Gromacs]]]]]]]]]]]] Home Page"]
+
+== Version ==
+
+*** *4.5.5*
+p(. 
+== Authorized Users ==
+
+*****circe` account holders
+
+== Platforms ==
+
+****@circe@ cluster
+
+== Local Documentation ==
+
+=== [[Modules]] ===
+p. [[[[[[[[[[[[Gromacs]]]]]]]]]]]] requires the following module file and some prerequisites to run:
+*** @apps/gromacs/4.5.5@
+p. See [wiki:[[Modules]]] for more information.
+
+=== Submitting Jobs ===
+
+p. The [[[[[[[[[[[[Gromacs]]]]]]]]]]]] Manual is essential to understanding the application and making the most of it.  The guide and this page should help you to get started with your simulations.
+*****http://www.gromacs.org/Documentation/Manual "[[[[[[[[[[[[Gromacs]]]]]]]]]]]] Manuals"]
+or
+*** /apps/gromacs/4.5.5/manual-4.5.4.pdf
+
+p. Information about individual executables can also be found using man pages, i.e "man mdrun" or "man pdb2gmx", *after* you have loaded the [[[[[[[[[[[[Gromacs]]]]]]]]]]]] module.
+
+p. In order to start a simulation, you will need a protein or molecule to play with. Go to http://www.rcsb.org/pdb/ and grab one in @.pdb@ format.  Follow the below procedure for simple molecules.
+
+***********************;pdb file&gt;@ on it to convert it to a @ file(s).
+
+**************onf` with proper parameters to change the dimensions of the box.
+
+**********enbox` with proper parameters to add solvate.
+
+*********grompp` to pre-process your input data.
+
+*****************************eded for @grompp@ and modify it in your local directory as needed.
+
+********** the @run@ utility to perform the simulation:
+p(((. {{{
+# This will execute a the single-precision mdrun binary on 16 processors and 8 GB memory
+run -n 16 -m 8G -N gmx_test -e SDP="mpi_s" gromacs/4.5.5
+
+# Setting SDP to mpi_d will execute the double-precision version on mdrun.
+# If you want to specify command line options to mdrun, use ARGV with the -e option as shown below:
+run -n 16 -m 8G -N gmx_test -e ARGV="-v -xvg xmgr",SDP="mpi_d" gromacs/4.5.5
+p(((. }}}
+
+p. For more information on [[Run]], see [wiki:[[Run]] "The GridEngine [[Run]] Utility"].
+
+=== Benchmarks and Tests ===
+
+p. The following contain input parameters for known [[[[[[[[[[[[Gromacs]]]]]]]]]]]] tests:
+*** /apps/gromacs/4.5.5/share/gromacs/tutor
+*** http://www.gromacs.org/Documentation/Tutorials
+
+=== More Job Information ===
+p. See the following for more detailed job submission information:
+******iki:gridEngineUsers "SGE User's Guide"]
+*******ki:gridEnginePolicy "Scheduling and Dispatch Policies"]
+******iki:gridEngineTechn "Advanced Submit Techniques"]
+
+=== Reporting Bugs ===
+p. Report bugs to the IT Help Desk: help@usf.edu
+
+

@@ -1,0 +1,59 @@
+= Quantum ESPRESSO =
+----
+[[PageOutline]]
+
+== Description ==
+_From the Quantum ESPRESSO website:_ "Quantum ESPRESSO is an integrated suite of Open-Source computer codes for electronic-structure calculations and materials modeling at the nanoscale. It is based on density-functional theory, plane waves, and pseudopotentials."
+********tp://www.quantum-espresso.org/ "Quantum ESPRESSO Home Page"]
+
+== Version ==
+*** *5.0*
+
+== Authorized Users ==
+*****irce account holders
+
+== Platform ==
+****@circe@ cluster
+
+== Running ESPRESSO Jobs on the Cluster ==
+
+=== [[Modules]] ===
+p. Before running a job, you must first set up your environment properly.  There are two module file options for version 5.0:
+*** apps/espresso/5.0
+or
+*** apps/espresso/5.0-r-lda
+
+p. To run ESPRESSO on the cluster, ensure that you use @module add@ prior to using any executables.  See [wiki:[[Modules]]] for more information.
+
+p. The '-r-lda' version of Quantum Espresso is nearly identical to the standard version, except that there is a minor change in the code that skips a check. To load this version instead, use 'module add apps/espresso/5.0-r-lda'. To read more, see http://www.democritos.it/pipermail/pw_forum/2008-September/010123.html. 
+
+=== Distributed Parallel (MPI) Submit Script ===
+p. This script can be copied into your job directory (the folder with your input files and database files) and modified so that you can submit batch processes to the queue.   This script is provided as an example only.  Your SGE and ESPRESSO executables, tools, and options will vary.  View the user's guide (/apps/espresso/5.0/Doc/user_guide.pdf) for more about ESPRESSO options.  For help on submitting jobs to the queue, see our [[gridEngineUsers|GridEngine User's Guide]].
+
+{{{
+#$ -N qe_job_name
+#$ -l h_rt=hh:mm:ss,pcpus=4
+#$ -cwd
+
+module load apps/epresso/5.0
+
+mpirun -np $NSLOTS pw.x -in file.in &gt; file.out
+}}}
+
+=== Benchmarks and Tests ===
+p. The following folders contain input parameters for known ESPRESSO tests:
+*** /apps/espresso/5.0/PW/tests
+*** /apps/espresso/5.0/CPV/tests
+
+== Vendor Documentation ==
+*** http://www.quantum-espresso.org/wp-content/uploads/Doc/user_guide.pdf
+******tp://www.quantum-espresso.org/wp-content/uploads/Doc/user_guide/  (HTML version)
+
+== More Job Information ==
+p. See the following for more detailed job submission information:
+******iki:gridEngineUsers "SGE User's Guide"]
+*******ki:gridEnginePolicy "Scheduling and Dispatch Policies"]
+******iki:gridEngineTechn "Advanced Submit Techniques"]
+
+== Reporting Bugs ==
+iReport bugs to the IT Help Desk: help@usf.edu

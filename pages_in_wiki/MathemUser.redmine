@@ -1,0 +1,169 @@
+= Mathematica =
+----
+
+[[PageOutline]]
+
+== Description ==
+
+p. Mathematica is the tool of choice at the frontiers of scientific research, in engineering analysis and modeling, in technical education from high school to graduate school, and w[[[[here]]]]ver quantitative methods are used.
+
+== Version ==
+
+*** *9.0*
+
+== Authorized Users ==
+
+*****circe` account holders
+******udents doing valid research
+*** Faculty
+
+== Platforms ==
+
+****@circe@ cluster
+*** Workstation/PC
+
+== Installation ==
+
+*IMPORTANT: Before You Begin*[[BR]]
+p. Make sure you've applied for and received the Mathematica 8 License information.  You will need to go [[[[here]]]] to apply: https://rc.usf.edu/licensing/licenserequest.php
+
+*_Contents_*[[BR]][[BR]]
+[MathemUser#InstallingMathematicaOnWindows Installing Mathematica On Windows][[BR]]
+[MathemUser#InstallingMathematicaOnLinux Installing Mathematica On Linux][[BR]]
+[MathemUser#InstallingMathematicaOnSolaris8 Installing Mathematica On Solaris8][[BR]]
+
+----
+
+=== Installing Mathematica On Windows ===
+
+p(((. 1. Log into https://rc.usf.edu/isos using your NetID and password. Change to the directory /Mathematica/V9.0 and download the Windows ISO file to a temporary directory on your PC. Once the file has finished downloading you may disconnect from the FTP server.
+
+p(((. 2. Burn a CD with this iso. Note: You cannot just copy the file to a CD, you must use a software program that allows you to create a CD from an image file. If you need help with recording CDs please see our guide at [wiki:CDBurning].
+
+p(((. Alternatively, you could mount the ISO without burning a CD. Read our guide at [wiki:WindowsISO].
+
+p(((. 3. Insert the CD from step 2 into your CD-ROM drive.
+
+p(((. 4. When the Mathematica installation program starts, click on "Install Mathematica to a hard disk."
+
+p(((. 5. On the next screens, select an install location and make sure the installation type is set to "Install all components" and click "Install"
+
+p(((. 6. When the files are finished copying, the Installer will ask you about a license or a key. Please select the "Additional Options" button and enter license0.rc.usf.edu in the license server field on the next screen.
+
+p(((. 7. Click OK.
+
+----
+
+=== Installing Mathematica On Linux ===
+
+p(((. 1. Log into https://rc.usf.edu/isos using your NetID and password. Change to the directory /Mathematica/V9.0 and download the file named Mathematica_9.0.0_LINUX.iso to a temporary directory on your PC. Once the file has finished downloading you may disconnect from the FTP server.
+
+p(((. 2. Next, become root user by using the su command. Then change to the temporary directory w[[[[here]]]] you downloaded the iso file. Inside the temporary directory create a new directory called cd1 by using the following command:
+
+p(((. @# mkdir cd1@
+
+p(((. Then mount the ISO image you downloaded into this new directory using the next command:
+
+p(((. @# mount -o loop Mathematica_9.0.0_LINUX.iso cd1/@
+
+p(((. The installation CD should now be mounted and ready for you to begin the installation process.
+
+p((((. 3. Issue the command @./cd1/Unix/Installer/MathInstaller@ from the current directory to start the installation.
+
+p((((. 4. For the first question (if asked), select (1) for a full installation or hit ENTER.
+
+p((((. 5. For the second question regarding the installation path we recommend using the default directory. Press ENTER to continue or enter a different installation directory now. The installation should now start. Please be patient as files are copied over.
+
+p((((. 6. For the last question about executable scripts, just press enter. if the installer says files already exist, select (1) or press ENTER to overwrite the old files.
+
+p((((. 7. The next question asks if you would like to install a password. Please enter 2 for Network License. When the installer asks for a license server, please enter @license0.rc.usf.edu@ and press enter.
+
+p((((. 8. Once the installation is complete, you should be able to type in mathematica at the command line to start the program. If this does not work, you will have to add '/usr/local/bin' to your path. Please edit your .bashrc file and add the line
+
+p((((. @PATH=$PATH:/usr/local/bin.@
+
+p. Re-login to your computer and issue the mathematica command.
+
+p((((. 9. The application launcher asks for a license key. Please select the "Additional Options" button and enter license0.rc.usf.edu in the license server field on the next screen.
+
+----
+
+=== Installing Mathematica On Solaris 8 ===
+
+p(((. 1. Log into https://rc.usf.edu/isos using your NetID and password. Change to the directory /Mathematica/7.0 and download the file named mathematica7-solaris.iso to a temporary directory on your PC. Once the file has finished downloading you may disconnect from the FTP server.
+
+p(((. 2. Burn a CD with this iso. Note: You cannot just copy the file to a CD, you must use a software program that allows you to create a CD from an image file. If you need help with recording CDs please see our guide at [wiki:CDBurning].  Insert the Mathematica UNIX CD in your CD-ROM drive.
+
+p(((. 3. A file manager window for CDE should pop up. Close it and open up a console instead. Use su to log in as root. Type in @cd /cdrom/cdrom0/Installers/Solaris/@ is the path w[[[[here]]]] your CD-ROM is mounted.
+
+p(((. 4. Issue the command @./MathInstall@ to start the installation.
+
+p(((. 5. For the first question, "Enter top Mathematica directory", just hitting enter will be fine. If you wish to install to a different path, please enter that path [[[[here]]]] and hit enter.
+
+p(((. 6. For the second question regarding your system type, please hit enter for Solaris.
+
+p(((. 7. For the next question about the installation method, just press enter for a Full installation.
+
+p(((. 8. The next question asks if you would like to install a password. Please enter 2 for Network License. When the installer asks for a license server, please enter license0.rc.usf.edu and press enter.
+
+p(((. 9. For the last question about executable scripts, just press enter. The installation should now start. Please be patient as files are copied over.
+
+p. Once the installation is complete, you should be able to type in mathematica at the command line to start the program. If this does not work, you will have to add '/usr/local/bin' to your path. Please edit your .cshrc file and add the line
+
+p(((. @PATH=$PATH:/usr/local/bin@
+
+p(((. Re-login to your computer and issue the mathematica command.
+
+p. Once installation is complete, just type in cd ~ ; umount /cdrom/cdrom0; eject; to eject the CD-ROM.
+----
+== Running Mathematica on Circe ==
+
+=== [[Modules]] ===
+
+p. Mathematica requires the following module file and some prerequisites to run:
+*** @apps/mathematica/9.0@
+p. To run Mathematica on the cluster, ensure that you use 'module add' prior to using any Mathematica executables. See [wiki:[[Modules]]] for more information.
+
+=== Submitting a Job ===
+
+p. T[[[[here]]]] are two ways to run Mathematica on Circe depending on the runtime of your particular job.
+
+==== Jobs Shorter than 20 Minutes in Length (most jobs) ====
+p. Simply type @ mathematica @ at the prompt.  For users wishing to use the graphical interface over X11, please see our [[XWin32Install|XWin32 Installation]] documentation.
+
+p. Mathematica can also be launched through the NX environment using the Applications menu.  For more information about the NX environment, please see our [[CirceDesktop|Circe NX Desktop]] documentation.
+
+==== Jobs Longer than 20 Minutes in Length ====
+p. To run Mathematica jobs on Circe, users will need to submit their jobs to the scheduling environment if their jobs take more than 20 minutes to run on a standard PC.
+
+p. If, for example, you have a Mathematica script file named test.math with all your functions defined in it, you would set up a submit script to use the Mathematica kernel like this:
+
+{{{
+#!/bin/bash
+#$ -cwd
+#$ -l h_rt=00:20:00
+#$ -j y
+#$ -N matlab_test
+#$ -o output.$JOB_ID
+
+module load apps/mathematica/9.0
+math &lt; test.math
+}}}
+
+==== Mathematica Notebook files (.nb) and Circe Submission ====
+
+p. If you're using Mathematica notebook files (.nb) and you wish to submit the job to Circe, you must first convert the notebook file to a Mathematica package file.
+
+p. Please use the following steps to convert a notebook file to a standard Mathematica package.
+
+1. Open the notebook file in Mathematica.
+2. Clear out any solved calculations.
+3. Click on "Edit" and then "Select all".
+4. Click on "Cell", "Cell Properties", and then select "Initialization Cell".
+5. Click on "File", "Save as", and then change "Files of type" to "Mathematica Package". 
+
+p. You'll then use the file you just saved as an input file using the Circe submission sample above, e.g. "math &lt; filesaved.m".
+
+
+=== Reporting Bugs ===
+p. Report bugs to the IT Help Desk: help@usf.edu

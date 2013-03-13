@@ -1,0 +1,87 @@
+= mpiBLAST =
+----
+[[PageOutline]]
+
+== Description ==
+
+mpiBLAST is a freely available, open-source, parallel implementation of NCBI BLAST. By efficiently utilizing distributed computational resources through database fragmentation, query segmentation, intelligent scheduling, and parallel I/O, mpiBLAST improves NCBI BLAST performance by several orders of magnitude while scaling to hundreds of processors. mpiBLAST is also portable across many different platforms and operating systems. Lastly, a renewed focus and consolidation of the many codebases has positioned mpiBLAST to continue to be of high utility to the bioinformatics community.
+
+== Version == 
+
+*** *1.6.0*
+
+== Authorized Users == 
+
+*****circe` account holders
+
+== Platforms ==
+
+****@circe@ cluster
+
+== [[Modules]] ==
+
+mpiBLAST requires the following module file to run:
+*** @apps/mpiblast/1.6.0@
+p. See [wiki:[[Modules]]] for more information.
+
+== Creating and Submitting a Job ==
+
+p. Create a .ncbirc file in your home directory.  It should be formatted as follows (user location of /work directory will vary):
+
+{{{
+p((. [mpiBLAST]
+p((. Shared=/work/j/joeuser/blast
+p((. Local=/tmp/joeuser/blast
+}}}
+
+'Shared' is a location that all of the nodes doing the computation will have access to and 'Local' should be a faster, local drive.
+
+=== Prepare a database for use ===
+p. Research Computing mirrors several of the available databases.  They can be found in /opt/apps/ncbi-6.1/blast/fasta.  If one of those will serve your needs, simply copy it from that location to your Shared location, and decompress it.
+
+{{{
+[joeuser@host ~]$ module add apps/mpiblast/1.6.0
+[joeuser@host ~]$ cp /opt/apps/ncbi-6.1/blast/fasta/drosoph.nt.gz /work/j/joeuser/blast
+[joeuser@host ~]$ cd /work/j/joeuser/blast
+[joeuser@host blast]$ gunzip drosoph.nt.gz
+}}}
+
+p. Then, you need to format the database for use.  Below is an example way to do so.  It assumes you want to run a job searching against the drosoph.nt database, on 4 nodes.
+
+{{{
+[joeuser@host blast]$ mpiformatdb --nfrags=4 -i drosoph.nt -pF --quiet
+}}}
+
+=== Submit the Job ===
+
+p. Below is a sample job script.  It assumes that you want a hard runtime of 1 hour and that you have set up the database in 4 fragments.  It also assumes that your value being searched for is in a file called query.in, in the current working directory.  You'll need to request two more processors than the number of fragments for the two coordinating processes that are created during execution.
+
+{{{
+#!/bin/bash
+#$ -N mpiblast-test
+#$ -cwd
+#$ -l pcpus=6,h_rt=01:00:00
+#$ -j y
+#$ -o output.$JOB_ID
+
+module add apps/mpiblast/1.6.0
+mpirun mpiblast -d drosoph.nt -i query.in -p blastn -o results.txt
+}}}
+
+p. Example query.in file for drosoph.nt:
+
+{{{
+&gt;Search sequence
+p. AGTACGTAAAGAAAATCTTTTTTTGGCGACATCATTGTATTTGGTAGTATACGATTTCCAGCATCCACAACTATTTCCT
+}}}
+
+p. For additional information, please look at the mpiBLAST documentation: http://www.mpiblast.org/Docs/Guide
+
+=== More Job Information ===
+p. See the following for more detailed job submission information:
+******iki:gridEngineUsers "SGE User's Guide"]
+*******ki:gridEnginePolicy "Scheduling and Dispatch Policies"]
+******iki:gridEngineTechn "Advanced Submit Techniques"]
+
+=== Reporting Bugs ===
+p. Report bugs to the IT Help Desk: help@usf.edu

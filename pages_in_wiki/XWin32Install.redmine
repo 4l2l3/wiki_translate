@@ -1,0 +1,38 @@
+= X-Win32 =
+[[PageOutline]]
+
+== Description ==
+p. X-Win32 is an X11 server written for Microsoft Windows that allows remote graphical applications on UNIX-based systems -- such as Circe, Sunblast, and Sungiant -- to be displayed on a Windows computer.  This application is useful for accessing graphical UNIX systems and replaces [wiki:XmingInstall XMing] as the actively supported X11 server.
+
+*PLEASE NOTE_': Use of X-Win32 is '_HIGHLY DISCOURAGED* for users of Circe due to performance reasons.  We will NOT support the use of X-Win32 on Circe and encourage users to use the NX desktop environment instead.  The documentation for NX is here: [[CirceDesktop]]
+
+== Downloading the Software and License File ==
+*****************owser to: [https://rc.usf.edu/isos/XWin32/2012/]. A login prompt will appear, requesting your NetID and password.
+******wnload @X-Win32_2012.msi@ (the installer).
+
+== Install the X-Win32 Executable ==
+********************@X-Win32_2012.msi@. Follow the on-screen directions and perform the "Complete Install" onto your workstation or home computer.
+
+== Set License Server ==
+********* X-Win32 from within your Start Menu.
+*********************r: a Welcome window and a License Wizard. In the License Wizard, Choose "License Server" option. 
+**************e license server @license1.rc.usf.edu@ and click "Ok".
+***********taller should say: "Activation was successful!". Click "Finish".
+
+== Configure a Connection to Circe with XWin32 and PuTTY ==
+p. This is the only supported configuration for using XWin32 with Circe for displaying graphical X11 applications remotely.  
+=== First-Time Configuration ===
+p(. 1. Ensure that XWin32 is running (you will see its icon in the System Tray).
+p(. 2. Download and Install the Putty Windows Installer: http://the.earth.li/~sgtatham/putty/latest/x86/putty-0.60-installer.exe
+p(. 3. Start PuTTY from the Start Menu.
+p(. 4. In the *Session_' section, enter this in the Host Name box: '_circe.rc.usf.edu*.
+p(. 5. In *Connection-&gt;SSH-&gt;X11_', check the '_Enable X11 Forwarding* box.
+p(. 6. In the *Session_' section, type '''Circe''' in the '_Saved Sessions* box, and click Save.
+p(. 7. Click _Open_. Once you successfully login, you should be able to execute X11-enabled programs. 
+p(. 8. When you start a graphical application on Circe, XWin32 may pop up a question asking you to allow a connection.  You can select *Always* to prevent that message from appearing again.
+
+=== Subsequent Logins ===
+p(. 1. Ensure that XWin32 is running (you will see its icon in the System Tray).
+p(. 2. Start PuTTY from the Start Menu.
+p(. 3. In the *Session_' section, double click on '_Circe* and proceed to login.
+p(. 4. When you start a graphical application on Circe, XWin32 may pop up a question asking you to allow a connection.  You can select *Always* to prevent that message from appearing again.

@@ -1,0 +1,98 @@
+= Circe Frequently Asked Questions =
+[[PageOutline]]
+
+
+p. This page contains a list of questions that we receive quite often from our users.  We'll attempt to answer these questions as best as possible so that you can come [[here]] for quick answers.  If t[[here]] are other questions you'd like to see added to this [[FAQ]], please send them to help@usf.edu.  Make sure you mention *Research Computing*
+
+----
+==== Q. Help! I can't log in! ====
+
+*A.* Here are some possibilities:
+
+p(. 1. Have you changed your NetID password lately (E-Mail, Blackboard, etc.)?  If you have, make sure you are using the same password when you log into Circe
+p(. 2. Have you forgotten your password?  You can reset it at https://netid.usf.edu
+p(. 3. Are you no longer a student?  Send an E-Mail to help@usf.edu saying that you're a former student and that you'd like access to your Research Computing data.  Please provide your USF NetID that you used to use to access your account.
+----
+==== Q. What is this "queue" thing I keep hearing about and why do I have to use it? ====
+
+*A.* The queue is like any other queue: it's simply a waiting line for people that are wanting access to limited resources.  Whether its a bank teller, the nice person at the DMV, or a 32 processor server with 512GB or RAM, resources must be managed.  You'll want to read our guide to !GridEngine located [wiki:gridEngineIntro [[here]]] for a better description.
+----
+p(. 
+==== Q. How do I run graphical applications like Matlab, Comsol, p4vasp, !PyMol, or CUBIT? ====
+
+*A.* We recommend that you follow the supported [[CirceDesktop|Circe Desktop instructions]] for connections to Circe for running graphical applications.
+----
+==== Q. I've submitted a job to the cluster and I'm getting errors about "Command not found" or "Syntax Error".  The script looks fine when I edit it.  What gives? ====
+
+*A.* A number of different problems can cause these messages.  The most frequent are listed below:
+
+p(. 1. Did you create your submit script from within the Windows editor *Notepad*?  If so, please ensure that you convert your submit script with the @dos2unix@ command by running
+p(. {{{ 
+[user@host ~]$ dos2unix &lt;script&gt; 
+}}}
+p(. w[[here]] @&lt;script&gt;@ is the name of your job script.  This will convert the file to the proper UNIX file format the !GridEngine uses.
+p(. 2. Does your submit script contain the appropriate module lines?  Please see the documentation for your respective application for the appropriate module lines to add.
+p(. 3. Are you actually referencing a file that exists?  You can make sure that the file exists by doing
+p(. {{{ 
+[user@host ~]$ ls &lt;path_to_file&gt; 
+}}}
+p(. w[[here]] @&lt;path_to_file&gt;@ cannot find the file, then chances are it doesn't exist on the nodes either.
+----
+==== Q. I just deleted an extremely important file from my directory and I'm defending my thesis next week!!! Please tell me you have a backup copy! ====
+
+*A.* Yes, we have 365 days of backups to rely on.  You can access any file in your @/home@ directory from any point in the last 365 days by running the command 
+{{{
+[user@host ~]$ snapshot-restore
+}}}
+p. Follow the on-screen instructions for retrieving your lost file.
+
+----
+==== Q. I try to qsub/qlogin and I get errors about "qsub: Command not Found" or "qlogin: Command not Found". What happened? ====
+
+*A.* It is very likely that you are using an old X-Ming setup that is misconfigured and is not loading your profile correctly. We recommend that you follow the supported [[CirceDesktop|Circe Desktop instructions]] for connections to Circe from Windows-based systems.
+----
+==== Q. I try to run Ansys/Matlab/Mathematica/Gambit on Circe and it fails, saying "This model requires more scratch space than available" or "Out of memory". Why is this happening? ====
+*A.* T[[here]] are a couple reasons why this happens:
+
+p(. 1. This happens if you are trying to run the command directly from a login machine (your prompt will look like this)
+{{{
+[user@login# ~]$
+}}}
+p(. To be fair to other users, we have resource restrictions on our login machines limiting the amount of RAM and CPU time you can use. We recommend running these applications from a qlogin session:
+{{{
+[user@host ~]$ qlogin -l h_rt=HH:MM:SS
+}}}
+p(. W[[here]] @h_rt@ is the hours, minutes, and seconds that you believe you will need to finish working with an application.  With qlogin, you will be guaranteed the resources needed to complete your work.
+
+p(. 2. This can also happen if you are within a qlogin session and you did not specify a memory request. Try again with a reasonable estimate with how much memory you think you need (for example, 4 Gigabytes):
+{{{
+[user@host ~]$ qlogin -l h_rt=8:00:00,mps=4G
+}}}
+p((((. 
+----
+==== Q. I submitted my job and it has been in the 'qw' state for a long time. Why isn't my job being run? ====
+*A.* T[[here]] are a few reasons why this might happen:
+p(. 1. Did you specify a queue? If all of the slots in the queue are occupied, you have to wait until enough are freed to start your job. Nine times out of ten, you don't need to specify a queue anyway. Removing the queue definition in your submission script will allow your job to use many more resources and will increase your overall job throughput.
+p(. 2. Did you make a reasonable resource request? If your submission script calls for 4096 processors and 1TB of RAM, you'll be hard pressed to find enough resources on Circe to meet that request.  To see our available hardware pool in order to make good decisions about resource requests, see the following guides:
+p(((. a. [[gridEngineQueue|GridEngine Queue Layout]]
+p(((. b. [[UsingComplexes|Using GridEngine Complexes]]
+
+----
+==== Q. My job keeps terminating with no indication of anything wrong. What gives? ====
+*A.* By default, all SGE jobs have a runtime of 1 hour, after which the scheduler will send a termination signal. Have you specified a runtime on your job?
+{{{
+-l h_rt=08:00:00
+}}}
+p. This option would request a runtime of eight hours. The *h_rt* option is required on both submitted jobs and interactive jobs.  It is also possible that you did not specify enough time when making your request.  Please see this guide on determining job run-time for help: [[gridEngineRuntime|Job Runtime Guide]]
+----
+==== Q. Why do I not receive mailing list messages like everyone else? ====
+
+*A.* What it probably means is that we have an old or incorrect entry for your E-Mail address in our central database.  We're working to convert those addresses to @&lt;netid&gt;@mail.usf.edu@, but some users have opted to register with other addresses and may not be aware of their mail.usf.edu account.  If you aren't receiving E-Mails about the system, send an E-Mail to help@usf.edu stating that you'd like to update your E-Mail address with Research Computing.  Include the address you'd like to be contacted at in the E-Mail.
+----
+==== Q. Why do I get redirected while using Internet Explorer to download software from the RC isos site? ====
+
+*A.* The version of Internet Explorer you are using has a bug and is unable to download large files. Because of this we have redirected users of Internet Explorer to this [[FAQ]] to explain the issue. You will be able to access the ISOS site and download the files but you must users browser, like Firefox, Mozilla, Chrome, Opera, or Safari. Here is a link to a Microsoft KB article discussing the issue in more detail: http://support.microsoft.com/kb/298618. 
+----
+==== Q. I've read all of this stuff and I'm still having trouble.  Who do I contact for help? ====
+
+*A.* Send an e-mail to help@usf.edu with a detailed description of your problem.  Include any input or output files, any error messages or warnings.  Make sure you include Research Computing in the subject for the quickest possible response.

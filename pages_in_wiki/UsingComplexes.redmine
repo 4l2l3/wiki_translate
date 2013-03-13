@@ -1,0 +1,75 @@
+= Using Complexes with !GridEngine =
+----
+[[PageOutline]]
+
+
+p. Complexes allow users to make very specific requests to the scheduler such as what interconnect your application prefers, how much available memory you require, whether you mind running on low priority machines, etc.  To get the most out of the queuing environment, it is very useful to have a reasonable understanding of how the complexes work and which complexes you should request for your type of application.
+
+== Important Complexes ==
+p. The following table lists custom defined complexes which are necessary for getting your job to run on the right hardware. 
+
+| *Complex Name_' | '''Value''' | '''Description''' | '_Default*|
+| @h_rt@               | Time        | Request and set a certain amount of run-time for your job.  Jobs are killed when they reach this limit | 10 Minutes |
+| @mps@ will set the amount of memory allocated per slot.  If you request 4 slots and 1GB with mps, you will allocate 1GB for each slot or 4GB total. | 1G |
+| @mpj@ will set the amount of memory allocated for the entire job.  This will evenly divide the memory request across each slot. | None |
+
+@mps@.  
+*************ets an upper limit on available virtual memory.  
+**************************************vailable stack space for binary execution (this must be set when you use @h_vmem@ or you will have NO stack space available.  64M is a reasonable value).  
+****************************nodes that have the specified amount of memory available and acts as a book-keeper to keep nodes from being over-subscribed with respect to memory
+
+
+== Requesting Complexes ==
+p. To request a complex, you must add the following line to your submit script:
+{{{
+#$ -l &lt;complex_name&gt;=&lt;value&gt;[,&lt;complex_name&gt;=&lt;value][,...]
+}}}
+or
+{{{
+#$ -l &lt;complex_name&gt;=&lt;value&gt;
+#$ -l &lt;complex_name&gt;=&lt;value&gt;
+...
+}}}
+where &lt;complex_name&gt; is one of the complexes defined above (or one of the standard complexes described in the !GridEngine User's Guide and show below), and &lt;value&gt; is the desired value of the complex.
+
+p. A couple examples:
+
+{{{
+#!/bin/bash
+#$ -N my_job_needs_infiniband
+#$ -cwd
+#$ -l h_rt=02:00:00,mps=1.5G,pcpus=24
+#$ -j y
+#$ -o output.$JOB_ID
+
+mpirun /opt/apps/my_app/my_binary
+}}}
+
+*********equests 2 hours of runtime (h_rt=02:00:00)
+************ests 1.5GB of memory for each allocated slot (mps=1.5G)
+
+== Complex Table ==
+p. This is a table of user-addressable !GridEngine complexes.  You can request machines with a variety of characteristics such as machines with a certain amount of memory or a particular architecture type.
+| *Complex_' | '''Description''' | '''Data Type''' | '''Default Value''' | '_Priority Change?* |
+| calendar | Job calendar (see SGE User's Guide)    | String | None | No |
+| cpu | n/a                                         | Double | None | No |
+| gpu  | Select number of gpus per slot             | Integer | 0 | +1000 |
+| h_cpu | Hard max CPU time                         | Time | 0:0:0 | No |
+| h_rt | Hard max runtime                           | Time | 0:0:0 | -100 |
+| h_stack | Hard max stack size                     | Memory | None | No |
+| h_vmem | Hard max Virtual Memory (includes swap space) | Memory | None | No |
+| num_proc | Number of processors                   | Integer | None | No |
+| qname | Queue name                                | String | None | No |
+| s_cpu | Soft max CPU time                         | Time | 0:0:0 | No |
+| s_rt | Soft max runtime                           | Time | 0:0:0 | No |
+| s_stack | Soft max stack size                     | Memory | None | No |
+| s_vmem | Soft max virtual memory                  | Memory | None | No |
+| slots | Total slots                               | Integer | 1 | Yes |
+| sse4  | Select only nodes with sse4 (and above) processor feature | Bool |  None | No |
+| sse41  | Select only nodes with sse41 (and above) processor feature | Bool | None | No |
+| sse4a  | Select only nodes with sse4a (and above) processor feature | Bool | None | No |
+| sse42  | Select only nodes with sse4a (and above) processor feature | Bool | None | No |
+| avx    | Select only nodes with avx (and above) processor feature | Bool | None | No |
+| virtual_free | Virtual memory free                | Memory | None | No |
+| virtual_total | Virtual memory total              | Memory | None | No |
+| virtual_used | Virtual memory used                | Memory | None | No |

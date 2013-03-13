@@ -1,0 +1,55 @@
+= R and RMPI =
+----
+[[PageOutline]]
+
+== Description ==
+
+p. [[[[[[[[[[[[Rmpi]]]]]]]]]]]] is a package that provides MPI bindings for the R programming language.  In much the same way parallel code is written in other languages such as C or Fortran, R codes can run in parallel across multiple processors or nodes.
+
+== Version ==
+
+*****RMPI 0.5.8*
+*****R 2.11.1*
+
+== Authorized Users == 
+
+*****circe` account holders
+
+== Platforms ==
+
+****@circe@ cluster
+
+== Local Documentation ==
+
+=== [[Modules]] ===
+
+p. [[[[[[[[[[[[Rmpi]]]]]]]]]]]] requires the following module file and some prerequisites to run:
+*** @apps/R/2.11.1@
+*****rerequisites: @compilers/gcc/4.4.2 openmpi/1.4.1-x86_64-gcc-4.4.2@
+p. To run [[[[[[[[[[[[Rmpi]]]]]]]]]]]] on the cluster, ensure that you use @module initadd@ to make the changes persistent.  See [wiki:[[Modules]]] for more information.
+
+=== Prepare your R Environment ===
+
+p. Copy this file to /path/to/job/directory/.Rprofile to allow [[[[[[[[[[[[Rmpi]]]]]]]]]]]] jobs to work:
+{{{
+cp /opt/apps/R/2.11.1/share/Rprofile ~/rmpitest/.Rprofile
+}}}
+
+=== Submitting a Job ===
+
+p. The submit script for running [[[[[[[[[[[[Rmpi]]]]]]]]]]]] jobs on the cluster is fairly simple.  An example script is provided below:
+
+{{{
+#!/bin/bash
+#$ -N rmpi-test
+#$ -cwd
+#$ -l h_rt=hh:mm:ss,pcpus=4
+#$ -j y
+#$ -o output.$JOB_ID
+
+module purge
+module add apps/R/2.11.1 compilers/gcc/4.4.2 openmpi/1.4.1-x86_64-gcc-4.4.2
+mpirun [[[[[[[[[[[[Rmpi]]]]]]]]]]]] Test[[[[[[[[[[[[Rmpi]]]]]]]]]]]].R
+}}}
+
+p. You can submit this job in exactly the same way as you would any other application.

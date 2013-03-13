@@ -1,0 +1,278 @@
+= [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[Maya]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]] =
+----
+[[PageOutline]]
+
+== Description ==
+
+_From the Autodesk [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[Maya]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]] homepage:_ Autodesk® [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[Maya]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]® 3D animation software delivers a comprehensive creative feature set with tools for animation, modeling, simulation, rendering, matchmoving, and compositing on a highly extensible production platform. For visual effects, game development, post production, or other 3D animation projects, [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[Maya]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]] offers toolsets to help meet demanding production requirements. [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[Maya]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]] 2013 adds tools that help facilitate parallel workflows and complexity handling; powerful new creative toolsets; and productivity enhancements to help you create higher quality content quickly.
+
+http://usa.autodesk.com/maya/
+
+== Version ==
+
+*** *2013*
+
+== Authorized Users ==
+
+******* Students, Faculty, and Staff
+
+== Platform ==
+
+****@circe@ cluster
+
+== [[Run]]ning [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[Maya]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]] on the Cluster ==
+
+p. The [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[Maya]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]] documentation is essential to understanding the Rendering process.  The guide and this page should be all you need to get started with [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[Maya]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]] rendering.
+******ya Rendering Documentation: http://download.autodesk.com/global/docs/maya2013/en_us/
+
+p. [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[Maya]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]] rendering on the cluster is very efficient as each frame is broken up into an individual task and uses whatever CPUs are available on the system.  Submitting a [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[Maya]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]] rendering job is very trivial:
+
+p. First, load the [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[Maya]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]] application module:
+{{{
+[user@host ~]$ module add apps/maya
+}}}
+
+p. Then, kick off your rendering job after uploading your [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[Maya]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]] project binary to the system:
+
+{{{
+[user@host ~]$ Render_sge start myproject.mb 1-1000 standard
+}}}
+
+p. This will launch a distributed rendering job that will render 1000 frames from the myproject.mb file.  Frames will be stored in $WORK/maya/myproject.mb/
+
+p. Full command line options are below:
+{{{
+p. Command requires at least 1 argumen1:
+p. Render_sge &lt;"start"|"stop"|"status"&gt; &lt;filename&gt; &lt;frames&gt; &lt;"standard"|"gpu"&gt; [&lt;additional_render_args&gt;]
+
+p. Examples:
+
+p((. Submit a job
+p(((((. Render_sge start myproject.mb 1-1000 standard
+
+p((. Stop a job
+p(((((. Render_sge stop myproject.mb
+
+p((. Check job status
+p(((((. Render_sge status
+p(((((. Render_sge status myproject.mb
+}}}
+
+p. Additional advanced render arguments can be passed at the very end of the command.  These arguments are listed and documented by running the Render command, show below:
+
+{{{
+[user@host ~]$ Render -h
+
+p. Usage: Render [options] filename
+p(((((((. where "filename" is a [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[Maya]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]] ASCII or a [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[Maya]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]] binary file.
+
+p. Common options:
+p((. -help              Print help
+p((. -test              Print Mel commands but do not execute them
+p((. -verb              Print Mel commands before they are executed
+p((. -keepMel           Keep the temporary Mel file
+p((. -listRenderers     List all available renderers
+p((. -renderer string   Use this specific renderer
+p((. -r string          Same as -renderer
+p((. -proj string       Use this [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[Maya]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]] project to load the file
+p((. -log string        Save output into the given file
+
+p. Specific options for renderer "default": Use the renderer stored in the [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[Maya]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]] file
+
+p. General purpose flags:
+p((. -rd path                       Directory in which to store image file
+p((. -of string                     Output image file format. See the Render Settings window to
+p((((((((. find available formats
+p((. -im filename                   Image file output name
+
+p. Frame numbering options
+p((. -s float                       Starting frame for an animation sequence
+p((. -e float                       End frame for an animation sequence
+p((. -b float                       By frame (or step) for an animation sequence
+p((. -pad int                       Number of digits in the output image frame file name
+p((((((((. extension
+p((. -rfs int                       Renumber Frame Start: number for the first image when
+p((((((((. renumbering frames
+p((. -rfb int                       Renumber Frame By (or step) used for renumbering frames
+p((. -fnc int                       File Name Convention: any of name, name.ext, ... See the
+p((((((((. Render Settings window to find available options. Use namec and
+p((((((((. namec.ext for Multi Frame Concatenated formats. As a shortcut,
+p((((((((. numbers 1, 2, ... can also be used
+
+p. Camera options
+p((. -cam name                      Specify which camera to be rendered
+p((. -rgb boolean                   Turn RGB output on or off
+p((. -alpha boolean                 Turn Alpha output on or off
+p((. -depth boolean                 Turn Depth output on or off
+p((. -iip                           Ignore Image Planes. Turn off all image planes before
+p((((((((. rendering
+
+p. Resolution options
+p((. -x int                         Set X resolution of the final image
+p((. -y int                         Set Y resolution of the final image
+p((. -percentRes float              Renders the image using percent of the resolution
+p((. -ard float                     Device aspect ratio for the rendered image
+p((. -par float                     Pixel aspect ratio for the rendered image
+
+p. Render Layers and Passes:
+p((. -rl boolean|name(s)            Render each render layer separately
+p((. -rp boolean|name(s)            Render passes separately. 'all' will render all passes
+p((. -sel boolean|name(s)           Selects which objects, groups and/or sets to render
+p((. -l boolean|name(s)             Selects which display and render layers to render
+
+p. Mel callbacks
+p((. -preRender string              Mel code executed before rendering
+p((. -postRender string             Mel code executed after rendering
+p((. -preLayer string               Mel code executed before each render layer
+p((. -postLayer string              Mel code executed after each render layer
+p((. -preFrame string               Mel code executed before each frame
+p((. -postFrame string              Mel code executed after each frame
+p((. -pre string                    Obsolete flag
+p((. -post string                   Obsolete flag
+
+p. Specific options for the layers who use [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[Maya]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]] software renderer:
+
+p. Anti-aliasing quality only for [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[Maya]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]] software renderer:
+p((. -sw:eaa int                    The anti-aliasing quality of EAS (Abuffer). One of:
+p((((((((. highest(0), high(1), medium(2), low(3)
+p((. -sw:ss int                     Global number of shading samples per surface in a pixel
+p((. -sw:mss int                    Maximum number of adaptive shading samples per surface
+p((((((((. in a pixel
+p((. -sw:mvs int                    Number of motion blur visibility samples
+p((. -sw:mvm int                    Maximum number of motion blur visibility samples
+p((. -sw:pss int                    Number of particle visibility samples
+p((. -sw:vs int                     Global number of volume shading samples
+p((. -sw:ufil boolean               If true, use the multi-pixel filtering; otherwise use
+p((((((((. single pixel filtering
+p((. -sw:pft int                    When useFilter is true, identifies one of the following
+p((((((((. filters: box(0), triangle(2), gaussian(4), quadratic(5)
+p((. -sw:pfx float                  When useFilter is true, defines the X size of the filter
+p((. -sw:pfy float                  When useFilter is true, defines the Y size of the filter
+p((. -sw:rct float                  Red channel contrast threshold
+p((. -sw:gct float                  Green channel contrast threshold
+p((. -sw:bct float                  Blue channel contrast threshold
+p((. -sw:cct float                  Pixel coverage contrast threshold (default is 1.0/8.0)
+
+p. Raytracing quality only for [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[Maya]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]] software renderer:
+p((. -sw:ert boolean                Enable ray tracing
+p((. -sw:rfl int                    Maximum ray-tracing reflection level
+p((. -sw:rfr int                    Maximum ray-tracing refraction level
+p((. -sw:sl int                     Maximum ray-tracing shadow ray depth
+
+p. Field Options only for [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[Maya]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]] software renderer:
+p((. -sw:field boolean              Enable field rendering. When on, images are interlaced
+p((. -sw:pal                        When field rendering is enabled, render even field
+p((((((((. first (PAL)
+p((. -sw:ntsc                       When field rendering is enabled, render odd field
+p((((((((. first (NTSC)
+
+p. Motion Blur only for [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[Maya]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]] software renderer:
+p((. -sw:mb boolean                 Motion blur on/off
+p((. -sw:mbf float                  Motion blur by frame
+p((. -sw:sa float                   Shutter angle for motion blur (1-360)
+p((. -sw:mb2d boolean               Motion blur 2D on/off
+p((. -sw:bll float                  2D motion blur blur length
+p((. -sw:bls float                  2D motion blur blur sharpness
+p((. -sw:smv int                    2D motion blur smooth value
+p((. -sw:smc boolean                2D motion blur smooth color on/off
+p((. -sw:kmv boolean                Keep motion vector for 2D motion blur on/off
+
+p. Render Options only for [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[Maya]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]] software renderer:
+p((. -sw:ifg boolean                Use the film gate for rendering if false
+p((. -sw:edm boolean                Enable depth map usage
+p((. -sw:g float                    Gamma value
+p((. -sw:premul boolean             Premultiply color by the alpha value
+p((. -sw:premulthr float            When premultiply is on, defines the threshold used to
+p((((((((. determine whether to premultiply or not
+
+p. Memory and Performance only for [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[Maya]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]] software renderer:
+p((. -sw:uf boolean                 Use the tessellation file cache
+p((. -sw:oi boolean                 Dynamically detects similarly tessellated surfaces
+p((. -sw:rut boolean                Reuse render geometry to generate depth maps
+p((. -sw:udb boolean                Use the displacement bounding box scale to optimize
+p((((((((. displacement-map performance
+p((. -sw:mm int                     Renderer maximum memory use (in Megabytes)
+
+p. Specific options for the layers who use [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[Maya]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]] hardware renderer:
+
+p. Quality flags only for [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[Maya]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]] hardware renderer:
+p((. -hw:ehl boolean                Enable high quality lighting
+p((. -hw:ams boolean                Accelerated multi sampling
+p((. -hw:ns int                     Number of samples per pixel
+p((. -hw:tsc boolean                Transparent shadow maps
+p((. -hw:ctr int                    Color texture resolution
+p((. -hw:btr int                    Bump texture resolution
+p((. -hw:tc boolean                 Enable texture compression
+
+p. Render options only for [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[Maya]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]] hardware renderer:
+p((. -hw:c boolean                  Culling mode.
+p((((((((((((((((. 0: per object.
+p((((((((((((((((. 1: all double sided.
+p((((((((((((((((. 2: all single sided
+p((. -hw:sco boolean                Enable small object culling
+p((. -hw:ct float                   Small object culling threshold
+
+p. Mel callbacks only for [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[Maya]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]] hardware renderer:
+p((. -hw:mb boolean                 Enable motion blur
+p((. -hw:mbf float                  Motion blur by frame
+p((. -hw:ne int                     Number of exposures
+p((. -hw:egm boolean                Enable geometry mask
+
+p. Specific options for the layers who use Mentalray renderer 
+
+p. Other only for Mentalray renderer:
+p((. -mr:v/mr:verbose int           Set the verbosity level.
+p((((((((. 0 to turn off messages
+p((((((((. 1 for fatal errors only
+p((((((((. 2 for all errors
+p((((((((. 3 for warnings
+p((((((((. 4 for informational messages
+p((((((((. 5 for progress messages
+p((((((((. 6 for detailed debugging messages
+p((. -mr:rt/mr:renderThreads int    Specify the number of rendering threads.
+p((. -mr:art/mr:autoRenderThreads   Automatically determine the number of rendering threads.
+p((. -mr:mem/mr:memory int          Set the memory limit (in MB).
+p((. -mr:aml/mr:autoMemoryLimit     Compute the memory limit automatically.
+p((. -mr:ts/mr:taskSize int         Set the pixel width/height of the render tiles.
+p((. -mr:at/mr:autoTiling           Automatically determine optimal tile size.
+p((. -mr:fbm/mr:frameBufferMode int Set the frame buffer mode.
+p((((((((. 0 in-memory framebuffers
+p((((((((. 1 memory mapped framebuffers
+p((((((((. 2 cached framebuffers
+p((. -mr:rnm boolean                Network rendering option. If true, mental ray renders
+p((((((((. almost everything on slave machines, thus reducing the workload on the
+p((((((((. master machine
+p((. -mr:lic string                 Specify satellite licensing option. mu/unlimited or
+p((((((((. mc/complete.
+p((. -mr:reg int int int int        Set sub-region pixel boundary of the final image:
+p((((((((. left, right, bottom, top
+p((. -mr:rat/allRenderable          Render all renderable (2D and 3D)
+p((. -mr:rto/renderTargetsOnly      Render target (2D) only rendering
+p((. -mr:ort/omitRenderTargets      Omit render targets and render 3D only
+************** to place a space between option flags and their arguments. ***
+p. Any boolean flag will take the following values as TRUE: on, yes, true, or 1.
+p. Any boolean flag will take the following values as FALSE: off, no, false, or 0.
+
+p((((. e.g. -s 1 -e 10 -x 512 -y 512 -cam persp -mr:v 5 file.
+}}}
+
+== Post-Render Encoding ==
+
+p. You can also use our standard MPlayer-based MPEG4 encoder to assemble your frames into a full video.  This can be done using the following command:
+
+{{{
+[user@host ~]$ Encode_sge myproject.mb 4 25 1920 1080
+}}}
+
+p. This will encode a High-Def MPEG4 video file from the rendered frames in the render work directory.  The options are listed below:
+
+{{{
+[user@host ~]$ Encode_sge 
+p. Requires 5 arguments: 
+p(((. Encode_sge &lt;maya_project&gt; &lt;cpu_threads&gt; &lt;framerate&gt; &lt;x_res&gt; &lt;y_res&gt;
+}}}
+
+p. For more information on [[Run]], see [wiki:[[Run]] "The GridEngine [[Run]] Utility"].
+
+== Reporting Issues ==
+p. Report issues to the IT Helpdesk: help@usf.edu

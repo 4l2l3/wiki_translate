@@ -1,0 +1,58 @@
+= SIESTA =
+----
+[[PageOutline]]
+
+== Description ==
+_From the NERSC website:_ "SIESTA is an O(N) DFT code for electronic structure calculations and ab initio molecular dynamics simulations for molecules and solids. It uses norm-conserving pseudopotentials and linear combination of numerical atomic orbitals (LCAO) basis set."
+
+*******tp://www.nersc.gov/users/software/applications/materials-science/[[siesta]]/ "SIESTA website on nersc.gov"]
+
+== Version ==
+*** *3.1*
+
+== Authorized Users ==
+*****irce account holders
+*** Faculty
+
+== Platform ==
+****@circe@ cluster
+
+== Running SIESTA Jobs on the Cluster ==
+
+=== [[Modules]] ===
+p. Before running a job, you must first set up your environment properly.  Below is the required module file.
+*** apps/[[siesta]]/3.1
+p. See [wiki:[[Modules]]] for more information.
+
+=== Submitting Jobs ===
+p. The SIESTA manual is essential to understanding the application and making the most of it.  The guide and this page should help you to get started with your simulations.
+*****http://www.icmab.es/dmmis/leem/[[siesta]]/Documentation/Manuals/[[siesta]]-3.1-manual/index.html "SIESTA Manuals"]
+or
+*** /apps/[[siesta]]/3.1/Docs/[[siesta]]-3.1-manual.pdf
+
+p. Below is an example submit script:
+
+{{{
+#$ -N job_name
+#$ -l h_rt=hh:mm:ss,pcpus=4
+#$ -cwd
+
+module load apps/[[siesta]]/3.1
+
+mpirun -np $NSLOTS [[siesta]] &lt; atom.sm
+}}}
+
+=== Tutorials and Tests ===
+p. The following contain input parameters for known SIESTA Examples:
+*** /apps/[[siesta]]/3.1/Tests
+*** /apps/[[siesta]]/3.1/Tutorials
+*** http://www.gromacs.org/Documentation/Tutorials
+
+=== More Job Information ===
+p. See the following for more detailed job submission information:
+******iki:gridEngineUsers "SGE User's Guide"]
+*******ki:gridEnginePolicy "Scheduling and Dispatch Policies"]
+******iki:gridEngineTechn "Advanced Submit Techniques"]
+
+=== Reporting Bugs ===
+p. Report bugs directly to Research Computing: support@rc.usf.edu or to the IT Help Desk: mailto:help@usf.edu

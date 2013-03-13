@@ -1,0 +1,94 @@
+= [[[[[[[[[[Synopsys]]]]]]]]]] Tools =
+[[PageOutline]]
+
+== Description == 
+
+p. [[[[[[[[[[Synopsys]]]]]]]]]] provides a comprehensive portfolio of tools for digital and mixed-signal IC design, implementation, signoff, verification, test, and design for manufacturability (DFM)
+
+****From: http://www.synopsys.com/tools/pages/default.aspx
+
+== Version ==
+
+*********** versions of tools, most current as of 4/2012
+
+== Authorized Users ==
+
+*****circe` account holders
+
+== Platforms ==
+
+*****circe` login nodes
+****@circe@ cluster
+
+== Running on Circe ==
+
+p. Running [[[[[[[[[[Synopsys]]]]]]]]]] tools on Circe requires modules to be properly set as described below.  Graphical tools will need to be run via the NX environment, documented here: http://www.rc.usf.edu/trac/doc/wiki/CirceDesktop
+
+=== [[Modules]] ===
+
+p. Individual tools, grouped by tool and specified by version.
+{{{ 
+#!html
+&lt;table border=1 width=98% cellpadding=2 cellspacing=0&gt;
+&lt;tr&gt;&lt;th colspan=1 width=50%&gt;Tool&lt;/th&gt;&lt;th colspan=1 width=50%&gt;Module Choices&lt;/th&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Certify&lt;/td&gt;&lt;td&gt;apps/synopsys/certify/F-2012.03&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;CHIPit Manager&lt;/td&gt;&lt;td&gt;apps/synopsys/chipitpro/E-2011.03-SP4&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;coretools (coreAssembler, coreBuilder, coreConsultant)&lt;/td&gt;&lt;td&gt;apps/synopsys/coretools/F-2011.12-SP1-1&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;CosmosScope&lt;/td&gt;&lt;td&gt;apps/synopsys/cosmosscope/F-2011.09&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;System Studio&lt;/td&gt;&lt;td&gt;apps/synopsys/css/G-2012.03&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Custom Designer&lt;/td&gt;&lt;td&gt;apps/synopsys/customdesigner/F-2011.09-SP2-1&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;ESP-CV, Formality ESP&lt;/td&gt;&lt;td&gt;apps/synopsys/esp/F-2011.12-SP1&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Formality&lt;/td&gt;&lt;td&gt;apps/synopsys/fm/F-2011.09-SP4&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Synplify (Synplify FPGA)&lt;/td&gt;&lt;td&gt;apps/synopsys/fpga/F-2012.03&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Hercules&lt;/td&gt;&lt;td&gt;apps/synopsys/hercules/B-2008.09-SP4&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;HSpice&lt;/td&gt;&lt;td&gt;apps/synopsys/hspice/F-2011.09-SP2&lt;/br&gt;
+p((((((((((((((((. apps/synopsys/hspice/C-2009.09&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;IC Compiler&lt;/td&gt;&lt;td&gt;apps/synopsys/icc/F-2011.09-SP4&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;IC WorkBench EV Plus&lt;/td&gt;&lt;td&gt;apps/synopsys/icwbev_plus/D-2010.06-14&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Identify&lt;/td&gt;&lt;td&gt;apps/synopsys/identify/F-2012.03&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;TetraMAX ATPG (iqd)&lt;/td&gt;&lt;td&gt;apps/synopsys/idq/F-2011.09-SP5&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;TetraMAX ATPG (tws)&lt;/td&gt;&lt;td&gt;apps/synopsys/txs/F-2011.09-SP5&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Leda&lt;/td&gt;&lt;td&gt;apps/synopsys/leda/F-2011.09&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Taurus Medici&lt;/td&gt;&lt;td&gt;apps/synopsys/medici/F_2011.09&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;MVtools&lt;/td&gt;&lt;td&gt;apps/synopsys/mvtools/F-2011.12&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Milkyway Environment&lt;/td&gt;&lt;td&gt;apps/synopsys/mw/F-2011.09-SP4&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;NanoSim&lt;/td&gt;&lt;td&gt;apps/synopsys/nanosim/F-2011.09-SP2&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Liberty NCX&lt;/td&gt;&lt;td&gt;apps/synopsys/ncx/F-2011.12-SP2&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;TCAD Sentaurus PCM Studio&lt;/td&gt;&lt;td&gt;apps/synopsys/pcm_studio/G-2012.03&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Processor Designe&lt;/td&gt;&lt;td&gt;apps/synopsys/pd/F-2011.06-SP3&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;PrimeRail&lt;/td&gt;&lt;td&gt;apps/synopsys/primerail/F-2011.12-SP1&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;PrimeTime Suite&lt;/td&gt;&lt;td&gt;apps/synopsys/pts/F-2011.06-SP3-4&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Raphael&lt;/td&gt;&lt;td&gt;apps/synopsys/raphael/F_2011.12&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Saber&lt;/td&gt;&lt;td&gt;apps/synopsys/saber/F-2011.09&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Synphony C Compiler&lt;/td&gt;&lt;td&gt;apps/synopsys/scc/G-2012.03&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;TCAD Sentaurus&lt;/td&gt;&lt;td&gt;apps/synopsys/sentaurus/F_2011.09-SP1&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;SimIF&lt;/td&gt;&lt;td&gt;apps/synopsys/simif/F-2011.09-SP2&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;SPW&lt;/td&gt;&lt;td&gt;apps/synopsys/spw/F-2011.06-SP1&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;StarRC&lt;/td&gt;&lt;td&gt;apps/synopsys/starrc/F-2011.12-SP2&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Spice Explorer&lt;/td&gt;&lt;td&gt;apps/synopsys/sx/C-2009.03-SP1&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Taurus TSUPREM-4&lt;/td&gt;&lt;td&gt;apps/synopsys/tsuprem4/F_2011.09&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;VCS (VCS VCSi)&lt;/td&gt;&lt;td&gt;apps/synopsys/vcs/F-2011.12&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Scirocco (VCS MX):&lt;/td&gt;&lt;td&gt;apps/synopsys/vcs-mx/F-2011.12&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Vera&lt;/td&gt;&lt;td&gt;apps/synopsys/vera/D-2009.12-15&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;VCS Verification Library&lt;/td&gt;&lt;td&gt;apps/synopsys/vip/G-2012.03&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;CustomSim. (XA)&lt;/td&gt;&lt;td&gt;apps/synopsys/xa/F-2011.09-SP2&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+}}} 
+
+p. To run any [[[[[[[[[[Synopsys]]]]]]]]]] tools on the cluster, ensure that you use @module add@ prior to using any [[[[[[[[[[Synopsys]]]]]]]]]] executables.  See [wiki:[[Modules]]] for more information.
+
+=== Examples ===
+==== hspice ====
+{{{
+module add apps/synopsys/hspice/F-2011.09-SP2
+hspice &lt;inputfile&gt;
+}}}
+
+=== More Job Information ===
+p. See the following for more detailed job submission information:
+******iki:gridEngineUsers "SGE User's Guide"]
+*******ki:gridEnginePolicy "Scheduling and Dispatch Policies"]
+******iki:gridEngineTechn "Advanced Submit Techniques"]
+
+=== Reporting Bugs ===
+p. Report bugs to the IT Help Desk: help@usf.edu

@@ -1,0 +1,77 @@
+= [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[LAMMPS]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]] =
+----
+[[PageOutline]]
+
+== Description == 
+
+_From the [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[LAMMPS]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]] manual:_ [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[LAMMPS]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]] is a classical molecular dynamics code that models an ensemble of particles in a liquid, solid, or gaseous state. It can model atomic, polymeric, biological, metallic, granular, and coarse-grained systems using a variety of force fields and boundary conditions.  [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[LAMMPS]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]] stands for Large-scale Atomic / Molecular Massively Parallel Simulator. 
+== Version ==
+
+*** *2Nov10*
+p(. 
+== Authorized Users ==
+
+*****circe` account holders
+
+== Platforms ==
+
+****@circe@ cluster
+
+== Local Documentation ==
+
+=== [[[[Modules]]]] ===
+
+p. Before running a job, you must first set up your environment properly. Here are the required module files: 
+*** @apps/lammps/2Nov10@
+p. To run [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[LAMMPS]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]] on the cluster, ensure that you use module add prior to using any [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[LAMMPS]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]] executables. See [[[[Modules]]]] for more information. 
+
+=== [[Run]]ning [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[LAMMPS]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]] on the Cluster ===
+
+p. The [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[LAMMPS]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]] manual is essential to understanding the application and making the most of it.  The guide and this page should be all you need to get started with your simulations.
+*****AMMPS Manual: http://lammps.sandia.gov/doc/Manual.html
+
+p. [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[LAMMPS]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]] runs efficiently on single-processor desktop or laptop machines, but is designed for parallel computers. It will run on any parallel machine that compiles C++ and supports the MPI message-passing library. This includes distributed- or shared-memory parallel machines and Beowulf-style clusters.  In the most general sense, [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[LAMMPS]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]] integrates Newton's equations of motion for collections of atoms, molecules, or macroscopic particles that interact via short- or long-range forces with a variety of initial and/or boundary conditions. For computational efficiency [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[LAMMPS]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]] uses neighbor lists to keep track of nearby particles. The lists are optimized for systems with particles that are repulsive at short distances, so that the local density of particles never becomes too large. On parallel machines, [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[LAMMPS]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]] uses spatial-decomposition techniques to partition the simulation domain into small 3d sub-domains, one of which is assigned to each processor. Processors communicate and store "ghost" atom information for atoms that border their sub-domain. [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[LAMMPS]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]] is most efficient (in a parallel sense) for systems whose particles fill a 3d rectangular box with roughly uniform density.  
+
+p. The following [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[LAMMPS]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]] Tools are also installed:
+
+******************* -  convert a [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[LAMMPS]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]] dump file from binary to ASCII text
+****************  create a data file of bead-spring chains
+****************     -  generate lattices of atoms within a geometry
+******************** -  convert a data file to a snapshot that xmovie can viz
+****************	     -  tool to generate EAM alloy potential files
+*****************input pre-processor Perl tool for creating input scripts
+**************** -  convert [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[LAMMPS]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]] output to Accelrys Insight format
+******************  convert [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[LAMMPS]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]] output to CFG files for Atomeye viz
+****************  -  convert [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[LAMMPS]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]] output to contour, density profiles
+*******************-  create a data file of small lipid chains in solvent
+*****************-  use Accelrys Insight code to setup [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[LAMMPS]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]] input
+*******************   -  convert a binary restart file to an input data file
+*****************t    -  C program for extracting thermo info from log file
+*****************  a quick/simple viz package (2d projections of 3d)
+
+p. Please view the associated README files in /opt/apps/lammps/2Nov10/tools for more information.
+
+=== Submitting Jobs ===
+
+p. Invoke the @run@ utility to perform the simulation. For more information on [[Run]], see [wiki:[[Run]] "The GridEngine [[Run]] Utility"].
+p(((. {{{
+# From within the directory that contains your input file, use the -e option below:
+run -n 2 -N lmp_run_test -t 02:00:00 -e INPUT="in.lmptest" lammps/2Nov10
+p(((. }}}
+p. This will request 2 processors via MPI, a job name of lmp_run_test, a 2 hour run-time, and specify the input file as in.lmptest.
+
+==== Benchmarks &amp; Tutorials ====
+
+p. The following folder contains input parameters for known LAMMMPS tutorials:
+*** /opt/apps/lammps/examples
+
+==== More Job Information ====
+
+p. See the following for more detailed job submission information:
+******iki:gridEngineUsers "SGE User's Guide"]
+*******ki:gridEnginePolicy "Scheduling and Dispatch Policies"]
+******iki:gridEngineTechn "Advanced Submit Techniques"]
+
+==== Reporting Bugs ====
+
+p. Report bugs directly to Research Computing: support@rc.usf.edu

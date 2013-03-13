@@ -1,0 +1,328 @@
+= CMAQ v.4.7 =
+[[PageOutline]]
+
+== Description ==
+p. CMAQ is a community state-of-the-science modeling system for diagnosis and prediction of air pollution.
+**************************************************************************************le scripts that invoke a specific configuration of the model. This configuration has been used by U.S. EPA in operational evaluation studies prior to release of the model, and the results of these evaluations accompany this release.  There are other features and options within the CMAQ modeling system within this release, beyond this specific model configuration, that have not yet been fully evaluated and documented, that are also available to users.
+
+p. From: http://www.cmascenter.org/help/model_docs/cmaq/4.7/README.txt
+
+== Version ==
+4.7
+
+== Plaforms ==
+@circe@ cluster
+
+----
+
+== Download ==
+p. You'll need to download the appropriate packages from the *Community Modeling and Analysis System_' (CMAS) Center.  You'll need to go to the '_Downloads* page and create an account.  Follow the directions on the CMAS web site for creating this account.  Once it is created, you can log into the downloads section and make the following selections:
+p(. 1. Product: CMAQ v.4.7
+p(. 2. Type of Computer: Linux-PC
+p(. 3. Compiler: Linux Intel Fortran 90
+
+== Preliminaries ==
+p. We'll need to add the appropriate modules to our environment, download, patch and build the appropriate sources.  Luckily, this is all done for us with the @cmaq-install@ script.  We begin by doing the following
+
+=== 1. Environment Settings ===
+p. Load the following environment modules 
+{{{
+[user@host ~]$ module add apps/cmaq/4.7
+[user@host ~]$ module initadd apps/cmaq/4.7
+}}}
+
+=== 2. Build and Install CMAQ ===
+{{{
+[user@host ~]$ cmaq-install
+}}}
+
+== Tutorial: Day 1, 32 km [[[[[[[[[[Run]]]]]]]]]] ==
+p. At this point, @cctm@ should be ready to run the included 32 km tutorial.  You can follow these instructions for running it if you wish to test your installation or get a feel for the program.  
+
+p(. a. Rename and submit the modified script to the queue by issuing 
+p((((. {{{
+[user@host ~]$ cd $M3HOME/scripts/cctm
+[user@host cctm]$ cp run.cctm run.cctm.tut_day1
+[user@host cctm]$ qsub run.cctm.tut_day1
+}}}
+p(. b. Verify that the job completed by checking the contents of @output.$JOB_ID@ number and checking the status of your job.
+*******************************************tput to `/scratch/$USER/cctm` rather than `$M3DATA/cctm`.  This is because of a long-standing bug with automounted NFS volumes (like your home directory).  The `/scratch` file system appears to handle the @cctm@ I/O patterns correctly.
+
+== Tutorial: Day 2, 32 km [[[[[[[[[[Run]]]]]]]]]] ==
+(This is directly from the CMAQ Tutorial documentation at http://www.cmascenter.org/help/model_docs/cmaq/4.6/TUTORIAL_PROCEDURE.txt)
+p. You will need to make a few changes to the run script for the second day's run. Assuming that you have used the run script as supplied for the first day's run, the following is a "patch" style difference in run.cctm for the second day at 32 km. 
+
+***************************mbers in this patch format will not match with your run.cctm.sge file!  Use the line's context to make the correct changes!
+
+*****************************************************************is patch!  There are subtle changes that you might miss which will cause your run to fail!  I would make this easier on you, but when you get to know this program a little more, you'll see its for your own good!  You must get used to using patches.  
+
+*********************eft arrow at the beginning of the line means "before the change", right arrow means "after the change"!
+
+p. Copy @run.cctm.tut_day1@ and modify the new file as follows:
+
+{{{
+7c7
+&lt; # Usage: run.cctm &gt;&amp;! cctm_e2a.log &amp;                                  #
+---
+&gt; # Usage: run.cctm &gt;&amp;! cctm_e2b.log &amp;                                  #
+22c22
+&lt;  set APPL     = e2a
+---
+&gt;  set APPL     = e2b
+42c42
+&lt;  set STDATE   = 1999183       # beginning date
+---
+&gt;  set STDATE   = 1999184       # beginning date
+106,107c106,107
+&lt;  set EMISfile  = e_32km_cb4.19990702.ncf
+&lt; #set EMISfile  = e_32km_cb4.19990703.ncf
+---
+&gt; #set EMISfile  = e_32km_cb4.19990702.ncf
+&gt;  set EMISfile  = e_32km_cb4.19990703.ncf
+114,117c114,117
+&lt; #set GC_ICpath = $OUTDIR
+&lt; #set GC_ICfile = CCTM_d1bCONC.d1b
+&lt;  set GC_ICpath = $M3DATA/icon
+&lt;  set GC_ICfile = ICON_cb4_M_32_99TUT02_profile
+---
+&gt;  set GC_ICpath = $OUTDIR
+&gt;  set GC_ICfile = CCTM_e2aCONC.e2a
+&gt; #set GC_ICpath = $M3DATA/icon
+&gt; #set GC_ICfile = ICON_cb4_M_32_99TUT02_profile
+}}}
+
+p. [[[[[[[[[[Run]]]]]]]]]] the next day's run by submitting the script, @run.cctm.tut_day2@.
+
+== Tutorial: Nested 8k [[[[[[[[[[Run]]]]]]]]]] ==
+p. After running both days of the 32 km, you are ready to run the nested 8 km.  Again, this section is directly from http://www.cmascenter.org/help/model_docs/cmaq/4.6/TUTORIAL_PROCEDURE.txt
+
+*************** The same rules of thumb from the above patch file still apply!
+p(. 
+=== 1. icon ===
+p. You will need to recompile @icon@ script:
+
+{{{
+42c42
+&lt;  set APPL  = e1a
+---
+&gt;  set APPL  = e3a
+59,60c59,60
+&lt; #set ModInpt   = ( module m3conc            $Revision; )
+&lt;  set ModInpt   = ( module profile           $Revision; )
+---
+&gt;  set ModInpt   = ( module m3conc            $Revision; )
+&gt; #set ModInpt   = ( module profile           $Revision; )
+62c62
+&lt; #set ModMech   = ( module mc_noop           $Revision; )
+---
+&gt;  set ModMech   = ( module mc_noop           $Revision; )
+64c64
+&lt;  set ModMech   = ( module radm2_to_cb4      $Revision; )
+---
+&gt; #set ModMech   = ( module radm2_to_cb4      $Revision; )
+}}}
+
+p. Likewise you will need to modify @run.icon@:
+
+{{{
+7c7
+&lt; # Usage: run.icon &gt;&amp;! icon_e2a.log &amp;                                  #
+---
+&gt; # Usage: run.icon &gt;&amp;! icon_e3a.log &amp;                                  #
+23c23
+&lt;  set CFG      = e1a
+---
+&gt;  set CFG      = e3a
+35c35
+&lt;  setenv GRID_NAME M_32_99TUT02
+---
+&gt;  setenv GRID_NAME M_08_99TUT02
+39c39
+&lt;  setenv LAYER_FILE $M3DATA/mcip3/M_32_99NASH/METCRO3D_benchmark2005
+---
+&gt;  setenv LAYER_FILE $M3DATA/mcip3/M_08_99NASH/METCRO3D_benchmark2005
+54,55c54,55
+&lt;  set IC = profile      # use default profile file
+&lt; #set IC = m3conc       # use CMAQ CTM concentration files (nested runs)
+---
+&gt; #set IC = profile      # use default profile file
+&gt;  set IC = m3conc       # use CMAQ CTM concentration files (nested runs)
+115c115
+&lt;     setenv CTM_CONC_1 $M3DATA/cctm/CCTM_d1bCONC.d1b
+---
+&gt;     setenv CTM_CONC_1 $M3DATA/cctm/CCTM_e2aCONC.e2a
+}}}
+
+=== 2. bcon ===
+p. You will also need to recompile @bcon@ script:
+
+{{{
+42c42
+&lt;  set APPL  = e1a
+---
+&gt;  set APPL  = e3a
+57,58c57,58
+&lt; #set ModInpt   = ( module m3conc            $Revision; )
+&lt;  set ModInpt   = ( module profile           $Revision; )
+---
+&gt;  set ModInpt   = ( module m3conc            $Revision; )
+&gt; #set ModInpt   = ( module profile           $Revision; )
+60c60
+&lt; #set ModMech   = ( module mc_noop           $Revision; )
+---
+&gt;  set ModMech   = ( module mc_noop           $Revision; )
+62c62
+&lt;  set ModMech   = ( module radm2_to_cb4      $Revision; )
+---
+&gt; #set ModMech   = ( module radm2_to_cb4      $Revision; )
+}}}
+
+p. The following are "patch" style differences in @run.bcon@, which must now be executed for every day of the nested, 8km runs. The first difference shows how to change the script from running the profile data to the first day of the nested data:
+
+{{{
+7c7
+&lt; # Usage: run.bcon &gt;&amp;! bcon_e2a.log &amp;                                  #
+---
+&gt; # Usage: run.bcon &gt;&amp;! bcon_e3a.log &amp;                                  #
+23c23
+&lt;  set CFG      = e1a
+---
+&gt;  set CFG      = e3a
+34c34
+&lt;  setenv GRID_NAME M_32_99TUT02
+---
+&gt;  setenv GRID_NAME M_08_99TUT02
+38c38
+&lt;  setenv LAYER_FILE $M3DATA/mcip3/M_32_99NASH/METCRO3D_benchmark2005
+---
+&gt;  setenv LAYER_FILE $M3DATA/mcip3/M_08_99NASH/METCRO3D_benchmark2005
+56,57c56,57
+&lt;  set BC = profile      # use default profile file
+&lt; #set BC = m3conc       # use CMAQ CTM concentration files (nested runs)
+---
+&gt; #set BC = profile      # use default profile file
+&gt;  set BC = m3conc       # use CMAQ CTM concentration files (nested runs)
+119c119
+&lt;     setenv CTM_CONC_1 $M3DATA/cctm/CCTM_d1bCONC.d1b
+---
+&gt;     setenv CTM_CONC_1 $M3DATA/cctm/CCTM_e2aCONC.e2a
+}}}
+
+p. The second difference shows how to change from the first day of the nest to running the second day:
+
+{{{
+7c7
+&lt; # Usage: run.bcon &gt;&amp;! bcon_e3a.log &amp;                                  #
+---
+&gt; # Usage: run.bcon &gt;&amp;! bcon_e3b.log &amp;                                  #
+64,65c64,65
+&lt;     set DATE = 1999183  # July 02, 1999
+&lt; #   set DATE = 1999184  # July 03, 1999
+---
+&gt; #   set DATE = 1999183  # July 02, 1999
+&gt;     set DATE = 1999184  # July 03, 1999
+119c119
+&lt;     setenv CTM_CONC_1 $M3DATA/cctm/CCTM_e2aCONC.e2a
+---
+&gt;     setenv CTM_CONC_1 $M3DATA/cctm/CCTM_e2aCONC.e2b
+}}}
+
+=== 3. cctm ===
+p. Just modify the run script. The first difference shows how to modify the run script @run.cctm.tut_day2@ and modify the new file as follows:
+
+{{{
+7c7
+&lt; # Usage: run.cctm &gt;&amp;! cctm_e2b.log &amp;                                  #
+---
+&gt; # Usage: run.cctm &gt;&amp;! cctm_e3a.log &amp;                                  #
+22c22
+&lt;  set APPL     = e2b
+---
+&gt;  set APPL     = e3a
+42c42
+&lt;  set STDATE   = 1999184       # beginning date
+---
+&gt;  set STDATE   = 1999183       # beginning date
+92c92
+&lt;  setenv GRID_NAME M_32_99TUT02
+---
+&gt;  setenv GRID_NAME M_08_99TUT02
+103c103
+&lt;  set OCEANfile = SSMASK_tut32
+---
+&gt;  set OCEANfile = SSMASK_tut08
+107,108c107,108
+&lt;  set EMISfile  = e_32km_cb4.19990703.ncf
+&lt; #set EMISfile  = e_08km_cb4.19990702.ncf
+---
+&gt; #set EMISfile  = e_32km_cb4.19990703.ncf
+&gt;  set EMISfile  = e_08km_cb4.19990702.ncf
+114,117c114,117
+&lt;  set GC_ICpath = $OUTDIR
+&lt;  set GC_ICfile = CCTM_e2aCONC.e2a
+&lt; #set GC_ICpath = $M3DATA/icon
+&lt; #set GC_ICfile = ICON_cb4_M_32_99TUT02_profile
+---
+&gt; #set GC_ICpath = $OUTDIR
+&gt; #set GC_ICfile = CCTM_e2aCONC.e2a
+&gt;  set GC_ICpath = $M3DATA/icon
+&gt;  set GC_ICfile = ICON_cb4_M_08_99TUT02_1999183
+120c120
+&lt;  set GC_BCfile = BCON_cb4_M_32_99TUT02_profile
+---
+&gt;  set GC_BCfile = BCON_cb4_M_08_99TUT02_1999183
+122c122
+&lt;  set METpath   = $M3DATA/mcip3/M_32_99NASH
+---
+&gt;  set METpath   = $M3DATA/mcip3/M_08_99NASH
+}}}
+
+p. You should submit this new job to the queue to run.  Finally, the differences from the first to the second day of the 8 km runs.  Copy @run.cctm.tut_8k_day1@run.cctm.tut_8k_day2:
+
+{{{
+7c7
+&lt; # Usage: run.cctm &gt;&amp;! cctm_e3a.log &amp;                                  #
+---
+&gt; # Usage: run.cctm &gt;&amp;! cctm_e3b.log &amp;                                  #
+22c22
+&lt;  set APPL     = e3a
+---
+&gt;  set APPL     = e3b
+42c42
+&lt;  set STDATE   = 1999183       # beginning date
+---
+&gt;  set STDATE   = 1999184       # beginning date
+108,109c108,109
+&lt;  set EMISfile  = e_08km_cb4.19990702.ncf
+&lt; #set EMISfile  = e_08km_cb4.19990703.ncf
+---
+&gt; #set EMISfile  = e_08km_cb4.19990702.ncf
+&gt;  set EMISfile  = e_08km_cb4.19990703.ncf
+114,117c114,117
+&lt; #set GC_ICpath = $OUTDIR
+&lt; #set GC_ICfile = CCTM_e2aCONC.e2a
+&lt;  set GC_ICpath = $M3DATA/icon
+&lt;  set GC_ICfile = ICON_cb4_M_08_99TUT02_1999183
+---
+&gt;  set GC_ICpath = $OUTDIR
+&gt;  set GC_ICfile = CCTM_e2aCONC.e3a
+&gt; #set GC_ICpath = $M3DATA/icon
+&gt; #set GC_ICfile = ICON_cb4_M_08_99TUT02_1999183
+120c120
+&lt;  set GC_BCfile = BCON_cb4_M_08_99TUT02_1999183
+---
+&gt;  set GC_BCfile = BCON_cb4_M_08_99TUT02_1999184
+}}}
+
+p. You can run the second day of the 8 km run by submitting @run.cctm.sge.tut_8k_day2@ to the queue.
+
+== Other [[Modules]] ==
+p. One other module, @procan@, is included with the CMAQ distribution.  Follow these instructions to build it if needed:
+
+=== 1. procan ===
+p(. a. Change directory to @$M3HOME/scripts/procan@
+p(. b. [[[[[[[[[[Run]]]]]]]]]] the build script by executing
+p((((. {{{
+[user@host pdm]$ ./bldit.pacp &amp;&gt; bldit.pacp.out
+}}}
+p(. c. Check the file @bldit.pacp.out@ in the current directory.

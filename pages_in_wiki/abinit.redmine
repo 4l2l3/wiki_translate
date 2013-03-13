@@ -3,40 +3,40 @@
 [[PageOutline]]
 
 == Description ==
-''From the ABINIT home page'':  ABINIT is a package whose main program allows one to find the total energy, charge density and electronic structure of systems made of electrons and nuclei (molecules and periodic solids) within Density Functional Theory (DFT), using pseudopotentials and a planewave or wavelet basis. ABINIT also includes options to optimize the geometry according to the DFT forces and stresses, or to perform molecular dynamics simulations using these forces, or to generate dynamical matrices, Born effective charges, and dielectric tensors, based on Density-Functional Perturbation Theory, and many more properties. Excited states can be computed within the Many-Body Perturbation Theory (the GW approximation and the Bethe-Salpeter equation), and Time-Dependent Density Functional Theory (for molecules). In addition to the main ABINIT code, different utility programs are provided. 
+_From the ABINIT home page_:  ABINIT is a package whose main program allows one to find the total energy, charge density and electronic structure of systems made of electrons and nuclei (molecules and periodic solids) within Density Functional Theory (DFT), using pseudopotentials and a planewave or wavelet basis. ABINIT also includes options to optimize the geometry according to the DFT forces and stresses, or to perform molecular dynamics simulations using these forces, or to generate dynamical matrices, Born effective charges, and dielectric tensors, based on Density-Functional Perturbation Theory, and many more properties. Excited states can be computed within the Many-Body Perturbation Theory (the GW approximation and the Bethe-Salpeter equation), and Time-Dependent Density Functional Theory (for molecules). In addition to the main ABINIT code, different utility programs are provided. 
 
-* [http://www.abinit.org/ "ABINIT Home Page"]
+*****ttp://www.[[[[abinit]]]].org/ "ABINIT Home Page"]
 
 == Version ==
- * '''6.12.3'''
+*** *6.12.3*
 
 == Authorized Users ==
- * `circe` account holders
+*****circe` account holders
 
 == Platforms ==
- * `circe` cluster
+****@circe@ cluster
 
 == Running ABINIT on the Cluster ==
 
-=== Modules ===
+=== [[Modules]] ===
 
-ABINIT requires the following module file to run:
- * `apps/abinit/6.12.3`
-See [wiki:Modules] for more information.  
+p. ABINIT requires the following module file to run:
+*** @apps/[[[[abinit]]]]/6.12.3@
+p. See [wiki:[[Modules]]] for more information.  
 
- * '''NOTE''': This module MUST be loaded persistently in order for the application to run.  Use
-   {{{
-[user@host ~]$ module load apps/abinit/6.12.3
+******************is module MUST be loaded persistently in order for the application to run.  Use
+p(((. {{{
+[user@host ~]$ module load apps/[[[[abinit]]]]/6.12.3
 }}}
-   in order to properly execute ABINIT.
+p(((. in order to properly execute ABINIT.
 
 === Submitting a Job ===
-The ABINIT user guide is essential to understanding the application and making the most of it.  The guide and this page should help you to get started with your simulations.
- * [http://www.abinit.org/documentation/helpfiles/for-v6.12/users/new_user_guide.html "ABINIT User Guide"]
+p. The ABINIT user guide is essential to understanding the application and making the most of it.  The guide and this page should help you to get started with your simulations.
+******ttp://www.[[[[abinit]]]].org/documentation/helpfiles/for-v6.12/users/new_user_guide.html "ABINIT User Guide"]
 
-Information about the abinit executable can be found using man pages, i.e "man abinit", after you have loaded the ABINIT module. 
+p. Information about the [[[[abinit]]]] executable can be found using man pages, i.e "man [[[[abinit]]]]", after you have loaded the ABINIT module. 
 
-Make sure to run your job from your $WORK directory. Use the a submit script like the following to run ABINIT:
+p. Make sure to run your job from your $WORK directory. Use the a submit script like the following to run ABINIT:
 
 {{{
 #$ -N &lt;job_name&gt;
@@ -46,28 +46,28 @@ Make sure to run your job from your $WORK directory. Use the a submit script lik
 #$ -o output.$JOB_ID
 
 module purge
-module load apps/abinit/6.12.3
+module load apps/[[[[abinit]]]]/6.12.3
 
-mpirun abinit &lt; test.files &gt; test.log
+mpirun [[[[abinit]]]] &lt; test.files &gt; test.log
 }}}
 
-Your submit scripts will vary depending on your individual needs.
+p. Your submit scripts will vary depending on your individual needs.
 
 === Benchmarks and Tests ===
-The following contain input parameters for known ABINIT tests:
- * /apps/abinit/6.12.3/tests
- * [http://www.abinit.org/documentation/helpfiles/for-v6.12/tutorial/welcome.html "Online Tutorials"]
+p. The following contain input parameters for known ABINIT tests:
+*** /apps/[[[[abinit]]]]/6.12.3/tests
+*****http://www.[[[[abinit]]]].org/documentation/helpfiles/for-v6.12/tutorial/welcome.html "Online Tutorials"]
 
 === Additional Documentation ===
- * /apps/abinit/6.12.3/doc
- * [http://www.abinit.org/documentation/helpfiles/for-v6.12/input_variables/keyhr.html "Input Variables"]
- * [http://www.abinit.org/documentation/helpfiles/for-v6.12/features/features.html "List of Features"]
+*** /apps/[[[[abinit]]]]/6.12.3/doc
+*****http://www.[[[[abinit]]]].org/documentation/helpfiles/for-v6.12/input_variables/keyhr.html "Input Variables"]
+******ttp://www.[[[[abinit]]]].org/documentation/helpfiles/for-v6.12/features/features.html "List of Features"]
 
 === More Job Information ===
-See the following for more detailed job submission information:
- * [wiki:gridEngineUsers "SGE User's Guide"]
- * [wiki:gridEnginePolicy "Scheduling and Dispatch Policies"]
- * [wiki:gridEngineTechn "Advanced Submit Techniques"]
+p. See the following for more detailed job submission information:
+******iki:gridEngineUsers "SGE User's Guide"]
+*******ki:gridEnginePolicy "Scheduling and Dispatch Policies"]
+******iki:gridEngineTechn "Advanced Submit Techniques"]
 
 == Reporting Bugs ==
-Report bugs to the IT Help Desk: mailto:help@usf.edu
+p. Report bugs to the IT Help Desk: help@usf.edu

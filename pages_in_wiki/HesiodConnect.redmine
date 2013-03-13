@@ -1,0 +1,21 @@
+= Working with Hesiod =
+p. Hesiod is a Windows-based High-Performance computing environment for commercial applications that easily integrate with the system.  We currently do not support development on this system but have plans to do so in the future using the Visual Studio components for Windows HPC.
+
+== Windows HPC Server 2008R2 Client Pack ==
+p. In order to work with Hesiod, you will need the Windows HPC Server 2008R2 Client Pack located here: http://www.microsoft.com/download/en/details.aspx?id=17017.  There is no direct login to Hesiod supported.
+
+== Supported Applications on Hesiod ==
+p. We're currently supporting 
+********ft [[HFSS]] versions 13 and 14
+******sys 13 and 14
+
+p. This month, we're rolling out support for
+****Comsol 4.2a
+****Matlab R2011b
+****Mathematica 8
+
+p. Instructions for working with these applications can be found in the [wiki:SoftwarePortal Available Software] section.
+
+p. Other applications on our roadmap include
+*** [[SAS]]
+*** SPSS

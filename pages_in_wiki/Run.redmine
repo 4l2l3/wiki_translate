@@ -1,0 +1,225 @@
+= The !GridEngine @[[[[[[[[[[Run]]]]]]]]]]@ Utility =
+[[PageOutline]]
+
+
+@run@ was written by Brian Smith for the University of South Florida.  It is licensed under the GPL and will be available on this site for download soon.
+
+== Example: [[[[[[[[[[Run]]]]]]]]]]ning Matlab through Module Integration ==
+p. Let's say you want to get a graphical Matlab session up and running.  First, ensure that your Workstation is correctly configured for displaying X11 applications by following our guide [wiki:XWin32Install [[[[here]]]]].
+
+p. Once you log into the system and have XWin32 (or your preferred X server) running, issue the following command:
+{{{
+[user@host ~]$ run matlab/r2009a
+}}}
+
+p. This will transparently start an interactive session with the scheduler and subsequently launch Matlab.
+
+== Example: [[[[[[[[[[Run]]]]]]]]]]ning VASP ==
+p. VASP is an Electronic Structure package that normally is run as a batch job submitted to the queue via a job script.  With @run@, we no longer need to know any of this (well, at least the batch job/script aspect...):
+{{{
+[user@host ~]$ run -n 16 -t 10:00:00 vasp/4.6.34
+p. Your job 30709 ("vasp/4.6.34-user-9408cf7") has been submitted
+[user@host ~]$
+}}}
+
+p. This will automatically submit a VASP job to the queue in batch mode, using your current directory as its search path for its INCAR file.  The anticipated runtime of 10 hours is reported with the -t directive.  That we require 16 processors is expressed with the -n directive.  Knowledge of what MPI library VASP was compiled with, what options should be passed to OpenMPI for optimal execution, and other details are taken care of behind the scenes.
+
+== run Command Options ==
+p. From the @--help@ option, we get a nice manual on how to use the command.  I'll reproduce below:
+
+run [OPTIONS] [[COMMAND] [ARGUMENTS]] | [APP_PROFILE]
+
+w[[[[here]]]] [[COMMAND] [ARGUMENTS]] signify the command you wish to execute.  If you are using pipes or redirects, the command must be enclosed in quotes.  You do not specify these if you are also specifying an Application Profile (described below).
+
+p. The following are command options to modify the behavior of 'run'.  By default, 'run' will execute your application interactively with no parallel features enabled.  More often than not, this is not what you want.
+
+p(. -p [parallel_configuration] | --parallel[=&lt;parallel_configuration&gt;]
+p((((. By itself, this option enables the default Parallel Configuration,
+p((((. "openmpi".  This option is only required to run parallel jobs that
+p((((. are not defined by an application profile.  You can select from 
+p((((. the following Parallel Configurations:
+
+******** ansys
+******** ddi
+******** hpmpi
+******** intelmpi
+******** linda
+******** matlab
+******** mpich2
+******** mpich
+******** mvapich2
+******** mvapich
+******** openmpi
+******** pgmpich
+******** smp
+
+p(. -n &lt;int&gt; | --num-cpus=&lt;int&gt;
+p((((. Specify the number of CPUs required for your parallel job.  Required if 
+p((((. specifying -p.
+
+p(. -c &lt;int&gt; | --num-cpus-per-node=&lt;int&gt;
+p((((. Specify the number of CPUs to use per node.  Useful for MPI/OpenMP 
+p((((. applications.
+
+p(. -t &lt;time_val&gt; | --time=&lt;time_val&gt;
+p((((. Specify the time required to execute your job.  Default for BATCH jobs 
+p((((. is 10 minutes.  &lt;time_val&gt; takes the format &lt;HH...&gt;HH:MM:SS
+
+p(. -m &lt;memory&gt; | --memreq=&lt;memory&gt;
+p((((. Specify the total amount of memory in Gigabytes that this job will use.
+p((((. &lt;memory&gt; takes the form of e.g. 16G or 0.2G for values less than 1G.
+
+p(. -a &lt;array_spec&gt; | --array=&lt;array_spec&gt;
+p((((. Specify that this job is an array job (which spawns multiple copies of 
+p((((. the same job).  Within each copy of the job, the variable SGE_TASK_ID is 
+p((((. defined as a value within the range defined by &lt;array_spec&gt;.
+p((((. &lt;array_spec&gt; takes the form of n-m, w[[[[here]]]] n is a positive integer
+p((((. denoting the first task and m is a positive integer denoting the last 
+p((((. task.
+
+p(. -f &lt;features&gt; | --feature=&lt;features&gt;
+p((((. A comma-separated list of features that should be requested for this job.
+p((((. Consult system documentation for list of features and their meaning.
+
+p(. -M &lt;email_addr&gt; | --mail=&lt;email_addr&gt;
+p((((. Send job status updates to the email address defined by &lt;email_addr&gt;
+
+p(. -N &lt;name&gt; | --name=&lt;name&gt;
+p((((. Assign a name for this job.  If this option is not specified, one will be 
+p((((. generated.
+
+p(. -e &lt;env_vars&gt; | --environment=&lt;env_vars&gt;
+p((((. A comma-separated list of environment variables and assigned values that 
+p((((. will be set during job execution.
+
+p(. -h | --help     - Display this help page.
+
+p(. -b | --batch    - This job should run in batch-mode (in the background).
+
+p(. -i | --inter    - This job should run in interactive-mode (in the foreground).
+p(((((((((((((((((((. NOTE: If no resources are available, job will not start.
+p(((((((((((((((((((. This mode is the DEFAULT unless defined by your application
+p(((((((((((((((((((. profile.
+
+p(. -l | --list     - List available application profiles.
+
+p(. -d | --debug    - Enable extra output during job run to diagnose problems.
+
+p(. -D | --devel    - Specify that this job should run in the development queue.
+p(((((((((((((((((((. 30 minute limit applies.
+
+p(. -v | --verbose  - See what is really going on.
+
+=== Example Usage: ===
+
+p(. 1. [[[[[[[[[[Run]]]]]]]]]] "Matlab" in an interactive session:
+p(((((. 
+p((((. [user@host ~]$ run matlab
+
+p((((. and run Matlab with more available memory:
+
+p((((. [user@host ~]$ run -m 2G matlab
+
+p(. 2. [[[[[[[[[[Run]]]]]]]]]] a parallel application with 16 processors that needs 10 hours to 
+p((((. complete.  Notify you when complete and submit to the queue:
+
+p((((. [user@host ~]$ run -b -p -n 16 -t 10:00:00 -m myemail@mydomain.com myapp
+
+p(. 3. [[[[[[[[[[Run]]]]]]]]]] an application from a profile that includes parallel support. In
+p((((. this case, we choose ANSYS 12 defined by the module 'apps/ansys/12':
+p((((. We see [[[[here]]]] that the command argument can be a valid executable OR 
+p((((. an 'apps' module:
+
+p((((. [user@host ~]$ run -n 4 ansys/12
+
+p(. 4. [[[[[[[[[[Run]]]]]]]]]] an application from a profile that requires environment options and 
+p((((. four processors per node:
+
+p((((. [user@host ~]$ run -n 16 -c 4 -e INPUT_DB=mydb.gdb gromacs/4.0.5
+
+p(. 5. [[[[[[[[[[Run]]]]]]]]]] an application in parallel that is tuned for a specific processor
+p((((. feature:
+
+p((((. [user@host ~]$ run -p -n 32 -f sse4e -t 4:00:00 myapp
+
+=== Defining an Application Profile ===
+p. On Circe, generally every module defined in apps/ is an application profile for @run@.  This is easily accomplished by adding a few simple environment variable definitions to the module itself.  Let's look at NAMD for example:
+
+*apps/[[[[namd]]]]/2.7b2*
+{{{
+#%Module1.0#####################################################################
+##
+## dot modulefile
+##
+## modulefiles/dotpath.  Generated from dot.in by configure.
+##
+proc ModulesHelp { } {
+	global [[[[namd]]]]version
+
+	puts stderr "\tAdds [[[[namd]]]] 2.7b2 to your environment"
+}
+
+module-whatis	"adds  to [[[[namd]]]] your PATH environment variable"
+
+# for Tcl script use only
+set		[[[[namd]]]]version		2.7b2
+append-path 	PATH			/opt/apps/[[[[namd]]]]/2.7b2
+append-path	LD_LIBRARY_PATH		/opt/lib/tcl8.3/lib
+setenv		PAR_MODE		openmpi
+setenv		BATCH_MODE		true
+setenv		EXEC			"parallel_exec [[[[namd]]]]2 *.conf"
+
+module rm openmpi compilers
+module add compilers/intel/10.1.018.x86_64 openmpi/1.4.1-x86_64-intel-10.1.018
+}}}
+
+p. In this file, you should be conscious of the following 3 variables:
+*** PAR_MODE
+*** BATCH_MODE
+*** EXEC
+
+p. These three variables help glue the module with the run command so that the best options are set as defaults when referencing the application as a profile.  So, we know that when we run
+{{{
+[user@circe ~]$ run -n 8 -t 1:00:00 [[[[namd]]]]/2.7b2
+}}}
+we're actually running 
+{{{
+[user@circe apoa1]$ run -b -p openmpi -n 8 -t 1:00:00 parallel_exec [[[[namd]]]]2 *.conf
+}}}
+
+p. The other nice thing about application profiles is the ability to tightly integrate resource requests with the execution parameters.  Let's look at [[[[HFSS]]]], for instance.  When running !ConfigureSoftware.bash, prior to execution, you can define upper level memory limits and the number of CPUs to use for the simulation.  Let's see how we use these values within an application profile:
+
+{{{
+#%Module1.0#####################################################################
+##
+## dot modulefile
+##
+## modulefiles/dotpath.  Generated from dot.in by configure.
+##
+proc ModulesHelp { } {
+	global hfssversion
+
+	puts stderr "\tAdds [[[[HFSS]]]] v.11 to your environment"
+}
+
+module-whatis	"adds [[[[HFSS]]]] to your PATH environment variable"
+
+# for Tcl script use only
+set		hfssversion 		11.0
+#append-path 	PATH			/opt/apps/ansoft/hfss11
+append-path 	PATH			/opt/apps/[[[[HFSS]]]]-11_2/hfss11
+if { [ module-info mode load ] } {
+	system	/opt/bin/hfss_config
+}
+setenv		PAR_MODE		smp
+setenv		EXEC			"ConfigureSoftware.bash --SetNumProcs=\$NSLOTS \
+p((((((((((((. --SetTempDirectory=/tmp --SetMaximumRAMLimit=\$(((\$MEMREQ*1024)-64)); hfss"
+}}}
+
+p. Look at that!  We even managed to incorporate a little shell arithmetic in order to scale the memory value to the units expected by the commandline for the application.  You can see [[[[here]]]] that we are setting the memory limit to that defined by 
+
+{{{
+[user@circe ~]$ run -n 4 -m 32G -t 12:00:00 ansoft/hfss-11
+}}}
+
+p. This particular application module defaults to interactive mode (meaning, a GUI will pop up on your workstation).

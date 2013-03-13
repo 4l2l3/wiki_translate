@@ -1,0 +1,56 @@
+= NAMD =
+----
+[[PageOutline]]
+
+== Description ==
+
+_From the NAMD manual:_ NAMD (NAnoscale Molecular Dynamics) can simulate the movement of proteins with millions of atoms, making it the world's fastest parallel molecular dynamics program. The NAMD development team will continue to incorporate the latest parallel-computing advances into NAMD, which already runs efficiently on several thousand parallel processors... 
+
+== Version ==
+
+*** *2.7*
+
+== Authorized Users ==
+
+*****circe` account holders
+
+== Platforms ==
+
+****@circe@ cluster
+
+== Local Documentation ==
+
+=== [[Modules]] ===
+
+p. Namd requires the following module file to run:
+*** @apps/namd/2.7@
+p. See [wiki:[[Modules]]] for more information.
+
+
+=== Submitting a Job ===
+
+p. NAMD can run well on most types of hardware on the cluster.  For the vast majority of cases, memory is not as big an issue as CPU time and the program is parallel "enough" to ensure that it runs reasonably well over GigE though it will run better on Myrinet or InfiniBand.  To run NAMD, use the 'run' command within a directory with your .conf file.  It will run over any number of .conf files if you have more than one in the directory.
+
+{{{
+[user@circe ~]$ cd apoa1
+[user@circe apoa1]$ ls
+...
+apoa1.conf
+...
+[user@circe apoa1]$ run -n 16 -f ib -t 1:00:00 -N namd_apoa1 namd/2.7
+p. Your job 225598 ("namd_apoa1") has been submitted
+}}}
+p. For more information on the @run@ command, see [wiki:Run here].
+
+==== Benchmarks &amp; Tutorials ====
+p. The above User Information &amp; Documentation links should have ample information to qualify as a tutorial.  We currently have one benchmark in the directory
+*** /opt/apps/namd/apoa1
+p. This is a fairly standard NAMD benchmark that is used for testing clusters.
+
+==== More Job Information ====
+p. See the following for more detailed job submission information:
+******iki:gridEngineUsers "SGE User's Guide"]
+*******ki:gridEnginePolicy "Scheduling and Dispatch Policies"]
+******iki:gridEngineTechn "Advanced Submit Techniques"]
+==== Reporting Bugs ====
+p. Report bugs directly to Research Computing: support@rc.usf.edu

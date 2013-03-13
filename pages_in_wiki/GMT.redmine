@@ -1,0 +1,61 @@
+= [[[[[[[[[[[[[[[[[[[[[[GMT]]]]]]]]]]]]]]]]]]]]]] =
+----
+[[PageOutline]]
+
+== Description == 
+
+_From http://www.soest.hawaii.edu/[[[[[[[[[[[[[[[[[[[[[[GMT]]]]]]]]]]]]]]]]]]]]]]/:_ [[[[[[[[[[[[[[[[[[[[[[GMT]]]]]]]]]]]]]]]]]]]]]] (Generic Mapping Tools) is an open source collection of ~60 tools for manipulating geographic and Cartesian data sets (including filtering, trend fitting, gridding, projecting, etc.) and producing encapsulated postscript file (EPS) illustrations ranging from simple x-y plots via contour maps to artificially illuminated surfaces and 3-D perspective views. [[[[[[[[[[[[[[[[[[[[[[GMT]]]]]]]]]]]]]]]]]]]]]] supports ~30 map projections and transformations and comes with support data such as GSHHS coastlines, rivers, and political boundaries.
+
+== Version ==
+
+*** *4.5.5*
+p(. 
+== Authorized Users ==
+
+*****circe` account holders
+
+== Platforms ==
+
+****@circe@ cluster
+
+== Local Documentation ==
+
+=== [[Modules]] ===
+
+p. Before running a job, you must first set up your environment properly. Here are the required module files:
+
+*** @apps/gmt/4.5.5@
+
+p. To run [[[[[[[[[[[[[[[[[[[[[[GMT]]]]]]]]]]]]]]]]]]]]]] on the cluster, ensure that you use @module add@ prior to using any [[[[[[[[[[[[[[[[[[[[[[GMT]]]]]]]]]]]]]]]]]]]]]] executables.  See [wiki:[[Modules]]] for more information.
+
+=== Running on Circe ===
+
+p. Running [[[[[[[[[[[[[[[[[[[[[[GMT]]]]]]]]]]]]]]]]]]]]]] on @circe@ is relatively easy. Before you login to @circe@, you need to make sure you have X11 Forwarding enabled. If you're logging in from a UNIX/Linux system, you will need to do the following:
+p((((((. {{{
+ssh -Y user@circe.rc.usf.edu
+p((((((. }}}
+p((((((. If you're logging in from a Windows machine, you need to Enable X11 Forwarding in whatever ssh client you're using.  Make sure you've followed our [[XWin32Install|XWin32 Guide]] to configure your connection to @circe@.
+
+p. Next, you need to load the [[[[[[[[[[[[[[[[[[[[[[GMT]]]]]]]]]]]]]]]]]]]]]] module.
+{{{
+module load apps/gmt/4.5.5
+}}}
+p. You should now be able to execute [[[[[[[[[[[[[[[[[[[[[[GMT]]]]]]]]]]]]]]]]]]]]]] related scripts and executables from the command line.  To view the output postscript files, you can use @evince@.
+
+=== Examples &amp; Tutorials ===
+
+p. The tutorial guide is located here: 
+*** /opt/apps/gmt/4.5.5/share/doc/gmt/pdf/[[[[[[[[[[[[[[[[[[[[[[GMT]]]]]]]]]]]]]]]]]]]]]]_Tutorial.pdf
+
+p. The following folder contains input parameters for known [[[[[[[[[[[[[[[[[[[[[[GMT]]]]]]]]]]]]]]]]]]]]]] tutorials:
+*** /opt/apps/gmt/4.5.5/share/doc/gmt/tutorial
+
+p. Additionally, each of the 30 examples in the [[[[[[[[[[[[[[[[[[[[[[GMT]]]]]]]]]]]]]]]]]]]]]] Technical Reference and Cookbook may be viewed individually here:
+*** /opt/apps/gmt/4.5.5/share/doc/gmt/examples
+
+p. More information about the features of [[[[[[[[[[[[[[[[[[[[[[GMT]]]]]]]]]]]]]]]]]]]]]] can be found in 
+*** /opt/apps/gmt/4.5.5/share/doc/gmt
+
+=== Reporting Bugs ===
+
+p. Report bugs directly to Research Computing: support@rc.usf.edu

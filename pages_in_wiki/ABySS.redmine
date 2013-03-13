@@ -1,0 +1,101 @@
+= [[[[[[[[[[[[[[[[ABySS]]]]]]]]]]]]]]]] =
+[[PageOutline]]
+
+== Description == 
+
+_From the [[[[[[[[[[[[[[[[ABySS]]]]]]]]]]]]]]]] web site'':  [[[[[[[[[[[[[[[[ABySS]]]]]]]]]]]]]]]] (Assembly By Short Sequences) is a ''de novo_, parallel, paired-end sequence assembler that is designed for short reads. The single-processor version is useful for assembling genomes up to 100 Mbases in size. The parallel version is implemented using MPI and is capable of assembling larger genomes.
+
+*** http://www.bcgsc.ca/platform/bioinfo/software/abyss
+
+== Version ==
+
+*** *1.2.7*
+
+== Authorized Users ==
+
+*****circe` account holders
+
+== Platforms ==
+
+****@circe@ cluster
+
+== Running [[[[[[[[[[[[[[[[ABySS]]]]]]]]]]]]]]]] Jobs on the Cluster ==
+
+p. To assemble transcriptome data, see [[transabyss|Trans-[[[[[[[[[[[[[[[[ABySS]]]]]]]]]]]]]]]]]].
+
+=== [[Modules]] ===
+
+p. Before running a job, you must first set up your environment properly.  Here are the required module files:
+
+*** apps/abyss/1.2.7
+
+p. To run [[[[[[[[[[[[[[[[ABySS]]]]]]]]]]]]]]]] on the cluster, ensure that you use @module add@ prior to using any executables.  See [wiki:[[Modules]]] for more information.
+
+=== How to Submit Jobs ===
+
+p. Provided are batch scripts for running [[[[[[[[[[[[[[[[ABySS]]]]]]]]]]]]]]]] as a single processor or multi-processor job.  These scripts can be copied into your work directory (the folder with your input files and database files) so that you can submit batch processes to the queue.  For help on submitting jobs to the queue, see our [[gridEngineUsers|GridEngine User's Guide]].  These scripts are provided as examples only.  Your SGE and [[[[[[[[[[[[[[[[ABySS]]]]]]]]]]]]]]]] options will vary.  View the man page or this site (http://seqanswers.com/wiki/[[[[[[[[[[[[[[[[ABySS]]]]]]]]]]]]]]]]#Single-end_assembly) for more about [[[[[[[[[[[[[[[[ABySS]]]]]]]]]]]]]]]] options.
+
+=== Serial Submit Script ===
+***Single-end assembly
+
+p. Assemble short reads in a file named reads.fa into contigs in a file named contigs.fa with the following script:
+
+{{{
+#$ -N abyss_job_name
+#$ -l h_rt=hh:mm:ss
+#$ -cwd
+#$ -j y
+#$ -o output.$JOB_ID
+
+module add apps/abyss/1.2.7
+
+p. ABYSS -k25 reads.fa -o contigs.fa
+}}}
+
+where '-k' is an appropriate k-mer length. The only method to find the optimal value of 'k' is to run multiple trials and inspect the results.  The maximum value for 'k' is 64.
+
+
+=== Distributed Parallel (MPI) Submit Script ===
+***Paired-end assembly
+
+p. To assemble paired short reads in two files named reads1.fa and reads2.fa into contigs in a file named ecoli-contigs.fa, use the script:
+
+{{{
+#$ -N abyss_job_name
+#$ -l h_rt=hh:mm:ss,pcpus=8
+#$ -cwd
+#$ -j y
+#$ -o output.$JOB_ID
+
+module add apps/abyss/1.2.7
+
+abyss-pe k=25 n=10 in='reads1.fa reads2.fa' name=ecoli
+}}}
+
+where 'k' is the k-mer length as before.  'n' is the minimum number of pairs needed to consider joining two contigs. The optimal value for 'n' must be found by trial. 'in' specifies the input files to read, which may be in FASTA, FASTQ, qseq, export, SAM or BAM format and compressed with gz, bz2 or xz and may be tarred.  The assembled contigs will be stored in ${name}-contigs.fa.
+
+p. The suffix of the read identifier for a pair of reads must be one of
+'1' and '2', or 'A' and 'B', or 'F' and 'R', or 'F3' and 'R3', or
+'forward' and 'reverse'. The reads may be interleaved in the same file
+or found in different files. If the mates are in different files, it's
+highly recommended to place each pair of files adjacent on the command
+line and to use an even number of threads. Even if you are running on
+a single-processor machine, using two threads will help performance.
+p. Do not group together all the files containing the forwards reads
+followed by all the files containing the reverse reads.
+
+p. Reads without mates should be placed in a file specified by the 'se'
+(single-end) parameter. Reads without mates in the paired-end files
+will slow down the paired-end assembler considerably during the
+!ParseAligns stage.
+
+p. See also [[transabyss|Trans-[[[[[[[[[[[[[[[[ABySS]]]]]]]]]]]]]]]]]].
+
+=== More Job Information ===
+p. See the following for more detailed job submission information:
+******iki:gridEngineUsers "SGE User's Guide"]
+*******ki:gridEnginePolicy "Scheduling and Dispatch Policies"]
+******iki:gridEngineTechn "Advanced Submit Techniques"]
+
+== Reporting Bugs ==
+p. Report bugs to the IT Help Desk: help@usf.edu

@@ -1,0 +1,40 @@
+= Mass Profiler Pro ([[[[[[[[MPP]]]]]]]]) =
+----
+[[PageOutline]]
+
+== Description == 
+
+_From Agilent:_ Agilent Mass Profiler Professional ([[[[[[[[MPP]]]]]]]]) software is a powerful chemometrics platform designed to exploit the high information content of MS data and can be used in any MS-based differential analysis to determine relationships among two or more sample groups and variables. [[[[[[[[MPP]]]]]]]] provides advanced statistical analysis and visualization tools for GC/MS, LC/MS, CE/MS and ICP-MS data analysis. [[[[[[[[MPP]]]]]]]] also integrates smoothly with Agilent Mass Hunter Workstation, Spectrum Mill and Chem Station software and is the only platform that provides integrated identification/annotation of compounds and integrated pathway analysis for metabolomic and proteomic studies. The system also enables Automated Sample Class Prediction that revolutionizes mass spectrometer-based qualitative analysis of unknown samples in many applications.
+
+*****http://www.chem.agilent.com/en-US/products-services/Software-Informatics/Mass-Profiler-Professional-Software/Pages/default.aspx "[[[[[[[[MPP]]]]]]]] Website"]
+
+== Versions ==
+
+*** *1.4.4*
+
+== Authorized Users ==
+
+****WHPC-Login Users
+p. If you receive a permissions error stating that your account doesn't have access, please email help@usf.edu and ask to be added to the Windows HPC user group on whpc-login.rc.usf.edu
+
+== Platforms ==
+
+*** whpc-login.rc.usf.edu
+
+==== Logging On ====
+p(. To log onto whpc-login.rc.usf.edu, you will need to use a remote desktop client. 
+**************************** it is recommended to use "rdesktop -u 'FOREST\&lt;username&gt;' whpc-login.rc.usf.edu" from the terminal. To view more options for rdesktop, view the manual page. 
+
+****************s machine, launch "Remote Desktop Connection" and specify "whpc-login.rc.usf.edu" for the 'Computer' field.
+
+=== Submitting Jobs ===
+p. Once logged onto the machine, double-click the desktop shortcut for [[[[[[[[MPP]]]]]]]] master to open the graphical user interface to begin working with the [[[[[[[[MPP]]]]]]]] software.
+
+=== Documentations and Videos ===
+p. Vendor documentation and video tutorials can be found for "MassProfilerPro" on the "All Programs" menu using the Windows "Start" button.
+
+=== Getting Job Status and Progress Information ===
+p. Please see our [[WinHPCJobStatus|Windows HPC Job Information page]] for information on managing your jobs, viewing status, and tracking output.
+
+== Getting Help ==
+p. Please report any issue to the USF IT Helpdesk by sending an e-mail to help@usf.edu

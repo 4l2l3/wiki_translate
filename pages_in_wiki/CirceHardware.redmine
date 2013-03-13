@@ -1,0 +1,17 @@
+== Circe Hardware ==
+----
+
+[[br]][[br]]
+p. Research Computing houses various types of hardware, configured to work together to help with any intense computation.  This table shows the various hardware configurations currently available:
+
+| | *Nodes_' | '''Core Count''' | '''Processors'''            | '''Memory''' | '''Word size''' | '''Interconnect''' | '''Grant No.''' | '_Additional Info* | 
+| | 120         | 960 | 2 x Intel(R) Xeon X5460 @ 3.16GHz (Quad Core) | 16 GB | 64-bit | DDR !InfiniBand | CHE-0722887 (NSF) | [[GibsonSpecs|MRI Cluster Specs]]|
+| | 36          | 288 | 2 x AMD Opteron 2384 (Quad Core) | 16 GB | 64-bit | DDR !InfiniBand | | |
+| | 38          | 456 | 2 x AMD Opteron 2427 (Six Core) | 24 GB | 64-bit | DDR !InfiniBand | | |
+| | 8           | 128 | 2 x AMD Opteron 6128 (Eight Core) | 32 GB | 64-bit | DDR !InfiniBand | | |
+| | 132 | 1584 | 2 x Intel Xeon E5649 (Six Core) | 24GB | 64-bit | QDR !InfiniBand | | |
+| | 8 | 96 | 2 x Intel Xeon E5649 (Six Core) | 24GB | 64-Bit | QDR !InfiniBand | | NVIDIA M2050 PCIe x16 GPGPUs (CUDA) |
+| | 16 | 192 | 2 x Intel Xeon E5649 (Six Core) | 24GB | 64-Bit | QDR !InfiniBand | | |
+| Pending Aug. 2012 | 64 | 192 | 2 x Intel Xeon E5-2630 (Six Core) | 24GB | 64-Bit | QDR !InfiniBand | | |
+| *Total* | | | | | | | | |
+| | 340 | 3804 | | | | | | |

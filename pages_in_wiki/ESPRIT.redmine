@@ -1,0 +1,107 @@
+= [[[[[[[[[[[[ESPRIT]]]]]]]]]]]] =
+----
+[[PageOutline]]
+*Last Modified:* [[LastModified([[[[[[[[[[[[ESPRIT]]]]]]]]]]]])]]
+== Description ==
+
+p. [[[[[[[[[[[[ESPRIT]]]]]]]]]]]] is a computational algorithm that can be used to estimate microbial diversity based on 16S rRNA shotgun sequences. It consists of four modules: (1) removes low-quality reads using various criteria, (2) computes pairwise distances of reads, (3) groups reads into OTUs at different dissimilarity levels, and (4) performs statistical inference to estimate species richness.
+p(. 
+
+== Version == 
+
+*** *20090715*
+
+== Authorized Users == 
+
+*****circe` account holders
+
+== Platforms ==
+
+****@circe@ cluster
+
+== Local Documentation ==
+p. The user guide can be found at */opt/apps/esprit/20090715/esprit_user_guide.pdf*.
+=== [[Modules]] ===
+
+p. [[[[[[[[[[[[ESPRIT]]]]]]]]]]]] requires the following module file to run:
+*** @apps/esprit/20090715@
+p. See [wiki:[[Modules]]] for more information.
+
+=== Creating and Submitting a Job ===
+==== Job Considerations ====
+p. In order to submit a [[[[[[[[[[[[ESPRIT]]]]]]]]]]]] job, you will need to have two things:
+*********put FASTA file that is pre-trimmed
+***************of pieces the FASTA file should be split into for parallelization
+
+p. The number of pieces you choose determines how many tasks will be submitted to the cluster. The kmer-distance calculation will require ((num_pieces SELECT 2) + num_pieces) tasks, and the Needleman-Wunch calculation will require (num_pieces * num_pieces) tasks. For a FASTA file split into 10 pieces, for example, you will have 55 and 100 tasks, respectively. 
+
+p. It is recommended that you do not split the file into more than 10 pieces, since the grid will have to dispatch a lot of tasks and it will take longer for them to finish since not all of them will be dispatched at the same time.
+
+p. It is also recommended that you run your job from /work to ensure integrity of results. 
+
+==== Submit the Job ====
+p. Ensure that the [[[[[[[[[[[[ESPRIT]]]]]]]]]]]] module is loaded in the persistent environment:
+{{{
+[aastaneh@login1 ~]$ module initload
+
+bash initialization file $HOME/.modules loads modules:
+p((((((((. null apps/esprit/20090715
+}}}
+
+p. Create a directory for the [[[[[[[[[[[[ESPRIT]]]]]]]]]]]] run:
+{{{
+[aastaneh@login1 ~]$ mkdir $WORK/esprit-job1
+}}}
+
+p. Copy your FASTA file into the directory:
+{{{
+[aastaneh@login1 ~]$ cp data/test.fas $WORK/esprit-job1
+}}}
+
+p. Finally, change into the job directory and run esprit_cc with the proper options. Press ENTER again to confirm the parameters.
+{{{
+[aastaneh@login1 esprit-job1]$ esprit_cc test.fas 5
+p. Specified input to be handled in 5 parts.
+p. The number of processes for the KMER distance and Needleman-Wunsh calculations are 15 and 25, respectively.
+p. Press Enter to continue. Otherwise, press Ctrl+c to exit.
+
+17666 Seqs Match Primer
+17666 Seqs Valid Len
+
+8234 Seqs After Process
+p((((((. 0.07 secs in Purging Strings. 
+p. Calculating KMER distances..
+p. Your job-array 77519.1-15:1 ("kmerdist.26893") has been submitted
+p. Waiting on job kmerdist.26893 to complete. Please wait..
+p. Counting Total Records....
+497836 Records Found, Splitting...
+p(. Writing kmer.dist_24
+p. Calculating Needleman-Wunch Distances:
+p. Your job-array 77521.1-25:1 ("needledist.26893") has been submitted
+p. Waiting on job needledist.26893 to complete. Please wait..
+p. Your job 77523 ("hcluster.26893") has been submitted
+p. Waiting on job hcluster.26893 to complete. Please wait..
+p. Dist 0.01 Seqs 17666 Clusters 8028
+p. Dist 0.02 Seqs 17666 Clusters 6363
+p. Dist 0.03 Seqs 17666 Clusters 6108
+p. Dist 0.04 Seqs 17666 Clusters 5035
+p. Dist 0.05 Seqs 17666 Clusters 4335
+p. Dist 0.06 Seqs 17666 Clusters 3961
+p. Dist 0.07 Seqs 17666 Clusters 3479
+p. Dist 0.08 Seqs 17666 Clusters 3107
+p. Dist 0.09 Seqs 17666 Clusters 2816
+p. Dist 0.10 Seqs 17666 Clusters 2536
+p. Dist 0.11 Seqs 17666 Clusters 2312
+p. Dist 0.12 Seqs 17666 Clusters 2147
+p. Dist 0.13 Seqs 17666 Clusters 2053
+p. Dist 0.14 Seqs 17666 Clusters 1994
+p. Dist 0.15 Seqs 17666 Clusters 1942
+p. Dist 0.16 Seqs 17666 Clusters 1917
+p. Dist 0.17 Seqs 17666 Clusters 1896
+p. Dist 0.18 Seqs 17666 Clusters 1892
+p. Dist 0.19 Seqs 17666 Clusters 1891
+p. Dist 0.20 Seqs 17666 Clusters 1890
+p((((((. 4.85 secs in Statistical Analysis.
+}}}
+
+

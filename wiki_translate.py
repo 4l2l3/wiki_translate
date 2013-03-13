@@ -280,9 +280,10 @@ def translate(trac_text):
 	trac_text = do_definitions(trac_text)
 	return trac_text
 
-print "Enter file location or 'no file' to exit program."
-file_loc = raw_input()
-while (file_loc!="no file"):
+page_file = open("pages",'r')
+
+for line in page_file:
+	file_loc = "pages_in_wiki/" + line.rstrip('\n')
 	#Get file contents
 	input_file = open(file_loc,'r').read()
 
@@ -292,9 +293,5 @@ while (file_loc!="no file"):
 	#Put redmine version in new file <filename>.redmine
 	output_file = open(file_loc+'.redmine','w')
 	output_file.write(output_text)
-
-	#Get next file or break loop
-	print "Enter file location or 'no file' to exit program."
-	file_loc = raw_input()
 
 print "Normal program termination."

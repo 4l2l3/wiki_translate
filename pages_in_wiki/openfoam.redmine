@@ -1,0 +1,77 @@
+= OpenFOAM =
+[[PageOutline]]
+
+== Description == 
+
+_From the OpenFOAM web site_: The OpenFOAM®  (Open Field Operation and Manipulation) CFD Toolbox has an extensive range of features to solve anything from complex fluid flows involving chemical reactions, turbulence and heat transfer, to solid dynamics and electromagnetics. It includes tools for meshing, notably snappyHexMesh, a parallelised mesher for complex CAD geometries, and for pre- and post-processing. Almost everything (including meshing, and pre- and post-processing) runs in parallel as standard, enabling users to take full advantage of computer hardware at their disposal. OpenFOAM includes over 80 solver applications that simulate specific problems in engineering mechanics and over 170 utility applications that perform pre- and post-processing tasks, e.g. meshing, data visualisation, etc. 
+
+*** http://www.openfoam.com/features/
+
+== Version ==
+
+*** *2.0.1*
+
+== Authorized Users ==
+
+*****circe` account holders
+
+== Platforms ==
+
+****@circe@ cluster
+
+== Running OpenFOAM Jobs on the Cluster ==
+
+=== [[Modules]] ===
+
+p. Before running a job, you must first set up your environment properly.  Here are the required module files:
+
+*** apps/openfoam/2.0.1
+
+p. To run OpenFOAM on the cluster, ensure that you use @module add@ prior to using any executables.  See [wiki:[[Modules]]] for more information.  You also need to load the environment variables into your profile after loading the module.  This is done by executing the following command in your terminal window:
+
+{{{
+[user@login ~]$ source $ENV_FILE
+}}}
+
+=== How to Submit Jobs ===
+
+p. Provided are directions for running an interactive job and a batch script for running OpenFOAM as a multi-processor job.    These scripts are provided as examples only.  Your SGE and OpenFOAM executables, tools, and options will vary.  View the user's guide on this site (http://www.openfoam.com/docs/user/) for more about OpenFOAM options.
+
+=== GUI (Interactive) Jobs ===
+
+p. Specify the number of processors (typically 2-8) and time needed to run OpenFOAM. This example is two processors for 10 hours:
+{{{
+[user@login ~]$ qlogin -l h_rt=10:00:00, pcpus= 2
+}}}
+p. Once you get dropped into an interactive shell on the execution host, you will need to load the module and environment as described above.  You can then run OpenFOAM tools with any corresponding options, i.e.:
+{{{
+[user@host ~]$ paraFoam
+}}}
+
+
+=== Distributed Parallel (MPI) Submit Script ===
+
+p. This script can be copied into your job directory (the folder with your input files and database files) and modified so that you can submit batch processes to the queue.  For help on submitting jobs to the queue, see our [[gridEngineUsers|GridEngine User's Guide]].
+
+{{{
+#$ -N openfoam_job_name
+#$ -l mps=3.0G 
+#$ -l h_rt=hh:mm:ss, pcpus=8
+#$ -cwd
+#$ -j n 
+#$ -o &lt;job_name&gt;.o&lt;job_id&gt;
+
+module load apps/openfoam/2.0.1
+source $ENV_FILE
+
+mpirun &lt;foam_exectutable&gt; &lt;-parallel&gt; &lt;options&gt;
+}}}
+
+=== More Job Information ===
+p. See the following for more detailed job submission information:
+******iki:gridEngineUsers "SGE User's Guide"]
+*******ki:gridEnginePolicy "Scheduling and Dispatch Policies"]
+******iki:gridEngineTechn "Advanced Submit Techniques"]
+
+=== Reporting Bugs ===
+p. Report bugs to the IT Help Desk: help@usf.edu

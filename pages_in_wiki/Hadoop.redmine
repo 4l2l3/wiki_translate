@@ -1,0 +1,163 @@
+= [[[[[[[[[[[[[[[[[[[[[[[[Hadoop]]]]]]]]]]]]]]]]]]]]]]]] = 
+----
+[[PageOutline]]
+
+
+== Description == 
+
+_From the [[[[[[[[[[[[[[[[[[[[[[[[Hadoop]]]]]]]]]]]]]]]]]]]]]]]] wiki:_ [[[[[[[[[[[[[[[[[[[[[[[[Hadoop]]]]]]]]]]]]]]]]]]]]]]]] is a framework for running applications on large clusters built of commodity hardware. The [[[[[[[[[[[[[[[[[[[[[[[[Hadoop]]]]]]]]]]]]]]]]]]]]]]]] framework transparently provides applications both reliability and data motion. [[[[[[[[[[[[[[[[[[[[[[[[Hadoop]]]]]]]]]]]]]]]]]]]]]]]] implements a computational paradigm named  !Map/Reduce, where the application is divided into many small fragments of work, each of which may be executed or reexecuted on any node in the cluster. In addition, it provides a distributed file system (HDFS) that stores data on the compute nodes, providing very high aggregate bandwidth across the cluster. Both !Map/Reduce and the distributed file system are designed so that node failures are automatically handled by the framework.
+
+== Version ==
+
+*** *0.20.2*
+p(. 
+== Authorized Users ==
+
+*****circe` account holders
+
+== Platforms ==
+
+****@circe@ cluster
+
+== Local Documentation ==
+
+=== [[Modules]] ===
+p. [[[[[[[[[[[[[[[[[[[[[[[[Hadoop]]]]]]]]]]]]]]]]]]]]]]]] requires the following module and its prerequisite to run:
+*** @apps/hadoop/0.20.2@
+*** @apps/jdk/1.6.0_22.x86_64@
+p. To run [[[[[[[[[[[[[[[[[[[[[[[[Hadoop]]]]]]]]]]]]]]]]]]]]]]]] on the cluster, ensure that you use @module initadd@ to make the changes persistent.  See [wiki:[[Modules]]] for more information.
+
+=== Submitting Jobs ===
+
+p. First, you will need a [[[[[[[[[[[[[[[[[[[[[[[[Hadoop]]]]]]]]]]]]]]]]]]]]]]]]-aware application to run within the [[[[[[[[[[[[[[[[[[[[[[[[Hadoop]]]]]]]]]]]]]]]]]]]]]]]] environment. For this example, we will use the !WordCount Java program cited in the [[[[[[[[[[[[[[[[[[[[[[[[Hadoop]]]]]]]]]]]]]]]]]]]]]]]] documentation:
+
+p. Save this example code to a file called !WordCount.java:
+
+{{{
+p((((((((. package org.myorg;
+
+p((((((((. import java.io.IOException;
+p((((((((. import java.util.*;
+
+p((((((((. import org.apache.hadoop.fs.Path;
+p((((((((. import org.apache.hadoop.conf.*;
+p((((((((. import org.apache.hadoop.io.*;
+p((((((((. import org.apache.hadoop.mapred.*;
+p((((((((. import org.apache.hadoop.util.*;
+
+p((((((((. public class WordCount {
+
+p(((((((((((. public static class Map extends MapReduceBase implements Mapper&lt;LongWritable, Text, Text, IntWritable&gt; {
+p(((((((((((((. private final static IntWritable one = new IntWritable(1);
+p(((((((((((((. private Text word = new Text();
+
+p(((((((((((((. public void map(LongWritable key, Text value, OutputCollector&lt;Text, IntWritable&gt; output, Reporter reporter) throws IOException {
+p(((((((((((((((. String line = value.toString();
+p(((((((((((((((. StringTokenizer tokenizer = new StringTokenizer(line);
+p(((((((((((((((. while (tokenizer.hasMoreTokens()) {
+p(((((((((((((((((. word.set(tokenizer.nextToken());
+p(((((((((((((((((. output.collect(word, one);
+p(((((((((((((((. }
+p(((((((((((((. }
+p(((((((((((. }
+
+p(((((((((((. public static class Reduce extends MapReduceBase implements Reducer&lt;Text, IntWritable, Text, IntWritable&gt; {
+p(((((((((((((. public void reduce(Text key, Iterator&lt;IntWritable&gt; values, OutputCollector&lt;Text, IntWritable&gt; output, Reporter reporter) throws IOException {
+p(((((((((((((((. int sum = 0;
+p(((((((((((((((. while (values.hasNext()) {
+p(((((((((((((((((. sum += values.next().get();
+p(((((((((((((((. }
+p(((((((((((((((. output.collect(key, new IntWritable(sum));
+p(((((((((((((. }
+p(((((((((((. }
+
+p(((((((((((. public static void main(String[] args) throws Exception {
+p(((((((((((((. JobConf conf = new JobConf(WordCount.class);
+p(((((((((((((. conf.setJobName("wordcount");
+
+p(((((((((((((. conf.setOutputKeyClass(Text.class);
+p(((((((((((((. conf.setOutputValueClass(IntWritable.class);
+
+p(((((((((((((. conf.setMapperClass(Map.class);
+p(((((((((((((. conf.setCombinerClass(Reduce.class);
+p(((((((((((((. conf.setReducerClass(Reduce.class);
+
+p(((((((((((((. conf.setInputFormat(TextInputFormat.class);
+p(((((((((((((. conf.setOutputFormat(TextOutputFormat.class);
+
+p(((((((((((((. FileInputFormat.setInputPaths(conf, new Path(args[0]));
+p(((((((((((((. FileOutputFormat.setOutputPath(conf, new Path(args[1]));
+
+p(((((((((((((. JobClient.runJob(conf);
+p(((((((((((. }
+p((((((((. }
+}}} 
+
+p. We will use this code against [[[[[[[[[[[[[[[[[[[[[[[[Hadoop]]]]]]]]]]]]]]]]]]]]]]]] to determine the word frequencies in a file (a listing of how many times a particular word exists in the file) 
+
+p. Now, we shall compile it and create a jar:
+
+{{{
+$ mkdir wordcount_classes
+$ javac -classpath ${HADOOP_HOME}/hadoop-${HADOOP_VERSION}-core.jar -d wordcount_classes WordCount.java
+$ jar -cvf ./wordcount.jar -C wordcount_classes/ . 
+}}}
+
+p. Next, we create the submission script which starts hadoop and submits a job using our jar file. (Read the comments below for details on how this works.) 
+
+{{{
+#!/bin/bash
+#$ -N hadoop_run
+#$ -j y
+#$ -o output.$JOB_ID
+#$ -l h_rt=00:10:00,pcpus=4
+#$ -cwd
+
+module purge
+module add apps/jdk/1.6.0_22.x86_64 apps/hadoop/0.20.2
+
+. $HADOOP_HOME/conf/hadoop-sge.sh
+
+# This configures the environment and starts the [[[[[[[[[[[[[[[[[[[[[[[[Hadoop]]]]]]]]]]]]]]]]]]]]]]]] Cluster.
+hadoop_start
+
+# I took a text copy of the King James Version of the Bible as test data (http://download.o-bible.com:8080/kjv.gz)
+# Removed all verse prefixes, punctuation, and forced everything to lowercase, like this:
+# zcat kjv.gz | awk '{ $1=NP; print }' | sed 's/[\.,-\!\?]//g' | tr "[:upper:]" "[:lower:]" | awk 'FNR&gt;1' &gt; properkjv.txt
+
+# Copy the input file into the HDFS filesystem
+hadoop fs -put ./properkjv.txt properkjv.txt
+
+# Running the hadoop task(s) here. I am specifying the jar, class, input, and output:
+hadoop jar ./wordcount.jar org.myorg.WordCount properkjv.txt output
+
+# Copying the output files from the HDFS filesystem
+hadoop fs -get output hadoop-output.$JOB_ID
+
+# Stops the [[[[[[[[[[[[[[[[[[[[[[[[Hadoop]]]]]]]]]]]]]]]]]]]]]]]] cluster.
+hadoop_end
+}}}
+
+p. With the above run, the result data would be stored in files ./hadoop-output-$JOB_ID/part-*. A sample:
+
+{{{
+aaronites       2
+aarons  31
+abaddon 1
+abagtha 1
+abana   1
+abarim  4
+abase   4
+abased  4
+abasing 1
+abated  6
+abba    3
+abda    2
+abdeel  1
+abdi    3
+abdiel  1
+abdon   8
+abednego        15
+
+}}}
+

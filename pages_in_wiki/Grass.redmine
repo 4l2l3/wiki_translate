@@ -1,0 +1,56 @@
+= GRASS GIS =
+----
+[[PageOutline]]
+
+== Description ==
+
+_From the GRASS GIS website: Commonly referred to as GRASS, this is free Geographic Information System (GIS) software used for geospatial data management and analysis, image processing, graphics/maps production, spatial modeling, and visualization. GRASS is currently used in academic and commercial settings around the world, as well as by many governmental agencies and environmental consulting companies._ 
+
+== Version ==
+
+*** *6.4.0*
+
+== Authorized Users ==
+
+*****circe` account holders
+
+== Platform ==
+
+****@circe@ cluster
+
+== Local Documentation ==
+
+
+=== Running GRASS GIS on the Cluster ===
+
+p. The GRASS documentation is essential to understanding the application and making the most of it.  The guides and this page should be all you need to get started with your simulations.
+**************user documentation and addendums are available on the GRASS-Wiki: http://grass.osgeo.org/wiki/
+
+p. Before you login to @circe@, you need to make sure you have X11 Forwarding enabled. If you're logging in from a UNIX/Linux system, you will need to do the following:
+p((((((. {{{
+ssh -Y user@circe.rc.usf.edu
+p((((((. }}}
+p((((((. If you're logging in from a Windows machine, you need to Enable X11 Forwarding in whatever ssh client you're using.  Make sure you've followed our [[XWin32Install|XWin32 Guide]] to configure your connection to @circe@.
+
+p. The GRASS GUI can be called from any login node using the following command:
+
+{{{
+[user@login ~]$ grass64
+}}}
+
+==== Benchmarks &amp; Tutorials ====
+
+p. The following folder contains input parameters for known GRASS tutorials:
+*** /opt/apps/grass/samples
+*** http://trac.osgeo.org/grass/wiki/HowToTestGrass6
+
+==== More Job Information ====
+
+p. See the following for more detailed job submission information:
+******iki:gridEngineUsers "SGE User's Guide"]
+*******ki:gridEnginePolicy "Scheduling and Dispatch Policies"]
+******iki:gridEngineTechn "Advanced Submit Techniques"]
+
+==== Reporting Bugs ====
+
+p. Report bugs directly to Research Computing: support@rc.usf.edu

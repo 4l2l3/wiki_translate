@@ -1,0 +1,155 @@
+= COMSOL =
+----
+[[PageOutline]]
+
+== Description ==
+
+_From Wikipedia:_ COMSOL Multiphysics (formerly FEMLAB) is a finite element analysis, solver and Simulation software / FEA Software package for various physics and engineering applications, especially coupled phenomena, or multiphysics.  COMSOL also offers an extensive interface to MATLAB and its toolboxes for a large variety of programming, preprocessing and postprocessing possibilities.  In addition to conventional physics-based user-interfaces, COMSOL Multiphysics also allows for entering coupled systems of partial differential equations (PDEs). The PDEs can be entered directly or using the so called weak form (see finite element method for a description of weak formulation).
+
+== Version ==
+*** *4.3a*
+
+== Authorized Users == 
+*****tudents doing research
+*** Faculty
+****@circe@ users
+
+== Platforms ==
+****Workstation/PC, Cluster
+
+== Installation == 
+
+*_Contents_*[[BR]]
+
+[FemlabUser#InstallingonLinux Installing on Linux][[BR]]
+[FemlabUser#InstallingonWindows Installing on Windows][[BR]]
+[FemlabUser#RunningonCirce Running on Circe][[BR]]
+----
+
+== Installing on Linux ==
+
+p(((. 1. Connect to https://rc.usf.edu/isos and login with your NetID and password. Change to the directory Comsol/v4.3a and download the ISO file. Once you have downloaded the ISO, disconnect from the ftp server.
+
+p(((. 2. Next, become root and issue the following commands.
+
+p(((((((((((. @root@host&gt; mkdir -p /tmp/comsol@
+p(((((((((((. @root@host&gt; mount -o loop comsol-4.3a.iso /tmp/comsol@
+
+p(((. Please note that /tmp/comsol could be any temporary directory you wish. These commands will create a directory and then mount the ISO DVD image to that temporary directory. This saves you the trouble of having to actually burn a DVD for Comsol.
+
+p(((. 3. Next you will need to start the installer by issuing the following command as root:
+
+p(((((((((((. @root@host&gt; sh /tmp/comsol/setup@
+
+p(((. After a few moments the graphical installer will be displayed.
+
+p(((. 4. Click on the New Installation Button to continue.
+
+p(((. 5. Read through the license agreement, agree to the terms and then click on the Agree button to proceed.
+
+p(((. 6. In the License Section change License format to License file.
+
+p(((. 7. Click on the "Browse ..." button to browse and select the license file you have been provided. If you need this file please go [http://rc.usf.edu/licensing/licenserequest.php here]. When you have selected the license file click Next to continue.
+
+p(((. 8. Follow the next on-screen instructions, select Linux as your platform and make sure the other two platforms are not selected. Be sure you choose the typical install set. If you have MATLAB 7.1 or higher installed on your computer you can choose to install the Comsol interface for use with MATLAB. Click on the "Choose ..." button and select the directory where MATLAB is installed.
+
+p(((. 9. When prompted for the directory for Comsol to install to we recommend the default directory.
+
+*************the on-screen instructions to complete the installation process.
+
+***************************************y wish to create a link to the Comsol binary under a directory that is in your path. You can do this by issuing the following command as root:
+
+p(((((((((((. @root@host&gt; ln -s /usr/local/comsol43a/bin/comsol /usr/local/bin@
+
+p(((. Note: !Comsol/Femlab has changed names to comsol, you can make the link above be any name you wish. 
+
+p(((. Please note that you can use a directory other than /usr/local/bin if you wish.
+
+p(((. Now that you have installed Comsol and created a link to the executable you can run Comsol with either of the two commands, the first starts Comsol without MATLAB and the second starts with MATLAB:
+
+p(((((((((((. @user@host&gt; comsol@
+p(((((((((((. @or user@host&gt; comsol matlab@
+
+== Installing on Windows ==
+
+p. Follow the steps below to download and install Comsol for Windows.
+
+p(((. 1. Connect to https://rc.usf.edu/isos and login with your NetID and password. Change to the directory Comsol/v4.3a and download the ISO file. Once you have downloaded the ISO, disconnect from the ftp server record the ISOs to a blank DVD-R under your favorite DVD recording software. If you need help with recording DVDs please see our guide at [wiki:CDBurning].
+
+p(((. Alternatively, you could mount the ISO without burning a DVD. Read our guide at [wiki:WindowsISO].
+
+p(((. 2. To begin the installation click on the installer on the newly created DVD located in the directory &lt;cdrom&gt;:\Windows\VM\setup.exe.
+
+p(((. 3. Click the New Installation button on the Introduction screen to continue.
+
+p(((. 4. Read through the license agreement, agree to the terms and then click the I Agree button to proceed.
+
+p(((. 5. In the licence section change the License format to License file. Click on the "Browse ..." button to browse and select the license file you have been provided. If you need this file please go [http://rc.usf.edu/licensing/licenserequest.php here]. When you have selected the license file click Next to continue.
+
+p(((. 6. Follow the next on-screen instructions, be sure you choose the typical install set. If you have MATLAB 7.1 or higher installed on your computer you should choose to install the Comsol interface for use with MATLAB. Click on the "Choose ..." button and select the directory where MATLAB is installed.
+
+p(((. 7. When prompted for the directory for Comsol to install to we recommend the default directory.
+
+p(((. 8. Follow the on-screen instructions to complete the installation process, inserting the other CDs when prompted.
+
+p(((. 9. When Comsol is finished installing you should have an icon on the desktop and in your Programs on the Start Menu. If you installed the MATLAB interface, you will also have an icon for starting Comsol with the interface.
+
+== Running on Circe ==
+
+p. Running Comsol on @circe@ is quite trivial.  When you are ready to run the solver against your model, save the model and copy the @.mph@ file to Circe via which ever method you prefer and run:
+{{{
+qsub -N mymodel.mph runcomsol.sh
+}}}
+
+p. You will need to add the following information in a script file and reference it in the qsub command argument:
+
+{{{
+#$ -l h_rt=04:00:00,mps=2.0G,pcpus=8
+#$ -cwd
+
+module purge
+module add apps/comsol/4.3a
+
+comsol -clustersimple batch -inputfile ${JOB_NAME} -outputfile ${JOB_NAME//\.mph/}.out.mph \
+p(((((((. -batchlog b.log -tmpdir $TMPDIR
+}}}
+
+p. This will start an 8 processor Comsol job with a limit of 2 GB of RAM per slot running against the file @mymodel.mph@ is unchecked so that you do not run into errors during the solution.
+
+p. For non-distributed, SMP jobs, the following script will work:
+
+{{{
+#$ -l h_rt=24:00:00,mpj=16.0G,nodes=1,ppn=12
+#$ -cwd
+
+module purge
+module add apps/comsol/4.3a
+
+comsol batch -np ${NSLOTS} -inputfile ${JOB_NAME} \
+p((((((((. -outputfile ${JOB_NAME}.${JOB_ID} \
+p((((((((. -batchlog ${JOB_NAME}.${JOB_ID}.comsol_log -tmpdir $TMPDIR
+}}}
+
+p. This script will request 16GB of memory for the job and 12 processor cores.
+
+p. Solution data will be stored within the @.mph@ file and can be viewed on your local machine simply by copying the file back once you are done.  A preferred way to deal with this is to [[CirceDataAccess|use your home directory share]] to map your Circe home directory as a network drive.  Then, you can simply save the file to the network drive, move it to your /work directory, and run the simulation on Circe.  When the simulation is complete, copy the file back to your home on Circe, and re-open the file to review the results on your desktop.
+
+p. If you plan to use Comsol 4.3a interactively, please follow the following procedures first:
+********** toolbar, click 'Options' then 'Preferences'. 
+*************** window, click 'Show' on the menu to the left. 
+************************dvanced study options'. Failure to complete this step will prevent visibility of 'Cluster computing' for the following steps.
+***********'Cluster computing' on the menu to the left.
+*******nge 'Queue Name' to 'pe*hg'
+*********************ectory' and 'External COMSOL batch directory path' from your home directory to '$WORK/Comsol'. (e.g., /home/b/brs becomes /work/b/brs/Comsol)
+**********************OMSOL installation directory path' to refect the version of Comsol that you are using (e.g. /apps/comsol/4.3 or /apps/comsol/4.3a)
+
+!http://www.rc.usf.edu/trac/doc/raw-attachment/wiki/FemlabUser/Screenshot%20from%202012-09-28%2014_27_05.png!
+
+=== More Job Information ===
+p. See the following for more detailed job submission information:
+******iki:gridEngineUsers "SGE User's Guide"]
+*******ki:gridEnginePolicy "Scheduling and Dispatch Policies"]
+******iki:gridEngineTechn "Advanced Submit Techniques"]
+
+=== Reporting Bugs ===
+p. Report bugs to the IT Help Desk: help@usf.edu
