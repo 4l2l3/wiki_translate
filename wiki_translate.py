@@ -84,6 +84,13 @@ def do_paragraph_formatting(text_in):
 		lang = re.compile('\n#!.+\n').search(block).group().strip("\n")[2:]
 		code = block[len("{{{\n#!")+len(lang)+len('\n') : len(block)-3]
 		text_out = text_out.replace(block,'<pre><code class="'+lang+'">\n'+code+'</code></pre>')
+	#TRAC		text of my paragraph
+	#REDMINE	p. text of my paragraph
+	par_noi = re.compile('\n[A-Z].+')
+	pars_noi = par_noi.findall(text_out)
+	for par in pars_noi:
+		text_out = text_out.replace(par,'\np. '+par[1:]) 
+
 
 	#TRAC		number of spaces then paragraph text begins
 	#REDMINE	p((((((((. text       ##the left paren is equivalent to number of spaces

@@ -1,0 +1,11 @@
+left aligned paragraph
+p(. 
+  two indents, two spaces
+
+<pre><code class="html">
+<h1 style="text-align: right">HTML Test</h1>
+</code></pre>
+
+<pre><code class="ruby">
+code goes [[here]]
+</code></pre>

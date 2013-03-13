@@ -1,0 +1,13 @@
+left aligned paragraph
+ left aligned paragraph, one indentation //note the leading space
+  two indents, two spaces
+
+{{{
+#!html
+<h1 style="text-align: right">HTML Test</h1>
+}}}
+
+{{{
+#!ruby
+code goes here
+}}}
