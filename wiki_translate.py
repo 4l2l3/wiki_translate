@@ -230,13 +230,16 @@ def do_lists_tables(text_in):
 	#TRAC		any number of indents then * text
 	#REDMINE	any number of *
 	#e.g.		'  *'  == '***'
-	list_pat = re.compile('\n *\*+ .+')
+	list_pat = re.compile('\n *\* .+')
 	lists = list_pat.findall(text_out)
 	for line in lists:
-		space_count = line.count(' ')
-		list_item = line[space_count+1:]
+		spc_n_asterisk = re.compile(' *\*').search(line[1:]).group()
+		spcs = spc_n_asterisk[:len(spc_n_asterisk)-1]
+		space_count = spcs.count(' ')
+		list_item = line[space_count+2:] #the one removes the original asterisk
 		redmine_line = '\n*'+('*'*space_count)+list_item
 		text_out = text_out.replace(line, redmine_line)
+	return text_out
 	
 	#trac		1. item1
 	#		 a. item1.a
