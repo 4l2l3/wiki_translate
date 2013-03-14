@@ -78,7 +78,7 @@ p. You can see job 77345 (as an example) listed in the output.  You can see it i
 h3. Submission for Parallel Jobs
 p. Because many of the applications available for science and engineering are highly resource intensive, many of them have been "parallelized" in order to run on multiple pieces of hardware to divide the work load.  Most applications have standardized upon the MPI or MPI2 specification.  Since many of you will want to run your applications in parallel in order to take advantage of performance gains, you'll need to know how to create a job script for submitting such an applications.  !GridEngine provides "Parallel Environments" for interfacing your job with an MPI library and distributing it across a cluster.
 
-p. Rather than explain everything all at once, [[here]] is a submit script for a parallel job:
+p. Rather than explain everything all at once, here is a submit script for a parallel job:
 {{{
 #$ -N parallel-job
 #$ -j y

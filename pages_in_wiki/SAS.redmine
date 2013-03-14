@@ -1,9 +1,9 @@
-h1. [[[[[[[[[[[[[[[[[[[[[[[[[[SAS]]]]]]]]]]]]]]]]]]]]]]]]]]
+h1. SAS
 [[PageOutline]]
 
 h2. Description 
 
-p. [[[[[[[[[[[[[[[[[[[[[[[[[[SAS]]]]]]]]]]]]]]]]]]]]]]]]]] software provides business analytics solutions through the utilization of high-performance computing, data management, and the management, processing, and analysis of "big data."
+p. SAS software provides business analytics solutions through the utilization of high-performance computing, data management, and the management, processing, and analysis of "big data."
 
 ** From: http://www.sas.com/software/sas9/
 
@@ -22,13 +22,13 @@ h2. Platforms
 
 h2. Running on Circe
 
-h3. [[[[Modules]]]]
+h3. Modules
 
-p. [[[[[[[[[[[[[[[[[[[[[[[[[[SAS]]]]]]]]]]]]]]]]]]]]]]]]]] requires the following module file to run:
+p. SAS requires the following module file to run:
 
 * apps/sas/9.3
 
-p. To run [[[[[[[[[[[[[[[[[[[[[[[[[[SAS]]]]]]]]]]]]]]]]]]]]]]]]]] on the cluster, ensure that you use 'module add' prior to using any [[[[[[[[[[[[[[[[[[[[[[[[[[SAS]]]]]]]]]]]]]]]]]]]]]]]]]] executables. See [[[[Modules]]]] for more information.
+p. To run SAS on the cluster, ensure that you use 'module add' prior to using any SAS executables. See Modules for more information.
 
 h3. Interactive Mode
 p. Before you login to @circe@, you need to make sure you have X11 Forwarding enabled. If you're logging in from a UNIX/Linux system, you will need to do the following:
@@ -47,12 +47,12 @@ module load apps/sas/9.3
 }}}
 p. You should now be able to execute "sas" (graphical mode) from the command line.
 
-p. [[[[[[[[[[[[[[[[[[[[[[[[[[SAS]]]]]]]]]]]]]]]]]]]]]]]]]] can also be launched through the NX environment using the Applications menu.  For more information about the NX environment, please see our [[CirceDesktop|Circe NX Desktop]] documentation.
+p. SAS can also be launched through the NX environment using the Applications menu.  For more information about the NX environment, please see our [[CirceDesktop|Circe NX Desktop]] documentation.
 
 h3. Batch Job submission
 p. To run batch jobs on the Circe cluster, users will need to submit their jobs to the scheduling environment if their jobs take more than 20 minutes to run on a standard PC.
 
-p. If, for example, you have a [[[[[[[[[[[[[[[[[[[[[[[[[[SAS]]]]]]]]]]]]]]]]]]]]]]]]]] script file named test.sas with all your tasks defined in it, you would set up a submit script to use the [[[[[[[[[[[[[[[[[[[[[[[[[[SAS]]]]]]]]]]]]]]]]]]]]]]]]]] kernel like this:
+p. If, for example, you have a SAS script file named test.sas with all your tasks defined in it, you would set up a submit script to use the SAS kernel like this:
 
 {{{
 #!/bin/bash
@@ -66,15 +66,15 @@ module load apps/sas/9.3
 sas test.sas
 }}}
 
-p. [[[[[[[[[[[[[[[[[[[[[[[[[[SAS]]]]]]]]]]]]]]]]]]]]]]]]]] script files can either be created using a standard text editor or by exporting an existing worksheet from the graphical [[[[[[[[[[[[[[[[[[[[[[[[[[SAS]]]]]]]]]]]]]]]]]]]]]]]]]] interface in .sas format.
+p. SAS script files can either be created using a standard text editor or by exporting an existing worksheet from the graphical SAS interface in .sas format.
 
-p. NOTE: When requesting your resources, you will need 1 more processor than the number of tasks in your [[[[[[[[[[[[[[[[[[[[[[[[[[SAS]]]]]]]]]]]]]]]]]]]]]]]]]] job. So, if you are using 3 tasks, you will need to request ppn=4.
+p. NOTE: When requesting your resources, you will need 1 more processor than the number of tasks in your SAS job. So, if you are using 3 tasks, you will need to request ppn=4.
 
 h3. Documentation
-p. Use the following links for the [[[[[[[[[[[[[[[[[[[[[[[[[[SAS]]]]]]]]]]]]]]]]]]]]]]]]]] User Manual and Programming Guides. 
-** "[[[[[[[[[[[[[[[[[[[[[[[[[[SAS]]]]]]]]]]]]]]]]]]]]]]]]]] 9.3 Product Documentation":http://support.sas.com/documentation/93/index.html
-** "Scalable [[[[[[[[[[[[[[[[[[[[[[[[[[SAS]]]]]]]]]]]]]]]]]]]]]]]]]] Procedures ":http://support.sas.com/rnd/scalability/procs/index.html
-** "[[[[[[[[[[[[[[[[[[[[[[[[[[SAS]]]]]]]]]]]]]]]]]]]]]]]]]]/CONNECT - Tips and Tricks ":http://support.sas.com/rnd/scalability/tricks/connect.html
+p. Use the following links for the SAS User Manual and Programming Guides. 
+** "SAS 9.3 Product Documentation":http://support.sas.com/documentation/93/index.html
+** "Scalable SAS Procedures ":http://support.sas.com/rnd/scalability/procs/index.html
+** "SAS/CONNECT - Tips and Tricks ":http://support.sas.com/rnd/scalability/tricks/connect.html
 
 h3. More Job Information
 p. See the following for more detailed job submission information:

@@ -18,10 +18,10 @@ h2. Platform
 
 h2. Running Molden on the Cluster
 
-h3. [[Modules]]
+h3. Modules
 p. Molden requires the following module file to run:
 ** @apps/molden/4.9@
-p. See [wiki:[[Modules]]] for more information.
+p. See [wiki:Modules] for more information.
 
 
 p. Molden is quite easy to execute on Circe:

@@ -17,13 +17,13 @@ h2. Platform
 
 h2. Running ESPRESSO Jobs on the Cluster
 
-h3. [[Modules]]
+h3. Modules
 p. Before running a job, you must first set up your environment properly.  There are two module file options for version 5.0:
 ** apps/espresso/5.0
 or
 ** apps/espresso/5.0-r-lda
 
-p. To run ESPRESSO on the cluster, ensure that you use @module add@ prior to using any executables.  See [wiki:[[Modules]]] for more information.
+p. To run ESPRESSO on the cluster, ensure that you use @module add@ prior to using any executables.  See [wiki:Modules] for more information.
 
 p. The '-r-lda' version of Quantum Espresso is nearly identical to the standard version, except that there is a minor change in the code that skips a check. To load this version instead, use 'module add apps/espresso/5.0-r-lda'. To read more, see http://www.democritos.it/pipermail/pw_forum/2008-September/010123.html. 
 

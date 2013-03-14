@@ -3,7 +3,7 @@ h1.
 [[PageOutline]]
 
 h2. Description
-_From !GaussView Documentation:_ !GaussView is a graphical user interface designed to help you prepare input for submission to [[[[[[Gaussian]]]]]] and to examine graphically the output that [[[[[[Gaussian]]]]]] produces.
+_From !GaussView Documentation:_ !GaussView is a graphical user interface designed to help you prepare input for submission to Gaussian and to examine graphically the output that Gaussian produces.
 
 h2. Version
 
@@ -20,11 +20,11 @@ h2. Platform
 
 h2. Running
 
-h3. [[Modules]]
+h3. Modules
 !GaussView requires the following module files to run:
 ** @apps/gaussian/09b01_amd64@
 ** @apps/gaussian/gaussview-5.0@
-p. See [wiki:[[Modules]]] for more information.
+p. See [wiki:Modules] for more information.
 
 
 !GaussView is quite easy to execute on Circe:
@@ -34,7 +34,7 @@ p. See [wiki:[[Modules]]] for more information.
 p. If you have properly configured an X11 session, you should see the full !GaussView interface.  If you haven't configured X11, please see our [[XWin32Install|XWin32 Installation]] documentation.
 
 h3. Caveats
-!GaussView expects to be aware of the [[[[[[Gaussian]]]]]] installation in order to invoke it from the GUI. Therefore you must load the 09b01 module first.  When starting gview, error messages may appear concerning this.
+!GaussView expects to be aware of the Gaussian installation in order to invoke it from the GUI. Therefore you must load the 09b01 module first.  When starting gview, error messages may appear concerning this.
 
 
 h4. Reporting Bugs

@@ -5,7 +5,7 @@ h1. Mathematica
 
 h2. Description
 
-p. Mathematica is the tool of choice at the frontiers of scientific research, in engineering analysis and modeling, in technical education from high school to graduate school, and w[[[[here]]]]ver quantitative methods are used.
+p. Mathematica is the tool of choice at the frontiers of scientific research, in engineering analysis and modeling, in technical education from high school to graduate school, and wherever quantitative methods are used.
 
 h2. Version
 
@@ -25,7 +25,7 @@ h2. Platforms
 h2. Installation
 
 *IMPORTANT: Before You Begin*[[BR]]
-p. Make sure you've applied for and received the Mathematica 8 License information.  You will need to go [[[[here]]]] to apply: https://rc.usf.edu/licensing/licenserequest.php
+p. Make sure you've applied for and received the Mathematica 8 License information.  You will need to go here to apply: https://rc.usf.edu/licensing/licenserequest.php
 
 *_Contents*_[[BR]][[BR]]
 [MathemUser#InstallingMathematicaOnWindows Installing Mathematica On Windows][[BR]]
@@ -58,7 +58,7 @@ h3. Installing Mathematica On Linux
 
 p(((. 1. Log into https://rc.usf.edu/isos using your NetID and password. Change to the directory /Mathematica/V9.0 and download the file named Mathematica_9.0.0_LINUX.iso to a temporary directory on your PC. Once the file has finished downloading you may disconnect from the FTP server.
 
-p(((. 2. Next, become root user by using the su command. Then change to the temporary directory w[[[[here]]]] you downloaded the iso file. Inside the temporary directory create a new directory called cd1 by using the following command:
+p(((. 2. Next, become root user by using the su command. Then change to the temporary directory where you downloaded the iso file. Inside the temporary directory create a new directory called cd1 by using the following command:
 
 p(((. @# mkdir cd1@
 
@@ -94,11 +94,11 @@ p(((. 1. Log into https://rc.usf.edu/isos using your NetID and password. Change 
 
 p(((. 2. Burn a CD with this iso. Note: You cannot just copy the file to a CD, you must use a software program that allows you to create a CD from an image file. If you need help with recording CDs please see our guide at [wiki:CDBurning].  Insert the Mathematica UNIX CD in your CD-ROM drive.
 
-p(((. 3. A file manager window for CDE should pop up. Close it and open up a console instead. Use su to log in as root. Type in @cd /cdrom/cdrom0/Installers/Solaris/@ is the path w[[[[here]]]] your CD-ROM is mounted.
+p(((. 3. A file manager window for CDE should pop up. Close it and open up a console instead. Use su to log in as root. Type in @cd /cdrom/cdrom0/Installers/Solaris/@ is the path where your CD-ROM is mounted.
 
 p(((. 4. Issue the command @./MathInstall@ to start the installation.
 
-p(((. 5. For the first question, "Enter top Mathematica directory", just hitting enter will be fine. If you wish to install to a different path, please enter that path [[[[here]]]] and hit enter.
+p(((. 5. For the first question, "Enter top Mathematica directory", just hitting enter will be fine. If you wish to install to a different path, please enter that path here and hit enter.
 
 p(((. 6. For the second question regarding your system type, please hit enter for Solaris.
 
@@ -118,15 +118,15 @@ p. Once installation is complete, just type in cd ~ ; umount /cdrom/cdrom0; ejec
 ----
 h2. Running Mathematica on Circe
 
-h3. [[Modules]]
+h3. Modules
 
 p. Mathematica requires the following module file and some prerequisites to run:
 ** @apps/mathematica/9.0@
-p. To run Mathematica on the cluster, ensure that you use 'module add' prior to using any Mathematica executables. See [wiki:[[Modules]]] for more information.
+p. To run Mathematica on the cluster, ensure that you use 'module add' prior to using any Mathematica executables. See [wiki:Modules] for more information.
 
 h3. Submitting a Job
 
-p. T[[[[here]]]] are two ways to run Mathematica on Circe depending on the runtime of your particular job.
+p. There are two ways to run Mathematica on Circe depending on the runtime of your particular job.
 
 h4. Jobs Shorter than 20 Minutes in Length
 p. Simply type @ mathematica @ at the command line. If you have properly configured an X11 session, you should see the full Mathematica interface.  If you haven't configured X11, you will be able to use the console interface by running @ math @ at the prompt.  For users wishing to use the graphical interface over X11, please see our [[XWin32Install|XWin32 Installation]] documentation.

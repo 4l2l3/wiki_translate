@@ -18,7 +18,7 @@ h2. Platform
 
 ** @circe@ cluster
 
-h2. [[Run]]ning WRF on the Cluster
+h2. Running WRF on the Cluster
 
 p. The WRF guide is essential to understanding the application and making the most of it.  The guide and this page should be all you need to get started with your simulations.
 ** WRF Guide: http://www.mmm.ucar.edu/wrf/users/docs/user_guide_V3/contents.html
@@ -30,7 +30,7 @@ p. To run WRF, simply execute the following within your job directory:
 
 p. This will request a job name of wrf_test,16 processors via MPI, and a 6 hour run-time.
 
-p. For more information on [[Run]], see [wiki:[[Run]] "The GridEngine [[Run]] Utility"].
+p. For more information on Run, see [[Run|The GridEngine Run Utility]].
 
 h4. Benchmarks
 p. The following folder contains input parameters for known WRF benchmarks and tutorials:

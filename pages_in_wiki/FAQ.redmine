@@ -2,7 +2,7 @@ h1. Circe Frequently Asked Questions
 [[PageOutline]]
 
 
-p. This page contains a list of questions that we receive quite often from our users.  We'll attempt to answer these questions as best as possible so that you can come [[here]] for quick answers.  If t[[here]] are other questions you'd like to see added to this [[FAQ]], please send them to help@usf.edu.  Make sure you mention *Research Computing*
+p. This page contains a list of questions that we receive quite often from our users.  We'll attempt to answer these questions as best as possible so that you can come here for quick answers.  If there are other questions you'd like to see added to this FAQ, please send them to help@usf.edu.  Make sure you mention *Research Computing*
 
 ----
 h4. Q
@@ -15,7 +15,7 @@ p(. 3. Are you no longer a student?  Send an E-Mail to help@usf.edu saying that 
 ----
 h4. Q
 
-*A.* The queue is like any other queue: it's simply a waiting line for people that are wanting access to limited resources.  Whether its a bank teller, the nice person at the DMV, or a 32 processor server with 512GB or RAM, resources must be managed.  You'll want to read our guide to !GridEngine located [wiki:gridEngineIntro [[here]]] for a better description.
+*A.* The queue is like any other queue: it's simply a waiting line for people that are wanting access to limited resources.  Whether its a bank teller, the nice person at the DMV, or a 32 processor server with 512GB or RAM, resources must be managed.  You'll want to read our guide to !GridEngine located [wiki:gridEngineIntro here] for a better description.
 ----
 p(. 
 h4. Q
@@ -30,13 +30,13 @@ p(. 1. Did you create your submit script from within the Windows editor *Notepad
 p(. {{{ 
 [user@host ~]$ dos2unix &lt;script&gt; 
 }}}
-p(. w[[here]] @&lt;script&gt;@ is the name of your job script.  This will convert the file to the proper UNIX file format the !GridEngine uses.
+p(. where @&lt;script&gt;@ is the name of your job script.  This will convert the file to the proper UNIX file format the !GridEngine uses.
 p(. 2. Does your submit script contain the appropriate module lines?  Please see the documentation for your respective application for the appropriate module lines to add.
 p(. 3. Are you actually referencing a file that exists?  You can make sure that the file exists by doing
 p(. {{{ 
 [user@host ~]$ ls &lt;path_to_file&gt; 
 }}}
-p(. w[[here]] @&lt;path_to_file&gt;@ cannot find the file, then chances are it doesn't exist on the nodes either.
+p(. where @&lt;path_to_file&gt;@ cannot find the file, then chances are it doesn't exist on the nodes either.
 ----
 h4. Q
 
@@ -52,7 +52,7 @@ h4. Q
 *A.* It is very likely that you are using an old X-Ming setup that is misconfigured and is not loading your profile correctly. We recommend that you follow the supported [[CirceDesktop|Circe Desktop instructions]] for connections to Circe from Windows-based systems.
 ----
 h4. Q
-*A.* T[[here]] are a couple reasons why this happens:
+*A.* There are a couple reasons why this happens:
 
 p(. 1. This happens if you are trying to run the command directly from a login machine (your prompt will look like this)
 {{{
@@ -62,7 +62,7 @@ p(. To be fair to other users, we have resource restrictions on our login machin
 {{{
 [user@host ~]$ qlogin -l h_rt=HH:MM:SS
 }}}
-p(. W[[here]] @h_rt@ is the hours, minutes, and seconds that you believe you will need to finish working with an application.  With qlogin, you will be guaranteed the resources needed to complete your work.
+p(. Where @h_rt@ is the hours, minutes, and seconds that you believe you will need to finish working with an application.  With qlogin, you will be guaranteed the resources needed to complete your work.
 
 p(. 2. This can also happen if you are within a qlogin session and you did not specify a memory request. Try again with a reasonable estimate with how much memory you think you need (for example, 4 Gigabytes):
 {{{
@@ -71,7 +71,7 @@ p(. 2. This can also happen if you are within a qlogin session and you did not s
 p((((. 
 ----
 h4. Q
-*A.* T[[here]] are a few reasons why this might happen:
+*A.* There are a few reasons why this might happen:
 p(. 1. Did you specify a queue? If all of the slots in the queue are occupied, you have to wait until enough are freed to start your job. Nine times out of ten, you don't need to specify a queue anyway. Removing the queue definition in your submission script will allow your job to use many more resources and will increase your overall job throughput.
 p(. 2. Did you make a reasonable resource request? If your submission script calls for 4096 processors and 1TB of RAM, you'll be hard pressed to find enough resources on Circe to meet that request.  To see our available hardware pool in order to make good decisions about resource requests, see the following guides:
 p(((. a. [[gridEngineQueue|GridEngine Queue Layout]]
@@ -91,7 +91,7 @@ h4. Q
 ----
 h4. Q
 
-*A.* The version of Internet Explorer you are using has a bug and is unable to download large files. Because of this we have redirected users of Internet Explorer to this [[FAQ]] to explain the issue. You will be able to access the ISOS site and download the files but you must users browser, like Firefox, Mozilla, Chrome, Opera, or Safari. Here is a link to a Microsoft KB article discussing the issue in more detail: http://support.microsoft.com/kb/298618. 
+*A.* The version of Internet Explorer you are using has a bug and is unable to download large files. Because of this we have redirected users of Internet Explorer to this FAQ to explain the issue. You will be able to access the ISOS site and download the files but you must users browser, like Firefox, Mozilla, Chrome, Opera, or Safari. Here is a link to a Microsoft KB article discussing the issue in more detail: http://support.microsoft.com/kb/298618. 
 ----
 h4. Q
 

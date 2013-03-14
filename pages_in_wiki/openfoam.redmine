@@ -21,13 +21,13 @@ h2. Platforms
 
 h2. Running OpenFOAM Jobs on the Cluster
 
-h3. [[Modules]]
+h3. Modules
 
 p. Before running a job, you must first set up your environment properly.  Here are the required module files:
 
 ** apps/openfoam/2.0.1
 
-p. To run OpenFOAM on the cluster, ensure that you use @module add@ prior to using any executables.  See [wiki:[[Modules]]] for more information.  You also need to load the environment variables into your profile after loading the module.  This is done by executing the following command in your terminal window:
+p. To run OpenFOAM on the cluster, ensure that you use @module add@ prior to using any executables.  See [wiki:Modules] for more information.  You also need to load the environment variables into your profile after loading the module.  This is done by executing the following command in your terminal window:
 
 {{{
 [user@login ~]$ source $ENV_FILE

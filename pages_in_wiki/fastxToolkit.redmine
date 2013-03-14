@@ -19,11 +19,11 @@ h2. Platform
 
 h2. Running FASTX Toolkit on the Cluster
 
-h3. [[Modules]]
+h3. Modules
 
 p. The FASTX Toolkit requires the following module file to run:
 ** @apps/fastx/0.0.13@
-p. See [wiki:[[Modules]]] for more information.
+p. See [wiki:Modules] for more information.
 
 p. Documentation on how to use each utility is available at the [http://hannonlab.cshl.edu/fastx_toolkit/commandline.html FASTX] website.
 

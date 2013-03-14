@@ -47,9 +47,9 @@ p. Show all of the processes spawned by your job and what node they are running 
 $ jprocs 44922
 wh-520-3-13: 30222 brs       0.0  0.0   960  16320  4080 qrsh_starter
 wh-520-3-13: 30229 brs       0.0  0.0  2068  26620  6655 orted
-wh-520-3-13: 30230 brs       101  0.4 121320 266400 66600 [[[[[[vasp]]]]]]
-wh-520-3-13: 30231 brs       101  0.4 120860 266920 66730 [[[[[[vasp]]]]]]
-wh-520-3-13: 30232 brs       101  0.4 120792 266308 66577 [[[[[[vasp]]]]]]
+wh-520-3-13: 30230 brs       101  0.4 121320 266400 66600 vasp
+wh-520-3-13: 30231 brs       101  0.4 120860 266920 66730 vasp
+wh-520-3-13: 30232 brs       101  0.4 120792 266308 66577 vasp
 ...
 p. Host         PID   user      CPU% MEM RSS    VMEM   SIZE  COMMAND
 }}}

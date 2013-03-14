@@ -18,11 +18,11 @@ h2. Platforms
 
 ** @circe@ cluster
 
-h2. [[Modules]]
+h2. Modules
 
 mpiBLAST requires the following module file to run:
 ** @apps/mpiblast/1.6.0@
-p. See [wiki:[[Modules]]] for more information.
+p. See [wiki:Modules] for more information.
 
 h2. Creating and Submitting a Job
 

@@ -21,11 +21,11 @@ h2. Platforms
 h2. Running DL_POLY on the Cluster
 p. The following describes what is necessary to run DL_POLY on the cluster.
 
-h3. [[Modules]]
+h3. Modules
 p. DL_POLY requires the following module file and some prerequisites to run:
 ** @apps/dlpoly/2.19@
 ** Prerequisites: @compilers/pgi/7.0-7.x86_64 openmpi/1.2.6-x86_64-pgi-7.0-7@
-p. To run DL_POLY on the cluster, ensure that you use @module initadd@ to make the changes persistent.  See [wiki:[[Modules]]] for more information.
+p. To run DL_POLY on the cluster, ensure that you use @module initadd@ to make the changes persistent.  See [wiki:Modules] for more information.
 
 h3. Job Script
 p. To run DL_POLY, you will need to create a work directory for your job that includes the necessary input files (CONFIG, CONTROL, FIELD and possible TABLE or TABEAM).  You'll also need to include a copy of this submit script (modify it to suit your parameters)

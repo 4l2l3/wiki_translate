@@ -1,9 +1,9 @@
-h1. [[[[[[[[[[Gaussian]]]]]]]]]]
+h1. Gaussian
 ----
 [[PageOutline]]
 
 h2. Description
-_From http://www.nersc.gov/nusers/resources/software/apps/chemistry/g09/_ [[[[[[[[[[Gaussian]]]]]]]]]] 09 is a connected series of programs for performing semi-empirical, density functional theory and ab initio molecular orbital calculations. 
+_From http://www.nersc.gov/nusers/resources/software/apps/chemistry/g09/_ Gaussian 09 is a connected series of programs for performing semi-empirical, density functional theory and ab initio molecular orbital calculations. 
 
 h2. Version
 
@@ -17,9 +17,9 @@ h2. Platform
 
 ** @circe@ cluster
 
-h2. Running [[[[[[[[[[Gaussian]]]]]]]]]] on the Cluster
+h2. Running Gaussian on the Cluster
 
-p. [[[[[[[[[[Gaussian]]]]]]]]]] is quite easy to execute on Circe.  After creating your input, simply use [wiki:Run @run@] to execute the program:
+p. Gaussian is quite easy to execute on Circe.  After creating your input, simply use [wiki:Run @run@] to execute the program:
 {{{
 [user@host ~]$ run -N test_g09 -n 8 -t 1:00:00 -e MODEL=input.com gaussian/09b01_em64t
 }}}
@@ -27,7 +27,7 @@ p. [[[[[[[[[[Gaussian]]]]]]]]]] is quite easy to execute on Circe.  After creati
 p. This will request a job with the name test_g09, 8 processors via MPI, and a 1 hour run-time.  The input file is specified as input.com, and will generate an output file in your current directory.
 
 h4. Benchmarks
-p. The following folder contains input parameters for known [[[[[[[[[[Gaussian]]]]]]]]]] test jobs:
+p. The following folder contains input parameters for known Gaussian test jobs:
 ** /opt/apps/gaussian/tests
 
 h4. More Job Information

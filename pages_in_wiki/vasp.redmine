@@ -18,21 +18,21 @@ h2. Platform
 
 ** @circe@ cluster
 
-h2. [[Run]]ning VASP on the Cluster
+h2. Running VASP on the Cluster
 
 p. The VASP guide is essential to understanding the application and making the most of it.  The guide and this page should be all you need to get started with your simulations.
 ** VASP Guide: http://cms.mpi.univie.ac.at/vasp/vasp/vasp.html
 
-p. VASP runs reasonably well on most types of hardware but its performance depends greatly upon the number of atoms in the system, the k-point configuration specified in the KPOINTS file, and the number of ionic or relaxation steps you specify in INCAR.  For smaller systems with a small set of atoms and k-point configuration, Gigabit Ethernet is sufficient for communications, but for anything more involved, you will definitely want to use Myrinet or ![[InfiniBand]] for an interconnect.  In certain cases, VASP may even benefit from running on a large, shared memory multi-processor machine.
+p. VASP runs reasonably well on most types of hardware but its performance depends greatly upon the number of atoms in the system, the k-point configuration specified in the KPOINTS file, and the number of ionic or relaxation steps you specify in INCAR.  For smaller systems with a small set of atoms and k-point configuration, Gigabit Ethernet is sufficient for communications, but for anything more involved, you will definitely want to use Myrinet or !InfiniBand for an interconnect.  In certain cases, VASP may even benefit from running on a large, shared memory multi-processor machine.
 
 p. To run VASP, simply execute the following within your job directory:
 {{{
 [user@host ~]$ run -n 16 -f i_ib -t 1:00:00 vasp/5.2.8
 }}}
 
-p. This will request 16 processors via MPI, [[InfiniBand]] interconnect (@-f i_ib@) and a 1 hour run-time.
+p. This will request 16 processors via MPI, InfiniBand interconnect (@-f i_ib@) and a 1 hour run-time.
 
-p. For more information on [[Run]], see [wiki:[[Run]] "The GridEngine [[Run]] Utility"].
+p. For more information on Run, see [[Run|The GridEngine Run Utility]].
 
 h4. Benchmarks
 p. The following folders contain input parameters for known VASP benchmarks and tutorials:

@@ -1,7 +1,7 @@
-h1. [[Iso2Mesh]]
+h1. Iso2Mesh
 ----
 [[PageOutline]]
-*Last Modified:* [[LastModified([[Iso2Mesh]])]]
+*Last Modified:* [[LastModified(Iso2Mesh)]]
 
 h2. Description 
 
@@ -21,10 +21,10 @@ h2. Platforms
 
 h2. Local Documentation
 
-h3. [[Modules]]
+h3. Modules
 iso2mesh requires the following module file to run:
 ** @apps/iso2mesh/0.8.0@
-p. The recommended use is @module initadd@ in order for Matlab to automatically see the toolbox. See [wiki:[[Modules]]] for more information.
+p. The recommended use is @module initadd@ in order for Matlab to automatically see the toolbox. See [wiki:Modules] for more information.
 
 h3. Submitting Jobs
 p. Since iso2mesh is a Matlab toolbox, please see the [[MatlabUser|Matlab]] documentation in order to submit Matlab jobs.

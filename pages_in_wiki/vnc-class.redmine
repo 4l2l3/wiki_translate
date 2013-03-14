@@ -3,7 +3,7 @@ h1. vnc
 
 h2. Description
 
-p. The [[[[[[vnc-class]]]]]] is broken up into three utilities, [[[[[[vnc-class]]]]]]-conf allow you to configure a VNC server to share your CIRCE Desktop (NX Session), [[[[[[vnc-class]]]]]]-server starts the VNC server which shares your CIRCE desktop Session, and the [[[[[[vnc-class]]]]]]-viewer starts the VNC viewer and allows you to view a users CIRCE Desktop Session. This allows you to share and view another users CIRCE Desktop Session using the VNC suite of tools.
+p. The vnc-class is broken up into three utilities, vnc-class-conf allow you to configure a VNC server to share your CIRCE Desktop (NX Session), vnc-class-server starts the VNC server which shares your CIRCE desktop Session, and the vnc-class-viewer starts the VNC viewer and allows you to view a users CIRCE Desktop Session. This allows you to share and view another users CIRCE Desktop Session using the VNC suite of tools.
 
 h2. Version
 
@@ -19,16 +19,16 @@ h2. Platform
 
 h2. Loading the vnc
 
-p. Before using any of the [[[[[[vnc-class]]]]]] utilities listed below you must load the [[[[[[vnc-class]]]]]] module configure your environment with the proper path to the utilities. 
+p. Before using any of the vnc-class utilities listed below you must load the vnc-class module configure your environment with the proper path to the utilities. 
 
 p. To load the module for your _JUST_ for the current session by run this command: 
 {{{ 
-[user@host ~]$ module load apps/[[[[[[vnc-class]]]]]]/1.0
+[user@host ~]$ module load apps/vnc-class/1.0
 }}}
 
 p. To load the module permanently to your environment by run this command: 
 {{{ 
-[user@host ~]$ module initadd apps/[[[[[[vnc-class]]]]]]/1.0
+[user@host ~]$ module initadd apps/vnc-class/1.0
 }}}
 
 h2. Configuring vnc
@@ -38,27 +38,27 @@ p. Before sharing your desktop you should run the configuration utility. This wi
 p. The utility can be started by issuing the following command and the options are pretty self explanatory:
 
 {{{ 
-[user@host ~]$ [[[[[[vnc-class]]]]]]-conf
+[user@host ~]$ vnc-class-conf
 }}}
 
 h2. Starting the vnc
 
-p. The [[[[[[vnc-class]]]]]]-server utility has two functions to start and stop the VNC server. 
+p. The vnc-class-server utility has two functions to start and stop the VNC server. 
 
 p. To start sharing your NX Desktop you can issue the following command to kill the vnc-server:
 {{{ 
-[user@host ~]$ [[[[[[vnc-class]]]]]]-server start
+[user@host ~]$ vnc-class-server start
 }}}
 
 p. To stop sharing your NX Desktop you can issue the following command to kill the vnc-server:
 {{{ 
-[user@host ~]$ [[[[[[vnc-class]]]]]]-server stop
+[user@host ~]$ vnc-class-server stop
 }}}
 
 h3. Starting the vnc
-p. Once the [[[[[[vnc-class]]]]]]-server has been started, a client called a VNC viewer must connect to your VNC session. The client can do so by issuing the following command (make sure to substitute 'netid' for the netid of the person's VNC session they would like to view):
+p. Once the vnc-class-server has been started, a client called a VNC viewer must connect to your VNC session. The client can do so by issuing the following command (make sure to substitute 'netid' for the netid of the person's VNC session they would like to view):
 {{{ 
-[user@host ~]$ [[[[[[vnc-class]]]]]]-viwer netid
+[user@host ~]$ vnc-class-viwer netid
 }}}
 
 h3. Reporting Issues

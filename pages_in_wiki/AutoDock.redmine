@@ -17,10 +17,10 @@ h2. Platforms
 
 h2. Running Jobs on the Cluster
 
-h3. [[Modules]]
+h3. Modules
 !AutoDock requires the following module file with prerequisites to run:
 ** @apps/autodock/4.2.3@
-p. See [wiki:[[Modules]]] for more information.
+p. See [wiki:Modules] for more information.
 
 h3. Distributed Parallel
 p. This script can be copied into your job directory (the folder with your input files and database files) and modified so that you can submit batch processes to the queue. This script is provided as an example only. Your SGE and !Autodock/Autogrid inputs, tools, and options will vary.  For help on submitting jobs to the queue, see our [[gridEngineUsers|GridEngine User's Guide]].

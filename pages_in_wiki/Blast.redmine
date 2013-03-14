@@ -7,7 +7,7 @@ h2. Description
 p. The Basic Local Alignment Search Tool (BLAST) finds regions of local similarity between sequences. The program compares nucleotide or protein sequences to sequence databases and calculates the statistical significance of matches. BLAST can be used to infer functional and evolutionary relationships between sequences as well as help identify members of gene families. 
 
 h2. Note About this Software
-p. We also have [[[[MPIBlast]]]] available here: (https://rc.usf.edu/trac/doc/wiki/[[[[MPIBlast]]]]). We recommend use of this software for high-performance benefits. However, we will still support the serial version for special cases.
+p. We also have MPIBlast available here: (https://rc.usf.edu/trac/doc/wiki/MPIBlast). We recommend use of this software for high-performance benefits. However, we will still support the serial version for special cases.
 
 h2. Version 
 
@@ -23,11 +23,11 @@ h2. Platforms
 
 h2. Local Documentation
 
-h3. [[Modules]]
+h3. Modules
 
-p. [[[[MPIBlast]]]] requires the following module file to run:
+p. MPIBlast requires the following module file to run:
 ** @apps/blast/2.2.22@
-p. See [wiki:[[Modules]]] for more information.
+p. See [wiki:Modules] for more information.
 
 h3. Creating and Submitting a Job
 

@@ -25,7 +25,7 @@ h2. Platforms
 h2. Installation
 
 *IMPORTANT: Before You Begin*[[BR]]
-p. Make sure you've applied for and received the Maple 16 License information.  You will need to go [[here]] to apply: https://rc.usf.edu/licensing/licenserequest.php
+p. Make sure you've applied for and received the Maple 16 License information.  You will need to go here to apply: https://rc.usf.edu/licensing/licenserequest.php
 
 p((. *_Contents*_
 
@@ -48,7 +48,7 @@ p. Before starting the installation:
 p(((. 1. Double-click on the Maple installation executable to start it.
 p(((. 2. At the Introduction page, click Next.
 p(((. 3. Accept the License Agreement, then click Next.
-p(((. 4. Specify w[[here]] you would like Maple to be installed, then click Next.
+p(((. 4. Specify where you would like Maple to be installed, then click Next.
 p(((. 5. Specify whether or not you would like a shortcut installed on your desktop, then click Next.
 p(((. 6. For the license type, Choose Network License and click Next.
 p(((. 7. Type in the license information provided in the email you received from us when requesting access to Maple, then click Next.
@@ -64,20 +64,20 @@ p. Disclaimer: This procedure was tested on a Fedora machine. Your mileage may v
 
 p(((. 1. Get the installation executable from https://rc.usf.edu/isos/Maple/.  Log into the server using your NetID and password. If your computer is a 64-bit machine, download Maple16LinuxX86_64Installer.bin. Otherwise, download Maple16Linux32Installer.bin.
 p(((. 2. Open a terminal and become root on your machine via 'su -' or 'sudo su -'.
-p(((. 3. [[Run]] the installation wizard by:
+p(((. 3. Run the installation wizard by:
 {{{
 sh /path/to/installer.bin
 }}}
 p(((. 4. At the Introduction page, click Next.
 p(((. 5. Accept the License Agreement, then click Next.
-p(((. 6. Specify w[[here]] you would like Maple to be installed, then click Next. We recommend /usr/local/maple16.
+p(((. 6. Specify where you would like Maple to be installed, then click Next. We recommend /usr/local/maple16.
 p(((. 7. Specify whether or not you would like a shortcut installed on your desktop, then click Next.
 p(((. 8. For the license type, Choose Network License and click Next.
 p(((. 9. Type in the license information provided in the email you received from us when requesting access to Maple, then click Next.
 p(((. 10. Confirm the installation details displayed, then click Install.
 p(((. 11. Once the installation exits, it should give you a set of instructions on how to start Maple in graphical and console modes. Click Next.
 p(((. 12. Click "Done" to exit the installer.
-p(((. 13. Be sure the directory $MAPLE/bin is added to your path. W[[here]] $MAPLE is the installation directory from step 6). 
+p(((. 13. Be sure the directory $MAPLE/bin is added to your path. Where $MAPLE is the installation directory from step 6). 
 
 p. You should be able to start xmaple or maple from the command line.
 
@@ -91,7 +91,7 @@ p(((. 1. Get the Mac installation executable from https://rc.usf.edu/isos/Maple/
 p(((. 2. Double-click on the installer. Supply the administrative password if asked.
 p(((. 3. At the Introduction page, click Next.
 p(((. 4. Accept the License Agreement, then click Next.
-p(((. 5. Specify w[[here]] you would like Maple to be installed, then click Next.
+p(((. 5. Specify where you would like Maple to be installed, then click Next.
 p(((. 6. Specify whether or not you would like a shortcut installed on your desktop, then click Next.
 p(((. 7. For the license type, Choose Network License and click Next.
 p(((. 8. Type in the license information provided in the email you received from us when requesting access to Maple, then click Next.
@@ -101,17 +101,17 @@ p(((. 11. Click "Done" to exit the installer.
 p(((. 
 p. You should be able to launch Maple by double clicking on the Maple 16 icon in the !Applications/Maple 16 directory.
 ----
-h2. [[Run]]ning Maple on Circe
+h2. Running Maple on Circe
 
-h3. [[Modules]]
+h3. Modules
 
 p. Maple requires the following module file and some prerequisites to run:
 ** @apps/maple/16@
-p. To run Maple on the cluster, ensure that you use 'module add' prior to using any Maple executables.  See [wiki:[[Modules]]] for more information.
+p. To run Maple on the cluster, ensure that you use 'module add' prior to using any Maple executables.  See [wiki:Modules] for more information.
 
 h3. Submitting a Job
 
-p. T[[here]] are two ways to run Maple on Circe depending on the runtime of your particular job.
+p. There are two ways to run Maple on Circe depending on the runtime of your particular job.
 
 h4. Jobs Shorter than 20 Minutes in Length
 p. Simply type @ xmaple @ at the command line. If you have properly configured an X11 session, you should see the full Maple interface.  If you haven't configured X11, you will be able to use the console interface by running @ maple @ at the prompt.  For users wishing to use the graphical interface over X11, please see our [[XWin32Install|XWin32 Installation]] documentation.

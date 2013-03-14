@@ -18,11 +18,11 @@ h2. Platforms
 
 h2. Running ESMF Jobs on the Cluster
 
-h3. [[[[Modules]]]]
+h3. Modules
 p. Before running a job, you must first set up your environment properly.  Here are the required module files:
 ** apps/esmf/5.2.0
 
-p. To use the ESMF libraries on the cluster, ensure that you use "module add apps/esmf/5.2.0" prior to using any executables for building or compiling software. This will set your environment variables, including ESMFMKFILE. This library was built with Intel 12.1.0 and mvapich2 1.8a2. See [[[[Modules]]]] for more information. 
+p. To use the ESMF libraries on the cluster, ensure that you use "module add apps/esmf/5.2.0" prior to using any executables for building or compiling software. This will set your environment variables, including ESMFMKFILE. This library was built with Intel 12.1.0 and mvapich2 1.8a2. See Modules for more information. 
 
 h3. Documentation and Test Data
 p. Users' Guide

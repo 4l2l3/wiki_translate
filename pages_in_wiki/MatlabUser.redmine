@@ -63,7 +63,7 @@ h2. Toolboxes with Restricted Availability
 
 h2. Installation
 *IMPORTANT: Before You Begin*[[BR]]
-p. Make sure you've applied for and received the Matlab License information.  You will need to go [[here]] to apply: https://rc.usf.edu/licensing/licenserequest.php
+p. Make sure you've applied for and received the Matlab License information.  You will need to go here to apply: https://rc.usf.edu/licensing/licenserequest.php
 
 *_Contents*_[[BR]][[BR]]
 [MatlabUser#InstallingOnLinux Installing On Linux][[BR]]
@@ -78,11 +78,11 @@ p(((. 1. Connect to @https://rc.usf.edu/isos@ and download R2012b_UNIX.iso to a 
 
 p((((((. Note: If you already have a previous version of Matlab installed you may skip to step 3.
 
-p(((. 2. Next you will want to create the directory w[[here]] you would like Matlab to be installed. We recommend installing to the directory /usr/local/matlab. To create the directory enter the following commands as root:
+p(((. 2. Next you will want to create the directory where you would like Matlab to be installed. We recommend installing to the directory /usr/local/matlab. To create the directory enter the following commands as root:
 
 p((((((. @# mkdir /usr/local/matlab@
 
-p((((((. You will also need to copy the license.dat file you have been provided to this directory before the installer is run. If you do not yet have a license.dat file you will need to click [[here]]: https://rc.usf.edu/licensing/licenserequest.php
+p((((((. You will also need to copy the license.dat file you have been provided to this directory before the installer is run. If you do not yet have a license.dat file you will need to click here: https://rc.usf.edu/licensing/licenserequest.php
 
 p(((. 3. Change to the directory that contain the downloaded ISO images and create directory called dvd1 by typing the following command:
 
@@ -92,13 +92,13 @@ p(((. 4. Next you will need to mount the ISO image into the newly created direct
 
 p((((((. @# mount -o loop R2012b_Unix.iso dvd1@
 
-p(((. 5. Now we are ready to install Matlab. Become root and change to the directory w[[here]] we want to install Matlab, i.e /usr/local/matlab. Begin the installation process by entering the following command:
+p(((. 5. Now we are ready to install Matlab. Become root and change to the directory where we want to install Matlab, i.e /usr/local/matlab. Begin the installation process by entering the following command:
 
 p((((((. @# $MOUNT_POINT_FOR_DVD1/install@
 
 p((((((. Note that $MOUNT_POINT_FOR_DVD1 should be the full path to the directory dvd1 that we created in step 3.
 
-p(((. 6. Select the *Install manually without using the Internet* option, then accept the license agreement. When the installer asks for the FIK code, insert the number contained in @plp.txt@ sent by our License Request Form that corresponds to the version of Matlab that you are installing.  When the installer asks for the MATLAB Root directory location, enter the directory that you created (/usr/local/matlab) or w[[here]] the previous version of Matlab is located.  When the installer asks for the license file, click "Browse" and select the "license.dat" file that you received in your E-Mail. 
+p(((. 6. Select the *Install manually without using the Internet* option, then accept the license agreement. When the installer asks for the FIK code, insert the number contained in @plp.txt@ sent by our License Request Form that corresponds to the version of Matlab that you are installing.  When the installer asks for the MATLAB Root directory location, enter the directory that you created (/usr/local/matlab) or where the previous version of Matlab is located.  When the installer asks for the license file, click "Browse" and select the "license.dat" file that you received in your E-Mail. 
 
 p(((. 7. Next the installer should list the items to install, either select the default selections or you may add/remove items. We recommend that you install the default selections.
 
@@ -119,11 +119,11 @@ p((((((. Note: If you do not have a previous version of Matlab installed you may
 
 p(((. 2. Unless you are going to keep your old version of Matlab you will want to remove the previous installation.  Follow the onscreen directions to uninstall, and remove all components of older versions of Matlab.  This can be done through the "Programs and Features" menu in the Windows 7 Control Panel.
 
-p(((. 3. Now you will need to create an installation DVD from the downloaded ISO file from step 1. You can create the DVD using your favorite DVD recording software. If you need help with recording DVDs please see our guide by clicking [wiki:CDBurning [[here]]].
+p(((. 3. Now you will need to create an installation DVD from the downloaded ISO file from step 1. You can create the DVD using your favorite DVD recording software. If you need help with recording DVDs please see our guide by clicking [wiki:CDBurning here].
 
 p((((((. Alternatively, you could mount the ISO without burning a CD. Read our [wiki:WindowsISO guide] to find out more.
 
-p(((. 4. Once you have recorded the installation DVD, insert it to begin the installation. If the installer does not begin automatically click on My Computer and select your CDROM drive w[[here]] the installation DVD is, and select setup.exe from the files contained on the CDROM.
+p(((. 4. Once you have recorded the installation DVD, insert it to begin the installation. If the installer does not begin automatically click on My Computer and select your CDROM drive where the installation DVD is, and select setup.exe from the files contained on the CDROM.
 
 p(((. 5. Select the *Install manually without using the Internet* option, then accept the license agreement. When the installer asks for the FIK code, insert the number contained in @plp.txt@ sent by our License Request Form that corresponds to the version of Matlab that you are installing. When the installer asks for the license file, click "Browse" and select the "license.dat" file that you received in your E-Mail.  Use the default values for each part of the installer, selecting Typical Installation and the recommended installation path.  If you have not registered for a license file, please visit https://rc.usf.edu/licensing/licenserequest.php .  If you have registered but have not received your license, please contact support@rc.usf.edu
 
@@ -131,13 +131,13 @@ p(((. 6. Once the installation is finished you will find an icon on your desktop
 ----
 h2. Running Matlab on Circe
 
-h3. [[Modules]]
+h3. Modules
 p. Matlab requires the following module file to run:
 ** apps/matlab/r2012b
-p. To run Matlab on the cluster, ensure that you use 'module add' prior to using any Matlab executables.  See [wiki:[[Modules]]] for more information.
+p. To run Matlab on the cluster, ensure that you use 'module add' prior to using any Matlab executables.  See [wiki:Modules] for more information.
 ----
 
-p. T[[here]] are two ways to run Matlab on Circe depending on the runtime of your particular job.
+p. There are two ways to run Matlab on Circe depending on the runtime of your particular job.
 
 h3. Jobs Longer than 20 Minutes in Length
 p. To run Matlab jobs on Circe, users will need to submit "batch jobs" to the scheduling environment if their jobs take more than 20 minutes to run on a standard PC.
@@ -157,7 +157,7 @@ module load apps/matlab/r2012b
 matlab -nodisplay -r test
 }}}
 
-p. You should be able to create the script file as shown above and submit it to the queue.  Make sure to edit the job name (matlab_test) and the first function name (test) to whatever is best suited for your job.  Ensure that you load the Matlab module that you want to use, 'apps/matlab/r2012b' is the most recent, prior to the matlab executable.  More information on modules can be found [wiki:[[Modules]] "[[here]]"].  
+p. You should be able to create the script file as shown above and submit it to the queue.  Make sure to edit the job name (matlab_test) and the first function name (test) to whatever is best suited for your job.  Ensure that you load the Matlab module that you want to use, 'apps/matlab/r2012b' is the most recent, prior to the matlab executable.  More information on modules can be found [[Modules|here]].  
 
 p. If you would rather call a different function, make sure the file which contains it is named after the function.  For example, if you want to call function 'addtwo', make sure it is defined in a file named 'addtwo.m'.
 
@@ -178,7 +178,7 @@ module load apps/matlab/r2012b
 matlab -nodisplay -logfile matlabLog.txt -r test_parallel &gt;&amp; err.out
 }}}
 
-p. In this example, you would have a Matlab script named test_parallel.m, and in it should be defined a 'matlabpool'.  Be sure that the 'pcpus' defined in your submit script is 2 more than the number requested using 'matlabpool'.  In this case, 'matlabpool' would have been set at 8, t[[here]]fore 'pcpus' is defined as 10.  More information about parallel computing in Matlab can be found on the  "MathWorks website":http://www.mathworks.com/help/toolbox/distcomp/exampleindex.html.  The 'mpj' request is the amount of memory to reserve for the job, and is set to 10 gigabytes [[here]].  This can be adjusted as necessary.
+p. In this example, you would have a Matlab script named test_parallel.m, and in it should be defined a 'matlabpool'.  Be sure that the 'pcpus' defined in your submit script is 2 more than the number requested using 'matlabpool'.  In this case, 'matlabpool' would have been set at 8, therefore 'pcpus' is defined as 10.  More information about parallel computing in Matlab can be found on the  "MathWorks website":http://www.mathworks.com/help/toolbox/distcomp/exampleindex.html.  The 'mpj' request is the amount of memory to reserve for the job, and is set to 10 gigabytes here.  This can be adjusted as necessary.
 
 h3. Jobs Shorter than 20 Minutes in Length
 p. Simply type @ matlab @ at the command line AFTER loading the proper module (see above).  If you have properly configured an X11 session, you should see the full Matlab interface.  If you haven't configured X11, you will be able to use the console interface.  For users wishing to use the graphical interface over X11, please see our [[XWin32Install|XWin32 Installation]] documentation.

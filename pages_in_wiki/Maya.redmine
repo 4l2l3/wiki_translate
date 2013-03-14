@@ -1,10 +1,10 @@
-h1. [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[Maya]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
+h1. Maya
 ----
 [[PageOutline]]
 
 h2. Description
 
-_From the Autodesk [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[Maya]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]] homepage:_ Autodesk® [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[Maya]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]® 3D animation software delivers a comprehensive creative feature set with tools for animation, modeling, simulation, rendering, matchmoving, and compositing on a highly extensible production platform. For visual effects, game development, post production, or other 3D animation projects, [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[Maya]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]] offers toolsets to help meet demanding production requirements. [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[Maya]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]] 2013 adds tools that help facilitate parallel workflows and complexity handling; powerful new creative toolsets; and productivity enhancements to help you create higher quality content quickly.
+_From the Autodesk Maya homepage:_ Autodesk® Maya® 3D animation software delivers a comprehensive creative feature set with tools for animation, modeling, simulation, rendering, matchmoving, and compositing on a highly extensible production platform. For visual effects, game development, post production, or other 3D animation projects, Maya offers toolsets to help meet demanding production requirements. Maya 2013 adds tools that help facilitate parallel workflows and complexity handling; powerful new creative toolsets; and productivity enhancements to help you create higher quality content quickly.
 
 http://usa.autodesk.com/maya/
 
@@ -20,19 +20,19 @@ h2. Platform
 
 ** @circe@ cluster
 
-h2. [[Run]]ning [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[Maya]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]] on the Cluster
+h2. Running Maya on the Cluster
 
-p. The [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[Maya]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]] documentation is essential to understanding the Rendering process.  The guide and this page should be all you need to get started with [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[Maya]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]] rendering.
-** [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[Maya]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]] Rendering Documentation: http://download.autodesk.com/global/docs/maya2013/en_us/
+p. The Maya documentation is essential to understanding the Rendering process.  The guide and this page should be all you need to get started with Maya rendering.
+** Maya Rendering Documentation: http://download.autodesk.com/global/docs/maya2013/en_us/
 
-p. [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[Maya]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]] rendering on the cluster is very efficient as each frame is broken up into an individual task and uses whatever CPUs are available on the system.  Submitting a [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[Maya]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]] rendering job is very trivial:
+p. Maya rendering on the cluster is very efficient as each frame is broken up into an individual task and uses whatever CPUs are available on the system.  Submitting a Maya rendering job is very trivial:
 
-p. First, load the [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[Maya]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]] application module:
+p. First, load the Maya application module:
 {{{
 [user@host ~]$ module add apps/maya
 }}}
 
-p. Then, kick off your rendering job after uploading your [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[Maya]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]] project binary to the system:
+p. Then, kick off your rendering job after uploading your Maya project binary to the system:
 
 {{{
 [user@host ~]$ Render_sge start myproject.mb 1-1000 standard
@@ -64,7 +64,7 @@ p. Additional advanced render arguments can be passed at the very end of the com
 [user@host ~]$ Render -h
 
 p. Usage: Render [options] filename
-p(((((((. where "filename" is a [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[Maya]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]] ASCII or a [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[Maya]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]] binary file.
+p(((((((. where "filename" is a Maya ASCII or a Maya binary file.
 
 p. Common options:
 p((. -help              Print help
@@ -74,10 +74,10 @@ p((. -keepMel           Keep the temporary Mel file
 p((. -listRenderers     List all available renderers
 p((. -renderer string   Use this specific renderer
 p((. -r string          Same as -renderer
-p((. -proj string       Use this [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[Maya]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]] project to load the file
+p((. -proj string       Use this Maya project to load the file
 p((. -log string        Save output into the given file
 
-p. Specific options for renderer "default": Use the renderer stored in the [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[Maya]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]] file
+p. Specific options for renderer "default": Use the renderer stored in the Maya file
 
 p. General purpose flags:
 p((. -rd path                       Directory in which to store image file
@@ -130,9 +130,9 @@ p((. -postFrame string              Mel code executed after each frame
 p((. -pre string                    Obsolete flag
 p((. -post string                   Obsolete flag
 
-p. Specific options for the layers who use [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[Maya]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]] software renderer:
+p. Specific options for the layers who use Maya software renderer:
 
-p. Anti-aliasing quality only for [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[Maya]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]] software renderer:
+p. Anti-aliasing quality only for Maya software renderer:
 p((. -sw:eaa int                    The anti-aliasing quality of EAS (Abuffer). One of:
 p((((((((. highest(0), high(1), medium(2), low(3)
 p((. -sw:ss int                     Global number of shading samples per surface in a pixel
@@ -153,20 +153,20 @@ p((. -sw:gct float                  Green channel contrast threshold
 p((. -sw:bct float                  Blue channel contrast threshold
 p((. -sw:cct float                  Pixel coverage contrast threshold (default is 1.0/8.0)
 
-p. Raytracing quality only for [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[Maya]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]] software renderer:
+p. Raytracing quality only for Maya software renderer:
 p((. -sw:ert boolean                Enable ray tracing
 p((. -sw:rfl int                    Maximum ray-tracing reflection level
 p((. -sw:rfr int                    Maximum ray-tracing refraction level
 p((. -sw:sl int                     Maximum ray-tracing shadow ray depth
 
-p. Field Options only for [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[Maya]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]] software renderer:
+p. Field Options only for Maya software renderer:
 p((. -sw:field boolean              Enable field rendering. When on, images are interlaced
 p((. -sw:pal                        When field rendering is enabled, render even field
 p((((((((. first (PAL)
 p((. -sw:ntsc                       When field rendering is enabled, render odd field
 p((((((((. first (NTSC)
 
-p. Motion Blur only for [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[Maya]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]] software renderer:
+p. Motion Blur only for Maya software renderer:
 p((. -sw:mb boolean                 Motion blur on/off
 p((. -sw:mbf float                  Motion blur by frame
 p((. -sw:sa float                   Shutter angle for motion blur (1-360)
@@ -177,7 +177,7 @@ p((. -sw:smv int                    2D motion blur smooth value
 p((. -sw:smc boolean                2D motion blur smooth color on/off
 p((. -sw:kmv boolean                Keep motion vector for 2D motion blur on/off
 
-p. Render Options only for [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[Maya]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]] software renderer:
+p. Render Options only for Maya software renderer:
 p((. -sw:ifg boolean                Use the film gate for rendering if false
 p((. -sw:edm boolean                Enable depth map usage
 p((. -sw:g float                    Gamma value
@@ -185,7 +185,7 @@ p((. -sw:premul boolean             Premultiply color by the alpha value
 p((. -sw:premulthr float            When premultiply is on, defines the threshold used to
 p((((((((. determine whether to premultiply or not
 
-p. Memory and Performance only for [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[Maya]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]] software renderer:
+p. Memory and Performance only for Maya software renderer:
 p((. -sw:uf boolean                 Use the tessellation file cache
 p((. -sw:oi boolean                 Dynamically detects similarly tessellated surfaces
 p((. -sw:rut boolean                Reuse render geometry to generate depth maps
@@ -193,9 +193,9 @@ p((. -sw:udb boolean                Use the displacement bounding box scale to o
 p((((((((. displacement-map performance
 p((. -sw:mm int                     Renderer maximum memory use (in Megabytes)
 
-p. Specific options for the layers who use [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[Maya]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]] hardware renderer:
+p. Specific options for the layers who use Maya hardware renderer:
 
-p. Quality flags only for [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[Maya]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]] hardware renderer:
+p. Quality flags only for Maya hardware renderer:
 p((. -hw:ehl boolean                Enable high quality lighting
 p((. -hw:ams boolean                Accelerated multi sampling
 p((. -hw:ns int                     Number of samples per pixel
@@ -204,7 +204,7 @@ p((. -hw:ctr int                    Color texture resolution
 p((. -hw:btr int                    Bump texture resolution
 p((. -hw:tc boolean                 Enable texture compression
 
-p. Render options only for [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[Maya]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]] hardware renderer:
+p. Render options only for Maya hardware renderer:
 p((. -hw:c boolean                  Culling mode.
 p((((((((((((((((. 0: per object.
 p((((((((((((((((. 1: all double sided.
@@ -212,7 +212,7 @@ p((((((((((((((((. 2: all single sided
 p((. -hw:sco boolean                Enable small object culling
 p((. -hw:ct float                   Small object culling threshold
 
-p. Mel callbacks only for [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[Maya]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]] hardware renderer:
+p. Mel callbacks only for Maya hardware renderer:
 p((. -hw:mb boolean                 Enable motion blur
 p((. -hw:mbf float                  Motion blur by frame
 p((. -hw:ne int                     Number of exposures
@@ -272,7 +272,7 @@ p. Requires 5 arguments:
 p(((. Encode_sge &lt;maya_project&gt; &lt;cpu_threads&gt; &lt;framerate&gt; &lt;x_res&gt; &lt;y_res&gt;
 }}}
 
-p. For more information on [[Run]], see [wiki:[[Run]] "The GridEngine [[Run]] Utility"].
+p. For more information on Run, see [[Run|The GridEngine Run Utility]].
 
 h2. Reporting Issues
 p. Report issues to the IT Helpdesk: help@usf.edu

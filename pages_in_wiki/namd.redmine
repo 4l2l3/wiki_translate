@@ -20,11 +20,11 @@ h2. Platforms
 
 h2. Local Documentation
 
-h3. [[Modules]]
+h3. Modules
 
 p. Namd requires the following module file to run:
 ** @apps/namd/2.7@
-p. See [wiki:[[Modules]]] for more information.
+p. See [wiki:Modules] for more information.
 
 
 h3. Submitting a Job

@@ -17,12 +17,12 @@ h2. Platforms
 
 h2. Using OpenMM on the Cluster
 
-h3. [[Modules]]
+h3. Modules
 p. Before using OpenMM libraries with your code, you must first set up your environment properly.  Here are the required module files:
 
 ** apps/openmm/4.0
 
-p. To use OpenMM on the cluster, ensure that you use @module add@ prior to using any executables.  See [wiki:[[Modules]]] for more information.  
+p. To use OpenMM on the cluster, ensure that you use @module add@ prior to using any executables.  See [wiki:Modules] for more information.  
 
 h3. Guides and Documentation
 p. Users' Guide
