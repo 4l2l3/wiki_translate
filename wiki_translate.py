@@ -145,7 +145,7 @@ def do_links(text_in):
 	#TRAC		WikiPageName
 	words = text_out.split() 
 	for word in words:
-		if wiki_pages.count(word)!=0:#we're good and we link it
+		if wiki_pages.count(word):#we're good and we link it
 			text_out = text_out.replace(word, "[["+ word +"]]")
 	#REDMINE	[[WikiPageName]]
 
