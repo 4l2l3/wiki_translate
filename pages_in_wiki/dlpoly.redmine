@@ -1,33 +1,33 @@
-= DL_POLY =
+h1. DL_POLY
 [[PageOutline]]
 *Last Modified:* [[LastModified(dlpoly)]]
 
-== Description ==
+h2. Description
 
 p. DL_POLY is a parallel molecular dynamics simulation package developed at Daresbury Laboratory by W. Smith and T.R. Forester.
 
-== Version ==
+h2. Version
 
 2.19, 3.08
 
-== Authorized Users ==
+h2. Authorized Users
 
-*****circe` account holders
+** @circe@ account holders
 
-== Platforms ==
+h2. Platforms
 
-****@circe@ cluster
+** @circe@ cluster
 
-== Running DL_POLY on the Cluster ==
+h2. Running DL_POLY on the Cluster
 p. The following describes what is necessary to run DL_POLY on the cluster.
 
-=== [[Modules]] ===
+h3. [[Modules]]
 p. DL_POLY requires the following module file and some prerequisites to run:
-******pps/dlpoly/2.19@ or  @
-*****rerequisites: @compilers/pgi/7.0-7.x86_64 openmpi/1.2.6-x86_64-pgi-7.0-7@
+** @apps/dlpoly/2.19@
+** Prerequisites: @compilers/pgi/7.0-7.x86_64 openmpi/1.2.6-x86_64-pgi-7.0-7@
 p. To run DL_POLY on the cluster, ensure that you use @module initadd@ to make the changes persistent.  See [wiki:[[Modules]]] for more information.
 
-=== Job Script ===
+h3. Job Script
 p. To run DL_POLY, you will need to create a work directory for your job that includes the necessary input files (CONFIG, CONTROL, FIELD and possible TABLE or TABEAM).  You'll also need to include a copy of this submit script (modify it to suit your parameters)
 
 {{{
@@ -50,8 +50,8 @@ p. Or, for DL_POLY 3.08:
 mpirun DLPOLY.Y-3.08
 }}}
 
-=== DL_POLY documentation ===
-*****ersion 2: http://www.cse.scitech.ac.uk/ccg/software/DL_POLY/MANUALS/USRMAN2.19.pdf
-*****ersion 3: http://www.cse.scitech.ac.uk/ccg/software/DL_POLY/MANUALS/USRMAN3.09.pdf
+h3. DL_POLY documentation
+** Version 2: http://www.cse.scitech.ac.uk/ccg/software/DL_POLY/MANUALS/USRMAN2.19.pdf
+** Version 3: http://www.cse.scitech.ac.uk/ccg/software/DL_POLY/MANUALS/USRMAN3.09.pdf
 
 p. Further information on using SGE (Sun !GridEngine) and MPI can be found [wiki:gridEngineIntro here].

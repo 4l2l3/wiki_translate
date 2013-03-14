@@ -1,33 +1,33 @@
-= [[[[[[[[[[[[[[[[[[[[[[[[Hadoop]]]]]]]]]]]]]]]]]]]]]]]] = 
+h1. [[[[[[[[[[[[[[[[[[[[[[[[Hadoop]]]]]]]]]]]]]]]]]]]]]]]] 
 ----
 [[PageOutline]]
 
 
-== Description == 
+h2. Description 
 
 _From the [[[[[[[[[[[[[[[[[[[[[[[[Hadoop]]]]]]]]]]]]]]]]]]]]]]]] wiki:_ [[[[[[[[[[[[[[[[[[[[[[[[Hadoop]]]]]]]]]]]]]]]]]]]]]]]] is a framework for running applications on large clusters built of commodity hardware. The [[[[[[[[[[[[[[[[[[[[[[[[Hadoop]]]]]]]]]]]]]]]]]]]]]]]] framework transparently provides applications both reliability and data motion. [[[[[[[[[[[[[[[[[[[[[[[[Hadoop]]]]]]]]]]]]]]]]]]]]]]]] implements a computational paradigm named  !Map/Reduce, where the application is divided into many small fragments of work, each of which may be executed or reexecuted on any node in the cluster. In addition, it provides a distributed file system (HDFS) that stores data on the compute nodes, providing very high aggregate bandwidth across the cluster. Both !Map/Reduce and the distributed file system are designed so that node failures are automatically handled by the framework.
 
-== Version ==
+h2. Version
 
-*** *0.20.2*
+** *0.20.2*
 p(. 
-== Authorized Users ==
+h2. Authorized Users
 
-*****circe` account holders
+** @circe@ account holders
 
-== Platforms ==
+h2. Platforms
 
-****@circe@ cluster
+** @circe@ cluster
 
-== Local Documentation ==
+h2. Local Documentation
 
-=== [[Modules]] ===
+h3. [[Modules]]
 p. [[[[[[[[[[[[[[[[[[[[[[[[Hadoop]]]]]]]]]]]]]]]]]]]]]]]] requires the following module and its prerequisite to run:
-*** @apps/hadoop/0.20.2@
-*** @apps/jdk/1.6.0_22.x86_64@
+** @apps/hadoop/0.20.2@
+** @apps/jdk/1.6.0_22.x86_64@
 p. To run [[[[[[[[[[[[[[[[[[[[[[[[Hadoop]]]]]]]]]]]]]]]]]]]]]]]] on the cluster, ensure that you use @module initadd@ to make the changes persistent.  See [wiki:[[Modules]]] for more information.
 
-=== Submitting Jobs ===
+h3. Submitting Jobs
 
 p. First, you will need a [[[[[[[[[[[[[[[[[[[[[[[[Hadoop]]]]]]]]]]]]]]]]]]]]]]]]-aware application to run within the [[[[[[[[[[[[[[[[[[[[[[[[Hadoop]]]]]]]]]]]]]]]]]]]]]]]] environment. For this example, we will use the !WordCount Java program cited in the [[[[[[[[[[[[[[[[[[[[[[[[Hadoop]]]]]]]]]]]]]]]]]]]]]]]] documentation:
 

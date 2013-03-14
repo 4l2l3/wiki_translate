@@ -1,33 +1,33 @@
-= Maple =
+h1. Maple
 ----
 
 [[PageOutline]]
 
-== Description == 
+h2. Description 
 
 p. Maple is a software tool for mathematical computation. It has many features that are useful for students and research scientists as well as mathematicians. It has powerful tools for symbolic mathematics and algebraic computing. It can also do numerical computations and graphing.
 
-== Current Version ==
+h2. Current Version
 
-*** *16*
+** *16*
 
-== Authorized Users ==
+h2. Authorized Users
 
-*****tudents doing research
-*** Faculty
-*****circe` account holders
+** Students doing research
+** Faculty
+** @circe@ account holders
 
-== Platforms ==
+h2. Platforms
 
-*** Workstation/PC
-****@circe@ cluster
+** Workstation/PC
+** @circe@ cluster
 
-== Installation ==
+h2. Installation
 
 *IMPORTANT: Before You Begin*[[BR]]
 p. Make sure you've applied for and received the Maple 16 License information.  You will need to go [[here]] to apply: https://rc.usf.edu/licensing/licenserequest.php
 
-p((. *_Contents_*
+p((. *_Contents*_
 
 p((. [MapleUser#Maple15WindowsInstallation Maple 16 Windows Installation][[BR]]
 p((. [MapleUser#Maple15LinuxSingleUserInstallation Maple 16 Linux Single User Installation][[BR]]
@@ -35,13 +35,13 @@ p((. [MapleUser#Maple15MacOSXSingleUserInstallation Maple 16 Mac OS X Single Use
 
 -----
 
-=== Maple 16 Windows Installation ===
+h3. Maple 16 Windows Installation
 
 p. Before starting the installation:
 
-**********************************able from https://rc.usf.edu/isos/Maple/.  Log into the server using your NetID and password. If your computer is a 64-bit machine, download Maple16WindowsX86_64Installer.exe. Otherwise, download Maple16WindowsInstaller.exe. 
-************all programs especially Maple and Excel
-************e that you have administrator privileges. 
+***** Get the installation executable from https://rc.usf.edu/isos/Maple/.  Log into the server using your NetID and password. If your computer is a 64-bit machine, download Maple16WindowsX86_64Installer.exe. Otherwise, download Maple16WindowsInstaller.exe. 
+***** Exit all programs especially Maple and Excel
+***** Ensure that you have administrator privileges. 
 
 ----
 
@@ -58,7 +58,7 @@ p(((. 10. Click "Done" to exit the installer.
 
 ----
 
-=== Maple 16 Linux Single User Installation ===
+h3. Maple 16 Linux Single User Installation
 
 p. Disclaimer: This procedure was tested on a Fedora machine. Your mileage may vary.
 
@@ -83,7 +83,7 @@ p. You should be able to start xmaple or maple from the command line.
 
 ----
 
-=== Maple 16 Mac OS X Single User Installation ===
+h3. Maple 16 Mac OS X Single User Installation
 
 p. Disclaimer: These are the standard instructions for a Mac OS X machine. Your mileage may vary.
 
@@ -101,24 +101,24 @@ p(((. 11. Click "Done" to exit the installer.
 p(((. 
 p. You should be able to launch Maple by double clicking on the Maple 16 icon in the !Applications/Maple 16 directory.
 ----
-== [[Run]]ning Maple on Circe ==
+h2. [[Run]]ning Maple on Circe
 
-=== [[Modules]] ===
+h3. [[Modules]]
 
 p. Maple requires the following module file and some prerequisites to run:
-*** @apps/maple/16@
+** @apps/maple/16@
 p. To run Maple on the cluster, ensure that you use 'module add' prior to using any Maple executables.  See [wiki:[[Modules]]] for more information.
 
-=== Submitting a Job ===
+h3. Submitting a Job
 
 p. T[[here]] are two ways to run Maple on Circe depending on the runtime of your particular job.
 
-==== Jobs Shorter than 20 Minutes in Length (most jobs) ====
-p. Simply type @ xmaple @ at the prompt.  For users wishing to use the graphical interface over X11, please see our [[XWin32Install|XWin32 Installation]] documentation.
+h4. Jobs Shorter than 20 Minutes in Length
+p. Simply type @ xmaple @ at the command line. If you have properly configured an X11 session, you should see the full Maple interface.  If you haven't configured X11, you will be able to use the console interface by running @ maple @ at the prompt.  For users wishing to use the graphical interface over X11, please see our [[XWin32Install|XWin32 Installation]] documentation.
 
 p. Maple can also be launched through the NX environment using the Applications menu.  For more information about the NX environment, please see our [[CirceDesktop|Circe NX Desktop]] documentation.
 
-==== Jobs Longer than 20 Minutes in Length ====
+h4. Jobs Longer than 20 Minutes in Length
 p. To run Maple jobs on the Circe cluster, users will need to submit their jobs to the scheduling environment if their jobs take more than 20 minutes to run on a standard PC.
 
 p. If, for example, you have a Maple script file named test.mpl with all your functions defined in it, you would set up a submit script to use the Maple kernel like this:
@@ -137,16 +137,16 @@ maple &lt; test.mpl&gt; output.txt
 
 p. Maple script files can either be created using a standard text editor or by exporting an existing worksheet from Standard Maple in .mpl format.
 
-==== Guides ====
+h4. Guides
 p. Use the following links for the Maple User Manual and Programming Guide.  A PDF reader is required.
-*** http://www.maplesoft.com/view.aspx?SF=131922/432650/UserManual.pdf
-*** http://www.maplesoft.com/view.aspx?SF=131923/432652/ProgrammingGuide.pdf
+** http://www.maplesoft.com/view.aspx?SF=131922/432650/UserManual.pdf
+** http://www.maplesoft.com/view.aspx?SF=131923/432652/ProgrammingGuide.pdf
 
-==== More Job Information ====
+h4. More Job Information
 p. See the following for more detailed job submission information:
-******iki:gridEngineUsers "SGE User's Guide"]
-*******ki:gridEnginePolicy "Scheduling and Dispatch Policies"]
-******iki:gridEngineTechn "Advanced Submit Techniques"]
+** [[gridEngineUsers|SGE User's Guide]]
+** [[gridEnginePolicy|Scheduling and Dispatch Policies]]
+** [[gridEngineTechn|Advanced Submit Techniques]]
 
-=== Reporting Bugs ===
+h3. Reporting Bugs
 p. Report bugs to the IT Help Desk: help@usf.edu

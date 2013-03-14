@@ -1,37 +1,37 @@
-= Connecting to Circe =
+h1. Connecting to Circe
 ----
 [[PageOutline]]
 
 p. To connect to Circe, you will need to use an SSH client or utilize the [CirceDesktop "Circe NX Desktop Environment"].  The following information will be needed to connect:
-*******r USF NetID and Password
-*****Hostname:* circe.rc.usf.edu
-*********H Port:''' 22 (This is the default)
+** Your USF NetID and Password
+** *Hostname:* circe.rc.usf.edu
+** *SSH Port:* 22 (This is the default)
 
 p. If you do not have an account, please register for one at https://rc.usf.edu/signup/account.php
 
 p. If you wish to use shell access via SSH, [[here]] are some popular SSH clients for Windows:
-****PuTTY: http://www.chiark.greenend.org.uk/~sgtatham/putty/
-*****************************e _recommended_ client to use when connecting to Circe.  IT staff will provide full support for users utilizing this connection method.
-*******win (Includes OpenSSH): http://www.cygwin.com/ 
-******************************* _advanced_ users who are familiar with using a UNIX/Linux environment!  We can only provide limited support for this method so be warned!
+** PuTTY: http://www.chiark.greenend.org.uk/~sgtatham/putty/
+**** *Note*: PuTTY is the _recommended_ client to use when connecting to Circe.  IT staff will provide full support for users utilizing this connection method.
+** Cygwin (Includes OpenSSH): http://www.cygwin.com/ 
+**** *Note*: Cygwin is for _advanced_ users who are familiar with using a UNIX/Linux environment!  We can only provide limited support for this method so be warned!
 
 p. Most other platforms such as Linux or Mac OSX include a version of OpenSSH by default.  Documentation for OpenSSH is [[here]]: http://www.openssh.com/
 
 p. You will probably be interested in transferring files to and from Circe.  Please see our [[CirceDataAccess|guide to accessing data on Circe]] for more information
 
-== System Basics ==
+h2. System Basics
 p. If you are new to Linux or UNIX, you may wish to review some online tutorials:
-******sic Linux tutorial: http://www.ee.surrey.ac.uk/Teaching/Unix/
-******other Linux tutorial: http://linuxsurvival.com/index.php
-************ripting Guide (extremely useful for automating repetitive tasks): http://www.freeos.com/guides/lsst/
+** Basic Linux tutorial: http://www.ee.surrey.ac.uk/Teaching/Unix/
+** Another Linux tutorial: http://linuxsurvival.com/index.php
+** Shell Scripting Guide (extremely useful for automating repetitive tasks): http://www.freeos.com/guides/lsst/
 
 p. Besides basic Linux knowledge, t[[here]] are just a couple of important things you should be aware of while using the systems.
 
-=== Account Types ===
-p. See the following document on *Account Types_' to get an idea of how we distinguish between '''Research''' and '_Standard* accounts: [[accountInfo|Account Information]]
+h3. Account Types
+p. See the following document on *Account Types* to get an idea of how we distinguish between *Research* and *Standard* accounts: [[accountInfo|Account Information]]
 
 
-== Getting Work Done ==
+h2. Getting Work Done
 p. To start using Circe for productive work, see the following documents:
 p(. 1. [[gridEngineIntro|Introduction to GridEngine]] - This guide will provide a brief introductory explanation of the !GridEngine environment.
 p(. 2. Locate the documentation for your application on this list: [SoftwarePortal "Available Applications"].  If its not t[[here]], then we haven't worked with it before.  You can either compile and install it yourself, or contact us to have it done for you.
@@ -39,5 +39,5 @@ p(. 3. [[gridEngineUsers|GridEngine User's Guide]] - This guide is a user manual
 p(. 4. [[CirceHardware|Available Hardware]] - This page provides a breakdown of all the HPC hardware that is part of Circe.  This is useful for referencing our resources or determining how best to compile or prepare your application.
 p(. 5. [wiki:[[Modules]] "Environment [[Modules]]"] - Environment [[Modules]] give you access to applications and features on Circe.  Taking the time to learn their use is essential for making the most of Circe.
 
-=== Running Graphical Applications ===
+h3. Running Graphical Applications
 p. In order to run graphical applications such as Comsol, Matlab, Mathematica, or HFSS, please see the documentation for the [CirceDesktop "Circe NX Desktop Environment"].

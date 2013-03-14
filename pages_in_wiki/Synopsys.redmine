@@ -1,30 +1,30 @@
-= [[[[[[[[[[Synopsys]]]]]]]]]] Tools =
+h1. [[[[[[[[[[Synopsys]]]]]]]]]] Tools
 [[PageOutline]]
 
-== Description == 
+h2. Description 
 
 p. [[[[[[[[[[Synopsys]]]]]]]]]] provides a comprehensive portfolio of tools for digital and mixed-signal IC design, implementation, signoff, verification, test, and design for manufacturability (DFM)
 
-****From: http://www.synopsys.com/tools/pages/default.aspx
+** From: http://www.synopsys.com/tools/pages/default.aspx
 
-== Version ==
+h2. Version
 
-*********** versions of tools, most current as of 4/2012
+** Various versions of tools, most current as of 4/2012
 
-== Authorized Users ==
+h2. Authorized Users
 
-*****circe` account holders
+** @circe@ account holders
 
-== Platforms ==
+h2. Platforms
 
-*****circe` login nodes
-****@circe@ cluster
+** @circe@ login nodes
+** @circe@ cluster
 
-== Running on Circe ==
+h2. Running on Circe
 
 p. Running [[[[[[[[[[Synopsys]]]]]]]]]] tools on Circe requires modules to be properly set as described below.  Graphical tools will need to be run via the NX environment, documented here: http://www.rc.usf.edu/trac/doc/wiki/CirceDesktop
 
-=== [[Modules]] ===
+h3. [[Modules]]
 
 p. Individual tools, grouped by tool and specified by version.
 {{{ 
@@ -77,18 +77,18 @@ p((((((((((((((((. apps/synopsys/hspice/C-2009.09&lt;/td&gt;&lt;/tr&gt;
 
 p. To run any [[[[[[[[[[Synopsys]]]]]]]]]] tools on the cluster, ensure that you use @module add@ prior to using any [[[[[[[[[[Synopsys]]]]]]]]]] executables.  See [wiki:[[Modules]]] for more information.
 
-=== Examples ===
-==== hspice ====
+h3. Examples
+h4. hspice
 {{{
 module add apps/synopsys/hspice/F-2011.09-SP2
 hspice &lt;inputfile&gt;
 }}}
 
-=== More Job Information ===
+h3. More Job Information
 p. See the following for more detailed job submission information:
-******iki:gridEngineUsers "SGE User's Guide"]
-*******ki:gridEnginePolicy "Scheduling and Dispatch Policies"]
-******iki:gridEngineTechn "Advanced Submit Techniques"]
+** [[gridEngineUsers|SGE User's Guide]]
+** [[gridEnginePolicy|Scheduling and Dispatch Policies]]
+** [[gridEngineTechn|Advanced Submit Techniques]]
 
-=== Reporting Bugs ===
+h3. Reporting Bugs
 p. Report bugs to the IT Help Desk: help@usf.edu

@@ -1,36 +1,36 @@
-= TITAN2D =
+h1. TITAN2D
 ----
 
 [[PageOutline]]
 
-== Description ==
+h2. Description
 
 _From the TITAN2D manual:_ TITAN2D was developed for the purpose of simulating granular flows (primarily geological mass flows such as debris avalanches and landslides) over digital elevation models of natural terrain. The code is designed to help scientists and civil protection authorities assess the risk of, and mitigate, hazards due to dry debris flows and avalanches. TITAN2D combines numerical simulations of a flow with digital elevation data of natural terrain supported through a Geographical Information System (GIS) interface.
 
-== Version ==
+h2. Version
 
-*** *2.0.1*
+** *2.0.1*
 
-== Authorized Users ==
+h2. Authorized Users
 
-*****circe` account holders
+** @circe@ account holders
 
-== Platform ==
+h2. Platform
 
-****@circe@ cluster
+** @circe@ cluster
 
-== Local Documentation ==
+h2. Local Documentation
 
-=== [[Modules]] ===
+h3. [[Modules]]
 
 p. The TITAN2D GUI requires the following module file to run:
-*** @apps/titan/2.0.1@
+** @apps/titan/2.0.1@
 p. See [wiki:[[Modules]]] for more information.
 
-=== [[Run]]ning TITAN2D on the Cluster ===
+h3. [[Run]]ning TITAN2D on the Cluster
 
 p. The TITAN2D guide is essential to understanding the application and making the most of it.  The guide and this page should be all you need to get started with your simulations.
-*****ITAN2D Guide: http://www.gmfg.buffalo.edu/software/titan_userguide.pdf
+** TITAN2D Guide: http://www.gmfg.buffalo.edu/software/titan_userguide.pdf
 
 p. TITAN2D can run well on most types of hardware on the cluster. For the vast majority of cases, memory is not as big an issue as CPU time and the program is parallel "enough" to ensure that it runs reasonably well over GigE.  The code currently simulates granular flows.  It runs in parallel with mesh refinement and unrefinement.  The maximum refinement level is set by the user when specifying the Number of Computational Cells Across Smallest !Pile/Flux-Source.  Mesh repartitioning is also used to maintain a good load-balance.  A python script is included to organize the preprocessing and launching of jobs on different computers.  
 
@@ -55,18 +55,18 @@ p. This will request 4 processors via MPI, a job name of titan_test, and a 2 hou
 
 p. For more information on [[Run]], see [wiki:[[Run]] "The GridEngine [[Run]] Utility"].
 
-==== Benchmarks &amp; Tutorials ====
+h4. Benchmarks
 
 p. The following folder contains input parameters for known TITAN2D tutorials:
-*** /opt/apps/titan/example
+** /opt/apps/titan/example
 
-==== More Job Information ====
+h4. More Job Information
 
 p. See the following for more detailed job submission information:
-******iki:gridEngineUsers "SGE User's Guide"]
-*******ki:gridEnginePolicy "Scheduling and Dispatch Policies"]
-******iki:gridEngineTechn "Advanced Submit Techniques"]
+** [[gridEngineUsers|SGE User's Guide]]
+** [[gridEnginePolicy|Scheduling and Dispatch Policies]]
+** [[gridEngineTechn|Advanced Submit Techniques]]
 
-==== Reporting Bugs ====
+h4. Reporting Bugs
 
 p. Report bugs directly to Research Computing: support@rc.usf.edu

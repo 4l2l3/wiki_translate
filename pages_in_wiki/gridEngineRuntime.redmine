@@ -1,4 +1,4 @@
-= Job [[[[Run]]]] Time =
+h1. Job [[[[Run]]]] Time
 ----
 [[PageOutline]]
 
@@ -13,7 +13,7 @@ where XX:XX:XX is the hours, minutes and seconds the job is expected to run.  Th
 
 p. Your job's runtime will fall into the range of one of the four available queues show below.  If your job will take longer than 1 week, you will need to request an exception by sending an e-mail to help@usf.edu, describing your need.
 
-| *Queue Name_' | '_Max [[[[Run]]]]time* |
+| *Queue Name* | *Max [[[[Run]]]]time* |
 | devel | 1 hour  | 
 | short | 6 hours | 
 | medium | 1 day  | 
@@ -21,8 +21,8 @@ p. Your job's runtime will fall into the range of one of the four available queu
 
 p. The general rule of thumb is that the shorter your job runtime, the more quickly your job should be started.
 
-== Determining Job [[[[Run]]]] Time ==
+h2. Determining Job [[[[Run]]]] Time
 p. Only benchmarking or profiling your code will provide a reasonable time estimate, but there are some rules you can go by when attempting to make an educated guess:
 
-**************************************_Course-Grained'_ tasks tend to scale linearly or near-linearly.  Generally, you can divide the time it takes to run on one processor by the number of processors you are planning to run on.
-****************************************************************************************************** additional resources does not yield any appreciable speedup.  Depending on the parameters passed to the program, there may be no established point of reference for a reasonable time table.  The best thing to do in this case is benchmark the code given the same input parameters but perhaps with fewer repeated iterations, time steps, etc.  Get an idea of how the application behaves with smaller, shorter-running jobs, then make a reasonable estimate of how the runtime will change as you increase your iterations, time-steps, etc.
+** *Embarrassingly Parallel* or *Course-Grained* tasks tend to scale linearly or near-linearly.  Generally, you can divide the time it takes to run on one processor by the number of processors you are planning to run on.
+** *Fine-Grained* computations generally follow some scaling curve where after some point, adding additional resources does not yield any appreciable speedup.  Depending on the parameters passed to the program, there may be no established point of reference for a reasonable time table.  The best thing to do in this case is benchmark the code given the same input parameters but perhaps with fewer repeated iterations, time steps, etc.  Get an idea of how the application behaves with smaller, shorter-running jobs, then make a reasonable estimate of how the runtime will change as you increase your iterations, time-steps, etc.

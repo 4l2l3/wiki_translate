@@ -1,40 +1,40 @@
-= Mathematica =
+h1. Mathematica
 ----
 
 [[PageOutline]]
 
-== Description ==
+h2. Description
 
 p. Mathematica is the tool of choice at the frontiers of scientific research, in engineering analysis and modeling, in technical education from high school to graduate school, and w[[[[here]]]]ver quantitative methods are used.
 
-== Version ==
+h2. Version
 
-*** *9.0*
+** *9.0*
 
-== Authorized Users ==
+h2. Authorized Users
 
-*****circe` account holders
-******udents doing valid research
-*** Faculty
+** @circe@ account holders
+** Students doing valid research
+** Faculty
 
-== Platforms ==
+h2. Platforms
 
-****@circe@ cluster
-*** Workstation/PC
+** @circe@ cluster
+** Workstation/PC
 
-== Installation ==
+h2. Installation
 
 *IMPORTANT: Before You Begin*[[BR]]
 p. Make sure you've applied for and received the Mathematica 8 License information.  You will need to go [[[[here]]]] to apply: https://rc.usf.edu/licensing/licenserequest.php
 
-*_Contents_*[[BR]][[BR]]
+*_Contents*_[[BR]][[BR]]
 [MathemUser#InstallingMathematicaOnWindows Installing Mathematica On Windows][[BR]]
 [MathemUser#InstallingMathematicaOnLinux Installing Mathematica On Linux][[BR]]
 [MathemUser#InstallingMathematicaOnSolaris8 Installing Mathematica On Solaris8][[BR]]
 
 ----
 
-=== Installing Mathematica On Windows ===
+h3. Installing Mathematica On Windows
 
 p(((. 1. Log into https://rc.usf.edu/isos using your NetID and password. Change to the directory /Mathematica/V9.0 and download the Windows ISO file to a temporary directory on your PC. Once the file has finished downloading you may disconnect from the FTP server.
 
@@ -54,7 +54,7 @@ p(((. 7. Click OK.
 
 ----
 
-=== Installing Mathematica On Linux ===
+h3. Installing Mathematica On Linux
 
 p(((. 1. Log into https://rc.usf.edu/isos using your NetID and password. Change to the directory /Mathematica/V9.0 and download the file named Mathematica_9.0.0_LINUX.iso to a temporary directory on your PC. Once the file has finished downloading you may disconnect from the FTP server.
 
@@ -88,7 +88,7 @@ p((((. 9. The application launcher asks for a license key. Please select the "Ad
 
 ----
 
-=== Installing Mathematica On Solaris 8 ===
+h3. Installing Mathematica On Solaris 8
 
 p(((. 1. Log into https://rc.usf.edu/isos using your NetID and password. Change to the directory /Mathematica/7.0 and download the file named mathematica7-solaris.iso to a temporary directory on your PC. Once the file has finished downloading you may disconnect from the FTP server.
 
@@ -116,24 +116,24 @@ p(((. Re-login to your computer and issue the mathematica command.
 
 p. Once installation is complete, just type in cd ~ ; umount /cdrom/cdrom0; eject; to eject the CD-ROM.
 ----
-== Running Mathematica on Circe ==
+h2. Running Mathematica on Circe
 
-=== [[Modules]] ===
+h3. [[Modules]]
 
 p. Mathematica requires the following module file and some prerequisites to run:
-*** @apps/mathematica/9.0@
+** @apps/mathematica/9.0@
 p. To run Mathematica on the cluster, ensure that you use 'module add' prior to using any Mathematica executables. See [wiki:[[Modules]]] for more information.
 
-=== Submitting a Job ===
+h3. Submitting a Job
 
 p. T[[[[here]]]] are two ways to run Mathematica on Circe depending on the runtime of your particular job.
 
-==== Jobs Shorter than 20 Minutes in Length (most jobs) ====
-p. Simply type @ mathematica @ at the prompt.  For users wishing to use the graphical interface over X11, please see our [[XWin32Install|XWin32 Installation]] documentation.
+h4. Jobs Shorter than 20 Minutes in Length
+p. Simply type @ mathematica @ at the command line. If you have properly configured an X11 session, you should see the full Mathematica interface.  If you haven't configured X11, you will be able to use the console interface by running @ math @ at the prompt.  For users wishing to use the graphical interface over X11, please see our [[XWin32Install|XWin32 Installation]] documentation.
 
 p. Mathematica can also be launched through the NX environment using the Applications menu.  For more information about the NX environment, please see our [[CirceDesktop|Circe NX Desktop]] documentation.
 
-==== Jobs Longer than 20 Minutes in Length ====
+h4. Jobs Longer than 20 Minutes in Length
 p. To run Mathematica jobs on Circe, users will need to submit their jobs to the scheduling environment if their jobs take more than 20 minutes to run on a standard PC.
 
 p. If, for example, you have a Mathematica script file named test.math with all your functions defined in it, you would set up a submit script to use the Mathematica kernel like this:
@@ -150,7 +150,7 @@ module load apps/mathematica/9.0
 math &lt; test.math
 }}}
 
-==== Mathematica Notebook files (.nb) and Circe Submission ====
+h4. Mathematica Notebook files
 
 p. If you're using Mathematica notebook files (.nb) and you wish to submit the job to Circe, you must first convert the notebook file to a Mathematica package file.
 
@@ -165,5 +165,5 @@ p. Please use the following steps to convert a notebook file to a standard Mathe
 p. You'll then use the file you just saved as an input file using the Circe submission sample above, e.g. "math &lt; filesaved.m".
 
 
-=== Reporting Bugs ===
+h3. Reporting Bugs
 p. Report bugs to the IT Help Desk: help@usf.edu

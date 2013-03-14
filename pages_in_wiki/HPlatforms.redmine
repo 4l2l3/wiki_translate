@@ -1,4 +1,4 @@
-= Which Hardware Platform Should I Use? =
+h1. Which Hardware Platform Should I Use
 
 p. Research Computing offers several different hardware platforms. To choose between these resources, you need to consider two issues: the available software on a given system, and the granularity of your problem. Since the granularity may affect where you want to run a given bit of software, we will discuss this topic first.
 

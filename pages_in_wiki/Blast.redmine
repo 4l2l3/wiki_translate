@@ -1,35 +1,35 @@
-= NCBI BLAST =
+h1. NCBI BLAST
 ----
 [[PageOutline]]
 
-== Description ==
+h2. Description
 
 p. The Basic Local Alignment Search Tool (BLAST) finds regions of local similarity between sequences. The program compares nucleotide or protein sequences to sequence databases and calculates the statistical significance of matches. BLAST can be used to infer functional and evolutionary relationships between sequences as well as help identify members of gene families. 
 
-== Note About this Software ==
+h2. Note About this Software
 p. We also have [[[[MPIBlast]]]] available here: (https://rc.usf.edu/trac/doc/wiki/[[[[MPIBlast]]]]). We recommend use of this software for high-performance benefits. However, we will still support the serial version for special cases.
 
-== Version == 
+h2. Version 
 
-*** *(BLAST+)2.2.22*
+** *(BLAST+)2.2.22*
 
-== Authorized Users == 
+h2. Authorized Users 
 
-*****circe` account holders
+** @circe@ account holders
 
-== Platforms ==
+h2. Platforms
 
-****@circe@ cluster
+** @circe@ cluster
 
-== Local Documentation ==
+h2. Local Documentation
 
-=== [[Modules]] ===
+h3. [[Modules]]
 
 p. [[[[MPIBlast]]]] requires the following module file to run:
-*** @apps/blast/2.2.22@
+** @apps/blast/2.2.22@
 p. See [wiki:[[Modules]]] for more information.
 
-=== Creating and Submitting a Job ===
+h3. Creating and Submitting a Job
 
 p. Create a .ncbirc file in your home directory.  It should be formatted as follows (user location of /work and /home directories will vary):
 
@@ -45,7 +45,7 @@ p. Description of the above directories:
 p. The 'DATA' variable gives the location of the NCBI Data directory containing BLOSUM and PAM scoring matrices, among other things. The scoring matrix files are necessary for any type of protein BLAST search and should be accessible by all cluster nodes.  The 'BLASTDB' variable tells standard NCBI blastall where to find BLAST databases.
 
 
-==== Prepare a database for use ====
+h4. Prepare a database for use
 p. Research Computing mirrors several of the available databases.  They can be found in /opt/apps/ncbi-6.1/blast/fasta.  If one of those will serve your needs, simply copy it from that location to your BLASTDB location, and decompress it.
 
 {{{
@@ -56,7 +56,7 @@ p. Research Computing mirrors several of the available databases.  They can be f
 }}}
 
 
-==== Submit the Job ====
+h4. Submit the Job
 p. Below is a sample job script.  It assumes that you want a hard runtime of 1 hour.  It also assumes that your value being searched for is in a file called query.in, in the current working directory. (For detailed parameters, please look at the BLAST+ documentation: ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/2.2.22/user_manual.pdf)
 
 {{{
@@ -71,11 +71,11 @@ module add apps/blast/2.2.22
 blastp -db drosoph.nt -query query.in -out results.txt
 }}}
 
-=== More Job Information ===
+h3. More Job Information
 p. See the following for more detailed job submission information:
-******iki:gridEngineUsers "SGE User's Guide"]
-*******ki:gridEnginePolicy "Scheduling and Dispatch Policies"]
-******iki:gridEngineTechn "Advanced Submit Techniques"]
+** [[gridEngineUsers|SGE User's Guide]]
+** [[gridEnginePolicy|Scheduling and Dispatch Policies]]
+** [[gridEngineTechn|Advanced Submit Techniques]]
 
-=== Reporting Bugs ===
+h3. Reporting Bugs
 p. Report bugs to the IT Help Desk: help@usf.edu

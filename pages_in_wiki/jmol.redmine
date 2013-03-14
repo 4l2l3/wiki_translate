@@ -1,32 +1,32 @@
-= Jmol =
+h1. Jmol
 ----
 [[PageOutline]]
 
-== Description == 
+h2. Description 
 
 p. Jmol is an open-source Java viewer for chemical structures in 3D.
 
-== Version ==
+h2. Version
 
-*** *11.6.24*
+** *11.6.24*
 p(. 
-== Authorized Users ==
+h2. Authorized Users
 
-*****circe` account holders
+** @circe@ account holders
 
-== Platforms ==
+h2. Platforms
 
-****@circe@ 
+** @circe@ 
 
-== Local Documentation ==
+h2. Local Documentation
 
-=== [[Modules]] ===
+h3. [[Modules]]
 p. Jmol requires the following module file and a prerequisite to run:
-*** @apps/[[jmol]]/11.6.24@
+** @apps/[[jmol]]/11.6.24@
 p(. 
 p. See [wiki:[[Modules]]] for more information.
 
-=== Execution ===
+h3. Execution
 p. First, you will need a protein or molecule to play with. Go to http://www.rcsb.org/pdb/ and grab one in @.pdb@ format. Other supported filetypes are listed here: http://[[jmol]].sourceforge.net/#What%20Jmol%20can%20do
 
 p. Next, start [[jmol]]:
@@ -35,7 +35,7 @@ $ [[jmol]]
 }}}
 p. Finally, go to *File-&gt;Open* and open your molecule file.
 
-== Documentation ==
+h2. Documentation
 p. You'll need to have XWin32 set up correctly to run Jmol.  See our XWin32 documentation for more details: [[XWin32Install|XWin32]]
 
 p. Detailed documentation on using JMol can be found here: http://wiki.[[jmol]].org:81/index.php/Main_Page

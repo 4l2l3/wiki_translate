@@ -1,38 +1,38 @@
-= ABINIT =
+h1. ABINIT
 ----
 [[PageOutline]]
 
-== Description ==
+h2. Description
 _From the ABINIT home page_:  ABINIT is a package whose main program allows one to find the total energy, charge density and electronic structure of systems made of electrons and nuclei (molecules and periodic solids) within Density Functional Theory (DFT), using pseudopotentials and a planewave or wavelet basis. ABINIT also includes options to optimize the geometry according to the DFT forces and stresses, or to perform molecular dynamics simulations using these forces, or to generate dynamical matrices, Born effective charges, and dielectric tensors, based on Density-Functional Perturbation Theory, and many more properties. Excited states can be computed within the Many-Body Perturbation Theory (the GW approximation and the Bethe-Salpeter equation), and Time-Dependent Density Functional Theory (for molecules). In addition to the main ABINIT code, different utility programs are provided. 
 
-*****ttp://www.[[[[abinit]]]].org/ "ABINIT Home Page"]
+* "ABINIT Home Page":http://www.[[[[abinit]]]].org/
 
-== Version ==
-*** *6.12.3*
+h2. Version
+** *6.12.3*
 
-== Authorized Users ==
-*****circe` account holders
+h2. Authorized Users
+** @circe@ account holders
 
-== Platforms ==
-****@circe@ cluster
+h2. Platforms
+** @circe@ cluster
 
-== Running ABINIT on the Cluster ==
+h2. Running ABINIT on the Cluster
 
-=== [[Modules]] ===
+h3. [[Modules]]
 
 p. ABINIT requires the following module file to run:
-*** @apps/[[[[abinit]]]]/6.12.3@
+** @apps/[[[[abinit]]]]/6.12.3@
 p. See [wiki:[[Modules]]] for more information.  
 
-******************is module MUST be loaded persistently in order for the application to run.  Use
+** *NOTE*: This module MUST be loaded persistently in order for the application to run.  Use
 p(((. {{{
 [user@host ~]$ module load apps/[[[[abinit]]]]/6.12.3
 }}}
 p(((. in order to properly execute ABINIT.
 
-=== Submitting a Job ===
+h3. Submitting a Job
 p. The ABINIT user guide is essential to understanding the application and making the most of it.  The guide and this page should help you to get started with your simulations.
-******ttp://www.[[[[abinit]]]].org/documentation/helpfiles/for-v6.12/users/new_user_guide.html "ABINIT User Guide"]
+** "ABINIT User Guide":http://www.[[[[abinit]]]].org/documentation/helpfiles/for-v6.12/users/new_user_guide.html
 
 p. Information about the [[[[abinit]]]] executable can be found using man pages, i.e "man [[[[abinit]]]]", after you have loaded the ABINIT module. 
 
@@ -53,21 +53,21 @@ mpirun [[[[abinit]]]] &lt; test.files &gt; test.log
 
 p. Your submit scripts will vary depending on your individual needs.
 
-=== Benchmarks and Tests ===
+h3. Benchmarks and Tests
 p. The following contain input parameters for known ABINIT tests:
-*** /apps/[[[[abinit]]]]/6.12.3/tests
-*****http://www.[[[[abinit]]]].org/documentation/helpfiles/for-v6.12/tutorial/welcome.html "Online Tutorials"]
+** /apps/[[[[abinit]]]]/6.12.3/tests
+** "Online Tutorials":http://www.[[[[abinit]]]].org/documentation/helpfiles/for-v6.12/tutorial/welcome.html
 
-=== Additional Documentation ===
-*** /apps/[[[[abinit]]]]/6.12.3/doc
-*****http://www.[[[[abinit]]]].org/documentation/helpfiles/for-v6.12/input_variables/keyhr.html "Input Variables"]
-******ttp://www.[[[[abinit]]]].org/documentation/helpfiles/for-v6.12/features/features.html "List of Features"]
+h3. Additional Documentation
+** /apps/[[[[abinit]]]]/6.12.3/doc
+** "Input Variables":http://www.[[[[abinit]]]].org/documentation/helpfiles/for-v6.12/input_variables/keyhr.html
+** "List of Features":http://www.[[[[abinit]]]].org/documentation/helpfiles/for-v6.12/features/features.html
 
-=== More Job Information ===
+h3. More Job Information
 p. See the following for more detailed job submission information:
-******iki:gridEngineUsers "SGE User's Guide"]
-*******ki:gridEnginePolicy "Scheduling and Dispatch Policies"]
-******iki:gridEngineTechn "Advanced Submit Techniques"]
+** [[gridEngineUsers|SGE User's Guide]]
+** [[gridEnginePolicy|Scheduling and Dispatch Policies]]
+** [[gridEngineTechn|Advanced Submit Techniques]]
 
-== Reporting Bugs ==
+h2. Reporting Bugs
 p. Report bugs to the IT Help Desk: help@usf.edu

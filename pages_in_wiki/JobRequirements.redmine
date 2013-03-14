@@ -1,7 +1,7 @@
-= Job Requirements =
+h1. Job Requirements
 p. The most important part of the job submission process, from a performance perspective, is understanding your job's requirements i.e. your memory requirements, memory bandwidth requirements, disk and I/O requirements, interconnect requirements, etc.  Based on this understanding, you need to tell the scheduler what it is you need for your job in order for it to run as efficiently as possible.
 
-== Discovering Your Job Requirements ==
+h2. Discovering Your Job Requirements
 p. Many pieces of code available today come with sufficient documentation that explains the requirements of the program given certain input parameters and how those requirements change as the size of your problem changes.  You can usually fudge these rough estimates into working resource requests that will, for the most part, ensure ample resources are provided to your job.  What if the documentation does not provide such information or is unclear?  There are a couple of methods at your disposal for revealing your job's requirements:
 
 p(. 1. Brute force methods would involve benchmarking the code under various conditions and analyzing the results to determine the best mix of memory, CPU and interconnect.  
@@ -9,8 +9,8 @@ p(. 2. A more analytic method would include the use of compiler and code tools s
 
 p. Obviously, having good documentation is always preferred, but is often a luxury not always available.  A brute-force method is good if your use of a code will not constitute an appreciable portion of your research time or if the code is something you will only use for a short period.  The best method, in any case, is an analytic method.
 
-== Tools for Profiling Code ==
-=== The Profiler ===
+h2. Tools for Profiling Code
+h3. The Profiler
 p. A good code profiler is a must-have in any programmer's toolbox, but its also useful for researchers running HPC codes.  Three profiling tools that are available on Circe are
 
 p(. 1. *pgprof*: Portland Group's (PGI) graphical code profiler
@@ -19,7 +19,7 @@ p(. 3. *vtune*: Vtune Performance analyzer, Intel's code profiler
 
 p. Profilers insert code into your application that write out valuable statistics about the run-time of individual function calls and even individual lines of code.  This allows you to track down which functions are taking up the largest share of run-time during the execution of your program.  By adjusting input parameters that affect these functions, you can get an idea of how your simulations may affect the performance of the application.  For the budding Computational Scientist, the tool provides a means to track down inefficient code that may be tuned or re-factored for greater efficiency.
 
-=== Monitor Programs: Using 'top' to Solve Swap Issues ===
+h3. Monitor Programs
 p. Programs like 'top' [man (1) top] allow you to take periodic snapshots of a process during execution (usually every second) to continuously monitor CPU utilization, memory usage, and the process state (running, sleeping, waiting for disk, writing to disk, etc.)  To run top and view the details of your application, you'll need to know what node your process is running on.  For a serial process, this is pretty straight forward:
 {{{
 [user@login0 ~]$ qstat -u user -t
@@ -73,4 +73,4 @@ p. Since the current system has 8GB of RAM and the process is apparently using &
 }}}
 p. This tells the scheduler to only run your job where at least 10GB of RAM is free to be used by your process.  Your job will not run unless there are hardware resources available to satisfy the request.  When the resources are found, say a node with 16GB of RAM, this particular job will run many orders of magnitude faster than on a swapped-out machine as in the example.
 
-*******Note''': More information to come.
+** *Note*: More information to come.

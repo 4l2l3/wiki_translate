@@ -1,4 +1,4 @@
-= !GridEngine Queue Layout =
+h1.
 ----
 
 p. It is really no longer necessary to discuss queues in the traditional sense.  In the past, we would create queues based on pools of hardware resources.  If a user wanted to utilize a particular hardware resource, he or she would request the appropriate queue.  Most times, however, what the user wants and what is best for the user or what is best for all users are not necessarily the same.  Allowing individuals to dictate w[[here]] their jobs will run will inevitably lead to throughput problems since it would be unreasonable to expect the users to understand the complete state and behavior of the scheduler.
@@ -11,7 +11,7 @@ p. When the scheduler finds a queue in which a job is eligible to run (based on 
 
 p. The following node sets are available:
 
-| *Memory_' | '''CPU''' | '''Cores''' | '''Interconnect''' | '''Nodes''' | '''Slots ''' | '''GPUs''' | '''Complex Flags''' | '_Location* |
+| *Memory* | *CPU* | *Cores* | *Interconnect* | *Nodes* | *Slots * | *GPUs* | *Complex Flags* | *Location* |
 | 16GB   | Xeon X5355   | 8  | 4x SDR IB | 32   | 256    | n/a | ib_sdr, sse4, cpu_type=xeon, cpu_model=X5355 | Tampa |
 | 24GB   | Opteron 2427 | 12 | 4x DDR IB | 38   | 456    | n/a | ib_ddr, sse4, sse4e, cpu_type=opteron, cpu_model=2427 | Tampa |
 | 16GB   | Xeon X5460   | 8  | 4x DDR IB | 120  | 960    | n/a | ib_ddr, sse4, sse41, cpu_type=xeon, cpu_model=X5460 | Tampa |
@@ -31,19 +31,19 @@ in your job submit script.
 
 p. The node sets are associated with the following queues:
 
-| *Queue Name_' | '''Max Runtime''' | '_Notes* |
+| *Queue Name* | *Max Runtime* | *Notes* |
 | default | 1 week | All jobs go [[here]] unless &gt; 1 week runtime |
 | xlong  | unlimited  |  636 slots, restricted, access granted on request |
 
 p. Jobs are classified and have certain priorities and restrictions based on runtime.  The following table illustrates:
 
-| *Class_' | '''Runtime Range''' | '_Priority Adjustment* |
+| *Class* | *Runtime Range* | *Priority Adjustment* |
 | devel       | 0 - 1hr             | +1000 |
 | short       | 1hr - 6hr           | +100 |
 | medium      | 6hr - 2d            | +10 |
 | long        | 2d - 1w             | 0 |
 | xlong*      | &gt; 1w                | 0 |
 
-**************are restricted by the system and must be granted access first.
+* xlong jobs are restricted by the system and must be granted access first.
 
 p. Remember, t[[here]] is no need to manually specify @ -q [queue_name.q] @ if you have correctly identified the requirements for your job.  The scheduler will run your job on the best possible hardware given your job requirements and permissions regardless of queue.

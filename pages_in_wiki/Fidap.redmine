@@ -1,39 +1,39 @@
-= ![[[[[[Fidap]]]]]]/Gambit =
+h1.
 ----
 [[PageOutline]]
 
 
-== Description ==
+h2. Description
 
 p. FIDAP is the flow modeling tool of choice for applications such as polymer processing, thin film coating, biomedical, semiconductor crystal growth, metallurgy, glass processing and related fields. Based on the finite element method, FIDAP offers complete mesh flexibility and robust and efficient calculations. It is available for UNIX and Windows/NT workstations and is optimized for parallel processing.
 
-== Version ==
+h2. Version
 
 p. FIDAP: *8.7.4*[[BR]]
 p. Gambit: *2.3.16*
 
-== Authorized Users ==
+h2. Authorized Users
 
-*****circe` account holders
+** @circe@ account holders
 
-== Platforms ==
+h2. Platforms
 
-****@circe@ cluster
+** @circe@ cluster
 
-== Local Documentation ==
+h2. Local Documentation
 
-=== [[Modules]] ===
+h3. [[Modules]]
 
-p. [[[[[[Fidap]]]]]] requires the following module file and some prerequisites to run:
-*** @apps/fidap/8.7.4@
+p. [[[[[[[[Fidap]]]]]]]] requires the following module file and some prerequisites to run:
+** @apps/fidap/8.7.4@
 
 p. Gambit requires the following module file and some prerequisites to run:
-*** @apps/gambit/2.3.16@
+** @apps/gambit/2.3.16@
 
 p(. See [wiki:[[Modules]]] for more information.
 
-=== Submitting Jobs ===
-p. Users can use the following SGE script to run [[[[[[Fidap]]]]]] jobs with fisol over SGE:
+h3. Submitting Jobs
+p. Users can use the following SGE script to run [[[[[[[[Fidap]]]]]]]] jobs with fisol over SGE:
 {{{
 #!/bin/bash
 ##
@@ -80,7 +80,7 @@ rm -rf $SCRATCH
 
 # end script
 }}}
-*Note:* This page is a place holder until more documentation is written.  The [[[[[[Fidap]]]]]] and Gambit user guides are located at the following links:
+*Note:* This page is a place holder until more documentation is written.  The [[[[[[[[Fidap]]]]]]]] and Gambit user guides are located at the following links:
 
-******dap User Documentation: https://rc.usf.edu/soft/fidap/fidapdoc/index.htm
-******mbit User Documentation: https://rc.usf.edu/soft/fidap/gambitdoc/index.htm
+** [[[[[[[[Fidap]]]]]]]] User Documentation: https://rc.usf.edu/soft/fidap/fidapdoc/index.htm
+** Gambit User Documentation: https://rc.usf.edu/soft/fidap/gambitdoc/index.htm

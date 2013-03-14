@@ -1,43 +1,43 @@
-= VAPOR =
+h1. VAPOR
 ----
 [[PageOutline]]
 
-== Description ==
+h2. Description
 
 _From the VAPOR website on ucar.edu:_ "The VAPOR project is an Open Source software development effort aimed at improving the ability of researchers in the Earth and Space sciences to analyze and interpret results from some of the largest numerical simulation outputs. The genesis of this work was an NSF-ITR research grant that supported NCAR as well as collaborators at the University of California at Davis and the Ohio State University. Though VAPOR’s origins are strongly rooted in geophysical turbulence, later work on VAPOR has focused on expanding its capabilities to support the needs of the broader Earth and Space sciences communities. Development of VAPOR is  guided by an international steering committee of  scientists that set development priorities, dictate software requirements, and serve as friendly users for testing and evaluating new software features. VAPOR’s unique features include its use of a progressive access model that permits exploration of some of the largest simulation outputs using only desktop computing resources; a feature set and user interface that are focused on the needs of the Earth sciences communities; and a strong emphasis on supporting quantitative data analysis."
 
-== Version ==
+h2. Version
 
-*** *2.1.0*
+** *2.1.0*
 
-== Authorized Users ==
+h2. Authorized Users
 
-*****irce account holders
+** circe account holders
 
-== Platform ==
+h2. Platform
 
-****@circe@ cluster
+** @circe@ cluster
 
-== Running VAPOR on the Cluster ==
+h2. Running VAPOR on the Cluster
 
-=== [[Modules]] ===
+h3. [[Modules]]
 
 p. Before running a job, you must first set up your environment properly.  Here are the required module files:
 
-*** apps/vapor/2.1.0
+** apps/vapor/2.1.0
 
 p. To run VAPOR on the cluster, ensure that you use @module add@ prior to using any executables.  See [wiki:[[Modules]]] for more information. 
 
 p. Simply type in "vaporgui" once the modules have been loaded to launch vapor.
 
-== Vendor Documentation ==
-*** https://www.vapor.ucar.edu/docs
+h2. Vendor Documentation
+** https://www.vapor.ucar.edu/docs
 
-== More Job Information ==
+h2. More Job Information
 p. See the following for more detailed job submission information:
-******iki:gridEngineUsers "SGE User's Guide"]
-*******ki:gridEnginePolicy "Scheduling and Dispatch Policies"]
-******iki:gridEngineTechn "Advanced Submit Techniques"]
+** [[gridEngineUsers|SGE User's Guide]]
+** [[gridEnginePolicy|Scheduling and Dispatch Policies]]
+** [[gridEngineTechn|Advanced Submit Techniques]]
 
-== Reporting Bugs ==
+h2. Reporting Bugs
 p. Report bugs to the IT Help Desk: help@usf.edu

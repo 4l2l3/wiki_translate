@@ -1,42 +1,42 @@
-= Dalton =
+h1. Dalton
 ----
 [[PageOutline]]
 
-== Description ==
+h2. Description
 _From the Dalton web site_: Dalton is a powerful molecular electronic structure program, with an extensive functional for the calculation of molecular properties at the HF, DFT, MCSCF, and CC levels of theory.
-*******ttp://dirac.chem.sdu.dk/[[dalton]]program.org "Dalton Home Page"]
+**  "Dalton Home Page":http://dirac.chem.sdu.dk/[[dalton]]program.org
 
-== Version ==
-*** *2.0*
+h2. Version
+** *2.0*
 
-== Authorized Users ==
-*****circe` account holders
+h2. Authorized Users
+** @circe@ account holders
 
-== Platforms ==
-****@circe@ cluster
+h2. Platforms
+** @circe@ cluster
 
-== [[Modules]] ==
+h2. [[Modules]]
 
 p. Dalton requires the following module file with prerequisites to run:
-*** @apps/[[dalton]]/2.0@
+** @apps/[[dalton]]/2.0@
 p. See [wiki:[[Modules]]] for more information.  
 
-== Note to Users about the Dalton License ==
+h2. Note to Users about the Dalton License
 
 1. Any published work arising from use of the Dalton program must acknowledge the program with an appropriate citation. A suitable text for Release 2 revision 0 would be:
 {{{
 ”Dalton, a molecular electronic structure program, Release 2.0 (2005), see http://www.kjemi.uio.no/software/[[dalton]]/[[dalton]].html”
 }}}
-*****************************Dalton are used in published work, we encourage the authors to cite the papers that describe their implementation, as indicated in the manual.
+** When certain features of Dalton are used in published work, we encourage the authors to cite the papers that describe their implementation, as indicated in the manual.
 
 2. The experimental nature of this program means that there is no warranty of correctness of results nor fitness for a particular purpose and that the authors of Dalton cannot be held responsible in any way for any consequences arising from the use of the program. While every attempt will be made to correct any errors reported, the authors of Dalton are not obliged to make such corrections, nor is there any support for users implied by making the program available.
 
-== Submitting a Job ==
+h2. Submitting a Job
 
 p. The Dalton Program Manual is essential to understanding the application and making the most of it.  The guide and this page should be all you need to get started with your simulations.
-******ttp://www.[[dalton]]program.org/resources/[[dalton]]20manual.pdf "Dalton Program Manual"]
+** "Dalton Program Manual":http://www.[[dalton]]program.org/resources/[[dalton]]20manual.pdf
 or
-*** /opt/apps/[[dalton]]/2.0/[[dalton]]20manual.pdf
+** /opt/apps/[[dalton]]/2.0/[[dalton]]20manual.pdf
 
 p. Use the following submit script as an example to run Dalton:
 
@@ -60,16 +60,16 @@ p. This will request 4 processors via MPI, a job name of [[dalton]]_test, and a 
 
 p. For more information on [[Run]], see [wiki:[[Run]] "The GridEngine [[Run]] Utility"].
 
-=== Benchmarks and Tests ===
+h3. Benchmarks and Tests
 
 p. The following folders contain input parameters for known Dalton tests:
-*** /opt/apps/[[dalton]]/2.0/tests
+** /opt/apps/[[dalton]]/2.0/tests
 
-=== More Job Information ===
+h3. More Job Information
 p. See the following for more detailed job submission information:
-******iki:gridEngineUsers "SGE User's Guide"]
-*******ki:gridEnginePolicy "Scheduling and Dispatch Policies"]
-******iki:gridEngineTechn "Advanced Submit Techniques"]
+** [[gridEngineUsers|SGE User's Guide]]
+** [[gridEnginePolicy|Scheduling and Dispatch Policies]]
+** [[gridEngineTechn|Advanced Submit Techniques]]
 
-=== Reporting Bugs ===
+h3. Reporting Bugs
 p. Report bugs to the IT Help Desk: help@usf.edu

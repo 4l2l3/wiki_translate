@@ -1,25 +1,25 @@
-= Using Complexes with !GridEngine =
+h1. Using Complexes with
 ----
 [[PageOutline]]
 
 
 p. Complexes allow users to make very specific requests to the scheduler such as what interconnect your application prefers, how much available memory you require, whether you mind running on low priority machines, etc.  To get the most out of the queuing environment, it is very useful to have a reasonable understanding of how the complexes work and which complexes you should request for your type of application.
 
-== Important Complexes ==
+h2. Important Complexes
 p. The following table lists custom defined complexes which are necessary for getting your job to run on the right hardware. 
 
-| *Complex Name_' | '''Value''' | '''Description''' | '_Default*|
+| *Complex Name* | *Value* | *Description* | *Default*|
 | @h_rt@               | Time        | Request and set a certain amount of run-time for your job.  Jobs are killed when they reach this limit | 10 Minutes |
 | @mps@ will set the amount of memory allocated per slot.  If you request 4 slots and 1GB with mps, you will allocate 1GB for each slot or 4GB total. | 1G |
 | @mpj@ will set the amount of memory allocated for the entire job.  This will evenly divide the memory request across each slot. | None |
 
 @mps@.  
-*************ets an upper limit on available virtual memory.  
-**************************************vailable stack space for binary execution (this must be set when you use @h_vmem@ or you will have NO stack space available.  64M is a reasonable value).  
-****************************nodes that have the specified amount of memory available and acts as a book-keeper to keep nodes from being over-subscribed with respect to memory
+** @h_vem@ sets an upper limit on available virtual memory.  
+** @h_stack@ or you will have NO stack space available.  64M is a reasonable value).  
+** @virtual_free@ requests nodes that have the specified amount of memory available and acts as a book-keeper to keep nodes from being over-subscribed with respect to memory
 
 
-== Requesting Complexes ==
+h2. Requesting Complexes
 p. To request a complex, you must add the following line to your submit script:
 {{{
 #$ -l &lt;complex_name&gt;=&lt;value&gt;[,&lt;complex_name&gt;=&lt;value][,...]
@@ -45,12 +45,12 @@ p. A couple examples:
 mpirun /opt/apps/my_app/my_binary
 }}}
 
-*********equests 2 hours of runtime (h_rt=02:00:00)
-************ests 1.5GB of memory for each allocated slot (mps=1.5G)
+** Job requests 2 hours of runtime (h_rt=02:00:00)
+** Job requests 1.5GB of memory for each allocated slot (mps=1.5G)
 
-== Complex Table ==
+h2. Complex Table
 p. This is a table of user-addressable !GridEngine complexes.  You can request machines with a variety of characteristics such as machines with a certain amount of memory or a particular architecture type.
-| *Complex_' | '''Description''' | '''Data Type''' | '''Default Value''' | '_Priority Change?* |
+| *Complex* | *Description* | *Data Type* | *Default Value* | *Priority Change?* |
 | calendar | Job calendar (see SGE User's Guide)    | String | None | No |
 | cpu | n/a                                         | Double | None | No |
 | gpu  | Select number of gpus per slot             | Integer | 0 | +1000 |

@@ -1,23 +1,23 @@
-= [[[[[[[[[[Gaussian]]]]]]]]]] =
+h1. [[[[[[[[[[Gaussian]]]]]]]]]]
 ----
 [[PageOutline]]
 
-== Description ==
+h2. Description
 _From http://www.nersc.gov/nusers/resources/software/apps/chemistry/g09/_ [[[[[[[[[[Gaussian]]]]]]]]]] 09 is a connected series of programs for performing semi-empirical, density functional theory and ab initio molecular orbital calculations. 
 
-== Version ==
+h2. Version
 
-*** *09b01*
+** *09b01*
 
-== Authorized Users ==
+h2. Authorized Users
 
-**************orized by Dr. Venkat Bhethanabotla and added to the @gaussian@ group.
+** Users authorized by Dr. Venkat Bhethanabotla and added to the @gaussian@ group.
 
-== Platform ==
+h2. Platform
 
-****@circe@ cluster
+** @circe@ cluster
 
-== Running [[[[[[[[[[Gaussian]]]]]]]]]] on the Cluster ==
+h2. Running [[[[[[[[[[Gaussian]]]]]]]]]] on the Cluster
 
 p. [[[[[[[[[[Gaussian]]]]]]]]]] is quite easy to execute on Circe.  After creating your input, simply use [wiki:Run @run@] to execute the program:
 {{{
@@ -26,15 +26,15 @@ p. [[[[[[[[[[Gaussian]]]]]]]]]] is quite easy to execute on Circe.  After creati
 
 p. This will request a job with the name test_g09, 8 processors via MPI, and a 1 hour run-time.  The input file is specified as input.com, and will generate an output file in your current directory.
 
-==== Benchmarks &amp; Tests ====
+h4. Benchmarks
 p. The following folder contains input parameters for known [[[[[[[[[[Gaussian]]]]]]]]]] test jobs:
-*** /opt/apps/gaussian/tests
+** /opt/apps/gaussian/tests
 
-==== More Job Information ====
+h4. More Job Information
 p. See the following for more detailed job submission information:
-******iki:gridEngineUsers "SGE User's Guide"]
-*******ki:gridEnginePolicy "Scheduling and Dispatch Policies"]
-******iki:gridEngineTechn "Advanced Submit Techniques"]
+** [[gridEngineUsers|SGE User's Guide]]
+** [[gridEnginePolicy|Scheduling and Dispatch Policies]]
+** [[gridEngineTechn|Advanced Submit Techniques]]
 
-==== Reporting Bugs ====
+h4. Reporting Bugs
 p. Report bugs directly to Research Computing: help@usf.edu

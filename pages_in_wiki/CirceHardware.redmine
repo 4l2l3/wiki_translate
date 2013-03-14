@@ -1,10 +1,10 @@
-== Circe Hardware ==
+h2. Circe Hardware
 ----
 
 [[br]][[br]]
 p. Research Computing houses various types of hardware, configured to work together to help with any intense computation.  This table shows the various hardware configurations currently available:
 
-| | *Nodes_' | '''Core Count''' | '''Processors'''            | '''Memory''' | '''Word size''' | '''Interconnect''' | '''Grant No.''' | '_Additional Info* | 
+| | *Nodes* | *Core Count* | *Processors*            | *Memory* | *Word size* | *Interconnect* | *Grant No.* | *Additional Info* | 
 | | 120         | 960 | 2 x Intel(R) Xeon X5460 @ 3.16GHz (Quad Core) | 16 GB | 64-bit | DDR !InfiniBand | CHE-0722887 (NSF) | [[GibsonSpecs|MRI Cluster Specs]]|
 | | 36          | 288 | 2 x AMD Opteron 2384 (Quad Core) | 16 GB | 64-bit | DDR !InfiniBand | | |
 | | 38          | 456 | 2 x AMD Opteron 2427 (Six Core) | 24 GB | 64-bit | DDR !InfiniBand | | |

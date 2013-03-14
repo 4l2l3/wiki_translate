@@ -1,77 +1,77 @@
-= Matlab and Simulink =
+h1. Matlab and Simulink
 ----
 [[PageOutline]]
 
-== Description ==
+h2. Description
 p. Matlab integrates mathematical computing, visualization, and a powerful language to provide a flexible environment for technical computing. The open architecture makes it easy to use MATLAB and its companion products to explore data, create algorithms, and create custom tools that provide early insights and competitive advantages.
 
-== Version ==
-*** *R2012b*
+h2. Version
+** *R2012b*
 
-== Authorized Users ==
-*****circe` account holders
-******udents doing valid research
-*** Faculty
+h2. Authorized Users
+** @circe@ account holders
+** Students doing valid research
+** Faculty
 
-== Platforms ==
-****@circe@ cluster
-*** Workstation/PC
+h2. Platforms
+** @circe@ cluster
+** Workstation/PC
 
-== Available Products and Toolboxes ==
-*** MATLAB
-*** Simulink
-*****istributed Computing Server
-****Bioinformatics Toolbox
-*****ommunications System Toolbox
-*****ontrol System Toolbox
-*****urve Fitting Toolbox
-*****SP System Toolbox
-*****ata Acquisition Toolbox
-****Database Toolbox
-*****uzzy Logic Toolbox
-*****mage Processing Toolbox
-*****nstrument Control Toolbox
-****MATLAB Compiler
-****Mapping Toolbox
-*****eural Network Toolbox
-****Optimization Toolbox
-*****arallel Computing Toolbox
-******rtial Differential Equation Toolbox
-*****ignal Processing Toolbox
-*** !SimMechanics
-*** Simscape
-*****imulink Control Design
-*** Stateflow
-*****tatistics Toolbox 
-*****ymbolic Math Toolbox
-*****ystem Identification Toolbox
-****Wavelet Toolbox
+h2. Available Products and Toolboxes
+** MATLAB
+** Simulink
+** Distributed Computing Server
+** Bioinformatics Toolbox
+** Communications System Toolbox
+** Control System Toolbox
+** Curve Fitting Toolbox
+** DSP System Toolbox
+** Data Acquisition Toolbox
+** Database Toolbox
+** Fuzzy Logic Toolbox
+** Image Processing Toolbox
+** Instrument Control Toolbox
+** MATLAB Compiler
+** Mapping Toolbox
+** Neural Network Toolbox
+** Optimization Toolbox
+** Parallel Computing Toolbox
+** Partial Differential Equation Toolbox
+** Signal Processing Toolbox
+** !SimMechanics
+** Simscape
+** Simulink Control Design
+** Stateflow
+** Statistics Toolbox 
+** Symbolic Math Toolbox
+** System Identification Toolbox
+** Wavelet Toolbox
 
-== Toolboxes with Restricted Availability ==
-******mputer Vision System Toolbox
-*****lobal Optimization Toolbox
-****HDL Coder
-*****mage Acquisition Toolbox
-****Matlab Coder
-*******el Predictive Control Toolbox 
-*** !SimElectronics
-*** !SimPowerSystems
-*****imulink 3D Animation
-****Simulink Coder
-*****imulink Design Optimization
-****RF Toolbox
+h2. Toolboxes with Restricted Availability
+** Computer Vision System Toolbox
+** Global Optimization Toolbox
+** HDL Coder
+** Image Acquisition Toolbox
+** Matlab Coder
+** Model Predictive Control Toolbox 
+** !SimElectronics
+** !SimPowerSystems
+** Simulink 3D Animation
+** Simulink Coder
+** Simulink Design Optimization
+** RF Toolbox
 
-== Installation ==
+h2. Installation
 *IMPORTANT: Before You Begin*[[BR]]
 p. Make sure you've applied for and received the Matlab License information.  You will need to go [[here]] to apply: https://rc.usf.edu/licensing/licenserequest.php
 
-*_Contents_*[[BR]][[BR]]
+*_Contents*_[[BR]][[BR]]
 [MatlabUser#InstallingOnLinux Installing On Linux][[BR]]
 [MatlabUser#InstallingOnWindowsorMac Installing On Windows or Mac][[BR]]
 
 ----
 
-=== Installing On Linux ===
+h3. Installing On Linux
 p. Follow the steps below to download and install Matlab for Linux.  Off campus users *must* be connected to the [http://it.usf.edu/itc/vpn-client USF VPN]. 
 
 p(((. 1. Connect to @https://rc.usf.edu/isos@ and download R2012b_UNIX.iso to a temporary directory on your computer. Be sure to read any README file. Once you have downloaded all the files, disconnect from the server.
@@ -110,7 +110,7 @@ p((((((. @# matlab@
 
 ----
 
-=== Installing On Windows or Mac ===
+h3. Installing On Windows or Mac
 p. Follow the steps below to download and install Matlab for Windows.  Off campus users *must* be connected to the [http://it.usf.edu/itc/vpn-client USF VPN].  
 
 p(((. 1. Connect to https://rc.usf.edu/isos and login with your NetID and password. Change to the directory /Matlab/R2012b/ and download the appropriate file (R2012b_Windows.iso for Windows, or R2012b_UNIX.iso for Mac) to a temporary directory on your computer. Once you have downloaded the files, disconnect from the server.
@@ -129,17 +129,17 @@ p(((. 5. Select the *Install manually without using the Internet* option, then a
 
 p(((. 6. Once the installation is finished you will find an icon on your desktop to launch the new version of Matlab.
 ----
-== Running Matlab on Circe ==
+h2. Running Matlab on Circe
 
-=== [[Modules]] ===
+h3. [[Modules]]
 p. Matlab requires the following module file to run:
-*** apps/matlab/r2012b
+** apps/matlab/r2012b
 p. To run Matlab on the cluster, ensure that you use 'module add' prior to using any Matlab executables.  See [wiki:[[Modules]]] for more information.
 ----
 
 p. T[[here]] are two ways to run Matlab on Circe depending on the runtime of your particular job.
 
-=== Jobs Longer than 20 Minutes in Length ===
+h3. Jobs Longer than 20 Minutes in Length
 p. To run Matlab jobs on Circe, users will need to submit "batch jobs" to the scheduling environment if their jobs take more than 20 minutes to run on a standard PC.
 
 p. If, for example, you have a Matlab script file named test.m with all your functions defined in it, you would set up a submit script like this:
@@ -180,16 +180,16 @@ matlab -nodisplay -logfile matlabLog.txt -r test_parallel &gt;&amp; err.out
 
 p. In this example, you would have a Matlab script named test_parallel.m, and in it should be defined a 'matlabpool'.  Be sure that the 'pcpus' defined in your submit script is 2 more than the number requested using 'matlabpool'.  In this case, 'matlabpool' would have been set at 8, t[[here]]fore 'pcpus' is defined as 10.  More information about parallel computing in Matlab can be found on the  "MathWorks website":http://www.mathworks.com/help/toolbox/distcomp/exampleindex.html.  The 'mpj' request is the amount of memory to reserve for the job, and is set to 10 gigabytes [[here]].  This can be adjusted as necessary.
 
-=== Jobs Shorter than 20 Minutes in Length (most common) ===
+h3. Jobs Shorter than 20 Minutes in Length
 p. Simply type @ matlab @ at the command line AFTER loading the proper module (see above).  If you have properly configured an X11 session, you should see the full Matlab interface.  If you haven't configured X11, you will be able to use the console interface.  For users wishing to use the graphical interface over X11, please see our [[XWin32Install|XWin32 Installation]] documentation.
 
 p. Matlab can also be launched through the NX environment using the Applications menu.  For more information about the NX environment, please see our [[CirceDesktop|Circe NX Desktop]] documentation.
 
-=== More Job Information ===
+h3. More Job Information
 p. See the following for more detailed job submission information:
-******iki:gridEngineUsers "SGE User's Guide"]
-*******ki:gridEnginePolicy "Scheduling and Dispatch Policies"]
-******iki:gridEngineTechn "Advanced Submit Techniques"]
+** [[gridEngineUsers|SGE User's Guide]]
+** [[gridEnginePolicy|Scheduling and Dispatch Policies]]
+** [[gridEngineTechn|Advanced Submit Techniques]]
 
-=== Reporting Bugs ===
+h3. Reporting Bugs
 p. Report bugs to the IT Help Desk: help@usf.edu

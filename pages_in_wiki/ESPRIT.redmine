@@ -1,37 +1,37 @@
-= [[[[[[[[[[[[ESPRIT]]]]]]]]]]]] =
+h1. [[[[[[[[[[[[ESPRIT]]]]]]]]]]]]
 ----
 [[PageOutline]]
 *Last Modified:* [[LastModified([[[[[[[[[[[[ESPRIT]]]]]]]]]]]])]]
-== Description ==
+h2. Description
 
 p. [[[[[[[[[[[[ESPRIT]]]]]]]]]]]] is a computational algorithm that can be used to estimate microbial diversity based on 16S rRNA shotgun sequences. It consists of four modules: (1) removes low-quality reads using various criteria, (2) computes pairwise distances of reads, (3) groups reads into OTUs at different dissimilarity levels, and (4) performs statistical inference to estimate species richness.
 p(. 
 
-== Version == 
+h2. Version 
 
-*** *20090715*
+** *20090715*
 
-== Authorized Users == 
+h2. Authorized Users 
 
-*****circe` account holders
+** @circe@ account holders
 
-== Platforms ==
+h2. Platforms
 
-****@circe@ cluster
+** @circe@ cluster
 
-== Local Documentation ==
+h2. Local Documentation
 p. The user guide can be found at */opt/apps/esprit/20090715/esprit_user_guide.pdf*.
-=== [[Modules]] ===
+h3. [[Modules]]
 
 p. [[[[[[[[[[[[ESPRIT]]]]]]]]]]]] requires the following module file to run:
-*** @apps/esprit/20090715@
+** @apps/esprit/20090715@
 p. See [wiki:[[Modules]]] for more information.
 
-=== Creating and Submitting a Job ===
-==== Job Considerations ====
+h3. Creating and Submitting a Job
+h4. Job Considerations
 p. In order to submit a [[[[[[[[[[[[ESPRIT]]]]]]]]]]]] job, you will need to have two things:
-*********put FASTA file that is pre-trimmed
-***************of pieces the FASTA file should be split into for parallelization
+** an input FASTA file that is pre-trimmed
+** the number of pieces the FASTA file should be split into for parallelization
 
 p. The number of pieces you choose determines how many tasks will be submitted to the cluster. The kmer-distance calculation will require ((num_pieces SELECT 2) + num_pieces) tasks, and the Needleman-Wunch calculation will require (num_pieces * num_pieces) tasks. For a FASTA file split into 10 pieces, for example, you will have 55 and 100 tasks, respectively. 
 
@@ -39,7 +39,7 @@ p. It is recommended that you do not split the file into more than 10 pieces, si
 
 p. It is also recommended that you run your job from /work to ensure integrity of results. 
 
-==== Submit the Job ====
+h4. Submit the Job
 p. Ensure that the [[[[[[[[[[[[ESPRIT]]]]]]]]]]]] module is loaded in the persistent environment:
 {{{
 [aastaneh@login1 ~]$ module initload

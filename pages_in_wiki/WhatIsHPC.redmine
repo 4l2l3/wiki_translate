@@ -1,4 +1,4 @@
-= What is High Performance Computing? =
+h1. What is High Performance Computing
 
 p. High Performance Computing (HPC) is an often poorly defined concept. There are several terms that are often confused with HPC, such as: High Throughput Computing, Parallel Computing, Numerically Intensive Computing, Grid Computing, and others. In fact, all of these are facets of High Performance Computing. For our purposes, we will define High Performance Computing to consist of hardware and software resources used for computational science that are beyond what is commonly found on the desktop machine. 
 

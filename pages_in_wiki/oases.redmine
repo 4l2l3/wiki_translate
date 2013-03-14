@@ -1,44 +1,44 @@
-= Oases =
+h1. Oases
 [[PageOutline]]
 
-== Description == 
+h2. Description 
 
-_From the Oases home page'': Oases is a ''de novo_ transcriptome assembler designed to produce transcripts from short read sequencing technologies, such as Illumina, SOLiD, or 454 in the absence of any genomic assembly.  Oases uploads a preliminary assembly produced by Velvet, and clusters the contigs into small groups, called "loci". It then exploits the paired-end read and long read information, when available, to construct transcript isoforms.
+_From the Oases home page_: Oases is a _de novo_ transcriptome assembler designed to produce transcripts from short read sequencing technologies, such as Illumina, SOLiD, or 454 in the absence of any genomic assembly.  Oases uploads a preliminary assembly produced by Velvet, and clusters the contigs into small groups, called "loci". It then exploits the paired-end read and long read information, when available, to construct transcript isoforms.
 
-*** http://www.ebi.ac.uk/~zerbino/[[[[oases]]]]/
+** http://www.ebi.ac.uk/~zerbino/[[[[oases]]]]/
 
-== Version ==
+h2. Version
 
-*** *0.1.22*
+** *0.1.22*
 
-== Authorized Users ==
+h2. Authorized Users
 
-*****circe` account holders
+** @circe@ account holders
 
-== Platforms ==
+h2. Platforms
 
-****@circe@ cluster
+** @circe@ cluster
 
-== Running Oases Jobs on the Cluster ==
+h2. Running Oases Jobs on the Cluster
 
-=== [[Modules]] ===
+h3. [[Modules]]
 
 p. Before running a job, you must first set up your environment properly.  Here are the required module files:
 
-*** apps/[[[[oases]]]]/0.1.22
+** apps/[[[[oases]]]]/0.1.22
 
 p. To run Oases on the cluster, ensure that you use @module add@ prior to using any executables.  See [wiki:[[Modules]]] for more information.
 
-=== How to Submit Jobs ===
+h3. How to Submit Jobs
 
 p. Provided is a batch script for running Oases executables on the cluster.  This script can be copied into your work directory (the folder with your input files and database files) so that you can submit batch processes to the queue.  For help on submitting jobs to the queue, see our [[gridEngineUsers|GridEngine User's Guide]].  This script is provided as an example only.  Your SGE and Oases options will vary.  View the product manual or this site (http://www.ebi.ac.uk/~zerbino/[[[[oases]]]]/Manual.txt) for more about Oases runtime options.
 
-=== Serial Submit Script ===
+h3. Serial Submit Script
 p. You must first process the reads using Velvet: 
-**************oose a hash length at this stage (cf. the Velvet manual),
-*************** coverage cutoff, you should set that when running [[[[oases]]]], 
-*******OT set an expected coverage,
-************to turn on the -read_trkg option when running velvetg. 
+* you must choose a hash length at this stage (cf. the Velvet manual),
+* DO NOT set a coverage cutoff, you should set that when running [[[[oases]]]], 
+* DO NOT set an expected coverage,
+* remember to turn on the -read_trkg option when running velvetg. 
 
 p. You can run Oases on the Velvet working directory after it has been created.  Provide all the information about insert lengths and their standard deviation as possible (identical to Velvet):
 
@@ -58,18 +58,18 @@ module add apps/[[[[oases]]]]/0.1.22
 
 p. A colorspace version of the Oases executable is also available as '[[[[oases]]]]_de'.  Beware that color- and sequence space are incompatible, hence separate sets of executables.  In other words, don’t try to hash sequence ﬁles with colorspace [[[[oases]]]] or vice-versa, under penalty of meaningless results!
 
-=== Manuals and Test Data ===
+h3. Manuals and Test Data
 p. Oases Program Manual
-*** /opt/apps/[[[[oases]]]]/0.1.22/MANUAL.txt
+** /opt/apps/[[[[oases]]]]/0.1.22/MANUAL.txt
 
 p. The following folder contains input parameters for known Oases tests:
-*** /opt/apps/[[[[oases]]]]/0.1.22/data
+** /opt/apps/[[[[oases]]]]/0.1.22/data
 
-=== More Job Information ===
+h3. More Job Information
 p. See the following for more detailed job submission information:
-******iki:gridEngineUsers "SGE User's Guide"]
-*******ki:gridEnginePolicy "Scheduling and Dispatch Policies"]
-******iki:gridEngineTechn "Advanced Submit Techniques"]
+** [[gridEngineUsers|SGE User's Guide]]
+** [[gridEnginePolicy|Scheduling and Dispatch Policies]]
+** [[gridEngineTechn|Advanced Submit Techniques]]
 
-=== Reporting Bugs ===
+h3. Reporting Bugs
 p. Report bugs to the IT Help Desk: help@usf.edu

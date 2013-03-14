@@ -1,29 +1,29 @@
-= [[[[[[[[[[[[[[feram]]]]]]]]]]]]]] =
+h1. [[[[[[[[[[[[[[feram]]]]]]]]]]]]]]
 ----
 [[PageOutline]]
 
-== Description ==
+h2. Description
 _From the [[[[[[[[[[[[[[feram]]]]]]]]]]]]]] website:_ "[[[[[[[[[[[[[[feram]]]]]]]]]]]]]] is a fast molecular dynamics (MD) simulator for bulk and thin-film ferroelectrics and relaxors."
-*******ttp://loto.sourceforge.net/[[[[[[[[[[[[[[feram]]]]]]]]]]]]]]/#LABEL-3 "[[[[[[[[[[[[[[feram]]]]]]]]]]]]]] on sourceforge"]
+**  "[[[[[[[[[[[[[[feram]]]]]]]]]]]]]] on sourceforge":http://loto.sourceforge.net/[[[[[[[[[[[[[[feram]]]]]]]]]]]]]]/#LABEL-3
 
-== Version ==
-*** *0.19.06*
+h2. Version
+** *0.19.06*
 
-== Authorized Users ==
-*****irce account holders
+h2. Authorized Users
+** circe account holders
 
-== Platform ==
-****@circe@ cluster
+h2. Platform
+** @circe@ cluster
 
-== Running [[[[[[[[[[[[[[feram]]]]]]]]]]]]]] Jobs on the Cluster ==
+h2. Running [[[[[[[[[[[[[[feram]]]]]]]]]]]]]] Jobs on the Cluster
 
-=== [[Modules]] ===
+h3. [[Modules]]
 p. Before running a job, you must first set up your environment properly.  
-*****odule load apps/[[[[[[[[[[[[[[feram]]]]]]]]]]]]]]/0.19.06
+** module load apps/[[[[[[[[[[[[[[feram]]]]]]]]]]]]]]/0.19.06
 
 p. To run [[[[[[[[[[[[[[feram]]]]]]]]]]]]]] on the cluster, ensure that you use @module add@ prior to using any executables.  See [wiki:[[Modules]]] for more information.
 
-=== Distributed Parallel (MPI) Submit Script ===
+h3. Distributed Parallel
 p. This script can be copied into your job directory (the folder with your input files and database files) and modified so that you can submit batch processes to the queue.   This script is provided as an example only.  Your SGE and [[[[[[[[[[[[[[feram]]]]]]]]]]]]]] executables, tools, and options will vary.  View the sections on input files, output files, and examples on the [[[[[[[[[[[[[[feram]]]]]]]]]]]]]] website "[[[[[[[[[[[[[[feram]]]]]]]]]]]]]] website"] for more about [[[[[[[[[[[[[[feram]]]]]]]]]]]]]] options.  For help on submitting jobs to the queue, see our [wiki:gridEngineUsers "GridEngine User's Guide":http://loto.sourceforge.net/[[[[[[[[[[[[[[feram]]]]]]]]]]]]]]/#LABEL-9.
 
 {{{
@@ -36,14 +36,14 @@ module load apps/[[[[[[[[[[[[[[feram]]]]]]]]]]]]]]/0.19.06
 mpirun -np ${NSLOTS} [[[[[[[[[[[[[[feram]]]]]]]]]]]]]]_mpi in.[[[[[[[[[[[[[[feram]]]]]]]]]]]]]]
 }}}
 
-== Vendor Documentation ==
-*****http://loto.sourceforge.net/[[[[[[[[[[[[[[feram]]]]]]]]]]]]]]/#LABEL-3 "About [[[[[[[[[[[[[[feram]]]]]]]]]]]]]]"]
+h2. Vendor Documentation
+** "About [[[[[[[[[[[[[[feram]]]]]]]]]]]]]]":http://loto.sourceforge.net/[[[[[[[[[[[[[[feram]]]]]]]]]]]]]]/#LABEL-3
 
-== More Job Information ==
+h2. More Job Information
 p. See the following for more detailed job submission information:
-******iki:gridEngineUsers "SGE User's Guide"]
-*******ki:gridEnginePolicy "Scheduling and Dispatch Policies"]
-******iki:gridEngineTechn "Advanced Submit Techniques"]
+** [[gridEngineUsers|SGE User's Guide]]
+** [[gridEnginePolicy|Scheduling and Dispatch Policies]]
+** [[gridEngineTechn|Advanced Submit Techniques]]
 
-== Reporting Bugs ==
+h2. Reporting Bugs
 p. Report bugs to the IT Help Desk: help@usf.edu

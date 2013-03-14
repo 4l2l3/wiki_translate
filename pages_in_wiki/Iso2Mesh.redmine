@@ -1,35 +1,35 @@
-= [[Iso2Mesh]] =
+h1. [[Iso2Mesh]]
 ----
 [[PageOutline]]
 *Last Modified:* [[LastModified([[Iso2Mesh]])]]
 
-== Description == 
+h2. Description 
 
 _From the iso2mesh site:_ iso2mesh is a Matlab/Octave-based meshing toolbox. It can create 3D tetrahedral finite element (FE) mesh from iso-surfaces and 3D binary volumetric images such as segmented MRI/CT scans. 
 
-== Version ==
+h2. Version
 
-*** *0.8.0*
+** *0.8.0*
 p(. 
-== Authorized Users ==
+h2. Authorized Users
 
-*****circe` account holders
+** @circe@ account holders
 
-== Platforms ==
+h2. Platforms
 
-****@circe@ cluster
+** @circe@ cluster
 
-== Local Documentation ==
+h2. Local Documentation
 
-=== [[Modules]] ===
+h3. [[Modules]]
 iso2mesh requires the following module file to run:
-*** @apps/iso2mesh/0.8.0@
+** @apps/iso2mesh/0.8.0@
 p. The recommended use is @module initadd@ in order for Matlab to automatically see the toolbox. See [wiki:[[Modules]]] for more information.
 
-=== Submitting Jobs ===
+h3. Submitting Jobs
 p. Since iso2mesh is a Matlab toolbox, please see the [[MatlabUser|Matlab]] documentation in order to submit Matlab jobs.
 
-=== Additional Information ===
+h3. Additional Information
 p. Documentation: http://iso2mesh.sourceforge.net/cgi-bin/index.cgi?Doc
 
 

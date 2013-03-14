@@ -1,27 +1,27 @@
-= WRF =
+h1. WRF
 ----
 [[PageOutline]]
 
-== Description ==
+h2. Description
 
 _From the WRF homepage:_ The Weather Research and Forecasting (WRF) Model is a next-generation mesoscale numerical weather prediction system designed to serve both operational forecasting and atmospheric research needs. It features multiple dynamical cores, a 3-dimensional variational (3DVAR) data assimilation system, and a software architecture allowing for computational parallelism and system extensibility. WRF is suitable for a broad spectrum of applications across scales ranging from meters to thousands of kilometers.
 
-== Version ==
+h2. Version
 
-*** *3.3*
+** *3.3*
 
-== Authorized Users ==
+h2. Authorized Users
 
-*****circe` account holders
+** @circe@ account holders
 
-== Platform ==
+h2. Platform
 
-****@circe@ cluster
+** @circe@ cluster
 
-== [[Run]]ning WRF on the Cluster ==
+h2. [[Run]]ning WRF on the Cluster
 
 p. The WRF guide is essential to understanding the application and making the most of it.  The guide and this page should be all you need to get started with your simulations.
-*****RF Guide: http://www.mmm.ucar.edu/wrf/users/docs/user_guide_V3/contents.html
+** WRF Guide: http://www.mmm.ucar.edu/wrf/users/docs/user_guide_V3/contents.html
 
 p. To run WRF, simply execute the following within your job directory:
 {{{
@@ -32,15 +32,15 @@ p. This will request a job name of wrf_test,16 processors via MPI, and a 6 hour 
 
 p. For more information on [[Run]], see [wiki:[[Run]] "The GridEngine [[Run]] Utility"].
 
-==== Benchmarks &amp; Tutorials ====
+h4. Benchmarks
 p. The following folder contains input parameters for known WRF benchmarks and tutorials:
-*** /opt/apps/wrf/3.3/tests
+** /opt/apps/wrf/3.3/tests
 
-==== More Job Information ====
+h4. More Job Information
 p. See the following for more detailed job submission information:
-******iki:gridEngineUsers "SGE User's Guide"]
-*******ki:gridEnginePolicy "Scheduling and Dispatch Policies"]
-******iki:gridEngineTechn "Advanced Submit Techniques"]
+** [[gridEngineUsers|SGE User's Guide]]
+** [[gridEnginePolicy|Scheduling and Dispatch Policies]]
+** [[gridEngineTechn|Advanced Submit Techniques]]
 
-==== Reporting Bugs ====
+h4. Reporting Bugs
 p. Report bugs directly to Research Computing: support@rc.usf.edu

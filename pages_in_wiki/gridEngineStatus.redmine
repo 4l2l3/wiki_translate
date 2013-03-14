@@ -1,10 +1,10 @@
-= !GridEngine Additional Available Status Commands =
+h1.
 ----
 [[PageOutline]]
 
 p. This document will provide information about additional available status commands to give users visibility into the system.
 
-== jusage ==
+h2. jusage
 p. Show system usage broken down by user:
 {{{
 $ jusage
@@ -17,7 +17,7 @@ user4             398
 ...
 }}}
 
-== jwaits ==
+h2. jwaits
 p. Show longest wait time and for what class they are waiting for users with no slots allocated:
 {{{
 $ jwaits
@@ -28,7 +28,7 @@ user2         275.4             xlong
 user3         30.4              medium
 }}}
 
-== jclass ==
+h2. jclass
 p. Show job numbers broken down by class (job classes are described here: [[gridEngineQueue|Queue Layout]])::
 {{{
 $ jclass
@@ -41,7 +41,7 @@ short                             626    220   4624
 xlong                             615     21    636
 }}}
 
-== jprocs ==
+h2. jprocs
 p. Show all of the processes spawned by your job and what node they are running on.  Fields documented below:
 {{{
 $ jprocs 44922
@@ -54,7 +54,7 @@ wh-520-3-13: 30232 brs       101  0.4 120792 266308 66577 [[[[[[vasp]]]]]]
 p. Host         PID   user      CPU% MEM RSS    VMEM   SIZE  COMMAND
 }}}
 
-== sss ==
+h2. sss
 p. Show slot status of hardware pools (hardware pools are described here: [[gridEngineQueue|Queue Layout]]):
 {{{
 $ sss
@@ -70,7 +70,7 @@ pe_oleynik_Dell_SC1435_hg        12    276    288
 pe_svarma_HP_SL365_hg            16    176    192
 }}}
 
-== ss ==
+h2. ss
 p. Show slot status of individual nodes in the hardware pools.
 {{{
 $ ss
@@ -118,7 +118,7 @@ p(((((. wh-520-3-8            3     12
 p((((((((((((((((((((((((((. 18     96
 }}}
 
-== qs ==
+h2. qs
 p. Queue status:
 {{{
 $ qs

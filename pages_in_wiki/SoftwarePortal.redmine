@@ -1,8 +1,8 @@
-= Available Software =
+h1. Available Software
 ----
 p. This is a list of currently available software with links to respective documentation.  Software listed [[here]] is currently supported by Research Computing.  New software may be added as per user requests.
 
-| * Application_' | '_Latest Installed Version* |
+| * Application* | *Latest Installed Version* |
 | [[abinit|ABINIT]] | 6.12.3 |
 | [[ABySS|ABySS]] | 1.2.7 |
 | [[ADS|ADS]] | 2009u1 |

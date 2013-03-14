@@ -1,32 +1,32 @@
-= Accelrys MS Modeling =
+h1. Accelrys MS Modeling
 [[PageOutline]]
 *Last Modified:* [[LastModified(MSModeling)]]
 ----
 
-== Description ==
+h2. Description
 
 p. MS Modeling is a visualizer for molecular systems.  This software can do its own calculations to render the effects of certain conditions or import data from other software for visualization.
 
-== Version ==
+h2. Version
 
-*** *3.2*
+** *3.2*
 
-== Authorized Users ==
+h2. Authorized Users
 
 p. Due to the limited number of licenses, we are only issuing license files per special request. Please contact us at support@rc.usf.edu to put in a request.
 
-== Platforms ==
+h2. Platforms
 
-*** Workstation/PC
+** Workstation/PC
 
-== Installation ==
+h2. Installation
 
 p. Before starting the installation:
 
-*************************************************************************TP server using your NetID and password. Change to the directory /pub/accelrys and download the file ms-modeling-3.2.iso. Once the download is finished disconnect from the FTP server. Burn this ISO image file to a blank CD using your favorite CD Recording software. If you need help with recording CDs please see our guide by clicking [wiki:CDBurning here].
-***********************ou could mount the ISO without burning a CD. Read our [wiki:WindowsISO guide] to find out more.
-********xit all programs
-****************s 2000/XP logon as administrator or have administrator privileges. 
+***** Get the ISO CD image from https://rc.usf.edu/isos . Log into the FTP server using your NetID and password. Change to the directory /pub/accelrys and download the file ms-modeling-3.2.iso. Once the download is finished disconnect from the FTP server. Burn this ISO image file to a blank CD using your favorite CD Recording software. If you need help with recording CDs please see our guide by clicking [wiki:CDBurning here].
+***** Alternatively, you could mount the ISO without burning a CD. Read our [wiki:WindowsISO guide] to find out more.
+***** Exit all programs
+***** On Windows 2000/XP logon as administrator or have administrator privileges. 
 
 p(((. 1. Insert CD. If program starts go to step 3.
 p(((. 2. Double click on the My Computer Icon.

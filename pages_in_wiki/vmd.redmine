@@ -1,25 +1,25 @@
-= VMD =
+h1. VMD
 ----
 [[PageOutline]]
 
-== Description ==
+h2. Description
 _From the VMD website:_ VMD is designed for modeling, visualization, and analysis of biological systems such as proteins, nucleic acids, lipid bilayer assemblies, etc. It may be used to view more general molecules, as VMD can read standard Protein Data Bank (PDB) files and display the contained structure. VMD provides a wide variety of methods for rendering and coloring a molecule: simple points and lines, CPK spheres and cylinders, licorice bonds, backbone tubes and ribbons, cartoon drawings, and others. VMD can be used to animate and analyze the trajectory of a molecular dynamics (MD) simulation. In particular, VMD can act as a graphical front end for an external MD program by displaying and animating a molecule undergoing simulation on a remote computer.
 
-== Version ==
+h2. Version
 
-*** *1.9*
+** *1.9*
 
-== Authorized Users ==
+h2. Authorized Users
 
-*****irce account holders
+** Circe account holders
 
-== Platform ==
+h2. Platform
 
-****@circe@ cluster
+** @circe@ cluster
 
-== Local Documentation ==
+h2. Local Documentation
 
-=== [[Run]]ning VMD on the Cluster ===
+h3. [[Run]]ning VMD on the Cluster
 
 p. To run VMD, simply execute the following within your job directory:
 {{{
@@ -32,10 +32,10 @@ p. For more information on [[Run]], see [wiki:[[Run]] "The GridEngine [[Run]] Ut
 
 p. If you have properly configured an X11 session, you should see the full VMD interface.  If you haven't configured X11, please see our [[XWin32Install|XWin32 Installation]] documentation.
 
-=== Documentation &amp; Tutorials ===
+h3. Documentation
 
 p. Documentation for VMD can be found in the following location:
-*** http://www.ks.uiuc.edu/Research/[[vmd]]/current/docs.html
+** http://www.ks.uiuc.edu/Research/[[vmd]]/current/docs.html
 
-=== Reporting Bugs ===
+h3. Reporting Bugs
 p. Report bugs directly to Research Computing: help@usf.edu

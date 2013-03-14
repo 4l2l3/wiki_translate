@@ -1,28 +1,28 @@
-= !TeraChem =
+h1.
 ----
 [[PageOutline]]
 
-== Description ==
+h2. Description
 _From the !TeraChem user guide:_ !TeraChem is general purpose quantum chemistry software designed to run on NVIDIA GPU architectures under a 64-bit Linux operating system.
 
-== Version ==
+h2. Version
 
-*** *1.0*
+** *1.0*
 
-== Authorized Users ==
+h2. Authorized Users
 
-**************orized by Dr. Brian Space and added to the @terachem@ group.
+** Users authorized by Dr. Brian Space and added to the @terachem@ group.
 
-== Platform ==
+h2. Platform
 
-****@circe@ cluster
+** @circe@ cluster
 
-== Local Documentation ==
+h2. Local Documentation
 
-=== Running !TeraChem on the Cluster ===
+h3. Running
 
 p. The !TeraChem user guide is essential to understanding the application and making the most of it.  The guide and this page should be all you need to get started with your simulations.
-*** /opt/apps/terachem/1.0/TeraChem/userguide.pdf
+** /opt/apps/terachem/1.0/TeraChem/userguide.pdf
 
 !TeraChem is quite easy to execute on Circe.  After creating your input, simply use [wiki:Run @run@] to execute the program:
 {{{
@@ -31,15 +31,15 @@ p. The !TeraChem user guide is essential to understanding the application and ma
 
 p. This will request 8 processors, a job name of test_name, a 4 hour run-time, and specify the input file as config.inp.
 
-==== Tests ====
+h4. Tests
 p. The following folders contain input parameters for known !TeraChem tests:
-*** /opt/apps/terachem/1.0/TeraChem/tests
+** /opt/apps/terachem/1.0/TeraChem/tests
 
-==== More Job Information ====
+h4. More Job Information
 p. See the following for more detailed job submission information:
-******iki:gridEngineUsers "SGE User's Guide"]
-*******ki:gridEnginePolicy "Scheduling and Dispatch Policies"]
-******iki:gridEngineTechn "Advanced Submit Techniques"]
+** [[gridEngineUsers|SGE User's Guide]]
+** [[gridEnginePolicy|Scheduling and Dispatch Policies]]
+** [[gridEngineTechn|Advanced Submit Techniques]]
 
-==== Reporting Bugs ====
+h4. Reporting Bugs
 p. Report bugs directly to Research Computing: help@usf.edu

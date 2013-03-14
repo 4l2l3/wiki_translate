@@ -1,38 +1,38 @@
-= IDL =
+h1. IDL
 ----
 [[PageOutline]]
 
-== Description == 
+h2. Description 
 
 p. IDL's features include: advanced image processing, interactive 2-D and 3-D graphics, object oriented programming, insightful volume visualization, a high-level programming language, integrated mathematics and statistics, flexible data I/O, a cross-platform GUI toolkit, and versatile program linking tools.
 
-== Version ==
+h2. Version
 
-*** *8.2*
+** *8.2*
 
-== Authorized Users == 
+h2. Authorized Users 
 
-*****tudents doing research
-*** Faculty
-******rce account holders 
+** Students doing research
+** Faculty
+** circe account holders 
 
-== Platforms ==
+h2. Platforms
 
-*** Workstation/PC
-****Circe Cluster
+** Workstation/PC
+** Circe Cluster
 
-*_Contents_*
+*_Contents*_
 
 [wiki:IDLUser#IDLWindowsInstallation Installing On Windows][[BR]]
 [wiki:IDLUser#IDLUnixInstallation Installing On Unix or Linux][[BR]]
 [wiki:IDLUser#IDLMacInstallation Installing On Mac][[BR]]
 [wiki:IDLUser#RunningonCirce Running on Circe][[BR]]
 
-== Installation ==
+h2. Installation
 
 ----
 
-=== IDL Windows Installation ===
+h3. IDL Windows Installation
 
 p. Before you begin:
 
@@ -48,33 +48,33 @@ p. Installation Instructions
 
 p. To download and install IDL:
 
-*******************er from https://rc.usf.edu/isos/IDL/8.2/.  Log in using your NetID and password. Download the idl82winXX_setup.exe file.
+** Get the installer from https://rc.usf.edu/isos/IDL/8.2/.  Log in using your NetID and password. Download the idl82winXX_setup.exe file.
 
-*********************alog, specify a location to save the executable file you are downloading, and click Save.
+** In the Save As dialog, specify a location to save the executable file you are downloading, and click Save.
 
-****************************mplete, go to the location where you saved the idl82win32_setup.exe or idl82win64_setup.exe file and double click on it to begin installing IDL.
+** After the download is complete, go to the location where you saved the idl82win32_setup.exe or idl82win64_setup.exe file and double click on it to begin installing IDL.
 
-***********etup, and follow the prompts to install IDL.
+** Click Setup, and follow the prompts to install IDL.
 
 ----
 
-=== IDL Unix Installation ===
+h3. IDL Unix Installation
 
 
 p. Before you begin:
 
-********************* install IDL on your system and create that directory. The default installation path is /usr/local/exelis.
+** Choose a place to install IDL on your system and create that directory. The default installation path is /usr/local/exelis.
 
-**********************ate the directory, be sure you have root (or similar) permissions, and issue the following commands:
+** If you need to create the directory, be sure you have root (or similar) permissions, and issue the following commands:
 
 p((((. % mkdir /usr/local/exelis (to create) 
 p((((. % chmod a+rx /usr/local/exelis (to give access) 
 
-*********************ion archive from  https://rc.usf.edu/isos/IDL/8.2/.  Log in using your NetID and password. Download the idl82linux.x86_64.tgz file.
+** Get the installation archive from  https://rc.usf.edu/isos/IDL/8.2/.  Log in using your NetID and password. Download the idl82linux.x86_64.tgz file.
 
-*********n as root on your machine.
+** Log on as root on your machine.
 
-***********************le is a compressed archive; save it in the directory in which you are installing IDL (/usr/local/exelis by default).
+** The installation file is a compressed archive; save it in the directory in which you are installing IDL (/usr/local/exelis by default).
 p((((. Unpack the archive by entering:
 
 p((((. % tar xfvz idl82linux.x86_64.tgz
@@ -83,7 +83,7 @@ p((((. Execute the installation program by entering the following command:
 
 p((((. % ./install.sh 
 
-********ow the prompts to install IDL.
+** Follow the prompts to install IDL.
 
 p((. -If you choose not to create symbolic links, you can set up IDL by issuing the following command:
 
@@ -91,24 +91,24 @@ p((((. % source install_dir/idl/idl82/bin/idl_setup
 
 p((. where install_dir is the main installation directory. Then run the IDL application.
 
-************************n finishes, you will need to install the license file. Copy the license file you receive by email to "/usr/local/itt/license/license.dat".
+** Once the installation finishes, you will need to install the license file. Copy the license file you receive by email to "/usr/local/itt/license/license.dat".
 p((((. 
 p. You should now be able to start @idlde@ (text mode) from the command line.
 
 ----
 
-=== IDL Mac Installation ===
+h3. IDL Mac Installation
 p. To download and install IDL:
 
-******************************** from  https://rc.usf.edu/isos/IDL/8.2/.  Log in using your NetID and password. Download the InstallIDL82_Mac.pkg file. Note the location to which you are downloading the PKG file.
+** Get the installation archive from  https://rc.usf.edu/isos/IDL/8.2/.  Log in using your NetID and password. Download the InstallIDL82_Mac.pkg file. Note the location to which you are downloading the PKG file.
 
-******uble-click the file InstallIDL82_Mac.pkg.
+** Double-click the file InstallIDL82_Mac.pkg.
 
-********ow the prompts to install IDL.
+** Follow the prompts to install IDL.
 
 ----
 
-== Running on Circe ==
+h2. Running on Circe
 
 p. Running IDL on @circe@, you need to make sure you have X11 Forwarding enabled. If you're logging in from a UNIX/Linux system, you will need to do the following:
 p((((((. {{{
@@ -128,10 +128,10 @@ p. You should now be able to execute @idlde@ (text mode) from the command line.
 
 p. IDL can also be launched through the NX environment using the Applications menu.  For more information about the NX environment, please see our [[CirceDesktop|Circe NX Desktop]] documentation.
 
-=== Tutorials ===
+h3. Tutorials
 
 p. More information about the features of IDL can be found by using @idldemo@.  The graphical mode also includes a tutorial.
 
-=== Reporting Bugs ===
+h3. Reporting Bugs
 
 p. Report bugs directly to Research Computing: support@rc.usf.edu

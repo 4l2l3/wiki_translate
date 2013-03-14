@@ -1,29 +1,29 @@
-= CP2K =
+h1. CP2K
 ----
 [[PageOutline]]
 
-== Description ==
+h2. Description
 _From the CP2K home page_: CP2K is a program to perform atomistic and molecular simulations of solid state, liquid, molecular, and biological systems. It provides a general framework for different methods such as e.g., density functional theory (DFT) using a mixed [[Gaussian]] and plane waves approach (GPW) and classical pair and many-body potentials.  CP2K is written in Fortran 95 and can be run efficiently in parallel.  However, you'll find all versions of the CP2K code come with little documentation and without any warranty.
-******ttp://www.cp2k.org "CP2K Home Page"]
+*  "CP2K Home Page":http://www.cp2k.org
 
-== Version ==
-********43 (9 January 2013), compiled against
-*******Intel 12.1.0*
-*******OpenMPI 1.6.1*
+h2. Version
+** 2.3.43 (9 January 2013), compiled against
+**** *Intel 12.1.0*
+**** *OpenMPI 1.6.1*
 
-== Authorized Users ==
-*****irce account holders
+h2. Authorized Users
+** circe account holders
 
-== Platforms ==
-*****irce cluster 
+h2. Platforms
+** circe cluster 
 
-== [[Modules]] ==
+h2. [[Modules]]
 
 p. CP2K requires the following module file with prerequisites to run:
-*** @apps/cp2k/2.3.43@
+** @apps/cp2k/2.3.43@
 p. See [wiki:[[Modules]]] for more information.  
 
-== [[Run]]ning CP2K on the Cluster ==
+h2. [[Run]]ning CP2K on the Cluster
 
 p. Please reference the CP2K home page for information on configuring the application inputs for execution.
 
@@ -35,18 +35,18 @@ p. You can see [[here]] that we've specified to use 16 processors for 1 hour.  W
 
 p. For more information on [[Run]], see [wiki:[[Run]] "The GridEngine [[Run]] Utility"].
 
-=== Benchmarks and Tests ===
+h3. Benchmarks and Tests
 p. The following folders contain input parameters for known CP2K tests:
-*** /apps/cp2k/2.3-01082013/tests
+** /apps/cp2k/2.3-01082013/tests
 
-=== Vendor Documentation ===
-*** http://www.cp2k.org/index.php/documentation
+h3. Vendor Documentation
+** http://www.cp2k.org/index.php/documentation
 
-=== More Job Information ===
+h3. More Job Information
 p. See the following for more detailed job submission information:
-******iki:gridEngineUsers "SGE User's Guide"]
-*******ki:gridEnginePolicy "Scheduling and Dispatch Policies"]
-******iki:gridEngineTechn "Advanced Submit Techniques"]
+** [[gridEngineUsers|SGE User's Guide]]
+** [[gridEnginePolicy|Scheduling and Dispatch Policies]]
+** [[gridEngineTechn|Advanced Submit Techniques]]
 
-=== Reporting Bugs ===
+h3. Reporting Bugs
 p. Report bugs to the IT Help Desk: help@usf.edu

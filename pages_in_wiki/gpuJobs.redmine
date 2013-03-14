@@ -1,7 +1,7 @@
-= GPU-Enabled Jobs =
+h1. GPU
 p. Research Computing hosts 9 compute nodes with GPU capabilities and depending on uptake, will probably expand this capability.  Requesting GPU resources requires additional parameters to be added to your job script in order to land on the right equipment and ensure that your job is dispatched correctly.
 
-== Basic GPU Job ==
+h2. Basic GPU Job
 p. For basic GPU jobs, where you will be using a single CPU thread and a single GPU, the following will be sufficient:
 {{{
 #$ -N myGpuJob
@@ -15,7 +15,7 @@ p. You can request up to two GPUs be used by a single job.  There is only one sy
 #$ -l gpu=2
 }}}
 
-== MPI GPU Jobs ==
+h2. MPI GPU Jobs
 p. On CIRCE, MPI parallel jobs with GPU support require extra care when crafting your request.  You MUST use the nodes,ppn parameters for your job request.  In this case, every node you select (up to 8) will get you an additional GPU.  So, lets say I want to use 8 GPUs with MPI, each with a single CPU thread:
 
 {{{

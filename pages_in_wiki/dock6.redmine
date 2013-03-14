@@ -1,38 +1,38 @@
-= Dock 6.5 =
+h1. Dock 6
 ----
 
 [[PageOutline]]
 
-== Description == 
+h2. Description 
 
 p. DOCK addresses the problem of "docking" molecules to each other. In general, "docking" is the identification of the low-energy binding modes of a small molecule, or ligand, within the active site of a macromolecule, or receptor, whose structure is known. A compound that interacts strongly with, or binds, a receptor associated with a disease may inhibit its function and thus act as a drug. Solving the docking problem computationally requires an accurate representation of the molecular energetics as well as an efficient algorithm to search the potential binding modes.
 
 p. From: http://dock.compbio.ucsf.edu/Overview_of_DOCK/index.htm
 
-== Version ==
+h2. Version
 
-*** *6.5*
+** *6.5*
 
-== Authorized Users == 
+h2. Authorized Users 
 
-*****circe` account holders
+** @circe@ account holders
 
-== Platforms ==
+h2. Platforms
 
-****@circe@ cluster
+** @circe@ cluster
 
-== Local Documentation ==
+h2. Local Documentation
 
-=== [[Modules]] ===
+h3. [[Modules]]
 
 p. Dock6 requires the following module file and some prerequisites to run:
-*** @apps/dock/6.5@
+** @apps/dock/6.5@
 
 p. To run Dock6 on the cluster, ensure that you use @module add apps/dock/6.5@ in your submit script.  See [wiki:[[Modules]]] for more information.
 
-=== Running dock6.mpi on the Grid ===
+h3. Running [[dock6]]
 
-p. In order to use DOCK, you must agree to the following: "I agree that any public reports or publication of results obtained using DOCK will acknowledge its use by an appropriate citation."  The following script will execute the parallel version of dock6, dock6.mpi.  You'll need to set the number of processors to the number you wish to use as well as modify the input and output file parameters to suit your environment:
+p. In order to use DOCK, you must agree to the following: "I agree that any public reports or publication of results obtained using DOCK will acknowledge its use by an appropriate citation."  The following script will execute the parallel version of [[dock6]], [[dock6]].mpi.  You'll need to set the number of processors to the number you wish to use as well as modify the input and output file parameters to suit your environment:
 {{{
 #!/bin/bash
 #$ -N job_name
@@ -44,22 +44,22 @@ p. In order to use DOCK, you must agree to the following: "I agree that any publ
 module purge
 module add apps/dock/6.5
 
-mpirun /apps/apps/dock/6.5/bin/dock6.mpi -i job.in -o job.out
+mpirun /apps/apps/dock/6.5/bin/[[dock6]].mpi -i job.in -o job.out
 }}}
 
-== Local Documentation ==
+h2. Local Documentation
 
 p. Parameter files, the tutorials, and the source code are located in /opt/apps/dock/6.5 under the respective directories
-*** parameters/
-*** tutorials/
-*** src/
+** parameters/
+** tutorials/
+** src/
 
-== More Job Information ==
+h2. More Job Information
 
 p. See the following for more detailed job submission information:
-******iki:gridEngineUsers "SGE User's Guide"]
-*******ki:gridEnginePolicy "Scheduling and Dispatch Policies"]
-******iki:gridEngineTechn "Advanced Submit Techniques"]
+** [[gridEngineUsers|SGE User's Guide]]
+** [[gridEnginePolicy|Scheduling and Dispatch Policies]]
+** [[gridEngineTechn|Advanced Submit Techniques]]
 
-== Reporting Bugs ==
+h2. Reporting Bugs
 p. Report bugs directly to Research Computing: support@rc.usf.edu
