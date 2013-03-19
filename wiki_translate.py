@@ -145,9 +145,10 @@ def do_links(text_in):
 	words = wikis_pat.findall(text_out)#.split() wasn't working how i wanted
 	replaced = []#don't do multiple replace()
 	for word in words:
-		if wiki_pages.count(word) and not replaced.count(word):#we're good and we link it
-			replaced.append(word)
-			text_out = text_out.replace(word, "[["+ word +"]]")
+		s_word = word.strip() #eliminate whitespace
+		if wiki_pages.count(s_word) and not replaced.count(s_word):#we're good and we link it
+			replaced.append(s_word)
+			text_out = text_out.replace(word, "[["+ s_word +"]]")
 	#REDMINE	[[WikiPageName]]
 
 	#TRAC		[wiki:WikiPageName "Title"]
