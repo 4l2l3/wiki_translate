@@ -17,12 +17,12 @@ h2. Platforms
 h2. Modules
 
 p. NWChem requires the following module file to run:
-** @apps/[[nwchem]]/6.1.1@
+** @apps/nwchem/6.1.1@
 p. See [wiki:Modules] for more information.  
 
 ** *NOTE*: This module MUST be loaded persistently in order for the application to run.  Use
 p(((. {{{
-[user@host ~]$ module load apps/[[nwchem]]/6.1.1
+[user@host ~]$ module load apps/nwchem/6.1.1
 }}}
 p(((. in order to properly execute NWChem
 h2. Submitting a Job
@@ -36,9 +36,9 @@ p. Make sure to run your job from your $WORK directory. Use the a submit script 
 #$ -o output.$JOB_ID
 
 module purge
-module load apps/[[nwchem]]/6.1.1
+module load apps/nwchem/6.1.1
 
-mpirun [[nwchem]] &lt;input_file&gt;
+mpirun nwchem &lt;input_file&gt;
 }}}
 
 h4. More Job Information

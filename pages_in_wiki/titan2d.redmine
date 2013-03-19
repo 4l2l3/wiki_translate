@@ -27,7 +27,7 @@ p. The TITAN2D GUI requires the following module file to run:
 ** @apps/titan/2.0.1@
 p. See [wiki:Modules] for more information.
 
-h3. [[Run]]ning TITAN2D on the Cluster
+h3. Running TITAN2D on the Cluster
 
 p. The TITAN2D guide is essential to understanding the application and making the most of it.  The guide and this page should be all you need to get started with your simulations.
 ** TITAN2D Guide: http://www.gmfg.buffalo.edu/software/titan_userguide.pdf
@@ -53,7 +53,7 @@ p. To run TITAN2D, simply execute the following within your job directory:
 
 p. This will request 4 processors via MPI, a job name of titan_test, and a 2 hour run-time.
 
-p. For more information on [[Run]], see [wiki:[[Run]] "The GridEngine [[Run]] Utility"].
+p. For more information on Run, see [[Run|The GridEngine Run Utility]].
 
 h4. Benchmarks
 

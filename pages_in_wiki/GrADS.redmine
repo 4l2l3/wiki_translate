@@ -1,12 +1,12 @@
-h1. [[GrADS]]
+h1. GrADS
 ----
 [[PageOutline]]
 
 h2. Description
 
-_From the [[GrADS]] homepage:_  The Grid Analysis and Display System ([[GrADS]]) is an interactive desktop tool that is used for easy access, manipulation, and visualization of earth science data. [[GrADS]] has two data models for handling gridded and station data. [[GrADS]] supports many data file formats, including binary (stream or sequential), GRIB (version 1 and 2), NetCDF, HDF (version 4 and 5), and BUFR (for station data). [[GrADS]] uses a 5-Dimensional data environment: the four conventional dimensions (longitude, latitude, vertical level, and time) plus an optional 5th dimension for grids that is generally implemented but designed to be used for ensembles. [[GrADS]] has a programmable interface (scripting language) that allows for sophisticated analysis and display applications. Use scripts to display buttons and dropmenus as well as graphics, and then take action based on user point-and-clicks. [[GrADS]] can be run in batch mode, and the scripting language facilitates using [[GrADS]] to do long overnight batch jobs. 
+_From the GrADS homepage:_  The Grid Analysis and Display System (GrADS) is an interactive desktop tool that is used for easy access, manipulation, and visualization of earth science data. GrADS has two data models for handling gridded and station data. GrADS supports many data file formats, including binary (stream or sequential), GRIB (version 1 and 2), NetCDF, HDF (version 4 and 5), and BUFR (for station data). GrADS uses a 5-Dimensional data environment: the four conventional dimensions (longitude, latitude, vertical level, and time) plus an optional 5th dimension for grids that is generally implemented but designed to be used for ensembles. GrADS has a programmable interface (scripting language) that allows for sophisticated analysis and display applications. Use scripts to display buttons and dropmenus as well as graphics, and then take action based on user point-and-clicks. GrADS can be run in batch mode, and the scripting language facilitates using GrADS to do long overnight batch jobs. 
 
-** "[[GrADS]] Home Page":http://www.iges.org/grads/
+** "GrADS Home Page":http://www.iges.org/grads/
 
 h2. Version
 
@@ -20,7 +20,7 @@ h2. Platform
 
 ** @circe@ cluster
 
-h2. [[Run]]ning [[GrADS]] on the Cluster
+h2. Running GrADS on the Cluster
 
 h3. Modules
 
@@ -28,9 +28,9 @@ p. Before running a job, you must first set up your environment properly. Here a
 
 ** apps/grads/2.0.1
 
-p. To run [[GrADS]] on the cluster, ensure that you use @module add@ prior to using any [[GrADS]] executables.  See [wiki:Modules] for more information.
+p. To run GrADS on the cluster, ensure that you use @module add@ prior to using any GrADS executables.  See [wiki:Modules] for more information.
 
-p. The following [[GrADS]] tools are installed:
+p. The following GrADS tools are installed:
 ** bufrscan   
 ** grads      
 ** gribmap   
@@ -42,20 +42,20 @@ p. The following [[GrADS]] tools are installed:
 ** gxps 
 ** wgrib
 
-p. The [[GrADS]] guide is essential to understanding the application and making the most of it.  The guide and this page should be all you need to get started with your simulations.
-** "[[GrADS]] User's Guide":http://www.iges.org/grads/gadoc/users.html
+p. The GrADS guide is essential to understanding the application and making the most of it.  The guide and this page should be all you need to get started with your simulations.
+** "GrADS User's Guide":http://www.iges.org/grads/gadoc/users.html
 
-p. To run [[GrADS]] in batch mode, simply execute the following within your job directory:
+p. To run GrADS in batch mode, simply execute the following within your job directory:
 {{{
 [user@host ~]$ run -n 1 -N run_test -t 00:30:00 -e INPUT="simple.gs" grads/2.0.1
 }}}
 
-p. Where simple.gs is your [[GrADS]] batch command script, -n is the number of processors, but should always be 1, -N is the name you want to give the job, and the runtime is scheduled for 30 minutes.
+p. Where simple.gs is your GrADS batch command script, -n is the number of processors, but should always be 1, -N is the name you want to give the job, and the runtime is scheduled for 30 minutes.
 
-p. For more information on [[Run]], see [wiki:[[Run]] "The GridEngine [[Run]] Utility"].
+p. For more information on Run, see [[Run|The GridEngine Run Utility]].
 
 h3. Benchmarks
-p. The following folders contain input parameters for known [[GrADS]] benchmarks and tutorials:
+p. The following folders contain input parameters for known GrADS benchmarks and tutorials:
 ** /apps/grads/2.0.1/examples
 
 h3. More Job Information

@@ -24,7 +24,7 @@ h2. Local Documentation
 
 h3. Modules
 
-p. [[Fidap]] requires the following module file and some prerequisites to run:
+p. Fidap requires the following module file and some prerequisites to run:
 ** @apps/fidap/8.7.4@
 
 p. Gambit requires the following module file and some prerequisites to run:
@@ -33,7 +33,7 @@ p. Gambit requires the following module file and some prerequisites to run:
 p(. See [wiki:Modules] for more information.
 
 h3. Submitting Jobs
-p. Users can use the following SGE script to run [[Fidap]] jobs with fisol over SGE:
+p. Users can use the following SGE script to run Fidap jobs with fisol over SGE:
 {{{
 #!/bin/bash
 ##
@@ -80,7 +80,7 @@ rm -rf $SCRATCH
 
 # end script
 }}}
-*Note:* This page is a place holder until more documentation is written.  The [[Fidap]] and Gambit user guides are located at the following links:
+*Note:* This page is a place holder until more documentation is written.  The Fidap and Gambit user guides are located at the following links:
 
-** [[Fidap]] User Documentation: https://rc.usf.edu/soft/fidap/fidapdoc/index.htm
+** Fidap User Documentation: https://rc.usf.edu/soft/fidap/fidapdoc/index.htm
 ** Gambit User Documentation: https://rc.usf.edu/soft/fidap/gambitdoc/index.htm

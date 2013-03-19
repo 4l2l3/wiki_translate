@@ -4,7 +4,7 @@ h1. Dalton
 
 h2. Description
 _From the Dalton web site_: Dalton is a powerful molecular electronic structure program, with an extensive functional for the calculation of molecular properties at the HF, DFT, MCSCF, and CC levels of theory.
-**  "Dalton Home Page":http://dirac.chem.sdu.dk/[[dalton]]program.org
+**  "Dalton Home Page":http://dirac.chem.sdu.dk/daltonprogram.org
 
 h2. Version
 ** *2.0*
@@ -18,14 +18,14 @@ h2. Platforms
 h2. Modules
 
 p. Dalton requires the following module file with prerequisites to run:
-** @apps/[[dalton]]/2.0@
+** @apps/dalton/2.0@
 p. See [wiki:Modules] for more information.  
 
 h2. Note to Users about the Dalton License
 
 1. Any published work arising from use of the Dalton program must acknowledge the program with an appropriate citation. A suitable text for Release 2 revision 0 would be:
 {{{
-”Dalton, a molecular electronic structure program, Release 2.0 (2005), see http://www.kjemi.uio.no/software/[[dalton]]/[[dalton]].html”
+”Dalton, a molecular electronic structure program, Release 2.0 (2005), see http://www.kjemi.uio.no/software/dalton/dalton.html”
 }}}
 ** When certain features of Dalton are used in published work, we encourage the authors to cite the papers that describe their implementation, as indicated in the manual.
 
@@ -34,9 +34,9 @@ h2. Note to Users about the Dalton License
 h2. Submitting a Job
 
 p. The Dalton Program Manual is essential to understanding the application and making the most of it.  The guide and this page should be all you need to get started with your simulations.
-** "Dalton Program Manual":http://www.[[dalton]]program.org/resources/[[dalton]]20manual.pdf
+** "Dalton Program Manual":http://www.daltonprogram.org/resources/dalton20manual.pdf
 or
-** /opt/apps/[[dalton]]/2.0/[[dalton]]20manual.pdf
+** /opt/apps/dalton/2.0/dalton20manual.pdf
 
 p. Use the following submit script as an example to run Dalton:
 
@@ -47,23 +47,23 @@ p. Use the following submit script as an example to run Dalton:
 #$ -j y
 #$ -o output.$JOB_ID
 
-module load apps/[[dalton]]/2.0
-mpirun [[dalton]] -N &lt;#_of_processors&gt; &lt;input_file&gt; &lt;mol_file&gt;
+module load apps/dalton/2.0
+mpirun dalton -N &lt;#_of_processors&gt; &lt;input_file&gt; &lt;mol_file&gt;
 }}}
 
 or simply execute the following within your job directory:
 {{{
-[user@host job_dir]$ run -n 4 -N [[dalton]]_test -t 1:00:00  -e OPTS="input_file mol_file" [[dalton]]/2.0 
+[user@host job_dir]$ run -n 4 -N dalton_test -t 1:00:00  -e OPTS="input_file mol_file" dalton/2.0 
 }}}
 
-p. This will request 4 processors via MPI, a job name of [[dalton]]_test, and a 1 hour run-time.  Other desired command line arguments for Dalton can be included with OPTS.
+p. This will request 4 processors via MPI, a job name of dalton_test, and a 1 hour run-time.  Other desired command line arguments for Dalton can be included with OPTS.
 
-p. For more information on [[Run]], see [wiki:[[Run]] "The GridEngine [[Run]] Utility"].
+p. For more information on Run, see [[Run|The GridEngine Run Utility]].
 
 h3. Benchmarks and Tests
 
 p. The following folders contain input parameters for known Dalton tests:
-** /opt/apps/[[dalton]]/2.0/tests
+** /opt/apps/dalton/2.0/tests
 
 h3. More Job Information
 p. See the following for more detailed job submission information:

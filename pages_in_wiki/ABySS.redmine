@@ -1,9 +1,9 @@
-h1. [[ABySS]]
+h1. ABySS
 [[PageOutline]]
 
 h2. Description 
 
-_From the [[ABySS]] web site_:  [[ABySS]] (Assembly By Short Sequences) is a _de novo_, parallel, paired-end sequence assembler that is designed for short reads. The single-processor version is useful for assembling genomes up to 100 Mbases in size. The parallel version is implemented using MPI and is capable of assembling larger genomes.
+_From the ABySS web site_:  ABySS (Assembly By Short Sequences) is a _de novo_, parallel, paired-end sequence assembler that is designed for short reads. The single-processor version is useful for assembling genomes up to 100 Mbases in size. The parallel version is implemented using MPI and is capable of assembling larger genomes.
 
 ** http://www.bcgsc.ca/platform/bioinfo/software/abyss
 
@@ -19,9 +19,9 @@ h2. Platforms
 
 ** @circe@ cluster
 
-h2. Running [[ABySS]] Jobs on the Cluster
+h2. Running ABySS Jobs on the Cluster
 
-p. To assemble transcriptome data, see [[transabyss|Trans-[[ABySS]]]].
+p. To assemble transcriptome data, see [[transabyss|Trans-ABySS]].
 
 h3. Modules
 
@@ -29,11 +29,11 @@ p. Before running a job, you must first set up your environment properly.  Here 
 
 ** apps/abyss/1.2.7
 
-p. To run [[ABySS]] on the cluster, ensure that you use @module add@ prior to using any executables.  See [wiki:Modules] for more information.
+p. To run ABySS on the cluster, ensure that you use @module add@ prior to using any executables.  See [wiki:Modules] for more information.
 
 h3. How to Submit Jobs
 
-p. Provided are batch scripts for running [[ABySS]] as a single processor or multi-processor job.  These scripts can be copied into your work directory (the folder with your input files and database files) so that you can submit batch processes to the queue.  For help on submitting jobs to the queue, see our [[gridEngineUsers|GridEngine User's Guide]].  These scripts are provided as examples only.  Your SGE and [[ABySS]] options will vary.  View the man page or this site (http://seqanswers.com/wiki/[[ABySS]]#Single-end_assembly) for more about [[ABySS]] options.
+p. Provided are batch scripts for running ABySS as a single processor or multi-processor job.  These scripts can be copied into your work directory (the folder with your input files and database files) so that you can submit batch processes to the queue.  For help on submitting jobs to the queue, see our [[gridEngineUsers|GridEngine User's Guide]].  These scripts are provided as examples only.  Your SGE and ABySS options will vary.  View the man page or this site (http://seqanswers.com/wiki/ABySS#Single-end_assembly) for more about ABySS options.
 
 h3. Serial Submit Script
 * Single-end assembly
@@ -89,7 +89,7 @@ p. Reads without mates should be placed in a file specified by the 'se'
 will slow down the paired-end assembler considerably during the
 !ParseAligns stage.
 
-p. See also [[transabyss|Trans-[[ABySS]]]].
+p. See also [[transabyss|Trans-ABySS]].
 
 h3. More Job Information
 p. See the following for more detailed job submission information:

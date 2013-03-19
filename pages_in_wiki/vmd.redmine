@@ -19,7 +19,7 @@ h2. Platform
 
 h2. Local Documentation
 
-h3. [[Run]]ning VMD on the Cluster
+h3. Running VMD on the Cluster
 
 p. To run VMD, simply execute the following within your job directory:
 {{{
@@ -28,7 +28,7 @@ p. To run VMD, simply execute the following within your job directory:
 }}}
 
 
-p. For more information on [[Run]], see [wiki:[[Run]] "The GridEngine [[Run]] Utility"].
+p. For more information on Run, see [[Run|The GridEngine Run Utility]].
 
 p. If you have properly configured an X11 session, you should see the full VMD interface.  If you haven't configured X11, please see our [[XWin32Install|XWin32 Installation]] documentation.
 

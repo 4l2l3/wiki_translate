@@ -1,11 +1,11 @@
-h1. [[Hadoop]] 
+h1. Hadoop 
 ----
 [[PageOutline]]
 
 
 h2. Description 
 
-_From the [[Hadoop]] wiki:_ [[Hadoop]] is a framework for running applications on large clusters built of commodity hardware. The [[Hadoop]] framework transparently provides applications both reliability and data motion. [[Hadoop]] implements a computational paradigm named  !Map/Reduce, where the application is divided into many small fragments of work, each of which may be executed or reexecuted on any node in the cluster. In addition, it provides a distributed file system (HDFS) that stores data on the compute nodes, providing very high aggregate bandwidth across the cluster. Both !Map/Reduce and the distributed file system are designed so that node failures are automatically handled by the framework.
+_From the Hadoop wiki:_ Hadoop is a framework for running applications on large clusters built of commodity hardware. The Hadoop framework transparently provides applications both reliability and data motion. Hadoop implements a computational paradigm named  !Map/Reduce, where the application is divided into many small fragments of work, each of which may be executed or reexecuted on any node in the cluster. In addition, it provides a distributed file system (HDFS) that stores data on the compute nodes, providing very high aggregate bandwidth across the cluster. Both !Map/Reduce and the distributed file system are designed so that node failures are automatically handled by the framework.
 
 h2. Version
 
@@ -22,14 +22,14 @@ h2. Platforms
 h2. Local Documentation
 
 h3. Modules
-p. [[Hadoop]] requires the following module and its prerequisite to run:
+p. Hadoop requires the following module and its prerequisite to run:
 ** @apps/hadoop/0.20.2@
 ** @apps/jdk/1.6.0_22.x86_64@
-p. To run [[Hadoop]] on the cluster, ensure that you use @module initadd@ to make the changes persistent.  See [wiki:Modules] for more information.
+p. To run Hadoop on the cluster, ensure that you use @module initadd@ to make the changes persistent.  See [wiki:Modules] for more information.
 
 h3. Submitting Jobs
 
-p. First, you will need a [[Hadoop]]-aware application to run within the [[Hadoop]] environment. For this example, we will use the !WordCount Java program cited in the [[Hadoop]] documentation:
+p. First, you will need a Hadoop-aware application to run within the Hadoop environment. For this example, we will use the !WordCount Java program cited in the Hadoop documentation:
 
 p. Save this example code to a file called !WordCount.java:
 
@@ -93,7 +93,7 @@ p(((((((((((. }
 p((((((((. }
 }}} 
 
-p. We will use this code against [[Hadoop]] to determine the word frequencies in a file (a listing of how many times a particular word exists in the file) 
+p. We will use this code against Hadoop to determine the word frequencies in a file (a listing of how many times a particular word exists in the file) 
 
 p. Now, we shall compile it and create a jar:
 
@@ -118,7 +118,7 @@ module add apps/jdk/1.6.0_22.x86_64 apps/hadoop/0.20.2
 
 . $HADOOP_HOME/conf/hadoop-sge.sh
 
-# This configures the environment and starts the [[Hadoop]] Cluster.
+# This configures the environment and starts the Hadoop Cluster.
 hadoop_start
 
 # I took a text copy of the King James Version of the Bible as test data (http://download.o-bible.com:8080/kjv.gz)
@@ -134,7 +134,7 @@ hadoop jar ./wordcount.jar org.myorg.WordCount properkjv.txt output
 # Copying the output files from the HDFS filesystem
 hadoop fs -get output hadoop-output.$JOB_ID
 
-# Stops the [[Hadoop]] cluster.
+# Stops the Hadoop cluster.
 hadoop_end
 }}}
 

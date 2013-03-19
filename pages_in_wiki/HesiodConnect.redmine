@@ -6,8 +6,8 @@ p. In order to work with Hesiod, you will need the Windows HPC Server 2008R2 Cli
 
 h2. Supported Applications on Hesiod
 p. We're currently supporting 
-** Ansoft [[HFSS]] versions 13 and 14
-** [[Ansys]] 13 and 14
+** Ansoft HFSS versions 13 and 14
+** Ansys 13 and 14
 
 p. This month, we're rolling out support for
 ** Comsol 4.2a

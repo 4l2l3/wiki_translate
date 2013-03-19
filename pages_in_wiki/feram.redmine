@@ -1,10 +1,10 @@
-h1. [[feram]]
+h1. feram
 ----
 [[PageOutline]]
 
 h2. Description
-_From the [[feram]] website:_ "[[feram]] is a fast molecular dynamics (MD) simulator for bulk and thin-film ferroelectrics and relaxors."
-**  "[[feram]] on sourceforge":http://loto.sourceforge.net/[[feram]]/#LABEL-3
+_From the feram website:_ "feram is a fast molecular dynamics (MD) simulator for bulk and thin-film ferroelectrics and relaxors."
+**  "feram on sourceforge":http://loto.sourceforge.net/feram/#LABEL-3
 
 h2. Version
 ** *0.19.06*
@@ -15,29 +15,29 @@ h2. Authorized Users
 h2. Platform
 ** @circe@ cluster
 
-h2. Running [[feram]] Jobs on the Cluster
+h2. Running feram Jobs on the Cluster
 
 h3. Modules
 p. Before running a job, you must first set up your environment properly.  
-** module load apps/[[feram]]/0.19.06
+** module load apps/feram/0.19.06
 
-p. To run [[feram]] on the cluster, ensure that you use @module add@ prior to using any executables.  See [wiki:Modules] for more information.
+p. To run feram on the cluster, ensure that you use @module add@ prior to using any executables.  See [wiki:Modules] for more information.
 
 h3. Distributed Parallel
-p. This script can be copied into your job directory (the folder with your input files and database files) and modified so that you can submit batch processes to the queue.   This script is provided as an example only.  Your SGE and [[feram]] executables, tools, and options will vary.  View the sections on input files, output files, and examples on the [[feram]] website "[[feram]] website"] for more about [[feram]] options.  For help on submitting jobs to the queue, see our [wiki:gridEngineUsers "GridEngine User's Guide":http://loto.sourceforge.net/[[feram]]/#LABEL-9.
+p. This script can be copied into your job directory (the folder with your input files and database files) and modified so that you can submit batch processes to the queue.   This script is provided as an example only.  Your SGE and feram executables, tools, and options will vary.  View the sections on input files, output files, and examples on the feram website "feram website"] for more about feram options.  For help on submitting jobs to the queue, see our [wiki:gridEngineUsers "GridEngine User's Guide":http://loto.sourceforge.net/feram/#LABEL-9.
 
 {{{
 #$ -N job_name
 #$ -l h_rt=hh:mm:ss,pcpus=4
 #$ -cwd
 
-module load apps/[[feram]]/0.19.06
+module load apps/feram/0.19.06
 
-mpirun -np ${NSLOTS} [[feram]]_mpi in.[[feram]]
+mpirun -np ${NSLOTS} feram_mpi in.feram
 }}}
 
 h2. Vendor Documentation
-** "About [[feram]]":http://loto.sourceforge.net/[[feram]]/#LABEL-3
+** "About feram":http://loto.sourceforge.net/feram/#LABEL-3
 
 h2. More Job Information
 p. See the following for more detailed job submission information:

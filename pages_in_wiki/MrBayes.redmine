@@ -24,7 +24,7 @@ h2. Modules
 ** @apps/mrbayes/3.1.2@
 p. To run !MrBayes on the cluster, ensure that you use @module load@ before executing the program.  The prerequisites will be automatically added when loading the application module.  See [wiki:Modules] for more information.
 
-h2. [[Run]]ning
+h2. Running
 
 p. The !MrBayes Manual is essential to understanding the application and making the most of it.  The manual and this page should be all you need to get started with your simulations.
 
@@ -32,7 +32,7 @@ h3. Interactive Mode
 
 !MrBayes can be run in an interactive mode from the command line.  After loading the module as specified above, simply execute "mb" in the terminal window.  This will drop you into the !MrBayes interactive shell.  Typing "help" will give you a list of !MrBayes command options, and typing "quit" will exit the program.  More information about how to perform an analysis can be found in the Tutorial section of the manual.
 
-p(((((. Note:  Please limit your use of the interactive mode to familiarizing yourself with the commands and quick analyses.  [[Run]]ning the interactive mode consumes login node resources shared by all.  Please be courteous.
+p(((((. Note:  Please limit your use of the interactive mode to familiarizing yourself with the commands and quick analyses.  Running the interactive mode consumes login node resources shared by all.  Please be courteous.
 
 h3. Batch Mode
 
@@ -66,7 +66,7 @@ or simply execute the following within your job directory:
 }}}
 
 p. This will request a job name of mrbayes_test, 4 processors via MPI, and a 1 hour run-time.  The batch and output file names are also specifed here, without any space before or after the comma.  
-p. For more information on [[Run]], see [wiki:[[Run]] "The GridEngine [[Run]] Utility"].
+p. For more information on Run, see [[Run|The GridEngine Run Utility]].
 
 h3. Guides
 p. The following folders contain the !MrBayes manual and input parameters for known tutorials:

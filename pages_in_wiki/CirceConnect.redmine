@@ -37,7 +37,7 @@ p(. 1. [[gridEngineIntro|Introduction to GridEngine]] - This guide will provide 
 p(. 2. Locate the documentation for your application on this list: [SoftwarePortal "Available Applications"].  If its not there, then we haven't worked with it before.  You can either compile and install it yourself, or contact us to have it done for you.
 p(. 3. [[gridEngineUsers|GridEngine User's Guide]] - This guide is a user manual for !GridEngine, creating custom job scripts, scheduling, etc.  This may not be necessary reading if your application is documented in our list.  This is useful for users who are integrating their own applications and writing their own submit scripts.  Links to more advanced documentation are also provided.
 p(. 4. [[CirceHardware|Available Hardware]] - This page provides a breakdown of all the HPC hardware that is part of Circe.  This is useful for referencing our resources or determining how best to compile or prepare your application.
-p(. 5. [wiki:[[Modules]] "Environment [[Modules]]"] - Environment [[Modules]] give you access to applications and features on Circe.  Taking the time to learn their use is essential for making the most of Circe.
+p(. 5. [[Modules|Environment Modules]] - Environment Modules give you access to applications and features on Circe.  Taking the time to learn their use is essential for making the most of Circe.
 
 h3. Running Graphical Applications
 p. In order to run graphical applications such as Comsol, Matlab, Mathematica, or HFSS, please see the documentation for the [CirceDesktop "Circe NX Desktop Environment"].

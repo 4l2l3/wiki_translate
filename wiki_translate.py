@@ -140,7 +140,8 @@ def do_links(text_in):
 		text_out = text_out.replace(turl,new_turl)
 
 	#TRAC		WikiPageName
-	wikis_pat = re.compile('(?<= )[-A-Za-z0-9\.]+(?= )')
+	#wikis_pat = re.compile('(?<= )[-A-Za-z0-9\.]+(?= )')
+	wikis_pat = re.compile(' [-A-Za-z0-9\.]+? ')
 	words = wikis_pat.findall(text_out)#.split() wasn't working how i wanted
 	replaced = []#don't do multiple replace()
 	for word in words:

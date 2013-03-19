@@ -64,7 +64,7 @@ p. Disclaimer: This procedure was tested on a Fedora machine. Your mileage may v
 
 p(((. 1. Get the installation executable from https://rc.usf.edu/isos/Maple/.  Log into the server using your NetID and password. If your computer is a 64-bit machine, download Maple16LinuxX86_64Installer.bin. Otherwise, download Maple16Linux32Installer.bin.
 p(((. 2. Open a terminal and become root on your machine via 'su -' or 'sudo su -'.
-p(((. 3. [[Run]] the installation wizard by:
+p(((. 3. Run the installation wizard by:
 {{{
 sh /path/to/installer.bin
 }}}
@@ -101,7 +101,7 @@ p(((. 11. Click "Done" to exit the installer.
 p(((. 
 p. You should be able to launch Maple by double clicking on the Maple 16 icon in the !Applications/Maple 16 directory.
 ----
-h2. [[Run]]ning Maple on Circe
+h2. Running Maple on Circe
 
 h3. Modules
 

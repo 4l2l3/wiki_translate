@@ -1,8 +1,8 @@
-h1. [[Modules]]
+h1. Modules
 ----
 [[PageOutline]]
 
-p. [[Modules]] provides an easy-to-use way to modify your environment to support applications and libraries.  This allows system administrators to create template files that contain all of the necessary environment information for a user to use an application.  It also simplifies a user's environment, removing extraneous paths from variables and including only those that a user needs.  We've installed modules 3.2.6 and have created a number of Module files for the various installed applications.  Some examples for using modules appear below.
+p. Modules provides an easy-to-use way to modify your environment to support applications and libraries.  This allows system administrators to create template files that contain all of the necessary environment information for a user to use an application.  It also simplifies a user's environment, removing extraneous paths from variables and including only those that a user needs.  We've installed modules 3.2.6 and have created a number of Module files for the various installed applications.  Some examples for using modules appear below.
 
 ** *Please Note*: Whether you are running an application as a batch job or not, you must have the appropriate module loaded into your environment in order to get access to your application!
 
@@ -11,17 +11,17 @@ p. Here is a list of common 'module' commands
 h3. Get a List of Available Applications
 {{{
 [brs@login0 ~]$ module avail
-------------------------- /opt/admin/[[Modules]]/versions --------------------------
+------------------------- /opt/admin/Modules/versions --------------------------
 3.2.6
 
---------------------- /opt/admin/[[Modules]]/3.2.6/modulefiles ---------------------
+--------------------- /opt/admin/Modules/3.2.6/modulefiles ---------------------
 apps/R/2.6.0                    apps/opencv/unknown
 apps/R/2.6.1                    apps/p4vasp/0.3.7
 apps/abinit/5.4.4               apps/paml/3.15
 ...
 }}}
-** *Please Note*: This is NOT the current list of modules.  [[Modules]] listed with @module avail@ are the current and up-to-date listing.
-h3. Show Currently Loaded [[Modules]]
+** *Please Note*: This is NOT the current list of modules.  Modules listed with @module avail@ are the current and up-to-date listing.
+h3. Show Currently Loaded Modules
 p. This shows a list of all modules that are currently loaded into the environment.  PATH, MANPATH, LD_LIBRARY_PATH, and other variables may be modified or initialized to support the application you are using.  
 {{{
 [brs@login0 ~]$ module list
@@ -75,7 +75,7 @@ p. When you are done using an application or you simply no longer want it loaded
 h3. Crafting your own Module Files
 p. You can create your own module files for your locally installed applications by placing them in a directory structure under @~/.modulefiles@
 
-h3. Purge All [[Modules]]
+h3. Purge All Modules
 p. To unload all modules, issue the following command:
 {{{
 [brs@login0 ~]$ module purge
