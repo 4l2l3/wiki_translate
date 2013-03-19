@@ -38,13 +38,13 @@ p. Information about individual executables can also be found using man pages, i
 
 p. In order to start a simulation, you will need a protein or molecule to play with. Go to http://www.rcsb.org/pdb/ and grab one in @.pdb@ format.  Follow the below procedure for simple molecules.
 
-** [[Run]] @pdb2gmx -f &lt;pdb file&gt;@ file(s).
+** Run @pdb2gmx -f &lt;pdb file&gt;@ file(s).
 
-** [[Run]] @editconf@ with proper parameters to change the dimensions of the box.
+** Run @editconf@ with proper parameters to change the dimensions of the box.
 
-** [[Run]] @genbox@ with proper parameters to add solvate.
+** Run @genbox@ with proper parameters to add solvate.
 
-** [[Run]] @grompp@ to pre-process your input data.
+** Run @grompp@ to pre-process your input data.
 
 p(. ** An additional file is needed for @grompp@ called `grommp.mdp`. You can grab a copy of it from `apps/gromacs/4.5.5/share/gromacs/tutor/methanol` and modify it in your local directory as needed.
 
@@ -58,7 +58,7 @@ run -n 16 -m 8G -N gmx_test -e SDP="mpi_s" gromacs/4.5.5
 run -n 16 -m 8G -N gmx_test -e ARGV="-v -xvg xmgr",SDP="mpi_d" gromacs/4.5.5
 p(((. }}}
 
-p. For more information on Run, see [[Run|The GridEngine [[Run]] Utility]].
+p. For more information on Run, see [[Run|The GridEngine Run Utility]].
 
 h3. Benchmarks and Tests
 

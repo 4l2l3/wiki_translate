@@ -25,7 +25,7 @@ p. Before running a job, you must first set up your environment properly. Here a
 p. To run ANSYS on the cluster, ensure that you use @module add@ prior to using any [[Ansys]] executables.  See [wiki:Modules] for more information.
 
 h3. Interactive Execution via NX
-p. [[Run]] the following to get a 4 processor session for [[Ansys]] using the interactive GUI (NOTE: you must be logged into Circe via the NX client for this to work):
+p. Run the following to get a 4 processor session for [[Ansys]] using the interactive GUI (NOTE: you must be logged into Circe via the NX client for this to work):
 
 {{{
 qrsh -l ppn=4,nodes=1 -display "$(hostname)${DISPLAY}" $(which ansysdis140) -g
