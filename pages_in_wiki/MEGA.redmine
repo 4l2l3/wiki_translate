@@ -1,11 +1,11 @@
-h1. MEGA
+h1. [[MEGA]]
 [[PageOutline]]
-*Last Modified*: [[LastModified(MEGA)]]
+*Last Modified*: [[LastModified([[MEGA]])]]
 h2. Description 
 
 p. From - http://www.megasoftware.net/
 
-p. MEGA is an integrated tool for conducting automatic and manual sequence alignment, inferring phylogenetic trees, mining web-based databases, estimating rates of molecular evolution, and testing evolutionary hypotheses. 
+p. [[MEGA]] is an integrated tool for conducting automatic and manual sequence alignment, inferring phylogenetic trees, mining web-based databases, estimating rates of molecular evolution, and testing evolutionary hypotheses. 
 
 h2. Version
 
@@ -19,23 +19,23 @@ h2. Platforms
 
 ** @circe@ cluster
 
-h2. Running MEGA on the Cluster
-p. The following describes what is necessary to run MEGA on CIRCE.
+h2. Running [[MEGA]] on the Cluster
+p. The following describes what is necessary to run [[MEGA]] on CIRCE.
 h3. Modules
-p. MEGA requires the following module file and some prerequisites to run:
+p. [[MEGA]] requires the following module file and some prerequisites to run:
 ** @apps/mega/4.02@
-h3. Installing MEGA
-p. Prior to the first time running MEGA you will need to install the application to your home directory. This is necessary because the application attempts to writes configuration settings to the application directory. Because of this behavior the program works much better when it is copied to a users home directory.
+h3. Installing [[MEGA]]
+p. Prior to the first time running [[MEGA]] you will need to install the application to your home directory. This is necessary because the application attempts to writes configuration settings to the application directory. Because of this behavior the program works much better when it is copied to a users home directory.
 {{{
 [jfargen@login1 ~]$ /opt/apps/mega/4.02/install-mega
 }}}
 
-h3. Starting MEGA
-p. Simply type @ mega @ at the command line.  The first time that MEGA starts you will need to follow the on screen instructions for the Mozilla ActiveX plugin and then MEGA should load normally. This application requires an ssh connection with 'X11 forwarding' enabled. For further instruction, please see our [[XWin32Install|XWin32 Installation]] documentation.
+h3. Starting [[MEGA]]
+p. Simply type @ mega @ at the command line.  The first time that [[MEGA]] starts you will need to follow the on screen instructions for the Mozilla ActiveX plugin and then [[MEGA]] should load normally. This application requires an ssh connection with 'X11 forwarding' enabled. For further instruction, please see our [[XWin32Install|XWin32 Installation]] documentation.
 {{{
 [jfargen@login1 ~]$ mega
 }}}
 
-h3. MEGA Documentation
+h3. [[MEGA]] Documentation
 ** http://www.megasoftware.net/
 

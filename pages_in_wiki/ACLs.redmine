@@ -56,7 +56,7 @@ p. Let's say I no longer want Jane to see my ~/.bash_profile.  I can run the fol
 {{{
 [jdoe@login0 ~]$ acltool revoke user:jane ~/.bash_profile
 }}}
-p. If Jane does not have access to any other files or directories in my home directory, I can remove all ACLs leading up to the file, too:
+p. If Jane does not have access to any other files or directories in my home directory, I can remove all [[ACLs]] leading up to the file, too:
 {{{
 [jdoe@login0 ~]$ acltool revokeall user:jane ~/.bash_profile
 }}}
@@ -65,7 +65,7 @@ p. I'll also revoke all access to the admin group while I'm at it:
 [jdoe@login0 ~]$ acltool revokeall group:admin ~/documents/admin
 }}}
 
-h2. Displaying Current ACLs
+h2. Displaying Current [[ACLs]]
 p. I'd like to see who has access to my ~/documents directory.  To do this, I can run
 {{{
 [brs@login0 ~]$ acltool show documents
@@ -106,8 +106,8 @@ p. You may notice that when the permissions are dumped for directories, there is
 
 p. You may also notice that @acltool show@ dumps out the permissions of the parent directory as well.  This is important since your parent directories need to provide enough access to the child directories that you are sharing.
 
-h2. Removing all ACLs from a File or Directory
-p. Let's say you want to remove all ACLs from a given file or directory:
+h2. Removing all [[ACLs]] from a File or Directory
+p. Let's say you want to remove all [[ACLs]] from a given file or directory:
 {{{
 acltool reset ~/.bash_profile
 }}}
@@ -115,13 +115,13 @@ or
 {{{
 acltool reset ~/documents
 }}}
-will remove any and all ACLs from the file ~/.bash_profile and the directory ~/documents and all files inside of ~/documents
+will remove any and all [[ACLs]] from the file ~/.bash_profile and the directory ~/documents and all files inside of ~/documents
 
-h2. Resetting ACLs to System Defaults
-p. Its possible that you may want to remove all ACLs from files and directories under your home directory.  To do this, run
+h2. Resetting [[ACLs]] to System Defaults
+p. Its possible that you may want to remove all [[ACLs]] from files and directories under your home directory.  To do this, run
 {{{
 [jdoe@login0 ~]$ acltool defaults
-p. This will completely remove ALL ACLs on your home directory!!! Do you wish to continue (Y/N)? Y
+p. This will completely remove ALL [[ACLs]] on your home directory!!! Do you wish to continue (Y/N)? Y
 }}}
 
 h2. Caveats
@@ -130,4 +130,4 @@ h2. Caveats
 [jdoe@login0 ~]$ acltool grant user:jane rw ~jdoe
 }}}
 
-2. Only add ACLs to files or directories *within* your home directory and *not* to your home directory itself.  This is a much safer practice and much less prone to error.
+2. Only add [[ACLs]] to files or directories *within* your home directory and *not* to your home directory itself.  This is a much safer practice and much less prone to error.

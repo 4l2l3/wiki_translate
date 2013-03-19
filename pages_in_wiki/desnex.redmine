@@ -29,13 +29,13 @@ ssh -Y user@circe.rc.usf.edu
 p((((((. }}}
 p((((((. If you're logging in from a Windows machine, you need to Enable X11 Forwarding in whatever ssh client you're using.  Make sure you've followed our [[XWin32Install|XWin32 Guide]] to configure your connection to Circe.
 
-p((. 2. Now you will want to start an interactive job, but you do NOT want to just run @qlogin@ with no options. This is because the default session time limit is 10 minutes, and you won't get to choose which queue you run your job in. Please refer to [[gridEngineInter|this wiki]] to learn how to run interactive jobs properly. Run an interactive job by typing the following:
+p((. 2. Now you will want to start an interactive job, but you do NOT want to just run @qlogin@ with no options. This is because the default session time limit is 10 minutes, and you won't get to choose which queue you run your job in. Please refer to [[gridEngineInter|this wiki]] to learn how to run interactive jobs properly. [[Run]] an interactive job by typing the following:
 p((((((. {{{
 qlogin -l mpj=3G,h_rt=01:00:00,nodes=1,ppn=4
 p((((((. }}}
 p((((((. That will give you a shell directly on a compute node with 4 smp processors, 3 Gigs of free memory, and 1 hour of runtime. You will have to run this command (with your desired options) whenever you run Designer in the future. This is just an example, and your requirements may vary.
 
-p(((. 3. Run the following:
+p(((. 3. [[Run]] the following:
 p((((((. {{{
 module add apps/ansoft/designer-6.0
 p((((((. }}}

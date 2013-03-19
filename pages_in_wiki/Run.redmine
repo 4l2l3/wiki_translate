@@ -112,7 +112,7 @@ p(. -v | --verbose  - See what is really going on.
 
 h3. Example Usage
 
-p(. 1. Run "Matlab" in an interactive session:
+p(. 1. [[Run]] "Matlab" in an interactive session:
 p(((((. 
 p((((. [user@host ~]$ run matlab
 
@@ -120,24 +120,24 @@ p((((. and run Matlab with more available memory:
 
 p((((. [user@host ~]$ run -m 2G matlab
 
-p(. 2. Run a parallel application with 16 processors that needs 10 hours to 
+p(. 2. [[Run]] a parallel application with 16 processors that needs 10 hours to 
 p((((. complete.  Notify you when complete and submit to the queue:
 
 p((((. [user@host ~]$ run -b -p -n 16 -t 10:00:00 -m myemail@mydomain.com myapp
 
-p(. 3. Run an application from a profile that includes parallel support. In
+p(. 3. [[Run]] an application from a profile that includes parallel support. In
 p((((. this case, we choose ANSYS 12 defined by the module 'apps/ansys/12':
 p((((. We see here that the command argument can be a valid executable OR 
 p((((. an 'apps' module:
 
 p((((. [user@host ~]$ run -n 4 ansys/12
 
-p(. 4. Run an application from a profile that requires environment options and 
+p(. 4. [[Run]] an application from a profile that requires environment options and 
 p((((. four processors per node:
 
 p((((. [user@host ~]$ run -n 16 -c 4 -e INPUT_DB=mydb.gdb gromacs/4.0.5
 
-p(. 5. Run an application in parallel that is tuned for a specific processor
+p(. 5. [[Run]] an application in parallel that is tuned for a specific processor
 p((((. feature:
 
 p((((. [user@host ~]$ run -p -n 32 -f sse4e -t 4:00:00 myapp
@@ -145,7 +145,7 @@ p((((. [user@host ~]$ run -p -n 32 -f sse4e -t 4:00:00 myapp
 h3. Defining an Application Profile
 p. On Circe, generally every module defined in apps/ is an application profile for @run@.  This is easily accomplished by adding a few simple environment variable definitions to the module itself.  Let's look at NAMD for example:
 
-*apps/namd/2.7b2*
+*apps/[[namd]]/2.7b2*
 {{{
 #%Module1.0#####################################################################
 ##
@@ -154,20 +154,20 @@ p. On Circe, generally every module defined in apps/ is an application profile f
 ## modulefiles/dotpath.  Generated from dot.in by configure.
 ##
 proc ModulesHelp { } {
-	global namdversion
+	global [[namd]]version
 
-	puts stderr "\tAdds namd 2.7b2 to your environment"
+	puts stderr "\tAdds [[namd]] 2.7b2 to your environment"
 }
 
-module-whatis	"adds  to namd your PATH environment variable"
+module-whatis	"adds  to [[namd]] your PATH environment variable"
 
 # for Tcl script use only
-set		namdversion		2.7b2
-append-path 	PATH			/opt/apps/namd/2.7b2
+set		[[namd]]version		2.7b2
+append-path 	PATH			/opt/apps/[[namd]]/2.7b2
 append-path	LD_LIBRARY_PATH		/opt/lib/tcl8.3/lib
 setenv		PAR_MODE		openmpi
 setenv		BATCH_MODE		true
-setenv		EXEC			"parallel_exec namd2 *.conf"
+setenv		EXEC			"parallel_exec [[namd]]2 *.conf"
 
 module rm openmpi compilers
 module add compilers/intel/10.1.018.x86_64 openmpi/1.4.1-x86_64-intel-10.1.018
@@ -180,14 +180,14 @@ p. In this file, you should be conscious of the following 3 variables:
 
 p. These three variables help glue the module with the run command so that the best options are set as defaults when referencing the application as a profile.  So, we know that when we run
 {{{
-[user@circe ~]$ run -n 8 -t 1:00:00 namd/2.7b2
+[user@circe ~]$ run -n 8 -t 1:00:00 [[namd]]/2.7b2
 }}}
 we're actually running 
 {{{
-[user@circe apoa1]$ run -b -p openmpi -n 8 -t 1:00:00 parallel_exec namd2 *.conf
+[user@circe apoa1]$ run -b -p openmpi -n 8 -t 1:00:00 parallel_exec [[namd]]2 *.conf
 }}}
 
-p. The other nice thing about application profiles is the ability to tightly integrate resource requests with the execution parameters.  Let's look at HFSS, for instance.  When running !ConfigureSoftware.bash, prior to execution, you can define upper level memory limits and the number of CPUs to use for the simulation.  Let's see how we use these values within an application profile:
+p. The other nice thing about application profiles is the ability to tightly integrate resource requests with the execution parameters.  Let's look at [[HFSS]], for instance.  When running !ConfigureSoftware.bash, prior to execution, you can define upper level memory limits and the number of CPUs to use for the simulation.  Let's see how we use these values within an application profile:
 
 {{{
 #%Module1.0#####################################################################
@@ -199,15 +199,15 @@ p. The other nice thing about application profiles is the ability to tightly int
 proc ModulesHelp { } {
 	global hfssversion
 
-	puts stderr "\tAdds HFSS v.11 to your environment"
+	puts stderr "\tAdds [[HFSS]] v.11 to your environment"
 }
 
-module-whatis	"adds HFSS to your PATH environment variable"
+module-whatis	"adds [[HFSS]] to your PATH environment variable"
 
 # for Tcl script use only
 set		hfssversion 		11.0
 #append-path 	PATH			/opt/apps/ansoft/hfss11
-append-path 	PATH			/opt/apps/HFSS-11_2/hfss11
+append-path 	PATH			/opt/apps/[[HFSS]]-11_2/hfss11
 if { [ module-info mode load ] } {
 	system	/opt/bin/hfss_config
 }

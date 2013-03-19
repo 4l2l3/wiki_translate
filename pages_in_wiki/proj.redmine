@@ -4,7 +4,7 @@ h1. PROJ
 
 h2. Description
 
-_From the PROJ.4 user manual: proj is a standard Unix filter function which converts geographic longitude and latitude coordinates into cartesian coordinates by means of a wide variety of cartographic projection functions. For many of the projection functions the inverse conversion can also be performed._ 
+_From the PROJ.4 user manual: [[proj]] is a standard Unix filter function which converts geographic longitude and latitude coordinates into cartesian coordinates by means of a wide variety of cartographic [[proj]]ection functions. For many of the [[proj]]ection functions the inverse conversion can also be performed._ 
 
 h2. Version
 
@@ -23,21 +23,21 @@ h2. Local Documentation
 h3. Modules
 
 p. PROJ.4 requires the following module file to run:
-** @apps/proj/4.7.1@
+** @apps/[[proj]]/4.7.1@
 p. See [wiki:Modules] for more information.
 
 h3. Running Proj
 
-p. The PROJ manual is essential to understanding the application and making the most of it.  The guide and this page should be all you need to get started with your simulations.  There are also man pages for proj, geod, and cs2cs available after the module is loaded.
-** The PROJ user manual and addendums are available in /opt/apps/proj/manual/
+p. The PROJ manual is essential to understanding the application and making the most of it.  The guide and this page should be all you need to get started with your simulations.  There are also man pages for [[proj]], geod, and cs2cs available after the module is loaded.
+** The PROJ user manual and addendums are available in /opt/apps/[[proj]]/manual/
 
-p. For short jobs (&gt; 10 min.), users can run proj directly from the command line.  For longer jobs, please use a qsub script.  For help on submitting jobs to the queue, see our [[gridEngineUsers|GridEngine User's Guide]].  PROJ commands can also be called from within other scripts.
+p. For short jobs (&gt; 10 min.), users can run [[proj]] directly from the command line.  For longer jobs, please use a qsub script.  For help on submitting jobs to the queue, see our [[gridEngineUsers|GridEngine User's Guide]].  PROJ commands can also be called from within other scripts.
 
 
 h4. Benchmarks
 
 p. The following folder contains input parameters for known PROJ tutorials:
-** /opt/apps/proj/example
+** /opt/apps/[[proj]]/example
 
 h4. More Job Information
 

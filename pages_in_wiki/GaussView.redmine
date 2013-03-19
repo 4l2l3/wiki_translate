@@ -3,7 +3,7 @@ h1.
 [[PageOutline]]
 
 h2. Description
-_From !GaussView Documentation:_ !GaussView is a graphical user interface designed to help you prepare input for submission to Gaussian and to examine graphically the output that Gaussian produces.
+_From !GaussView Documentation:_ !GaussView is a graphical user interface designed to help you prepare input for submission to [[Gaussian]] and to examine graphically the output that [[Gaussian]] produces.
 
 h2. Version
 
@@ -34,7 +34,7 @@ p. See [wiki:Modules] for more information.
 p. If you have properly configured an X11 session, you should see the full !GaussView interface.  If you haven't configured X11, please see our [[XWin32Install|XWin32 Installation]] documentation.
 
 h3. Caveats
-!GaussView expects to be aware of the Gaussian installation in order to invoke it from the GUI. Therefore you must load the 09b01 module first.  When starting gview, error messages may appear concerning this.
+!GaussView expects to be aware of the [[Gaussian]] installation in order to invoke it from the GUI. Therefore you must load the 09b01 module first.  When starting gview, error messages may appear concerning this.
 
 
 h4. Reporting Bugs

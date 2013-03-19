@@ -5,7 +5,7 @@ h1. SIESTA
 h2. Description
 _From the NERSC website:_ "SIESTA is an O(N) DFT code for electronic structure calculations and ab initio molecular dynamics simulations for molecules and solids. It uses norm-conserving pseudopotentials and linear combination of numerical atomic orbitals (LCAO) basis set."
 
-** "SIESTA website on nersc.gov":http://www.nersc.gov/users/software/applications/materials-science/siesta/
+** "SIESTA website on nersc.gov":http://www.nersc.gov/users/software/applications/materials-science/[[siesta]]/
 
 h2. Version
 ** *3.1*
@@ -21,14 +21,14 @@ h2. Running SIESTA Jobs on the Cluster
 
 h3. Modules
 p. Before running a job, you must first set up your environment properly.  Below is the required module file.
-** apps/siesta/3.1
+** apps/[[siesta]]/3.1
 p. See [wiki:Modules] for more information.
 
 h3. Submitting Jobs
 p. The SIESTA manual is essential to understanding the application and making the most of it.  The guide and this page should help you to get started with your simulations.
-** "SIESTA Manuals":http://www.icmab.es/dmmis/leem/siesta/Documentation/Manuals/siesta-3.1-manual/index.html
+** "SIESTA Manuals":http://www.icmab.es/dmmis/leem/[[siesta]]/Documentation/Manuals/[[siesta]]-3.1-manual/index.html
 or
-** /apps/siesta/3.1/Docs/siesta-3.1-manual.pdf
+** /apps/[[siesta]]/3.1/Docs/[[siesta]]-3.1-manual.pdf
 
 p. Below is an example submit script:
 
@@ -37,15 +37,15 @@ p. Below is an example submit script:
 #$ -l h_rt=hh:mm:ss,pcpus=4
 #$ -cwd
 
-module load apps/siesta/3.1
+module load apps/[[siesta]]/3.1
 
-mpirun -np $NSLOTS siesta &lt; atom.sm
+mpirun -np $NSLOTS [[siesta]] &lt; atom.sm
 }}}
 
 h3. Tutorials and Tests
 p. The following contain input parameters for known SIESTA Examples:
-** /apps/siesta/3.1/Tests
-** /apps/siesta/3.1/Tutorials
+** /apps/[[siesta]]/3.1/Tests
+** /apps/[[siesta]]/3.1/Tutorials
 ** http://www.gromacs.org/Documentation/Tutorials
 
 h3. More Job Information

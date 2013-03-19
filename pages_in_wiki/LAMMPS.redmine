@@ -1,10 +1,10 @@
-h1. LAMMPS
+h1. [[LAMMPS]]
 ----
 [[PageOutline]]
 
 h2. Description 
 
-_From the LAMMPS manual:_ LAMMPS is a classical molecular dynamics code that models an ensemble of particles in a liquid, solid, or gaseous state. It can model atomic, polymeric, biological, metallic, granular, and coarse-grained systems using a variety of force fields and boundary conditions.  LAMMPS stands for Large-scale Atomic / Molecular Massively Parallel Simulator. 
+_From the [[LAMMPS]] manual:_ [[LAMMPS]] is a classical molecular dynamics code that models an ensemble of particles in a liquid, solid, or gaseous state. It can model atomic, polymeric, biological, metallic, granular, and coarse-grained systems using a variety of force fields and boundary conditions.  [[LAMMPS]] stands for Large-scale Atomic / Molecular Massively Parallel Simulator. 
 h2. Version
 
 ** *2Nov10*
@@ -19,32 +19,32 @@ h2. Platforms
 
 h2. Local Documentation
 
-h3. Modules
+h3. [[Modules]]
 
 p. Before running a job, you must first set up your environment properly. Here are the required module files: 
 ** @apps/lammps/2Nov10@
-p. To run LAMMPS on the cluster, ensure that you use module add prior to using any LAMMPS executables. See Modules for more information. 
+p. To run [[LAMMPS]] on the cluster, ensure that you use module add prior to using any [[LAMMPS]] executables. See [[Modules]] for more information. 
 
-h3. Running LAMMPS on the Cluster
+h3. [[Run]]ning [[LAMMPS]] on the Cluster
 
-p. The LAMMPS manual is essential to understanding the application and making the most of it.  The guide and this page should be all you need to get started with your simulations.
-** LAMMPS Manual: http://lammps.sandia.gov/doc/Manual.html
+p. The [[LAMMPS]] manual is essential to understanding the application and making the most of it.  The guide and this page should be all you need to get started with your simulations.
+** [[LAMMPS]] Manual: http://lammps.sandia.gov/doc/Manual.html
 
-p. LAMMPS runs efficiently on single-processor desktop or laptop machines, but is designed for parallel computers. It will run on any parallel machine that compiles C++ and supports the MPI message-passing library. This includes distributed- or shared-memory parallel machines and Beowulf-style clusters.  In the most general sense, LAMMPS integrates Newton's equations of motion for collections of atoms, molecules, or macroscopic particles that interact via short- or long-range forces with a variety of initial and/or boundary conditions. For computational efficiency LAMMPS uses neighbor lists to keep track of nearby particles. The lists are optimized for systems with particles that are repulsive at short distances, so that the local density of particles never becomes too large. On parallel machines, LAMMPS uses spatial-decomposition techniques to partition the simulation domain into small 3d sub-domains, one of which is assigned to each processor. Processors communicate and store "ghost" atom information for atoms that border their sub-domain. LAMMPS is most efficient (in a parallel sense) for systems whose particles fill a 3d rectangular box with roughly uniform density.  
+p. [[LAMMPS]] runs efficiently on single-processor desktop or laptop machines, but is designed for parallel computers. It will run on any parallel machine that compiles C++ and supports the MPI message-passing library. This includes distributed- or shared-memory parallel machines and Beowulf-style clusters.  In the most general sense, [[LAMMPS]] integrates Newton's equations of motion for collections of atoms, molecules, or macroscopic particles that interact via short- or long-range forces with a variety of initial and/or boundary conditions. For computational efficiency [[LAMMPS]] uses neighbor lists to keep track of nearby particles. The lists are optimized for systems with particles that are repulsive at short distances, so that the local density of particles never becomes too large. On parallel machines, [[LAMMPS]] uses spatial-decomposition techniques to partition the simulation domain into small 3d sub-domains, one of which is assigned to each processor. Processors communicate and store "ghost" atom information for atoms that border their sub-domain. [[LAMMPS]] is most efficient (in a parallel sense) for systems whose particles fill a 3d rectangular box with roughly uniform density.  
 
-p. The following LAMMPS Tools are also installed:
+p. The following [[LAMMPS]] Tools are also installed:
 
-** binary2txt	     -  convert a LAMMPS dump file from binary to ASCII text
+** binary2txt	     -  convert a [[LAMMPS]] dump file from binary to ASCII text
 ** chain	     -  create a data file of bead-spring chains
 ** createatoms	     -  generate lattices of atoms within a geometry
 ** data2xmovie	     -  convert a data file to a snapshot that xmovie can viz
 ** eam_database	     -  tool to generate EAM alloy potential files
 ** ipp		     -  input pre-processor Perl tool for creating input scripts
-** lmp2arc	     -  convert LAMMPS output to Accelrys Insight format
-** lmp2cfg	     -  convert LAMMPS output to CFG files for Atomeye viz
-** lmp2traj	     -  convert LAMMPS output to contour, density profiles
+** lmp2arc	     -  convert [[LAMMPS]] output to Accelrys Insight format
+** lmp2cfg	     -  convert [[LAMMPS]] output to CFG files for Atomeye viz
+** lmp2traj	     -  convert [[LAMMPS]] output to contour, density profiles
 ** micelle2d	     -  create a data file of small lipid chains in solvent
-** msi2lmp	     -  use Accelrys Insight code to setup LAMMPS input
+** msi2lmp	     -  use Accelrys Insight code to setup [[LAMMPS]] input
 ** restart2data	     -  convert a binary restart file to an input data file
 ** thermo_extract    -  C program for extracting thermo info from log file
 ** xmovie	     -  a quick/simple viz package (2d projections of 3d)
@@ -53,7 +53,7 @@ p. Please view the associated README files in /opt/apps/lammps/2Nov10/tools for 
 
 h3. Submitting Jobs
 
-p. Invoke the @run@ utility to perform the simulation. For more information on Run, see [[Run|The GridEngine Run Utility]].
+p. Invoke the @run@ utility to perform the simulation. For more information on [[Run]], see [wiki:[[Run]] "The GridEngine [[Run]] Utility"].
 p(((. {{{
 # From within the directory that contains your input file, use the -e option below:
 run -n 2 -N lmp_run_test -t 02:00:00 -e INPUT="in.lmptest" lammps/2Nov10

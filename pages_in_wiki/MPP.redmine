@@ -4,9 +4,9 @@ h1. Mass Profiler Pro
 
 h2. Description 
 
-_From Agilent:_ Agilent Mass Profiler Professional (MPP) software is a powerful chemometrics platform designed to exploit the high information content of MS data and can be used in any MS-based differential analysis to determine relationships among two or more sample groups and variables. MPP provides advanced statistical analysis and visualization tools for GC/MS, LC/MS, CE/MS and ICP-MS data analysis. MPP also integrates smoothly with Agilent Mass Hunter Workstation, Spectrum Mill and Chem Station software and is the only platform that provides integrated identification/annotation of compounds and integrated pathway analysis for metabolomic and proteomic studies. The system also enables Automated Sample Class Prediction that revolutionizes mass spectrometer-based qualitative analysis of unknown samples in many applications.
+_From Agilent:_ Agilent Mass Profiler Professional ([[MPP]]) software is a powerful chemometrics platform designed to exploit the high information content of MS data and can be used in any MS-based differential analysis to determine relationships among two or more sample groups and variables. [[MPP]] provides advanced statistical analysis and visualization tools for GC/MS, LC/MS, CE/MS and ICP-MS data analysis. [[MPP]] also integrates smoothly with Agilent Mass Hunter Workstation, Spectrum Mill and Chem Station software and is the only platform that provides integrated identification/annotation of compounds and integrated pathway analysis for metabolomic and proteomic studies. The system also enables Automated Sample Class Prediction that revolutionizes mass spectrometer-based qualitative analysis of unknown samples in many applications.
 
-** "MPP Website":http://www.chem.agilent.com/en-US/products-services/Software-Informatics/Mass-Profiler-Professional-Software/Pages/default.aspx
+** "[[MPP]] Website":http://www.chem.agilent.com/en-US/products-services/Software-Informatics/Mass-Profiler-Professional-Software/Pages/default.aspx
 
 h2. Versions
 
@@ -28,7 +28,7 @@ p(. To log onto whpc-login.rc.usf.edu, you will need to use a remote desktop cli
 * From a Windows machine, launch "Remote Desktop Connection" and specify "whpc-login.rc.usf.edu" for the 'Computer' field.
 
 h3. Submitting Jobs
-p. Once logged onto the machine, double-click the desktop shortcut for MPP master to open the graphical user interface to begin working with the MPP software.
+p. Once logged onto the machine, double-click the desktop shortcut for [[MPP]] master to open the graphical user interface to begin working with the [[MPP]] software.
 
 h3. Documentations and Videos
 p. Vendor documentation and video tutorials can be found for "MassProfilerPro" on the "All Programs" menu using the Windows "Start" button.

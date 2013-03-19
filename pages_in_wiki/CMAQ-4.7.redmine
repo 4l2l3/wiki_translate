@@ -91,7 +91,7 @@ p. Copy @run.cctm.tut_day1@ and modify the new file as follows:
 &gt; #set GC_ICfile = ICON_cb4_M_32_99TUT02_profile
 }}}
 
-p. Run the next day's run by submitting the script, @run.cctm.tut_day2@.
+p. [[Run]] the next day's run by submitting the script, @run.cctm.tut_day2@.
 
 h2. Tutorial
 p. After running both days of the 32 km, you are ready to run the nested 8 km.  Again, this section is directly from http://www.cmascenter.org/help/model_docs/cmaq/4.6/TUTORIAL_PROCEDURE.txt
@@ -321,7 +321,7 @@ p. One other module, @procan@, is included with the CMAQ distribution.  Follow t
 
 h3. 1
 p(. a. Change directory to @$M3HOME/scripts/procan@
-p(. b. Run the build script by executing
+p(. b. [[Run]] the build script by executing
 p((((. {{{
 [user@host pdm]$ ./bldit.pacp &amp;&gt; bldit.pacp.out
 }}}

@@ -38,7 +38,7 @@ itrc-adm1.rc.usf.edu
 h3. Mapped Network Drive Configuration
 p. It is HIGHLY RECOMMENDED that you map your Circe home directory to your S: drive and save all FDTD solution work to it.  This way, it is available on the cluster when you decide its time to run a distributed analysis.  For information on performing this process, see the following guide: [[CirceDataAccess|Accessing Your Data]]
 -----
-h2. Running FDTD Solutions on the Cluster
+h2. [[Run]]ning FDTD Solutions on the Cluster
 p. Below is an example of how to run FDTD Solutions on Circe using your S: drive and locally-installed FDTD Solutions software.
 
 ** From my workstation, I've saved my project to @S:\nanowire\nanowire_1.fsp@
@@ -54,7 +54,7 @@ p(((. {{{
 ** I can view the status of my job with the @qstat@ command.  
 ** Once the simulation is complete, I can open S:\nanowire\nanowire_1.fsp from FDTD Solutions on my workstation to view the results.
 
-p. For more information on using the @run@ command, see [[Run|The GridEngine Run Utility]].
+p. For more information on using the @run@ command, see [wiki:[[Run]] "The GridEngine [[Run]] Utility"].
 
 h4. Benchmarks
 p. The following folder contains example projects for FDTD Solutions :

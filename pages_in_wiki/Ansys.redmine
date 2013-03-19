@@ -15,29 +15,29 @@ h2. Authorized Users
 h2. Platforms
 ** @circe@ cluster
 
-h2. Running Ansys Jobs on the Cluster
+h2. [[Run]]ning [[Ansys]] Jobs on the Cluster
 
 h3. Modules
 p. Before running a job, you must first set up your environment properly. Here are the required module files:
 
 ** apps/ansys/14.0
 
-p. To run ANSYS on the cluster, ensure that you use @module add@ prior to using any Ansys executables.  See [wiki:Modules] for more information.
+p. To run ANSYS on the cluster, ensure that you use @module add@ prior to using any [[Ansys]] executables.  See [wiki:Modules] for more information.
 
 h3. Interactive Execution via NX
-p. Run the following to get a 4 processor session for Ansys using the interactive GUI (NOTE: you must be logged into Circe via the NX client for this to work):
+p. [[Run]] the following to get a 4 processor session for [[Ansys]] using the interactive GUI (NOTE: you must be logged into Circe via the NX client for this to work):
 
 {{{
 qrsh -l ppn=4,nodes=1 -display "$(hostname)${DISPLAY}" $(which ansysdis140) -g
 }}}
 
-p. To run Ansys Workbench using the GUI, use the following updated command:
+p. To run [[Ansys]] Workbench using the GUI, use the following updated command:
 
 {{{
 qrsh -l ppn=4,nodes=1 -display "$(hostname)${DISPLAY}" $(which runwb2)
 }}}
 
-p. To run Ansys Fluent using the GUI, a few more steps must be taken, in addition to using another command sequence.
+p. To run [[Ansys]] Fluent using the GUI, a few more steps must be taken, in addition to using another command sequence.
 
 1.  You must take note of the CIRCE login node that you're presently logged into.  You should see something like *[user@wh-520-5-24 ~]$*.  The current valid hosts are wh-520-5-24, wh-520-5-25, wh-520-5-26, and wh-520-5-27.
 
@@ -48,7 +48,7 @@ p. To run Ansys Fluent using the GUI, a few more steps must be taken, in additio
 :7009.0
 }}}
 
-3.  You now have your display variables necessary to use the Ansys GUI on a compute node within the cluster.  You now need to run the command below:
+3.  You now have your display variables necessary to use the [[Ansys]] GUI on a compute node within the cluster.  You now need to run the command below:
 
 {{{
 qlogin -l ppn=4,nodes=1 
@@ -70,7 +70,7 @@ p. Establishing builtin session to host wh-520-3-7 ...
 export DISPLAY=wh-520-5-27:7009
 }}}
 
-6.)  The last step is to load the Ansys module as described above and then start Ansys Fluent by typing "fluent" on the console:
+6.)  The last step is to load the [[Ansys]] module as described above and then start [[Ansys]] Fluent by typing "fluent" on the console:
 
 {{{
 fluent
