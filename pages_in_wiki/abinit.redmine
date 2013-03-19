@@ -34,7 +34,7 @@ h3. Submitting a Job
 p. The ABINIT user guide is essential to understanding the application and making the most of it.  The guide and this page should help you to get started with your simulations.
 ** "ABINIT User Guide":http://www.abinit.org/documentation/helpfiles/for-v6.12/users/new_user_guide.html
 
-p. Information about the abinit executable can be found using man pages, i.e "man abinit", after you have loaded the ABINIT module. 
+p. Information about the [[abinit]] executable can be found using man pages, i.e "man abinit", after you have loaded the ABINIT module. 
 
 p. Make sure to run your job from your $WORK directory. Use the a submit script like the following to run ABINIT:
 
@@ -48,7 +48,7 @@ p. Make sure to run your job from your $WORK directory. Use the a submit script 
 module purge
 module load apps/abinit/6.12.3
 
-mpirun abinit &lt; test.files &gt; test.log
+mpirun [[abinit]] &lt; test.files &gt; test.log
 }}}
 
 p. Your submit scripts will vary depending on your individual needs.

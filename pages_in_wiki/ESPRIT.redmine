@@ -4,7 +4,7 @@ h1. ESPRIT
 *Last Modified:* [[LastModified(ESPRIT)]]
 h2. Description
 
-p. ESPRIT is a computational algorithm that can be used to estimate microbial diversity based on 16S rRNA shotgun sequences. It consists of four modules: (1) removes low-quality reads using various criteria, (2) computes pairwise distances of reads, (3) groups reads into OTUs at different dissimilarity levels, and (4) performs statistical inference to estimate species richness.
+p. [[ESPRIT]] is a computational algorithm that can be used to estimate microbial diversity based on 16S rRNA shotgun sequences. It consists of four modules: (1) removes low-quality reads using various criteria, (2) computes pairwise distances of reads, (3) groups reads into OTUs at different dissimilarity levels, and (4) performs statistical inference to estimate species richness.
 p(. 
 
 h2. Version 
@@ -23,13 +23,13 @@ h2. Local Documentation
 p. The user guide can be found at */opt/apps/esprit/20090715/esprit_user_guide.pdf*.
 h3. Modules
 
-p. ESPRIT requires the following module file to run:
+p. [[ESPRIT]] requires the following module file to run:
 ** @apps/esprit/20090715@
 p. See [wiki:Modules] for more information.
 
 h3. Creating and Submitting a Job
 h4. Job Considerations
-p. In order to submit a ESPRIT job, you will need to have two things:
+p. In order to submit a [[ESPRIT]] job, you will need to have two things:
 ** an input FASTA file that is pre-trimmed
 ** the number of pieces the FASTA file should be split into for parallelization
 
@@ -40,7 +40,7 @@ p. It is recommended that you do not split the file into more than 10 pieces, si
 p. It is also recommended that you run your job from /work to ensure integrity of results. 
 
 h4. Submit the Job
-p. Ensure that the ESPRIT module is loaded in the persistent environment:
+p. Ensure that the [[ESPRIT]] module is loaded in the persistent environment:
 {{{
 [aastaneh@login1 ~]$ module initload
 
@@ -48,7 +48,7 @@ bash initialization file $HOME/.modules loads modules:
 p((((((((. null apps/esprit/20090715
 }}}
 
-p. Create a directory for the ESPRIT run:
+p. Create a directory for the [[ESPRIT]] run:
 {{{
 [aastaneh@login1 ~]$ mkdir $WORK/esprit-job1
 }}}

@@ -5,21 +5,21 @@ import re
 def do_headers(text_in):
 	text_out = text_in 
 
-	whole_header_pattern = re.compile('=+ [^=\n]+ =+') #TODO: modify this regex to make sure starts(^) and ends($) the line?? Because python treats the entire file as one line, this match only works for single-line files. I've modified the regex to just use the trailing newline.
+	whole_header_pattern = re.compile('=+ [^=\r\n]+ =+') #TODO: modify this regex to make sure starts(^) and ends($) the line?? Because python treats the entire file as one line, this match only works for single-line files. I've modified the regex to just use the trailing newline.
 	all_headers = whole_header_pattern.finditer(text_out)
 	
-	header_text = re.compile('[\w\s]+') 
+	header_text = re.compile('[-a-zA-Z0-9 ]+')
 	count_eq = re.compile('=+') 
 
 	for header in all_headers:
-		cur_hd_txt = header_text.search(header.group()) #should only be one set of text per header
+		cur_hd_txt = header_text.search(header.group()).group() #should only be one set of text per header
 		cur_eq_list = count_eq.findall(header.group())
 		eq_num1 = len(cur_eq_list[0])
 		eq_num2 = len(cur_eq_list[1])
 		if eq_num1 != eq_num2:
 			print "Equal signs don't match in current header: '"+header+"'"#throw error
 			continue #just ignore current header, don't translate
-		new_hd = "h"+str(eq_num1)+"."+cur_hd_txt.group().rstrip()#rstrip gets rid of our trailing space
+		new_hd = "h"+str(eq_num1)+"."+cur_hd_txt.rstrip()#rstrip gets rid of our trailing space
 		#It appears there's a glitch with header.start(), it's matching '= header_text ===' instead of '=== header_text ===' and therefore .start() returns 2 spaces before our full match begins. Also does the same with 4 equal signs.
 		#before = text_in[:(header.span()[0])]
 		#after = text_in[(header.span()[1]):]
@@ -141,14 +141,14 @@ def do_links(text_in):
 
 	#TRAC		WikiPageName
 	#wikis_pat = re.compile('(?<= )[-A-Za-z0-9\.]+(?= )')
-	wikis_pat = re.compile(' [-A-Za-z0-9\.]+? ')
+	wikis_pat = re.compile(' [-A-Za-z0-9\.]+?[ \n]')
 	words = wikis_pat.findall(text_out)#.split() wasn't working how i wanted
 	replaced = []#don't do multiple replace()
 	for word in words:
 		s_word = word.strip() #eliminate whitespace
 		if wiki_pages.count(s_word) and not replaced.count(s_word):#we're good and we link it
 			replaced.append(s_word)
-			text_out = text_out.replace(word, "[["+ s_word +"]]")
+			text_out = text_out.replace(word, " [["+ s_word +"]] ")#remember to keep leading/trailing whitespace
 	#REDMINE	[[WikiPageName]]
 
 	#TRAC		[wiki:WikiPageName "Title"]

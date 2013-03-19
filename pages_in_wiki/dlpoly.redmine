@@ -1,4 +1,4 @@
-h1. DL_POLY
+h1. DL
 [[PageOutline]]
 *Last Modified:* [[LastModified(dlpoly)]]
 
@@ -18,7 +18,7 @@ h2. Platforms
 
 ** @circe@ cluster
 
-h2. Running DL_POLY on the Cluster
+h2. Running DL
 p. The following describes what is necessary to run DL_POLY on the cluster.
 
 h3. Modules
@@ -50,7 +50,7 @@ p. Or, for DL_POLY 3.08:
 mpirun DLPOLY.Y-3.08
 }}}
 
-h3. DL_POLY documentation
+h3. DL
 ** Version 2: http://www.cse.scitech.ac.uk/ccg/software/DL_POLY/MANUALS/USRMAN2.19.pdf
 ** Version 3: http://www.cse.scitech.ac.uk/ccg/software/DL_POLY/MANUALS/USRMAN3.09.pdf
 

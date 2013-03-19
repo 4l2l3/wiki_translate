@@ -48,7 +48,7 @@ p. Use the following submit script as an example to run Dalton:
 #$ -o output.$JOB_ID
 
 module load apps/dalton/2.0
-mpirun dalton -N &lt;#_of_processors&gt; &lt;input_file&gt; &lt;mol_file&gt;
+mpirun [[dalton]] -N &lt;#_of_processors&gt; &lt;input_file&gt; &lt;mol_file&gt;
 }}}
 
 or simply execute the following within your job directory:

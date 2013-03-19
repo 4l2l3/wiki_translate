@@ -156,10 +156,10 @@ p. On Circe, generally every module defined in apps/ is an application profile f
 proc ModulesHelp { } {
 	global namdversion
 
-	puts stderr "\tAdds namd 2.7b2 to your environment"
+	puts stderr "\tAdds [[namd]] 2.7b2 to your environment"
 }
 
-module-whatis	"adds  to namd your PATH environment variable"
+module-whatis	"adds  to [[namd]] your PATH environment variable"
 
 # for Tcl script use only
 set		namdversion		2.7b2
@@ -199,10 +199,10 @@ p. The other nice thing about application profiles is the ability to tightly int
 proc ModulesHelp { } {
 	global hfssversion
 
-	puts stderr "\tAdds HFSS v.11 to your environment"
+	puts stderr "\tAdds [[HFSS]] v.11 to your environment"
 }
 
-module-whatis	"adds HFSS to your PATH environment variable"
+module-whatis	"adds [[HFSS]] to your PATH environment variable"
 
 # for Tcl script use only
 set		hfssversion 		11.0

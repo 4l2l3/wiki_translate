@@ -56,7 +56,7 @@ oases output_directory [options]
 
 *Note:*  The k-mer length and categories values have a maximum of 57.  See the Oases Manual or use '--help' for more information about Oases options and syntax.
 
-p. A colorspace version of the Oases executable is also available as 'oases_de'.  Beware that color- and sequence space are incompatible, hence separate sets of executables.  In other words, don’t try to hash sequence ﬁles with colorspace oases or vice-versa, under penalty of meaningless results!
+p. A colorspace version of the Oases executable is also available as 'oases_de'.  Beware that color- and sequence space are incompatible, hence separate sets of executables.  In other words, don’t try to hash sequence ﬁles with colorspace [[oases]] or vice-versa, under penalty of meaningless results!
 
 h3. Manuals and Test Data
 p. Oases Program Manual

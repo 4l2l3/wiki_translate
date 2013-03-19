@@ -6,7 +6,7 @@ h2. Description
 
 _From Q&amp;A:_ MOtor Vehicle Emission Simulator (MOVES) is U.S. Environmental Protection Agency’s (EPA’s) state-of-the-art tool for estimating emissions from highway vehicles. The model is based on analyses of millions of emission test results and considerable advances in the Agency’s understanding of vehicle emissions.
 
-** "US EPA MOVES Website":http://www.epa.gov/otaq/models/moves/index.htm
+** "US EPA [[MOVES]] Website":http://www.epa.gov/otaq/models/moves/index.htm
 
 h2. Versions
 
@@ -28,7 +28,7 @@ p(. To log onto whpc-login.rc.usf.edu, you will need to use a remote desktop cli
 * From a Windows machine, launch "Remote Desktop Connection" and specify "whpc-login.rc.usf.edu" for the 'Computer' field.
 
 h3. Submitting Jobs
-p. Once logged onto the machine, double-click the desktop shortcut for MOVES master to open the graphical user interface to begin working with the MOVES software.
+p. Once logged onto the machine, double-click the desktop shortcut for [[MOVES]] master to open the graphical user interface to begin working with the [[MOVES]] software.
 
 h3. Getting Job Status and Progress Information
 p. Please see our [[WinHPCJobStatus|Windows HPC Job Information page]] for information on managing your jobs, viewing status, and tracking output.

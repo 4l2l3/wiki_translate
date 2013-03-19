@@ -38,7 +38,7 @@ p. Make sure to run your job from your $WORK directory. Use the a submit script 
 module purge
 module load apps/nwchem/6.1.1
 
-mpirun nwchem &lt;input_file&gt;
+mpirun [[nwchem]] &lt;input_file&gt;
 }}}
 
 h4. More Job Information

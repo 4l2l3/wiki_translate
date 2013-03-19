@@ -69,7 +69,7 @@ velvetg output_directory [options]
 
 p. See the Velvet Manual for more information about velvetg options and syntax.
 
-p. Colorspace versions of the Velvet executables are also available as 'velveth_de' and 'velvetg_de'.  Beware that color- and sequence space are incompatible, hence separate sets of executables.  In other words, don’t try to hash sequence ﬁles with colorspace velvet or vice-versa, under penalty of meaningless results!
+p. Colorspace versions of the Velvet executables are also available as 'velveth_de' and 'velvetg_de'.  Beware that color- and sequence space are incompatible, hence separate sets of executables.  In other words, don’t try to hash sequence ﬁles with colorspace [[velvet]] or vice-versa, under penalty of meaningless results!
 
 h3. Manuals and Test Data
 p. Velvet Program Manual

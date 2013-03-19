@@ -3,7 +3,7 @@ h1.
 
 
 p. This guide will help users understand how their jobs get executed and why they get the priority that they do.
-h2. Fair
+h2. Fair-Share Scheduling
 p. The !GridEngine installation at USF implements a Fair-Share-based scheduling system where individual utilization figures are used to determine the priority, in the queue, of that individual's next job relative to other users.  Theoretically, this should result in the following situation:
 
 ** Over the course of two weeks, user johnq submits over 100 jobs and consumes about 1000 hours of CPU time.  The system records this usage.

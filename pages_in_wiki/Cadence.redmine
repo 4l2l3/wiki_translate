@@ -3,7 +3,7 @@ h1. Cadence
 
 h2. Description 
 
-p. The Cadence toolset is a complete Integrated Circuit (IC) Electronic Design Automation (EDA) system used to devlop commercial analog, digital, mixed-signal and RF ICs and breadboards.
+p. The [[Cadence]] toolset is a complete Integrated Circuit (IC) Electronic Design Automation (EDA) system used to devlop commercial analog, digital, mixed-signal and RF ICs and breadboards.
 
 ** From: http://www2.ece.ohio-state.edu/cadence/
 
@@ -26,7 +26,7 @@ p. Requires 75dpi fonts to be installed.  Please install them from http://www.no
 
 h2. Running on Circe
 
-p. Running Cadence on Circe requires modules to be properly set as described below.
+p. Running [[Cadence]] on Circe requires modules to be properly set as described below.
 
 h3. Modules
 
@@ -50,7 +50,7 @@ p. NCSU CDKs:
 ** apps/cadence/ncsu/1.5.1
 ** apps/cadence/ncsu/1.6.0.beta
 
-p. To run any Cadence tools on the cluster, ensure that you use @module add@ prior to using any Cadence executables.  See [wiki:Modules] for more information.
+p. To run any [[Cadence]] tools on the cluster, ensure that you use @module add@ prior to using any [[Cadence]] executables.  See [wiki:Modules] for more information.
 
 h3. Examples
 h4. Digital Layout

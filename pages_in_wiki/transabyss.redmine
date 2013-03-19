@@ -1,4 +1,4 @@
-h1. Trans
+h1. Trans-ABySS
 [[PageOutline]]
 
 h2. Description 
@@ -19,7 +19,7 @@ h2. Platforms
 
 ** @circe@ cluster
 
-h2. Running Trans
+h2. Running Trans-ABySS Jobs on the Cluster
 
 h3. Modules
 

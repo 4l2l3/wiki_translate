@@ -1,4 +1,4 @@
-h1. X
+h1. X-Win32
 [[PageOutline]]
 
 h2. Description
@@ -10,7 +10,7 @@ h2. Downloading the Software and License File
 ** Point your browser to: [https://rc.usf.edu/isos/XWin32/2012/]. A login prompt will appear, requesting your NetID and password.
 ** Download @X-Win32_2012.msi@ (the installer).
 
-h2. Install the X
+h2. Install the X-Win32 Executable
 ** Double-Click on @X-Win32_2012.msi@. Follow the on-screen directions and perform the "Complete Install" onto your workstation or home computer.
 
 h2. Set License Server
@@ -21,7 +21,7 @@ h2. Set License Server
 
 h2. Configure a Connection to Circe with XWin32 and PuTTY
 p. This is the only supported configuration for using XWin32 with Circe for displaying graphical X11 applications remotely.  
-h3. First
+h3. First-Time Configuration
 p(. 1. Ensure that XWin32 is running (you will see its icon in the System Tray).
 p(. 2. Download and Install the Putty Windows Installer: http://the.earth.li/~sgtatham/putty/latest/x86/putty-0.60-installer.exe
 p(. 3. Start PuTTY from the Start Menu.

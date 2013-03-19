@@ -1,4 +1,4 @@
-h1. Job Run Time
+h1. Job [[Run]] Time
 ----
 [[PageOutline]]
 
@@ -21,7 +21,7 @@ p. Your job's runtime will fall into the range of one of the four available queu
 
 p. The general rule of thumb is that the shorter your job runtime, the more quickly your job should be started.
 
-h2. Determining Job Run Time
+h2. Determining Job [[Run]] Time
 p. Only benchmarking or profiling your code will provide a reasonable time estimate, but there are some rules you can go by when attempting to make an educated guess:
 
 ** *Embarrassingly Parallel* or *Course-Grained* tasks tend to scale linearly or near-linearly.  Generally, you can divide the time it takes to run on one processor by the number of processors you are planning to run on.

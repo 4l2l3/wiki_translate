@@ -3,7 +3,7 @@ h1. Meep
 *Last Modified*: [[LastModified(Meep)]]
 h2. Description
 
-_From the Meep Homepage, http://ab-initio.mit.edu/wiki/index.php/Meep_: Meep (or MEEP) is a free finite-difference time-domain (FDTD) simulation software package developed at MIT to model electromagnetic systems, along with our MPB eigenmode package. Its features include: 
+_From the [[Meep]] Homepage, http://ab-initio.mit.edu/wiki/index.php/Meep_: [[Meep]] (or MEEP) is a free finite-difference time-domain (FDTD) simulation software package developed at MIT to model electromagnetic systems, along with our MPB eigenmode package. Its features include: 
 **  Free software under the GNU GPL.
 ** Simulation in 1d, 2d, 3d, and cylindrical coordinates.
 ** Distributed memory parallelism on any system supporting the MPI standard. Portable to any Unix-like system (GNU/Linux is fine).
@@ -15,7 +15,7 @@ _From the Meep Homepage, http://ab-initio.mit.edu/wiki/index.php/Meep_: Meep (or
 ** Arbitrary material and source distributions.
 ** Field analyses including flux spectra, frequency extraction, and energy integrals; completely programmable.
 ** Multi-parameter optimization, root-finding, integration, etcetera (via libctl). 
-p. Meep officially stands for MIT Electromagnetic Equation Propagation, but we also have several unofficial meanings of the acronym. 
+p. [[Meep]] officially stands for MIT Electromagnetic Equation Propagation, but we also have several unofficial meanings of the acronym. 
 
 h2. Version
 
@@ -29,11 +29,11 @@ h2. Platform
 
 ** @circe@ cluster
 
-h2. Running Meep on the Cluster
-p. It is highly recommended that you read the tutorials on using Meep from the Meep webpage:
-** Meep tutorial: http://ab-initio.mit.edu/wiki/index.php/Meep_Tutorial
+h2. Running [[Meep]] on the Cluster
+p. It is highly recommended that you read the tutorials on using [[Meep]] from the [[Meep]] webpage:
+** [[Meep]] tutorial: http://ab-initio.mit.edu/wiki/index.php/Meep_Tutorial
 
-h3. Meep Utilities
+h3. [[Meep]] Utilities
 p. Ensure that you've loaded the module @apps/meep/1.1.1@ into your environment to access the various HDF5 utilities for converting and working with output data.  Load it persistently so that we can avoid having to deal with it again later:
 
 {{{
@@ -41,7 +41,7 @@ p. Ensure that you've loaded the module @apps/meep/1.1.1@ into your environment 
 [user@login0 ~]$ module initadd apps/meep/1.1.1
 }}}
 
-p. Loading the Meep module will automatically provide the following dependencies:
+p. Loading the [[Meep]] module will automatically provide the following dependencies:
 ** compilers/intel/10.1.018.x86_64
 ** openmpi/1.2.7-x86_64-intel-10.1.018
 ** apps/szip/2.0
@@ -51,7 +51,7 @@ p. Loading the Meep module will automatically provide the following dependencies
 ** apps/harminv/1.3.1
 
 h3. Running a Parallel Job
-p. To run Meep, we will use the @run@ command which creates our job script and submits our job to the cluster for us.  We will also use the /work filesystem since Meep relies on HDF5's parallel I/O facilities:
+p. To run Meep, we will use the @run@ command which creates our job script and submits our job to the cluster for us.  We will also use the /work filesystem since [[Meep]] relies on HDF5's parallel I/O facilities:
 {{{
 [user@login0 ~]$ cd $WORK
 [user@login0 user]$ ls
@@ -59,7 +59,7 @@ input.ctl
 [user@login0 user]$ run -b -t 1:00:00 -n 4 meep-mpi input.ctl
 ...
 }}}
-p. Here, we run Meep with 4 processors for one hour, specifying the input ctl file `input.ctl`.  See the tutorials linked above for information on creating the ctl (Scheme-based) input file.  For more information on using the @run@ command, please see [wiki:Run here].
+p. Here, we run [[Meep]] with 4 processors for one hour, specifying the input ctl file `input.ctl`.  See the tutorials linked above for information on creating the ctl (Scheme-based) input file.  For more information on using the @run@ command, please see [wiki:Run here].
 
 h2. More Job Information
 p. See the following for more detailed job submission information:

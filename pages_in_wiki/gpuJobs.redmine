@@ -1,4 +1,4 @@
-h1. GPU
+h1. GPU-Enabled Jobs
 p. Research Computing hosts 9 compute nodes with GPU capabilities and depending on uptake, will probably expand this capability.  Requesting GPU resources requires additional parameters to be added to your job script in order to land on the right equipment and ensure that your job is dispatched correctly.
 
 h2. Basic GPU Job

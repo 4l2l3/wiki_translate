@@ -30,7 +30,7 @@ p. To run VASP, simply execute the following within your job directory:
 [user@host ~]$ run -n 16 -f i_ib -t 1:00:00 vasp/5.2.8
 }}}
 
-p. This will request 16 processors via MPI, InfiniBand interconnect (@-f i_ib@) and a 1 hour run-time.
+p. This will request 16 processors via MPI, [[InfiniBand]] interconnect (@-f i_ib@) and a 1 hour run-time.
 
 p. For more information on Run, see [[Run|The GridEngine Run Utility]].
 
