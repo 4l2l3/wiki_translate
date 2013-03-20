@@ -27,20 +27,20 @@ The [[Maya]] documentation is essential to understanding the Rendering process. 
 Maya rendering on the cluster is very efficient as each frame is broken up into an individual task and uses whatever CPUs are available on the system.  Submitting a [[Maya]] rendering job is very trivial:
 
 First, load the [[Maya]] application module:
-{{{
+<pre>
 [user@host ~]$ module add apps/maya
-}}}
+</pre>
 
 Then, kick off your rendering job after uploading your [[Maya]] project binary to the system:
 
-{{{
+<pre>
 [user@host ~]$ Render_sge start myproject.mb 1-1000 standard
-}}}
+</pre>
 
 This will launch a distributed rendering job that will render 1000 frames from the myproject.mb file.  Frames will be stored in $WORK/maya/myproject.mb/
 
 Full command line options are below:
-{{{
+<pre>
 Command requires at least 1 argumen1:
 Render_sge &lt;"start"|"stop"|"status"&gt; &lt;filename&gt; &lt;frames&gt; &lt;"standard"|"gpu"&gt; [&lt;additional_render_args&gt;]
 
@@ -55,11 +55,11 @@ Examples:
   Check job status
      Render_sge status
      Render_sge status myproject.mb
-}}}
+</pre>
 
 Additional advanced render arguments can be passed at the very end of the command.  These arguments are listed and documented by running the Render command, show below:
 
-{{{
+<pre>
 [user@host ~]$ Render -h
 
 Usage: Render [options] filename
@@ -253,23 +253,23 @@ Any boolean flag will take the following values as TRUE: on, yes, true, or 1.
 Any boolean flag will take the following values as FALSE: off, no, false, or 0.
 
     e.g. -s 1 -e 10 -x 512 -y 512 -cam persp -mr:v 5 file.
-}}}
+</pre>
 
 h2. Post-Render Encoding
 
 You can also use our standard MPlayer-based MPEG4 encoder to assemble your frames into a full video.  This can be done using the following command:
 
-{{{
+<pre>
 [user@host ~]$ Encode_sge myproject.mb 4 25 1920 1080
-}}}
+</pre>
 
 This will encode a High-Def MPEG4 video file from the rendered frames in the render work directory.  The options are listed below:
 
-{{{
+<pre>
 [user@host ~]$ Encode_sge 
 Requires 5 arguments: 
    Encode_sge &lt;maya_project&gt; &lt;cpu_threads&gt; &lt;framerate&gt; &lt;x_res&gt; &lt;y_res&gt;
-}}}
+</pre>
 
 For more information on Run, see [[Run|The GridEngine Run Utility]].
 

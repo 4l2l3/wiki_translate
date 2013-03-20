@@ -21,15 +21,15 @@ Profilers insert code into your application that write out valuable statistics a
 
 h3. Monitor Programs
 Programs like 'top' [man (1) top] allow you to take periodic snapshots of a process during execution (usually every second) to continuously monitor CPU utilization, memory usage, and the process state (running, sleeping, waiting for disk, writing to disk, etc.)  To run top and view the details of your application, you'll need to know what node your process is running on.  For a serial process, this is pretty straight forward:
-{{{
+<pre>
 [user@login0 ~]$ qstat -u user -t
 job-ID  prior   name       user         state submit/start at     queue
 ------------------------------------------------------------------------------------
    1000 1.00000 my_job     user         r     10/09/2007 13:31:29 ib_volatile1.q@svc-3024-1-1
-}}}
+</pre>
 
 In this case, the job is running on svc-3024-1-1.  You can ssh into the host and run 'top' like so:
-{{{
+<pre>
 [user@login0 ~]$ ssh svc-3024-1-1
 [user@rcn-mx-0008]$ top
 top - 22:09:06 up 36 days,  6:05, 18 users,  load average: 0.99, 0.08, 0.03
@@ -41,11 +41,11 @@ Swap:  1048568k total,        0k used,   838572k free,  4214904k cached
   PID USER      PR  NI  VIRT   RES  SHR S %CPU %MEM    TIME+  COMMAND
  2859 user      15   0 19408 43632  844 R   99  1.1   0:03.91 myprocess
 ...
-}}}
+</pre>
 Here, you can see that your process is particularly CPU-bound.  It is in a running state, consuming 99% of the system's CPU resources while using only 1% of the system's memory.  The requirements for this sort of process would be relatively straight forward.
 
 How about when things get a little bit more intense?
-{{{
+<pre>
 [user@login0 ~]$ ssh svc-3024-1-1
 [user@svc-3024-1-1]$ top
 top - 22:09:06 up 36 days,  6:05, 18 users,  load average: 0.99, 0.08, 0.03
@@ -57,7 +57,7 @@ Swap:  1048568k total,  1209996k used,   838572k free,  4214904k cached
   PID USER      PR  NI  VIRT   RES  SHR S %CPU %MEM    TIME+  COMMAND
  2859 user      15   0 9112m 8912m  844 D   10 96.1   0:05.21 myprocess2
 ...
-}}}
+</pre>
 
 Here, we have a problem.  You can see the state (the column 'S') is 'D'.  This indicates that the process is waiting for either a read or a write to or from the disk.  If we look at the %MEM column, we see that 96.1% of the system's main memory has been utilized by the application.  And to top things off, nearly 1GB of swap space is being used.  Essentially, this program is using so much memory that
 
@@ -68,9 +68,9 @@ or
 In either case, this is bad news for our application and its performance.  We need a system with more memory.
 
 Since the current system has 8GB of RAM and the process is apparently using &gt;= 9GB of RAM, then we have a good basis for making a resource request:
-{{{
+<pre>
 #$ -l mpj=10G
-}}}
+</pre>
 This tells the scheduler to only run your job where at least 10GB of RAM is free to be used by your process.  Your job will not run unless there are hardware resources available to satisfy the request.  When the resources are found, say a node with 16GB of RAM, this particular job will run many orders of magnitude faster than on a swapped-out machine as in the example.
 
 ** *Note*: More information to come.

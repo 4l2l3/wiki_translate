@@ -26,16 +26,16 @@ The GRASS documentation is essential to understanding the application and making
 ** The GRASS user documentation and addendums are available on the GRASS-Wiki: http://grass.osgeo.org/wiki/
 
 Before you login to @circe@, you need to make sure you have X11 Forwarding enabled. If you're logging in from a UNIX/Linux system, you will need to do the following:
-      {{{
+      <pre>
 ssh -Y user@circe.rc.usf.edu
-      }}}
+      </pre>
       If you're logging in from a Windows machine, you need to Enable X11 Forwarding in whatever ssh client you're using.  Make sure you've followed our [[XWin32Install|XWin32 Guide]] to configure your connection to @circe@.
 
 The GRASS GUI can be called from any login node using the following command:
 
-{{{
+<pre>
 [user@login ~]$ grass64
-}}}
+</pre>
 
 h4. Benchmarks
 

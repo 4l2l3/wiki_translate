@@ -40,25 +40,25 @@ It is also recommended that you run your job from /work to ensure integrity of r
 
 h4. Submit the Job
 Ensure that the [[ESPRIT]] module is loaded in the persistent environment:
-{{{
+<pre>
 [aastaneh@login1 ~]$ module initload
 
 bash initialization file $HOME/.modules loads modules:
         null apps/esprit/20090715
-}}}
+</pre>
 
 Create a directory for the [[ESPRIT]] run:
-{{{
+<pre>
 [aastaneh@login1 ~]$ mkdir $WORK/esprit-job1
-}}}
+</pre>
 
 Copy your FASTA file into the directory:
-{{{
+<pre>
 [aastaneh@login1 ~]$ cp data/test.fas $WORK/esprit-job1
-}}}
+</pre>
 
 Finally, change into the job directory and run esprit_cc with the proper options. Press ENTER again to confirm the parameters.
-{{{
+<pre>
 [aastaneh@login1 esprit-job1]$ esprit_cc test.fas 5
 Specified input to be handled in 5 parts.
 The number of processes for the KMER distance and Needleman-Wunsh calculations are 15 and 25, respectively.
@@ -101,6 +101,6 @@ Dist 0.18 Seqs 17666 Clusters 1892
 Dist 0.19 Seqs 17666 Clusters 1891
 Dist 0.20 Seqs 17666 Clusters 1890
       4.85 secs in Statistical Analysis.
-}}}
+</pre>
 
 

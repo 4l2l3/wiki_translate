@@ -86,7 +86,7 @@ def do_paragraph_formatting(text_in):
 	#TRAC		{{{ blah blah blah }}}
 	#REDMINE	<pre> blah blah blah </pre>
 	#TODO: find/replace
-	curly_pat = re.compile('\{{3}.+?\}{3}')
+	curly_pat = re.compile('\{{3}.+?\}{3}', re.DOTALL)
 	curlies = curly_pat.findall(text_out)
 	for curly in curlies:
 		text_out = text_out.replace("{{{",'<pre>')

@@ -2,13 +2,13 @@ h1. File Permissions
 File permissions on Circe determine which users can access your files or directories.  
 h2. Overview
 Generally, it is desired that only YOU should have access to your files.  Given this general requirement, all home directories are set with the following permissions:
-{{{
+<pre>
 [jdoe@login0 ~]$ ls -ld ~jdoe
 drwx--x---+ 4 jdoe usfuser 4096 Mar  1 12:00 /home/j/jdoe
-}}}
+</pre>
 
 This says that only user jdoe can access the directory /home/b/brs.  There is also an x under the group field.  This can be safely ignored as it is used by the ACL (Access Control List) system.  By default, each directory has one ACL applied to it:
-{{{
+<pre>
 [jdoe@login0 ~]$ acltool show ~jdoe
 # file: /home/j/jdoe
 USER   jdoe      rwx     
@@ -17,7 +17,7 @@ GROUP  usfuser   ---
 mask             --x     
 other            ---     
 
-}}}
+</pre>
 
 The special user, @apache@ user have access to any part of your home directory.
 
@@ -25,48 +25,48 @@ By default, when you create a file or directory, it will be created with the def
 
 h2. Sharing Files
 To share a file that exists in the top-level of your home directory, e.g. @~/.bash_profile@, with another user, you can simply run:
-{{{
+<pre>
 [jdoe@login0 ~]$ acltool grant user:jane r ~/.bash_profile
-}}}
+</pre>
 I'd like my friend, jane, to be able to see some neat things I've added to my ~/.bash_profile, so I've shared it with her.  She wont be able to 
-{{{
+<pre>
 [jane@login0 ~]$ cd ~jdoe
 [jane@login0 jdoe]$ ls
 ls: .: Permission denied
-}}}
+</pre>
 see my files, but she will be able to see the file I shared with her:
-{{{
+<pre>
 [jane@login0 ~]$ cat .bash_profile
 ...
 ...
 ...
-}}}
+</pre>
 
 h2. Sharing Directories
 For directory trees, the same is true:
-{{{
+<pre>
 [jdoe@login0 ~]$ acltool grant group:admin rw ~/documents/admin
-}}}
+</pre>
 
 I've provided read-write access to the admin group of the ~/documents/admin folder under my home directory.  The admin users will not be able to see files in ~/ or ~/documents, but they will be able to read and write files inside of ~/documents/admin.
 
 h2. Revoking Access
 Let's say I no longer want Jane to see my ~/.bash_profile.  I can run the following command to get rid of this access:
-{{{
+<pre>
 [jdoe@login0 ~]$ acltool revoke user:jane ~/.bash_profile
-}}}
+</pre>
 If Jane does not have access to any other files or directories in my home directory, I can remove all [[ACLs]] leading up to the file, too:
-{{{
+<pre>
 [jdoe@login0 ~]$ acltool revokeall user:jane ~/.bash_profile
-}}}
+</pre>
 I'll also revoke all access to the admin group while I'm at it:
-{{{
+<pre>
 [jdoe@login0 ~]$ acltool revokeall group:admin ~/documents/admin
-}}}
+</pre>
 
 h2. Displaying Current ACLs
 I'd like to see who has access to my ~/documents directory.  To do this, I can run
-{{{
+<pre>
 [brs@login0 ~]$ acltool show documents
 # file: /home/j/jdoe/documents
 USER   jdoe      rwx     
@@ -79,10 +79,10 @@ user   apache    --x
 GROUP  usfuser   ---     
 mask             --x     
 other            ---     
-}}}
+</pre>
 
 I'll give my friend Dan read access to this folder and its files:
-{{{
+<pre>
 [jdoe@login0 ~]$ acltool grant user:dan r documents
 [jdoe@login0 ~]$ acltool show documents/
 # file: /home/j/jdoe/documents
@@ -100,33 +100,33 @@ GROUP  usfuser   ---
 mask             --x     
 other            ---     
 
-}}}
+</pre>
 You may notice that when the permissions are dumped for directories, there is always at least an 'x' permission.  This is normal.  Without this permission, a user would not be able to change into that directory, which would make sharing the files impossible.
 
 You may also notice that @acltool show@ dumps out the permissions of the parent directory as well.  This is important since your parent directories need to provide enough access to the child directories that you are sharing.
 
 h2. Removing all [[ACLs]] from a File or Directory
 Let's say you want to remove all [[ACLs]] from a given file or directory:
-{{{
+<pre>
 acltool reset ~/.bash_profile
-}}}
+</pre>
 or
-{{{
+<pre>
 acltool reset ~/documents
-}}}
+</pre>
 will remove any and all [[ACLs]] from the file ~/.bash_profile and the directory ~/documents and all files inside of ~/documents
 
 h2. Resetting [[ACLs]] to System Defaults
 Its possible that you may want to remove all [[ACLs]] from files and directories under your home directory.  To do this, run
-{{{
+<pre>
 [jdoe@login0 ~]$ acltool defaults
 This will completely remove ALL [[ACLs]] on your home directory!!! Do you wish to continue (Y/N)? Y
-}}}
+</pre>
 
 h2. Caveats
 1. Never grant write access to your home directory itself.  It will break things like SSH and is very insecure.  The following is a big NO-NO
-{{{
+<pre>
 [jdoe@login0 ~]$ acltool grant user:jane rw ~jdoe
-}}}
+</pre>
 
 2. Only add [[ACLs]] to files or directories *within* your home directory and *not* to your home directory itself.  This is a much safer practice and much less prone to error.

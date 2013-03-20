@@ -35,7 +35,7 @@ Provided are batch scripts for running Velvet executables on the cluster.  These
 h3. Serial Submit Script
 * Velveth helps you construct the dataset for the following program, velvetg, and indicate to the system what each sequence ﬁle represents.
 
-{{{
+<pre>
 #$ -N velvet_job_name
 #$ -l h_rt=hh:mm:ss
 #$ -cwd
@@ -45,7 +45,7 @@ h3. Serial Submit Script
 module add apps/velvet/1.1.05
 
 velveth output_directory hash_length {[-file_format] [-read_type] filename} [options]
-}}}
+</pre>
 
 *Note:*  The k-mer length and categories values have a maximum of 57.  See the Velvet Manual for more information about velveth options and syntax.
 
@@ -54,7 +54,7 @@ h3. Distributed Parallel
 
 Although velvetg saves some ﬁles during the process to avoid useless recalculations, the parameters are not saved from one run to the next.
 
-{{{
+<pre>
 #$ -N velvet_job_name
 #$ -l h_rt=hh:mm:ss, pcpus=4
 #$ -cwd
@@ -64,7 +64,7 @@ Although velvetg saves some ﬁles during the process to avoid useless recalcula
 module add apps/velvet/1.1.05
 
 velvetg output_directory [options]
-}}}
+</pre>
 
 See the Velvet Manual for more information about velvetg options and syntax.
 

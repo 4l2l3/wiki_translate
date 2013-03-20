@@ -24,7 +24,7 @@ See [[Modules]] for more information.
 h3. Distributed Parallel
 This script can be copied into your job directory (the folder with your input files and database files) and modified so that you can submit batch processes to the queue. This script is provided as an example only. Your SGE and !Autodock/Autogrid inputs, tools, and options will vary.  For help on submitting jobs to the queue, see our [[gridEngineUsers|GridEngine User's Guide]].
 
-{{{
+<pre>
 #$ -N autodock_job_name
 #$ -l h_rt=hh:mm:ss,pcpus=4
 #$ -cwd
@@ -33,7 +33,7 @@ module load apps/autogrid/4.2.3
 module load apps/autodock/4.2.3
 mpirun -np $NSLOTS autogrid4 [input parameters]
 mpirun -np $NSLOTS autodock4 [input parameters]
-}}}
+</pre>
 
 h3. User  
 ** /apps/legacy/autodock/4.2.3/AutoDock4.2_UserGuide.pdf

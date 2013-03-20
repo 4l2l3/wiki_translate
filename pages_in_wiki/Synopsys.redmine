@@ -26,7 +26,7 @@ Running [[Synopsys]] tools on Circe requires modules to be properly set as descr
 h3. Modules
 
 Individual tools, grouped by tool and specified by version.
-{{{ 
+<pre> 
 #!html
 &lt;table border=1 width=98% cellpadding=2 cellspacing=0&gt;
 &lt;tr&gt;&lt;th colspan=1 width=50%&gt;Tool&lt;/th&gt;&lt;th colspan=1 width=50%&gt;Module Choices&lt;/th&gt;&lt;/tr&gt;
@@ -72,16 +72,16 @@ Individual tools, grouped by tool and specified by version.
 &lt;tr&gt;&lt;td&gt;VCS Verification Library&lt;/td&gt;&lt;td&gt;apps/synopsys/vip/G-2012.03&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;CustomSim. (XA)&lt;/td&gt;&lt;td&gt;apps/synopsys/xa/F-2011.09-SP2&lt;/td&gt;&lt;/tr&gt;
 &lt;/table&gt;
-}}} 
+</pre> 
 
 To run any [[Synopsys]] tools on the cluster, ensure that you use @module add@ prior to using any [[Synopsys]] executables.  See [[Modules]] for more information.
 
 h3. Examples
 h4. hspice
-{{{
+<pre>
 module add apps/synopsys/hspice/F-2011.09-SP2
 hspice &lt;inputfile&gt;
-}}}
+</pre>
 
 h3. More Job Information
 See the following for more detailed job submission information:

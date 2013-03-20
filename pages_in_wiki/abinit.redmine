@@ -24,9 +24,9 @@ ABINIT requires the following module file to run:
 See [[Modules]] for more information.  
 
 ** *NOTE*: This module MUST be loaded persistently in order for the application to run.  Use
-   {{{
+   <pre>
 [user@host ~]$ module load apps/abinit/6.12.3
-}}}
+</pre>
    in order to properly execute ABINIT.
 
 h3. Submitting a Job
@@ -37,7 +37,7 @@ Information about the [[abinit]] executable can be found using man pages, i.e "m
 
 Make sure to run your job from your $WORK directory. Use the a submit script like the following to run ABINIT:
 
-{{{
+<pre>
 #$ -N &lt;job_name&gt;
 #$ -l h_rt=HH:MM:SS,pcpus=&lt;#_of_processors&gt;
 #$ -cwd
@@ -48,7 +48,7 @@ module purge
 module load apps/abinit/6.12.3
 
 mpirun [[abinit]] &lt; test.files &gt; test.log
-}}}
+</pre>
 
 Your submit scripts will vary depending on your individual needs.
 

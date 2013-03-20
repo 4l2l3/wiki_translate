@@ -31,19 +31,19 @@ To run [[SAS]] on the cluster, ensure that you use 'module add' prior to using a
 
 h3. Interactive Mode
 Before you login to @circe@, you need to make sure you have X11 Forwarding enabled. If you're logging in from a UNIX/Linux system, you will need to do the following:
-      {{{
+      <pre>
 ssh -Y user@circe.rc.usf.edu
-      }}}
+      </pre>
       If you're logging in from a Windows machine, you need to Enable X11 Forwarding in whatever ssh client you're using.  Make sure you've followed our [[XWin32Install|XWin32 Guide]] to configure your connection to @circe@.
 
 Next, use qlogin to enter an interactive shell. This example is for 48 hours using 4 cpu cores on 1 node with 8GB of shared memory:
-{{{
+<pre>
 qlogin -l h_rt=48:00:00,mpj=8.0G,nodes=1,ppn=4
-}}}
+</pre>
 Once you get dropped into an interactive shell on the execution host, you need to load the IDL module.
-{{{
+<pre>
 module load apps/sas/9.3
-}}}
+</pre>
 You should now be able to execute "sas" (graphical mode) from the command line.
 
 SAS can also be launched through the NX environment using the Applications menu.  For more information about the NX environment, please see our [[CirceDesktop|Circe NX Desktop]] documentation.
@@ -53,7 +53,7 @@ To run batch jobs on the Circe cluster, users will need to submit their jobs to 
 
 If, for example, you have a [[SAS]] script file named test.sas with all your tasks defined in it, you would set up a submit script to use the [[SAS]] kernel like this:
 
-{{{
+<pre>
 #!/bin/bash
 #$ -cwd
 #$ -N sas_test
@@ -63,7 +63,7 @@ If, for example, you have a [[SAS]] script file named test.sas with all your tas
 
 module load apps/sas/9.3 
 sas test.sas
-}}}
+</pre>
 
 SAS script files can either be created using a standard text editor or by exporting an existing worksheet from the graphical [[SAS]] interface in .sas format.
 

@@ -31,7 +31,7 @@ To run Trans-ABySS on the cluster, ensure that you use @module add@ prior to usi
 h3. How to Submit Jobs
 Make sure to run your job from your $WORK directory. Use the a submit script like the following to run Trans-ABySS:
 
-{{{
+<pre>
 #$ -N &lt;job_name&gt;
 #$ -l h_rt=HH:MM:SS,pcpus=&lt;#_of_processors&gt;
 #$ -cwd
@@ -42,7 +42,7 @@ module purge
 module load apps/trans-abyss/1.4.4
 
 python wrappers/trans_abyss.py &lt;arguments&gt; &lt;input_file(s)&gt;
-}}}
+</pre>
 
 Your submit scripts will vary depending on your individual needs.
 

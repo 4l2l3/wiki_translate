@@ -24,9 +24,9 @@ The !TeraChem user guide is essential to understanding the application and makin
 ** /opt/apps/terachem/1.0/TeraChem/userguide.pdf
 
 !TeraChem is quite easy to execute on Circe.  After creating your input, simply use [[Run @run@]] to execute the program:
-{{{
+<pre>
 [user@host ~]$ run -n 8 -N test_name -t 4:00:00 -e CONFIG=config.inp terachem/1.0
-}}}
+</pre>
 
 This will request 8 processors, a job name of test_name, a 4 hour run-time, and specify the input file as config.inp.
 

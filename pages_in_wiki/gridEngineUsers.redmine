@@ -37,17 +37,17 @@ h3. Submission for Serial Jobs
 
 A simple job for SGE would look like this
 
-{{{
+<pre>
 date
-}}}
+</pre>
 It is a simple script that calls *date* on whatever machine SGE decides to run your job on. Let's have a look at another submit file that does the same thing:
-{{{
+<pre>
 #$ -cwd
 #$ -N get_date
 #$ -l h_rt=00:30:00
 
 date
-}}}
+</pre>
 
 An overview of the options (following the character sequence "#$") is as follows:
 ** @-N (name)@: Set job name for queue
@@ -58,18 +58,18 @@ These options should be sufficient for the most basic serial jobs.
 
 With this file, we have specified our output file, the name of the job, and that SGE should execute this job from within the same directory as it was submitted.  Let us call this script @date.sh@ and submit the job to the queue:
 
-{{{
+<pre>
 [user@login0 ~]$ qsub date.sh
 Your job 77345 ("get_date") has been submitted
-}}}
+</pre>
 
 Let's now check the status of our job:
-{{{
+<pre>
 [user@login0 ~]$ qstat
 job-ID  prior   name       user         state submit/start at     queue                          slots ja-task-ID 
 -----------------------------------------------------------------------------------------------------------------
   77345 0.00000 get_date   brs          qw    05/25/2010 14:54:26                                    1
-}}}
+</pre>
 
 You can see job 77345 (as an example) listed in the output.  You can see it is in the state @qw@ which means it is waiting to be dispatched pending the arrival of the next scheduler iteration OR when sufficient resources become available.
 
@@ -77,7 +77,7 @@ h3. Submission for Parallel Jobs
 Because many of the applications available for science and engineering are highly resource intensive, many of them have been "parallelized" in order to run on multiple pieces of hardware to divide the work load.  Most applications have standardized upon the MPI or MPI2 specification.  Since many of you will want to run your applications in parallel in order to take advantage of performance gains, you'll need to know how to create a job script for submitting such an applications.  !GridEngine provides "Parallel Environments" for interfacing your job with an MPI library and distributing it across a cluster.
 
 Rather than explain everything all at once, here is a submit script for a parallel job:
-{{{
+<pre>
 #$ -N parallel-job
 #$ -j y
 #$ -o output.$JOB_ID
@@ -85,7 +85,7 @@ Rather than explain everything all at once, here is a submit script for a parall
 #$ -l pcpus=4,h_rt=08:00:00
 
 mpirun -np $NSLOTS parallel-executable
-}}}
+</pre>
 
 Most of the submit directives (remember, those lines starting with "#$" ?) should already be familiar to you.  But you should also notice that we've added a few new directives:
 
@@ -122,10 +122,10 @@ h3.
 Options for the @qstat@ command may be stored in the `~/.sge_qstat` file, in your home directory.  This allows you to add default options to the @qstat@ command.  An example of this follows:
 
 h4.
-{{{
+<pre>
 -u *
 -g t
-}}}
+</pre>
 
 Adding these options to the `~/.sge_qstat` file ensures that the default call to @qstat@ will show jobs for all users and provide a view of the process distribution throughout the cluster.  You can add any of the options defined in the @qstat@ man pages to this file to make them defaults for your account.
 

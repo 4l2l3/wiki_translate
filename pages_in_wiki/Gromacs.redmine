@@ -48,14 +48,14 @@ In order to start a simulation, you will need a protein or molecule to play with
  ** An additional file is needed for @grompp@ called `grommp.mdp`. You can grab a copy of it from `apps/gromacs/4.5.5/share/gromacs/tutor/methanol` and modify it in your local directory as needed.
 
 ** Invoke the @run@ utility to perform the simulation:
-   {{{
+   <pre>
 # This will execute a the single-precision mdrun binary on 16 processors and 8 GB memory
 run -n 16 -m 8G -N gmx_test -e SDP="mpi_s" gromacs/4.5.5
 
 # Setting SDP to mpi_d will execute the double-precision version on mdrun.
 # If you want to specify command line options to mdrun, use ARGV with the -e option as shown below:
 run -n 16 -m 8G -N gmx_test -e ARGV="-v -xvg xmgr",SDP="mpi_d" gromacs/4.5.5
-   }}}
+   </pre>
 
 For more information on Run, see [[Run|The GridEngine Run Utility]].
 

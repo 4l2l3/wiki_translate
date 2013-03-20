@@ -110,19 +110,19 @@ To download and install IDL:
 h2. Running on Circe
 
 Running IDL on @circe@, you need to make sure you have X11 Forwarding enabled. If you're logging in from a UNIX/Linux system, you will need to do the following:
-      {{{
+      <pre>
 ssh -Y user@circe.rc.usf.edu
-      }}}
+      </pre>
       If you're logging in from a Windows machine, you need to Enable X11 Forwarding in whatever ssh client you're using.  Make sure you've followed our [[XWin32Install|XWin32 Guide]] to configure your connection to @circe@.
 
 Next, use qlogin to enter an interactive shell. This example is for 4 hours:
-{{{
+<pre>
 qlogin -l h_rt=04:00:00
-}}}
+</pre>
 Once you get dropped into an interactive shell on the execution host, you need to load the IDL module.
-{{{
+<pre>
 module load apps/idl/8.2
-}}}
+</pre>
 You should now be able to execute @idlde@ (text mode) from the command line.
 
 IDL can also be launched through the NX environment using the Applications menu.  For more information about the NX environment, please see our [[CirceDesktop|Circe NX Desktop]] documentation.

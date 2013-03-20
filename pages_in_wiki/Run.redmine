@@ -7,19 +7,19 @@ h2. Example
 Let's say you want to get a graphical Matlab session up and running.  First, ensure that your Workstation is correctly configured for displaying X11 applications by following our guide [[XWin32Install here]].
 
 Once you log into the system and have XWin32 (or your preferred X server) running, issue the following command:
-{{{
+<pre>
 [user@host ~]$ run matlab/r2009a
-}}}
+</pre>
 
 This will transparently start an interactive session with the scheduler and subsequently launch Matlab.
 
 h2. Example
 VASP is an Electronic Structure package that normally is run as a batch job submitted to the queue via a job script.  With @run@, we no longer need to know any of this (well, at least the batch job/script aspect...):
-{{{
+<pre>
 [user@host ~]$ run -n 16 -t 10:00:00 vasp/4.6.34
 Your job 30709 ("vasp/4.6.34-user-9408cf7") has been submitted
 [user@host ~]$
-}}}
+</pre>
 
 This will automatically submit a VASP job to the queue in batch mode, using your current directory as its search path for its INCAR file.  The anticipated runtime of 10 hours is reported with the -t directive.  That we require 16 processors is expressed with the -n directive.  Knowledge of what MPI library VASP was compiled with, what options should be passed to OpenMPI for optimal execution, and other details are taken care of behind the scenes.
 
@@ -145,7 +145,7 @@ h3. Defining an Application Profile
 On Circe, generally every module defined in apps/ is an application profile for @run@.  This is easily accomplished by adding a few simple environment variable definitions to the module itself.  Let's look at NAMD for example:
 
 *apps/namd/2.7b2*
-{{{
+<pre>
 #%Module1.0#####################################################################
 ##
 ## dot modulefile
@@ -170,7 +170,7 @@ setenv		EXEC			"parallel_exec namd2 *.conf"
 
 module rm openmpi compilers
 module add compilers/intel/10.1.018.x86_64 openmpi/1.4.1-x86_64-intel-10.1.018
-}}}
+</pre>
 
 In this file, you should be conscious of the following 3 variables:
 ** PAR_MODE
@@ -178,17 +178,17 @@ In this file, you should be conscious of the following 3 variables:
 ** EXEC
 
 These three variables help glue the module with the run command so that the best options are set as defaults when referencing the application as a profile.  So, we know that when we run
-{{{
+<pre>
 [user@circe ~]$ run -n 8 -t 1:00:00 namd/2.7b2
-}}}
+</pre>
 we're actually running 
-{{{
+<pre>
 [user@circe apoa1]$ run -b -p openmpi -n 8 -t 1:00:00 parallel_exec namd2 *.conf
-}}}
+</pre>
 
 The other nice thing about application profiles is the ability to tightly integrate resource requests with the execution parameters.  Let's look at HFSS, for instance.  When running !ConfigureSoftware.bash, prior to execution, you can define upper level memory limits and the number of CPUs to use for the simulation.  Let's see how we use these values within an application profile:
 
-{{{
+<pre>
 #%Module1.0#####################################################################
 ##
 ## dot modulefile
@@ -213,12 +213,12 @@ if { [ module-info mode load ] } {
 setenv		PAR_MODE		smp
 setenv		EXEC			"ConfigureSoftware.bash --SetNumProcs=\$NSLOTS \
             --SetTempDirectory=/tmp --SetMaximumRAMLimit=\$(((\$MEMREQ*1024)-64)); hfss"
-}}}
+</pre>
 
 Look at that!  We even managed to incorporate a little shell arithmetic in order to scale the memory value to the units expected by the commandline for the application.  You can see here that we are setting the memory limit to that defined by 
 
-{{{
+<pre>
 [user@circe ~]$ run -n 4 -m 32G -t 12:00:00 ansoft/hfss-11
-}}}
+</pre>
 
 This particular application module defaults to interactive mode (meaning, a GUI will pop up on your workstation).

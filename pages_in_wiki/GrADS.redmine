@@ -45,9 +45,9 @@ The [[GrADS]] guide is essential to understanding the application and making the
 ** "GrADS User's Guide":http://www.iges.org/grads/gadoc/users.html
 
 To run [[GrADS]] in batch mode, simply execute the following within your job directory:
-{{{
+<pre>
 [user@host ~]$ run -n 1 -N run_test -t 00:30:00 -e INPUT="simple.gs" grads/2.0.1
-}}}
+</pre>
 
 Where simple.gs is your [[GrADS]] batch command script, -n is the number of processors, but should always be 1, -N is the name you want to give the job, and the runtime is scheduled for 30 minutes.
 

@@ -32,9 +32,9 @@ h3. Multiprocessor Graphical ADS
 
 ADS can be run on Circe either using the run command from a terminal window or through the NX environment using the Applications menu. For more information about the NX environment, please see our [[CirceDesktop|Circe NX Desktop]] documentation.  Below is an example for using the run command.
 
-{{{ 
+<pre> 
 run -i -n 2 -m 2.0G -t 04:00:00 ads/2009u1
-}}}
+</pre>
 
 This will start an interactive 2 processor [[ADS]] session with a limit of 2 GB of RAM for 4 hours.  If you have a properly configured X11 session, you should see the full [[ADS]] interface.  For users wishing to use the graphical interface over X11 on Windows, please see our [[XWin32Install|XWin32 Installation]] documentation.
 

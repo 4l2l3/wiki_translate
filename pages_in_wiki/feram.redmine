@@ -25,7 +25,7 @@ To run [[feram]] on the cluster, ensure that you use @module add@ prior to using
 h3. Distributed Parallel
 This script can be copied into your job directory (the folder with your input files and database files) and modified so that you can submit batch processes to the queue.   This script is provided as an example only.  Your SGE and [[feram]] executables, tools, and options will vary.  View the sections on input files, output files, and examples on the [[feram]] website "feram website"] for more about [[feram]] options.  For help on submitting jobs to the queue, see our [[gridEngineUsers "GridEngine User's Guide":http://loto.sourceforge.net/feram/#LABEL-9.
 
-{{{
+<pre>
 #$ -N job_name
 #$ -l h_rt=hh:mm:ss,pcpus=4
 #$ -cwd
@@ -33,7 +33,7 @@ This script can be copied into your job directory (the folder with your input fi
 module load apps/feram/0.19.06
 
 mpirun -np ${NSLOTS} feram_mpi in.feram
-}}}
+</pre>
 
 h2. Vendor Documentation
 ** "About feram":http://loto.sourceforge.net/feram/#LABEL-3

@@ -31,7 +31,7 @@ or
 
 Below is an example submit script:
 
-{{{
+<pre>
 #$ -N job_name
 #$ -l h_rt=hh:mm:ss,pcpus=4
 #$ -cwd
@@ -39,7 +39,7 @@ Below is an example submit script:
 module load apps/siesta/3.1
 
 mpirun -np $NSLOTS [[siesta]] &lt; atom.sm
-}}}
+</pre>
 
 h3. Tutorials and Tests
 The following contain input parameters for known SIESTA Examples:

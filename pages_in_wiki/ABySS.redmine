@@ -39,7 +39,7 @@ h3. Serial Submit Script
 
 Assemble short reads in a file named reads.fa into contigs in a file named contigs.fa with the following script:
 
-{{{
+<pre>
 #$ -N abyss_job_name
 #$ -l h_rt=hh:mm:ss
 #$ -cwd
@@ -49,7 +49,7 @@ Assemble short reads in a file named reads.fa into contigs in a file named conti
 module add apps/abyss/1.2.7
 
 ABYSS -k25 reads.fa -o contigs.fa
-}}}
+</pre>
 
 where '-k' is an appropriate k-mer length. The only method to find the optimal value of 'k' is to run multiple trials and inspect the results.  The maximum value for 'k' is 64.
 
@@ -59,7 +59,7 @@ h3. Distributed Parallel
 
 To assemble paired short reads in two files named reads1.fa and reads2.fa into contigs in a file named ecoli-contigs.fa, use the script:
 
-{{{
+<pre>
 #$ -N abyss_job_name
 #$ -l h_rt=hh:mm:ss,pcpus=8
 #$ -cwd
@@ -69,7 +69,7 @@ To assemble paired short reads in two files named reads1.fa and reads2.fa into c
 module add apps/abyss/1.2.7
 
 abyss-pe k=25 n=10 in='reads1.fa reads2.fa' name=ecoli
-}}}
+</pre>
 
 where 'k' is the k-mer length as before.  'n' is the minimum number of pairs needed to consider joining two contigs. The optimal value for 'n' must be found by trial. 'in' specifies the input files to read, which may be in FASTA, FASTQ, qseq, export, SAM or BAM format and compressed with gz, bz2 or xz and may be tarred.  The assembled contigs will be stored in ${name}-contigs.fa.
 

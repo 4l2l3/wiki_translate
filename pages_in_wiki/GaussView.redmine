@@ -27,9 +27,9 @@ See [[Modules]] for more information.
 
 
 !GaussView is quite easy to execute on Circe:
-{{{
+<pre>
 [user@host ~]$  gview
-}}}
+</pre>
 If you have properly configured an X11 session, you should see the full !GaussView interface.  If you haven't configured X11, please see our [[XWin32Install|XWin32 Installation]] documentation.
 
 h3. Caveats
@@ -38,6 +38,6 @@ h3. Caveats
 
 h4. Reporting Bugs
 Report bugs directly to Research Computing: help@usf.edu
-{{{
+<pre>
 
-}}}
+</pre>

@@ -23,9 +23,9 @@ See [[Modules]] for more information.
 h2. Note to Users about the Dalton License
 
 1. Any published work arising from use of the Dalton program must acknowledge the program with an appropriate citation. A suitable text for Release 2 revision 0 would be:
-{{{
+<pre>
 ”Dalton, a molecular electronic structure program, Release 2.0 (2005), see http://www.kjemi.uio.no/software/dalton/dalton.html”
-}}}
+</pre>
 ** When certain features of Dalton are used in published work, we encourage the authors to cite the papers that describe their implementation, as indicated in the manual.
 
 2. The experimental nature of this program means that there is no warranty of correctness of results nor fitness for a particular purpose and that the authors of Dalton cannot be held responsible in any way for any consequences arising from the use of the program. While every attempt will be made to correct any errors reported, the authors of Dalton are not obliged to make such corrections, nor is there any support for users implied by making the program available.
@@ -39,7 +39,7 @@ or
 
 Use the following submit script as an example to run Dalton:
 
-{{{
+<pre>
 #$ -N &lt;job_name&gt;
 #$ -l h_rt=HH:MM:SS,i_ib=true, pcpus=&lt;#_of_processors&gt;
 #$ -cwd
@@ -48,12 +48,12 @@ Use the following submit script as an example to run Dalton:
 
 module load apps/dalton/2.0
 mpirun [[dalton]] -N &lt;#_of_processors&gt; &lt;input_file&gt; &lt;mol_file&gt;
-}}}
+</pre>
 
 or simply execute the following within your job directory:
-{{{
+<pre>
 [user@host job_dir]$ run -n 4 -N dalton_test -t 1:00:00  -e OPTS="input_file mol_file" dalton/2.0 
-}}}
+</pre>
 
 This will request 4 processors via MPI, a job name of dalton_test, and a 1 hour run-time.  Other desired command line arguments for Dalton can be included with OPTS.
 

@@ -29,9 +29,9 @@ h3. Execution
 First, you will need a protein or molecule to play with. Go to http://www.rcsb.org/pdb/ and grab one in @.pdb@ format. Other supported filetypes are listed here: http://jmol.sourceforge.net/#What%20Jmol%20can%20do
 
 Next, start jmol:
-{{{
+<pre>
 $ jmol
-}}}
+</pre>
 Finally, go to *File-&gt;Open* and open your molecule file.
 
 h2. Documentation

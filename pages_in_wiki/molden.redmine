@@ -24,9 +24,9 @@ See [[Modules]] for more information.
 
 
 Molden is quite easy to execute on Circe:
-{{{
+<pre>
 [user@host ~]$  gmolden
-}}}
+</pre>
 If you have properly configured an X11 session, you should see the full GMolden interface.  If you haven't configured X11, please see our [[XWin32Install|XWin32 Installation]] documentation.
 
 h4. Reporting Bugs

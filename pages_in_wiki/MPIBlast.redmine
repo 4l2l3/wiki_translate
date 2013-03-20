@@ -27,35 +27,35 @@ h2. Creating and Submitting a Job
 
 Create a .ncbirc file in your home directory.  It should be formatted as follows (user location of /work directory will vary):
 
-{{{
+<pre>
   [mpiBLAST]
   Shared=/work/j/joeuser/blast
   Local=/tmp/joeuser/blast
-}}}
+</pre>
 
 'Shared' is a location that all of the nodes doing the computation will have access to and 'Local' should be a faster, local drive.
 
 h3. Prepare a database for use
 Research Computing mirrors several of the available databases.  They can be found in /opt/apps/ncbi-6.1/blast/fasta.  If one of those will serve your needs, simply copy it from that location to your Shared location, and decompress it.
 
-{{{
+<pre>
 [joeuser@host ~]$ module add apps/mpiblast/1.6.0
 [joeuser@host ~]$ cp /opt/apps/ncbi-6.1/blast/fasta/drosoph.nt.gz /work/j/joeuser/blast
 [joeuser@host ~]$ cd /work/j/joeuser/blast
 [joeuser@host blast]$ gunzip drosoph.nt.gz
-}}}
+</pre>
 
 Then, you need to format the database for use.  Below is an example way to do so.  It assumes you want to run a job searching against the drosoph.nt database, on 4 nodes.
 
-{{{
+<pre>
 [joeuser@host blast]$ mpiformatdb --nfrags=4 -i drosoph.nt -pF --quiet
-}}}
+</pre>
 
 h3. Submit the Job
 
 Below is a sample job script.  It assumes that you want a hard runtime of 1 hour and that you have set up the database in 4 fragments.  It also assumes that your value being searched for is in a file called query.in, in the current working directory.  You'll need to request two more processors than the number of fragments for the two coordinating processes that are created during execution.
 
-{{{
+<pre>
 #!/bin/bash
 #$ -N mpiblast-test
 #$ -cwd
@@ -65,14 +65,14 @@ Below is a sample job script.  It assumes that you want a hard runtime of 1 hour
 
 module add apps/mpiblast/1.6.0
 mpirun mpiblast -d drosoph.nt -i query.in -p blastn -o results.txt
-}}}
+</pre>
 
 Example query.in file for drosoph.nt:
 
-{{{
+<pre>
 &gt;Search sequence
 AGTACGTAAAGAAAATCTTTTTTTGGCGACATCATTGTATTTGGTAGTATACGATTTCCAGCATCCACAACTATTTCCT
-}}}
+</pre>
 
 For additional information, please look at the mpiBLAST documentation: http://www.mpiblast.org/Docs/Guide
 

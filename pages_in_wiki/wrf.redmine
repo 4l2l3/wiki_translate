@@ -23,9 +23,9 @@ The WRF guide is essential to understanding the application and making the most 
 ** WRF Guide: http://www.mmm.ucar.edu/wrf/users/docs/user_guide_V3/contents.html
 
 To run WRF, simply execute the following within your job directory:
-{{{
+<pre>
 [user@host ~]$ run -N wrf_test -n 16 -t 6:00:00 wrf/3.3
-}}}
+</pre>
 
 This will request a job name of wrf_test,16 processors via MPI, and a 6 hour run-time.
 

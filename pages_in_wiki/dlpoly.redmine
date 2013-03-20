@@ -29,25 +29,25 @@ To run DL_POLY on the cluster, ensure that you use @module initadd@ to make the 
 h3. Job Script
 To run DL_POLY, you will need to create a work directory for your job that includes the necessary input files (CONFIG, CONTROL, FIELD and possible TABLE or TABEAM).  You'll also need to include a copy of this submit script (modify it to suit your parameters)
 
-{{{
+<pre>
 #!/bin/bash
 #$ -N dl_poly_job
 #$ -l h_rt=00:04:00, pcpus=4
 #$ -cwd
 
 mpirun DLPOLY.X-2.19
-}}}
+</pre>
 
 Or, for DL_POLY 3.08:
 
-{{{
+<pre>
 #!/bin/bash
 #$ -N dl_poly_job
 #$ -l h_rt=00:04:00, pcpus=4
 #$ -cwd
 
 mpirun DLPOLY.Y-3.08
-}}}
+</pre>
 
 h3. DL
 ** Version 2: http://www.cse.scitech.ac.uk/ccg/software/DL_POLY/MANUALS/USRMAN2.19.pdf

@@ -33,7 +33,7 @@ Gambit requires the following module file and some prerequisites to run:
 
 h3. Submitting Jobs
 Users can use the following SGE script to run [[Fidap]] jobs with fisol over SGE:
-{{{
+<pre>
 #!/bin/bash
 ##
 ## FISOLV Submit script for SGE
@@ -78,7 +78,7 @@ time fidap -fidapscr $SCRATCH $JOB_NAME -in $INPUT_FILE
 rm -rf $SCRATCH
 
 # end script
-}}}
+</pre>
 *Note:* This page is a place holder until more documentation is written.  The [[Fidap]] and Gambit user guides are located at the following links:
 
 ** [[Fidap]] User Documentation: https://rc.usf.edu/soft/fidap/fidapdoc/index.htm

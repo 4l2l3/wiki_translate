@@ -21,14 +21,14 @@ h2. Loading the [[vnc-class]] module
 Before using any of the [[vnc-class]] utilities listed below you must load the [[vnc-class]] module configure your environment with the proper path to the utilities. 
 
 To load the module for your _JUST_ for the current session by run this command: 
-{{{ 
+<pre> 
 [user@host ~]$ module load apps/vnc-class/1.0
-}}}
+</pre>
 
 To load the module permanently to your environment by run this command: 
-{{{ 
+<pre> 
 [user@host ~]$ module initadd apps/vnc-class/1.0
-}}}
+</pre>
 
 h2. Configuring vnc-class
 
@@ -36,29 +36,29 @@ Before sharing your desktop you should run the configuration utility. This will 
 
 The utility can be started by issuing the following command and the options are pretty self explanatory:
 
-{{{ 
+<pre> 
 [user@host ~]$ vnc-class-conf
-}}}
+</pre>
 
 h2. Starting the vnc-class-server on the Cluster
 
 The vnc-class-server utility has two functions to start and stop the VNC server. 
 
 To start sharing your NX Desktop you can issue the following command to kill the vnc-server:
-{{{ 
+<pre> 
 [user@host ~]$ vnc-class-server start
-}}}
+</pre>
 
 To stop sharing your NX Desktop you can issue the following command to kill the vnc-server:
-{{{ 
+<pre> 
 [user@host ~]$ vnc-class-server stop
-}}}
+</pre>
 
 h3. Starting the vnc-class-viewer
 Once the vnc-class-server has been started, a client called a VNC viewer must connect to your VNC session. The client can do so by issuing the following command (make sure to substitute 'netid' for the netid of the person's VNC session they would like to view):
-{{{ 
+<pre> 
 [user@host ~]$ vnc-class-viwer netid
-}}}
+</pre>
 
 h3. Reporting Issues
 Report issues to the IT Helpdesk: help@usf.edu

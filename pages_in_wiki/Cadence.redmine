@@ -53,17 +53,17 @@ To run any [[Cadence]] tools on the cluster, ensure that you use @module add@ pr
 
 h3. Examples
 h4. Digital Layout
-{{{
+<pre>
 cd
 mkdir testing
 cd testing
 module add apps/cadence/ic/615
 digital-init
 digital-start
-}}}
+</pre>
 
 h4. Digital Layout
-{{{
+<pre>
 cd
 mkdir testing
 cd testing
@@ -71,16 +71,16 @@ module add apps/cadence/ic/615
 module add apps/cadence/ncsu/1.6.0.beta
 ncsu-init
 ncsu-start
-}}}
+</pre>
 
 h4. Allegro PCB Editor
-{{{
+<pre>
 cd
 mkdir testing
 cd testing
 module add apps/cadence/spb/165
 allegro
-}}}
+</pre>
 
 h3. More Job Information
 See the following for more detailed job submission information:

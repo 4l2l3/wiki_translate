@@ -30,15 +30,15 @@ To run [[GMT]] on the cluster, ensure that you use @module add@ prior to using a
 h3. Running on Circe
 
 Running [[GMT]] on @circe@ is relatively easy. Before you login to @circe@, you need to make sure you have X11 Forwarding enabled. If you're logging in from a UNIX/Linux system, you will need to do the following:
-      {{{
+      <pre>
 ssh -Y user@circe.rc.usf.edu
-      }}}
+      </pre>
       If you're logging in from a Windows machine, you need to Enable X11 Forwarding in whatever ssh client you're using.  Make sure you've followed our [[XWin32Install|XWin32 Guide]] to configure your connection to @circe@.
 
 Next, you need to load the [[GMT]] module.
-{{{
+<pre>
 module load apps/gmt/4.5.5
-}}}
+</pre>
 You should now be able to execute [[GMT]] related scripts and executables from the command line.  To view the output postscript files, you can use @evince@.
 
 h3. Examples

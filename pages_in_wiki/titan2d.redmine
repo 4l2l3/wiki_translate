@@ -34,21 +34,21 @@ The TITAN2D guide is essential to understanding the application and making the m
 TITAN2D can run well on most types of hardware on the cluster. For the vast majority of cases, memory is not as big an issue as CPU time and the program is parallel "enough" to ensure that it runs reasonably well over GigE.  The code currently simulates granular flows.  It runs in parallel with mesh refinement and unrefinement.  The maximum refinement level is set by the user when specifying the Number of Computational Cells Across Smallest !Pile/Flux-Source.  Mesh repartitioning is also used to maintain a good load-balance.  A python script is included to organize the preprocessing and launching of jobs on different computers.  
 
 Before you login to @circe@, you need to make sure you have X11 Forwarding enabled. If you're logging in from a UNIX/Linux system, you will need to do the following:
-      {{{
+      <pre>
 ssh -Y user@circe.rc.usf.edu
-      }}}
+      </pre>
       If you're logging in from a Windows machine, you need to Enable X11 Forwarding in whatever ssh client you're using.  Make sure you've followed our [[XWin32Install|XWin32 Guide]] to configure your connection to @circe@.
 
 Next, load the TITAN2D module. The python script is then run by the command: 
-{{{
+<pre>
 [user@host ~]$ titan_gui.py
-}}}
+</pre>
 A GUI will come up and ask for certain info.  There are several pop-up windows that will open, depending on the information you provide.  The GUI will create several input files in a job directory that you specify.
 
 To run TITAN2D, simply execute the following within your job directory:
-{{{
+<pre>
 [user@host job_dir]$ run -n 4 -N titan_test -t 2:00:00 titan/2.0.1
-}}}
+</pre>
 
 This will request 4 processors via MPI, a job name of titan_test, and a 2 hour run-time.
 

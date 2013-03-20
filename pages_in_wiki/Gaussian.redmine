@@ -19,9 +19,9 @@ h2. Platform
 h2. Running [[Gaussian]] on the Cluster
 
 Gaussian is quite easy to execute on Circe.  After creating your input, simply use [[Run @run@]] to execute the program:
-{{{
+<pre>
 [user@host ~]$ run -N test_g09 -n 8 -t 1:00:00 -e MODEL=input.com gaussian/09b01_em64t
-}}}
+</pre>
 
 This will request a job with the name test_g09, 8 processors via MPI, and a 1 hour run-time.  The input file is specified as input.com, and will generate an output file in your current directory.
 

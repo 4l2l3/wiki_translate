@@ -53,10 +53,10 @@ Please view the associated README files in /opt/apps/lammps/2Nov10/tools for mor
 h3. Submitting Jobs
 
 Invoke the @run@ utility to perform the simulation. For more information on Run, see [[Run|The GridEngine Run Utility]].
-   {{{
+   <pre>
 # From within the directory that contains your input file, use the -e option below:
 run -n 2 -N lmp_run_test -t 02:00:00 -e INPUT="in.lmptest" lammps/2Nov10
-   }}}
+   </pre>
 This will request 2 processors via MPI, a job name of lmp_run_test, a 2 hour run-time, and specify the input file as in.lmptest.
 
 h4. Benchmarks

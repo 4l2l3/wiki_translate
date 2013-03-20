@@ -29,7 +29,7 @@ The '-r-lda' version of Quantum Espresso is nearly identical to the standard ver
 h3. Distributed Parallel
 This script can be copied into your job directory (the folder with your input files and database files) and modified so that you can submit batch processes to the queue.   This script is provided as an example only.  Your SGE and ESPRESSO executables, tools, and options will vary.  View the user's guide (/apps/espresso/5.0/Doc/user_guide.pdf) for more about ESPRESSO options.  For help on submitting jobs to the queue, see our [[gridEngineUsers|GridEngine User's Guide]].
 
-{{{
+<pre>
 #$ -N qe_job_name
 #$ -l h_rt=hh:mm:ss,pcpus=4
 #$ -cwd
@@ -37,7 +37,7 @@ This script can be copied into your job directory (the folder with your input fi
 module load apps/epresso/5.0
 
 mpirun -np $NSLOTS pw.x -in file.in &gt; file.out
-}}}
+</pre>
 
 h3. Benchmarks and Tests
 The following folders contain input parameters for known ESPRESSO tests:

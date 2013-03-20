@@ -32,7 +32,7 @@ First, you will need a Hadoop-aware application to run within the [[Hadoop]] env
 
 Save this example code to a file called !WordCount.java:
 
-{{{
+<pre>
         package org.myorg;
 
         import java.io.IOException;
@@ -90,21 +90,21 @@ Save this example code to a file called !WordCount.java:
              JobClient.runJob(conf);
            }
         }
-}}} 
+</pre> 
 
 We will use this code against [[Hadoop]] to determine the word frequencies in a file (a listing of how many times a particular word exists in the file) 
 
 Now, we shall compile it and create a jar:
 
-{{{
+<pre>
 $ mkdir wordcount_classes
 $ javac -classpath ${HADOOP_HOME}/hadoop-${HADOOP_VERSION}-core.jar -d wordcount_classes WordCount.java
 $ jar -cvf ./wordcount.jar -C wordcount_classes/ . 
-}}}
+</pre>
 
 Next, we create the submission script which starts hadoop and submits a job using our jar file. (Read the comments below for details on how this works.) 
 
-{{{
+<pre>
 #!/bin/bash
 #$ -N hadoop_run
 #$ -j y
@@ -135,11 +135,11 @@ hadoop fs -get output hadoop-output.$JOB_ID
 
 # Stops the [[Hadoop]] cluster.
 hadoop_end
-}}}
+</pre>
 
 With the above run, the result data would be stored in files ./hadoop-output-$JOB_ID/part-*. A sample:
 
-{{{
+<pre>
 aaronites       2
 aarons  31
 abaddon 1
@@ -158,5 +158,5 @@ abdiel  1
 abdon   8
 abednego        15
 
-}}}
+</pre>
 

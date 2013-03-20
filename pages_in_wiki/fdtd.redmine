@@ -27,9 +27,9 @@ h2. Install FDTD Solutions on Windows XP
 ** Click on 'Configuration'-&gt;'Access to Remote License Managers'
 ** Check the box for 'Aggressive search of remote licenses'
 ** In the 'Specify search parameters' box, enter
-   {{{
+   <pre>
 itrc-adm1.rc.usf.edu
-}}}
+</pre>
 ** Click on 'Submit' and close the browser window
 ** Click Ok on the previous license dialog and close FDTD Solutions (A few errors may pop up here, which can be ignored)
 ** Re-open FDTD solutions.  A dialog saying that there are no license keys configured may appear.  If it does, go to the configuration and under the 'HASP Key ID' select the numerical license key that appears in the drop-down dialog.
@@ -42,14 +42,14 @@ Below is an example of how to run FDTD Solutions on Circe using your S: drive an
 
 ** From my workstation, I've saved my project to @S:\nanowire\nanowire_1.fsp@
 ** I then log into Circe via SSH and change my directory to ~/nanowire, which is the same directory that appears on my S: drive: 
-   {{{
+   <pre>
 [user@host ~]$ cd ~/nanowire
 [user@host nanowire]$
-}}}
+</pre>
 ** To run FDTD Solutions, I submit a job to the scheduler, specifying my project file:
-   {{{
+   <pre>
 [user@host nanowire]$ run -n 8 -t 1:00:00 -e FSPFILE=nanowire_1.fsp fdtd/7.5.2
-}}}
+</pre>
 ** I can view the status of my job with the @qstat@ command.  
 ** Once the simulation is complete, I can open S:\nanowire\nanowire_1.fsp from FDTD Solutions on my workstation to view the results.
 

@@ -21,10 +21,10 @@ h2. Local Documentation
 h3. Running VMD on the Cluster
 
 To run VMD, simply execute the following within your job directory:
-{{{
+<pre>
 [user@host ~]$ module add apps/vmd
 [user@host ~]$ vmd
-}}}
+</pre>
 
 
 For more information on Run, see [[Run|The GridEngine Run Utility]].

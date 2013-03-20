@@ -96,13 +96,13 @@ Follow the steps below to download and install Comsol for Windows.
 h2. Running on Circe
 
 Running Comsol on @circe@ is quite trivial.  When you are ready to run the solver against your model, save the model and copy the @.mph@ file to Circe via which ever method you prefer and run:
-{{{
+<pre>
 qsub -N mymodel.mph runcomsol.sh
-}}}
+</pre>
 
 You will need to add the following information in a script file and reference it in the qsub command argument:
 
-{{{
+<pre>
 #$ -l h_rt=04:00:00,mps=2.0G,pcpus=8
 #$ -cwd
 
@@ -111,13 +111,13 @@ module add apps/comsol/4.3a
 
 comsol -clustersimple batch -inputfile ${JOB_NAME} -outputfile ${JOB_NAME//\.mph/}.out.mph \
        -batchlog b.log -tmpdir $TMPDIR
-}}}
+</pre>
 
 This will start an 8 processor Comsol job with a limit of 2 GB of RAM per slot running against the file @mymodel.mph@ is unchecked so that you do not run into errors during the solution.
 
 For non-distributed, SMP jobs, the following script will work:
 
-{{{
+<pre>
 #$ -l h_rt=24:00:00,mpj=16.0G,nodes=1,ppn=12
 #$ -cwd
 
@@ -127,7 +127,7 @@ module add apps/comsol/4.3a
 comsol batch -np ${NSLOTS} -inputfile ${JOB_NAME} \
         -outputfile ${JOB_NAME}.${JOB_ID} \
         -batchlog ${JOB_NAME}.${JOB_ID}.comsol_log -tmpdir $TMPDIR
-}}}
+</pre>
 
 This script will request 16GB of memory for the job and 12 processor cores.
 

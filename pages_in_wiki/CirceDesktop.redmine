@@ -25,9 +25,9 @@ Sessions can be terminated by logging out (going to @Start-&gt;Quit@ in the NX t
 1. Connect to the system using your SSH client (PuTTY, ssh)
 
 2. Perform this command
-{{{
+<pre>
 pkill -u &lt;netid&gt;
-}}}
+</pre>
 
 Note that all processes you own on the server will be terminated. No running jobs should be affected.
 

@@ -37,7 +37,7 @@ h3. Batch Mode
 
 Alternatively, the parallel version of !MrBayes can also be run in batch mode using input redirection. For that you need a text file containing the commands exactly as you would have typed them from the command line. For instance, assume that your data set is in primates.nex and that you want to perform a series of commands to analyse it.  You will need a text file similar to the one below:
 
-{{{
+<pre>
 set autoclose=yes nowarn=yes
 execute primates.nex
 lset nst=6 rates=gamma
@@ -45,10 +45,10 @@ mcmc ngen=10000 savebrlens=yes file=primates.nex1
 mcmc file=primates.nex2
 mcmc file=primates.nex3
 quit
-}}}
+</pre>
 
 Use the following submit script as an example to run !MrBayes in batch mode:
-{{{
+<pre>
 #$ -N mrbayes_test
 #$ -cwd
 #$ -l h_rt=HH:MM:SS, pcpus=4
@@ -57,12 +57,12 @@ Use the following submit script as an example to run !MrBayes in batch mode:
 
 module load apps/mrbayes/3.1.2
 mpirun mb_parallel &lt; batchfile.txt &gt; outfile.txt
-}}}
+</pre>
 
 or simply execute the following within your job directory:
-{{{
+<pre>
 [user@host job_dir]$  run -N mrbayes_test -n 4 -t 1:00:00 -e input=batchfile.txt,output=outfile.txt mrbayes/3.1.2
-}}}
+</pre>
 
 This will request a job name of mrbayes_test, 4 processors via MPI, and a 1 hour run-time.  The batch and output file names are also specifed here, without any space before or after the comma.  
 For more information on Run, see [[Run|The GridEngine Run Utility]].

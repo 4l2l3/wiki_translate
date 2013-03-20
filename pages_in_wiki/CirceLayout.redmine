@@ -12,9 +12,9 @@ h4.
 Circe's storage resides on a !FibreChannel SAN which is centrally managed by Information Technology.  2 servers are connected to the SAN fabric to provide fail-over redundancy for data access.  The data for /home is snapshotted nightly to another storage device where up to 14 days of snapshots are kept.  The /home file system is served via NFS to all nodes in the Circe environment.
 
 Home directories are laid out as follows:
-{{{
+<pre>
 /home/[a-z]/&lt;netid&gt;
-}}}
+</pre>
 where [a-z] is the first letter of the user's NetID.  @$WORK@
 
 h4.

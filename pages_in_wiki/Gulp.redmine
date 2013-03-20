@@ -22,9 +22,9 @@ The GULP documentation is essential to understanding the application and making 
 ** GULP Documentation: https://www.ivec.org/gulp/help/
 
 To run GULP, simply execute the following within your job directory:
-{{{
+<pre>
 [user@host ~]$ run -n 16 -m 1.0G -t 1:00:00 -e INPUT=&lt;inputfile&gt; gulp/4.0
-}}}
+</pre>
 
 This will request 16 processors via MPI, 1 Gigabyte of memory per slot (for 16 GB total), and a 1 hour run-time.
 

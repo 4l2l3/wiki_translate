@@ -41,7 +41,7 @@ You must first process the reads using Velvet:
 
 You can run Oases on the Velvet working directory after it has been created.  Provide all the information about insert lengths and their standard deviation as possible (identical to Velvet):
 
-{{{
+<pre>
 #$ -N oases_job_name
 #$ -l h_rt=hh:mm:ss
 #$ -cwd
@@ -51,7 +51,7 @@ You can run Oases on the Velvet working directory after it has been created.  Pr
 module add apps/oases/0.1.22
 
 oases output_directory [options]
-}}}
+</pre>
 
 *Note:*  The k-mer length and categories values have a maximum of 57.  See the Oases Manual or use '--help' for more information about Oases options and syntax.
 

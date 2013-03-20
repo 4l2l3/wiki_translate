@@ -26,23 +26,23 @@ h4. Q
 *A.* A number of different problems can cause these messages.  The most frequent are listed below:
 
  1. Did you create your submit script from within the Windows editor *Notepad*?  If so, please ensure that you convert your submit script with the @dos2unix@ command by running
- {{{ 
+ <pre> 
 [user@host ~]$ dos2unix &lt;script&gt; 
-}}}
+</pre>
  where @&lt;script&gt;@ is the name of your job script.  This will convert the file to the proper UNIX file format the !GridEngine uses.
  2. Does your submit script contain the appropriate module lines?  Please see the documentation for your respective application for the appropriate module lines to add.
  3. Are you actually referencing a file that exists?  You can make sure that the file exists by doing
- {{{ 
+ <pre> 
 [user@host ~]$ ls &lt;path_to_file&gt; 
-}}}
+</pre>
  where @&lt;path_to_file&gt;@ cannot find the file, then chances are it doesn't exist on the nodes either.
 ----
 h4. Q
 
 *A.* Yes, we have 365 days of backups to rely on.  You can access any file in your @/home@ directory from any point in the last 365 days by running the command 
-{{{
+<pre>
 [user@host ~]$ snapshot-restore
-}}}
+</pre>
 Follow the on-screen instructions for retrieving your lost file.
 
 ----
@@ -54,19 +54,19 @@ h4. Q
 *A.* There are a couple reasons why this happens:
 
  1. This happens if you are trying to run the command directly from a login machine (your prompt will look like this)
-{{{
+<pre>
 [user@login# ~]$
-}}}
+</pre>
  To be fair to other users, we have resource restrictions on our login machines limiting the amount of RAM and CPU time you can use. We recommend running these applications from a qlogin session:
-{{{
+<pre>
 [user@host ~]$ qlogin -l h_rt=HH:MM:SS
-}}}
+</pre>
  Where @h_rt@ is the hours, minutes, and seconds that you believe you will need to finish working with an application.  With qlogin, you will be guaranteed the resources needed to complete your work.
 
  2. This can also happen if you are within a qlogin session and you did not specify a memory request. Try again with a reasonable estimate with how much memory you think you need (for example, 4 Gigabytes):
-{{{
+<pre>
 [user@host ~]$ qlogin -l h_rt=8:00:00,mps=4G
-}}}
+</pre>
     
 ----
 h4. Q
@@ -79,9 +79,9 @@ h4. Q
 ----
 h4. Q
 *A.* By default, all SGE jobs have a runtime of 1 hour, after which the scheduler will send a termination signal. Have you specified a runtime on your job?
-{{{
+<pre>
 -l h_rt=08:00:00
-}}}
+</pre>
 This option would request a runtime of eight hours. The *h_rt* option is required on both submitted jobs and interactive jobs.  It is also possible that you did not specify enough time when making your request.  Please see this guide on determining job run-time for help: [[gridEngineRuntime|Job Runtime Guide]]
 ----
 h4. Q

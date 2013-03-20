@@ -32,13 +32,13 @@ h3. Creating and Submitting a Job
 
 Create a .ncbirc file in your home directory.  It should be formatted as follows (user location of /work and /home directories will vary):
 
-{{{
+<pre>
   [NCBI]
   DATA=/home/j/joeuser/data
 
   [BLAST]
   BLASTDB=/work/j/joeuser/db
-}}}
+</pre>
 
 Description of the above directories:
 The 'DATA' variable gives the location of the NCBI Data directory containing BLOSUM and PAM scoring matrices, among other things. The scoring matrix files are necessary for any type of protein BLAST search and should be accessible by all cluster nodes.  The 'BLASTDB' variable tells standard NCBI blastall where to find BLAST databases.
@@ -47,18 +47,18 @@ The 'DATA' variable gives the location of the NCBI Data directory containing BLO
 h4. Prepare a database for use
 Research Computing mirrors several of the available databases.  They can be found in /opt/apps/ncbi-6.1/blast/fasta.  If one of those will serve your needs, simply copy it from that location to your BLASTDB location, and decompress it.
 
-{{{
+<pre>
 [joeuser@host ~]$ module add apps/blast/2.2.22
 [joeuser@host ~]$ cp /opt/apps/ncbi-6.1/blast/fasta/drosoph.nt.gz /work/j/joeuser/blast
 [joeuser@host ~]$ cd /work/j/joeuser/blast
 [joeuser@host blast]$ gunzip drosoph.nt.gz
-}}}
+</pre>
 
 
 h4. Submit the Job
 Below is a sample job script.  It assumes that you want a hard runtime of 1 hour.  It also assumes that your value being searched for is in a file called query.in, in the current working directory. (For detailed parameters, please look at the BLAST+ documentation: ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/2.2.22/user_manual.pdf)
 
-{{{
+<pre>
 #!/bin/bash
 #$ -l h_rt=01:00:00, pcpus=1
 #$ -N blast-text
@@ -68,7 +68,7 @@ Below is a sample job script.  It assumes that you want a hard runtime of 1 hour
 
 module add apps/blast/2.2.22
 blastp -db drosoph.nt -query query.in -out results.txt
-}}}
+</pre>
 
 h3. More Job Information
 See the following for more detailed job submission information:

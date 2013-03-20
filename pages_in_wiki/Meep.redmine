@@ -35,10 +35,10 @@ It is highly recommended that you read the tutorials on using [[Meep]] from the 
 h3. [[Meep]] Utilities
 Ensure that you've loaded the module @apps/meep/1.1.1@ into your environment to access the various HDF5 utilities for converting and working with output data.  Load it persistently so that we can avoid having to deal with it again later:
 
-{{{
+<pre>
 [user@login0 ~]$ module add apps/meep/1.1.1
 [user@login0 ~]$ module initadd apps/meep/1.1.1
-}}}
+</pre>
 
 Loading the [[Meep]] module will automatically provide the following dependencies:
 ** compilers/intel/10.1.018.x86_64
@@ -51,13 +51,13 @@ Loading the [[Meep]] module will automatically provide the following dependencie
 
 h3. Running a Parallel Job
 To run Meep, we will use the @run@ command which creates our job script and submits our job to the cluster for us.  We will also use the /work filesystem since [[Meep]] relies on HDF5's parallel I/O facilities:
-{{{
+<pre>
 [user@login0 ~]$ cd $WORK
 [user@login0 user]$ ls
 input.ctl
 [user@login0 user]$ run -b -t 1:00:00 -n 4 meep-mpi input.ctl
 ...
-}}}
+</pre>
 Here, we run [[Meep]] with 4 processors for one hour, specifying the input ctl file `input.ctl`.  See the tutorials linked above for information on creating the ctl (Scheme-based) input file.  For more information on using the @run@ command, please see [[Run here]].
 
 h2. More Job Information

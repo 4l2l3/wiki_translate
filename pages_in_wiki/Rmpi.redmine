@@ -30,15 +30,15 @@ To run [[Rmpi]] on the cluster, ensure that you use @module initadd@ to make the
 h3. Prepare your R Environment
 
 Copy this file to /path/to/job/directory/.Rprofile to allow [[Rmpi]] jobs to work:
-{{{
+<pre>
 cp /opt/apps/R/2.11.1/share/Rprofile ~/rmpitest/.Rprofile
-}}}
+</pre>
 
 h3. Submitting a Job
 
 The submit script for running [[Rmpi]] jobs on the cluster is fairly simple.  An example script is provided below:
 
-{{{
+<pre>
 #!/bin/bash
 #$ -N rmpi-test
 #$ -cwd
@@ -49,6 +49,6 @@ The submit script for running [[Rmpi]] jobs on the cluster is fairly simple.  An
 module purge
 module add apps/R/2.11.1 compilers/gcc/4.4.2 openmpi/1.4.1-x86_64-gcc-4.4.2
 mpirun [[Rmpi]] TestRmpi.R
-}}}
+</pre>
 
 You can submit this job in exactly the same way as you would any other application.

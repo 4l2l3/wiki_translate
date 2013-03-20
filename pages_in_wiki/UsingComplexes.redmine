@@ -20,20 +20,20 @@ The following table lists custom defined complexes which are necessary for getti
 
 h2. Requesting Complexes
 To request a complex, you must add the following line to your submit script:
-{{{
+<pre>
 #$ -l &lt;complex_name&gt;=&lt;value&gt;[,&lt;complex_name&gt;=&lt;value][,...]
-}}}
+</pre>
 or
-{{{
+<pre>
 #$ -l &lt;complex_name&gt;=&lt;value&gt;
 #$ -l &lt;complex_name&gt;=&lt;value&gt;
 ...
-}}}
+</pre>
 where &lt;complex_name&gt; is one of the complexes defined above (or one of the standard complexes described in the !GridEngine User's Guide and show below), and &lt;value&gt; is the desired value of the complex.
 
 A couple examples:
 
-{{{
+<pre>
 #!/bin/bash
 #$ -N my_job_needs_infiniband
 #$ -cwd
@@ -42,7 +42,7 @@ A couple examples:
 #$ -o output.$JOB_ID
 
 mpirun /opt/apps/my_app/my_binary
-}}}
+</pre>
 
 ** Job requests 2 hours of runtime (h_rt=02:00:00)
 ** Job requests 1.5GB of memory for each allocated slot (mps=1.5G)

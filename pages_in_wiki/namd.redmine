@@ -30,7 +30,7 @@ h3. Submitting a Job
 
 NAMD can run well on most types of hardware on the cluster.  For the vast majority of cases, memory is not as big an issue as CPU time and the program is parallel "enough" to ensure that it runs reasonably well over GigE though it will run better on Myrinet or InfiniBand.  To run NAMD, use the 'run' command within a directory with your .conf file.  It will run over any number of .conf files if you have more than one in the directory.
 
-{{{
+<pre>
 [user@circe ~]$ cd apoa1
 [user@circe apoa1]$ ls
 ...
@@ -38,7 +38,7 @@ apoa1.conf
 ...
 [user@circe apoa1]$ run -n 16 -f ib -t 1:00:00 -N namd_apoa1 namd/2.7
 Your job 225598 ("namd_apoa1") has been submitted
-}}}
+</pre>
 For more information on the @run@ command, see [[Run here]].
 
 h4. Benchmarks

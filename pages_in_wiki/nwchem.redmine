@@ -20,14 +20,14 @@ NWChem requires the following module file to run:
 See [[Modules]] for more information.  
 
 ** *NOTE*: This module MUST be loaded persistently in order for the application to run.  Use
-   {{{
+   <pre>
 [user@host ~]$ module load apps/nwchem/6.1.1
-}}}
+</pre>
    in order to properly execute NWChem
 h2. Submitting a Job
 Make sure to run your job from your $WORK directory. Use the a submit script like the following to run NWChem:
 
-{{{
+<pre>
 #$ -N &lt;job_name&gt;
 #$ -l h_rt=HH:MM:SS,pcpus=&lt;#_of_processors&gt;
 #$ -cwd
@@ -38,7 +38,7 @@ module purge
 module load apps/nwchem/6.1.1
 
 mpirun [[nwchem]] &lt;input_file&gt;
-}}}
+</pre>
 
 h4. More Job Information
 See the following for more detailed job submission information:

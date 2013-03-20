@@ -27,9 +27,9 @@ h2. Running CP2K on the Cluster
 Please reference the CP2K home page for information on configuring the application inputs for execution.
 
 Once you're ready to execute a job, the following command will submit a job to the cluster:
-{{{
+<pre>
 [user@host ~]$ run -n 16 -t 01:00:00 -e INPUT=input.inp cp2k/2.3.43
-}}}
+</pre>
 You can see here that we've specified to use 16 processors for 1 hour.  We've also defined our input file to be @input.inp@.
 
 For more information on Run, see [[Run|The GridEngine Run Utility]].

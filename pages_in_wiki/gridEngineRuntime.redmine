@@ -5,9 +5,9 @@ h1. Job Run Time
 All jobs are required to have a hard run-time specification.  Jobs that do not have this specification will have a default run-time of 1 hour and will be stopped at that point.
 
 User's should ensure that they let the scheduler know the estimated run time of their jobs by including the following option in their submit scripts:
-{{{
+<pre>
 #$ -l h_rt=XX:XX:XX
-}}}
+</pre>
 where XX:XX:XX is the hours, minutes and seconds the job is expected to run.  This time can also be expressed as a single integer of seconds.  The runtime is used to help route your job to the appropriate queues.
 
 Your job's runtime will fall into the range of one of the four available queues show below.  If your job will take longer than 1 week, you will need to request an exception by sending an e-mail to help@usf.edu, describing your need.

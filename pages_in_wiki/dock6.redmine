@@ -32,7 +32,7 @@ To run Dock6 on the cluster, ensure that you use @module add apps/dock/6.5@ in y
 h3. Running dock6
 
 In order to use DOCK, you must agree to the following: "I agree that any public reports or publication of results obtained using DOCK will acknowledge its use by an appropriate citation."  The following script will execute the parallel version of dock6, dock6.mpi.  You'll need to set the number of processors to the number you wish to use as well as modify the input and output file parameters to suit your environment:
-{{{
+<pre>
 #!/bin/bash
 #$ -N job_name
 #$ -cwd
@@ -44,7 +44,7 @@ module purge
 module add apps/dock/6.5
 
 mpirun /apps/apps/dock/6.5/bin/dock6.mpi -i job.in -o job.out
-}}}
+</pre>
 
 h2. Local Documentation
 
