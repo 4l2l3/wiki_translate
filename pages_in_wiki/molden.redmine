@@ -1,6 +1,5 @@
 h1. Molden
 ----
-[[PageOutline]]
 
 h2. Description
 _From Molden Documentation:_ Molden is a package for displaying Molecular Density from the Ab Initio packages GAMESS-UK , GAMESS-US and GAUSSIAN and the Semi-Empirical packages !Mopac/Ampac
@@ -19,16 +18,16 @@ h2. Platform
 h2. Running Molden on the Cluster
 
 h3. Modules
-p. Molden requires the following module file to run:
+Molden requires the following module file to run:
 ** @apps/molden/4.9@
-p. See [wiki:Modules] for more information.
+See [[Modules]] for more information.
 
 
-p. Molden is quite easy to execute on Circe:
+Molden is quite easy to execute on Circe:
 {{{
 [user@host ~]$  gmolden
 }}}
-p. If you have properly configured an X11 session, you should see the full GMolden interface.  If you haven't configured X11, please see our [[XWin32Install|XWin32 Installation]] documentation.
+If you have properly configured an X11 session, you should see the full GMolden interface.  If you haven't configured X11, please see our [[XWin32Install|XWin32 Installation]] documentation.
 
 h4. Reporting Bugs
-p. Report bugs directly to Research Computing: help@usf.edu
+Report bugs directly to Research Computing: help@usf.edu

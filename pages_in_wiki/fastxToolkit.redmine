@@ -1,5 +1,4 @@
 h1. FASTX Toolkit
-[[PageOutline]]
 
 h2. Description
 
@@ -21,11 +20,11 @@ h2. Running FASTX Toolkit on the Cluster
 
 h3. Modules
 
-p. The FASTX Toolkit requires the following module file to run:
+The FASTX Toolkit requires the following module file to run:
 ** @apps/fastx/0.0.13@
-p. See [wiki:Modules] for more information.
+See [[Modules]] for more information.
 
-p. Documentation on how to use each utility is available at the [http://hannonlab.cshl.edu/fastx_toolkit/commandline.html FASTX] website.
+Documentation on how to use each utility is available at the [http://hannonlab.cshl.edu/fastx_toolkit/commandline.html FASTX] website.
 
 h3. Reporting Bugs
-p. Report bugs directly to Research Computing: help@usf.edu
+Report bugs directly to Research Computing: help@usf.edu

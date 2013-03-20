@@ -1,9 +1,8 @@
 h1. [[Synopsys]] Tools
-[[PageOutline]]
 
 h2. Description 
 
-p. [[Synopsys]] provides a comprehensive portfolio of tools for digital and mixed-signal IC design, implementation, signoff, verification, test, and design for manufacturability (DFM)
+Synopsys provides a comprehensive portfolio of tools for digital and mixed-signal IC design, implementation, signoff, verification, test, and design for manufacturability (DFM)
 
 ** From: http://www.synopsys.com/tools/pages/default.aspx
 
@@ -22,11 +21,11 @@ h2. Platforms
 
 h2. Running on Circe
 
-p. Running [[Synopsys]] tools on Circe requires modules to be properly set as described below.  Graphical tools will need to be run via the NX environment, documented here: http://www.rc.usf.edu/trac/doc/wiki/CirceDesktop
+Running [[Synopsys]] tools on Circe requires modules to be properly set as described below.  Graphical tools will need to be run via the NX environment, documented here: http://www.rc.usf.edu/trac/doc/wiki/CirceDesktop
 
 h3. Modules
 
-p. Individual tools, grouped by tool and specified by version.
+Individual tools, grouped by tool and specified by version.
 {{{ 
 #!html
 &lt;table border=1 width=98% cellpadding=2 cellspacing=0&gt;
@@ -42,7 +41,7 @@ p. Individual tools, grouped by tool and specified by version.
 &lt;tr&gt;&lt;td&gt;Synplify (Synplify FPGA)&lt;/td&gt;&lt;td&gt;apps/synopsys/fpga/F-2012.03&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;Hercules&lt;/td&gt;&lt;td&gt;apps/synopsys/hercules/B-2008.09-SP4&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;HSpice&lt;/td&gt;&lt;td&gt;apps/synopsys/hspice/F-2011.09-SP2&lt;/br&gt;
-p((((((((((((((((. apps/synopsys/hspice/C-2009.09&lt;/td&gt;&lt;/tr&gt;
+                apps/synopsys/hspice/C-2009.09&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;IC Compiler&lt;/td&gt;&lt;td&gt;apps/synopsys/icc/F-2011.09-SP4&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;IC WorkBench EV Plus&lt;/td&gt;&lt;td&gt;apps/synopsys/icwbev_plus/D-2010.06-14&lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;Identify&lt;/td&gt;&lt;td&gt;apps/synopsys/identify/F-2012.03&lt;/td&gt;&lt;/tr&gt;
@@ -75,7 +74,7 @@ p((((((((((((((((. apps/synopsys/hspice/C-2009.09&lt;/td&gt;&lt;/tr&gt;
 &lt;/table&gt;
 }}} 
 
-p. To run any [[Synopsys]] tools on the cluster, ensure that you use @module add@ prior to using any [[Synopsys]] executables.  See [wiki:Modules] for more information.
+To run any [[Synopsys]] tools on the cluster, ensure that you use @module add@ prior to using any [[Synopsys]] executables.  See [[Modules]] for more information.
 
 h3. Examples
 h4. hspice
@@ -85,10 +84,10 @@ hspice &lt;inputfile&gt;
 }}}
 
 h3. More Job Information
-p. See the following for more detailed job submission information:
+See the following for more detailed job submission information:
 ** [[gridEngineUsers|SGE User's Guide]]
 ** [[gridEnginePolicy|Scheduling and Dispatch Policies]]
 ** [[gridEngineTechn|Advanced Submit Techniques]]
 
 h3. Reporting Bugs
-p. Report bugs to the IT Help Desk: help@usf.edu
+Report bugs to the IT Help Desk: help@usf.edu

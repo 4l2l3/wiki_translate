@@ -1,11 +1,10 @@
 h1. Maple
 ----
 
-[[PageOutline]]
 
 h2. Description 
 
-p. Maple is a software tool for mathematical computation. It has many features that are useful for students and research scientists as well as mathematicians. It has powerful tools for symbolic mathematics and algebraic computing. It can also do numerical computations and graphing.
+Maple is a software tool for mathematical computation. It has many features that are useful for students and research scientists as well as mathematicians. It has powerful tools for symbolic mathematics and algebraic computing. It can also do numerical computations and graphing.
 
 h2. Current Version
 
@@ -25,19 +24,19 @@ h2. Platforms
 h2. Installation
 
 *IMPORTANT: Before You Begin*[[BR]]
-p. Make sure you've applied for and received the Maple 16 License information.  You will need to go here to apply: https://rc.usf.edu/licensing/licenserequest.php
+Make sure you've applied for and received the Maple 16 License information.  You will need to go here to apply: https://rc.usf.edu/licensing/licenserequest.php
 
-p((. *_Contents*_
+  *_Contents*_
 
-p((. [MapleUser#Maple15WindowsInstallation Maple 16 Windows Installation][[BR]]
-p((. [MapleUser#Maple15LinuxSingleUserInstallation Maple 16 Linux Single User Installation][[BR]]
-p((. [MapleUser#Maple15MacOSXSingleUserInstallation Maple 16 Mac OS X Single User Installation][[BR]]
+  [MapleUser#Maple15WindowsInstallation Maple 16 Windows Installation][[BR]]
+  [MapleUser#Maple15LinuxSingleUserInstallation Maple 16 Linux Single User Installation][[BR]]
+  [MapleUser#Maple15MacOSXSingleUserInstallation Maple 16 Mac OS X Single User Installation][[BR]]
 
 -----
 
 h3. Maple 16 Windows Installation
 
-p. Before starting the installation:
+Before starting the installation:
 
 ***** Get the installation executable from https://rc.usf.edu/isos/Maple/.  Log into the server using your NetID and password. If your computer is a 64-bit machine, download Maple16WindowsX86_64Installer.exe. Otherwise, download Maple16WindowsInstaller.exe. 
 ***** Exit all programs especially Maple and Excel
@@ -45,85 +44,85 @@ p. Before starting the installation:
 
 ----
 
-p(((. 1. Double-click on the Maple installation executable to start it.
-p(((. 2. At the Introduction page, click Next.
-p(((. 3. Accept the License Agreement, then click Next.
-p(((. 4. Specify where you would like Maple to be installed, then click Next.
-p(((. 5. Specify whether or not you would like a shortcut installed on your desktop, then click Next.
-p(((. 6. For the license type, Choose Network License and click Next.
-p(((. 7. Type in the license information provided in the email you received from us when requesting access to Maple, then click Next.
-p(((. 8. Confirm the installation details displayed, then click Install.
-p(((. 9. Once the installation exits, it should give you a set of instructions on how to start Maple in graphical and console modes. Click Next.
-p(((. 10. Click "Done" to exit the installer.
+   1. Double-click on the Maple installation executable to start it.
+   2. At the Introduction page, click Next.
+   3. Accept the License Agreement, then click Next.
+   4. Specify where you would like Maple to be installed, then click Next.
+   5. Specify whether or not you would like a shortcut installed on your desktop, then click Next.
+   6. For the license type, Choose Network License and click Next.
+   7. Type in the license information provided in the email you received from us when requesting access to Maple, then click Next.
+   8. Confirm the installation details displayed, then click Install.
+   9. Once the installation exits, it should give you a set of instructions on how to start Maple in graphical and console modes. Click Next.
+   10. Click "Done" to exit the installer.
 
 ----
 
 h3. Maple 16 Linux Single User Installation
 
-p. Disclaimer: This procedure was tested on a Fedora machine. Your mileage may vary.
+Disclaimer: This procedure was tested on a Fedora machine. Your mileage may vary.
 
-p(((. 1. Get the installation executable from https://rc.usf.edu/isos/Maple/.  Log into the server using your NetID and password. If your computer is a 64-bit machine, download Maple16LinuxX86_64Installer.bin. Otherwise, download Maple16Linux32Installer.bin.
-p(((. 2. Open a terminal and become root on your machine via 'su -' or 'sudo su -'.
-p(((. 3. Run the installation wizard by:
-{{{
+   1. Get the installation executable from https://rc.usf.edu/isos/Maple/.  Log into the server using your NetID and password. If your computer is a 64-bit machine, download Maple16LinuxX86_64Installer.bin. Otherwise, download Maple16Linux32Installer.bin.
+   2. Open a terminal and become root on your machine via 'su -' or 'sudo su -'.
+   3. Run the installation wizard by:
+<pre>
 sh /path/to/installer.bin
-}}}
-p(((. 4. At the Introduction page, click Next.
-p(((. 5. Accept the License Agreement, then click Next.
-p(((. 6. Specify where you would like Maple to be installed, then click Next. We recommend /usr/local/maple16.
-p(((. 7. Specify whether or not you would like a shortcut installed on your desktop, then click Next.
-p(((. 8. For the license type, Choose Network License and click Next.
-p(((. 9. Type in the license information provided in the email you received from us when requesting access to Maple, then click Next.
-p(((. 10. Confirm the installation details displayed, then click Install.
-p(((. 11. Once the installation exits, it should give you a set of instructions on how to start Maple in graphical and console modes. Click Next.
-p(((. 12. Click "Done" to exit the installer.
-p(((. 13. Be sure the directory $MAPLE/bin is added to your path. Where $MAPLE is the installation directory from step 6). 
+</pre>
+   4. At the Introduction page, click Next.
+   5. Accept the License Agreement, then click Next.
+   6. Specify where you would like Maple to be installed, then click Next. We recommend /usr/local/maple16.
+   7. Specify whether or not you would like a shortcut installed on your desktop, then click Next.
+   8. For the license type, Choose Network License and click Next.
+   9. Type in the license information provided in the email you received from us when requesting access to Maple, then click Next.
+   10. Confirm the installation details displayed, then click Install.
+   11. Once the installation exits, it should give you a set of instructions on how to start Maple in graphical and console modes. Click Next.
+   12. Click "Done" to exit the installer.
+   13. Be sure the directory $MAPLE/bin is added to your path. Where $MAPLE is the installation directory from step 6). 
 
-p. You should be able to start xmaple or maple from the command line.
+You should be able to start xmaple or maple from the command line.
 
 ----
 
 h3. Maple 16 Mac OS X Single User Installation
 
-p. Disclaimer: These are the standard instructions for a Mac OS X machine. Your mileage may vary.
+Disclaimer: These are the standard instructions for a Mac OS X machine. Your mileage may vary.
 
-p(((. 1. Get the Mac installation executable from https://rc.usf.edu/isos/Maple/maple16/.  Log in using your NetID and password.
-p(((. 2. Double-click on the installer. Supply the administrative password if asked.
-p(((. 3. At the Introduction page, click Next.
-p(((. 4. Accept the License Agreement, then click Next.
-p(((. 5. Specify where you would like Maple to be installed, then click Next.
-p(((. 6. Specify whether or not you would like a shortcut installed on your desktop, then click Next.
-p(((. 7. For the license type, Choose Network License and click Next.
-p(((. 8. Type in the license information provided in the email you received from us when requesting access to Maple, then click Next.
-p(((. 9. Confirm the installation details displayed, then click Install.
-p(((. 10. Once the installation exits, it should give you a set of instructions on how to start Maple in graphical and console modes. Click Next.
-p(((. 11. Click "Done" to exit the installer.
-p(((. 
-p. You should be able to launch Maple by double clicking on the Maple 16 icon in the !Applications/Maple 16 directory.
+   1. Get the Mac installation executable from https://rc.usf.edu/isos/Maple/maple16/.  Log in using your NetID and password.
+   2. Double-click on the installer. Supply the administrative password if asked.
+   3. At the Introduction page, click Next.
+   4. Accept the License Agreement, then click Next.
+   5. Specify where you would like Maple to be installed, then click Next.
+   6. Specify whether or not you would like a shortcut installed on your desktop, then click Next.
+   7. For the license type, Choose Network License and click Next.
+   8. Type in the license information provided in the email you received from us when requesting access to Maple, then click Next.
+   9. Confirm the installation details displayed, then click Install.
+   10. Once the installation exits, it should give you a set of instructions on how to start Maple in graphical and console modes. Click Next.
+   11. Click "Done" to exit the installer.
+   
+You should be able to launch Maple by double clicking on the Maple 16 icon in the !Applications/Maple 16 directory.
 ----
 h2. Running Maple on Circe
 
 h3. Modules
 
-p. Maple requires the following module file and some prerequisites to run:
+Maple requires the following module file and some prerequisites to run:
 ** @apps/maple/16@
-p. To run Maple on the cluster, ensure that you use 'module add' prior to using any Maple executables.  See [wiki:Modules] for more information.
+To run Maple on the cluster, ensure that you use 'module add' prior to using any Maple executables.  See [[Modules]] for more information.
 
 h3. Submitting a Job
 
-p. There are two ways to run Maple on Circe depending on the runtime of your particular job.
+There are two ways to run Maple on Circe depending on the runtime of your particular job.
 
 h4. Jobs Shorter than 20 Minutes in Length
-p. Simply type @ xmaple @ at the command line. If you have properly configured an X11 session, you should see the full Maple interface.  If you haven't configured X11, you will be able to use the console interface by running @ maple @ at the prompt.  For users wishing to use the graphical interface over X11, please see our [[XWin32Install|XWin32 Installation]] documentation.
+Simply type <pre> xmaple </pre> at the command line. If you have properly configured an X11 session, you should see the full Maple interface.  If you haven't configured X11, you will be able to use the console interface by running <pre> maple </pre> at the prompt.  For users wishing to use the graphical interface over X11, please see our [[XWin32Install|XWin32 Installation]] documentation.
 
-p. Maple can also be launched through the NX environment using the Applications menu.  For more information about the NX environment, please see our [[CirceDesktop|Circe NX Desktop]] documentation.
+Maple can also be launched through the NX environment using the Applications menu.  For more information about the NX environment, please see our [[CirceDesktop|Circe NX Desktop]] documentation.
 
 h4. Jobs Longer than 20 Minutes in Length
-p. To run Maple jobs on the Circe cluster, users will need to submit their jobs to the scheduling environment if their jobs take more than 20 minutes to run on a standard PC.
+To run Maple jobs on the Circe cluster, users will need to submit their jobs to the scheduling environment if their jobs take more than 20 minutes to run on a standard PC.
 
-p. If, for example, you have a Maple script file named test.mpl with all your functions defined in it, you would set up a submit script to use the Maple kernel like this:
+If, for example, you have a Maple script file named test.mpl with all your functions defined in it, you would set up a submit script to use the Maple kernel like this:
 
-{{{
+<pre>
 #!/bin/bash
 #$ -cwd
 #$ -N maple_test
@@ -133,20 +132,20 @@ p. If, for example, you have a Maple script file named test.mpl with all your fu
 
 module load apps/maple/16
 maple &lt; test.mpl&gt; output.txt
-}}}
+</pre>
 
-p. Maple script files can either be created using a standard text editor or by exporting an existing worksheet from Standard Maple in .mpl format.
+Maple script files can either be created using a standard text editor or by exporting an existing worksheet from Standard Maple in .mpl format.
 
 h4. Guides
-p. Use the following links for the Maple User Manual and Programming Guide.  A PDF reader is required.
+Use the following links for the Maple User Manual and Programming Guide.  A PDF reader is required.
 ** http://www.maplesoft.com/view.aspx?SF=131922/432650/UserManual.pdf
 ** http://www.maplesoft.com/view.aspx?SF=131923/432652/ProgrammingGuide.pdf
 
 h4. More Job Information
-p. See the following for more detailed job submission information:
+See the following for more detailed job submission information:
 ** [[gridEngineUsers|SGE User's Guide]]
 ** [[gridEnginePolicy|Scheduling and Dispatch Policies]]
 ** [[gridEngineTechn|Advanced Submit Techniques]]
 
 h3. Reporting Bugs
-p. Report bugs to the IT Help Desk: help@usf.edu
+Report bugs to the IT Help Desk: help@usf.edu

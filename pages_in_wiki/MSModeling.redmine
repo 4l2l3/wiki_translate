@@ -1,11 +1,10 @@
 h1. Accelrys MS Modeling
-[[PageOutline]]
 *Last Modified:* [[LastModified(MSModeling)]]
 ----
 
 h2. Description
 
-p. MS Modeling is a visualizer for molecular systems.  This software can do its own calculations to render the effects of certain conditions or import data from other software for visualization.
+MS Modeling is a visualizer for molecular systems.  This software can do its own calculations to render the effects of certain conditions or import data from other software for visualization.
 
 h2. Version
 
@@ -13,7 +12,7 @@ h2. Version
 
 h2. Authorized Users
 
-p. Due to the limited number of licenses, we are only issuing license files per special request. Please contact us at support@rc.usf.edu to put in a request.
+Due to the limited number of licenses, we are only issuing license files per special request. Please contact us at support@rc.usf.edu to put in a request.
 
 h2. Platforms
 
@@ -21,23 +20,23 @@ h2. Platforms
 
 h2. Installation
 
-p. Before starting the installation:
+Before starting the installation:
 
-***** Get the ISO CD image from https://rc.usf.edu/isos . Log into the FTP server using your NetID and password. Change to the directory /pub/accelrys and download the file ms-modeling-3.2.iso. Once the download is finished disconnect from the FTP server. Burn this ISO image file to a blank CD using your favorite CD Recording software. If you need help with recording CDs please see our guide by clicking [wiki:CDBurning here].
-***** Alternatively, you could mount the ISO without burning a CD. Read our [wiki:WindowsISO guide] to find out more.
+***** Get the ISO CD image from https://rc.usf.edu/isos . Log into the FTP server using your NetID and password. Change to the directory /pub/accelrys and download the file ms-modeling-3.2.iso. Once the download is finished disconnect from the FTP server. Burn this ISO image file to a blank CD using your favorite CD Recording software. If you need help with recording CDs please see our guide by clicking [[CDBurning here]].
+***** Alternatively, you could mount the ISO without burning a CD. Read our [[WindowsISO guide]] to find out more.
 ***** Exit all programs
 ***** On Windows 2000/XP logon as administrator or have administrator privileges. 
 
-p(((. 1. Insert CD. If program starts go to step 3.
-p(((. 2. Double click on the My Computer Icon.
-p(((. 3. Double click on the cdrom icon.
-p(((. 4. Click on the 'Install MS Modeling' button
-p(((. 5. From the main screen click next to continue.
-p(((. 6. Enter your name and 'USF' as the organization, click Next
-p(((. 7. By default, the installation is set to 'Complete'. Leave this and click Next, then Install on the next screen. This installation will take some time.
-p(((. 8. A screen will come up asking about a gateway. Please uncheck the box and click next.
-p(((. 9. The next screen will talk about licensing. Make sure the checkbox "Launch license administrator" is checked and click Next
-p(((. 10. You will see a series of sections summarised in a tree on the left side of the window. Click 'Install License' and click 'Browse' next to the 'License File' prompt. Search for your 'license.dat' and click it.
-p(((. 11. Close the license window.
-p(((. 12. Click Finish to exit the installer. Then close the main installation screen.
-p(((. 13. Remove cdrom.
+   1. Insert CD. If program starts go to step 3.
+   2. Double click on the My Computer Icon.
+   3. Double click on the cdrom icon.
+   4. Click on the 'Install MS Modeling' button
+   5. From the main screen click next to continue.
+   6. Enter your name and 'USF' as the organization, click Next
+   7. By default, the installation is set to 'Complete'. Leave this and click Next, then Install on the next screen. This installation will take some time.
+   8. A screen will come up asking about a gateway. Please uncheck the box and click next.
+   9. The next screen will talk about licensing. Make sure the checkbox "Launch license administrator" is checked and click Next
+   10. You will see a series of sections summarised in a tree on the left side of the window. Click 'Install License' and click 'Browse' next to the 'License File' prompt. Search for your 'license.dat' and click it.
+   11. Close the license window.
+   12. Click Finish to exit the installer. Then close the main installation screen.
+   13. Remove cdrom.

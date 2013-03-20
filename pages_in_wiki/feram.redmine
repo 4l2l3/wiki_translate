@@ -1,6 +1,5 @@
 h1. feram
 ----
-[[PageOutline]]
 
 h2. Description
 _From the [[feram]] website:_ "feram is a fast molecular dynamics (MD) simulator for bulk and thin-film ferroelectrics and relaxors."
@@ -18,13 +17,13 @@ h2. Platform
 h2. Running [[feram]] Jobs on the Cluster
 
 h3. Modules
-p. Before running a job, you must first set up your environment properly.  
+Before running a job, you must first set up your environment properly.  
 ** module load apps/feram/0.19.06
 
-p. To run [[feram]] on the cluster, ensure that you use @module add@ prior to using any executables.  See [wiki:Modules] for more information.
+To run [[feram]] on the cluster, ensure that you use @module add@ prior to using any executables.  See [[Modules]] for more information.
 
 h3. Distributed Parallel
-p. This script can be copied into your job directory (the folder with your input files and database files) and modified so that you can submit batch processes to the queue.   This script is provided as an example only.  Your SGE and [[feram]] executables, tools, and options will vary.  View the sections on input files, output files, and examples on the [[feram]] website "feram website"] for more about [[feram]] options.  For help on submitting jobs to the queue, see our [wiki:gridEngineUsers "GridEngine User's Guide":http://loto.sourceforge.net/feram/#LABEL-9.
+This script can be copied into your job directory (the folder with your input files and database files) and modified so that you can submit batch processes to the queue.   This script is provided as an example only.  Your SGE and [[feram]] executables, tools, and options will vary.  View the sections on input files, output files, and examples on the [[feram]] website "feram website"] for more about [[feram]] options.  For help on submitting jobs to the queue, see our [[gridEngineUsers "GridEngine User's Guide":http://loto.sourceforge.net/feram/#LABEL-9.
 
 {{{
 #$ -N job_name
@@ -40,10 +39,10 @@ h2. Vendor Documentation
 ** "About feram":http://loto.sourceforge.net/feram/#LABEL-3
 
 h2. More Job Information
-p. See the following for more detailed job submission information:
-** [[gridEngineUsers|SGE User's Guide]]
+See the following for more detailed job submission information:
+** [[gridEngineUsers|SGE User's Guide]]]
 ** [[gridEnginePolicy|Scheduling and Dispatch Policies]]
 ** [[gridEngineTechn|Advanced Submit Techniques]]
 
 h2. Reporting Bugs
-p. Report bugs to the IT Help Desk: help@usf.edu
+Report bugs to the IT Help Desk: help@usf.edu

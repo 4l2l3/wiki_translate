@@ -1,43 +1,43 @@
 h2. PGI Workstation Installation
 
-p. If you want to use the PGI compilers from your Linux workstation then you should follow the instructions below. This allows you to run the compilers on your own computer instead of having to log into one of our clusters. The binary generated should work without modification on the cluster. You will need a license.dat file. If you are a researcher at USF please request a license through our license request form at https://rc.usf.edu/licensing/licenserequest.php
+If you want to use the PGI compilers from your Linux workstation then you should follow the instructions below. This allows you to run the compilers on your own computer instead of having to log into one of our clusters. The binary generated should work without modification on the cluster. You will need a license.dat file. If you are a researcher at USF please request a license through our license request form at https://rc.usf.edu/licensing/licenserequest.php
 
-p(((. 1. If you have a previous version of pgi installed you will still need to do a complete reinstall. It is suggested that you move the current install directory to a back up directory to save any local modifications. These modifications will have to be performed manually on the new directory.
-p(((. 2. Download from https://rc.usf.edu/isos/PGI (32/64 bit version).
-p(((. 3. The tarfile unpacks the files into the current directory, so it is suggested that you make a separate directory for instance, /usr/local/src/pgi
-p(((. 4. Move the tarfile to the directory that you created in step 3 and unpack it with the command:
+   1. If you have a previous version of pgi installed you will still need to do a complete reinstall. It is suggested that you move the current install directory to a back up directory to save any local modifications. These modifications will have to be performed manually on the new directory.
+   2. Download from https://rc.usf.edu/isos/PGI (32/64 bit version).
+   3. The tarfile unpacks the files into the current directory, so it is suggested that you make a separate directory for instance, /usr/local/src/pgi
+   4. Move the tarfile to the directory that you created in step 3 and unpack it with the command:
 *********** tar xvfz pgilinux-XXX.tar.gz 
-p(((. 5. From the directory where you unpacked the tar file run the installation script with the command:
+   5. From the directory where you unpacked the tar file run the installation script with the command:
 *********** @./install@ 
-p(((. 6. Accept the license agreement
-p(((. 7. Accept the ACML if you wish and you are installing the 64 bit version
-p(((. 8. Choose the installation directory.  You can use the default (/usr/pgi) or choose your own (example: /usr/local/pgi). Whichever you choose use that directory for the rest of these instructions.
-p(((. 9. Do not create an evaluation license.
-p(((. 10. Do not make the files read only unless you need to.
-p(((. 11. Put the file license.dat into the installation directory created in step 6.
-p(((. 12. Add install_directory_path/linux86/X.X/bin to your path. Or if you may make links from the linux86 directory to the linux86/X.X directory and then add just the linux86/bin directory to your path. This is particularly useful if you are reinstalling, as your users will not have to change their path settings. You should also link the include, lib, liblf, doc, EXAMPLE, man directories in a similar fashion.
-p(((. 13. Add the variable PGI set equal to the  install directory from 6 to your environment for instance in csh add the line:
+   6. Accept the license agreement
+   7. Accept the ACML if you wish and you are installing the 64 bit version
+   8. Choose the installation directory.  You can use the default (/usr/pgi) or choose your own (example: /usr/local/pgi). Whichever you choose use that directory for the rest of these instructions.
+   9. Do not create an evaluation license.
+   10. Do not make the files read only unless you need to.
+   11. Put the file license.dat into the installation directory created in step 6.
+   12. Add install_directory_path/linux86/X.X/bin to your path. Or if you may make links from the linux86 directory to the linux86/X.X directory and then add just the linux86/bin directory to your path. This is particularly useful if you are reinstalling, as your users will not have to change their path settings. You should also link the include, lib, liblf, doc, EXAMPLE, man directories in a similar fashion.
+   13. Add the variable PGI set equal to the  install directory from 6 to your environment for instance in csh add the line:
 *********** @setenv PGI /usr/local/pgi@ 
-p((((((. to your .cshrc file. (Other shells will vary.)
+      to your .cshrc file. (Other shells will vary.)
 
-p(((. Set the flexlm license file variable
+   Set the flexlm license file variable
 *********** @setenv LM_LICENSE_FILE /usr/local/pgi/license.dat@
-p(((. to your .cshrc file. (Other shells will vary.)
+   to your .cshrc file. (Other shells will vary.)
 
-p(((. Log out and log in, or source your rc files to update your path then try the following commands to test your installation. Note that the x.c and x.f files need not exist, and the error messages that get generated because of this are ok.
+   Log out and log in, or source your rc files to update your path then try the following commands to test your installation. Note that the x.c and x.f files need not exist, and the error messages that get generated because of this are ok.
 *********** @pgf77 -V x.f@
 *********** @pgf90 -V x.f@
 *********** @pghpf -V x.f@
 *********** @pgCC -V x.c@
 *********** @pgcc -V x.c@
 
-p. You should get results like:
+You should get results like:
 {{{
 some output
 .
 .
 .
-p. PGC-F-0002-Unable to open source input file: x.c
-p. PGC/x86-64 Linux/x86-64 6.0-5: compilation aborted
+PGC-F-0002-Unable to open source input file: x.c
+PGC/x86-64 Linux/x86-64 6.0-5: compilation aborted
 pgcc-Fatal-ccompile completed with exit code 1
 

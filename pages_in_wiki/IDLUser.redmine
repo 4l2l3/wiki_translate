@@ -1,10 +1,9 @@
 h1. IDL
 ----
-[[PageOutline]]
 
 h2. Description 
 
-p. IDL's features include: advanced image processing, interactive 2-D and 3-D graphics, object oriented programming, insightful volume visualization, a high-level programming language, integrated mathematics and statistics, flexible data I/O, a cross-platform GUI toolkit, and versatile program linking tools.
+IDL's features include: advanced image processing, interactive 2-D and 3-D graphics, object oriented programming, insightful volume visualization, a high-level programming language, integrated mathematics and statistics, flexible data I/O, a cross-platform GUI toolkit, and versatile program linking tools.
 
 h2. Version
 
@@ -23,10 +22,10 @@ h2. Platforms
 
 *_Contents*_
 
-[wiki:IDLUser#IDLWindowsInstallation Installing On Windows][[BR]]
-[wiki:IDLUser#IDLUnixInstallation Installing On Unix or Linux][[BR]]
-[wiki:IDLUser#IDLMacInstallation Installing On Mac][[BR]]
-[wiki:IDLUser#RunningonCirce Running on Circe][[BR]]
+[[IDLUser#IDLWindowsInstallation Installing On Windows]][[BR]]
+[[IDLUser#IDLUnixInstallation Installing On Unix or Linux]][[BR]]
+[[IDLUser#IDLMacInstallation Installing On Mac]][[BR]]
+[[IDLUser#RunningonCirce Running on Circe]][[BR]]
 
 h2. Installation
 
@@ -34,19 +33,19 @@ h2. Installation
 
 h3. IDL Windows Installation
 
-p. Before you begin:
+Before you begin:
 
-p. There are two installation packages:
-p((((. idl82win32_setup.exe for 32-bit Windows systems
-p((((. idl82win64_setup.exe for 64-bit Windows systems
+There are two installation packages:
+    idl82win32_setup.exe for 32-bit Windows systems
+    idl82win64_setup.exe for 64-bit Windows systems
 
-p((((. Note: If you have a 64-bit Windows system, use the 64-bit installation package. It includes both 32-bit and 64-bit versions of IDL.
+    Note: If you have a 64-bit Windows system, use the 64-bit installation package. It includes both 32-bit and 64-bit versions of IDL.
 
-p. You need Administrator privileges to install IDL. If you do not have such privileges, the installation process will fail because it cannot modify the system configuration.
+You need Administrator privileges to install IDL. If you do not have such privileges, the installation process will fail because it cannot modify the system configuration.
 
-p. Installation Instructions
+Installation Instructions
 
-p. To download and install IDL:
+To download and install IDL:
 
 ** Get the installer from https://rc.usf.edu/isos/IDL/8.2/.  Log in using your NetID and password. Download the idl82winXX_setup.exe file.
 
@@ -61,44 +60,44 @@ p. To download and install IDL:
 h3. IDL Unix Installation
 
 
-p. Before you begin:
+Before you begin:
 
 ** Choose a place to install IDL on your system and create that directory. The default installation path is /usr/local/exelis.
 
 ** If you need to create the directory, be sure you have root (or similar) permissions, and issue the following commands:
 
-p((((. % mkdir /usr/local/exelis (to create) 
-p((((. % chmod a+rx /usr/local/exelis (to give access) 
+    % mkdir /usr/local/exelis (to create) 
+    % chmod a+rx /usr/local/exelis (to give access) 
 
 ** Get the installation archive from  https://rc.usf.edu/isos/IDL/8.2/.  Log in using your NetID and password. Download the idl82linux.x86_64.tgz file.
 
 ** Log on as root on your machine.
 
 ** The installation file is a compressed archive; save it in the directory in which you are installing IDL (/usr/local/exelis by default).
-p((((. Unpack the archive by entering:
+    Unpack the archive by entering:
 
-p((((. % tar xfvz idl82linux.x86_64.tgz
+    % tar xfvz idl82linux.x86_64.tgz
 
-p((((. Execute the installation program by entering the following command:
+    Execute the installation program by entering the following command:
 
-p((((. % ./install.sh 
+    % ./install.sh 
 
 ** Follow the prompts to install IDL.
 
-p((. -If you choose not to create symbolic links, you can set up IDL by issuing the following command:
+  -If you choose not to create symbolic links, you can set up IDL by issuing the following command:
 
-p((((. % source install_dir/idl/idl82/bin/idl_setup
+    % source install_dir/idl/idl82/bin/idl_setup
 
-p((. where install_dir is the main installation directory. Then run the IDL application.
+  where install_dir is the main installation directory. Then run the IDL application.
 
 ** Once the installation finishes, you will need to install the license file. Copy the license file you receive by email to "/usr/local/itt/license/license.dat".
-p((((. 
-p. You should now be able to start @idlde@ (text mode) from the command line.
+    
+You should now be able to start @idlde@ (text mode) from the command line.
 
 ----
 
 h3. IDL Mac Installation
-p. To download and install IDL:
+To download and install IDL:
 
 ** Get the installation archive from  https://rc.usf.edu/isos/IDL/8.2/.  Log in using your NetID and password. Download the InstallIDL82_Mac.pkg file. Note the location to which you are downloading the PKG file.
 
@@ -110,28 +109,28 @@ p. To download and install IDL:
 
 h2. Running on Circe
 
-p. Running IDL on @circe@, you need to make sure you have X11 Forwarding enabled. If you're logging in from a UNIX/Linux system, you will need to do the following:
-p((((((. {{{
+Running IDL on @circe@, you need to make sure you have X11 Forwarding enabled. If you're logging in from a UNIX/Linux system, you will need to do the following:
+      {{{
 ssh -Y user@circe.rc.usf.edu
-p((((((. }}}
-p((((((. If you're logging in from a Windows machine, you need to Enable X11 Forwarding in whatever ssh client you're using.  Make sure you've followed our [[XWin32Install|XWin32 Guide]] to configure your connection to @circe@.
+      }}}
+      If you're logging in from a Windows machine, you need to Enable X11 Forwarding in whatever ssh client you're using.  Make sure you've followed our [[XWin32Install|XWin32 Guide]] to configure your connection to @circe@.
 
-p. Next, use qlogin to enter an interactive shell. This example is for 4 hours:
+Next, use qlogin to enter an interactive shell. This example is for 4 hours:
 {{{
 qlogin -l h_rt=04:00:00
 }}}
-p. Once you get dropped into an interactive shell on the execution host, you need to load the IDL module.
+Once you get dropped into an interactive shell on the execution host, you need to load the IDL module.
 {{{
 module load apps/idl/8.2
 }}}
-p. You should now be able to execute @idlde@ (text mode) from the command line.
+You should now be able to execute @idlde@ (text mode) from the command line.
 
-p. IDL can also be launched through the NX environment using the Applications menu.  For more information about the NX environment, please see our [[CirceDesktop|Circe NX Desktop]] documentation.
+IDL can also be launched through the NX environment using the Applications menu.  For more information about the NX environment, please see our [[CirceDesktop|Circe NX Desktop]] documentation.
 
 h3. Tutorials
 
-p. More information about the features of IDL can be found by using @idldemo@.  The graphical mode also includes a tutorial.
+More information about the features of IDL can be found by using @idldemo@.  The graphical mode also includes a tutorial.
 
 h3. Reporting Bugs
 
-p. Report bugs directly to Research Computing: support@rc.usf.edu
+Report bugs directly to Research Computing: support@rc.usf.edu

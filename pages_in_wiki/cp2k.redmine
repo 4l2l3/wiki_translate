@@ -1,6 +1,5 @@
 h1. CP2K
 ----
-[[PageOutline]]
 
 h2. Description
 _From the CP2K home page_: CP2K is a program to perform atomistic and molecular simulations of solid state, liquid, molecular, and biological systems. It provides a general framework for different methods such as e.g., density functional theory (DFT) using a mixed Gaussian and plane waves approach (GPW) and classical pair and many-body potentials.  CP2K is written in Fortran 95 and can be run efficiently in parallel.  However, you'll find all versions of the CP2K code come with little documentation and without any warranty.
@@ -19,34 +18,34 @@ h2. Platforms
 
 h2. Modules
 
-p. CP2K requires the following module file with prerequisites to run:
+CP2K requires the following module file with prerequisites to run:
 ** @apps/cp2k/2.3.43@
-p. See [wiki:Modules] for more information.  
+See [[Modules]] for more information.  
 
 h2. Running CP2K on the Cluster
 
-p. Please reference the CP2K home page for information on configuring the application inputs for execution.
+Please reference the CP2K home page for information on configuring the application inputs for execution.
 
-p. Once you're ready to execute a job, the following command will submit a job to the cluster:
+Once you're ready to execute a job, the following command will submit a job to the cluster:
 {{{
 [user@host ~]$ run -n 16 -t 01:00:00 -e INPUT=input.inp cp2k/2.3.43
 }}}
-p. You can see here that we've specified to use 16 processors for 1 hour.  We've also defined our input file to be @input.inp@.
+You can see here that we've specified to use 16 processors for 1 hour.  We've also defined our input file to be @input.inp@.
 
-p. For more information on Run, see [[Run|The GridEngine Run Utility]].
+For more information on Run, see [[Run|The GridEngine Run Utility]].
 
 h3. Benchmarks and Tests
-p. The following folders contain input parameters for known CP2K tests:
+The following folders contain input parameters for known CP2K tests:
 ** /apps/cp2k/2.3-01082013/tests
 
 h3. Vendor Documentation
 ** http://www.cp2k.org/index.php/documentation
 
 h3. More Job Information
-p. See the following for more detailed job submission information:
+See the following for more detailed job submission information:
 ** [[gridEngineUsers|SGE User's Guide]]
 ** [[gridEnginePolicy|Scheduling and Dispatch Policies]]
 ** [[gridEngineTechn|Advanced Submit Techniques]]
 
 h3. Reporting Bugs
-p. Report bugs to the IT Help Desk: help@usf.edu
+Report bugs to the IT Help Desk: help@usf.edu

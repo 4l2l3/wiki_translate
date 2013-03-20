@@ -1,6 +1,5 @@
 h1. Gromacs
 ----
-[[PageOutline]]
 
 h2. Description 
 
@@ -11,7 +10,7 @@ _From the [[Gromacs]] web site:_ GROMACS is a versatile package to perform molec
 h2. Version
 
 ** *4.5.5*
-p(. 
+ 
 h2. Authorized Users
 
 ** @circe@ account holders
@@ -23,20 +22,20 @@ h2. Platforms
 h2. Local Documentation
 
 h3. Modules
-p. [[Gromacs]] requires the following module file and some prerequisites to run:
+Gromacs requires the following module file and some prerequisites to run:
 ** @apps/gromacs/4.5.5@
-p. See [wiki:Modules] for more information.
+See [[Modules]] for more information.
 
 h3. Submitting Jobs
 
-p. The [[Gromacs]] Manual is essential to understanding the application and making the most of it.  The guide and this page should help you to get started with your simulations.
+The [[Gromacs]] Manual is essential to understanding the application and making the most of it.  The guide and this page should help you to get started with your simulations.
 ** "Gromacs Manuals":http://www.gromacs.org/Documentation/Manual
 or
 ** /apps/gromacs/4.5.5/manual-4.5.4.pdf
 
-p. Information about individual executables can also be found using man pages, i.e "man mdrun" or "man pdb2gmx", *after* you have loaded the [[Gromacs]] module.
+Information about individual executables can also be found using man pages, i.e "man mdrun" or "man pdb2gmx", *after* you have loaded the [[Gromacs]] module.
 
-p. In order to start a simulation, you will need a protein or molecule to play with. Go to http://www.rcsb.org/pdb/ and grab one in @.pdb@ format.  Follow the below procedure for simple molecules.
+In order to start a simulation, you will need a protein or molecule to play with. Go to http://www.rcsb.org/pdb/ and grab one in @.pdb@ format.  Follow the below procedure for simple molecules.
 
 ** Run @pdb2gmx -f &lt;pdb file&gt;@ file(s).
 
@@ -46,33 +45,33 @@ p. In order to start a simulation, you will need a protein or molecule to play w
 
 ** Run @grompp@ to pre-process your input data.
 
-p(. ** An additional file is needed for @grompp@ called `grommp.mdp`. You can grab a copy of it from `apps/gromacs/4.5.5/share/gromacs/tutor/methanol` and modify it in your local directory as needed.
+ ** An additional file is needed for @grompp@ called `grommp.mdp`. You can grab a copy of it from `apps/gromacs/4.5.5/share/gromacs/tutor/methanol` and modify it in your local directory as needed.
 
 ** Invoke the @run@ utility to perform the simulation:
-p(((. {{{
+   {{{
 # This will execute a the single-precision mdrun binary on 16 processors and 8 GB memory
 run -n 16 -m 8G -N gmx_test -e SDP="mpi_s" gromacs/4.5.5
 
 # Setting SDP to mpi_d will execute the double-precision version on mdrun.
 # If you want to specify command line options to mdrun, use ARGV with the -e option as shown below:
 run -n 16 -m 8G -N gmx_test -e ARGV="-v -xvg xmgr",SDP="mpi_d" gromacs/4.5.5
-p(((. }}}
+   }}}
 
-p. For more information on Run, see [[Run|The GridEngine Run Utility]].
+For more information on Run, see [[Run|The GridEngine Run Utility]].
 
 h3. Benchmarks and Tests
 
-p. The following contain input parameters for known [[Gromacs]] tests:
+The following contain input parameters for known [[Gromacs]] tests:
 ** /apps/gromacs/4.5.5/share/gromacs/tutor
 ** http://www.gromacs.org/Documentation/Tutorials
 
 h3. More Job Information
-p. See the following for more detailed job submission information:
+See the following for more detailed job submission information:
 ** [[gridEngineUsers|SGE User's Guide]]
 ** [[gridEnginePolicy|Scheduling and Dispatch Policies]]
 ** [[gridEngineTechn|Advanced Submit Techniques]]
 
 h3. Reporting Bugs
-p. Report bugs to the IT Help Desk: help@usf.edu
+Report bugs to the IT Help Desk: help@usf.edu
 
 

@@ -1,26 +1,26 @@
 h1. Circe NX Desktop
-p. Using the FreeNX and Xfce4 applications, we've been able to build a highly usable desktop environment to provide access to Circe and its applications.  Some of you may remember using XDMCP long ago on machines like Sunblast or Sungiant; this technology provides a somewhat similar experience.  This environment allows users to run Graphical applications as well as Terminal-based applications with the speed of a locally-installed desktop application over many different types of network and Internet connections.  As we add further features to this desktop environment including _Clickable Supercomputing_ features, we hope that this environment will greatly enhance the usability of computing resources at USF for research purposes.
+Using the FreeNX and Xfce4 applications, we've been able to build a highly usable desktop environment to provide access to Circe and its applications.  Some of you may remember using XDMCP long ago on machines like Sunblast or Sungiant; this technology provides a somewhat similar experience.  This environment allows users to run Graphical applications as well as Terminal-based applications with the speed of a locally-installed desktop application over many different types of network and Internet connections.  As we add further features to this desktop environment including _Clickable Supercomputing_ features, we hope that this environment will greatly enhance the usability of computing resources at USF for research purposes.
 
 h2. Installing the Client
-p. In order to use the Circe desktop, you will need to install the NX Client on your desktop or workstation.  Download the client from the NX web site, here: http://nomachine.com/download.php
+In order to use the Circe desktop, you will need to install the NX Client on your desktop or workstation.  Download the client from the NX web site, here: http://nomachine.com/download.php
 
-p. You'll want to pick one of the *NX Client Products* that best matches your computer.  For information on installing the NX client here: http://www.nomachine.com/documents/configuration/client-guide.php
+You'll want to pick one of the *NX Client Products* that best matches your computer.  For information on installing the NX client here: http://www.nomachine.com/documents/configuration/client-guide.php
 
-p. If you're on a Windows workstation, please install all of the supplemental fonts that are available for NX since there are still applications that use them.  This will save you from aggravation later.
+If you're on a Windows workstation, please install all of the supplemental fonts that are available for NX since there are still applications that use them.  This will save you from aggravation later.
 
 h2. Configure the Client
 *IMPORTANT*: You MUST download the client configuration for Circe from our web site (USF NetID and password required): https://rc.usf.edu/isos/NX/Circe.nxs
 
-p. You can copy this file to your desktop and double-click it to start the client.  
+You can copy this file to your desktop and double-click it to start the client.  
 
 h2. Logging In
-p. Once you've double clicked the Circe.nxs configuration file, you should be presented with a login prompt.  You should enter your NetID and password then click 'Login'.  It can take several seconds for the desktop to initialize so please be patient. 
+Once you've double clicked the Circe.nxs configuration file, you should be presented with a login prompt.  You should enter your NetID and password then click 'Login'.  It can take several seconds for the desktop to initialize so please be patient. 
 
 h2. Sessions 
-p. When you first log into Circe via NX, you begin a new session.  A session provides a full desktop environment and will include any applications you launch while you are logged in.  This will not include any programs running in the queue.
+When you first log into Circe via NX, you begin a new session.  A session provides a full desktop environment and will include any applications you launch while you are logged in.  This will not include any programs running in the queue.
 
 h3. Terminating a Session
-p. Sessions can be terminated by logging out (going to @Start-&gt;Quit@ in the NX top tool bar). If you need to terminate a suspended session and you are unable to do so from the NX client, note the system that the session is running on (eg: login0.rc.usf.edu) and follow this procedure:
+Sessions can be terminated by logging out (going to @Start-&gt;Quit@ in the NX top tool bar). If you need to terminate a suspended session and you are unable to do so from the NX client, note the system that the session is running on (eg: login0.rc.usf.edu) and follow this procedure:
 
 1. Connect to the system using your SSH client (PuTTY, ssh)
 
@@ -29,7 +29,7 @@ p. Sessions can be terminated by logging out (going to @Start-&gt;Quit@ in the N
 pkill -u &lt;netid&gt;
 }}}
 
-p. Note that all processes you own on the server will be terminated. No running jobs should be affected.
+Note that all processes you own on the server will be terminated. No running jobs should be affected.
 
 h3. Suspending a Session
-p. Sessions can also be suspended and resumed later.  This is accomplished by clicking on the window close button at the very top right corner of the NX window.  This will present you with a small window asking you to @Suspend@.  The next time you log into the system, you will go back to this exact session, with all of your windows and applications continuing to run as they were when you logged out.
+Sessions can also be suspended and resumed later.  This is accomplished by clicking on the window close button at the very top right corner of the NX window.  This will present you with a small window asking you to @Suspend@.  The next time you log into the system, you will go back to this exact session, with all of your windows and applications continuing to run as they were when you logged out.

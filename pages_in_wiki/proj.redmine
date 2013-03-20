@@ -1,6 +1,5 @@
 h1. PROJ
 ----
-[[PageOutline]]
 
 h2. Description
 
@@ -22,30 +21,30 @@ h2. Local Documentation
 
 h3. Modules
 
-p. PROJ.4 requires the following module file to run:
+PROJ.4 requires the following module file to run:
 ** @apps/proj/4.7.1@
-p. See [wiki:Modules] for more information.
+See [[Modules]] for more information.
 
 h3. Running Proj
 
-p. The PROJ manual is essential to understanding the application and making the most of it.  The guide and this page should be all you need to get started with your simulations.  There are also man pages for proj, geod, and cs2cs available after the module is loaded.
+The PROJ manual is essential to understanding the application and making the most of it.  The guide and this page should be all you need to get started with your simulations.  There are also man pages for proj, geod, and cs2cs available after the module is loaded.
 ** The PROJ user manual and addendums are available in /opt/apps/proj/manual/
 
-p. For short jobs (&gt; 10 min.), users can run [[proj]] directly from the command line.  For longer jobs, please use a qsub script.  For help on submitting jobs to the queue, see our [[gridEngineUsers|GridEngine User's Guide]].  PROJ commands can also be called from within other scripts.
+For short jobs (&gt; 10 min.), users can run [[proj]] directly from the command line.  For longer jobs, please use a qsub script.  For help on submitting jobs to the queue, see our [[gridEngineUsers|GridEngine User's Guide]].  PROJ commands can also be called from within other scripts.
 
 
 h4. Benchmarks
 
-p. The following folder contains input parameters for known PROJ tutorials:
+The following folder contains input parameters for known PROJ tutorials:
 ** /opt/apps/proj/example
 
 h4. More Job Information
 
-p. See the following for more detailed job submission information:
+See the following for more detailed job submission information:
 ** [[gridEngineUsers|SGE User's Guide]]
 ** [[gridEnginePolicy|Scheduling and Dispatch Policies]]
 ** [[gridEngineTechn|Advanced Submit Techniques]]
 
 h4. Reporting Bugs
 
-p. Report bugs directly to Research Computing: support@rc.usf.edu
+Report bugs directly to Research Computing: support@rc.usf.edu

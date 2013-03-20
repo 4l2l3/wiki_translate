@@ -1,16 +1,15 @@
 h1. Meme
 ----
-[[PageOutline]]
 *Last Modified:* [[LastModified(Meme)]]
 
 h2. Description 
 
-p. MEME allows discovery of motifs (highly conserved regions) in groups of related DNA or protein sequences.
+MEME allows discovery of motifs (highly conserved regions) in groups of related DNA or protein sequences.
 
 h2. Version
 
 ** *3.5.7*
-p(. 
+ 
 h2. Authorized Users
 
 ** @circe@ account holders
@@ -23,13 +22,13 @@ h2. Local Documentation
 
 h3. Modules
 
-p. [[Meme]] requires the following module file and some prerequisites to run:
+Meme requires the following module file and some prerequisites to run:
 ** @apps/meme/3.5.7@
 ** Prerequisites: @compilers/pgi/7.0-7.x86_64 openmpi/1.2.6-x86_64-pgi-7.0-7@
-p. To run [[Meme]] on the cluster, ensure that you use @module initadd@ to make the changes persistent.  See [wiki:Modules] for more information.
+To run Meme on the cluster, ensure that you use @module initadd@ to make the changes persistent.  See [[Modules]] for more information.
 
 h3. Submitting a Job
-p. A sample sge script is provided below.  For more information on submit scripts, see [[gridEngineTechn|GridEngine Submit Techniques]]:
+A sample sge script is provided below.  For more information on submit scripts, see [[gridEngineTechn|GridEngine Submit Techniques]]:
 
 {{{
 #!/bin/bash

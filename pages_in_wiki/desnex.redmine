@@ -1,6 +1,5 @@
 h1. Ansoft Designer
 ----
-[[PageOutline]]
 
 h2. Description 
 
@@ -21,29 +20,29 @@ h2. Platforms
 
 h2. Instructions for First-Time Use
 
-p. You will need to use the [wiki:Modules modules] program, so if you're not familiar with it, check out the wiki link. 
+You will need to use the [[Modules modules]] program, so if you're not familiar with it, check out the wiki link. 
 
-p(((. 1. Before you login to @circe@, you need to make sure you have X11 Forwarding enabled. If you're logging in from a UNIX/Linux system, you will need to do the following:
-p((((((. {{{
+   1. Before you login to @circe@, you need to make sure you have X11 Forwarding enabled. If you're logging in from a UNIX/Linux system, you will need to do the following:
+      {{{
 ssh -Y user@circe.rc.usf.edu
-p((((((. }}}
-p((((((. If you're logging in from a Windows machine, you need to Enable X11 Forwarding in whatever ssh client you're using.  Make sure you've followed our [[XWin32Install|XWin32 Guide]] to configure your connection to Circe.
+      }}}
+      If you're logging in from a Windows machine, you need to Enable X11 Forwarding in whatever ssh client you're using.  Make sure you've followed our [[XWin32Install|XWin32 Guide]] to configure your connection to Circe.
 
-p((. 2. Now you will want to start an interactive job, but you do NOT want to just run @qlogin@ with no options. This is because the default session time limit is 10 minutes, and you won't get to choose which queue you run your job in. Please refer to [[gridEngineInter|this wiki]] to learn how to run interactive jobs properly. Run an interactive job by typing the following:
-p((((((. {{{
+  2. Now you will want to start an interactive job, but you do NOT want to just run @qlogin@ with no options. This is because the default session time limit is 10 minutes, and you won't get to choose which queue you run your job in. Please refer to [[gridEngineInter|this wiki]] to learn how to run interactive jobs properly. Run an interactive job by typing the following:
+      {{{
 qlogin -l mpj=3G,h_rt=01:00:00,nodes=1,ppn=4
-p((((((. }}}
-p((((((. That will give you a shell directly on a compute node with 4 smp processors, 3 Gigs of free memory, and 1 hour of runtime. You will have to run this command (with your desired options) whenever you run Designer in the future. This is just an example, and your requirements may vary.
+      }}}
+      That will give you a shell directly on a compute node with 4 smp processors, 3 Gigs of free memory, and 1 hour of runtime. You will have to run this command (with your desired options) whenever you run Designer in the future. This is just an example, and your requirements may vary.
 
-p(((. 3. Run the following:
-p((((((. {{{
+   3. Run the following:
+      {{{
 module add apps/ansoft/designer-6.0
-p((((((. }}}
+      }}}
 
-p(((. 4. Next, run Designer itself by typing @designer@.
+   4. Next, run Designer itself by typing @designer@.
 
-p(((. 5. Two dialogue boxes will pop up. Just click OK on them after the auto update fails. The third box will ask you what directories you want to store your projects and temporary files in. You shouldn't have to change the path that the temporary files will be stored at, but you might want to change the path where the project files will be stored. Fill that out, hit OK, and Designer will run.
+   5. Two dialogue boxes will pop up. Just click OK on them after the auto update fails. The third box will ask you what directories you want to store your projects and temporary files in. You shouldn't have to change the path that the temporary files will be stored at, but you might want to change the path where the project files will be stored. Fill that out, hit OK, and Designer will run.
 
 
 h2. Getting Help
-p. Please report any issue to the USF IT Helpdesk by sending an e-mail to help@usf.edu
+Please report any issue to the USF IT Helpdesk by sending an e-mail to help@usf.edu

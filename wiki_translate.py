@@ -19,7 +19,7 @@ def do_headers(text_in):
 		if eq_num1 != eq_num2:
 			print "Equal signs don't match in current header: '"+header+"'"#throw error
 			continue #just ignore current header, don't translate
-		new_hd = "h"+str(eq_num1)+"."+cur_hd_txt.rstrip()#rstrip gets rid of our trailing space
+		new_hd = "h"+str(eq_num1)+"."+cur_hd_txt.rstrip()#rstrip gets rid of our trailing space and the added newline makes things look nice on redmine
 		#It appears there's a glitch with header.start(), it's matching '= header_text ===' instead of '=== header_text ===' and therefore .start() returns 2 spaces before our full match begins. Also does the same with 4 equal signs.
 		#before = text_in[:(header.span()[0])]
 		#after = text_in[(header.span()[1]):]
@@ -27,7 +27,8 @@ def do_headers(text_in):
 		
 		#The following line is a hacky band-aid for it.
 		text_out = text_out.replace(header.group(),new_hd) 
-
+	
+	text_out = text_out.replace('[[PageOutline]]\r\n','')
 	return text_out
 
 def stylings_replace( pattern, text_in, trac_style, redmine_style ):
@@ -65,8 +66,8 @@ def do_stylings(text_in):
 	subs_pattern = re.compile(',,.+?,,')	
 	text_out = stylings_replace(subs_pattern, text_out, ",,", "~")
 
-	mono_pattern = re.compile('(\{{3}.+?\}{3}|`.+`)')
-	text_out = stylings_replace(mono_pattern, text_out, "`{}", "@")
+	mono_pattern = re.compile('`.+`')#OLD: (\{{3}.+?\}{3}|`.+`)')
+	text_out = stylings_replace(mono_pattern, text_out, "`","@")#OLD: {}", "@")
 
 	return text_out
 
@@ -81,6 +82,17 @@ def do_paragraph_formatting(text_in):
 		lang = re.compile('\n#!.+\n').search(block).group().strip("\n")[2:]
 		code = block[len("{{{\n#!")+len(lang)+len('\n') : len(block)-3]
 		text_out = text_out.replace(block,'<pre><code class="'+lang+'">\n'+code+'</code></pre>')
+
+	#TRAC		{{{ blah blah blah }}}
+	#REDMINE	<pre> blah blah blah </pre>
+	#TODO: find/replace
+	curly_pat = re.compile('\{{3}.+?\}{3}')
+	curlies = curly_pat.findall(text_out)
+	for curly in curlies:
+		text_out = text_out.replace("{{{",'<pre>')
+		text_out = text_out.replace("}}}",'</pre>')
+
+	'''=====These prefixes seem unnecessary======
 	#TRAC		text of my paragraph
 	#REDMINE	p. text of my paragraph
 	par_noi = re.compile('\n[A-Z].+')
@@ -99,7 +111,7 @@ def do_paragraph_formatting(text_in):
 		tl = par.end()
 		num_of_spaces = par.group().count(' ')
 		text_out = text_out[:hd+1]+"p"+"("*num_of_spaces+". "+text_out[tl:] #+1 for newline
-
+	'''
 	return text_out
 
 def do_links(text_in):
@@ -161,6 +173,14 @@ def do_links(text_in):
 		#REDMINE	[[WikiPageName|Title]]
 		new_twiki = "[["+page_name+"|"+title.group()[1:len(title.group())-1]+"]]"
 		text_out = text_out.replace(twiki,new_twiki)
+
+	#TODO: TRAC:	[wiki:WikiPageName]
+	#REDMINE:	[[WikiPageName]]
+	untitled_wiki = re.compile('\[wiki:[^\]]+?\]')
+	all_utwiki = untitled_wiki.findall(text_out)
+	for utwiki in all_utwiki:
+		new_utwiki = "[[" + utwiki[len("[wiki:"):len(utwiki)-1] + "]]"
+		text_out = text_out.replace(utwiki,new_utwiki)
 	return text_out
 
 def do_images(text_in):

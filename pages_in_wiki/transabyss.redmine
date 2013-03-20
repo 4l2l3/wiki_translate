@@ -1,5 +1,4 @@
 h1. Trans-ABySS
-[[PageOutline]]
 
 h2. Description 
 
@@ -23,14 +22,14 @@ h2. Running Trans-ABySS Jobs on the Cluster
 
 h3. Modules
 
-p. Before running a job, you must first set up your environment properly.  Here are the required module files:
+Before running a job, you must first set up your environment properly.  Here are the required module files:
 
 ** apps/trans-abyss/1.4.4
 
-p. To run Trans-ABySS on the cluster, ensure that you use @module add@ prior to using any executables.  See [wiki:Modules] for more information.
+To run Trans-ABySS on the cluster, ensure that you use @module add@ prior to using any executables.  See [[Modules]] for more information.
 
 h3. How to Submit Jobs
-p. Make sure to run your job from your $WORK directory. Use the a submit script like the following to run Trans-ABySS:
+Make sure to run your job from your $WORK directory. Use the a submit script like the following to run Trans-ABySS:
 
 {{{
 #$ -N &lt;job_name&gt;
@@ -45,19 +44,19 @@ module load apps/trans-abyss/1.4.4
 python wrappers/trans_abyss.py &lt;arguments&gt; &lt;input_file(s)&gt;
 }}}
 
-p. Your submit scripts will vary depending on your individual needs.
+Your submit scripts will vary depending on your individual needs.
 
-p. For help on submitting jobs to the queue, see our [[gridEngineUsers|GridEngine User's Guide]].  These scripts are provided as examples only.  Your SGE and ABySS options will vary.  View the user's guide (link and location provided below) for more about Trans-ABySS options.
+For help on submitting jobs to the queue, see our [[gridEngineUsers|GridEngine User's Guide]].  These scripts are provided as examples only.  Your SGE and ABySS options will vary.  View the user's guide (link and location provided below) for more about Trans-ABySS options.
 
 h3. Documentation
 ** /apps/trans-abyss/1.4.4/trans-abyss-manual-v1.4.4.pdf
 ** "User's Guide":http://www.bcgsc.ca/platform/bioinfo/software/trans-abyss/releases/1.4.4
 
 h3. More Job Information
-p. See the following for more detailed job submission information:
+See the following for more detailed job submission information:
 ** [[gridEngineUsers|SGE User's Guide]]
 ** [[gridEnginePolicy|Scheduling and Dispatch Policies]]
 ** [[gridEngineTechn|Advanced Submit Techniques]]
 
 h2. Reporting Bugs
-p. Report bugs to the IT Help Desk: help@usf.edu
+Report bugs to the IT Help Desk: help@usf.edu

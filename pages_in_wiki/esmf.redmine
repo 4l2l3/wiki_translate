@@ -1,6 +1,5 @@
 h1. ESMF
 ----
-[[PageOutline]]
 
 h2. Description 
 _From the ESMF web site:_ The Earth System Modeling Framework (ESMF) collaboration is building high-performance, flexible software infrastructure to increase ease of use, performance portability, interoperability, and reuse in climate, numerical weather prediction, data assimilation, and other Earth science applications. The ESMF defines an architecture for composing complex, coupled modeling systems and includes data structures and utilities for developing individual models. ESMF also includes toolkits for building components and applications, such as regridding software, calendar management, logging and error handling, and parallel communications.
@@ -9,7 +8,7 @@ _From the ESMF web site:_ The Earth System Modeling Framework (ESMF) collaborati
 
 h2. Version
 ** *5.2.0rp1*
-p(. 
+ 
 h2. Authorized Users
 ** @circe@ account holders
 
@@ -19,24 +18,24 @@ h2. Platforms
 h2. Running ESMF Jobs on the Cluster
 
 h3. Modules
-p. Before running a job, you must first set up your environment properly.  Here are the required module files:
+Before running a job, you must first set up your environment properly.  Here are the required module files:
 ** apps/esmf/5.2.0
 
-p. To use the ESMF libraries on the cluster, ensure that you use "module add apps/esmf/5.2.0" prior to using any executables for building or compiling software. This will set your environment variables, including ESMFMKFILE. This library was built with Intel 12.1.0 and mvapich2 1.8a2. See Modules for more information. 
+To use the ESMF libraries on the cluster, ensure that you use "module add apps/esmf/5.2.0" prior to using any executables for building or compiling software. This will set your environment variables, including ESMFMKFILE. This library was built with Intel 12.1.0 and mvapich2 1.8a2. See Modules for more information. 
 
 h3. Documentation and Test Data
-p. Users' Guide
+Users' Guide
 ** /apps/esmf/5.2.0rp1/doc/ESMF_usrdoc.pdf
 ** http://www.earthsystemmodeling.org/users/documentation.shtml
 
-p. The following folder contains input parameters for known ESMF tests:
+The following folder contains input parameters for known ESMF tests:
 ** /apps/esmf/5.2.0rp1/test
 
 h3. More Job Information
-p. See the following for more detailed job submission information:
+See the following for more detailed job submission information:
 ** [[gridEngineUsers|SGE User's Guide]]
 ** [[gridEnginePolicy|Scheduling and Dispatch Policies]]
 ** [[gridEngineTechn|Advanced Submit Techniques]]
 
 h3. Reporting Bugs
-p. Report bugs to the IT Help Desk: help@usf.edu
+Report bugs to the IT Help Desk: help@usf.edu

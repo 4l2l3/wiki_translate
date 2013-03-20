@@ -1,5 +1,4 @@
 h1. OpenFOAM
-[[PageOutline]]
 
 h2. Description 
 
@@ -23,11 +22,11 @@ h2. Running OpenFOAM Jobs on the Cluster
 
 h3. Modules
 
-p. Before running a job, you must first set up your environment properly.  Here are the required module files:
+Before running a job, you must first set up your environment properly.  Here are the required module files:
 
 ** apps/openfoam/2.0.1
 
-p. To run OpenFOAM on the cluster, ensure that you use @module add@ prior to using any executables.  See [wiki:Modules] for more information.  You also need to load the environment variables into your profile after loading the module.  This is done by executing the following command in your terminal window:
+To run OpenFOAM on the cluster, ensure that you use @module add@ prior to using any executables.  See [[Modules]] for more information.  You also need to load the environment variables into your profile after loading the module.  This is done by executing the following command in your terminal window:
 
 {{{
 [user@login ~]$ source $ENV_FILE
@@ -35,15 +34,15 @@ p. To run OpenFOAM on the cluster, ensure that you use @module add@ prior to usi
 
 h3. How to Submit Jobs
 
-p. Provided are directions for running an interactive job and a batch script for running OpenFOAM as a multi-processor job.    These scripts are provided as examples only.  Your SGE and OpenFOAM executables, tools, and options will vary.  View the user's guide on this site (http://www.openfoam.com/docs/user/) for more about OpenFOAM options.
+Provided are directions for running an interactive job and a batch script for running OpenFOAM as a multi-processor job.    These scripts are provided as examples only.  Your SGE and OpenFOAM executables, tools, and options will vary.  View the user's guide on this site (http://www.openfoam.com/docs/user/) for more about OpenFOAM options.
 
 h3. GUI
 
-p. Specify the number of processors (typically 2-8) and time needed to run OpenFOAM. This example is two processors for 10 hours:
+Specify the number of processors (typically 2-8) and time needed to run OpenFOAM. This example is two processors for 10 hours:
 {{{
 [user@login ~]$ qlogin -l h_rt=10:00:00, pcpus= 2
 }}}
-p. Once you get dropped into an interactive shell on the execution host, you will need to load the module and environment as described above.  You can then run OpenFOAM tools with any corresponding options, i.e.:
+Once you get dropped into an interactive shell on the execution host, you will need to load the module and environment as described above.  You can then run OpenFOAM tools with any corresponding options, i.e.:
 {{{
 [user@host ~]$ paraFoam
 }}}
@@ -51,7 +50,7 @@ p. Once you get dropped into an interactive shell on the execution host, you wil
 
 h3. Distributed Parallel
 
-p. This script can be copied into your job directory (the folder with your input files and database files) and modified so that you can submit batch processes to the queue.  For help on submitting jobs to the queue, see our [[gridEngineUsers|GridEngine User's Guide]].
+This script can be copied into your job directory (the folder with your input files and database files) and modified so that you can submit batch processes to the queue.  For help on submitting jobs to the queue, see our [[gridEngineUsers|GridEngine User's Guide]].
 
 {{{
 #$ -N openfoam_job_name
@@ -68,10 +67,10 @@ mpirun &lt;foam_exectutable&gt; &lt;-parallel&gt; &lt;options&gt;
 }}}
 
 h3. More Job Information
-p. See the following for more detailed job submission information:
+See the following for more detailed job submission information:
 ** [[gridEngineUsers|SGE User's Guide]]
 ** [[gridEnginePolicy|Scheduling and Dispatch Policies]]
 ** [[gridEngineTechn|Advanced Submit Techniques]]
 
 h3. Reporting Bugs
-p. Report bugs to the IT Help Desk: help@usf.edu
+Report bugs to the IT Help Desk: help@usf.edu

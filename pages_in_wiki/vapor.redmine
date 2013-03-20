@@ -1,6 +1,5 @@
 h1. VAPOR
 ----
-[[PageOutline]]
 
 h2. Description
 
@@ -22,22 +21,22 @@ h2. Running VAPOR on the Cluster
 
 h3. Modules
 
-p. Before running a job, you must first set up your environment properly.  Here are the required module files:
+Before running a job, you must first set up your environment properly.  Here are the required module files:
 
 ** apps/vapor/2.1.0
 
-p. To run VAPOR on the cluster, ensure that you use @module add@ prior to using any executables.  See [wiki:Modules] for more information. 
+To run VAPOR on the cluster, ensure that you use @module add@ prior to using any executables.  See [[Modules]] for more information. 
 
-p. Simply type in "vaporgui" once the modules have been loaded to launch vapor.
+Simply type in "vaporgui" once the modules have been loaded to launch vapor.
 
 h2. Vendor Documentation
 ** https://www.vapor.ucar.edu/docs
 
 h2. More Job Information
-p. See the following for more detailed job submission information:
+See the following for more detailed job submission information:
 ** [[gridEngineUsers|SGE User's Guide]]
 ** [[gridEnginePolicy|Scheduling and Dispatch Policies]]
 ** [[gridEngineTechn|Advanced Submit Techniques]]
 
 h2. Reporting Bugs
-p. Report bugs to the IT Help Desk: help@usf.edu
+Report bugs to the IT Help Desk: help@usf.edu

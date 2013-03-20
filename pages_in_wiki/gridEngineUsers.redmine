@@ -1,8 +1,7 @@
 h1.
 ----
-[[PageOutline]]
 
-p. This document will provide information on submitting jobs, removing jobs, checking job status, and interacting with the scheduler.
+This document will provide information on submitting jobs, removing jobs, checking job status, and interacting with the scheduler.
 
 h2. Key Commands
 
@@ -12,14 +11,13 @@ h2. Key Commands
 | qdel [job_id]     | Delete/stop jobs.  Again, the man page will provide further information.  To stop all of your jobs, issue *qdel -u [your_user_name]*.  To force the deletion of your job, issue *qdel -f [job_id]* |
 | qs                | Display a status summary of the entire grid.  This displays total, used, and available slots per queue as well as the aggregate load average. |
 
-p. Complete command-line options can be found by issuing *-help* at the end of any of the above commands or by utilizing the manual pages, e.g. run *man qsub*
+Complete command-line options can be found by issuing *-help* at the end of any of the above commands or by utilizing the manual pages, e.g. run *man qsub*
 
 h2. Submitting Jobs
 h1.
 ----
-[[PageOutline]]
 
-p. This document will provide information on submitting jobs, removing jobs, checking job status, and interacting with the scheduler.
+This document will provide information on submitting jobs, removing jobs, checking job status, and interacting with the scheduler.
 
 h2. Key Commands
 
@@ -29,20 +27,20 @@ h2. Key Commands
 | qdel [job_id]     | Delete/stop jobs.  Again, the man page will provide further information.  To stop all of your jobs, issue *qdel -u [your_user_name]*.  To force the deletion of your job, issue *qdel -f [job_id]* |
 | qs                | Display a status summary of the entire grid.  This displays total, used, and available slots per queue as well as the aggregate load average. |
 
-p. Complete command-line options can be found by issuing *-help* at the end of any of the above commands or by utilizing the manual pages, e.g. run *man qsub*
+Complete command-line options can be found by issuing *-help* at the end of any of the above commands or by utilizing the manual pages, e.g. run *man qsub*
 
 h2. Submitting Jobs
-p. You will need to create a submit script to run your job on the cluster.  The submit script will specify what type of hardware you wish to run on, what priority your job has, what do do with console output, etc.  We will look at SGE submit scripts for Serial and Parallel jobs so that you may have a good understanding of how they work and what it is they do.
+You will need to create a submit script to run your job on the cluster.  The submit script will specify what type of hardware you wish to run on, what priority your job has, what do do with console output, etc.  We will look at SGE submit scripts for Serial and Parallel jobs so that you may have a good understanding of how they work and what it is they do.
 
 h3. Submission for Serial Jobs
 !GridEngine uses pre-processed shell scripts to submit jobs. SGE provides predefined variables to help integrate your process with the scheduler and the job dispatcher.  It is likely that you will need to pass options to !GridEngine to retieive statistical information, set job specifications, redirect your I/O, change your working directory, and possibly notify you of job failure or completion.  To set these options, you will need to pass arguments to qsub or you can embed these options in your submit file.
 
-p. A simple job for SGE would look like this
+A simple job for SGE would look like this
 
 {{{
 date
 }}}
-p. It is a simple script that calls *date* on whatever machine SGE decides to run your job on. Let's have a look at another submit file that does the same thing:
+It is a simple script that calls *date* on whatever machine SGE decides to run your job on. Let's have a look at another submit file that does the same thing:
 {{{
 #$ -cwd
 #$ -N get_date
@@ -51,34 +49,34 @@ p. It is a simple script that calls *date* on whatever machine SGE decides to ru
 date
 }}}
 
-p. An overview of the options (following the character sequence "#$") is as follows:
+An overview of the options (following the character sequence "#$") is as follows:
 ** @-N (name)@: Set job name for queue
 ** @-cwd@: Set directory to current working directory
 ** @-l h_rt=00:30:00@: Tell the scheduler that this process should only run for 30 minutes.  *Note*: This request will become mandatory in the near future so that the scheduler will know when jobs will finish.
 
-p. These options should be sufficient for the most basic serial jobs.  
+These options should be sufficient for the most basic serial jobs.  
 
-p. With this file, we have specified our output file, the name of the job, and that SGE should execute this job from within the same directory as it was submitted.  Let us call this script @date.sh@ and submit the job to the queue:
+With this file, we have specified our output file, the name of the job, and that SGE should execute this job from within the same directory as it was submitted.  Let us call this script @date.sh@ and submit the job to the queue:
 
 {{{
 [user@login0 ~]$ qsub date.sh
-p. Your job 77345 ("get_date") has been submitted
+Your job 77345 ("get_date") has been submitted
 }}}
 
-p. Let's now check the status of our job:
+Let's now check the status of our job:
 {{{
 [user@login0 ~]$ qstat
 job-ID  prior   name       user         state submit/start at     queue                          slots ja-task-ID 
 -----------------------------------------------------------------------------------------------------------------
-p((. 77345 0.00000 get_date   brs          qw    05/25/2010 14:54:26                                    1
+  77345 0.00000 get_date   brs          qw    05/25/2010 14:54:26                                    1
 }}}
 
-p. You can see job 77345 (as an example) listed in the output.  You can see it is in the state @qw@ which means it is waiting to be dispatched pending the arrival of the next scheduler iteration OR when sufficient resources become available.
+You can see job 77345 (as an example) listed in the output.  You can see it is in the state @qw@ which means it is waiting to be dispatched pending the arrival of the next scheduler iteration OR when sufficient resources become available.
 
 h3. Submission for Parallel Jobs
-p. Because many of the applications available for science and engineering are highly resource intensive, many of them have been "parallelized" in order to run on multiple pieces of hardware to divide the work load.  Most applications have standardized upon the MPI or MPI2 specification.  Since many of you will want to run your applications in parallel in order to take advantage of performance gains, you'll need to know how to create a job script for submitting such an applications.  !GridEngine provides "Parallel Environments" for interfacing your job with an MPI library and distributing it across a cluster.
+Because many of the applications available for science and engineering are highly resource intensive, many of them have been "parallelized" in order to run on multiple pieces of hardware to divide the work load.  Most applications have standardized upon the MPI or MPI2 specification.  Since many of you will want to run your applications in parallel in order to take advantage of performance gains, you'll need to know how to create a job script for submitting such an applications.  !GridEngine provides "Parallel Environments" for interfacing your job with an MPI library and distributing it across a cluster.
 
-p. Rather than explain everything all at once, here is a submit script for a parallel job:
+Rather than explain everything all at once, here is a submit script for a parallel job:
 {{{
 #$ -N parallel-job
 #$ -j y
@@ -89,7 +87,7 @@ p. Rather than explain everything all at once, here is a submit script for a par
 mpirun -np $NSLOTS parallel-executable
 }}}
 
-p. Most of the submit directives (remember, those lines starting with "#$" ?) should already be familiar to you.  But you should also notice that we've added a few new directives:
+Most of the submit directives (remember, those lines starting with "#$" ?) should already be familiar to you.  But you should also notice that we've added a few new directives:
 
 ** @pcpus=4@: This specifies the number of CPUs you would like allocated for your job. 
 
@@ -97,13 +95,13 @@ p. Most of the submit directives (remember, those lines starting with "#$" ?) sh
 
 ** @-j y@: This tells !GridEngine to merge the output streams of your job, stdout and stderr, into a single file rather than putting it into two separate files.
 
-p. Following the exact same steps for a serial job submission script that were described above, we can submit our parallel job script to the cluster using @qsub@ to view its execution status.
+Following the exact same steps for a serial job submission script that were described above, we can submit our parallel job script to the cluster using @qsub@ to view its execution status.
 
 h3. Interactive jobs
-p. Interactive jobs can be run via the @qlogin@ uses many of the same options that are available to submit scripts.  
+Interactive jobs can be run via the @qlogin@ uses many of the same options that are available to submit scripts.  
 
 h3. Available Environment Variables
-p. The following environment variables are defined by !GridEngine at run time.  They may be referenced in your submit scripts to add functionality to your code:
+The following environment variables are defined by !GridEngine at run time.  They may be referenced in your submit scripts to add functionality to your code:
 ** @$JOB_ID@: The job number assigned by the scheduler to your job
 ** @$JOBDIR@: The directory your job is currently running in
 ** @$USER@: The username of the person currently running the job
@@ -118,10 +116,10 @@ p. The following environment variables are defined by !GridEngine at run time.  
 ** @$QUEUE@: Current running queue
 
 h2. Storing
-p. Commonly used options in submit scripts or calls to @qstat@ can be stored in dot files within your home directory in order to prevent you from needlessly using them repeatedly.
+Commonly used options in submit scripts or calls to @qstat@ can be stored in dot files within your home directory in order to prevent you from needlessly using them repeatedly.
 
 h3.
-p. Options for the @qstat@ command may be stored in the `~/.sge_qstat` file, in your home directory.  This allows you to add default options to the @qstat@ command.  An example of this follows:
+Options for the @qstat@ command may be stored in the `~/.sge_qstat` file, in your home directory.  This allows you to add default options to the @qstat@ command.  An example of this follows:
 
 h4.
 {{{
@@ -129,9 +127,9 @@ h4.
 -g t
 }}}
 
-p. Adding these options to the `~/.sge_qstat` file ensures that the default call to @qstat@ will show jobs for all users and provide a view of the process distribution throughout the cluster.  You can add any of the options defined in the @qstat@ man pages to this file to make them defaults for your account.
+Adding these options to the `~/.sge_qstat` file ensures that the default call to @qstat@ will show jobs for all users and provide a view of the process distribution throughout the cluster.  You can add any of the options defined in the @qstat@ man pages to this file to make them defaults for your account.
 
 h3.
-p. Even more useful is the @~/.sge_request@ file and an example submit script using those defaults:
+Even more useful is the @~/.sge_request@ file and an example submit script using those defaults:
 
 http://docs.sun.com/app/docs/doc/817-6117?q=N1GE

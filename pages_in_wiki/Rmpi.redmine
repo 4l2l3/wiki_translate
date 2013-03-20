@@ -1,10 +1,9 @@
 h1. R and RMPI
 ----
-[[PageOutline]]
 
 h2. Description
 
-p. [[Rmpi]] is a package that provides MPI bindings for the R programming language.  In much the same way parallel code is written in other languages such as C or Fortran, R codes can run in parallel across multiple processors or nodes.
+Rmpi is a package that provides MPI bindings for the R programming language.  In much the same way parallel code is written in other languages such as C or Fortran, R codes can run in parallel across multiple processors or nodes.
 
 h2. Version
 
@@ -23,21 +22,21 @@ h2. Local Documentation
 
 h3. Modules
 
-p. [[Rmpi]] requires the following module file and some prerequisites to run:
+Rmpi requires the following module file and some prerequisites to run:
 ** @apps/R/2.11.1@
 ** Prerequisites: @compilers/gcc/4.4.2 openmpi/1.4.1-x86_64-gcc-4.4.2@
-p. To run [[Rmpi]] on the cluster, ensure that you use @module initadd@ to make the changes persistent.  See [wiki:Modules] for more information.
+To run [[Rmpi]] on the cluster, ensure that you use @module initadd@ to make the changes persistent.  See [[Modules]] for more information.
 
 h3. Prepare your R Environment
 
-p. Copy this file to /path/to/job/directory/.Rprofile to allow [[Rmpi]] jobs to work:
+Copy this file to /path/to/job/directory/.Rprofile to allow [[Rmpi]] jobs to work:
 {{{
 cp /opt/apps/R/2.11.1/share/Rprofile ~/rmpitest/.Rprofile
 }}}
 
 h3. Submitting a Job
 
-p. The submit script for running [[Rmpi]] jobs on the cluster is fairly simple.  An example script is provided below:
+The submit script for running [[Rmpi]] jobs on the cluster is fairly simple.  An example script is provided below:
 
 {{{
 #!/bin/bash
@@ -52,4 +51,4 @@ module add apps/R/2.11.1 compilers/gcc/4.4.2 openmpi/1.4.1-x86_64-gcc-4.4.2
 mpirun [[Rmpi]] TestRmpi.R
 }}}
 
-p. You can submit this job in exactly the same way as you would any other application.
+You can submit this job in exactly the same way as you would any other application.

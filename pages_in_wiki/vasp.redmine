@@ -1,6 +1,5 @@
 h1. VASP
 ----
-[[PageOutline]]
 
 h2. Description
 
@@ -20,37 +19,37 @@ h2. Platform
 
 h2. Running VASP on the Cluster
 
-p. The VASP guide is essential to understanding the application and making the most of it.  The guide and this page should be all you need to get started with your simulations.
+The VASP guide is essential to understanding the application and making the most of it.  The guide and this page should be all you need to get started with your simulations.
 ** VASP Guide: http://cms.mpi.univie.ac.at/vasp/vasp/vasp.html
 
-p. VASP runs reasonably well on most types of hardware but its performance depends greatly upon the number of atoms in the system, the k-point configuration specified in the KPOINTS file, and the number of ionic or relaxation steps you specify in INCAR.  For smaller systems with a small set of atoms and k-point configuration, Gigabit Ethernet is sufficient for communications, but for anything more involved, you will definitely want to use Myrinet or !InfiniBand for an interconnect.  In certain cases, VASP may even benefit from running on a large, shared memory multi-processor machine.
+VASP runs reasonably well on most types of hardware but its performance depends greatly upon the number of atoms in the system, the k-point configuration specified in the KPOINTS file, and the number of ionic or relaxation steps you specify in INCAR.  For smaller systems with a small set of atoms and k-point configuration, Gigabit Ethernet is sufficient for communications, but for anything more involved, you will definitely want to use Myrinet or !InfiniBand for an interconnect.  In certain cases, VASP may even benefit from running on a large, shared memory multi-processor machine.
 
-p. To run VASP, simply execute the following within your job directory:
+To run VASP, simply execute the following within your job directory:
 {{{
 [user@host ~]$ run -n 16 -f i_ib -t 1:00:00 vasp/5.2.8
 }}}
 
-p. This will request 16 processors via MPI, [[InfiniBand]] interconnect (@-f i_ib@) and a 1 hour run-time.
+This will request 16 processors via MPI, [[InfiniBand]] interconnect (@-f i_ib@) and a 1 hour run-time.
 
-p. For more information on Run, see [[Run|The GridEngine Run Utility]].
+For more information on Run, see [[Run|The GridEngine Run Utility]].
 
 h4. Benchmarks
-p. The following folders contain input parameters for known VASP benchmarks and tutorials:
+The following folders contain input parameters for known VASP benchmarks and tutorials:
 ** /opt/apps/vasp/Hg
 ** /opt/apps/vasp/benchmark
 ** /opt/apps/vasp/tutor/diamant
 
 h4. Other Data
-p. Pseudo-Potential sets are included in /opt/apps/vasp in the pot directories.
+Pseudo-Potential sets are included in /opt/apps/vasp in the pot directories.
 
 h4. More Job Information
-p. See the following for more detailed job submission information:
+See the following for more detailed job submission information:
 ** [[gridEngineUsers|SGE User's Guide]]
 ** [[gridEnginePolicy|Scheduling and Dispatch Policies]]
 ** [[gridEngineTechn|Advanced Submit Techniques]]
 
 h4. Reporting Bugs
-p. Report bugs directly to Research Computing: support@rc.usf.edu
+Report bugs directly to Research Computing: support@rc.usf.edu
 ** *IMPORTANT INFORMATION*: Please read carefully
-p(. 1. This program is only available to members of the *USF Laboratory for the study of Band Structures*.  
-p(. 2. Only certain members of the Band Structure Lab are authorized to contact VASP developers for assistance with problems.  HENCE, ALL SUPPORT REQUESTS MUST GO THROUGH RESEARCH COMPUTING unless you know you are one of these members.
+ 1. This program is only available to members of the *USF Laboratory for the study of Band Structures*.  
+ 2. Only certain members of the Band Structure Lab are authorized to contact VASP developers for assistance with problems.  HENCE, ALL SUPPORT REQUESTS MUST GO THROUGH RESEARCH COMPUTING unless you know you are one of these members.

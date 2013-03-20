@@ -1,15 +1,15 @@
 h1.
 ----
 
-p. It is really no longer necessary to discuss queues in the traditional sense.  In the past, we would create queues based on pools of hardware resources.  If a user wanted to utilize a particular hardware resource, he or she would request the appropriate queue.  Most times, however, what the user wants and what is best for the user or what is best for all users are not necessarily the same.  Allowing individuals to dictate where their jobs will run will inevitably lead to throughput problems since it would be unreasonable to expect the users to understand the complete state and behavior of the scheduler.
+It is really no longer necessary to discuss queues in the traditional sense.  In the past, we would create queues based on pools of hardware resources.  If a user wanted to utilize a particular hardware resource, he or she would request the appropriate queue.  Most times, however, what the user wants and what is best for the user or what is best for all users are not necessarily the same.  Allowing individuals to dictate where their jobs will run will inevitably lead to throughput problems since it would be unreasonable to expect the users to understand the complete state and behavior of the scheduler.
 
-p. Below is a general description of how jobs make their way through the queue.  Please see [[gridEnginePolicy|Scheduling and Dispatch Policy]] for more information.
+Below is a general description of how jobs make their way through the queue.  Please see [[gridEnginePolicy|Scheduling and Dispatch Policy]] for more information.
 
-p. When the scheduler finds a queue in which a job is eligible to run (based on requested hard runtime h_rt), it then determines if the requested hardware requirements of the job (see [[UsingComplexes|Using Complexes]]) match up with the resources the queue provides.  If it does, the job is executed if there are available resources.  If there are no available resources, the job will be held until the next scheduler iteration, to see if resources have become available.
+When the scheduler finds a queue in which a job is eligible to run (based on requested hard runtime h_rt), it then determines if the requested hardware requirements of the job (see [[UsingComplexes|Using Complexes]]) match up with the resources the queue provides.  If it does, the job is executed if there are available resources.  If there are no available resources, the job will be held until the next scheduler iteration, to see if resources have become available.
 
 "Available resources" include processors and memory.  Processors generally match up to the number of slots in a given queue while memory is defined as a complex value which may not be so obvious to query.  If your job is waiting in the @qw@ state, it is likely that either the slots requested or the memory requested are beyond what the system can provide at that particular point in time.
 
-p. The following node sets are available:
+The following node sets are available:
 
 | *Memory* | *CPU* | *Cores* | *Interconnect* | *Nodes* | *Slots * | *GPUs* | *Complex Flags* | *Location* |
 | 16GB   | Xeon X5355   | 8  | 4x SDR IB | 32   | 256    | n/a | ib_sdr, sse4, cpu_type=xeon, cpu_model=X5355 | Tampa |
@@ -21,21 +21,21 @@ p. The following node sets are available:
 | 24GB  | Xeon E5-2630 | 12 | 4x QDR IB | 68 | 816    | n/a | ib_qdr, sse4, sse41, sse42, sse4e, avx, cpu_type=xeon, cpu_model=E5-2630 | Winter Haven |
 | *Total* | | | | | 4684 | 8 | |
 
-p. Nodes that are in Tampa have slower access to the @/work@ storage.  You can make this request mandatory or hard by specifying
+Nodes that are in Tampa have slower access to the @/work@ storage.  You can make this request mandatory or hard by specifying
 
-{{{
+<pre>
 #$ -l location=wh
-}}}
+</pre>
 
 in your job submit script.
 
-p. The node sets are associated with the following queues:
+The node sets are associated with the following queues:
 
 | *Queue Name* | *Max Runtime* | *Notes* |
 | default | 1 week | All jobs go here unless &gt; 1 week runtime |
 | xlong  | unlimited  |  636 slots, restricted, access granted on request |
 
-p. Jobs are classified and have certain priorities and restrictions based on runtime.  The following table illustrates:
+Jobs are classified and have certain priorities and restrictions based on runtime.  The following table illustrates:
 
 | *Class* | *Runtime Range* | *Priority Adjustment* |
 | devel       | 0 - 1hr             | +1000 |
@@ -46,4 +46,4 @@ p. Jobs are classified and have certain priorities and restrictions based on run
 
 * xlong jobs are restricted by the system and must be granted access first.
 
-p. Remember, there is no need to manually specify @ -q [queue_name.q] @ if you have correctly identified the requirements for your job.  The scheduler will run your job on the best possible hardware given your job requirements and permissions regardless of queue.
+Remember, there is no need to manually specify <pre> -q [queue_name.q] </pre> if you have correctly identified the requirements for your job.  The scheduler will run your job on the best possible hardware given your job requirements and permissions regardless of queue.

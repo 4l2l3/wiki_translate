@@ -1,6 +1,5 @@
 h1. MOVES
 ----
-[[PageOutline]]
 
 h2. Description 
 
@@ -15,23 +14,23 @@ h2. Versions
 h2. Authorized Users
 
 ** WHPC-Login Users
-p. If you receive a permissions error stating that your account doesn't have access, please email help@usf.edu and ask to be added to the Windows HPC user group on whpc-login.rc.usf.edu
+If you receive a permissions error stating that your account doesn't have access, please email help@usf.edu and ask to be added to the Windows HPC user group on whpc-login.rc.usf.edu
 
 h2. Platforms
 
 ** whpc-login.rc.usf.edu
 
 h4. Logging On
-p(. To log onto whpc-login.rc.usf.edu, you will need to use a remote desktop client. 
+ To log onto whpc-login.rc.usf.edu, you will need to use a remote desktop client. 
 * From a Linux workstation, it is recommended to use "rdesktop -u 'FOREST\&lt;username&gt;' whpc-login.rc.usf.edu" from the terminal. To view more options for rdesktop, view the manual page. 
 
 * From a Windows machine, launch "Remote Desktop Connection" and specify "whpc-login.rc.usf.edu" for the 'Computer' field.
 
 h3. Submitting Jobs
-p. Once logged onto the machine, double-click the desktop shortcut for [[MOVES]] master to open the graphical user interface to begin working with the [[MOVES]] software.
+Once logged onto the machine, double-click the desktop shortcut for [[MOVES]] master to open the graphical user interface to begin working with the [[MOVES]] software.
 
 h3. Getting Job Status and Progress Information
-p. Please see our [[WinHPCJobStatus|Windows HPC Job Information page]] for information on managing your jobs, viewing status, and tracking output.
+Please see our [[WinHPCJobStatus|Windows HPC Job Information page]] for information on managing your jobs, viewing status, and tracking output.
 
 h2. Getting Help
-p. Please report any issue to the USF IT Helpdesk by sending an e-mail to help@usf.edu
+Please report any issue to the USF IT Helpdesk by sending an e-mail to help@usf.edu

@@ -1,76 +1,76 @@
 h1. Job Requirements
-p. The most important part of the job submission process, from a performance perspective, is understanding your job's requirements i.e. your memory requirements, memory bandwidth requirements, disk and I/O requirements, interconnect requirements, etc.  Based on this understanding, you need to tell the scheduler what it is you need for your job in order for it to run as efficiently as possible.
+The most important part of the job submission process, from a performance perspective, is understanding your job's requirements i.e. your memory requirements, memory bandwidth requirements, disk and I/O requirements, interconnect requirements, etc.  Based on this understanding, you need to tell the scheduler what it is you need for your job in order for it to run as efficiently as possible.
 
 h2. Discovering Your Job Requirements
-p. Many pieces of code available today come with sufficient documentation that explains the requirements of the program given certain input parameters and how those requirements change as the size of your problem changes.  You can usually fudge these rough estimates into working resource requests that will, for the most part, ensure ample resources are provided to your job.  What if the documentation does not provide such information or is unclear?  There are a couple of methods at your disposal for revealing your job's requirements:
+Many pieces of code available today come with sufficient documentation that explains the requirements of the program given certain input parameters and how those requirements change as the size of your problem changes.  You can usually fudge these rough estimates into working resource requests that will, for the most part, ensure ample resources are provided to your job.  What if the documentation does not provide such information or is unclear?  There are a couple of methods at your disposal for revealing your job's requirements:
 
-p(. 1. Brute force methods would involve benchmarking the code under various conditions and analyzing the results to determine the best mix of memory, CPU and interconnect.  
-p(. 2. A more analytic method would include the use of compiler and code tools such as system monitors to watch resource utilization during runtime and code profilers to determine performance intensive areas of code and how they utilize the system.  Using the data gathered from these tools with a general understanding of the code will yield very accurate predictions as to the code's behavior given various input parameters.
+ 1. Brute force methods would involve benchmarking the code under various conditions and analyzing the results to determine the best mix of memory, CPU and interconnect.  
+ 2. A more analytic method would include the use of compiler and code tools such as system monitors to watch resource utilization during runtime and code profilers to determine performance intensive areas of code and how they utilize the system.  Using the data gathered from these tools with a general understanding of the code will yield very accurate predictions as to the code's behavior given various input parameters.
 
-p. Obviously, having good documentation is always preferred, but is often a luxury not always available.  A brute-force method is good if your use of a code will not constitute an appreciable portion of your research time or if the code is something you will only use for a short period.  The best method, in any case, is an analytic method.
+Obviously, having good documentation is always preferred, but is often a luxury not always available.  A brute-force method is good if your use of a code will not constitute an appreciable portion of your research time or if the code is something you will only use for a short period.  The best method, in any case, is an analytic method.
 
 h2. Tools for Profiling Code
 h3. The Profiler
-p. A good code profiler is a must-have in any programmer's toolbox, but its also useful for researchers running HPC codes.  Three profiling tools that are available on Circe are
+A good code profiler is a must-have in any programmer's toolbox, but its also useful for researchers running HPC codes.  Three profiling tools that are available on Circe are
 
-p(. 1. *pgprof*: Portland Group's (PGI) graphical code profiler
-p(. 2. *gprof*: GNU Profiler, a command-line, GNU-compatible profiler
-p(. 3. *vtune*: Vtune Performance analyzer, Intel's code profiler
+ 1. *pgprof*: Portland Group's (PGI) graphical code profiler
+ 2. *gprof*: GNU Profiler, a command-line, GNU-compatible profiler
+ 3. *vtune*: Vtune Performance analyzer, Intel's code profiler
 
-p. Profilers insert code into your application that write out valuable statistics about the run-time of individual function calls and even individual lines of code.  This allows you to track down which functions are taking up the largest share of run-time during the execution of your program.  By adjusting input parameters that affect these functions, you can get an idea of how your simulations may affect the performance of the application.  For the budding Computational Scientist, the tool provides a means to track down inefficient code that may be tuned or re-factored for greater efficiency.
+Profilers insert code into your application that write out valuable statistics about the run-time of individual function calls and even individual lines of code.  This allows you to track down which functions are taking up the largest share of run-time during the execution of your program.  By adjusting input parameters that affect these functions, you can get an idea of how your simulations may affect the performance of the application.  For the budding Computational Scientist, the tool provides a means to track down inefficient code that may be tuned or re-factored for greater efficiency.
 
 h3. Monitor Programs
-p. Programs like 'top' [man (1) top] allow you to take periodic snapshots of a process during execution (usually every second) to continuously monitor CPU utilization, memory usage, and the process state (running, sleeping, waiting for disk, writing to disk, etc.)  To run top and view the details of your application, you'll need to know what node your process is running on.  For a serial process, this is pretty straight forward:
+Programs like 'top' [man (1) top] allow you to take periodic snapshots of a process during execution (usually every second) to continuously monitor CPU utilization, memory usage, and the process state (running, sleeping, waiting for disk, writing to disk, etc.)  To run top and view the details of your application, you'll need to know what node your process is running on.  For a serial process, this is pretty straight forward:
 {{{
 [user@login0 ~]$ qstat -u user -t
 job-ID  prior   name       user         state submit/start at     queue
 ------------------------------------------------------------------------------------
-p(((. 1000 1.00000 my_job     user         r     10/09/2007 13:31:29 ib_volatile1.q@svc-3024-1-1
+   1000 1.00000 my_job     user         r     10/09/2007 13:31:29 ib_volatile1.q@svc-3024-1-1
 }}}
 
-p. In this case, the job is running on svc-3024-1-1.  You can ssh into the host and run 'top' like so:
+In this case, the job is running on svc-3024-1-1.  You can ssh into the host and run 'top' like so:
 {{{
 [user@login0 ~]$ ssh svc-3024-1-1
 [user@rcn-mx-0008]$ top
 top - 22:09:06 up 36 days,  6:05, 18 users,  load average: 0.99, 0.08, 0.03
-p. Tasks: 158 total,   1 running, 156 sleeping,   0 stopped,   1 zombie
-p. Cpu(s):  1.5%us,  0.1%sy,  97.8%ni, 1.2%id,  0.1%wa,  0.0%hi,  0.0%si,  0.0%st
-p. Mem:   8247676k total,  4968872k used,  3278804k free,   197448k buffers
-p. Swap:  1048568k total,        0k used,   838572k free,  4214904k cached
+Tasks: 158 total,   1 running, 156 sleeping,   0 stopped,   1 zombie
+Cpu(s):  1.5%us,  0.1%sy,  97.8%ni, 1.2%id,  0.1%wa,  0.0%hi,  0.0%si,  0.0%st
+Mem:   8247676k total,  4968872k used,  3278804k free,   197448k buffers
+Swap:  1048568k total,        0k used,   838572k free,  4214904k cached
 
-p((. PID USER      PR  NI  VIRT   RES  SHR S %CPU %MEM    TIME+  COMMAND
-p(. 2859 user      15   0 19408 43632  844 R   99  1.1   0:03.91 myprocess
+  PID USER      PR  NI  VIRT   RES  SHR S %CPU %MEM    TIME+  COMMAND
+ 2859 user      15   0 19408 43632  844 R   99  1.1   0:03.91 myprocess
 ...
 }}}
-p. Here, you can see that your process is particularly CPU-bound.  It is in a running state, consuming 99% of the system's CPU resources while using only 1% of the system's memory.  The requirements for this sort of process would be relatively straight forward.
+Here, you can see that your process is particularly CPU-bound.  It is in a running state, consuming 99% of the system's CPU resources while using only 1% of the system's memory.  The requirements for this sort of process would be relatively straight forward.
 
-p. How about when things get a little bit more intense?
+How about when things get a little bit more intense?
 {{{
 [user@login0 ~]$ ssh svc-3024-1-1
 [user@svc-3024-1-1]$ top
 top - 22:09:06 up 36 days,  6:05, 18 users,  load average: 0.99, 0.08, 0.03
-p. Tasks: 158 total,   1 running, 156 sleeping,   0 stopped,   1 zombie
-p. Cpu(s):  1.5%us,  0.1%sy,  97.8%ni, 1.2%id,  0.1%wa,  0.0%hi,  0.0%si,  0.0%st
-p. Mem:   8247676k total,  4118651k used,  3118424k free,   197448k buffers
-p. Swap:  1048568k total,  1209996k used,   838572k free,  4214904k cached
+Tasks: 158 total,   1 running, 156 sleeping,   0 stopped,   1 zombie
+Cpu(s):  1.5%us,  0.1%sy,  97.8%ni, 1.2%id,  0.1%wa,  0.0%hi,  0.0%si,  0.0%st
+Mem:   8247676k total,  4118651k used,  3118424k free,   197448k buffers
+Swap:  1048568k total,  1209996k used,   838572k free,  4214904k cached
 
-p((. PID USER      PR  NI  VIRT   RES  SHR S %CPU %MEM    TIME+  COMMAND
-p(. 2859 user      15   0 9112m 8912m  844 D   10 96.1   0:05.21 myprocess2
+  PID USER      PR  NI  VIRT   RES  SHR S %CPU %MEM    TIME+  COMMAND
+ 2859 user      15   0 9112m 8912m  844 D   10 96.1   0:05.21 myprocess2
 ...
 }}}
 
-p. Here, we have a problem.  You can see the state (the column 'S') is 'D'.  This indicates that the process is waiting for either a read or a write to or from the disk.  If we look at the %MEM column, we see that 96.1% of the system's main memory has been utilized by the application.  And to top things off, nearly 1GB of swap space is being used.  Essentially, this program is using so much memory that
+Here, we have a problem.  You can see the state (the column 'S') is 'D'.  This indicates that the process is waiting for either a read or a write to or from the disk.  If we look at the %MEM column, we see that 96.1% of the system's main memory has been utilized by the application.  And to top things off, nearly 1GB of swap space is being used.  Essentially, this program is using so much memory that
 
-p(. a. It is having to use disk swap to store temporary data needed for execution
+ a. It is having to use disk swap to store temporary data needed for execution
 or
-p(. b. It is causing the rest of the system (kernel, services, etc.) to swap in order to make room for the application and its dataset
+ b. It is causing the rest of the system (kernel, services, etc.) to swap in order to make room for the application and its dataset
 
-p. In either case, this is bad news for our application and its performance.  We need a system with more memory.
+In either case, this is bad news for our application and its performance.  We need a system with more memory.
 
-p. Since the current system has 8GB of RAM and the process is apparently using &gt;= 9GB of RAM, then we have a good basis for making a resource request:
+Since the current system has 8GB of RAM and the process is apparently using &gt;= 9GB of RAM, then we have a good basis for making a resource request:
 {{{
 #$ -l mpj=10G
 }}}
-p. This tells the scheduler to only run your job where at least 10GB of RAM is free to be used by your process.  Your job will not run unless there are hardware resources available to satisfy the request.  When the resources are found, say a node with 16GB of RAM, this particular job will run many orders of magnitude faster than on a swapped-out machine as in the example.
+This tells the scheduler to only run your job where at least 10GB of RAM is free to be used by your process.  Your job will not run unless there are hardware resources available to satisfy the request.  When the resources are found, say a node with 16GB of RAM, this particular job will run many orders of magnitude faster than on a swapped-out machine as in the example.
 
 ** *Note*: More information to come.

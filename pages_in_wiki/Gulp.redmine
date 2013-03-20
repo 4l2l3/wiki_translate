@@ -1,5 +1,4 @@
 h1. GULP
-[[PageOutline]]
 
 h2. Description
 
@@ -19,28 +18,28 @@ h2. Platform
 
 h2. Running GULP on the Cluster
 
-p. The GULP documentation is essential to understanding the application and making the most of it.  This page should be all you need to get started with your simulations.
+The GULP documentation is essential to understanding the application and making the most of it.  This page should be all you need to get started with your simulations.
 ** GULP Documentation: https://www.ivec.org/gulp/help/
 
-p. To run GULP, simply execute the following within your job directory:
+To run GULP, simply execute the following within your job directory:
 {{{
 [user@host ~]$ run -n 16 -m 1.0G -t 1:00:00 -e INPUT=&lt;inputfile&gt; gulp/4.0
 }}}
 
-p. This will request 16 processors via MPI, 1 Gigabyte of memory per slot (for 16 GB total), and a 1 hour run-time.
+This will request 16 processors via MPI, 1 Gigabyte of memory per slot (for 16 GB total), and a 1 hour run-time.
 
 h4. Tutorials
-p. The following folders contain input parameters for GULP examples and tutorials:
+The following folders contain input parameters for GULP examples and tutorials:
 ** /apps/gulp/4.0/examples
 
 h4. Other Data
-p. Library sets are included in /apps/gulp/4.0/libraries.
+Library sets are included in /apps/gulp/4.0/libraries.
 
 h4. More Job Information
-p. See the following for more detailed job submission information:
+See the following for more detailed job submission information:
 ** [[gridEngineUsers|SGE User's Guide]]
 ** [[gridEnginePolicy|Scheduling and Dispatch Policies]]
 ** [[gridEngineTechn|Advanced Submit Techniques]]
 
 h4. Reporting Bugs
-p. Report bugs directly to the IT Helpdesk: help@usf.edu
+Report bugs directly to the IT Helpdesk: help@usf.edu

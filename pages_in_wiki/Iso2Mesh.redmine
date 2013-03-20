@@ -1,6 +1,5 @@
 h1. Iso2Mesh
 ----
-[[PageOutline]]
 *Last Modified:* [[LastModified(Iso2Mesh)]]
 
 h2. Description 
@@ -10,7 +9,7 @@ _From the iso2mesh site:_ iso2mesh is a Matlab/Octave-based meshing toolbox. It 
 h2. Version
 
 ** *0.8.0*
-p(. 
+ 
 h2. Authorized Users
 
 ** @circe@ account holders
@@ -24,12 +23,12 @@ h2. Local Documentation
 h3. Modules
 iso2mesh requires the following module file to run:
 ** @apps/iso2mesh/0.8.0@
-p. The recommended use is @module initadd@ in order for Matlab to automatically see the toolbox. See [wiki:Modules] for more information.
+The recommended use is @module initadd@ in order for Matlab to automatically see the toolbox. See [[Modules]] for more information.
 
 h3. Submitting Jobs
-p. Since iso2mesh is a Matlab toolbox, please see the [[MatlabUser|Matlab]] documentation in order to submit Matlab jobs.
+Since iso2mesh is a Matlab toolbox, please see the [[MatlabUser|Matlab]] documentation in order to submit Matlab jobs.
 
 h3. Additional Information
-p. Documentation: http://iso2mesh.sourceforge.net/cgi-bin/index.cgi?Doc
+Documentation: http://iso2mesh.sourceforge.net/cgi-bin/index.cgi?Doc
 
 

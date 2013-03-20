@@ -1,8 +1,7 @@
 h1. ANSYS
-[[PageOutline]]
 
 h2. Description 
-p. ANSYS is an engineering package and support routine for general-purpose, finite-element analysis:  statics, mode frequency, stability analysis, heat transfer, magnetostatics, coupled field analysis, modeling, etc. ANSYS was developed and is supported by ANSYS, Inc.
+ANSYS is an engineering package and support routine for general-purpose, finite-element analysis:  statics, mode frequency, stability analysis, heat transfer, magnetostatics, coupled field analysis, modeling, etc. ANSYS was developed and is supported by ANSYS, Inc.
 
 ** "ANSYS Software Products":http://www.ansys.com/Products
 
@@ -18,26 +17,26 @@ h2. Platforms
 h2. Running [[Ansys]] Jobs on the Cluster
 
 h3. Modules
-p. Before running a job, you must first set up your environment properly. Here are the required module files:
+Before running a job, you must first set up your environment properly. Here are the required module files:
 
 ** apps/ansys/14.0
 
-p. To run ANSYS on the cluster, ensure that you use @module add@ prior to using any [[Ansys]] executables.  See [wiki:Modules] for more information.
+To run ANSYS on the cluster, ensure that you use @module add@ prior to using any [[Ansys]] executables.  See [[Modules]] for more information.
 
 h3. Interactive Execution via NX
-p. Run the following to get a 4 processor session for [[Ansys]] using the interactive GUI (NOTE: you must be logged into Circe via the NX client for this to work):
+Run the following to get a 4 processor session for [[Ansys]] using the interactive GUI (NOTE: you must be logged into Circe via the NX client for this to work):
 
 {{{
 qrsh -l ppn=4,nodes=1 -display "$(hostname)${DISPLAY}" $(which ansysdis140) -g
 }}}
 
-p. To run [[Ansys]] Workbench using the GUI, use the following updated command:
+To run [[Ansys]] Workbench using the GUI, use the following updated command:
 
 {{{
 qrsh -l ppn=4,nodes=1 -display "$(hostname)${DISPLAY}" $(which runwb2)
 }}}
 
-p. To run [[Ansys]] Fluent using the GUI, a few more steps must be taken, in addition to using another command sequence.
+To run [[Ansys]] Fluent using the GUI, a few more steps must be taken, in addition to using another command sequence.
 
 1.  You must take note of the CIRCE login node that you're presently logged into.  You should see something like *[user@wh-520-5-24 ~]$*.  The current valid hosts are wh-520-5-24, wh-520-5-25, wh-520-5-26, and wh-520-5-27.
 
@@ -58,10 +57,10 @@ qlogin -l ppn=4,nodes=1
 
 {{{
 qlogin -l ppn=4,nodes=1
-p. Your job 290804 ("QLOGIN") has been submitted
+Your job 290804 ("QLOGIN") has been submitted
 waiting for interactive job to be scheduled ...
-p. Your interactive job 290804 has been successfully scheduled.
-p. Establishing builtin session to host wh-520-3-7 ...
+Your interactive job 290804 has been successfully scheduled.
+Establishing builtin session to host wh-520-3-7 ...
 }}}
 
 5.  You'll now need to export the display variables taken from steps 1 and 2 above.  You'll run the following command:
@@ -78,7 +77,7 @@ fluent
 
 
 h3. How to Submit Jobs
-p. Provided are batch scripts for running ANSYS as a single processor and multi-processor job.  Most existing ANSYS scripts will run in parallel mode with no modification.  These scripts can be copied into your work directory (the folder with your input files and database files) so that you can submit batch processes to the queue.  For help on submitting jobs to the queue, see our [[gridEngineUsers|GridEngine User's Guide]]
+Provided are batch scripts for running ANSYS as a single processor and multi-processor job.  Most existing ANSYS scripts will run in parallel mode with no modification.  These scripts can be copied into your work directory (the folder with your input files and database files) so that you can submit batch processes to the queue.  For help on submitting jobs to the queue, see our [[gridEngineUsers|GridEngine User's Guide]]
 
 h3. Serial Submit Script
 {{{
@@ -87,7 +86,7 @@ h3. Serial Submit Script
 #$ -cwd
 
 module add apps/ansys/14.0
-p. ANSYS_OPTS="-p aa_r -dir @pwd@ -b"
+ANSYS_OPTS="-p aa_r -dir @pwd@ -b"
 time ansysdis130 $ANSYS_OPTS &lt; $JOB_NAME
 }}}
 
@@ -98,7 +97,7 @@ h3. Multi-Threaded Parallel Submit Script
 #$ -cwd
 
 module add apps/ansys/14.0
-p. ANSYS_OPTS="-p aa_r -dir @pwd@ -b -np $NSLOTS"
+ANSYS_OPTS="-p aa_r -dir @pwd@ -b -np $NSLOTS"
 time ansysdis140 $ANSYS_OPTS &lt; $JOB_NAME
 }}}
 
@@ -109,14 +108,14 @@ h3. Distributed Parallel
 #$ -cwd
 
 module add apps/ansys/14.0
-p. ANSYS_OPTS="-p aa_r -dir @pwd@ -b -dis -machines $(cat $TMPDIR/machines.ansys)"
+ANSYS_OPTS="-p aa_r -dir @pwd@ -b -dis -machines $(cat $TMPDIR/machines.ansys)"
 time ansysdis140 $ANSYS_OPTS &lt; $JOB_NAME
 }}}
 
-p. Where @$JOB_NAME@ and is the name of the input file you are using.  
+Where @$JOB_NAME@ and is the name of the input file you are using.  
 
 h2. Licensing
-p. Since we have a limited number of ANSYS licenses, you'll need to specify some options when running your job.  You can see how these options are set in the above sample scripts.
+Since we have a limited number of ANSYS licenses, you'll need to specify some options when running your job.  You can see how these options are set in the above sample scripts.
 
 *For 1-2 processor ANSYS jobs*, the option @aa_r@ is all you need to be concerned with.  You can set this to one in either case.  This will insure that your job does not try to run when there are no licenses available and thus failing (potentially after waiting for some time in the queue... this can be aggravating).
 
@@ -129,10 +128,10 @@ h4. Figure 1
 | aa_r_hpc    | HPC License |
 
 h3. More Job Information
-p. See the following for more detailed job submission information:
+See the following for more detailed job submission information:
 ** [[gridEngineUsers|SGE User's Guide]]
 ** [[gridEnginePolicy|Scheduling and Dispatch Policies]]
 ** [[gridEngineTechn|Advanced Submit Techniques]]
 
 h3. Reporting Bugs
-p. Report bugs to the IT Help Desk: help@usf.edu
+Report bugs to the IT Help Desk: help@usf.edu

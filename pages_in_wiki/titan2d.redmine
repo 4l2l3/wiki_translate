@@ -1,7 +1,6 @@
 h1. TITAN2D
 ----
 
-[[PageOutline]]
 
 h2. Description
 
@@ -23,50 +22,50 @@ h2. Local Documentation
 
 h3. Modules
 
-p. The TITAN2D GUI requires the following module file to run:
+The TITAN2D GUI requires the following module file to run:
 ** @apps/titan/2.0.1@
-p. See [wiki:Modules] for more information.
+See [[Modules]] for more information.
 
 h3. Running TITAN2D on the Cluster
 
-p. The TITAN2D guide is essential to understanding the application and making the most of it.  The guide and this page should be all you need to get started with your simulations.
+The TITAN2D guide is essential to understanding the application and making the most of it.  The guide and this page should be all you need to get started with your simulations.
 ** TITAN2D Guide: http://www.gmfg.buffalo.edu/software/titan_userguide.pdf
 
-p. TITAN2D can run well on most types of hardware on the cluster. For the vast majority of cases, memory is not as big an issue as CPU time and the program is parallel "enough" to ensure that it runs reasonably well over GigE.  The code currently simulates granular flows.  It runs in parallel with mesh refinement and unrefinement.  The maximum refinement level is set by the user when specifying the Number of Computational Cells Across Smallest !Pile/Flux-Source.  Mesh repartitioning is also used to maintain a good load-balance.  A python script is included to organize the preprocessing and launching of jobs on different computers.  
+TITAN2D can run well on most types of hardware on the cluster. For the vast majority of cases, memory is not as big an issue as CPU time and the program is parallel "enough" to ensure that it runs reasonably well over GigE.  The code currently simulates granular flows.  It runs in parallel with mesh refinement and unrefinement.  The maximum refinement level is set by the user when specifying the Number of Computational Cells Across Smallest !Pile/Flux-Source.  Mesh repartitioning is also used to maintain a good load-balance.  A python script is included to organize the preprocessing and launching of jobs on different computers.  
 
-p. Before you login to @circe@, you need to make sure you have X11 Forwarding enabled. If you're logging in from a UNIX/Linux system, you will need to do the following:
-p((((((. {{{
+Before you login to @circe@, you need to make sure you have X11 Forwarding enabled. If you're logging in from a UNIX/Linux system, you will need to do the following:
+      {{{
 ssh -Y user@circe.rc.usf.edu
-p((((((. }}}
-p((((((. If you're logging in from a Windows machine, you need to Enable X11 Forwarding in whatever ssh client you're using.  Make sure you've followed our [[XWin32Install|XWin32 Guide]] to configure your connection to @circe@.
+      }}}
+      If you're logging in from a Windows machine, you need to Enable X11 Forwarding in whatever ssh client you're using.  Make sure you've followed our [[XWin32Install|XWin32 Guide]] to configure your connection to @circe@.
 
-p. Next, load the TITAN2D module. The python script is then run by the command: 
+Next, load the TITAN2D module. The python script is then run by the command: 
 {{{
 [user@host ~]$ titan_gui.py
 }}}
-p. A GUI will come up and ask for certain info.  There are several pop-up windows that will open, depending on the information you provide.  The GUI will create several input files in a job directory that you specify.
+A GUI will come up and ask for certain info.  There are several pop-up windows that will open, depending on the information you provide.  The GUI will create several input files in a job directory that you specify.
 
-p. To run TITAN2D, simply execute the following within your job directory:
+To run TITAN2D, simply execute the following within your job directory:
 {{{
 [user@host job_dir]$ run -n 4 -N titan_test -t 2:00:00 titan/2.0.1
 }}}
 
-p. This will request 4 processors via MPI, a job name of titan_test, and a 2 hour run-time.
+This will request 4 processors via MPI, a job name of titan_test, and a 2 hour run-time.
 
-p. For more information on Run, see [[Run|The GridEngine Run Utility]].
+For more information on Run, see [[Run|The GridEngine Run Utility]].
 
 h4. Benchmarks
 
-p. The following folder contains input parameters for known TITAN2D tutorials:
+The following folder contains input parameters for known TITAN2D tutorials:
 ** /opt/apps/titan/example
 
 h4. More Job Information
 
-p. See the following for more detailed job submission information:
+See the following for more detailed job submission information:
 ** [[gridEngineUsers|SGE User's Guide]]
 ** [[gridEnginePolicy|Scheduling and Dispatch Policies]]
 ** [[gridEngineTechn|Advanced Submit Techniques]]
 
 h4. Reporting Bugs
 
-p. Report bugs directly to Research Computing: support@rc.usf.edu
+Report bugs directly to Research Computing: support@rc.usf.edu

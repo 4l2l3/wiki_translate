@@ -1,23 +1,22 @@
 h1. Circe Frequently Asked Questions
-[[PageOutline]]
 
 
-p. This page contains a list of questions that we receive quite often from our users.  We'll attempt to answer these questions as best as possible so that you can come here for quick answers.  If there are other questions you'd like to see added to this FAQ, please send them to help@usf.edu.  Make sure you mention *Research Computing*
+This page contains a list of questions that we receive quite often from our users.  We'll attempt to answer these questions as best as possible so that you can come here for quick answers.  If there are other questions you'd like to see added to this FAQ, please send them to help@usf.edu.  Make sure you mention *Research Computing*
 
 ----
 h4. Q
 
 *A.* Here are some possibilities:
 
-p(. 1. Have you changed your NetID password lately (E-Mail, Blackboard, etc.)?  If you have, make sure you are using the same password when you log into Circe
-p(. 2. Have you forgotten your password?  You can reset it at https://netid.usf.edu
-p(. 3. Are you no longer a student?  Send an E-Mail to help@usf.edu saying that you're a former student and that you'd like access to your Research Computing data.  Please provide your USF NetID that you used to use to access your account.
+ 1. Have you changed your NetID password lately (E-Mail, Blackboard, etc.)?  If you have, make sure you are using the same password when you log into Circe
+ 2. Have you forgotten your password?  You can reset it at https://netid.usf.edu
+ 3. Are you no longer a student?  Send an E-Mail to help@usf.edu saying that you're a former student and that you'd like access to your Research Computing data.  Please provide your USF NetID that you used to use to access your account.
 ----
 h4. Q
 
-*A.* The queue is like any other queue: it's simply a waiting line for people that are wanting access to limited resources.  Whether its a bank teller, the nice person at the DMV, or a 32 processor server with 512GB or RAM, resources must be managed.  You'll want to read our guide to !GridEngine located [wiki:gridEngineIntro here] for a better description.
+*A.* The queue is like any other queue: it's simply a waiting line for people that are wanting access to limited resources.  Whether its a bank teller, the nice person at the DMV, or a 32 processor server with 512GB or RAM, resources must be managed.  You'll want to read our guide to !GridEngine located [[gridEngineIntro here]] for a better description.
 ----
-p(. 
+ 
 h4. Q
 
 *A.* We recommend that you follow the supported [[CirceDesktop|Circe Desktop instructions]] for connections to Circe for running graphical applications.
@@ -26,17 +25,17 @@ h4. Q
 
 *A.* A number of different problems can cause these messages.  The most frequent are listed below:
 
-p(. 1. Did you create your submit script from within the Windows editor *Notepad*?  If so, please ensure that you convert your submit script with the @dos2unix@ command by running
-p(. {{{ 
+ 1. Did you create your submit script from within the Windows editor *Notepad*?  If so, please ensure that you convert your submit script with the @dos2unix@ command by running
+ {{{ 
 [user@host ~]$ dos2unix &lt;script&gt; 
 }}}
-p(. where @&lt;script&gt;@ is the name of your job script.  This will convert the file to the proper UNIX file format the !GridEngine uses.
-p(. 2. Does your submit script contain the appropriate module lines?  Please see the documentation for your respective application for the appropriate module lines to add.
-p(. 3. Are you actually referencing a file that exists?  You can make sure that the file exists by doing
-p(. {{{ 
+ where @&lt;script&gt;@ is the name of your job script.  This will convert the file to the proper UNIX file format the !GridEngine uses.
+ 2. Does your submit script contain the appropriate module lines?  Please see the documentation for your respective application for the appropriate module lines to add.
+ 3. Are you actually referencing a file that exists?  You can make sure that the file exists by doing
+ {{{ 
 [user@host ~]$ ls &lt;path_to_file&gt; 
 }}}
-p(. where @&lt;path_to_file&gt;@ cannot find the file, then chances are it doesn't exist on the nodes either.
+ where @&lt;path_to_file&gt;@ cannot find the file, then chances are it doesn't exist on the nodes either.
 ----
 h4. Q
 
@@ -44,7 +43,7 @@ h4. Q
 {{{
 [user@host ~]$ snapshot-restore
 }}}
-p. Follow the on-screen instructions for retrieving your lost file.
+Follow the on-screen instructions for retrieving your lost file.
 
 ----
 h4. Q
@@ -54,28 +53,28 @@ h4. Q
 h4. Q
 *A.* There are a couple reasons why this happens:
 
-p(. 1. This happens if you are trying to run the command directly from a login machine (your prompt will look like this)
+ 1. This happens if you are trying to run the command directly from a login machine (your prompt will look like this)
 {{{
 [user@login# ~]$
 }}}
-p(. To be fair to other users, we have resource restrictions on our login machines limiting the amount of RAM and CPU time you can use. We recommend running these applications from a qlogin session:
+ To be fair to other users, we have resource restrictions on our login machines limiting the amount of RAM and CPU time you can use. We recommend running these applications from a qlogin session:
 {{{
 [user@host ~]$ qlogin -l h_rt=HH:MM:SS
 }}}
-p(. Where @h_rt@ is the hours, minutes, and seconds that you believe you will need to finish working with an application.  With qlogin, you will be guaranteed the resources needed to complete your work.
+ Where @h_rt@ is the hours, minutes, and seconds that you believe you will need to finish working with an application.  With qlogin, you will be guaranteed the resources needed to complete your work.
 
-p(. 2. This can also happen if you are within a qlogin session and you did not specify a memory request. Try again with a reasonable estimate with how much memory you think you need (for example, 4 Gigabytes):
+ 2. This can also happen if you are within a qlogin session and you did not specify a memory request. Try again with a reasonable estimate with how much memory you think you need (for example, 4 Gigabytes):
 {{{
 [user@host ~]$ qlogin -l h_rt=8:00:00,mps=4G
 }}}
-p((((. 
+    
 ----
 h4. Q
 *A.* There are a few reasons why this might happen:
-p(. 1. Did you specify a queue? If all of the slots in the queue are occupied, you have to wait until enough are freed to start your job. Nine times out of ten, you don't need to specify a queue anyway. Removing the queue definition in your submission script will allow your job to use many more resources and will increase your overall job throughput.
-p(. 2. Did you make a reasonable resource request? If your submission script calls for 4096 processors and 1TB of RAM, you'll be hard pressed to find enough resources on Circe to meet that request.  To see our available hardware pool in order to make good decisions about resource requests, see the following guides:
-p(((. a. [[gridEngineQueue|GridEngine Queue Layout]]
-p(((. b. [[UsingComplexes|Using GridEngine Complexes]]
+ 1. Did you specify a queue? If all of the slots in the queue are occupied, you have to wait until enough are freed to start your job. Nine times out of ten, you don't need to specify a queue anyway. Removing the queue definition in your submission script will allow your job to use many more resources and will increase your overall job throughput.
+ 2. Did you make a reasonable resource request? If your submission script calls for 4096 processors and 1TB of RAM, you'll be hard pressed to find enough resources on Circe to meet that request.  To see our available hardware pool in order to make good decisions about resource requests, see the following guides:
+   a. [[gridEngineQueue|GridEngine Queue Layout]]
+   b. [[UsingComplexes|Using GridEngine Complexes]]
 
 ----
 h4. Q
@@ -83,7 +82,7 @@ h4. Q
 {{{
 -l h_rt=08:00:00
 }}}
-p. This option would request a runtime of eight hours. The *h_rt* option is required on both submitted jobs and interactive jobs.  It is also possible that you did not specify enough time when making your request.  Please see this guide on determining job run-time for help: [[gridEngineRuntime|Job Runtime Guide]]
+This option would request a runtime of eight hours. The *h_rt* option is required on both submitted jobs and interactive jobs.  It is also possible that you did not specify enough time when making your request.  Please see this guide on determining job run-time for help: [[gridEngineRuntime|Job Runtime Guide]]
 ----
 h4. Q
 

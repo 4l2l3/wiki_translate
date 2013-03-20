@@ -1,6 +1,5 @@
 h1. mpiBLAST
 ----
-[[PageOutline]]
 
 h2. Description
 
@@ -22,22 +21,22 @@ h2. Modules
 
 mpiBLAST requires the following module file to run:
 ** @apps/mpiblast/1.6.0@
-p. See [wiki:Modules] for more information.
+See [[Modules]] for more information.
 
 h2. Creating and Submitting a Job
 
-p. Create a .ncbirc file in your home directory.  It should be formatted as follows (user location of /work directory will vary):
+Create a .ncbirc file in your home directory.  It should be formatted as follows (user location of /work directory will vary):
 
 {{{
-p((. [mpiBLAST]
-p((. Shared=/work/j/joeuser/blast
-p((. Local=/tmp/joeuser/blast
+  [mpiBLAST]
+  Shared=/work/j/joeuser/blast
+  Local=/tmp/joeuser/blast
 }}}
 
 'Shared' is a location that all of the nodes doing the computation will have access to and 'Local' should be a faster, local drive.
 
 h3. Prepare a database for use
-p. Research Computing mirrors several of the available databases.  They can be found in /opt/apps/ncbi-6.1/blast/fasta.  If one of those will serve your needs, simply copy it from that location to your Shared location, and decompress it.
+Research Computing mirrors several of the available databases.  They can be found in /opt/apps/ncbi-6.1/blast/fasta.  If one of those will serve your needs, simply copy it from that location to your Shared location, and decompress it.
 
 {{{
 [joeuser@host ~]$ module add apps/mpiblast/1.6.0
@@ -46,7 +45,7 @@ p. Research Computing mirrors several of the available databases.  They can be f
 [joeuser@host blast]$ gunzip drosoph.nt.gz
 }}}
 
-p. Then, you need to format the database for use.  Below is an example way to do so.  It assumes you want to run a job searching against the drosoph.nt database, on 4 nodes.
+Then, you need to format the database for use.  Below is an example way to do so.  It assumes you want to run a job searching against the drosoph.nt database, on 4 nodes.
 
 {{{
 [joeuser@host blast]$ mpiformatdb --nfrags=4 -i drosoph.nt -pF --quiet
@@ -54,7 +53,7 @@ p. Then, you need to format the database for use.  Below is an example way to do
 
 h3. Submit the Job
 
-p. Below is a sample job script.  It assumes that you want a hard runtime of 1 hour and that you have set up the database in 4 fragments.  It also assumes that your value being searched for is in a file called query.in, in the current working directory.  You'll need to request two more processors than the number of fragments for the two coordinating processes that are created during execution.
+Below is a sample job script.  It assumes that you want a hard runtime of 1 hour and that you have set up the database in 4 fragments.  It also assumes that your value being searched for is in a file called query.in, in the current working directory.  You'll need to request two more processors than the number of fragments for the two coordinating processes that are created during execution.
 
 {{{
 #!/bin/bash
@@ -68,20 +67,20 @@ module add apps/mpiblast/1.6.0
 mpirun mpiblast -d drosoph.nt -i query.in -p blastn -o results.txt
 }}}
 
-p. Example query.in file for drosoph.nt:
+Example query.in file for drosoph.nt:
 
 {{{
 &gt;Search sequence
-p. AGTACGTAAAGAAAATCTTTTTTTGGCGACATCATTGTATTTGGTAGTATACGATTTCCAGCATCCACAACTATTTCCT
+AGTACGTAAAGAAAATCTTTTTTTGGCGACATCATTGTATTTGGTAGTATACGATTTCCAGCATCCACAACTATTTCCT
 }}}
 
-p. For additional information, please look at the mpiBLAST documentation: http://www.mpiblast.org/Docs/Guide
+For additional information, please look at the mpiBLAST documentation: http://www.mpiblast.org/Docs/Guide
 
 h3. More Job Information
-p. See the following for more detailed job submission information:
+See the following for more detailed job submission information:
 ** [[gridEngineUsers|SGE User's Guide]]
 ** [[gridEnginePolicy|Scheduling and Dispatch Policies]]
 ** [[gridEngineTechn|Advanced Submit Techniques]]
 
 h3. Reporting Bugs
-p. Report bugs to the IT Help Desk: help@usf.edu
+Report bugs to the IT Help Desk: help@usf.edu

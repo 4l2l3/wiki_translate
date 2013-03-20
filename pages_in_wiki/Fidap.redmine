@@ -1,16 +1,15 @@
 h1.
 ----
-[[PageOutline]]
 
 
 h2. Description
 
-p. FIDAP is the flow modeling tool of choice for applications such as polymer processing, thin film coating, biomedical, semiconductor crystal growth, metallurgy, glass processing and related fields. Based on the finite element method, FIDAP offers complete mesh flexibility and robust and efficient calculations. It is available for UNIX and Windows/NT workstations and is optimized for parallel processing.
+FIDAP is the flow modeling tool of choice for applications such as polymer processing, thin film coating, biomedical, semiconductor crystal growth, metallurgy, glass processing and related fields. Based on the finite element method, FIDAP offers complete mesh flexibility and robust and efficient calculations. It is available for UNIX and Windows/NT workstations and is optimized for parallel processing.
 
 h2. Version
 
-p. FIDAP: *8.7.4*[[BR]]
-p. Gambit: *2.3.16*
+FIDAP: *8.7.4*[[BR]]
+Gambit: *2.3.16*
 
 h2. Authorized Users
 
@@ -24,16 +23,16 @@ h2. Local Documentation
 
 h3. Modules
 
-p. [[Fidap]] requires the following module file and some prerequisites to run:
+Fidap requires the following module file and some prerequisites to run:
 ** @apps/fidap/8.7.4@
 
-p. Gambit requires the following module file and some prerequisites to run:
+Gambit requires the following module file and some prerequisites to run:
 ** @apps/gambit/2.3.16@
 
-p(. See [wiki:Modules] for more information.
+ See [[Modules]] for more information.
 
 h3. Submitting Jobs
-p. Users can use the following SGE script to run [[Fidap]] jobs with fisol over SGE:
+Users can use the following SGE script to run [[Fidap]] jobs with fisol over SGE:
 {{{
 #!/bin/bash
 ##
@@ -45,18 +44,18 @@ p. Users can use the following SGE script to run [[Fidap]] jobs with fisol over 
 #$ -o sge_output.$JOB_NAME.$JOB_ID
 #$ -N &lt;job_name&gt;
 
-p. INPUT_FILE=input.txt
+INPUT_FILE=input.txt
 
-p. PATH=$PATH:/opt/apps/Fluent.Inc/bin
+PATH=$PATH:/opt/apps/Fluent.Inc/bin
 
 function return_error(){
-p((((((((. case "$1" in
-p((((((((((((((((. ENVERR) STR="Incorrect environment parameters" ;;
-p((((((((((((((((. FPATHERR) STR="'fidap' executable not fount in PATH" ;;
-p((((((((((((((((. *) STR="Invalid error specifier" ;;
-p((((((((. esac
-p((((((((. echo $STR
-p((((((((. exit 1
+        case "$1" in
+                ENVERR) STR="Incorrect environment parameters" ;;
+                FPATHERR) STR="'fidap' executable not fount in PATH" ;;
+                *) STR="Invalid error specifier" ;;
+        esac
+        echo $STR
+        exit 1
 }
 
 [ -z "$JOB_NAME" ] | 
@@ -68,7 +67,7 @@ which fidap &amp;&gt; /dev/null
 [ $? -ne 0 ] &amp;&amp; return_error FPATHERR
 
 ## Specify scratch directory for working files
-p. SCRATCH=/tmp/$USER/$JOB_NAME.$JOB_ID
+SCRATCH=/tmp/$USER/$JOB_NAME.$JOB_ID
 
 ## If SCRATCH directory does not exist, create it
 [ ! -d "$SCRATCH" ] &amp;&amp; mkdir -p $SCRATCH

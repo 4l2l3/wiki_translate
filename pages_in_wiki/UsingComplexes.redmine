@@ -1,12 +1,11 @@
 h1. Using Complexes with
 ----
-[[PageOutline]]
 
 
-p. Complexes allow users to make very specific requests to the scheduler such as what interconnect your application prefers, how much available memory you require, whether you mind running on low priority machines, etc.  To get the most out of the queuing environment, it is very useful to have a reasonable understanding of how the complexes work and which complexes you should request for your type of application.
+Complexes allow users to make very specific requests to the scheduler such as what interconnect your application prefers, how much available memory you require, whether you mind running on low priority machines, etc.  To get the most out of the queuing environment, it is very useful to have a reasonable understanding of how the complexes work and which complexes you should request for your type of application.
 
 h2. Important Complexes
-p. The following table lists custom defined complexes which are necessary for getting your job to run on the right hardware. 
+The following table lists custom defined complexes which are necessary for getting your job to run on the right hardware. 
 
 | *Complex Name* | *Value* | *Description* | *Default*|
 | @h_rt@               | Time        | Request and set a certain amount of run-time for your job.  Jobs are killed when they reach this limit | 10 Minutes |
@@ -20,7 +19,7 @@ p. The following table lists custom defined complexes which are necessary for ge
 
 
 h2. Requesting Complexes
-p. To request a complex, you must add the following line to your submit script:
+To request a complex, you must add the following line to your submit script:
 {{{
 #$ -l &lt;complex_name&gt;=&lt;value&gt;[,&lt;complex_name&gt;=&lt;value][,...]
 }}}
@@ -32,7 +31,7 @@ or
 }}}
 where &lt;complex_name&gt; is one of the complexes defined above (or one of the standard complexes described in the !GridEngine User's Guide and show below), and &lt;value&gt; is the desired value of the complex.
 
-p. A couple examples:
+A couple examples:
 
 {{{
 #!/bin/bash
@@ -49,7 +48,7 @@ mpirun /opt/apps/my_app/my_binary
 ** Job requests 1.5GB of memory for each allocated slot (mps=1.5G)
 
 h2. Complex Table
-p. This is a table of user-addressable !GridEngine complexes.  You can request machines with a variety of characteristics such as machines with a certain amount of memory or a particular architecture type.
+This is a table of user-addressable !GridEngine complexes.  You can request machines with a variety of characteristics such as machines with a certain amount of memory or a particular architecture type.
 | *Complex* | *Description* | *Data Type* | *Default Value* | *Priority Change?* |
 | calendar | Job calendar (see SGE User's Guide)    | String | None | No |
 | cpu | n/a                                         | Double | None | No |

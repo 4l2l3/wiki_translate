@@ -1,6 +1,5 @@
 h1. GMT
 ----
-[[PageOutline]]
 
 h2. Description 
 
@@ -9,7 +8,7 @@ _From http://www.soest.hawaii.edu/GMT/:_ [[GMT]] (Generic Mapping Tools) is an o
 h2. Version
 
 ** *4.5.5*
-p(. 
+ 
 h2. Authorized Users
 
 ** @circe@ account holders
@@ -22,40 +21,40 @@ h2. Local Documentation
 
 h3. Modules
 
-p. Before running a job, you must first set up your environment properly. Here are the required module files:
+Before running a job, you must first set up your environment properly. Here are the required module files:
 
 ** @apps/gmt/4.5.5@
 
-p. To run [[GMT]] on the cluster, ensure that you use @module add@ prior to using any [[GMT]] executables.  See [wiki:Modules] for more information.
+To run [[GMT]] on the cluster, ensure that you use @module add@ prior to using any [[GMT]] executables.  See [[Modules]] for more information.
 
 h3. Running on Circe
 
-p. Running [[GMT]] on @circe@ is relatively easy. Before you login to @circe@, you need to make sure you have X11 Forwarding enabled. If you're logging in from a UNIX/Linux system, you will need to do the following:
-p((((((. {{{
+Running [[GMT]] on @circe@ is relatively easy. Before you login to @circe@, you need to make sure you have X11 Forwarding enabled. If you're logging in from a UNIX/Linux system, you will need to do the following:
+      {{{
 ssh -Y user@circe.rc.usf.edu
-p((((((. }}}
-p((((((. If you're logging in from a Windows machine, you need to Enable X11 Forwarding in whatever ssh client you're using.  Make sure you've followed our [[XWin32Install|XWin32 Guide]] to configure your connection to @circe@.
+      }}}
+      If you're logging in from a Windows machine, you need to Enable X11 Forwarding in whatever ssh client you're using.  Make sure you've followed our [[XWin32Install|XWin32 Guide]] to configure your connection to @circe@.
 
-p. Next, you need to load the [[GMT]] module.
+Next, you need to load the [[GMT]] module.
 {{{
 module load apps/gmt/4.5.5
 }}}
-p. You should now be able to execute [[GMT]] related scripts and executables from the command line.  To view the output postscript files, you can use @evince@.
+You should now be able to execute [[GMT]] related scripts and executables from the command line.  To view the output postscript files, you can use @evince@.
 
 h3. Examples
 
-p. The tutorial guide is located here: 
+The tutorial guide is located here: 
 ** /opt/apps/gmt/4.5.5/share/doc/gmt/pdf/GMT_Tutorial.pdf
 
-p. The following folder contains input parameters for known [[GMT]] tutorials:
+The following folder contains input parameters for known [[GMT]] tutorials:
 ** /opt/apps/gmt/4.5.5/share/doc/gmt/tutorial
 
-p. Additionally, each of the 30 examples in the [[GMT]] Technical Reference and Cookbook may be viewed individually here:
+Additionally, each of the 30 examples in the [[GMT]] Technical Reference and Cookbook may be viewed individually here:
 ** /opt/apps/gmt/4.5.5/share/doc/gmt/examples
 
-p. More information about the features of [[GMT]] can be found in 
+More information about the features of [[GMT]] can be found in 
 ** /opt/apps/gmt/4.5.5/share/doc/gmt
 
 h3. Reporting Bugs
 
-p. Report bugs directly to Research Computing: support@rc.usf.edu
+Report bugs directly to Research Computing: support@rc.usf.edu

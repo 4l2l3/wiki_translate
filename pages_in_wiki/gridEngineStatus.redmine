@@ -1,14 +1,13 @@
 h1.
 ----
-[[PageOutline]]
 
-p. This document will provide information about additional available status commands to give users visibility into the system.
+This document will provide information about additional available status commands to give users visibility into the system.
 
 h2. jusage
-p. Show system usage broken down by user:
+Show system usage broken down by user:
 {{{
 $ jusage
-p. USER       SLOTS USED
+USER       SLOTS USED
 ---------------------
 user1             192
 user2              96
@@ -18,10 +17,10 @@ user4             398
 }}}
 
 h2. jwaits
-p. Show longest wait time and for what class they are waiting for users with no slots allocated:
+Show longest wait time and for what class they are waiting for users with no slots allocated:
 {{{
 $ jwaits
-p. USER          WAIT TIME (min)   WAIT CLASS
+USER          WAIT TIME (min)   WAIT CLASS
 ----------------------------------------------
 user1         81.9              long
 user2         275.4             xlong       
@@ -29,10 +28,10 @@ user3         30.4              medium
 }}}
 
 h2. jclass
-p. Show job numbers broken down by class (job classes are described here: [[gridEngineQueue|Queue Layout]])::
+Show job numbers broken down by class (job classes are described here: [[gridEngineQueue|Queue Layout]])::
 {{{
 $ jclass
-p. JOB CLASSIFICATION              AVAIL   USED  LIMIT
+JOB CLASSIFICATION              AVAIL   USED  LIMIT
 ---------------------------------------------------
 devel                             626      0   4624
 long                                8   1526   1534
@@ -42,7 +41,7 @@ xlong                             615     21    636
 }}}
 
 h2. jprocs
-p. Show all of the processes spawned by your job and what node they are running on.  Fields documented below:
+Show all of the processes spawned by your job and what node they are running on.  Fields documented below:
 {{{
 $ jprocs 44922
 wh-520-3-13: 30222 brs       0.0  0.0   960  16320  4080 qrsh_starter
@@ -51,14 +50,14 @@ wh-520-3-13: 30230 brs       101  0.4 121320 266400 66600 vasp
 wh-520-3-13: 30231 brs       101  0.4 120860 266920 66730 vasp
 wh-520-3-13: 30232 brs       101  0.4 120792 266308 66577 vasp
 ...
-p. Host         PID   user      CPU% MEM RSS    VMEM   SIZE  COMMAND
+Host         PID   user      CPU% MEM RSS    VMEM   SIZE  COMMAND
 }}}
 
 h2. sss
-p. Show slot status of hardware pools (hardware pools are described here: [[gridEngineQueue|Queue Layout]]):
+Show slot status of hardware pools (hardware pools are described here: [[gridEngineQueue|Queue Layout]]):
 {{{
 $ sss
-p. HARDWARE POOL                 AVAIL   USED  TOTAL
+HARDWARE POOL                 AVAIL   USED  TOTAL
 -------------------------------------------------
 pe_MRI_Sun_X4150_hg              70    890    960
 pe_RC_Dell_R410_hg              266   1246   1512
@@ -71,58 +70,58 @@ pe_svarma_HP_SL365_hg            16    176    192
 }}}
 
 h2. ss
-p. Show slot status of individual nodes in the hardware pools.
+Show slot status of individual nodes in the hardware pools.
 {{{
 $ ss
 
-p. PE = pe_C6100_GPU_hg
+PE = pe_C6100_GPU_hg
 
-p(((((((((((. Host         Used  Total
+           Host         Used  Total
 -----------------------------------
-p(((((. wh-520-3-1            2     12
-p(((((. wh-520-3-2            2     12
-p(((((. wh-520-3-3            2     12
-p(((((. wh-520-3-4            2     12
-p(((((. wh-520-3-5            2     12
-p(((((. wh-520-3-6            2     12
-p(((((. wh-520-3-7            3     12
-p(((((. wh-520-3-8            3     12
+     wh-520-3-1            2     12
+     wh-520-3-2            2     12
+     wh-520-3-3            2     12
+     wh-520-3-4            2     12
+     wh-520-3-5            2     12
+     wh-520-3-6            2     12
+     wh-520-3-7            3     12
+     wh-520-3-8            3     12
 -----------------------------------
-p((((((((((((((((((((((((((. 18     96
+                          18     96
 
 
-p. PE = pe_MRI_Sun_X4150_hg
+PE = pe_MRI_Sun_X4150_hg
 
-p(((((((((((. Host         Used  Total
+           Host         Used  Total
 -----------------------------------
-p(((. svc-3024-1-1            8      8
-p((. svc-3024-1-10            0      8
-p((. svc-3024-1-11            7      8
+   svc-3024-1-1            8      8
+  svc-3024-1-10            0      8
+  svc-3024-1-11            7      8
 ...
 
 $ ss pe_C6100_GPU_hg
 
-p. PE = pe_C6100_GPU_hg
+PE = pe_C6100_GPU_hg
 
-p(((((((((((. Host         Used  Total
+           Host         Used  Total
 -----------------------------------
-p(((((. wh-520-3-1            2     12
-p(((((. wh-520-3-2            2     12
-p(((((. wh-520-3-3            2     12
-p(((((. wh-520-3-4            2     12
-p(((((. wh-520-3-5            2     12
-p(((((. wh-520-3-6            2     12
-p(((((. wh-520-3-7            3     12
-p(((((. wh-520-3-8            3     12
+     wh-520-3-1            2     12
+     wh-520-3-2            2     12
+     wh-520-3-3            2     12
+     wh-520-3-4            2     12
+     wh-520-3-5            2     12
+     wh-520-3-6            2     12
+     wh-520-3-7            3     12
+     wh-520-3-8            3     12
 -----------------------------------
-p((((((((((((((((((((((((((. 18     96
+                          18     96
 }}}
 
 h2. qs
-p. Queue status:
+Queue status:
 {{{
 $ qs
-p. CLUSTER QUEUE                   CQLOAD   USED    RES  AVAIL  TOTAL aoACDS  cdsuE  
+CLUSTER QUEUE                   CQLOAD   USED    RES  AVAIL  TOTAL aoACDS  cdsuE  
 --------------------------------------------------------------------------------
 default                           0.92   3353      0   1199   4624      0     72 
 xlong                             0.92    219      0    293    512      0      0

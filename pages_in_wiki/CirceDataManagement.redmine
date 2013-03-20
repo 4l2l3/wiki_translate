@@ -1,5 +1,5 @@
 h1. Managing your data on CIRCE
-p. This page will provide guidelines for managing your data effectively on CIRCE.  Since we have various storage locations available as well as differing rules for how those storage locations are managed, its good to have an idea of what you should do to ensure your data is on the best location depending on your requirements.
+This page will provide guidelines for managing your data effectively on CIRCE.  Since we have various storage locations available as well as differing rules for how those storage locations are managed, its good to have an idea of what you should do to ensure your data is on the best location depending on your requirements.
 
 h2. Rules of Thumb
 1. Use @/work@ as your storage location for running jobs.  This file system was designed for that purpose and prevents disk-heavy applications from slowing down the system for other users.  There is also a large amount of space available so it is much less likely that you will run into any quota issues.
@@ -7,37 +7,37 @@ h2. Rules of Thumb
 3. Compress results that you would like to store permanently!  There is no reason not to do this and it helps you to keep you under your quota, allowing you to store more results.
 
 h2. Running Jobs Example
-p. Typically, jobs should be run from a staging directory under @/work@.  This can be accomplished by creating a directory under @/work@ for your job input files and resulting output.  We'll show an example below:
+Typically, jobs should be run from a staging directory under @/work@.  This can be accomplished by creating a directory under @/work@ for your job input files and resulting output.  We'll show an example below:
 
-p. Create the directory
+Create the directory
 {{{
 [user@login0 ~]$ mkdir $WORK/myjob
 }}}
-p. Put your input files inside the directory
+Put your input files inside the directory
 {{{
 [user@login0 ~]$ cp INPUT1 INPUT2 INPUT3 $WORK/myjob
 }}}
-p. Let's run the job.  We'll be running myapp against the input files in this directory
+Let's run the job.  We'll be running myapp against the input files in this directory
 {{{
 [user@login0 ~]$ cd $WORK/myjob
 [user@login0 myjob]$ run -n 16 -t 10:00:00 myapp/1.0
 ...
 }}}
-p. After we run and the job completes, there should be output as well
+After we run and the job completes, there should be output as well
 {{{
 [user@login0 myjob]$ ls
-p. INPUT1 INPUT2 INPUT3 OUTPUT1 OUTPUT2 OUTPUT3 output.myapp-1.0-asdfge-10000.txt
+INPUT1 INPUT2 INPUT3 OUTPUT1 OUTPUT2 OUTPUT3 output.myapp-1.0-asdfge-10000.txt
 }}}
-p. Let's do some post-processing and review our data while its on /work
+Let's do some post-processing and review our data while its on /work
 {{{
 [user@login0 myjob]$ &lt;sequence of commands to view and postprocess data&gt;
 }}}
-p. Good.  we have what we need, but we should store our calculation somewhere safe to recall later.  We'll put the directory in a compressed archive in our /home directory where it will be backed up and kept safe
+Good.  we have what we need, but we should store our calculation somewhere safe to recall later.  We'll put the directory in a compressed archive in our /home directory where it will be backed up and kept safe
 {{{
 [user@login0 myjob]$ pushd ..; tar -czvf $HOME/myjob.tar.gz myjob; popd
 ...
 }}}
-p. Let's go ahead and remove the job directory from /work to keep our disk utilization low
+Let's go ahead and remove the job directory from /work to keep our disk utilization low
 {{{
 [user@login0 myjob]$ cd
 [user@login0 ~]$ rm -rf $WORK/myjob

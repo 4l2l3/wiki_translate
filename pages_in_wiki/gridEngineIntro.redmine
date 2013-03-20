@@ -1,43 +1,42 @@
 h1. Sun
 ----
-[[PageOutline]]
 [[br]]
 [[br]]
-p. This page will provide some introductory information about the Sun's !GridEngine software and how it is utilized at USF.  It provides an optimal environment for efficiently managing computational resources that are used by many different departments and research groups across campus.  It allows Research Computing to effectively monitor and control the way computational tasks are assigned and executed allowing us to maximize job throughput and performance by picking the right place at the right time for a particular job to execute.  
+This page will provide some introductory information about the Sun's !GridEngine software and how it is utilized at USF.  It provides an optimal environment for efficiently managing computational resources that are used by many different departments and research groups across campus.  It allows Research Computing to effectively monitor and control the way computational tasks are assigned and executed allowing us to maximize job throughput and performance by picking the right place at the right time for a particular job to execute.  
 
-p. There is a variety of information on the web about !GridEngine:
+There is a variety of information on the web about !GridEngine:
 ******* Introduction Video: http://youtube.com/watch?v=0JBsMitNnQ8
 ******* Sun's Product Page: http://www.sun.com/software/gridware/
 ******* Sun Documentation Portal: http://docs.sun.com/app/docs/coll/1017.4
-p. Most of this information, however, is geared more towards marketing and promoting the product to IT types rather than the individuals who will be using it.  Therefore, it may seem unclear to the user what role SGE plays in how work will be done and how specific tasks will be accomplished.  Despite efforts to make the Resource Manager transparent to the user, it is inevitable that users will become highly exposed to !GridEngine during the course of their computational work so an understanding of it as a tool for accomplishing that work should prove helpful.
+Most of this information, however, is geared more towards marketing and promoting the product to IT types rather than the individuals who will be using it.  Therefore, it may seem unclear to the user what role SGE plays in how work will be done and how specific tasks will be accomplished.  Despite efforts to make the Resource Manager transparent to the user, it is inevitable that users will become highly exposed to !GridEngine during the course of their computational work so an understanding of it as a tool for accomplishing that work should prove helpful.
 
 h2. 1
-p. In a large computational environment such as a Beowulf Cluster, Supercomputer, or large multi-processor machine, there are many users trying to run many different applications.  It is the role of the Resource Manager, in this case !GridEngine, to manage the flow of these different jobs which are, at the most basic level, competing for resources.    In much the same way as one waits in a line, say at the DMV in order to renew their vehicle registration, !GridEngine creates a queue of jobs.  However, unlike the DMV, !GridEngine's scheduler does not necessarily operate on a first-come/first-serve basis since also, unlike the DMV, you are not likely to get in line only once, but perhaps many times.  Without efficient scheduling, one person may dominate a great portion of the resources for most of the time.
+In a large computational environment such as a Beowulf Cluster, Supercomputer, or large multi-processor machine, there are many users trying to run many different applications.  It is the role of the Resource Manager, in this case !GridEngine, to manage the flow of these different jobs which are, at the most basic level, competing for resources.    In much the same way as one waits in a line, say at the DMV in order to renew their vehicle registration, !GridEngine creates a queue of jobs.  However, unlike the DMV, !GridEngine's scheduler does not necessarily operate on a first-come/first-serve basis since also, unlike the DMV, you are not likely to get in line only once, but perhaps many times.  Without efficient scheduling, one person may dominate a great portion of the resources for most of the time.
 
 h3. Fairness
-p. The scheduler allows us to implement policies that are geared toward achieving fairness of the overall utilization of the resources.  We want everyone to have as equal an opportunity at utilizing resources, based on the demands of their job, as everyone else.
+The scheduler allows us to implement policies that are geared toward achieving fairness of the overall utilization of the resources.  We want everyone to have as equal an opportunity at utilizing resources, based on the demands of their job, as everyone else.
 
 h3. Performance
-p. The scheduler also allows us to dispatch jobs to appropriate hardware.  Since our setup is not a traditional homogeneous Beowulf-style cluster but is a collection of different sub-clusters and multi-processor nodes, it is important that we take the computational needs of the application into account when we schedule a task.  The scheduler will assign jobs to the appropriate hardware platforms based on the application's need.
+The scheduler also allows us to dispatch jobs to appropriate hardware.  Since our setup is not a traditional homogeneous Beowulf-style cluster but is a collection of different sub-clusters and multi-processor nodes, it is important that we take the computational needs of the application into account when we schedule a task.  The scheduler will assign jobs to the appropriate hardware platforms based on the application's need.
 
 h3. Throughput
-p. We are also concerned with getting the most work done in a given amount of time as possible.  Individual job considerations do not often translate into overall considerations and so it is necessary for scheduling policies to reflect that.
+We are also concerned with getting the most work done in a given amount of time as possible.  Individual job considerations do not often translate into overall considerations and so it is necessary for scheduling policies to reflect that.
 
-p. Essentially, our scheduling policy aims to achieve the greatest throughput while maintaining fairness in how much an individual utilizes resources and providing the greatest possible performance for individual applications.
+Essentially, our scheduling policy aims to achieve the greatest throughput while maintaining fairness in how much an individual utilizes resources and providing the greatest possible performance for individual applications.
 
 h2. 2
-p. Many of you have already worked with outside Supercomputing centers and already know the ropes when it comes to job scheduling.  If this is the case for you, then you'll want to see the following sections instead:
+Many of you have already worked with outside Supercomputing centers and already know the ropes when it comes to job scheduling.  If this is the case for you, then you'll want to see the following sections instead:
 ****** [[gridEngineQueue|Hardware Layout]]
 ****** [[gridEngineUsers|SGE User's Guide]]
 ****** [[gridEnginePolicy|Scheduling and Dispatch Policies]]
 ****** [[gridEngineTechn|Advanced Submit Techniques]]
-p. If you are not at all familiar with working on a Grid-type environment, this section should help you get a high-level understanding of what it is you're doing when you "submit a job to the queue".
+If you are not at all familiar with working on a Grid-type environment, this section should help you get a high-level understanding of what it is you're doing when you "submit a job to the queue".
 h2. 3
-p(. 1. Understand what it is you wish to accomplish and what you'll need.  What applications or tools will you need to use?  In what way are you using these applications?  Do these tools require more extensive computing capabilities provided by High-Performance or High-Throughput platforms?
-p(. 2. You'll probably need an account.  If you don't have one already, please visit https://rc.usf.edu/signup/account.php
-p(. 3. If you're not very familiar with UNIX or Linux in particular, you may benefit from going through our Linux Tutorials located at http://rc.usf.edu/tutorials/linux.php
-p(. 4. Will you be developing your own applications or running your own code?  You'll want to see our [[DeveloperPortal|Developer's Portal]].  If you are new to coding, you may benefit from our MPI tutorials hosted at http://rc.usf.edu/tutorials/mpi.php
-p(. 5. Know the specifics of your job requirements.  See [[gridEngineRuntime|Measuring Resource Needs]]
-p(. 6. Learn how to run your jobs:
+ 1. Understand what it is you wish to accomplish and what you'll need.  What applications or tools will you need to use?  In what way are you using these applications?  Do these tools require more extensive computing capabilities provided by High-Performance or High-Throughput platforms?
+ 2. You'll probably need an account.  If you don't have one already, please visit https://rc.usf.edu/signup/account.php
+ 3. If you're not very familiar with UNIX or Linux in particular, you may benefit from going through our Linux Tutorials located at http://rc.usf.edu/tutorials/linux.php
+ 4. Will you be developing your own applications or running your own code?  You'll want to see our [[DeveloperPortal|Developer's Portal]].  If you are new to coding, you may benefit from our MPI tutorials hosted at http://rc.usf.edu/tutorials/mpi.php
+ 5. Know the specifics of your job requirements.  See [[gridEngineRuntime|Measuring Resource Needs]]
+ 6. Learn how to run your jobs:
 *** [[gridEngineUsers|GridEngine User's Guide]]
 *** [[gridEngineTechn|Advanced Submit Techniques]]

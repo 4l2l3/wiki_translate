@@ -1,6 +1,5 @@
 h1.
 ----
-[[PageOutline]]
 
 h2. Description
 _From the !TeraChem user guide:_ !TeraChem is general purpose quantum chemistry software designed to run on NVIDIA GPU architectures under a 64-bit Linux operating system.
@@ -21,25 +20,25 @@ h2. Local Documentation
 
 h3. Running
 
-p. The !TeraChem user guide is essential to understanding the application and making the most of it.  The guide and this page should be all you need to get started with your simulations.
+The !TeraChem user guide is essential to understanding the application and making the most of it.  The guide and this page should be all you need to get started with your simulations.
 ** /opt/apps/terachem/1.0/TeraChem/userguide.pdf
 
-!TeraChem is quite easy to execute on Circe.  After creating your input, simply use [wiki:Run @run@] to execute the program:
+!TeraChem is quite easy to execute on Circe.  After creating your input, simply use [[Run @run@]] to execute the program:
 {{{
 [user@host ~]$ run -n 8 -N test_name -t 4:00:00 -e CONFIG=config.inp terachem/1.0
 }}}
 
-p. This will request 8 processors, a job name of test_name, a 4 hour run-time, and specify the input file as config.inp.
+This will request 8 processors, a job name of test_name, a 4 hour run-time, and specify the input file as config.inp.
 
 h4. Tests
-p. The following folders contain input parameters for known !TeraChem tests:
+The following folders contain input parameters for known !TeraChem tests:
 ** /opt/apps/terachem/1.0/TeraChem/tests
 
 h4. More Job Information
-p. See the following for more detailed job submission information:
+See the following for more detailed job submission information:
 ** [[gridEngineUsers|SGE User's Guide]]
 ** [[gridEnginePolicy|Scheduling and Dispatch Policies]]
 ** [[gridEngineTechn|Advanced Submit Techniques]]
 
 h4. Reporting Bugs
-p. Report bugs directly to Research Computing: help@usf.edu
+Report bugs directly to Research Computing: help@usf.edu
