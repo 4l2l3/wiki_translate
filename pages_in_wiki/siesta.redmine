@@ -37,7 +37,7 @@ Below is an example submit script:
 
 module load apps/siesta/3.1
 
-mpirun -np $NSLOTS [[siesta]] &lt; atom.sm
+mpirun -np $NSLOTS [[siesta]] < atom.sm
 </pre>
 
 h3. Tutorials and Tests

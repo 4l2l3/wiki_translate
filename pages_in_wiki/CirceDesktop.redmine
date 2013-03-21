@@ -20,13 +20,13 @@ h2. Sessions
 When you first log into Circe via NX, you begin a new session.  A session provides a full desktop environment and will include any applications you launch while you are logged in.  This will not include any programs running in the queue.
 
 h3. Terminating a Session
-Sessions can be terminated by logging out (going to @Start-&gt;Quit@ in the NX top tool bar). If you need to terminate a suspended session and you are unable to do so from the NX client, note the system that the session is running on (eg: login0.rc.usf.edu) and follow this procedure:
+Sessions can be terminated by logging out (going to @Start->Quit@ in the NX top tool bar). If you need to terminate a suspended session and you are unable to do so from the NX client, note the system that the session is running on (eg: login0.rc.usf.edu) and follow this procedure:
 
 1. Connect to the system using your SSH client (PuTTY, ssh)
 
 2. Perform this command
 <pre>
-pkill -u &lt;netid&gt;
+pkill -u <netid>
 </pre>
 
 Note that all processes you own on the server will be terminated. No running jobs should be affected.

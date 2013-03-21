@@ -21,7 +21,7 @@ h2. Platforms
 
 h4. Logging On
  To log onto whpc-login.rc.usf.edu, you will need to use a remote desktop client. 
-* From a Linux workstation, it is recommended to use "rdesktop -u 'FOREST\&lt;username&gt;' whpc-login.rc.usf.edu" from the terminal. To view more options for rdesktop, view the manual page. 
+* From a Linux workstation, it is recommended to use "rdesktop -u 'FOREST\<username>' whpc-login.rc.usf.edu" from the terminal. To view more options for rdesktop, view the manual page. 
 
 * From a Windows machine, launch "Remote Desktop Connection" and specify "whpc-login.rc.usf.edu" for the 'Computer' field.
 

@@ -20,15 +20,15 @@ The following table lists custom defined complexes which are necessary for getti
 h2. Requesting Complexes
 To request a complex, you must add the following line to your submit script:
 <pre>
-#$ -l &lt;complex_name&gt;=&lt;value&gt;[,&lt;complex_name&gt;=&lt;value][,...]
+#$ -l <complex_name>=<value>[,<complex_name>=<value][,...]
 </pre>
 or
 <pre>
-#$ -l &lt;complex_name&gt;=&lt;value&gt;
-#$ -l &lt;complex_name&gt;=&lt;value&gt;
+#$ -l <complex_name>=<value>
+#$ -l <complex_name>=<value>
 ...
 </pre>
-where &lt;complex_name&gt; is one of the complexes defined above (or one of the standard complexes described in the !GridEngine User's Guide and show below), and &lt;value&gt; is the desired value of the complex.
+where <complex_name> is one of the complexes defined above (or one of the standard complexes described in the !GridEngine User's Guide and show below), and <value> is the desired value of the complex.
 
 A couple examples:
 

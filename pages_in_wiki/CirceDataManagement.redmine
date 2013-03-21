@@ -30,7 +30,7 @@ INPUT1 INPUT2 INPUT3 OUTPUT1 OUTPUT2 OUTPUT3 output.myapp-1.0-asdfge-10000.txt
 </pre>
 Let's do some post-processing and review our data while its on /work
 <pre>
-[user@login0 myjob]$ &lt;sequence of commands to view and postprocess data&gt;
+[user@login0 myjob]$ <sequence of commands to view and postprocess data>
 </pre>
 Good.  we have what we need, but we should store our calculation somewhere safe to recall later.  We'll put the directory in a compressed archive in our /home directory where it will be backed up and kept safe
 <pre>

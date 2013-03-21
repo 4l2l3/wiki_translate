@@ -31,8 +31,8 @@ h3. How to Submit Jobs
 Make sure to run your job from your $WORK directory. Use the a submit script like the following to run Trans-ABySS:
 
 <pre>
-#$ -N &lt;job_name&gt;
-#$ -l h_rt=HH:MM:SS,pcpus=&lt;#_of_processors&gt;
+#$ -N <job_name>
+#$ -l h_rt=HH:MM:SS,pcpus=<#_of_processors>
 #$ -cwd
 #$ -j y
 #$ -o output.$JOB_ID
@@ -40,7 +40,7 @@ Make sure to run your job from your $WORK directory. Use the a submit script lik
 module purge
 module load apps/trans-abyss/1.4.4
 
-python wrappers/trans_abyss.py &lt;arguments&gt; &lt;input_file(s)&gt;
+python wrappers/trans_abyss.py <arguments> <input_file(s)>
 </pre>
 
 Your submit scripts will vary depending on your individual needs.

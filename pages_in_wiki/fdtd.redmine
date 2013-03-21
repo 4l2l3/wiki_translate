@@ -23,7 +23,7 @@ h2. Install FDTD Solutions on Windows XP
 ** Complete Installation and start FDTD Solutions from start menu
 ** A dialog for license key configuration will appear.  Click the link to "Check HASP key status..."
 ** A browser window will appear with the HASP license configuration
-** Click on 'Configuration'-&gt;'Access to Remote License Managers'
+** Click on 'Configuration'->'Access to Remote License Managers'
 ** Check the box for 'Aggressive search of remote licenses'
 ** In the 'Specify search parameters' box, enter
    <pre>

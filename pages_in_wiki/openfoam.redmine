@@ -57,12 +57,12 @@ This script can be copied into your job directory (the folder with your input fi
 #$ -l h_rt=hh:mm:ss, pcpus=8
 #$ -cwd
 #$ -j n 
-#$ -o &lt;job_name&gt;.o&lt;job_id&gt;
+#$ -o <job_name>.o<job_id>
 
 module load apps/openfoam/2.0.1
 source $ENV_FILE
 
-mpirun &lt;foam_exectutable&gt; &lt;-parallel&gt; &lt;options&gt;
+mpirun <foam_exectutable> <-parallel> <options>
 </pre>
 
 h3. More Job Information

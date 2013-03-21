@@ -38,7 +38,7 @@ A sample sge script is provided below.  For more information on submit scripts, 
 #$ -l p_low=true
 #$ -l h_rt=8:00:00,pcpus=4
 
-mpirun /opt/apps/meme/bin/meme &lt;ARGS&gt;
+mpirun /opt/apps/meme/bin/meme <ARGS>
 </pre>
 
 

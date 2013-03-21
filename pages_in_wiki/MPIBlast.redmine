@@ -69,7 +69,7 @@ mpirun mpiblast -d drosoph.nt -i query.in -p blastn -o results.txt
 Example query.in file for drosoph.nt:
 
 <pre>
-&gt;Search sequence
+>Search sequence
 AGTACGTAAAGAAAATCTTTTTTTGGCGACATCATTGTATTTGGTAGTATACGATTTCCAGCATCCACAACTATTTCCT
 </pre>
 

@@ -45,11 +45,11 @@ Save this example code to a file called !WordCount.java:
 
         public class WordCount {
 
-           public static class Map extends MapReduceBase implements Mapper&lt;LongWritable, Text, Text, IntWritable&gt; {
+           public static class Map extends MapReduceBase implements Mapper<LongWritable, Text, Text, IntWritable> {
              private final static IntWritable one = new IntWritable(1);
              private Text word = new Text();
 
-             public void map(LongWritable key, Text value, OutputCollector&lt;Text, IntWritable&gt; output, Reporter reporter) throws IOException {
+             public void map(LongWritable key, Text value, OutputCollector<Text, IntWritable> output, Reporter reporter) throws IOException {
                String line = value.toString();
                StringTokenizer tokenizer = new StringTokenizer(line);
                while (tokenizer.hasMoreTokens()) {
@@ -59,8 +59,8 @@ Save this example code to a file called !WordCount.java:
              }
            }
 
-           public static class Reduce extends MapReduceBase implements Reducer&lt;Text, IntWritable, Text, IntWritable&gt; {
-             public void reduce(Text key, Iterator&lt;IntWritable&gt; values, OutputCollector&lt;Text, IntWritable&gt; output, Reporter reporter) throws IOException {
+           public static class Reduce extends MapReduceBase implements Reducer<Text, IntWritable, Text, IntWritable> {
+             public void reduce(Text key, Iterator<IntWritable> values, OutputCollector<Text, IntWritable> output, Reporter reporter) throws IOException {
                int sum = 0;
                while (values.hasNext()) {
                  sum += values.next().get();
@@ -121,7 +121,7 @@ hadoop_start
 
 # I took a text copy of the King James Version of the Bible as test data (http://download.o-bible.com:8080/kjv.gz)
 # Removed all verse prefixes, punctuation, and forced everything to lowercase, like this:
-# zcat kjv.gz | awk '{ $1=NP; print }' | sed 's/[\.,-\!\?]//g' | tr "[:upper:]" "[:lower:]" | awk 'FNR&gt;1' &gt; properkjv.txt
+# zcat kjv.gz | awk '{ $1=NP; print }' | sed 's/[\.,-\!\?]//g' | tr "[:upper:]" "[:lower:]" | awk 'FNR>1' > properkjv.txt
 
 # Copy the input file into the HDFS filesystem
 hadoop fs -put ./properkjv.txt properkjv.txt

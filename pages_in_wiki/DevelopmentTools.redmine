@@ -34,7 +34,7 @@ The following numerical libraries for BLAS, LAPACK, FFTW, GSL, etc. are availabl
 | ACML       | BLAS/LAPACK | AMD | 4.4.0 | -L/opt/lib/acml/4.4.0/gfortran64/lib -lacml_mv -lacml | 
 | | | | | -L/opt/lib/acml/4.4.0/gfortran64_mp/lib -lacml_mv -lacml |
 | MKL | BLAS/LAPACK/BLACS | Intel | 12.1.0 | -mkl=sequential | 
-| | SCALAPACK/FFT | | | -mkl=&lt;parallel|cluster&gt; |
+| | SCALAPACK/FFT | | | -mkl=<parallel|cluster> |
 
 h2. Scripting Languages
 The systems support a number of scripting languages.  The table below provides further information:

@@ -130,7 +130,7 @@ If, for example, you have a Maple script file named test.mpl with all your funct
 #$ -o output.$JOB_ID
 
 module load apps/maple/16
-maple &lt; test.mpl&gt; output.txt
+maple < test.mpl> output.txt
 </pre>
 
 Maple script files can either be created using a standard text editor or by exporting an existing worksheet from Standard Maple in .mpl format.

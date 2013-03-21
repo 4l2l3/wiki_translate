@@ -145,7 +145,7 @@ If, for example, you have a Mathematica script file named test.math with all you
 #$ -o output.$JOB_ID
 
 module load apps/mathematica/9.0
-math &lt; test.math
+math < test.math
 </pre>
 
 h4. Mathematica Notebook files
@@ -160,7 +160,7 @@ Please use the following steps to convert a notebook file to a standard Mathemat
 4. Click on "Cell", "Cell Properties", and then select "Initialization Cell".
 5. Click on "File", "Save as", and then change "Files of type" to "Mathematica Package". 
 
-You'll then use the file you just saved as an input file using the Circe submission sample above, e.g. "math &lt; filesaved.m".
+You'll then use the file you just saved as an input file using the Circe submission sample above, e.g. "math < filesaved.m".
 
 
 h3. Reporting Bugs

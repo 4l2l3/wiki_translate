@@ -39,14 +39,14 @@ or
 Use the following submit script as an example to run Dalton:
 
 <pre>
-#$ -N &lt;job_name&gt;
-#$ -l h_rt=HH:MM:SS,i_ib=true, pcpus=&lt;#_of_processors&gt;
+#$ -N <job_name>
+#$ -l h_rt=HH:MM:SS,i_ib=true, pcpus=<#_of_processors>
 #$ -cwd
 #$ -j y
 #$ -o output.$JOB_ID
 
 module load apps/dalton/2.0
-mpirun [[dalton]] -N &lt;#_of_processors&gt; &lt;input_file&gt; &lt;mol_file&gt;
+mpirun [[dalton]] -N <#_of_processors> <input_file> <mol_file>
 </pre>
 
 or simply execute the following within your job directory:

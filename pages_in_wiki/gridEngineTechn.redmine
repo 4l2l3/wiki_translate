@@ -41,11 +41,11 @@ A slightly more complex example uses $SGE_TASK_ID as an index variable to define
 
 # Set the new temperature
 BASE_TEMP=100
-TEMP=`bc -q &lt;&lt;EOF
+TEMP=`bc -q <<EOF
 scale=2
 $BASE_TEMP+($SGE_TASK_ID/10)
 EOF`
-sed -r "s/TEMP(\s)+\=(\s)+([0-9])+\.([0-9])+/TEMP = $TEMP" inputfile.template &gt; inputfile.$SGE_TASK_ID
+sed -r "s/TEMP(\s)+\=(\s)+([0-9])+\.([0-9])+/TEMP = $TEMP" inputfile.template > inputfile.$SGE_TASK_ID
 
 mpirun -np $NSLOTS ./my_app inputfile.$SGE_TASK_ID
 </pre>
@@ -85,7 +85,7 @@ if [ $ITR -gt 1 ]; then
 
      # Generate our new input file
      sed -r "s/PARAMETER1(\s)+\=(\s)+([0-9])+\.([0-9])+/PARAMETER1 = $NEW_PARAM_1/" \
-                inputfile.template &gt; inputfile.$JOB_NAME.$SGE_TASK_ID
+                inputfile.template > inputfile.$JOB_NAME.$SGE_TASK_ID
      # Do the replacement 'inline' to the existing inputfile
      sed -ri "s/PARAMETER2(\s)+\=(\s)+([0-9])+\.([0-9])+/PARAMETER2 = $NEW_PARAM_2/" \
                 inputfile.$JOB_NAME.$SGE_TASK_ID

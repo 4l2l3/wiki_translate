@@ -41,7 +41,7 @@ Users can use the following SGE script to run [[Fidap]] jobs with fisol over SGE
 #$ -l arch=lx24-amd64
 #$ -j y
 #$ -o sge_output.$JOB_NAME.$JOB_ID
-#$ -N &lt;job_name&gt;
+#$ -N <job_name>
 
 INPUT_FILE=input.txt
 
@@ -59,17 +59,17 @@ function return_error(){
 
 [ -z "$JOB_NAME" ] | 
 [ -z "$JOB_ID" ]   | 
-[ -z "$TMPDIR" ]   &amp;&amp; return_error ENVERR
+[ -z "$TMPDIR" ]   && return_error ENVERR
 
 ## Check for 'fidap' in path, evaluate exit code $?
-which fidap &amp;&gt; /dev/null
-[ $? -ne 0 ] &amp;&amp; return_error FPATHERR
+which fidap &> /dev/null
+[ $? -ne 0 ] && return_error FPATHERR
 
 ## Specify scratch directory for working files
 SCRATCH=/tmp/$USER/$JOB_NAME.$JOB_ID
 
 ## If SCRATCH directory does not exist, create it
-[ ! -d "$SCRATCH" ] &amp;&amp; mkdir -p $SCRATCH
+[ ! -d "$SCRATCH" ] && mkdir -p $SCRATCH
 
 ## Time and run fidap with specified SCRATCH location in FISOLV mode
 time fidap -fidapscr $SCRATCH $JOB_NAME -in $INPUT_FILE

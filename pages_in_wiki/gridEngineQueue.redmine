@@ -32,7 +32,7 @@ in your job submit script.
 The node sets are associated with the following queues:
 
 | *Queue Name* | *Max Runtime* | *Notes* |
-| default | 1 week | All jobs go here unless &gt; 1 week runtime |
+| default | 1 week | All jobs go here unless > 1 week runtime |
 | xlong  | unlimited  |  636 slots, restricted, access granted on request |
 
 Jobs are classified and have certain priorities and restrictions based on runtime.  The following table illustrates:
@@ -42,7 +42,7 @@ Jobs are classified and have certain priorities and restrictions based on runtim
 | short       | 1hr - 6hr           | +100 |
 | medium      | 6hr - 2d            | +10 |
 | long        | 2d - 1w             | 0 |
-| xlong*      | &gt; 1w                | 0 |
+| xlong*      | > 1w                | 0 |
 
 * xlong jobs are restricted by the system and must be granted access first.
 

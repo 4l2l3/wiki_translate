@@ -26,15 +26,15 @@ h4. Q
 
  1. Did you create your submit script from within the Windows editor *Notepad*?  If so, please ensure that you convert your submit script with the @dos2unix@ command by running
  <pre> 
-[user@host ~]$ dos2unix &lt;script&gt; 
+[user@host ~]$ dos2unix <script> 
 </pre>
- where @&lt;script&gt;@ is the name of your job script.  This will convert the file to the proper UNIX file format the !GridEngine uses.
+ where @<script>@ is the name of your job script.  This will convert the file to the proper UNIX file format the !GridEngine uses.
  2. Does your submit script contain the appropriate module lines?  Please see the documentation for your respective application for the appropriate module lines to add.
  3. Are you actually referencing a file that exists?  You can make sure that the file exists by doing
  <pre> 
-[user@host ~]$ ls &lt;path_to_file&gt; 
+[user@host ~]$ ls <path_to_file> 
 </pre>
- where @&lt;path_to_file&gt;@ cannot find the file, then chances are it doesn't exist on the nodes either.
+ where @<path_to_file>@ cannot find the file, then chances are it doesn't exist on the nodes either.
 ----
 h4. Q
 
@@ -85,7 +85,7 @@ This option would request a runtime of eight hours. The *h_rt* option is require
 ----
 h4. Q
 
-*A.* What it probably means is that we have an old or incorrect entry for your E-Mail address in our central database.  We're working to convert those addresses to @&lt;netid&gt;@mail.usf.edu@, but some users have opted to register with other addresses and may not be aware of their mail.usf.edu account.  If you aren't receiving E-Mails about the system, send an E-Mail to help@usf.edu stating that you'd like to update your E-Mail address with Research Computing.  Include the address you'd like to be contacted at in the E-Mail.
+*A.* What it probably means is that we have an old or incorrect entry for your E-Mail address in our central database.  We're working to convert those addresses to @<netid>@mail.usf.edu@, but some users have opted to register with other addresses and may not be aware of their mail.usf.edu account.  If you aren't receiving E-Mails about the system, send an E-Mail to help@usf.edu stating that you'd like to update your E-Mail address with Research Computing.  Include the address you'd like to be contacted at in the E-Mail.
 ----
 h4. Q
 

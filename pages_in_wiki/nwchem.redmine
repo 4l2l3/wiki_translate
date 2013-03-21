@@ -27,8 +27,8 @@ h2. Submitting a Job
 Make sure to run your job from your $WORK directory. Use the a submit script like the following to run NWChem:
 
 <pre>
-#$ -N &lt;job_name&gt;
-#$ -l h_rt=HH:MM:SS,pcpus=&lt;#_of_processors&gt;
+#$ -N <job_name>
+#$ -l h_rt=HH:MM:SS,pcpus=<#_of_processors>
 #$ -cwd
 #$ -j y
 #$ -o output.$JOB_ID
@@ -36,7 +36,7 @@ Make sure to run your job from your $WORK directory. Use the a submit script lik
 module purge
 module load apps/nwchem/6.1.1
 
-mpirun [[nwchem]] &lt;input_file&gt;
+mpirun [[nwchem]] <input_file>
 </pre>
 
 h4. More Job Information

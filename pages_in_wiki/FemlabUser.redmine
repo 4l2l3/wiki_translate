@@ -30,14 +30,14 @@ h2. Installing on Linux
 
    2. Next, become root and issue the following commands.
 
-           @root@host&gt; mkdir -p /tmp/comsol@
-           @root@host&gt; mount -o loop comsol-4.3a.iso /tmp/comsol@
+           @root@host> mkdir -p /tmp/comsol@
+           @root@host> mount -o loop comsol-4.3a.iso /tmp/comsol@
 
    Please note that /tmp/comsol could be any temporary directory you wish. These commands will create a directory and then mount the ISO DVD image to that temporary directory. This saves you the trouble of having to actually burn a DVD for Comsol.
 
    3. Next you will need to start the installer by issuing the following command as root:
 
-           @root@host&gt; sh /tmp/comsol/setup@
+           @root@host> sh /tmp/comsol/setup@
 
    After a few moments the graphical installer will be displayed.
 
@@ -57,7 +57,7 @@ h2. Installing on Linux
 
 **** Once the installer is done you may wish to create a link to the Comsol binary under a directory that is in your path. You can do this by issuing the following command as root:
 
-           @root@host&gt; ln -s /usr/local/comsol43a/bin/comsol /usr/local/bin@
+           @root@host> ln -s /usr/local/comsol43a/bin/comsol /usr/local/bin@
 
    Note: !Comsol/Femlab has changed names to comsol, you can make the link above be any name you wish. 
 
@@ -65,8 +65,8 @@ h2. Installing on Linux
 
    Now that you have installed Comsol and created a link to the executable you can run Comsol with either of the two commands, the first starts Comsol without MATLAB and the second starts with MATLAB:
 
-           @user@host&gt; comsol@
-           @or user@host&gt; comsol matlab@
+           @user@host> comsol@
+           @or user@host> comsol matlab@
 
 h2. Installing on Windows
 
@@ -76,7 +76,7 @@ Follow the steps below to download and install Comsol for Windows.
 
    Alternatively, you could mount the ISO without burning a DVD. Read our guide at [[WindowsISO]].
 
-   2. To begin the installation click on the installer on the newly created DVD located in the directory &lt;cdrom&gt;:\Windows\VM\setup.exe.
+   2. To begin the installation click on the installer on the newly created DVD located in the directory <cdrom>:\Windows\VM\setup.exe.
 
    3. Click the New Installation button on the Introduction screen to continue.
 

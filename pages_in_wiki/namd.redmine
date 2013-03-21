@@ -41,7 +41,7 @@ Your job 225598 ("namd_apoa1") has been submitted
 For more information on the @run@ command, see [[Run here]].
 
 h4. Benchmarks
-The above User Information &amp; Documentation links should have ample information to qualify as a tutorial.  We currently have one benchmark in the directory
+The above User Information & Documentation links should have ample information to qualify as a tutorial.  We currently have one benchmark in the directory
 ** /opt/apps/namd/apoa1
 This is a fairly standard NAMD benchmark that is used for testing clusters.
 

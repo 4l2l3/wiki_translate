@@ -173,7 +173,7 @@ Parallel batch jobs can be submitted using a script similar to the one below.
 
 module load apps/matlab/r2012b
 
-matlab -nodisplay -logfile matlabLog.txt -r test_parallel &gt;&amp; err.out
+matlab -nodisplay -logfile matlabLog.txt -r test_parallel >& err.out
 </pre>
 
 In this example, you would have a Matlab script named test_parallel.m, and in it should be defined a 'matlabpool'.  Be sure that the 'pcpus' defined in your submit script is 2 more than the number requested using 'matlabpool'.  In this case, 'matlabpool' would have been set at 8, therefore 'pcpus' is defined as 10.  More information about parallel computing in Matlab can be found on the  "MathWorks website":http://www.mathworks.com/help/toolbox/distcomp/exampleindex.html.  The 'mpj' request is the amount of memory to reserve for the job, and is set to 10 gigabytes here.  This can be adjusted as necessary.

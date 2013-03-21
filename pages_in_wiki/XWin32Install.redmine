@@ -24,7 +24,7 @@ h3. First-Time Configuration
  2. Download and Install the Putty Windows Installer: http://the.earth.li/~sgtatham/putty/latest/x86/putty-0.60-installer.exe
  3. Start PuTTY from the Start Menu.
  4. In the *Session* section, enter this in the Host Name box: *circe.rc.usf.edu*.
- 5. In *Connection-&gt;SSH-&gt;X11*, check the *Enable X11 Forwarding* box.
+ 5. In *Connection->SSH->X11*, check the *Enable X11 Forwarding* box.
  6. In the *Session* section, type *Circe* in the *Saved Sessions* box, and click Save.
  7. Click _Open_. Once you successfully login, you should be able to execute X11-enabled programs. 
  8. When you start a graphical application on Circe, XWin32 may pop up a question asking you to allow a connection.  You can select *Always* to prevent that message from appearing again.

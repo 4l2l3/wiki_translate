@@ -67,7 +67,7 @@ or
 
 In either case, this is bad news for our application and its performance.  We need a system with more memory.
 
-Since the current system has 8GB of RAM and the process is apparently using &gt;= 9GB of RAM, then we have a good basis for making a resource request:
+Since the current system has 8GB of RAM and the process is apparently using >= 9GB of RAM, then we have a good basis for making a resource request:
 <pre>
 #$ -l mpj=10G
 </pre>

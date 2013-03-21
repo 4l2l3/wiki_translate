@@ -41,7 +41,7 @@ This will launch a distributed rendering job that will render 1000 frames from t
 Full command line options are below:
 <pre>
 Command requires at least 1 argumen1:
-Render_sge &lt;"start"|"stop"|"status"&gt; &lt;filename&gt; &lt;frames&gt; &lt;"standard"|"gpu"&gt; [&lt;additional_render_args&gt;]
+Render_sge <"start"|"stop"|"status"> <filename> <frames> <"standard"|"gpu"> [<additional_render_args>]
 
 Examples:
 
@@ -267,7 +267,7 @@ This will encode a High-Def MPEG4 video file from the rendered frames in the ren
 <pre>
 [user@host ~]$ Encode_sge 
 Requires 5 arguments: 
-   Encode_sge &lt;maya_project&gt; &lt;cpu_threads&gt; &lt;framerate&gt; &lt;x_res&gt; &lt;y_res&gt;
+   Encode_sge <maya_project> <cpu_threads> <framerate> <x_res> <y_res>
 </pre>
 
 For more information on Run, see [[Run|The GridEngine Run Utility]].

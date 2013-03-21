@@ -36,7 +36,7 @@ Information about individual executables can also be found using man pages, i.e 
 
 In order to start a simulation, you will need a protein or molecule to play with. Go to http://www.rcsb.org/pdb/ and grab one in @.pdb@ format.  Follow the below procedure for simple molecules.
 
-** Run @pdb2gmx -f &lt;pdb file&gt;@ file(s).
+** Run @pdb2gmx -f <pdb file>@ file(s).
 
 ** Run @editconf@ with proper parameters to change the dimensions of the box.
 

@@ -35,7 +35,7 @@ This script can be copied into your job directory (the folder with your input fi
 
 module load apps/epresso/5.0
 
-mpirun -np $NSLOTS pw.x -in file.in &gt; file.out
+mpirun -np $NSLOTS pw.x -in file.in > file.out
 </pre>
 
 h3. Benchmarks and Tests

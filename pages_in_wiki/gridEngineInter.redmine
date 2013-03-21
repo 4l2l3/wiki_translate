@@ -12,7 +12,7 @@ Last login: Wed Oct 31 15:26:22 from login1
 </pre>
 You can now run any compute-intensive task interactively.
 
-Let us say that you require a minimum of 4GB of RAM for your interactive task.  We can ask the scheduler to put us on a node with &gt;4GB of RAM by requesting the @mem_free@ complex like so:
+Let us say that you require a minimum of 4GB of RAM for your interactive task.  We can ask the scheduler to put us on a node with >4GB of RAM by requesting the @mem_free@ complex like so:
 <pre>
 [user@login0 ~]$ qlogin -l mps=4G,h_rt=01:00:00
 Last login: Wed Oct 31 15:26:22 from login1

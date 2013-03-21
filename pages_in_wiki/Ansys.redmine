@@ -86,7 +86,7 @@ h3. Serial Submit Script
 
 module add apps/ansys/14.0
 ANSYS_OPTS="-p aa_r -dir @pwd@ -b"
-time ansysdis130 $ANSYS_OPTS &lt; $JOB_NAME
+time ansysdis130 $ANSYS_OPTS < $JOB_NAME
 </pre>
 
 h3. Multi-Threaded Parallel Submit Script
@@ -97,7 +97,7 @@ h3. Multi-Threaded Parallel Submit Script
 
 module add apps/ansys/14.0
 ANSYS_OPTS="-p aa_r -dir @pwd@ -b -np $NSLOTS"
-time ansysdis140 $ANSYS_OPTS &lt; $JOB_NAME
+time ansysdis140 $ANSYS_OPTS < $JOB_NAME
 </pre>
 
 h3. Distributed Parallel
@@ -108,7 +108,7 @@ h3. Distributed Parallel
 
 module add apps/ansys/14.0
 ANSYS_OPTS="-p aa_r -dir @pwd@ -b -dis -machines $(cat $TMPDIR/machines.ansys)"
-time ansysdis140 $ANSYS_OPTS &lt; $JOB_NAME
+time ansysdis140 $ANSYS_OPTS < $JOB_NAME
 </pre>
 
 Where @$JOB_NAME@ and is the name of the input file you are using.  

@@ -12,7 +12,7 @@ Circe's storage resides on a !FibreChannel SAN which is centrally managed by Inf
 
 Home directories are laid out as follows:
 <pre>
-/home/[a-z]/&lt;netid&gt;
+/home/[a-z]/<netid>
 </pre>
 where [a-z] is the first letter of the user's NetID.  @$WORK@
 

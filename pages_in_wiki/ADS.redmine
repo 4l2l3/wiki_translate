@@ -1,9 +1,9 @@
 h1. ADS
 h2. Description 
 
-Advanced Design System (ADS) is the leading electronic design automation software for RF, microwave, and high speed digital applications. [[ADS]] pioneers the most innovative and commercially successful technologies, such as X-parameters and 3D EM simulators, used by leading companies in the wireless communication &amp; networking and aerospace &amp; defense industries. For WiMAX™, LTE, multi-gigabit per second data links, radar, &amp; satellite applications, [[ADS]] provides full, standards-based design and verification with Wireless Libraries and circuit-system-EM co-simulation in an integrated platform.
+Advanced Design System (ADS) is the leading electronic design automation software for RF, microwave, and high speed digital applications. [[ADS]] pioneers the most innovative and commercially successful technologies, such as X-parameters and 3D EM simulators, used by leading companies in the wireless communication & networking and aerospace & defense industries. For WiMAX™, LTE, multi-gigabit per second data links, radar, & satellite applications, [[ADS]] provides full, standards-based design and verification with Wireless Libraries and circuit-system-EM co-simulation in an integrated platform.
 
-** From: http://www.home.agilent.com/agilent/product.jspx?nid=-34346.0.00&amp;cc=US&amp;lc=eng
+** From: http://www.home.agilent.com/agilent/product.jspx?nid=-34346.0.00&cc=US&lc=eng
 
 h2. Version
 
@@ -39,12 +39,12 @@ This will start an interactive 2 processor [[ADS]] session with a limit of 2 GB 
 
 h3. Using Design Kits
 
-To load currently installed design kits, click !DesignKit-&gt;List Design Kits, and enable the ones you would like to use.
+To load currently installed design kits, click !DesignKit->List Design Kits, and enable the ones you would like to use.
 
 To load you own design kits, follow the instructions below.
 
 1. Start [[ADS]] and install the design kit:
-     a. From the [[ADS]] main window, click !DesignKit-&gt;Install Design Kits;
+     a. From the [[ADS]] main window, click !DesignKit->Install Design Kits;
      b. Click Browse (next to Path) and locate the design kit library folder;
      c. The rest of the information will fill in automatically;
      d. Select USER LEVEL;

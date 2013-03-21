@@ -55,7 +55,7 @@ Use the following submit script as an example to run !MrBayes in batch mode:
 #$ -o output.$JOB_ID
 
 module load apps/mrbayes/3.1.2
-mpirun mb_parallel &lt; batchfile.txt &gt; outfile.txt
+mpirun mb_parallel < batchfile.txt > outfile.txt
 </pre>
 
 or simply execute the following within your job directory:
