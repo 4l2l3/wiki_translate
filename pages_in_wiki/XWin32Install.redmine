@@ -1,5 +1,4 @@
 h1. X-Win32
-
 h2. Description
 X-Win32 is an X11 server written for Microsoft Windows that allows remote graphical applications on UNIX-based systems -- such as Circe, Sunblast, and Sungiant -- to be displayed on a Windows computer.  This application is useful for accessing graphical UNIX systems and replaces [[XmingInstall XMing]] as the actively supported X11 server.
 

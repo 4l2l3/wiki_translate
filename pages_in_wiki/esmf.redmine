@@ -1,5 +1,4 @@
 h1. ESMF
-----
 
 h2. Description 
 _From the ESMF web site:_ The Earth System Modeling Framework (ESMF) collaboration is building high-performance, flexible software infrastructure to increase ease of use, performance portability, interoperability, and reuse in climate, numerical weather prediction, data assimilation, and other Earth science applications. The ESMF defines an architecture for composing complex, coupled modeling systems and includes data structures and utilities for developing individual models. ESMF also includes toolkits for building components and applications, such as regridding software, calendar management, logging and error handling, and parallel communications.

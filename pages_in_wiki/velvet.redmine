@@ -1,5 +1,4 @@
 h1. Velvet
-
 h2. Description 
 
 _From the Velvet web site_: Velvet is a _de novo_ genomic assembler specially designed for short read sequencing technologies, such as Solexa or 454 or SOLiD.  Velvet currently takes in short read sequences, removes errors then produces high quality unique contigs. It then uses paired-end read and long read information, when available, to retrieve the repeated areas between contigs.

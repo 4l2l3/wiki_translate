@@ -1,5 +1,4 @@
 h1. OpenMM
-
 h2. Description 
 _From the OpenMM web site_:   OpenMM is an extensible library that enables accelerated calculations for molecular dynamics on high-performance computer architectures, currently for high-end NVIDIA and ATI GPU cards.  OpenMM provides tools for modern molecular modeling simulation.  As a library it can be hooked into any code, allowing that code to do molecular modeling with minimal extra coding.  Moreover, OpenMM has a strong emphasis on hardware acceleration, thus providing not just a consistent API, but much greater performance than what one could get from just about any other code available.  
 

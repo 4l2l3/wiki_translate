@@ -1,5 +1,4 @@
-h1. File Permissions
-File permissions on Circe determine which users can access your files or directories.  
+h1. File PermissionsFile permissions on Circe determine which users can access your files or directories.  
 h2. Overview
 Generally, it is desired that only YOU should have access to your files.  Given this general requirement, all home directories are set with the following permissions:
 <pre>

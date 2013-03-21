@@ -27,8 +27,10 @@ def do_headers(text_in):
 		
 		#The following line is a hacky band-aid for it.
 		text_out = text_out.replace(header.group(),new_hd) 
-	
-	text_out = text_out.replace('[[PageOutline]]\r\n','')
+
+	pg_out = re.compile('-*\r\n\[\[PageOutline\]\]\r\n').search(text_out)
+	if pg_out:
+		text_out = text_out.replace(pg_out.group(),'')
 	return text_out
 
 def stylings_replace( pattern, text_in, trac_style, redmine_style ):

@@ -1,5 +1,4 @@
 h1. Trans-ABySS
-
 h2. Description 
 
 _From the Trans-ABySS web site_:  Trans-ABySS is a software pipeline for analyzing ABySS-assembled contigs from shotgun transcriptome data. The pipeline accepts assemblies that were generated across a wide range of k values in order to address variable transcript expression levels. It first filters and merges the multi-k assemblies, generating a much smaller set of nonredundant contigs. It contains scripts that map assembled contigs to known transcripts, currently supporting the Blat contig-to-genome aligner. It identifies novel splicing events like exon-skipping, novel exons, retained introns, novel introns, and alternative splicing. Its scripts can also identify candidate gene-fusions, single-nucleotide variants, insertions, deletions, and inversions.

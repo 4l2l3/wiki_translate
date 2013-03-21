@@ -1,5 +1,4 @@
 h1. Oases
-
 h2. Description 
 
 _From the Oases home page_: Oases is a _de novo_ transcriptome assembler designed to produce transcripts from short read sequencing technologies, such as Illumina, SOLiD, or 454 in the absence of any genomic assembly.  Oases uploads a preliminary assembly produced by Velvet, and clusters the contigs into small groups, called "loci". It then exploits the paired-end read and long read information, when available, to construct transcript isoforms.

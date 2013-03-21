@@ -1,5 +1,4 @@
 h1. Job Run Time
-----
 
 
 All jobs are required to have a hard run-time specification.  Jobs that do not have this specification will have a default run-time of 1 hour and will be stopped at that point.

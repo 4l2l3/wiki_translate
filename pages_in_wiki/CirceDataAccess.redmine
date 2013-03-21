@@ -1,5 +1,4 @@
-h1. Accessing Your Data
-This page describes how a user can access their data on the Circe environment
+h1. Accessing Your DataThis page describes how a user can access their data on the Circe environment
 
 h2. Starting VPN
 *IMPORTANT*: When connecting on campus via USF Wifi or from off campus altogether, you must have the USF VPN running already before connecting to the S: drive and the W: drive. See more on how to set up the VPN here: http://vpn.usf.edu

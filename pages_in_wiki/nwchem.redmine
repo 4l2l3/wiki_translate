@@ -1,5 +1,4 @@
 h1. NWChem
-----
 
 h2. Description
 _From the NWChem home page_: NWChem is a computational chemistry package that is designed to run on high-performance parallel supercomputers as well as conventional workstation clusters. It aims to be scalable both in its ability to treat large problems efficiently, and in its usage of available parallel computing resources. NWChem has been developed by the Molecular Sciences Software group of the Environmental Molecular Sciences Laboratory (EMSL) at the Pacific Northwest National Laboratory (PNNL). Most of the implementation has been funded by the EMSL Construction Project. 

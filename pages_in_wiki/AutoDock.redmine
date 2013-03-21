@@ -1,5 +1,4 @@
 h1.
-----
 
 h2. Description
 _From the !AutoDock website:_ !AutoDock is a suite of automated docking tools. It is designed to predict how small molecules, such as substrates or drug candidates, bind to a receptor of known 3D structure. !AutoDock 4 actually consists of two main programs: autodock performs the docking of the ligand to a set of grids describing the target protein; autogrid pre-calculates these grids. In addition to using them for docking, the atomic affinity grids can be visualised. This can help, for example, to guide organic synthetic chemists design better binders.

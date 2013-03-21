@@ -1,5 +1,4 @@
 h1. Using Complexes with
-----
 
 
 Complexes allow users to make very specific requests to the scheduler such as what interconnect your application prefers, how much available memory you require, whether you mind running on low priority machines, etc.  To get the most out of the queuing environment, it is very useful to have a reasonable understanding of how the complexes work and which complexes you should request for your type of application.

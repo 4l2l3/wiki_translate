@@ -1,5 +1,4 @@
 h1. CP2K
-----
 
 h2. Description
 _From the CP2K home page_: CP2K is a program to perform atomistic and molecular simulations of solid state, liquid, molecular, and biological systems. It provides a general framework for different methods such as e.g., density functional theory (DFT) using a mixed Gaussian and plane waves approach (GPW) and classical pair and many-body potentials.  CP2K is written in Fortran 95 and can be run efficiently in parallel.  However, you'll find all versions of the CP2K code come with little documentation and without any warranty.

@@ -1,5 +1,4 @@
-h1. Meep
-*Last Modified*: [[LastModified(Meep)]]
+h1. Meep*Last Modified*: [[LastModified(Meep)]]
 h2. Description
 
 _From the [[Meep]] Homepage, http://ab-initio.mit.edu/wiki/index.php/Meep_: [[Meep]] (or MEEP) is a free finite-difference time-domain (FDTD) simulation software package developed at MIT to model electromagnetic systems, along with our MPB eigenmode package. Its features include: 

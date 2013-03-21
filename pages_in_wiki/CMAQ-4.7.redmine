@@ -1,5 +1,4 @@
 h1. CMAQ v
-
 h2. Description
 CMAQ is a community state-of-the-science modeling system for diagnosis and prediction of air pollution.
 ** CMAQ version 4.7 (CMAQv4.7) is released to the user community accompanied by example scripts that invoke a specific configuration of the model. This configuration has been used by U.S. EPA in operational evaluation studies prior to release of the model, and the results of these evaluations accompany this release.  There are other features and options within the CMAQ modeling system within this release, beyond this specific model configuration, that have not yet been fully evaluated and documented, that are also available to users.

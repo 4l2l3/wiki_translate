@@ -1,5 +1,4 @@
 h1.
-----
 
 This document will provide information on submitting jobs, removing jobs, checking job status, and interacting with the scheduler.
 
@@ -15,7 +14,6 @@ Complete command-line options can be found by issuing *-help* at the end of any 
 
 h2. Submitting Jobs
 h1.
-----
 
 This document will provide information on submitting jobs, removing jobs, checking job status, and interacting with the scheduler.
 

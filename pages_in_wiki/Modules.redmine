@@ -1,5 +1,4 @@
 h1. Modules
-----
 
 Modules provides an easy-to-use way to modify your environment to support applications and libraries.  This allows system administrators to create template files that contain all of the necessary environment information for a user to use an application.  It also simplifies a user's environment, removing extraneous paths from variables and including only those that a user needs.  We've installed modules 3.2.6 and have created a number of Module files for the various installed applications.  Some examples for using modules appear below.
 

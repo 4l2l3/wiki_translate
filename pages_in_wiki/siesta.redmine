@@ -1,5 +1,4 @@
 h1. SIESTA
-----
 
 h2. Description
 _From the NERSC website:_ "SIESTA is an O(N) DFT code for electronic structure calculations and ab initio molecular dynamics simulations for molecules and solids. It uses norm-conserving pseudopotentials and linear combination of numerical atomic orbitals (LCAO) basis set."

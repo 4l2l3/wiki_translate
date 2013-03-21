@@ -1,7 +1,6 @@
 h1. TITAN2D
 ----
 
-
 h2. Description
 
 _From the TITAN2D manual:_ TITAN2D was developed for the purpose of simulating granular flows (primarily geological mass flows such as debris avalanches and landslides) over digital elevation models of natural terrain. The code is designed to help scientists and civil protection authorities assess the risk of, and mitigate, hazards due to dry debris flows and avalanches. TITAN2D combines numerical simulations of a flow with digital elevation data of natural terrain supported through a Geographical Information System (GIS) interface.
