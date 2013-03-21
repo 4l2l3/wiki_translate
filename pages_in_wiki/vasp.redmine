@@ -1,22 +1,28 @@
 h1. VASP
 
+
 h2. Description
+
 
 _From the VASP homepage:_ VAMP/VASP is a package for performing ab-initio quantum-mechanical molecular dynamics (MD) using pseudopotentials and a plane wave basis set. The approach implemented in VAMP/VASP is based on a finite-temperature local-density approximation (with the free energy as variational quantity) and an exact evaluation of the instantaneous electronic ground state at each MD-step using efficient matrix diagonalization schemes and an efficient Pulay mixing. These techniques avoid all problems occurring in the original Car-Parrinello method which is based on the simultaneous integration of electronic and ionic equations of motion. The interaction between ions and electrons is described using ultrasoft Vanderbilt pseudopotentials (US-PP) or the projector augmented wave method (PAW). Both techniques allow a considerable reduction of the necessary number of plane-waves per atom for transition metals and first row elements. Forces and stress can be easily calculated with VAMP/VASP and used to relax atoms into their instantaneous groundstate.
 
 h2. Version
 
+
 ** *5.2.8*
 
 h2. Authorized Users
+
 
 ** USF Laboratory for the Study of Band Structures
 
 h2. Platform
 
+
 ** @circe@ cluster
 
 h2. Running VASP on the Cluster
+
 
 The VASP guide is essential to understanding the application and making the most of it.  The guide and this page should be all you need to get started with your simulations.
 ** VASP Guide: http://cms.mpi.univie.ac.at/vasp/vasp/vasp.html
@@ -33,21 +39,25 @@ This will request 16 processors via MPI, [[InfiniBand]] interconnect (@-f i_ib@)
 For more information on Run, see [[Run|The GridEngine Run Utility]].
 
 h4. Benchmarks
+
 The following folders contain input parameters for known VASP benchmarks and tutorials:
 ** /opt/apps/vasp/Hg
 ** /opt/apps/vasp/benchmark
 ** /opt/apps/vasp/tutor/diamant
 
 h4. Other Data
+
 Pseudo-Potential sets are included in /opt/apps/vasp in the pot directories.
 
 h4. More Job Information
+
 See the following for more detailed job submission information:
 ** [[gridEngineUsers|SGE User's Guide]]
 ** [[gridEnginePolicy|Scheduling and Dispatch Policies]]
 ** [[gridEngineTechn|Advanced Submit Techniques]]
 
 h4. Reporting Bugs
+
 Report bugs directly to Research Computing: support@rc.usf.edu
 ** *IMPORTANT INFORMATION*: Please read carefully
  1. This program is only available to members of the *USF Laboratory for the study of Band Structures*.  

@@ -19,7 +19,7 @@ def do_headers(text_in):
 		if eq_num1 != eq_num2:
 			print "Equal signs don't match in current header: '"+header+"'"#throw error
 			continue #just ignore current header, don't translate
-		new_hd = "h"+str(eq_num1)+"."+cur_hd_txt.rstrip()#rstrip gets rid of our trailing space and the added newline makes things look nice on redmine
+		new_hd = "h"+str(eq_num1)+"."+cur_hd_txt.rstrip()+"\n"#rstrip gets rid of our trailing space and the added newline makes things look nice on redmine
 		#It appears there's a glitch with header.start(), it's matching '= header_text ===' instead of '=== header_text ===' and therefore .start() returns 2 spaces before our full match begins. Also does the same with 4 equal signs.
 		#before = text_in[:(header.span()[0])]
 		#after = text_in[(header.span()[1]):]
@@ -286,7 +286,7 @@ def do_lists_tables(text_in):
 		text_out = text_out.replace(aline, redmine_nlist)
 	return text_out
 
-def do_definitions(text_in):
+def do_misc(text_in):
 	text_out = text_in
 	#TRAC		term::\n  definition
 	#REDMINE	*term*\n  definition
@@ -294,6 +294,12 @@ def do_definitions(text_in):
 	for defn in defs:
 		colon_pos = defn.index('::')
 		text_out = text_out.replace(defn, "*"+defn[:colon_pos]+"*"+defn[colon_pos+2:])
+
+	#When deloading, wget converted the following so we need to undo this.
+	text_out = text_out.replace('&lt;','<')
+	text_out = text_out.replace('&gt;','>')
+	text_out = text_out.replace('&amp;','&')
+	#text_out = text_out.replace('&;','')	
 	return text_out
 
 def translate(trac_text):
@@ -304,7 +310,8 @@ def translate(trac_text):
 	trac_text = do_stylings(trac_text)
 	trac_text = do_links(trac_text)
 	trac_text = do_images(trac_text) 
-	trac_text = do_definitions(trac_text)
+	trac_text = do_misc(trac_text)
+
 	return trac_text
 
 page_file = open("pages",'r')

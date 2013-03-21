@@ -1,9 +1,11 @@
 h1.
+
 ----
 
 
 This guide will help users understand how their jobs get executed and why they get the priority that they do.
 h2. Fair-Share Scheduling
+
 The !GridEngine installation at USF implements a Fair-Share-based scheduling system where individual utilization figures are used to determine the priority, in the queue, of that individual's next job relative to other users.  Theoretically, this should result in the following situation:
 
 ** Over the course of two weeks, user johnq submits over 100 jobs and consumes about 1000 hours of CPU time.  The system records this usage.
@@ -14,4 +16,5 @@ The !GridEngine installation at USF implements a Fair-Share-based scheduling sys
 This is how the scheduler works, in the grossest possible sense.  There are also other things to take into account such as job sizes and requested resources.  There are also different queues that jobs are dispatched to.
 
 h2. Dispatch Policy
+
 Because of the layout of the queue, jobs with shorter runtime specifications will start immediately or close to immediately.  Jobs with medium to longer runtimes will dispatch at longer intervals.  This is so users who have a simple 1 hour task will not be held up by a user wishing to run a 1 week task.  The jobs have different requirements and thus should be treated differently.

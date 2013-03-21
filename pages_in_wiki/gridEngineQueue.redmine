@@ -1,4 +1,5 @@
 h1.
+
 ----
 
 It is really no longer necessary to discuss queues in the traditional sense.  In the past, we would create queues based on pools of hardware resources.  If a user wanted to utilize a particular hardware resource, he or she would request the appropriate queue.  Most times, however, what the user wants and what is best for the user or what is best for all users are not necessarily the same.  Allowing individuals to dictate where their jobs will run will inevitably lead to throughput problems since it would be unreasonable to expect the users to understand the complete state and behavior of the scheduler.

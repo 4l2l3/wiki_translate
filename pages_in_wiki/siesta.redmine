@@ -1,28 +1,35 @@
 h1. SIESTA
 
+
 h2. Description
+
 _From the NERSC website:_ "SIESTA is an O(N) DFT code for electronic structure calculations and ab initio molecular dynamics simulations for molecules and solids. It uses norm-conserving pseudopotentials and linear combination of numerical atomic orbitals (LCAO) basis set."
 
 ** "SIESTA website on nersc.gov":http://www.nersc.gov/users/software/applications/materials-science/siesta/
 
 h2. Version
+
 ** *3.1*
 
 h2. Authorized Users
+
 ** circe account holders
 ** Faculty
 
 h2. Platform
+
 ** @circe@ cluster
 
 h2. Running SIESTA Jobs on the Cluster
 
-h3. Modules
+
+h3. [[Modules]] 
 Before running a job, you must first set up your environment properly.  Below is the required module file.
 ** apps/siesta/3.1
 See [[Modules]] for more information.
 
 h3. Submitting Jobs
+
 The SIESTA manual is essential to understanding the application and making the most of it.  The guide and this page should help you to get started with your simulations.
 ** "SIESTA Manuals":http://www.icmab.es/dmmis/leem/siesta/Documentation/Manuals/siesta-3.1-manual/index.html
 or
@@ -41,16 +48,19 @@ mpirun -np $NSLOTS [[siesta]] < atom.sm
 </pre>
 
 h3. Tutorials and Tests
+
 The following contain input parameters for known SIESTA Examples:
 ** /apps/siesta/3.1/Tests
 ** /apps/siesta/3.1/Tutorials
 ** http://www.gromacs.org/Documentation/Tutorials
 
 h3. More Job Information
+
 See the following for more detailed job submission information:
 ** [[gridEngineUsers|SGE User's Guide]]
 ** [[gridEnginePolicy|Scheduling and Dispatch Policies]]
 ** [[gridEngineTechn|Advanced Submit Techniques]]
 
 h3. Reporting Bugs
+
 Report bugs directly to Research Computing: support@rc.usf.edu or to the IT Help Desk: mailto:help@usf.edu

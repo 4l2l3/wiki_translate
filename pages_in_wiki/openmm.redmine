@@ -1,21 +1,27 @@
 h1. OpenMM
-h2. Description 
+
+h2. Description
+ 
 _From the OpenMM web site_:   OpenMM is an extensible library that enables accelerated calculations for molecular dynamics on high-performance computer architectures, currently for high-end NVIDIA and ATI GPU cards.  OpenMM provides tools for modern molecular modeling simulation.  As a library it can be hooked into any code, allowing that code to do molecular modeling with minimal extra coding.  Moreover, OpenMM has a strong emphasis on hardware acceleration, thus providing not just a consistent API, but much greater performance than what one could get from just about any other code available.  
 
 ** https://simtk.org/home/openmm
 
 h2. Version
+
 ** *4.0*
 
 h2. Authorized Users
+
 ** @circe@ account holders
 
 h2. Platforms
+
 ** @circe@ cluster
 
 h2. Using OpenMM on the Cluster
 
-h3. Modules
+
+h3. [[Modules]] 
 Before using OpenMM libraries with your code, you must first set up your environment properly.  Here are the required module files:
 
 ** apps/openmm/4.0
@@ -23,6 +29,7 @@ Before using OpenMM libraries with your code, you must first set up your environ
 To use OpenMM on the cluster, ensure that you use @module add@ prior to using any executables.  See [[Modules]] for more information.  
 
 h3. Guides and Documentation
+
 Users' Guide
 ** /apps/openmm/4.0/docs/OpenMMUsersGuide.pdf
 Application Guide
@@ -32,4 +39,5 @@ API Docs
 ** /apps/openmm/4.0/docs/API_Reference.html
 
 h3. Reporting Bugs
+
 Report bugs to the IT Help Desk: help@usf.edu

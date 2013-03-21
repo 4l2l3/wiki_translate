@@ -1,12 +1,14 @@
-h1. Modules
+h1. [[Modules]] 
 
 Modules provides an easy-to-use way to modify your environment to support applications and libraries.  This allows system administrators to create template files that contain all of the necessary environment information for a user to use an application.  It also simplifies a user's environment, removing extraneous paths from variables and including only those that a user needs.  We've installed modules 3.2.6 and have created a number of Module files for the various installed applications.  Some examples for using modules appear below.
 
 ** *Please Note*: Whether you are running an application as a batch job or not, you must have the appropriate module loaded into your environment in order to get access to your application!
 
 h2. Module Commands
+
 Here is a list of common 'module' commands
 h3. Get a List of Available Applications
+
 <pre>
 [brs@login0 ~]$ module avail
 ------------------------- /opt/admin/Modules/versions --------------------------
@@ -18,8 +20,8 @@ apps/R/2.6.1                    apps/p4vasp/0.3.7
 apps/abinit/5.4.4               apps/paml/3.15
 ...
 </pre>
-** *Please Note*: This is NOT the current list of modules.  [[Modules]] listed with @module avail@ are the current and up-to-date listing.
-h3. Show Currently Loaded Modules
+** *Please Note*: This is NOT the current list of modules.  Modules listed with @module avail@ are the current and up-to-date listing.
+h3. Show Currently Loaded [[Modules]] 
 This shows a list of all modules that are currently loaded into the environment.  PATH, MANPATH, LD_LIBRARY_PATH, and other variables may be modified or initialized to support the application you are using.  
 <pre>
 [brs@login0 ~]$ module list
@@ -29,6 +31,7 @@ Currently Loaded Modulefiles:
   3) apps/namd/2.6
 </pre>
 h3. Show modules that are loaded during login and job execution
+
 Often times, you will want to see which modules you are using in your persistent environment.  In order to see which modules will load when you log in or when you submit a job to the queue, use the following command:
 <pre>
 [brs@login0 ~]$ module initlist
@@ -38,9 +41,11 @@ bash initialization file $HOME/.modules loads modules:
 </pre>
 
 h3. Dependencies
+
 In the examples above, even though @module list@ is referenced, saving you from having to remember which compiler and libraries are needed with a particular module.
 
 h3. Load a Module into the Current Environment
+
 This loads a module into the current environment by modifying environment variables such as PATH, MANPATH or LD_LIBRARY_PATH to include locations that are necessary for running a particular application.  These changes are lost on subsequent logins.
 <pre>
 [brs@login0 ~]$ module add apps/R/2.6.1
@@ -48,6 +53,7 @@ This loads a module into the current environment by modifying environment variab
 where apps/R/2.6.1 is one of the modules listed in the output of *module list*
 
 h3. Load a Module into the Persistent Environment
+
 This tells modules to make the loading of a particular module persistent across all subsequent sessions, These changes are kept after every subsequent login but do not take place during the current session.  Using *module load* after *module initload* will ensure that the current session is modified and that subsequent sessions are aware of the change.  This is most useful for applications you will be running with !GridEngine.
 <pre>
 [brs@login0 ~]$ module initadd apps/R/2.6.1
@@ -59,21 +65,24 @@ module load null
 This will ensure that modules are loaded any time a shell is invoked, regardless of the shell in question.
 
 h3. Remove a Module from the Current Environment
+
 Sometimes you need to remove support for an application from the current environment.  This command allows you to do this.  Changes are not persistent across reboots, especially if a module is loaded at login.
 <pre>
 [brs@login0 ~]$ module rm apps/R/2.6.1
 </pre>
 
 h3. Remove a Module from the Persistent Environment
+
 When you are done using an application or you simply no longer want it loaded at login, the following command will help:
 <pre>
 [brs@login0 ~]$ module initrm apps/R/2.6.1
 </pre>
 
 h3. Crafting your own Module Files
+
 You can create your own module files for your locally installed applications by placing them in a directory structure under @~/.modulefiles@
 
-h3. Purge All Modules
+h3. Purge All [[Modules]] 
 To unload all modules, issue the following command:
 <pre>
 [brs@login0 ~]$ module purge

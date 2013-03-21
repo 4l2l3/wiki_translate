@@ -1,8 +1,10 @@
 h1.
 
+
 This document will provide information about additional available status commands to give users visibility into the system.
 
 h2. jusage
+
 Show system usage broken down by user:
 <pre>
 $ jusage
@@ -16,6 +18,7 @@ user4             398
 </pre>
 
 h2. jwaits
+
 Show longest wait time and for what class they are waiting for users with no slots allocated:
 <pre>
 $ jwaits
@@ -27,6 +30,7 @@ user3         30.4              medium
 </pre>
 
 h2. jclass
+
 Show job numbers broken down by class (job classes are described here: [[gridEngineQueue|Queue Layout]])::
 <pre>
 $ jclass
@@ -40,6 +44,7 @@ xlong                             615     21    636
 </pre>
 
 h2. jprocs
+
 Show all of the processes spawned by your job and what node they are running on.  Fields documented below:
 <pre>
 $ jprocs 44922
@@ -53,6 +58,7 @@ Host         PID   user      CPU% MEM RSS    VMEM   SIZE  COMMAND
 </pre>
 
 h2. sss
+
 Show slot status of hardware pools (hardware pools are described here: [[gridEngineQueue|Queue Layout]]):
 <pre>
 $ sss
@@ -69,6 +75,7 @@ pe_svarma_HP_SL365_hg            16    176    192
 </pre>
 
 h2. ss
+
 Show slot status of individual nodes in the hardware pools.
 <pre>
 $ ss
@@ -117,6 +124,7 @@ PE = pe_C6100_GPU_hg
 </pre>
 
 h2. qs
+
 Queue status:
 <pre>
 $ qs

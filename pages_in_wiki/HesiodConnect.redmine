@@ -1,10 +1,13 @@
 h1. Working with Hesiod
+
 Hesiod is a Windows-based High-Performance computing environment for commercial applications that easily integrate with the system.  We currently do not support development on this system but have plans to do so in the future using the Visual Studio components for Windows HPC.
 
 h2. Windows HPC Server 2008R2 Client Pack
+
 In order to work with Hesiod, you will need the Windows HPC Server 2008R2 Client Pack located here: http://www.microsoft.com/download/en/details.aspx?id=17017.  There is no direct login to Hesiod supported.
 
 h2. Supported Applications on Hesiod
+
 We're currently supporting 
 ** Ansoft HFSS versions 13 and 14
 ** [[Ansys]] 13 and 14

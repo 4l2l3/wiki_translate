@@ -1,25 +1,32 @@
 h1. GRASS GIS
 
+
 h2. Description
+
 
 _From the GRASS GIS website: Commonly referred to as GRASS, this is free Geographic Information System (GIS) software used for geospatial data management and analysis, image processing, graphics/maps production, spatial modeling, and visualization. GRASS is currently used in academic and commercial settings around the world, as well as by many governmental agencies and environmental consulting companies._ 
 
 h2. Version
 
+
 ** *6.4.0*
 
 h2. Authorized Users
 
+
 ** @circe@ account holders
 
 h2. Platform
+
 
 ** @circe@ cluster
 
 h2. Local Documentation
 
 
+
 h3. Running GRASS GIS on the Cluster
+
 
 The GRASS documentation is essential to understanding the application and making the most of it.  The guides and this page should be all you need to get started with your simulations.
 ** The GRASS user documentation and addendums are available on the GRASS-Wiki: http://grass.osgeo.org/wiki/
@@ -38,11 +45,13 @@ The GRASS GUI can be called from any login node using the following command:
 
 h4. Benchmarks
 
+
 The following folder contains input parameters for known GRASS tutorials:
 ** /opt/apps/grass/samples
 ** http://trac.osgeo.org/grass/wiki/HowToTestGrass6
 
 h4. More Job Information
+
 
 See the following for more detailed job submission information:
 ** [[gridEngineUsers|SGE User's Guide]]
@@ -50,5 +59,6 @@ See the following for more detailed job submission information:
 ** [[gridEngineTechn|Advanced Submit Techniques]]
 
 h4. Reporting Bugs
+
 
 Report bugs directly to Research Computing: support@rc.usf.edu

@@ -1,12 +1,15 @@
 h1. Managing your data on CIRCE
+
 This page will provide guidelines for managing your data effectively on CIRCE.  Since we have various storage locations available as well as differing rules for how those storage locations are managed, its good to have an idea of what you should do to ensure your data is on the best location depending on your requirements.
 
 h2. Rules of Thumb
+
 1. Use @/work@ as your storage location for running jobs.  This file system was designed for that purpose and prevents disk-heavy applications from slowing down the system for other users.  There is also a large amount of space available so it is much less likely that you will run into any quota issues.
 2. Move data that you would like to keep to `/home`!  @/work@ is not backed up, is not redundant, and files older than 6 months are purged.  You do not want to lose important data, so do not use @/work@ for permanent storage!
 3. Compress results that you would like to store permanently!  There is no reason not to do this and it helps you to keep you under your quota, allowing you to store more results.
 
 h2. Running Jobs Example
+
 Typically, jobs should be run from a staging directory under @/work@.  This can be accomplished by creating a directory under @/work@ for your job input files and resulting output.  We'll show an example below:
 
 Create the directory

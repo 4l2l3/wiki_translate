@@ -1,4 +1,5 @@
-h1. Do I Need High Performance Computing 
+h1. Do I Need High Performance Computing
+ 
 
 There are two reasons that you may want to use HPC resources. The first and most obvious is that your computer tasks take too long. You may also have a task that some specialized software would make much easier. Both of these possibilities are examined in more detail in the following paragraphs.
 

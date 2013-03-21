@@ -1,4 +1,5 @@
 h1. Interactive Jobs
+
 ----
 
 
@@ -26,4 +27,5 @@ Swap:      2096440      42972    2053468
 You can specify a wide variety of complexes.  See [[UsingComplexes|Using Complexes]]
 
 h2. Graphical Jobs
+
 The same rules apply for graphical jobs.  Your X11 connection will be forwarded from the remote compute node so that your application will appear on your desktop.  We highly recommend using the [[CirceDesktop|Circe Desktop Environment]] if you plan to utilize any graphical applications on the cluster.

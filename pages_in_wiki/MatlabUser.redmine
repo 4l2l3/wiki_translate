@@ -1,21 +1,27 @@
 h1. Matlab and Simulink
 
+
 h2. Description
+
 Matlab integrates mathematical computing, visualization, and a powerful language to provide a flexible environment for technical computing. The open architecture makes it easy to use MATLAB and its companion products to explore data, create algorithms, and create custom tools that provide early insights and competitive advantages.
 
 h2. Version
+
 ** *R2012b*
 
 h2. Authorized Users
+
 ** @circe@ account holders
 ** Students doing valid research
 ** Faculty
 
 h2. Platforms
+
 ** @circe@ cluster
 ** Workstation/PC
 
 h2. Available Products and Toolboxes
+
 ** MATLAB
 ** Simulink
 ** Distributed Computing Server
@@ -46,6 +52,7 @@ h2. Available Products and Toolboxes
 ** Wavelet Toolbox
 
 h2. Toolboxes with Restricted Availability
+
 ** Computer Vision System Toolbox
 ** Global Optimization Toolbox
 ** HDL Coder
@@ -60,6 +67,7 @@ h2. Toolboxes with Restricted Availability
 ** RF Toolbox
 
 h2. Installation
+
 *IMPORTANT: Before You Begin*[[BR]]
 Make sure you've applied for and received the Matlab License information.  You will need to go here to apply: https://rc.usf.edu/licensing/licenserequest.php
 
@@ -70,6 +78,7 @@ Make sure you've applied for and received the Matlab License information.  You w
 ----
 
 h3. Installing On Linux
+
 Follow the steps below to download and install Matlab for Linux.  Off campus users *must* be connected to the [http://it.usf.edu/itc/vpn-client USF VPN]. 
 
    1. Connect to @https://rc.usf.edu/isos@ and download R2012b_UNIX.iso to a temporary directory on your computer. Be sure to read any README file. Once you have downloaded all the files, disconnect from the server.
@@ -109,6 +118,7 @@ Follow the steps below to download and install Matlab for Linux.  Off campus use
 ----
 
 h3. Installing On Windows or Mac
+
 Follow the steps below to download and install Matlab for Windows.  Off campus users *must* be connected to the [http://it.usf.edu/itc/vpn-client USF VPN].  
 
    1. Connect to https://rc.usf.edu/isos and login with your NetID and password. Change to the directory /Matlab/R2012b/ and download the appropriate file (R2012b_Windows.iso for Windows, or R2012b_UNIX.iso for Mac) to a temporary directory on your computer. Once you have downloaded the files, disconnect from the server.
@@ -129,7 +139,8 @@ Follow the steps below to download and install Matlab for Windows.  Off campus u
 ----
 h2. Running Matlab on Circe
 
-h3. Modules
+
+h3. [[Modules]] 
 Matlab requires the following module file to run:
 ** apps/matlab/r2012b
 To run Matlab on the cluster, ensure that you use 'module add' prior to using any Matlab executables.  See [[Modules]] for more information.
@@ -138,6 +149,7 @@ To run Matlab on the cluster, ensure that you use 'module add' prior to using an
 There are two ways to run Matlab on Circe depending on the runtime of your particular job.
 
 h3. Jobs Longer than 20 Minutes in Length
+
 To run Matlab jobs on Circe, users will need to submit "batch jobs" to the scheduling environment if their jobs take more than 20 minutes to run on a standard PC.
 
 If, for example, you have a Matlab script file named test.m with all your functions defined in it, you would set up a submit script like this:
@@ -179,15 +191,18 @@ matlab -nodisplay -logfile matlabLog.txt -r test_parallel >& err.out
 In this example, you would have a Matlab script named test_parallel.m, and in it should be defined a 'matlabpool'.  Be sure that the 'pcpus' defined in your submit script is 2 more than the number requested using 'matlabpool'.  In this case, 'matlabpool' would have been set at 8, therefore 'pcpus' is defined as 10.  More information about parallel computing in Matlab can be found on the  "MathWorks website":http://www.mathworks.com/help/toolbox/distcomp/exampleindex.html.  The 'mpj' request is the amount of memory to reserve for the job, and is set to 10 gigabytes here.  This can be adjusted as necessary.
 
 h3. Jobs Shorter than 20 Minutes in Length
+
 Simply type <pre> matlab </pre> at the command line AFTER loading the proper module (see above).  If you have properly configured an X11 session, you should see the full Matlab interface.  If you haven't configured X11, you will be able to use the console interface.  For users wishing to use the graphical interface over X11, please see our [[XWin32Install|XWin32 Installation]] documentation.
 
 Matlab can also be launched through the NX environment using the Applications menu.  For more information about the NX environment, please see our [[CirceDesktop|Circe NX Desktop]] documentation.
 
 h3. More Job Information
+
 See the following for more detailed job submission information:
 ** [[gridEngineUsers|SGE User's Guide]]
 ** [[gridEnginePolicy|Scheduling and Dispatch Policies]]
 ** [[gridEngineTechn|Advanced Submit Techniques]]
 
 h3. Reporting Bugs
+
 Report bugs to the IT Help Desk: help@usf.edu

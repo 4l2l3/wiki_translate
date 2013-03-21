@@ -1,8 +1,10 @@
 h1. The
 
+
 @run@ was written by Brian Smith for the University of South Florida.  It is licensed under the GPL and will be available on this site for download soon.
 
 h2. Example
+
 Let's say you want to get a graphical Matlab session up and running.  First, ensure that your Workstation is correctly configured for displaying X11 applications by following our guide [[XWin32Install here]].
 
 Once you log into the system and have XWin32 (or your preferred X server) running, issue the following command:
@@ -13,6 +15,7 @@ Once you log into the system and have XWin32 (or your preferred X server) runnin
 This will transparently start an interactive session with the scheduler and subsequently launch Matlab.
 
 h2. Example
+
 VASP is an Electronic Structure package that normally is run as a batch job submitted to the queue via a job script.  With @run@, we no longer need to know any of this (well, at least the batch job/script aspect...):
 <pre>
 [user@host ~]$ run -n 16 -t 10:00:00 vasp/4.6.34
@@ -23,6 +26,7 @@ Your job 30709 ("vasp/4.6.34-user-9408cf7") has been submitted
 This will automatically submit a VASP job to the queue in batch mode, using your current directory as its search path for its INCAR file.  The anticipated runtime of 10 hours is reported with the -t directive.  That we require 16 processors is expressed with the -n directive.  Knowledge of what MPI library VASP was compiled with, what options should be passed to OpenMPI for optimal execution, and other details are taken care of behind the scenes.
 
 h2. run Command Options
+
 From the @--help@ option, we get a nice manual on how to use the command.  I'll reproduce below:
 
 run [OPTIONS] [[COMMAND] [ARGUMENTS]] | [APP_PROFILE]
@@ -110,6 +114,7 @@ The following are command options to modify the behavior of 'run'.  By default, 
 
 h3. Example Usage
 
+
  1. Run "Matlab" in an interactive session:
      
     [user@host ~]$ run matlab
@@ -141,6 +146,7 @@ h3. Example Usage
     [user@host ~]$ run -p -n 32 -f sse4e -t 4:00:00 myapp
 
 h3. Defining an Application Profile
+
 On Circe, generally every module defined in apps/ is an application profile for @run@.  This is easily accomplished by adding a few simple environment variable definitions to the module itself.  Let's look at NAMD for example:
 
 *apps/namd/2.7b2*

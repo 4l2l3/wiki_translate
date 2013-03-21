@@ -1,5 +1,6 @@
 h2. PGI Workstation Installation
 
+
 If you want to use the PGI compilers from your Linux workstation then you should follow the instructions below. This allows you to run the compilers on your own computer instead of having to log into one of our clusters. The binary generated should work without modification on the cluster. You will need a license.dat file. If you are a researcher at USF please request a license through our license request form at https://rc.usf.edu/licensing/licenserequest.php
 
    1. If you have a previous version of pgi installed you will still need to do a complete reinstall. It is suggested that you move the current install directory to a back up directory to save any local modifications. These modifications will have to be performed manually on the new directory.

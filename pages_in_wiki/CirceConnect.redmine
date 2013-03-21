@@ -1,5 +1,6 @@
 h1. Connecting to Circe
 
+
 To connect to Circe, you will need to use an SSH client or utilize the [CirceDesktop "Circe NX Desktop Environment"].  The following information will be needed to connect:
 ** Your USF NetID and Password
 ** *Hostname:* circe.rc.usf.edu
@@ -18,6 +19,7 @@ Most other platforms such as Linux or Mac OSX include a version of OpenSSH by de
 You will probably be interested in transferring files to and from Circe.  Please see our [[CirceDataAccess|guide to accessing data on Circe]] for more information
 
 h2. System Basics
+
 If you are new to Linux or UNIX, you may wish to review some online tutorials:
 ** Basic Linux tutorial: http://www.ee.surrey.ac.uk/Teaching/Unix/
 ** Another Linux tutorial: http://linuxsurvival.com/index.php
@@ -26,10 +28,12 @@ If you are new to Linux or UNIX, you may wish to review some online tutorials:
 Besides basic Linux knowledge, there are just a couple of important things you should be aware of while using the systems.
 
 h3. Account Types
+
 See the following document on *Account Types* to get an idea of how we distinguish between *Research* and *Standard* accounts: [[accountInfo|Account Information]]
 
 
 h2. Getting Work Done
+
 To start using Circe for productive work, see the following documents:
  1. [[gridEngineIntro|Introduction to GridEngine]] - This guide will provide a brief introductory explanation of the !GridEngine environment.
  2. Locate the documentation for your application on this list: [SoftwarePortal "Available Applications"].  If its not there, then we haven't worked with it before.  You can either compile and install it yourself, or contact us to have it done for you.
@@ -38,4 +42,5 @@ To start using Circe for productive work, see the following documents:
  5. [[Modules|Environment Modules]] - Environment [[Modules]] give you access to applications and features on Circe.  Taking the time to learn their use is essential for making the most of Circe.
 
 h3. Running Graphical Applications
+
 In order to run graphical applications such as Comsol, Matlab, Mathematica, or HFSS, please see the documentation for the [CirceDesktop "Circe NX Desktop Environment"].

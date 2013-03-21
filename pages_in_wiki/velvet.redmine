@@ -1,5 +1,7 @@
 h1. Velvet
-h2. Description 
+
+h2. Description
+ 
 
 _From the Velvet web site_: Velvet is a _de novo_ genomic assembler specially designed for short read sequencing technologies, such as Solexa or 454 or SOLiD.  Velvet currently takes in short read sequences, removes errors then produces high quality unique contigs. It then uses paired-end read and long read information, when available, to retrieve the repeated areas between contigs.
 
@@ -7,19 +9,23 @@ _From the Velvet web site_: Velvet is a _de novo_ genomic assembler specially de
 
 h2. Version
 
+
 ** *1.1.05*
 
 h2. Authorized Users
+
 
 ** @circe@ account holders
 
 h2. Platforms
 
+
 ** @circe@ cluster
 
 h2. Running Velvet Jobs on the Cluster
 
-h3. Modules
+
+h3. [[Modules]] 
 
 Before running a job, you must first set up your environment properly.  Here are the required module files:
 
@@ -29,9 +35,11 @@ To run Velvet on the cluster, ensure that you use @module add@ prior to using an
 
 h3. How to Submit Jobs
 
+
 Provided are batch scripts for running Velvet executables on the cluster.  These scripts can be copied into your work directory (the folder with your input files and database files) so that you can submit batch processes to the queue.  For help on submitting jobs to the queue, see our [[gridEngineUsers|GridEngine User's Guide]].  These scripts are provided as examples only.  Your SGE and Velvet options will vary.  View the product manual or this site (http://seqanswers.com/wiki/Velvet) for more about Velvet runtime options.
 
 h3. Serial Submit Script
+
 * Velveth helps you construct the dataset for the following program, velvetg, and indicate to the system what each sequence ﬁle represents.
 
 <pre>
@@ -49,6 +57,7 @@ velveth output_directory hash_length {[-file_format] [-read_type] filename} [opt
 *Note:*  The k-mer length and categories values have a maximum of 57.  See the Velvet Manual for more information about velveth options and syntax.
 
 h3. Distributed Parallel
+
 * Velvetg is the core of Velvet where the de Bruijn graph is built then manipulated. 
 
 Although velvetg saves some ﬁles during the process to avoid useless recalculations, the parameters are not saved from one run to the next.
@@ -70,6 +79,7 @@ See the Velvet Manual for more information about velvetg options and syntax.
 Colorspace versions of the Velvet executables are also available as 'velveth_de' and 'velvetg_de'.  Beware that color- and sequence space are incompatible, hence separate sets of executables.  In other words, don’t try to hash sequence ﬁles with colorspace [[velvet]] or vice-versa, under penalty of meaningless results!
 
 h3. Manuals and Test Data
+
 Velvet Program Manual
 ** http://www.ebi.ac.uk/~zerbino/velvet/Manual.pdf
 ** /opt/apps/velvet/1.1.05/Maunual.pdf
@@ -78,10 +88,12 @@ The following folder contains input parameters for known Velvet tests:
 ** /opt/apps/velvet/1.1.05/data
 
 h3. More Job Information
+
 See the following for more detailed job submission information:
 ** [[gridEngineUsers|SGE User's Guide]]
 ** [[gridEnginePolicy|Scheduling and Dispatch Policies]]
 ** [[gridEngineTechn|Advanced Submit Techniques]]
 
 h3. Reporting Bugs
+
 iReport bugs to the IT Help Desk: help@usf.edu

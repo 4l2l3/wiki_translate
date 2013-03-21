@@ -1,13 +1,18 @@
 h1. Circe Layout
 
+
 The following page will describe the system layout with details on where files and directories are stored.
 
 h2. Hardware
+
 h3. Circe Login Nodes
+
 When a user connects via SSH to @circe.rc.usf.edu@, they will end up on one of several login nodes.   These are the redundant, load-balancing login nodes which will allow you to access your files, develop code, submit jobs, and review your data.
 
 h3. Storage
+
 h4.
+
 Circe's storage resides on a !FibreChannel SAN which is centrally managed by Information Technology.  2 servers are connected to the SAN fabric to provide fail-over redundancy for data access.  The data for /home is snapshotted nightly to another storage device where up to 14 days of snapshots are kept.  The /home file system is served via NFS to all nodes in the Circe environment.
 
 Home directories are laid out as follows:
@@ -17,10 +22,13 @@ Home directories are laid out as follows:
 where [a-z] is the first letter of the user's NetID.  @$WORK@
 
 h4.
+
 @/work@ is NOT backed up and files can be removed that have not been accessed within 6 months.
 
 h4.
+
 @/apps@ contains most of the system's third-party applications.
 
 h3. Clusters
+
 Circe provides access to several compute cluster environments, some of which are accessible University-wide and others which are only accessible by certain research groups.  Please see the [[gridEngineQueue|queue layout]] documentation for more information.

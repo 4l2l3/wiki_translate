@@ -1,28 +1,34 @@
 h1. mpiBLAST
 
+
 h2. Description
+
 
 mpiBLAST is a freely available, open-source, parallel implementation of NCBI BLAST. By efficiently utilizing distributed computational resources through database fragmentation, query segmentation, intelligent scheduling, and parallel I/O, mpiBLAST improves NCBI BLAST performance by several orders of magnitude while scaling to hundreds of processors. mpiBLAST is also portable across many different platforms and operating systems. Lastly, a renewed focus and consolidation of the many codebases has positioned mpiBLAST to continue to be of high utility to the bioinformatics community.
 
-h2. Version 
+h2. Version
+ 
 
 ** *1.6.0*
 
-h2. Authorized Users 
+h2. Authorized Users
+ 
 
 ** @circe@ account holders
 
 h2. Platforms
 
+
 ** @circe@ cluster
 
-h2. Modules
+h2. [[Modules]] 
 
 mpiBLAST requires the following module file to run:
 ** @apps/mpiblast/1.6.0@
 See [[Modules]] for more information.
 
 h2. Creating and Submitting a Job
+
 
 Create a .ncbirc file in your home directory.  It should be formatted as follows (user location of /work directory will vary):
 
@@ -35,6 +41,7 @@ Create a .ncbirc file in your home directory.  It should be formatted as follows
 'Shared' is a location that all of the nodes doing the computation will have access to and 'Local' should be a faster, local drive.
 
 h3. Prepare a database for use
+
 Research Computing mirrors several of the available databases.  They can be found in /opt/apps/ncbi-6.1/blast/fasta.  If one of those will serve your needs, simply copy it from that location to your Shared location, and decompress it.
 
 <pre>
@@ -51,6 +58,7 @@ Then, you need to format the database for use.  Below is an example way to do so
 </pre>
 
 h3. Submit the Job
+
 
 Below is a sample job script.  It assumes that you want a hard runtime of 1 hour and that you have set up the database in 4 fragments.  It also assumes that your value being searched for is in a file called query.in, in the current working directory.  You'll need to request two more processors than the number of fragments for the two coordinating processes that are created during execution.
 
@@ -76,10 +84,12 @@ AGTACGTAAAGAAAATCTTTTTTTGGCGACATCATTGTATTTGGTAGTATACGATTTCCAGCATCCACAACTATTTCCT
 For additional information, please look at the mpiBLAST documentation: http://www.mpiblast.org/Docs/Guide
 
 h3. More Job Information
+
 See the following for more detailed job submission information:
 ** [[gridEngineUsers|SGE User's Guide]]
 ** [[gridEnginePolicy|Scheduling and Dispatch Policies]]
 ** [[gridEngineTechn|Advanced Submit Techniques]]
 
 h3. Reporting Bugs
+
 Report bugs to the IT Help Desk: help@usf.edu

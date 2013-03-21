@@ -1,5 +1,7 @@
 h1. [[Synopsys]] Tools
-h2. Description 
+
+h2. Description
+ 
 
 Synopsys provides a comprehensive portfolio of tools for digital and mixed-signal IC design, implementation, signoff, verification, test, and design for manufacturability (DFM)
 
@@ -7,22 +9,26 @@ Synopsys provides a comprehensive portfolio of tools for digital and mixed-signa
 
 h2. Version
 
+
 ** Various versions of tools, most current as of 4/2012
 
 h2. Authorized Users
 
+
 ** @circe@ account holders
 
 h2. Platforms
+
 
 ** @circe@ login nodes
 ** @circe@ cluster
 
 h2. Running on Circe
 
+
 Running [[Synopsys]] tools on Circe requires modules to be properly set as described below.  Graphical tools will need to be run via the NX environment, documented here: http://www.rc.usf.edu/trac/doc/wiki/CirceDesktop
 
-h3. Modules
+h3. [[Modules]] 
 
 Individual tools, grouped by tool and specified by version.
 <pre> 
@@ -76,17 +82,21 @@ Individual tools, grouped by tool and specified by version.
 To run any [[Synopsys]] tools on the cluster, ensure that you use @module add@ prior to using any [[Synopsys]] executables.  See [[Modules]] for more information.
 
 h3. Examples
+
 h4. hspice
+
 <pre>
 module add apps/synopsys/hspice/F-2011.09-SP2
 hspice <inputfile>
 </pre>
 
 h3. More Job Information
+
 See the following for more detailed job submission information:
 ** [[gridEngineUsers|SGE User's Guide]]
 ** [[gridEnginePolicy|Scheduling and Dispatch Policies]]
 ** [[gridEngineTechn|Advanced Submit Techniques]]
 
 h3. Reporting Bugs
+
 Report bugs to the IT Help Desk: help@usf.edu

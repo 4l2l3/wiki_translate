@@ -1,18 +1,23 @@
 h1. NWChem
 
+
 h2. Description
+
 _From the NWChem home page_: NWChem is a computational chemistry package that is designed to run on high-performance parallel supercomputers as well as conventional workstation clusters. It aims to be scalable both in its ability to treat large problems efficiently, and in its usage of available parallel computing resources. NWChem has been developed by the Molecular Sciences Software group of the Environmental Molecular Sciences Laboratory (EMSL) at the Pacific Northwest National Laboratory (PNNL). Most of the implementation has been funded by the EMSL Construction Project. 
 
 h2. Version
+
 ** *6.1.1*
 
 h2. Authorized Users
+
 ** @circe@ account holders
 
 h2. Platforms
+
 ** @circe@ cluster
 
-h2. Modules
+h2. [[Modules]] 
 
 NWChem requires the following module file to run:
 ** @apps/nwchem/6.1.1@
@@ -24,6 +29,7 @@ See [[Modules]] for more information.
 </pre>
    in order to properly execute NWChem
 h2. Submitting a Job
+
 Make sure to run your job from your $WORK directory. Use the a submit script like the following to run NWChem:
 
 <pre>
@@ -40,9 +46,11 @@ mpirun [[nwchem]] <input_file>
 </pre>
 
 h4. More Job Information
+
 See the following for more detailed job submission information:
 ** [[gridEngineUsers|SGE User's Guide]]
 ** [[gridEnginePolicy|Scheduling and Dispatch Policies]]
 ** [[gridEngineTechn|Advanced Submit Techniques]]
 h4. Reporting Bugs
+
 Report bugs to the IT Help Desk: help@usf.edu

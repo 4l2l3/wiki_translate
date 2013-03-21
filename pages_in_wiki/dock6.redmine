@@ -1,7 +1,9 @@
 h1. Dock 6
+
 ----
 
-h2. Description 
+h2. Description
+ 
 
 DOCK addresses the problem of "docking" molecules to each other. In general, "docking" is the identification of the low-energy binding modes of a small molecule, or ligand, within the active site of a macromolecule, or receptor, whose structure is known. A compound that interacts strongly with, or binds, a receptor associated with a disease may inhibit its function and thus act as a drug. Solving the docking problem computationally requires an accurate representation of the molecular energetics as well as an efficient algorithm to search the potential binding modes.
 
@@ -9,19 +11,23 @@ From: http://dock.compbio.ucsf.edu/Overview_of_DOCK/index.htm
 
 h2. Version
 
+
 ** *6.5*
 
-h2. Authorized Users 
+h2. Authorized Users
+ 
 
 ** @circe@ account holders
 
 h2. Platforms
 
+
 ** @circe@ cluster
 
 h2. Local Documentation
 
-h3. Modules
+
+h3. [[Modules]] 
 
 Dock6 requires the following module file and some prerequisites to run:
 ** @apps/dock/6.5@
@@ -29,6 +35,7 @@ Dock6 requires the following module file and some prerequisites to run:
 To run Dock6 on the cluster, ensure that you use @module add apps/dock/6.5@ in your submit script.  See [[Modules]] for more information.
 
 h3. Running dock6
+
 
 In order to use DOCK, you must agree to the following: "I agree that any public reports or publication of results obtained using DOCK will acknowledge its use by an appropriate citation."  The following script will execute the parallel version of dock6, dock6.mpi.  You'll need to set the number of processors to the number you wish to use as well as modify the input and output file parameters to suit your environment:
 <pre>
@@ -47,6 +54,7 @@ mpirun /apps/apps/dock/6.5/bin/dock6.mpi -i job.in -o job.out
 
 h2. Local Documentation
 
+
 Parameter files, the tutorials, and the source code are located in /opt/apps/dock/6.5 under the respective directories
 ** parameters/
 ** tutorials/
@@ -54,10 +62,12 @@ Parameter files, the tutorials, and the source code are located in /opt/apps/doc
 
 h2. More Job Information
 
+
 See the following for more detailed job submission information:
 ** [[gridEngineUsers|SGE User's Guide]]
 ** [[gridEnginePolicy|Scheduling and Dispatch Policies]]
 ** [[gridEngineTechn|Advanced Submit Techniques]]
 
 h2. Reporting Bugs
+
 Report bugs directly to Research Computing: support@rc.usf.edu

@@ -1,5 +1,6 @@
 h1. What software is available
 
+
 Research Computing maintains licenses and instances of a good number of research oriented software packages. These packages span the range from standard math packages (Maple, Matlab, etc.) to special purpose packages (VASP, LS_Dyna, Wien2k). A full listing is given in the table below. Please take careful note that not all of the software is available on all hardware platforms. You should also review the [[HPlatforms|Which Hardware Platform Should I Use?]] page. Many of these packages are available for local installation and for most researches this is the best place to run the program. Each package name links to a page giving more complete description of the software and the availability of the software.
 
 See [[SoftwarePortal|Software Portal]] for a list of applications and documentation.

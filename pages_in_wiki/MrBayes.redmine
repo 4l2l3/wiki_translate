@@ -1,22 +1,27 @@
 h1.
 
-h2. Description 
+
+h2. Description
+ 
 
 !MrBayes is a program for the Bayesian estimation of phylogeny. Bayesian inference of phylogeny is based upon a quantity called the posterior probability distribution of trees, which is the probability of a tree conditioned on the observations. The conditioning is accomplished using Bayes's theorem. The posterior probability distribution of trees is impossible to calculate analytically; instead, !MrBayes uses a simulation technique called Markov chain Monte Carlo (or MCMC) to approximate the posterior probabilities of trees.
 
 h2. Version
 
+
 ** *3.1.2*
 
 h2. Authorized Users
+
 
 ** @circe@ account holders
 
 h2. Platforms
 
+
 ** @circe@ cluster
 
-h2. Modules
+h2. [[Modules]] 
 
 !MrBayes requires the following module file and some prerequisites to run:
 ** @apps/mrbayes/3.1.2@
@@ -24,15 +29,18 @@ To run !MrBayes on the cluster, ensure that you use @module load@ before executi
 
 h2. Running
 
+
 The !MrBayes Manual is essential to understanding the application and making the most of it.  The manual and this page should be all you need to get started with your simulations.
 
 h3. Interactive Mode
+
 
 !MrBayes can be run in an interactive mode from the command line.  After loading the module as specified above, simply execute "mb" in the terminal window.  This will drop you into the !MrBayes interactive shell.  Typing "help" will give you a list of !MrBayes command options, and typing "quit" will exit the program.  More information about how to perform an analysis can be found in the Tutorial section of the manual.
 
      Note:  Please limit your use of the interactive mode to familiarizing yourself with the commands and quick analyses.  Running the interactive mode consumes login node resources shared by all.  Please be courteous.
 
 h3. Batch Mode
+
 
 Alternatively, the parallel version of !MrBayes can also be run in batch mode using input redirection. For that you need a text file containing the commands exactly as you would have typed them from the command line. For instance, assume that your data set is in primates.nex and that you want to perform a series of commands to analyse it.  You will need a text file similar to the one below:
 
@@ -67,15 +75,18 @@ This will request a job name of mrbayes_test, 4 processors via MPI, and a 1 hour
 For more information on Run, see [[Run|The GridEngine Run Utility]].
 
 h3. Guides
+
 The following folders contain the !MrBayes manual and input parameters for known tutorials:
 ** /opt/apps/mrbayes/3.1.2/mb3.1_manual.pdf
 ** /opt/apps/mrbayes/3.1.2/examples
 
 h3. More Job Information
+
 See the following for more detailed job submission information:
 ** [[gridEngineUsers|SGE User's Guide]]
 ** [[gridEnginePolicy|Scheduling and Dispatch Policies]]
 ** [[gridEngineTechn|Advanced Submit Techniques]]
 
 h3. Reporting Bugs
+
 Report bugs to the IT Help Desk: help@usf.edu

@@ -1,23 +1,29 @@
 h1. Lumerical FDTD Solutions
 
+
 h3. Description
+
 
 _From the FDTD Solutions web site:_ Employing the industry proven finite-difference time-domain (FDTD) method, FDTD Solutions empowers designers to confront the most challenging optical design problems.  http://www.lumerical.com/fdtd.php
 
 h3. Version
 
+
 ** *7.5.2*
 
 h3. Authorized Users
+
 
 ** Authorized students from Venkat Bhethanabotla's research group
 
 h3. Platform
 
+
 ** @circe@ cluster
 ** Desktop Workstation
 -----
 h2. Install FDTD Solutions on Windows XP
+
 ** Insert product CD and follow prompts for installation
 ** When prompted for *MPICH2* subsystem, *do not install*
 ** Complete Installation and start FDTD Solutions from start menu
@@ -34,9 +40,11 @@ itrc-adm1.rc.usf.edu
 ** Re-open FDTD solutions.  A dialog saying that there are no license keys configured may appear.  If it does, go to the configuration and under the 'HASP Key ID' select the numerical license key that appears in the drop-down dialog.
 
 h3. Mapped Network Drive Configuration
+
 It is HIGHLY RECOMMENDED that you map your Circe home directory to your S: drive and save all FDTD solution work to it.  This way, it is available on the cluster when you decide its time to run a distributed analysis.  For information on performing this process, see the following guide: [[CirceDataAccess|Accessing Your Data]]
 -----
 h2. Running FDTD Solutions on the Cluster
+
 Below is an example of how to run FDTD Solutions on Circe using your S: drive and locally-installed FDTD Solutions software.
 
 ** From my workstation, I've saved my project to @S:\nanowire\nanowire_1.fsp@
@@ -55,13 +63,16 @@ Below is an example of how to run FDTD Solutions on Circe using your S: drive an
 For more information on using the @run@ command, see [[Run|The GridEngine Run Utility]].
 
 h4. Benchmarks
+
 The following folder contains example projects for FDTD Solutions :
 ** C:\Program Files\Lumerical\FDTD\examples
 
 h4. More Job Information
+
 See the following for more detailed job submission information:
 ** [[gridEngineUsers|SGE User's Guide]]
 ** [[gridEnginePolicy|Scheduling and Dispatch Policies]]
 -----
 h2. Reporting Bugs
+
 Report bugs directly to the IT Help Desk: help@usf.edu

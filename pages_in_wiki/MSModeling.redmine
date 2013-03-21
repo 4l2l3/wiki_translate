@@ -1,23 +1,29 @@
-h1. Accelrys MS Modeling*Last Modified:* [[LastModified(MSModeling)]]
+h1. Accelrys MS Modeling
+*Last Modified:* [[LastModified(MSModeling)]]
 ----
 
 h2. Description
+
 
 MS Modeling is a visualizer for molecular systems.  This software can do its own calculations to render the effects of certain conditions or import data from other software for visualization.
 
 h2. Version
 
+
 ** *3.2*
 
 h2. Authorized Users
+
 
 Due to the limited number of licenses, we are only issuing license files per special request. Please contact us at support@rc.usf.edu to put in a request.
 
 h2. Platforms
 
+
 ** Workstation/PC
 
 h2. Installation
+
 
 Before starting the installation:
 

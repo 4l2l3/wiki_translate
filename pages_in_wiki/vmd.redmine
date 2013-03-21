@@ -1,23 +1,30 @@
 h1. VMD
 
+
 h2. Description
+
 _From the VMD website:_ VMD is designed for modeling, visualization, and analysis of biological systems such as proteins, nucleic acids, lipid bilayer assemblies, etc. It may be used to view more general molecules, as VMD can read standard Protein Data Bank (PDB) files and display the contained structure. VMD provides a wide variety of methods for rendering and coloring a molecule: simple points and lines, CPK spheres and cylinders, licorice bonds, backbone tubes and ribbons, cartoon drawings, and others. VMD can be used to animate and analyze the trajectory of a molecular dynamics (MD) simulation. In particular, VMD can act as a graphical front end for an external MD program by displaying and animating a molecule undergoing simulation on a remote computer.
 
 h2. Version
+
 
 ** *1.9*
 
 h2. Authorized Users
 
+
 ** Circe account holders
 
 h2. Platform
+
 
 ** @circe@ cluster
 
 h2. Local Documentation
 
+
 h3. Running VMD on the Cluster
+
 
 To run VMD, simply execute the following within your job directory:
 <pre>
@@ -32,8 +39,10 @@ If you have properly configured an X11 session, you should see the full VMD inte
 
 h3. Documentation
 
+
 Documentation for VMD can be found in the following location:
 ** http://www.ks.uiuc.edu/Research/vmd/current/docs.html
 
 h3. Reporting Bugs
+
 Report bugs directly to Research Computing: help@usf.edu

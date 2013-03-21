@@ -1,25 +1,31 @@
 h1. R and RMPI
 
+
 h2. Description
+
 
 Rmpi is a package that provides MPI bindings for the R programming language.  In much the same way parallel code is written in other languages such as C or Fortran, R codes can run in parallel across multiple processors or nodes.
 
 h2. Version
 
+
 ** *RMPI 0.5.8*
 ** *R 2.11.1*
 
-h2. Authorized Users 
+h2. Authorized Users
+ 
 
 ** @circe@ account holders
 
 h2. Platforms
 
+
 ** @circe@ cluster
 
 h2. Local Documentation
 
-h3. Modules
+
+h3. [[Modules]] 
 
 Rmpi requires the following module file and some prerequisites to run:
 ** @apps/R/2.11.1@
@@ -28,12 +34,14 @@ To run [[Rmpi]] on the cluster, ensure that you use @module initadd@ to make the
 
 h3. Prepare your R Environment
 
+
 Copy this file to /path/to/job/directory/.Rprofile to allow [[Rmpi]] jobs to work:
 <pre>
 cp /opt/apps/R/2.11.1/share/Rprofile ~/rmpitest/.Rprofile
 </pre>
 
 h3. Submitting a Job
+
 
 The submit script for running [[Rmpi]] jobs on the cluster is fairly simple.  An example script is provided below:
 

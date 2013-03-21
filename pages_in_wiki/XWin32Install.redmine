@@ -1,25 +1,32 @@
 h1. X-Win32
+
 h2. Description
+
 X-Win32 is an X11 server written for Microsoft Windows that allows remote graphical applications on UNIX-based systems -- such as Circe, Sunblast, and Sungiant -- to be displayed on a Windows computer.  This application is useful for accessing graphical UNIX systems and replaces [[XmingInstall XMing]] as the actively supported X11 server.
 
 *PLEASE NOTE*: Use of X-Win32 is *HIGHLY DISCOURAGED* for users of Circe due to performance reasons.  We will NOT support the use of X-Win32 on Circe and encourage users to use the NX desktop environment instead.  The documentation for NX is here: [[CirceDesktop]]
 
 h2. Downloading the Software and License File
+
 ** Point your browser to: [https://rc.usf.edu/isos/XWin32/2012/]. A login prompt will appear, requesting your NetID and password.
 ** Download @X-Win32_2012.msi@ (the installer).
 
 h2. Install the X-Win32 Executable
+
 ** Double-Click on @X-Win32_2012.msi@. Follow the on-screen directions and perform the "Complete Install" onto your workstation or home computer.
 
 h2. Set License Server
+
 ** Start X-Win32 from within your Start Menu.
 ** Two windows appear: a Welcome window and a License Wizard. In the License Wizard, Choose "License Server" option. 
 ** Specify the license server @license1.rc.usf.edu@ and click "Ok".
 ** The installer should say: "Activation was successful!". Click "Finish".
 
 h2. Configure a Connection to Circe with XWin32 and PuTTY
+
 This is the only supported configuration for using XWin32 with Circe for displaying graphical X11 applications remotely.  
 h3. First-Time Configuration
+
  1. Ensure that XWin32 is running (you will see its icon in the System Tray).
  2. Download and Install the Putty Windows Installer: http://the.earth.li/~sgtatham/putty/latest/x86/putty-0.60-installer.exe
  3. Start PuTTY from the Start Menu.
@@ -30,6 +37,7 @@ h3. First-Time Configuration
  8. When you start a graphical application on Circe, XWin32 may pop up a question asking you to allow a connection.  You can select *Always* to prevent that message from appearing again.
 
 h3. Subsequent Logins
+
  1. Ensure that XWin32 is running (you will see its icon in the System Tray).
  2. Start PuTTY from the Start Menu.
  3. In the *Session* section, double click on *Circe* and proceed to login.

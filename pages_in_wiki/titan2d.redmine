@@ -1,31 +1,38 @@
 h1. TITAN2D
+
 ----
 
 h2. Description
+
 
 _From the TITAN2D manual:_ TITAN2D was developed for the purpose of simulating granular flows (primarily geological mass flows such as debris avalanches and landslides) over digital elevation models of natural terrain. The code is designed to help scientists and civil protection authorities assess the risk of, and mitigate, hazards due to dry debris flows and avalanches. TITAN2D combines numerical simulations of a flow with digital elevation data of natural terrain supported through a Geographical Information System (GIS) interface.
 
 h2. Version
 
+
 ** *2.0.1*
 
 h2. Authorized Users
+
 
 ** @circe@ account holders
 
 h2. Platform
 
+
 ** @circe@ cluster
 
 h2. Local Documentation
 
-h3. Modules
+
+h3. [[Modules]] 
 
 The TITAN2D GUI requires the following module file to run:
 ** @apps/titan/2.0.1@
 See [[Modules]] for more information.
 
 h3. Running TITAN2D on the Cluster
+
 
 The TITAN2D guide is essential to understanding the application and making the most of it.  The guide and this page should be all you need to get started with your simulations.
 ** TITAN2D Guide: http://www.gmfg.buffalo.edu/software/titan_userguide.pdf
@@ -55,10 +62,12 @@ For more information on Run, see [[Run|The GridEngine Run Utility]].
 
 h4. Benchmarks
 
+
 The following folder contains input parameters for known TITAN2D tutorials:
 ** /opt/apps/titan/example
 
 h4. More Job Information
+
 
 See the following for more detailed job submission information:
 ** [[gridEngineUsers|SGE User's Guide]]
@@ -66,5 +75,6 @@ See the following for more detailed job submission information:
 ** [[gridEngineTechn|Advanced Submit Techniques]]
 
 h4. Reporting Bugs
+
 
 Report bugs directly to Research Computing: support@rc.usf.edu

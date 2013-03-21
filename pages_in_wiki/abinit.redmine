@@ -1,22 +1,28 @@
 h1. ABINIT
 
+
 h2. Description
+
 _From the ABINIT home page_:  ABINIT is a package whose main program allows one to find the total energy, charge density and electronic structure of systems made of electrons and nuclei (molecules and periodic solids) within Density Functional Theory (DFT), using pseudopotentials and a planewave or wavelet basis. ABINIT also includes options to optimize the geometry according to the DFT forces and stresses, or to perform molecular dynamics simulations using these forces, or to generate dynamical matrices, Born effective charges, and dielectric tensors, based on Density-Functional Perturbation Theory, and many more properties. Excited states can be computed within the Many-Body Perturbation Theory (the GW approximation and the Bethe-Salpeter equation), and Time-Dependent Density Functional Theory (for molecules). In addition to the main ABINIT code, different utility programs are provided. 
 
 * "ABINIT Home Page":http://www.abinit.org/
 
 h2. Version
+
 ** *6.12.3*
 
 h2. Authorized Users
+
 ** @circe@ account holders
 
 h2. Platforms
+
 ** @circe@ cluster
 
 h2. Running ABINIT on the Cluster
 
-h3. Modules
+
+h3. [[Modules]] 
 
 ABINIT requires the following module file to run:
 ** @apps/abinit/6.12.3@
@@ -29,6 +35,7 @@ See [[Modules]] for more information.
    in order to properly execute ABINIT.
 
 h3. Submitting a Job
+
 The ABINIT user guide is essential to understanding the application and making the most of it.  The guide and this page should help you to get started with your simulations.
 ** "ABINIT User Guide":http://www.abinit.org/documentation/helpfiles/for-v6.12/users/new_user_guide.html
 
@@ -52,20 +59,24 @@ mpirun [[abinit]] < test.files > test.log
 Your submit scripts will vary depending on your individual needs.
 
 h3. Benchmarks and Tests
+
 The following contain input parameters for known ABINIT tests:
 ** /apps/abinit/6.12.3/tests
 ** "Online Tutorials":http://www.abinit.org/documentation/helpfiles/for-v6.12/tutorial/welcome.html
 
 h3. Additional Documentation
+
 ** /apps/abinit/6.12.3/doc
 ** "Input Variables":http://www.abinit.org/documentation/helpfiles/for-v6.12/input_variables/keyhr.html
 ** "List of Features":http://www.abinit.org/documentation/helpfiles/for-v6.12/features/features.html
 
 h3. More Job Information
+
 See the following for more detailed job submission information:
 ** [[gridEngineUsers|SGE User's Guide]]
 ** [[gridEnginePolicy|Scheduling and Dispatch Policies]]
 ** [[gridEngineTechn|Advanced Submit Techniques]]
 
 h2. Reporting Bugs
+
 Report bugs to the IT Help Desk: help@usf.edu

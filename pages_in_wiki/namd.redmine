@@ -1,24 +1,30 @@
 h1. NAMD
 
+
 h2. Description
+
 
 _From the NAMD manual:_ NAMD (NAnoscale Molecular Dynamics) can simulate the movement of proteins with millions of atoms, making it the world's fastest parallel molecular dynamics program. The NAMD development team will continue to incorporate the latest parallel-computing advances into NAMD, which already runs efficiently on several thousand parallel processors... 
 
 h2. Version
 
+
 ** *2.7*
 
 h2. Authorized Users
+
 
 ** @circe@ account holders
 
 h2. Platforms
 
+
 ** @circe@ cluster
 
 h2. Local Documentation
 
-h3. Modules
+
+h3. [[Modules]] 
 
 Namd requires the following module file to run:
 ** @apps/namd/2.7@
@@ -26,6 +32,7 @@ See [[Modules]] for more information.
 
 
 h3. Submitting a Job
+
 
 NAMD can run well on most types of hardware on the cluster.  For the vast majority of cases, memory is not as big an issue as CPU time and the program is parallel "enough" to ensure that it runs reasonably well over GigE though it will run better on Myrinet or InfiniBand.  To run NAMD, use the 'run' command within a directory with your .conf file.  It will run over any number of .conf files if you have more than one in the directory.
 
@@ -41,14 +48,17 @@ Your job 225598 ("namd_apoa1") has been submitted
 For more information on the @run@ command, see [[Run here]].
 
 h4. Benchmarks
+
 The above User Information & Documentation links should have ample information to qualify as a tutorial.  We currently have one benchmark in the directory
 ** /opt/apps/namd/apoa1
 This is a fairly standard NAMD benchmark that is used for testing clusters.
 
 h4. More Job Information
+
 See the following for more detailed job submission information:
 ** [[gridEngineUsers|SGE User's Guide]]
 ** [[gridEnginePolicy|Scheduling and Dispatch Policies]]
 ** [[gridEngineTechn|Advanced Submit Techniques]]
 h4. Reporting Bugs
+
 Report bugs directly to Research Computing: support@rc.usf.edu

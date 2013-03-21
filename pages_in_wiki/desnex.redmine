@@ -1,23 +1,29 @@
 h1. Ansoft Designer
 
-h2. Description 
+
+h2. Description
+ 
 
 _From the Ansoft website:_ Ansoft Designer is an integrated schematic and design management front-end for Ansoft's simulation technologies, HFSS, Q3D Extractor, and SIwave. Ansoft Designer is the foundation for a highly accurate design flow that allows users to precisely model and simulate complex analog, RF, and mixed-signal applications and perform signal-integrity analysis and system verification of high-performance IC/package/board designs. This flexible, easy-to-use software includes schematic capture and layout editing, netlist generation and sophisticated data visualization and analysis tools. 
 
 h2. Version
 
+
 ** *6.0*
 
 h2. Authorized Users
+
 
 ** Students doing research
 ** Faculty
 
 h2. Platforms
 
+
 ** Cluster
 
 h2. Instructions for First-Time Use
+
 
 You will need to use the [[Modules modules]] program, so if you're not familiar with it, check out the wiki link. 
 
@@ -44,4 +50,5 @@ module add apps/ansoft/designer-6.0
 
 
 h2. Getting Help
+
 Please report any issue to the USF IT Helpdesk by sending an e-mail to help@usf.edu

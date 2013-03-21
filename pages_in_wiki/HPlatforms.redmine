@@ -1,5 +1,6 @@
 h1. Which Hardware Platform Should I Use
 
+
 Research Computing offers several different hardware platforms. To choose between these resources, you need to consider two issues: the available software on a given system, and the granularity of your problem. Since the granularity may affect where you want to run a given bit of software, we will discuss this topic first.
 
 Granularity refers to the ratio of the amount of communication to the amount of computation inherent in a computation. If this ratio is low then the problem is considered coarse grained. This means that there is a small amount of communication when compared to the amount of computation. These problems are also referred to as embarrassingly parallel. If the ratio is high then the amount of communication dominates, and the task is considered fine grained. A large number of tasks fall somewhere between and are considered medium grained.

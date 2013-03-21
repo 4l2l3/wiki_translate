@@ -1,25 +1,31 @@
 h1. Dalton
 
+
 h2. Description
+
 _From the Dalton web site_: Dalton is a powerful molecular electronic structure program, with an extensive functional for the calculation of molecular properties at the HF, DFT, MCSCF, and CC levels of theory.
 **  "Dalton Home Page":http://dirac.chem.sdu.dk/daltonprogram.org
 
 h2. Version
+
 ** *2.0*
 
 h2. Authorized Users
+
 ** @circe@ account holders
 
 h2. Platforms
+
 ** @circe@ cluster
 
-h2. Modules
+h2. [[Modules]] 
 
 Dalton requires the following module file with prerequisites to run:
 ** @apps/dalton/2.0@
 See [[Modules]] for more information.  
 
 h2. Note to Users about the Dalton License
+
 
 1. Any published work arising from use of the Dalton program must acknowledge the program with an appropriate citation. A suitable text for Release 2 revision 0 would be:
 <pre>
@@ -30,6 +36,7 @@ h2. Note to Users about the Dalton License
 2. The experimental nature of this program means that there is no warranty of correctness of results nor fitness for a particular purpose and that the authors of Dalton cannot be held responsible in any way for any consequences arising from the use of the program. While every attempt will be made to correct any errors reported, the authors of Dalton are not obliged to make such corrections, nor is there any support for users implied by making the program available.
 
 h2. Submitting a Job
+
 
 The Dalton Program Manual is essential to understanding the application and making the most of it.  The guide and this page should be all you need to get started with your simulations.
 ** "Dalton Program Manual":http://www.daltonprogram.org/resources/dalton20manual.pdf
@@ -60,14 +67,17 @@ For more information on Run, see [[Run|The GridEngine Run Utility]].
 
 h3. Benchmarks and Tests
 
+
 The following folders contain input parameters for known Dalton tests:
 ** /opt/apps/dalton/2.0/tests
 
 h3. More Job Information
+
 See the following for more detailed job submission information:
 ** [[gridEngineUsers|SGE User's Guide]]
 ** [[gridEnginePolicy|Scheduling and Dispatch Policies]]
 ** [[gridEngineTechn|Advanced Submit Techniques]]
 
 h3. Reporting Bugs
+
 Report bugs to the IT Help Desk: help@usf.edu

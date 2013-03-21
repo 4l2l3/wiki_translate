@@ -1,5 +1,6 @@
-h1. WEKA
-h2. Description 
+h1. [[WEKA]] 
+h2. Description
+ 
 
 From - http://www.cs.waikato.ac.nz/ml/weka/:
 
@@ -7,27 +8,32 @@ Weka is a collection of machine learning algorithms for data mining tasks. The a
 
 h2. Version
 
+
 ** *3.6.2*
 
 h2. Authorized Users
+
 
 ** @circe@ account holders
 
 h2. Platforms
 
+
 ** @circe@ cluster
 
-h2. Running [[WEKA]] on the Cluster
-The following describes what is necessary to run [[WEKA]] on CIRCE.
-h3. Modules
+h2. Running WEKA on the Cluster
+
+The following describes what is necessary to run WEKA on CIRCE.
+h3. [[Modules]] 
 WEKA requires the following module file and some prerequisites to run:
 ** @apps/weka/3.6.2@
-h3. Starting WEKA
-Simply type <pre> [[WEKA]] </pre> at the command line.  If you have properly configured an X11 session, you should see the full [[WEKA]] interface.  For users wishing to use the graphical interface over X11, please see our [[XWin32Install|XWin32 Installation]] documentation.
+h3. Starting [[WEKA]] 
+Simply type <pre> WEKA </pre> at the command line.  If you have properly configured an X11 session, you should see the full WEKA interface.  For users wishing to use the graphical interface over X11, please see our [[XWin32Install|XWin32 Installation]] documentation.
 <pre>
 [jfargen@login1 ~]$ weka
 </pre>
 
-h3. [[WEKA]] Documentation
+h3. WEKA Documentation
+
 ** http://www.cs.waikato.ac.nz/ml/weka/
 

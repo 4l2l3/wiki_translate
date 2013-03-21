@@ -1,21 +1,27 @@
 h1. COMSOL
 
+
 h2. Description
+
 
 _From Wikipedia:_ COMSOL Multiphysics (formerly FEMLAB) is a finite element analysis, solver and Simulation software / FEA Software package for various physics and engineering applications, especially coupled phenomena, or multiphysics.  COMSOL also offers an extensive interface to MATLAB and its toolboxes for a large variety of programming, preprocessing and postprocessing possibilities.  In addition to conventional physics-based user-interfaces, COMSOL Multiphysics also allows for entering coupled systems of partial differential equations (PDEs). The PDEs can be entered directly or using the so called weak form (see finite element method for a description of weak formulation).
 
 h2. Version
+
 ** *4.3a*
 
-h2. Authorized Users 
+h2. Authorized Users
+ 
 ** Students doing research
 ** Faculty
 ** @circe@ users
 
 h2. Platforms
+
 ** Workstation/PC, Cluster
 
-h2. Installation 
+h2. Installation
+ 
 
 *_Contents*_[[BR]]
 
@@ -25,6 +31,7 @@ h2. Installation
 ----
 
 h2. Installing on Linux
+
 
    1. Connect to https://rc.usf.edu/isos and login with your NetID and password. Change to the directory Comsol/v4.3a and download the ISO file. Once you have downloaded the ISO, disconnect from the ftp server.
 
@@ -70,6 +77,7 @@ h2. Installing on Linux
 
 h2. Installing on Windows
 
+
 Follow the steps below to download and install Comsol for Windows.
 
    1. Connect to https://rc.usf.edu/isos and login with your NetID and password. Change to the directory Comsol/v4.3a and download the ISO file. Once you have downloaded the ISO, disconnect from the ftp server record the ISOs to a blank DVD-R under your favorite DVD recording software. If you need help with recording DVDs please see our guide at [[CDBurning]].
@@ -93,6 +101,7 @@ Follow the steps below to download and install Comsol for Windows.
    9. When Comsol is finished installing you should have an icon on the desktop and in your Programs on the Start Menu. If you installed the MATLAB interface, you will also have an icon for starting Comsol with the interface.
 
 h2. Running on Circe
+
 
 Running Comsol on @circe@ is quite trivial.  When you are ready to run the solver against your model, save the model and copy the @.mph@ file to Circe via which ever method you prefer and run:
 <pre>
@@ -144,10 +153,12 @@ If you plan to use Comsol 4.3a interactively, please follow the following proced
 !http://www.rc.usf.edu/trac/doc/raw-attachment/wiki/FemlabUser/Screenshot%20from%202012-09-28%2014_27_05.png!
 
 h3. More Job Information
+
 See the following for more detailed job submission information:
 ** [[gridEngineUsers|SGE User's Guide]]
 ** [[gridEnginePolicy|Scheduling and Dispatch Policies]]
 ** [[gridEngineTechn|Advanced Submit Techniques]]
 
 h3. Reporting Bugs
+
 Report bugs to the IT Help Desk: help@usf.edu

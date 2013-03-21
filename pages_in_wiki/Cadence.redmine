@@ -1,32 +1,38 @@
-h1. Cadence
-h2. Description 
+h1. [[Cadence]] 
+h2. Description
+ 
 
-The [[Cadence]] toolset is a complete Integrated Circuit (IC) Electronic Design Automation (EDA) system used to devlop commercial analog, digital, mixed-signal and RF ICs and breadboards.
+The Cadence toolset is a complete Integrated Circuit (IC) Electronic Design Automation (EDA) system used to devlop commercial analog, digital, mixed-signal and RF ICs and breadboards.
 
 ** From: http://www2.ece.ohio-state.edu/cadence/
 
 h2. Version
 
+
 ** Various versions of tools, most current as of 4/2012
 
 h2. Authorized Users
 
+
 ** @circe@ account holders
 
 h2. Platforms
+
 
 ** @circe@ login nodes
 ** @circe@ cluster
 
 h2. Running from NX
 
+
 Requires 75dpi fonts to be installed.  Please install them from http://www.nomachine.com/download-client-windows.php
 
 h2. Running on Circe
 
-Running [[Cadence]] on Circe requires modules to be properly set as described below.
 
-h3. Modules
+Running Cadence on Circe requires modules to be properly set as described below.
+
+h3. [[Modules]] 
 
 Individual tools, grouped by "release stream" and specified by version.  Find the release stream and version for the desired tool/functionality at [http://rc.usf.edu/trac/doc/attachment/wiki/Cadence/Cadence_Software_Selection_2012.pdf Release Stream List]:
 ** apps/cadence/anls/62
@@ -48,10 +54,12 @@ NCSU CDKs:
 ** apps/cadence/ncsu/1.5.1
 ** apps/cadence/ncsu/1.6.0.beta
 
-To run any [[Cadence]] tools on the cluster, ensure that you use @module add@ prior to using any [[Cadence]] executables.  See [[Modules]] for more information.
+To run any Cadence tools on the cluster, ensure that you use @module add@ prior to using any Cadence executables.  See [[Modules]] for more information.
 
 h3. Examples
+
 h4. Digital Layout
+
 <pre>
 cd
 mkdir testing
@@ -62,6 +70,7 @@ digital-start
 </pre>
 
 h4. Digital Layout
+
 <pre>
 cd
 mkdir testing
@@ -73,6 +82,7 @@ ncsu-start
 </pre>
 
 h4. Allegro PCB Editor
+
 <pre>
 cd
 mkdir testing
@@ -82,10 +92,12 @@ allegro
 </pre>
 
 h3. More Job Information
+
 See the following for more detailed job submission information:
 ** [[gridEngineUsers|SGE User's Guide]]
 ** [[gridEnginePolicy|Scheduling and Dispatch Policies]]
 ** [[gridEngineTechn|Advanced Submit Techniques]]
 
 h3. Reporting Bugs
+
 Report bugs to the IT Help Desk: help@usf.edu

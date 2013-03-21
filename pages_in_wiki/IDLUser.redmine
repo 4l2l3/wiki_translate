@@ -1,20 +1,25 @@
 h1. IDL
 
-h2. Description 
+
+h2. Description
+ 
 
 IDL's features include: advanced image processing, interactive 2-D and 3-D graphics, object oriented programming, insightful volume visualization, a high-level programming language, integrated mathematics and statistics, flexible data I/O, a cross-platform GUI toolkit, and versatile program linking tools.
 
 h2. Version
 
+
 ** *8.2*
 
-h2. Authorized Users 
+h2. Authorized Users
+ 
 
 ** Students doing research
 ** Faculty
 ** circe account holders 
 
 h2. Platforms
+
 
 ** Workstation/PC
 ** Circe Cluster
@@ -28,9 +33,11 @@ h2. Platforms
 
 h2. Installation
 
+
 ----
 
 h3. IDL Windows Installation
+
 
 Before you begin:
 
@@ -57,6 +64,7 @@ To download and install IDL:
 ----
 
 h3. IDL Unix Installation
+
 
 
 Before you begin:
@@ -96,6 +104,7 @@ You should now be able to start @idlde@ (text mode) from the command line.
 ----
 
 h3. IDL Mac Installation
+
 To download and install IDL:
 
 ** Get the installation archive from  https://rc.usf.edu/isos/IDL/8.2/.  Log in using your NetID and password. Download the InstallIDL82_Mac.pkg file. Note the location to which you are downloading the PKG file.
@@ -107,6 +116,7 @@ To download and install IDL:
 ----
 
 h2. Running on Circe
+
 
 Running IDL on @circe@, you need to make sure you have X11 Forwarding enabled. If you're logging in from a UNIX/Linux system, you will need to do the following:
       <pre>
@@ -128,8 +138,10 @@ IDL can also be launched through the NX environment using the Applications menu.
 
 h3. Tutorials
 
+
 More information about the features of IDL can be found by using @idldemo@.  The graphical mode also includes a tutorial.
 
 h3. Reporting Bugs
+
 
 Report bugs directly to Research Computing: support@rc.usf.edu

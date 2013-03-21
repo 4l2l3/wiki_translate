@@ -1,15 +1,19 @@
 h1. Mathematica
+
 ----
 
 h2. Description
+
 
 Mathematica is the tool of choice at the frontiers of scientific research, in engineering analysis and modeling, in technical education from high school to graduate school, and wherever quantitative methods are used.
 
 h2. Version
 
+
 ** *9.0*
 
 h2. Authorized Users
+
 
 ** @circe@ account holders
 ** Students doing valid research
@@ -17,10 +21,12 @@ h2. Authorized Users
 
 h2. Platforms
 
+
 ** @circe@ cluster
 ** Workstation/PC
 
 h2. Installation
+
 
 *IMPORTANT: Before You Begin*[[BR]]
 Make sure you've applied for and received the Mathematica 8 License information.  You will need to go here to apply: https://rc.usf.edu/licensing/licenserequest.php
@@ -33,6 +39,7 @@ Make sure you've applied for and received the Mathematica 8 License information.
 ----
 
 h3. Installing Mathematica On Windows
+
 
    1. Log into https://rc.usf.edu/isos using your NetID and password. Change to the directory /Mathematica/V9.0 and download the Windows ISO file to a temporary directory on your PC. Once the file has finished downloading you may disconnect from the FTP server.
 
@@ -53,6 +60,7 @@ h3. Installing Mathematica On Windows
 ----
 
 h3. Installing Mathematica On Linux
+
 
    1. Log into https://rc.usf.edu/isos using your NetID and password. Change to the directory /Mathematica/V9.0 and download the file named Mathematica_9.0.0_LINUX.iso to a temporary directory on your PC. Once the file has finished downloading you may disconnect from the FTP server.
 
@@ -88,6 +96,7 @@ Re-login to your computer and issue the mathematica command.
 
 h3. Installing Mathematica On Solaris 8
 
+
    1. Log into https://rc.usf.edu/isos using your NetID and password. Change to the directory /Mathematica/7.0 and download the file named mathematica7-solaris.iso to a temporary directory on your PC. Once the file has finished downloading you may disconnect from the FTP server.
 
    2. Burn a CD with this iso. Note: You cannot just copy the file to a CD, you must use a software program that allows you to create a CD from an image file. If you need help with recording CDs please see our guide at [[CDBurning]].  Insert the Mathematica UNIX CD in your CD-ROM drive.
@@ -116,7 +125,8 @@ Once installation is complete, just type in cd ~ ; umount /cdrom/cdrom0; eject; 
 ----
 h2. Running Mathematica on Circe
 
-h3. Modules
+
+h3. [[Modules]] 
 
 Mathematica requires the following module file and some prerequisites to run:
 ** @apps/mathematica/9.0@
@@ -124,14 +134,17 @@ To run Mathematica on the cluster, ensure that you use 'module add' prior to usi
 
 h3. Submitting a Job
 
+
 There are two ways to run Mathematica on Circe depending on the runtime of your particular job.
 
 h4. Jobs Shorter than 20 Minutes in Length
+
 Simply type <pre> mathematica </pre> at the command line. If you have properly configured an X11 session, you should see the full Mathematica interface.  If you haven't configured X11, you will be able to use the console interface by running <pre> math </pre> at the prompt.  For users wishing to use the graphical interface over X11, please see our [[XWin32Install|XWin32 Installation]] documentation.
 
 Mathematica can also be launched through the NX environment using the Applications menu.  For more information about the NX environment, please see our [[CirceDesktop|Circe NX Desktop]] documentation.
 
 h4. Jobs Longer than 20 Minutes in Length
+
 To run Mathematica jobs on Circe, users will need to submit their jobs to the scheduling environment if their jobs take more than 20 minutes to run on a standard PC.
 
 If, for example, you have a Mathematica script file named test.math with all your functions defined in it, you would set up a submit script to use the Mathematica kernel like this:
@@ -150,6 +163,7 @@ math < test.math
 
 h4. Mathematica Notebook files
 
+
 If you're using Mathematica notebook files (.nb) and you wish to submit the job to Circe, you must first convert the notebook file to a Mathematica package file.
 
 Please use the following steps to convert a notebook file to a standard Mathematica package.
@@ -164,4 +178,5 @@ You'll then use the file you just saved as an input file using the Circe submiss
 
 
 h3. Reporting Bugs
+
 Report bugs to the IT Help Desk: help@usf.edu

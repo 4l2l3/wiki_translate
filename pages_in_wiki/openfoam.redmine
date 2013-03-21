@@ -1,5 +1,7 @@
 h1. OpenFOAM
-h2. Description 
+
+h2. Description
+ 
 
 _From the OpenFOAM web site_: The OpenFOAM®  (Open Field Operation and Manipulation) CFD Toolbox has an extensive range of features to solve anything from complex fluid flows involving chemical reactions, turbulence and heat transfer, to solid dynamics and electromagnetics. It includes tools for meshing, notably snappyHexMesh, a parallelised mesher for complex CAD geometries, and for pre- and post-processing. Almost everything (including meshing, and pre- and post-processing) runs in parallel as standard, enabling users to take full advantage of computer hardware at their disposal. OpenFOAM includes over 80 solver applications that simulate specific problems in engineering mechanics and over 170 utility applications that perform pre- and post-processing tasks, e.g. meshing, data visualisation, etc. 
 
@@ -7,19 +9,23 @@ _From the OpenFOAM web site_: The OpenFOAM®  (Open Field Operation and Manipula
 
 h2. Version
 
+
 ** *2.0.1*
 
 h2. Authorized Users
+
 
 ** @circe@ account holders
 
 h2. Platforms
 
+
 ** @circe@ cluster
 
 h2. Running OpenFOAM Jobs on the Cluster
 
-h3. Modules
+
+h3. [[Modules]] 
 
 Before running a job, you must first set up your environment properly.  Here are the required module files:
 
@@ -33,9 +39,11 @@ To run OpenFOAM on the cluster, ensure that you use @module add@ prior to using 
 
 h3. How to Submit Jobs
 
+
 Provided are directions for running an interactive job and a batch script for running OpenFOAM as a multi-processor job.    These scripts are provided as examples only.  Your SGE and OpenFOAM executables, tools, and options will vary.  View the user's guide on this site (http://www.openfoam.com/docs/user/) for more about OpenFOAM options.
 
 h3. GUI
+
 
 Specify the number of processors (typically 2-8) and time needed to run OpenFOAM. This example is two processors for 10 hours:
 <pre>
@@ -48,6 +56,7 @@ Once you get dropped into an interactive shell on the execution host, you will n
 
 
 h3. Distributed Parallel
+
 
 This script can be copied into your job directory (the folder with your input files and database files) and modified so that you can submit batch processes to the queue.  For help on submitting jobs to the queue, see our [[gridEngineUsers|GridEngine User's Guide]].
 
@@ -66,10 +75,12 @@ mpirun <foam_exectutable> <-parallel> <options>
 </pre>
 
 h3. More Job Information
+
 See the following for more detailed job submission information:
 ** [[gridEngineUsers|SGE User's Guide]]
 ** [[gridEnginePolicy|Scheduling and Dispatch Policies]]
 ** [[gridEngineTechn|Advanced Submit Techniques]]
 
 h3. Reporting Bugs
+
 Report bugs to the IT Help Desk: help@usf.edu

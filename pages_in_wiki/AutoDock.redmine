@@ -1,26 +1,33 @@
 h1.
 
+
 h2. Description
+
 _From the !AutoDock website:_ !AutoDock is a suite of automated docking tools. It is designed to predict how small molecules, such as substrates or drug candidates, bind to a receptor of known 3D structure. !AutoDock 4 actually consists of two main programs: autodock performs the docking of the ligand to a set of grids describing the target protein; autogrid pre-calculates these grids. In addition to using them for docking, the atomic affinity grids can be visualised. This can help, for example, to guide organic synthetic chemists design better binders.
 **  "AutoDock Home Page":http://autodock.scripps.edu/
 
 h2. Version
+
 ** *4.2.3*
 
 h2. Authorized Users
+
 ** 'circe' account holders
 
 h2. Platforms
+
 ** 'circe' cluster
 
 h2. Running Jobs on the Cluster
 
-h3. Modules
+
+h3. [[Modules]] 
 !AutoDock requires the following module file with prerequisites to run:
 ** @apps/autodock/4.2.3@
 See [[Modules]] for more information.
 
 h3. Distributed Parallel
+
 This script can be copied into your job directory (the folder with your input files and database files) and modified so that you can submit batch processes to the queue. This script is provided as an example only. Your SGE and !Autodock/Autogrid inputs, tools, and options will vary.  For help on submitting jobs to the queue, see our [[gridEngineUsers|GridEngine User's Guide]].
 
 <pre>
@@ -34,14 +41,17 @@ mpirun -np $NSLOTS autogrid4 [input parameters]
 mpirun -np $NSLOTS autodock4 [input parameters]
 </pre>
 
-h3. User  
+h3. User
+  
 ** /apps/legacy/autodock/4.2.3/AutoDock4.2_UserGuide.pdf
 
 h3. More Job Information
+
 See the following for more detailed job submission information:
 ** [[gridEngineUsers|SGE User's Guide]]
 ** [[gridEnginePolicy|Scheduling and Dispatch Policies]]
 ** [[gridEngineTechn|Advanced Submit Techniques]]
 
 h3. Reporting Bugs
+
 Report bugs to the IT Help Desk: help@usf.edu

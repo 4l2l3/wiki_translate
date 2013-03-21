@@ -1,36 +1,41 @@
-h1. Maya
+h1. [[Maya]] 
 
 h2. Description
 
-_From the Autodesk [[Maya]] homepage:_ Autodesk® Maya® 3D animation software delivers a comprehensive creative feature set with tools for animation, modeling, simulation, rendering, matchmoving, and compositing on a highly extensible production platform. For visual effects, game development, post production, or other 3D animation projects, [[Maya]] offers toolsets to help meet demanding production requirements. [[Maya]] 2013 adds tools that help facilitate parallel workflows and complexity handling; powerful new creative toolsets; and productivity enhancements to help you create higher quality content quickly.
+
+_From the Autodesk Maya homepage:_ Autodesk® Maya® 3D animation software delivers a comprehensive creative feature set with tools for animation, modeling, simulation, rendering, matchmoving, and compositing on a highly extensible production platform. For visual effects, game development, post production, or other 3D animation projects, Maya offers toolsets to help meet demanding production requirements. Maya 2013 adds tools that help facilitate parallel workflows and complexity handling; powerful new creative toolsets; and productivity enhancements to help you create higher quality content quickly.
 
 http://usa.autodesk.com/maya/
 
 h2. Version
 
+
 ** *2013*
 
 h2. Authorized Users
+
 
 ** USF Students, Faculty, and Staff
 
 h2. Platform
 
+
 ** @circe@ cluster
 
-h2. Running [[Maya]] on the Cluster
+h2. Running Maya on the Cluster
 
-The [[Maya]] documentation is essential to understanding the Rendering process.  The guide and this page should be all you need to get started with [[Maya]] rendering.
-** [[Maya]] Rendering Documentation: http://download.autodesk.com/global/docs/maya2013/en_us/
 
-Maya rendering on the cluster is very efficient as each frame is broken up into an individual task and uses whatever CPUs are available on the system.  Submitting a [[Maya]] rendering job is very trivial:
+The Maya documentation is essential to understanding the Rendering process.  The guide and this page should be all you need to get started with Maya rendering.
+** Maya Rendering Documentation: http://download.autodesk.com/global/docs/maya2013/en_us/
 
-First, load the [[Maya]] application module:
+Maya rendering on the cluster is very efficient as each frame is broken up into an individual task and uses whatever CPUs are available on the system.  Submitting a Maya rendering job is very trivial:
+
+First, load the Maya application module:
 <pre>
 [user@host ~]$ module add apps/maya
 </pre>
 
-Then, kick off your rendering job after uploading your [[Maya]] project binary to the system:
+Then, kick off your rendering job after uploading your Maya project binary to the system:
 
 <pre>
 [user@host ~]$ Render_sge start myproject.mb 1-1000 standard
@@ -62,7 +67,7 @@ Additional advanced render arguments can be passed at the very end of the comman
 [user@host ~]$ Render -h
 
 Usage: Render [options] filename
-       where "filename" is a [[Maya]] ASCII or a [[Maya]] binary file.
+       where "filename" is a Maya ASCII or a Maya binary file.
 
 Common options:
   -help              Print help
@@ -72,10 +77,10 @@ Common options:
   -listRenderers     List all available renderers
   -renderer string   Use this specific renderer
   -r string          Same as -renderer
-  -proj string       Use this [[Maya]] project to load the file
+  -proj string       Use this Maya project to load the file
   -log string        Save output into the given file
 
-Specific options for renderer "default": Use the renderer stored in the [[Maya]] file
+Specific options for renderer "default": Use the renderer stored in the Maya file
 
 General purpose flags:
   -rd path                       Directory in which to store image file
@@ -128,9 +133,9 @@ Mel callbacks
   -pre string                    Obsolete flag
   -post string                   Obsolete flag
 
-Specific options for the layers who use [[Maya]] software renderer:
+Specific options for the layers who use Maya software renderer:
 
-Anti-aliasing quality only for [[Maya]] software renderer:
+Anti-aliasing quality only for Maya software renderer:
   -sw:eaa int                    The anti-aliasing quality of EAS (Abuffer). One of:
         highest(0), high(1), medium(2), low(3)
   -sw:ss int                     Global number of shading samples per surface in a pixel
@@ -151,20 +156,20 @@ Anti-aliasing quality only for [[Maya]] software renderer:
   -sw:bct float                  Blue channel contrast threshold
   -sw:cct float                  Pixel coverage contrast threshold (default is 1.0/8.0)
 
-Raytracing quality only for [[Maya]] software renderer:
+Raytracing quality only for Maya software renderer:
   -sw:ert boolean                Enable ray tracing
   -sw:rfl int                    Maximum ray-tracing reflection level
   -sw:rfr int                    Maximum ray-tracing refraction level
   -sw:sl int                     Maximum ray-tracing shadow ray depth
 
-Field Options only for [[Maya]] software renderer:
+Field Options only for Maya software renderer:
   -sw:field boolean              Enable field rendering. When on, images are interlaced
   -sw:pal                        When field rendering is enabled, render even field
         first (PAL)
   -sw:ntsc                       When field rendering is enabled, render odd field
         first (NTSC)
 
-Motion Blur only for [[Maya]] software renderer:
+Motion Blur only for Maya software renderer:
   -sw:mb boolean                 Motion blur on/off
   -sw:mbf float                  Motion blur by frame
   -sw:sa float                   Shutter angle for motion blur (1-360)
@@ -175,7 +180,7 @@ Motion Blur only for [[Maya]] software renderer:
   -sw:smc boolean                2D motion blur smooth color on/off
   -sw:kmv boolean                Keep motion vector for 2D motion blur on/off
 
-Render Options only for [[Maya]] software renderer:
+Render Options only for Maya software renderer:
   -sw:ifg boolean                Use the film gate for rendering if false
   -sw:edm boolean                Enable depth map usage
   -sw:g float                    Gamma value
@@ -183,7 +188,7 @@ Render Options only for [[Maya]] software renderer:
   -sw:premulthr float            When premultiply is on, defines the threshold used to
         determine whether to premultiply or not
 
-Memory and Performance only for [[Maya]] software renderer:
+Memory and Performance only for Maya software renderer:
   -sw:uf boolean                 Use the tessellation file cache
   -sw:oi boolean                 Dynamically detects similarly tessellated surfaces
   -sw:rut boolean                Reuse render geometry to generate depth maps
@@ -191,9 +196,9 @@ Memory and Performance only for [[Maya]] software renderer:
         displacement-map performance
   -sw:mm int                     Renderer maximum memory use (in Megabytes)
 
-Specific options for the layers who use [[Maya]] hardware renderer:
+Specific options for the layers who use Maya hardware renderer:
 
-Quality flags only for [[Maya]] hardware renderer:
+Quality flags only for Maya hardware renderer:
   -hw:ehl boolean                Enable high quality lighting
   -hw:ams boolean                Accelerated multi sampling
   -hw:ns int                     Number of samples per pixel
@@ -202,7 +207,7 @@ Quality flags only for [[Maya]] hardware renderer:
   -hw:btr int                    Bump texture resolution
   -hw:tc boolean                 Enable texture compression
 
-Render options only for [[Maya]] hardware renderer:
+Render options only for Maya hardware renderer:
   -hw:c boolean                  Culling mode.
                 0: per object.
                 1: all double sided.
@@ -210,7 +215,7 @@ Render options only for [[Maya]] hardware renderer:
   -hw:sco boolean                Enable small object culling
   -hw:ct float                   Small object culling threshold
 
-Mel callbacks only for [[Maya]] hardware renderer:
+Mel callbacks only for Maya hardware renderer:
   -hw:mb boolean                 Enable motion blur
   -hw:mbf float                  Motion blur by frame
   -hw:ne int                     Number of exposures
@@ -256,6 +261,7 @@ Any boolean flag will take the following values as FALSE: off, no, false, or 0.
 
 h2. Post-Render Encoding
 
+
 You can also use our standard MPlayer-based MPEG4 encoder to assemble your frames into a full video.  This can be done using the following command:
 
 <pre>
@@ -273,4 +279,5 @@ Requires 5 arguments:
 For more information on Run, see [[Run|The GridEngine Run Utility]].
 
 h2. Reporting Issues
+
 Report issues to the IT Helpdesk: help@usf.edu

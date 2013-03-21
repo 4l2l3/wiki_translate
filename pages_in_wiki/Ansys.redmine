@@ -1,21 +1,27 @@
 h1. ANSYS
-h2. Description 
+
+h2. Description
+ 
 ANSYS is an engineering package and support routine for general-purpose, finite-element analysis:  statics, mode frequency, stability analysis, heat transfer, magnetostatics, coupled field analysis, modeling, etc. ANSYS was developed and is supported by ANSYS, Inc.
 
 ** "ANSYS Software Products":http://www.ansys.com/Products
 
 h2. Version
+
 ** *14.0*
 
 h2. Authorized Users
+
 ** @circe@ account holders
 
 h2. Platforms
+
 ** @circe@ cluster
 
 h2. Running [[Ansys]] Jobs on the Cluster
 
-h3. Modules
+
+h3. [[Modules]] 
 Before running a job, you must first set up your environment properly. Here are the required module files:
 
 ** apps/ansys/14.0
@@ -23,6 +29,7 @@ Before running a job, you must first set up your environment properly. Here are 
 To run ANSYS on the cluster, ensure that you use @module add@ prior to using any [[Ansys]] executables.  See [[Modules]] for more information.
 
 h3. Interactive Execution via NX
+
 Run the following to get a 4 processor session for [[Ansys]] using the interactive GUI (NOTE: you must be logged into Circe via the NX client for this to work):
 
 <pre>
@@ -76,9 +83,11 @@ fluent
 
 
 h3. How to Submit Jobs
+
 Provided are batch scripts for running ANSYS as a single processor and multi-processor job.  Most existing ANSYS scripts will run in parallel mode with no modification.  These scripts can be copied into your work directory (the folder with your input files and database files) so that you can submit batch processes to the queue.  For help on submitting jobs to the queue, see our [[gridEngineUsers|GridEngine User's Guide]]
 
 h3. Serial Submit Script
+
 <pre>
 #$ -N ansys_job_name
 #$ -l h_rt=hh:mm:ss,aa_r=1
@@ -90,6 +99,7 @@ time ansysdis130 $ANSYS_OPTS < $JOB_NAME
 </pre>
 
 h3. Multi-Threaded Parallel Submit Script
+
 <pre>
 #$ -N ansys_job_name
 #$ -l h_rt=hh:mm:ss,aa_r=1,aa_r_hpc=2,nodes=1,ppn=4
@@ -101,6 +111,7 @@ time ansysdis140 $ANSYS_OPTS < $JOB_NAME
 </pre>
 
 h3. Distributed Parallel
+
 <pre>
 #$ -N ansys_job_name
 #$ -l h_rt=hh:mm:ss,aa_r=2,aa_r_hpc=6,pcpus=8
@@ -114,6 +125,7 @@ time ansysdis140 $ANSYS_OPTS < $JOB_NAME
 Where @$JOB_NAME@ and is the name of the input file you are using.  
 
 h2. Licensing
+
 Since we have a limited number of ANSYS licenses, you'll need to specify some options when running your job.  You can see how these options are set in the above sample scripts.
 
 *For 1-2 processor ANSYS jobs*, the option @aa_r@ is all you need to be concerned with.  You can set this to one in either case.  This will insure that your job does not try to run when there are no licenses available and thus failing (potentially after waiting for some time in the queue... this can be aggravating).
@@ -121,16 +133,19 @@ Since we have a limited number of ANSYS licenses, you'll need to specify some op
 *For 3-8 processor ANSYS jobs*, you'll need to set @aa_r@ to 2. You'll also need to set `aa_r_hpc` to `($NSLOTS-2)` or the number of processors minus two.  That figure, unfortunately, must be calculated and included before submitting your job as there is no automatic way to accomplish this.  This will be fixed in the next release of !GridEngine.  You can determine `feature` from this table:
 
 h4. Figure 1
+
 |*Feature*|*Description* |
 | aa_mcad     | Academic Research |
 | aa_r        | Academic Research * |
 | aa_r_hpc    | HPC License |
 
 h3. More Job Information
+
 See the following for more detailed job submission information:
 ** [[gridEngineUsers|SGE User's Guide]]
 ** [[gridEnginePolicy|Scheduling and Dispatch Policies]]
 ** [[gridEngineTechn|Advanced Submit Techniques]]
 
 h3. Reporting Bugs
+
 Report bugs to the IT Help Desk: help@usf.edu
