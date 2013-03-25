@@ -1,0 +1,73 @@
+= snapshot-restore =
+
+The Circe utility `snapshot-restore` is useful in situations where a user accidentally deletes an important file, and would like to restore the file from our backup infrastructure. The best way to understand how to use it is by example:
+
+Suppose the user jdoe is working on his dissertation, and accidentally deletes the file `~jdoe/Dissertation.doc` or `S:\Dissertation.doc`
+
+Instead of panicking, we merely execute snapshot-restore:
+
+{{{
+[jdoe@login0 ~]$ snapshot-restore
+Welcome to the Circe Backup Restoration Utility!
+
+Here is the range of available snapshots:
+Snapshots exist between 2011-04-25 and 2011-05-04
+NOTE: You may or may not have existing data on all of these dates!
+
+Please enter a date in YYYY-MM-DD format that you wish to restore from:
+}}}
+
+Helpdesk staff can run:
+{{{
+[staff@login0 ~]$ sudo -u jdoe snapshot-restore
+}}}
+to restore files for other users.
+
+The user is given a range of dates in which snapshots exist. He types 2011-05-03, since it is the most recent:
+{{{
+Please enter a date in YYYY-MM-DD format that you wish to restore from: 2011-05-03
+You chose 2011-05-03...
+
+Now in File Restore Environment
+Restricted Command Set: cd <dir>, exit, ls, restore <file/dir>
+backupsh jdoe>
+}}}
+
+Now the user can change directories(cd <dir>), do a directory listing(ls), 
+and restore a file or directory (restore <file/dir>). We can do an ls to look for the lost Dissertation.doc:
+
+{{{
+Restricted Command Set: cd <dir>, exit, ls, restore <file/dir>, orestore <file/dir>
+backupsh jdoe> ls
+.
+..
+.bash_history
+.bash_logout
+.bash_profile
+Dissertation.doc
+stuff
+backupsh jdoe>
+}}}
+
+We see that `Dissertation.doc` exists and we restore it:
+
+{{{
+backupsh jdoe> restore Dissertation.doc
+Restoring file Dissertation.doc to /home/j/jdoe/Dissertation.doc-2011-05-03
+sending incremental file list
+Dissertation.doc
+       11342 100%    0.00kB/s    0:00:00 (xfer#1, to-check=0/1)
+
+sent 11447 bytes  received 31 bytes  22956.00 bytes/sec
+total size is 11342  speedup is 0.99
+}}}
+
+We can exit, and user `jdoe` will find the file in his home directory or `S:` drive, appended with the snapshot date in the filename:
+
+{{{
+backupsh jdoe> exit
+[jdoe@login0 ~]$ ls Dissertation.doc*
+Dissertation.doc-2011-05-03
+}}}
+
+The user now has a copy of the lost file from the date it was backed up.

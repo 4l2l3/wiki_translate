@@ -1,0 +1,72 @@
+= Developer Portal =
+
+The Developer Portal will provide valuable resources for building, benchmarking, and developing scientific codes on the system.  This will include tutorials and documentation on the following:
+
+ * Using the various compilers like Intel, Portland Group, GNU Compiler Collection, and Sun Studio
+ * Documentation on various tools
+ * Debugging parallel applications
+ * Performance Profiling and Optimization
+ * Introductions to C, C++, Fortran, High-Performance Fortran, and Java
+ * Using libraries and API's such as MPI, FFTW, GSL, and Matlab
+ * Links to publications on useful computational methods and computer science resources
+
+ * '''Note''': The Developer Portal is very much a work in progress.  More of the items described above will be added in the future.
+
+== 1. Compilers ==
+ 1. Intel C++/Fortran v9.1
+    * Manual 1
+    * Manual 2
+    * Manual 3
+    * Tutorials
+ 2. Portland Group Compilers v7.0
+    * Manual 1
+    * Manual 2
+    * Manual 3
+    * Tutorials
+ 3. GNU Compiler Collection (gcc) v4.1
+    * Manual 1
+    * Manual 2
+    * Manual 3
+    * Tutorials
+ 4. Sun Studio 11
+    * Manual 1
+    * Manual 2
+    * Manual 3
+    * Tutorials
+== 2. Code Debugging ==
+ 1. The GNU Debugger (gdb)
+    * Tutorials
+    * Manual
+ 2. The Portland Group Debugger
+    * Tutorials
+    * Parallel Debugging
+    * Manual
+ 3. Intel Debugger
+    * Tutorials
+    * Parallel Debugging
+    * Manual
+== 3. Code Profiling & Optimization ==
+ 1. Gprof
+    * Tutorial
+    * Manuals
+ 2. Portland Group Profiler (pgprof)
+    * Tutorial
+    * Manuals
+ 3. Intel Vtune
+    * Tutorial 
+    * Manuals
+ 4. Basic Optimization Methods
+== 4. Programming Languages ==
+ 1. C
+ 2. C++
+ 3. Fortran
+ 4. High-Performance Fortran
+ 5. Java
+== 5. Libraries and APIs ==
+ 1. BLAS/LAPACK
+ 2. ScaLAPACK
+ 3. GSL
+ 4. Message Passing Interface (MPI/MPI2)
+ 5. FFTW3
+ 6. Interfacing Matlab with C/C++/Fortran
+== 6. Further Information ==

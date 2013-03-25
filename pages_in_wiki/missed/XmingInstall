@@ -1,0 +1,77 @@
+= Xming =
+----
+[[PageOutline]]
+'''Last Modified:''' [[LastModified(XmingInstall)]]
+== Description ==
+
+Xming is an Xserver for Win32 clients which allows remote graphical applications to be utilized on a Windows host without a lot of complicated setup.  It utilizes X11 forwarding to accomplish this.
+
+== Version ==
+
+Varies
+
+== Installation ==
+
+Follow the steps below to download and install Xming for Windows.  Most users will want to install with PuTTY so the sections on OpenSSH can be ignored.
+
+ * '''Note''': If you are running '''Fluent's Gambit''', please make sure you follow the instructions to install OpenSSH, otherwise you will not be able to run the program correctly.
+
+=== Xming Directions ===
+   1. Click [http://rc.usf.edu/downloads/xming-setup.exe here] to download the Xming setup.
+   2. Double click on the icon labeled "xming-setup."
+   3. Click next on the introduction screen. 
+   4. Click next on the screen prompting you for which directory you wish to install in (note: the default is recommended). 
+   5. Make sure "Full Installation" is selected, and click next again. 
+   6. Click next when it asks where to install start menu shortcuts.
+   7. Make sure "Associate Xlaunch.exe with the .xlaunch file extension" checkbox is selected, and click next.
+   8. Click Install on the summary page.
+   
+This should work with the standard SSH client as long as you enable "X11 Tunneling" under the Edit->Settings... menu.  The appropriate option is under Profile Settings->Tunneling.  You can the check "Tunnel X11 connections" to enable this feature.  
+
+You can then launch Xming by double-clicking the desktop icon.  Now, any SSH connection you make to Circe will allow you to display graphical applications on your work station.
+
+You can download the SSH client from here: https://rc.usf.edu/isos/SSH/sshsecureshellclient-3.2.9.exe
+You will be required to enter your NetID and password in order to proceed with the download.
+
+=== Using PuTTY ===
+These instructions are for users who wish to use PuTTY.
+   1. Click [http://rc.usf.edu/downloads/pputty-setup.exe here] to download the Putty utility set.
+   2. Double click on the icon labeled "pputty-setup.exe"
+   3. Click next on the introduction screen.
+   4. Click next on the screen prompting you for which directory you wish to install in (note: the default is recommended).
+   5. Click next when it asks where to install start menu shortcuts.
+   6. Click next when it asks you to select additional tasks.
+   7. Click Install on the summary page. 
+
+=== Install OpenSSH for Windows ===
+This is for applications which require Trusted X11 support such as Fluent's Gambit
+
+   1. Download the OpenSSH 3.81 installer from [http://rc.usf.edu/downloads/openssh-setup.zip here]
+   2. Double-click on the file to open the archive extractor and then double-click '''setupssh.exe''' to start the installation
+   3. Accept all of the default values and complete the installer by clicking next.
+
+=== Configure an Xlaunch file ===
+
+   1. Go to Start -> Programs -> Xming > Xlaunch
+   2. On the first screen, select "Multiple Windows." This will make the remote application forwarding more like a normal windows application.
+   3. On the next screen, it will ask how to start Xming. Select the "start a program" radio button, and click next.
+   4. Where it says "Start Program", type the name of the program you wish to start when you select the Xlaunch icon. If you wish to use this as a generic starting point for remote applications on the cluster, you may want to use ''' /bin/bash --login -c /usr/bin/xterm ''', as executing commands from within it will automatically forward those window as well. Gnome-Terminal is not yet supported at this time.
+
+==== With PuTTY ====
+   5. In the dialog that says "Run Remote", select "Using PuTTY (plink.exe)". This will allow integration with the Portable Putty utility set you previously installed.
+   6. In the box that says "Connect to computer", type the hostname of the server you wish to connect to.  See [wiki:CirceConnect "Connecting to Circe"] for login details for the Circe cluster.
+   7. In the box that says "Login as user", enter your netid.
+   8. Leave the password box blank, and click next.
+   9. Click next on the next screen.
+   10. Click the "Save Configuration" button on the next screen, and save the Xlaunch shortcut in an easily accessable location (such as your Desktop). 
+
+==== With OpenSSH ====
+   5. In the dialog that says "Run Remote", select "Using SSH (ssh.exe).  This will allow integration with your OpenSSH installation.
+   6. In the box that says "Connect to computer", type the hostname of the server you wish to connect to.  See [wiki:CirceConnect "Connecting to Circe"] for login details for the Circe cluster.
+   7. In the box that says "Login as user", enter your username.
+   8. Leave the password box blank, and click next.
+   9. A file selector dialog will open to find the executable for '''ssh.exe'''.  You will need to select the file '''C:\Program Files\OpenSSH\bin\ssh.exe''' and click 'Open'
+   10. On the next screen, add '''-Y''' to the field that says '''Additional parameters for PuTTY or SSH''' and click 'Next'
+   11. Click the "Save Configuration" button on the next screen, and save the Xlaunch shortcut in an easily accessable location (such as your Desktop).
+
+You should be able to double-click on the created .xlaunch file to connect to the system.  You'll need to provide your password when you log in.

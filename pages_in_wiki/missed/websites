@@ -1,0 +1,44 @@
+= Websites =
+
+
+
+Webspace is provided by IT for all students at the University of South Florida. 
+
+
+=== Create a CIRCE account ===
+Before you can begin to add content to your site you need to have a CIRCE/myWeb account. If you login to CIRCE/myWeb using an SCP client, which is discussed below, the account will be created for you automatically.
+
+=== Creating a website ===
+There are a number of tutorials online about creating an HTML website by hand. You can find a tutorial using your favorite search engine like [http://www.bing.com/ Bing], [http://www.google.com/ Google], [http://www.ask.com/ Ask.com] and the keywords: html and tutorial.   
+
+If you want to avoid writing raw HTML code by hand you can use a WYSIWYG HTML editor. There are a number of graphical WYSIWYG (What-You-See-Is-What-You-Get) applications, some of the most common ones are Microsoft Word, Dreamweaver, !SeaMonkey, and !OpenOffice. 
+
+=== Connecting to !MyWeb, Uploading, and Editing Your Website ===
+Users wanting a !MyWeb website should copy or edit their files into the public_html directory under in their home directory. 
+
+When configuring your SCP client use these settings:
+
+'''Server: ssh.myweb.usf.edu[[BR]]
+Username: netid[[BR]]
+Password: netid password[[BR]]'''
+
+'''Note''': Users who were migrated from the College of Arts and Science webserver, shell.cas.usf.edu, should copy or edit their HTML files located in the shell_public_html directory in their home directory.
+
+'''Users off campus should have the VPN running''' prior attempting to connect with SCP, see VPN documentation '''[ http://net.usf.edu/vpn/ ] '''
+
+=== Accessing your website ===
+
+Once you have uploaded your site you can view it by entering the following URL, where <netid> is your USF NetID: '''!http://<netid>.myweb.usf.edu'''
+
+
+
+=== Links to Software Available for Download ===
+
+[http://winscp.net/ WinSCP] SCP file transfer client for Windows XP, Vista and 7.
+
+[http://rsug.itd.umich.edu/software/fugu/ FUGU] SCP file transfer client for OS X.
+
+[http://www.seamonkey-project.org/ SeaMonkey]  The open source, Mozilla-based, WYSIWYG HTML editor.
+
+
+ 

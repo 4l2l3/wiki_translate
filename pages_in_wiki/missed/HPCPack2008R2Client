@@ -1,0 +1,6 @@
+= Microsoft HPC Pack 2008 R2 Client =
+The client may be downloaded from this page: http://www.microsoft.com/download/en/details.aspx?id=17017
+
+When asked to select a '''Head Node''' to connect to, specify '''rcwhpc-master.forest.usf.edu'''.
+
+More specific directions on using the client will be provided soon...

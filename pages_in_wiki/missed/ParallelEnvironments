@@ -1,0 +1,41 @@
+= More About Parallel Environments =
+----
+[[PageOutline]]
+
+
+Parallel Environments are a feature of !GridEngine that allows it to interface with various parallel libraries such as MPI, PVM, or Charm++.  They allow the scheduler to properly dispatch, distribute, manage, and account for parallel processes.  In this section, we will see what parallel libraries are supported on Circe and how to use them.
+
+== Available Environments ==
+The following is a table of available parallel environments:
+
+|| '''Name''' || '''Library''' || '''Description''' ||
+|| ompi*      || OpenMPI       || Interfaces with OpenMPI which provides support for all available interconnects. ||
+|| smp        || PThreads, OpenMP || Provides slots on only one node to run multi-threaded applications. ||
+|| hpmpi*     || HP MPI        || Used by applications such as Ansys to provide MPI support.  Supports all available interconnects. ||
+
+== Using Parallel Environments ==
+In your job script, you will need to add the following line:
+{{{
+#$ -pe <pe_name> <#procs>
+}}}
+
+where <pe_name> specifies the name of the parallel environment from the above list, and <#procs> specifies the desired number or range of processors.  Some examples are provided below:
+
+{{{
+#!/bin/bash
+#$ -N my_parallel_job
+#$ -cwd
+#$ -j y
+#$ -o output.$JOB_ID
+#$ -pe ompi* 4-8
+#$ -l i_ib=true
+#$ -l h_rt=08:00:00
+#$ -l mem_request=3.5G,h_data=3.5G
+
+sge_mpirun my_application
+}}}
+ * Script uses OpenMPI environment
+ * Request at least 4 processors but no more than 8
+ * Make sure we use !InfiniBand, set our runtime, and define our memory requirements.  See [wiki:UsingComplexes "Using Complexes"]
+
+For more information, contact support at help@usf.edu

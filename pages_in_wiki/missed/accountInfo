@@ -1,0 +1,16 @@
+= Account Information =
+During registration for an account, you may wonder what the question "Is this account for research purposes?" is really asking.  This page should clear up any confusion.
+
+== Research Purposes ==
+Includes students who are engaged in research activities for the purposes of obtaining data for
+ a. Peer-reviewed publication
+ b. Conference or symposium presentations
+ c. Sponsored graduate thesis work
+ d. Sponsored undergraduate thesis work
+Do not select the check-box on the account sign-up page unless you fall under one of the above categories.  Research accounts are given access to the High-Performance Computing hardware queues and a quota space of 50GB.  They are also entitled to utilize any available scientific software and receive direct support from IT Research Computing staff.  Be advised that you will need to provide your faculty sponsor's NetID in order to register for a research account.  Your sponsore will be notified of the request and will need to validate your research status before it can continue.
+
+== Non-Research Purposes ==
+This includes students who require the use of Linux-based resources for class assignments, projects, or personal development.  Non-Research accounts will be given a 100MB quota and will have access to core applications such as Matlab, Maple, Mathematica, open-license compilers and IDEs, and standard Linux tools.  Non-Research accounts will be created immediately after registration and acceptance of our terms of use.
+
+== Changing Your Account Status ==
+In order to migrate from a Non-Research account to a Research account, you will need to revisit the account sign-up page.  It should detect that you already have an account and provide you with the option to upgrade your account and to enter a faculty sponsor NetID.  Once your account upgrade status is approved by a faculty sponsor, you will be unable to use your account for a short period while your quota and credentials are being changed.  You will be notified once the changes are complete.

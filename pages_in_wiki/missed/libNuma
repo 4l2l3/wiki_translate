@@ -1,0 +1,13 @@
+= NUMA Information =
+Research Computing hosts two machines that are designed for fine-grained parallel applications.  Each machine has four to eight processor cores and 32GB of main memory.  OpenMPI will pick the best interconnect by default and, on those hosts, can use the system's libnuma libraries to set processor and memory affinity which in many cases, will help performance. 
+
+To enable processor affinity, add `--mca mpi_paffinity_alone 1` to your `sge_mpirun` command, like so:
+{{{
+sge_mpirun --mca mpi_paffinity_alone 1 my_application
+}}}
+For more information on this feature, please visit http://www.open-mpi.org/faq/?category=tuning#using-paffinity
+
+To request a shared-memory NUMA host for your job, specify the following in your job script:
+{{{
+#$ -l l_numa=true
+}}} 

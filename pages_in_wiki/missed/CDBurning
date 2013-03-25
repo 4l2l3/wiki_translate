@@ -1,0 +1,23 @@
+= Burning CDs from ISO files =
+
+Just about all the software, such as Matlab and Femlab, that you download from
+our FTP site will come in the form of CD ISO images. These files are an image
+of the original installation disks. To burn these images you will need to have
+software to burn the images to a blank CD. For those of you that do not have
+recording software, we have found a free program called !ImgBurn. !ImgBurn will
+burn the ISO files that you download from Research Computing, including several other CD image
+formats. Below are some basic instructions on how to obtain and use !ImgBurn to
+record CDs.[[BR]]
+
+NOTE: This guide assumes that you already have the CD images downloaded
+to your computer. If not please download the images first and then return to
+this guide.[[BR]]
+
+ * The first step is to get !ImgBurn. Click on http://fileforum.betanews.com/detail/ImgBurn/1128426215/1 to download the software.[[BR]][[BR]]
+ * Once the software is downloaded click on the file to start installing !ImgBurn. We recommend leaving all the default settings.[[BR]][[BR]]
+ * After the installation completes you should have an icon called !ImgBurn on your desktop. You should also have an icon in '''Start''' -- '''Programs''' -- '''!ImgBurn''' called !ImgBurn. You may start the software however you wish.[[BR]][[BR]]
+ * Start the software and if you haven't already inserted your blank CD into your drive, be sure to do it now.[[BR]][[BR]]
+ * Underneath the File menu you should see an area labeled Source. In this section it should say '''Please select a file...''' with a folder icon to the right of it. Click on the folder icon, this should bring up a window to select a CD image file.[[BR]][[BR]]
+ * Browse to the folder where you downloaded the image file(s). Select the file that you wish to burn and click open. This will close the open window and return you to the main program window.[[BR]][[BR]]
+ * To begin recording click on the button at the bottom of the main window with the picture of the drive and an arrow pointing to a CD.[[BR]][[BR]]
+ * Once the recording is done, you may remove the CD. If you are burning more that one image, repeat the same process for the other disks. Once you are all finished close !ImgBurn and proceed with installing your software from the newly created disks.[[BR]][[BR]]
