@@ -1,0 +1,35 @@
+h1. How do I enable [[Webdav]] for my USF myWeb account?
+
+
+To enable [[Webdav]] on your USF myWeb account, first login to CIRCE using these directions [http://rc.usf.edu/trac/doc/wiki/CirceConnect CirceConnect].Once logged into CIRCE, you will be presented with a prompt like the one below and from here you will run the command: enable-dav.
+<pre>
+[joeuser@host ~]$ enable-dav
+</pre>
+
+Depending on the size of your home directory it may take a few minutes for the *enable-dav* command to complete. Once the command has finished a file called .htpasswd.dav will be placed into your home directory, /dav will be added to your public_html/ directory, inside of the dav directory there will be a file called .htaccess. Now you will be able to upload and download files using the [[Webdav]] protocol using a client like BitKinex. 
+
+h2. [[Webdav]] Server settings for myWeb
+
+
+*Http/Webdav server:* netid.myweb.usf.edu 
+*Directory:* /dav 
+*Username:* NetID 
+*Password:* NetID Password 
+
+
+h2. Instructions for configuring BitKinex [[Webdav]] client
+ 
+
+http://rc.usf.edu/trac/doc/raw-attachment/wiki/Webdav/mywebwebdav.pdf 
+
+h2. Controlling access to your /dav folder
+
+
+To add users that have a NetID, open ~/public_html/dav/.htaccess and simply list them after your
+NetID on the 'Require ldap-user' line.  Separated by space.
+
+To add non-NetID users, use the following command:
+<pre>
+[joeuser@login1 ~]$ htpasswd ~/.htpasswd.dav <username>
+</pre>
+

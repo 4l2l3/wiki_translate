@@ -1,0 +1,38 @@
+h2. Accessing Migrated Sunblast/Sungiant Directories
+
+*Last Modified*: [[LastModified(SunblastData)]]
+
+Due to hardware failure, all user data on sunblast.eng.usf.edu and sungiant.eng.usf.edu
+has been moved to the CIRCE environment. In order to obtain access to their data, 
+all sunblast/sungiant users that do not have a CIRCE account will need apply for one at
+[https://rc.usf.edu/signup/account.php].
+
+*Please note:* To sign up for a CIRCE account a user must first have a USF NetID. If a user
+does not have a NetID, they may apply for one at [https://netid.usf.edu/una/].
+
+h3. Current CIRCE users
+
+If a user currently has an account on CIRCE, they may simply change their directory 
+to @~/eng_home_dir@.  Data is also accessible via their home share on the Esamba system.
+
+For example, if a user’s CIRCE login name is @enguser@, they can see their original engineering
+data by entering the following at the command prompt:
+
+<pre>
+[enguser@login0 ~]$ cd ~/eng_home_dir
+</pre>
+
+
+h3. New CIRCE users
+
+If a new CIRCE account is created, and the user's new CIRCE login name *MATCHES EXACTLY*
+with their sunblast/sungiant login name, they may access their migrated directory using the
+same method listed above.
+
+For new accounts where a user’s CIRCE and sunblast/sungiant login names differ, or if there
+appears to be a problem with the account, please send a support request to [help@usf.edu].
+
+h3. Questions/Problems
+
+For any questions or problems with accessing your data please send a support request to
+[help@usf.edu].

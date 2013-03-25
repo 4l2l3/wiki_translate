@@ -1,0 +1,26 @@
+unning Matlab on Circe =
+There are two ways to run Matlab on Circe depending on the runtime of your particular job.
+h2. Jobs Longer than 20 Minutes in Length
+
+To run Matlab jobs on Circe, users will need to submit their jobs to the scheduling environment if their jobs take more than 20 minutes to run on a standard PC.
+
+If, for example, you have a Matlab script file named test.m with all your functions defined in it, you would set up a submit script like this:
+
+<pre><code class="/bin/bash">
+#$ -cwd
+#$ -l h_rt=00:20:00
+#$ -j y
+#$ -N matlab_test
+#$ -o output.$JOB_ID
+
+source /etc/apps.d/matlab.sh
+matlab -nodisplay -r test
+</code></pre>
+
+If you would rather call a function instead of using a file, make sure the file which contains it is the function's name.m.  For example, if you want to call function addtwo, make sure it is defined in a file named addtwo.m.
+
+Matlab will automatically detect any other .m files in the same directory and be able to execute functions within those files.
+
+h2. Jobs Shorter than 20 Minutes in Length (most common)
+
+Simply type <pre> matlab </pre> at the command line.  If you have properly configured an X11 session, you should see the full Matlab interface.  If you haven't configured X11, you will be able to use the console interface.  For users wishing to use the graphical interface over X11, please see our [[XWin32Install|XWin32 Installation]] documentation.

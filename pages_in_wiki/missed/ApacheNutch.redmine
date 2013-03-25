@@ -1,0 +1,136 @@
+h1. Apache Nutch
+
+[[PageOutline]]
+
+h2. Description
+ 
+Apache Nutch is an open source web-search software project. Stemming from Apache Lucene, it now builds on Apache Solr adding web-specifics, such as a crawler, a link-graph database and parsing support handled by Apache Tika for HTML and and array other document formats.
+
+** "Apache Nutch":http://nutch.apache.org/index.html
+
+h2. Version
+
+** *1.6*
+
+h2. Authorized Users
+
+** @circe@ account holders
+
+h2. Platforms
+
+** @circe@ cluster
+
+h2. Running Apache Nutch Jobs on the Cluster
+
+
+h3. [[Modules]] 
+To run Apache Nutch on the cluster, ensure that you use @module add@ prior to using the Apache Nutch "nutch" executable.  See [[Modules]] for more information.
+
+<pre>
+module add apps/nutch/1.6
+</pre>
+
+
+h3. Before submitting a job
+
+Before you submit a nutch job to CIRCE, you will need to create the following directories within the location that you'll be running nutch from:
+
+* logs
+* urls
+
+<pre>
+mkdir logs urls ./
+</pre>
+
+You will need to copy over the "conf" directory into your submission directory:
+
+<pre>
+cp -R /apps/nutch/1.6/conf ./
+</pre>
+
+If you plan on running from the command line, copy and paste these commands into the terminal in order to configure the environment properly.
+
+<pre>
+export HADOOP_CONF_DIR=conf/
+export NUTCH_CONF_DIR=conf/
+export HADOOP_LOG_DIR=logs/
+export HADOOP_LOGFILE=logs/hadoop.log
+export NUTCH_LOG_DIR=logs/
+export NUTCH_LOG_FILE=logs/hadoop.log
+</pre>
+
+At a minimum, the files "conf/nutch-site.xml", "conf/regex-urlfilter.txt", and "urls/seed.txt" should be modified.  Please see the URL http://wiki.apache.org/nutch/NutchTutorial for guidelines on how these files should be configured.
+
+To run Nutch, use the following command.
+
+<pre>
+nutch crawl urls -dir crawl -depth 1
+</pre>
+
+
+h3. How to Submit a Job
+
+Provided below is a simple batch script for running Apache Nutch as a single processor job. The script should   be copied into your work directory, preferably under a name such as "nutch_job", so that you can submit batch processes to the queue.  For help on submitting jobs to the queue, see our [[gridEngineUsers|GridEngine User's Guide]]
+
+h3. Serial Submit Script
+
+<pre>
+#$ -N nutch_job_name
+#$ -l h_rt=hh:mm:ss
+#$ -cwd
+#$ -j y
+#$ -o output.$JOB_NAME.$JOB_ID
+
+module add apps/nutch/1.6
+
+# These paths are relative to the current working directory
+# but can be changed to any location that makes sense
+
+export HADOOP_CONF_DIR=conf/
+export NUTCH_CONF_DIR=conf/
+export HADOOP_LOG_DIR=logs/
+export HADOOP_LOGFILE=logs/hadoop.log
+export NUTCH_LOG_DIR=logs/
+export NUTCH_LOG_FILE=logs/hadoop.log
+
+nutch crawl urls -dir crawl -depth 1
+
+</pre>
+
+h3. More Apache Nutch Documentation
+
+Please see the URL http://wiki.apache.org/nutch/NutchTutorial for more information on using Apache Nutch and its command line options, as the samples above most likely will not suit your needs.
+
+h3. Viewing Results
+
+In order to view the results, you will need to manually export the variables again on the console, otherwise you will receive an error.  Please note again that the syntax below assumes that you're within the job directory which contains the relative path to the log file.  Simply copy and paste the "export" commands below into the prompt.
+
+<pre>
+export HADOOP_LOG_DIR=logs/
+export HADOOP_LOGFILE=logs/hadoop.log
+export NUTCH_LOG_DIR=logs/
+export NUTCH_LOG_FILE=logs/hadoop.log
+</pre>
+
+You can then perform a simple dump of the content:
+
+<pre>
+nutch readseg -dump crawl/segments/* dump_dir
+</pre>
+
+Note that "dump_dir" does not need to be the name of the directory to be created containing the dump file, it can be anything that makes sense to you. 
+
+Once the dump is finished, there will be a file called "dump" within the "dump_dir".  You can use any text editor to view the file, as it is plain text.
+
+There are may other options to Apache Nutch, and again viewing the URL http://wiki.apache.org/nutch/NutchTutorial is highly advisable.
+
+h3. More Job Information
+
+See the following for more detailed job submission information:
+** [[gridEngineUsers|SGE User's Guide]]
+** [[gridEnginePolicy|Scheduling and Dispatch Policies]]
+** [[gridEngineTechn|Advanced Submit Techniques]]
+
+h3. Reporting Bugs
+
+Report bugs to the IT Help Desk: help@usf.edu

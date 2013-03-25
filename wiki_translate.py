@@ -31,6 +31,7 @@ def do_headers(text_in):
 	pg_out = re.compile('-*\r\n\[\[PageOutline\]\]\r\n').search(text_out)
 	if pg_out:
 		text_out = text_out.replace(pg_out.group(),'')
+	text_out = text_out.replace('[[BR]]','')
 	return text_out
 
 def stylings_replace( pattern, text_in, trac_style, redmine_style ):
@@ -314,10 +315,10 @@ def translate(trac_text):
 
 	return trac_text
 
-page_file = open("pages",'r')
+page_file = open("missed_pages",'r')
 
 for line in page_file:
-	file_loc = "pages_in_wiki/" + line.rstrip('\n')
+	file_loc = "pages_in_wiki/missed/" + line.rstrip('\n')
 	#Get file contents
 	input_file = open(file_loc,'r').read()
 

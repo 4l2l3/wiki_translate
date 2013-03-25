@@ -1,0 +1,14 @@
+h1. Myrinet Interconnect Information
+
+Research Computing hosts two hardware pools which are connected by Myrinet using the MX driver stack.  The MX driver stack is a more efficient and modern implementation of the kernel and user-space software required to interact with the Myrinet hardware.  For most purposes, users will be shielded from these details by whatever MPI library they choose to develop or compile code with.
+
+h2. Selecting Myrinet for Job Runs
+
+IF your parallel process requires a high-speed interconnect fabric and your testing reveals that you run best on Myrinet, you can tell the scheduler to only run your job on Myrinet-connected machines by passing
+<pre>
+#$ -l i_mx=true
+</pre>
+in your job script.  
+h2. Parallel Environments
+
+Parallel environments that support Myrinet are outlined in the [[ParallelEnvironments|Parallel Environments"] page.  The two that work with Myrinet are *ompi** and *hpmpi**.  More information on selecting a parallel environment can be found in the [[ParallelEnvironments "Parallel Environments]]] page.

@@ -1,0 +1,34 @@
+h1. Mounting an ISO in Windows
+
+
+There is an alternative to burning a CD every time you want to install a program from an ISO. A quicker alternative would be to 'mount' the ISO as a virtual device and access it as you would a regular CD. There are a few advantages to this. You don't need to use media just to read the data. Access times are quicker because the ISO is being read from the hard drive. One downside is that you have to store the ISO on your hard drive to read it.
+
+The first step should be to download a program that can mount the ISO's. Daemon Tools is good for this, but there are many other programs that can do the same thing. For the purposes of this tutorial, however, we will look at Daemon Tools.
+
+h2. Installing Daemon Tools
+ 
+
+Download Daemon Tools at http://www.daemon-tools.cc/dtcc/download.php and run through the installer. When it prompts you about the built-in search bar tool, you can hit cancel at that point and the program will still be installed properly.
+
+h2. Running Daemon Tools
+
+
+There isn't much configuration to be done before it's ready to be used. You will know that Daemon Tools is running if you see the small red lightning bolt in your programs list next to the clock. If it's not open, go ahead and run it. Then, right click the red bolt icon and follow the picture below to enable 4 devices.
+
+!htdocs:/images/setnodev.JPG!
+
+To mount an ISO, right-click the icon again (this is how every operation starts with Daemon Tools). Get to the menu shown below and click on 'Mount Image'.
+
+!htdocs:/images/mountone.JPG!
+
+You should see the following screen. Here, I will select the first Comsol iso to mount.
+
+!htdocs:/images/openiso.JPG!
+
+When you mount the image, it will probably 'autorun' and bring up a menu of some sort, usually to install the software on the image. Now that the image is mounted, Windows thinks it's an actual CD/DVD in a drive. Below is a screenshot of the devices in 'My Computer'.
+
+!htdocs:/images/virtdrive.JPG!
+
+To unmount, find the virtual device from the Daemon Tools menu and 'Unmount Image', as below.
+
+!htdocs:/images/unmount.JPG!

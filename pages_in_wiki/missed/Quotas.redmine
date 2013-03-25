@@ -1,0 +1,17 @@
+h1. Home Directory [[Quotas]] 
+Each user has been assigned a quota depending on their level of access to the system.  Standard users, or those who are not using the system for High-Performance computing-related work, receive a 4GB quota by default.  High-Performance users receive a 50GB quota for their use.
+
+h2. Checking Directory Usage
+
+<pre>
+[user@host ~]$ quota -s
+Disk quotas for user jdoe (uid 100000000): 
+     Filesystem  blocks   quota   limit   grace   files   quota   limit   grace
+rcnfs01:/export/home_1/j
+                   2011M    4G    4G              200     0       0
+</pre>
+You can see here that user jdoe is using around 2GB of his 4GB quota.
+
+h2. What happens when you go over quota
+
+You will have 7 days to reduce your usage to a level under the hard limit.  You have a buffer of 50MB prior to the hard limit which is considered the soft limit.  You will receive warnings when you log into the system when you have reached the soft limit.  After 7 days, you will not be able to modify your directory, except to remove files.  You may need administrator intervention to regain access to your account.  Contact help@usf.edu if you have an issue.

@@ -1,0 +1,169 @@
+h1. USF VPN Client
+
+
+The VPN helps keep our system isolated from outside network traffic, keeping them safer from prying eyes and people that shouldn't be poking around.  It is required that you use the VPN when connecting to Circe from off-campus.
+
+For Windows and Mac OSX hosts, please see Information Technology's page on the VPN Client: http://it.usf.edu/itc/vpn-client
+
+If you're a Linux user, please read below.
+
+h2. Linux SSH Proxy Configuration (Recommended method)
+
+This method establishes an SSH proxy connection through an intermediate host, proxy.rc.usf.edu, to connect to Circe.  Follow the instructions below on any Linux computer from which you will connect to Circe.  You will only need to perform these steps once per machine.
+
+1. Add the following to the @~/.ssh/config@ file on your Linux computer
+   <pre>
+Host circe
+IdentityFile ~/.ssh/circe_id_rsa
+ProxyCommand ssh -q -W login:%p proxy.rc.usf.edu
+</pre>
+
+2. Create a public/private key pair for authentication by running the following command.  Absolutely set a passphrase that you'll remember!!!
+   <pre>
+$ ssh-keygen -t rsa -f ~/.ssh/circe_id_rsa
+</pre>
+
+3. Copy your key to Circe.  You will be prompted for your password twice:
+   <pre>
+$ ssh-copy-id -i ~/.ssh/circe_id_rsa circe
+</pre>
+
+You can now log in to Circe using key-based authentication with the ssh/scp/sftp/rsync commands.  If you are using Gnome or KDE desktop environments, you will be asked only once for your key passphrase.  
+
+For other desktop environments or to connect from remote servers, please do the following before logging in:
+
+<pre>
+$ eval $(ssh-agent)
+Agent pid 21550
+$ ssh-add ~/.ssh/circe_id_rsa
+</pre>
+
+h2. VPN Client Linux Installation Instructions (Very Alpha-quality, for the brave few who wish to try it)
+
+BE ADVISED THAT THIS METHOD IS PROVIDED AS-IS WITH NO SUPPORT FROM I.T. OR RESEARCH COMPUTING STAFF!  IT MAY WORK, IT MAY NOT WORK.
+
+Download the Linux USF VPN client from here (USF NetID and Password required): https://rc.usf.edu/isos/vpnlinux/usfvpn-0.1.tar.gz
+
+Extract the archive like so:
+
+<pre>
+$ tar xzvf usfvpn-0.1.tar.gz
+</pre>
+
+h4. Prerequisites
+
+This package should work on 64-bit and 32-bit linux systems and should be distribution-agnostic.
+
+For 32 bit systems, you will need to ensure you have the following installed prior to attempting installation:
+
+** gcc
+** python and python-devel
+** openssl
+** pexpect
+
+For 64 bit systems, you will need to ensure you have the following installed prior to attempting installation:
+
+** gcc
+** python.i686 and python-devel.i686
+** openssl.i686
+** pexpect
+
+Please note that some distributions use i386 or i586 versions.  If you get any errors during the install process below stating that i686 doesn't exist, use i386 or i586 instead, although i686 should be fine.
+
+These can all be found in your distribution's software repositories and can be installed via apt-get on !Ubuntu/Mint/Debian, or via yum on !Fedora/RedHat/CentOS, i.e:
+
+For 32 bit non Ubuntu systems
+
+<pre>
+$ su -c 'yum install gcc openssl python python-devel pexpect'
+</pre>
+
+For 64 bit non Ubuntu systems
+
+<pre>
+$ su -c 'yum install gcc openssl.i686 python.i686 python-devel.i686 pexpect'
+</pre>
+
+on Ubuntu 11.10 32 bit:
+<pre> 
+$ sudo apt-get install build-essential openssl python python-dev python-pexpect
+</pre>
+
+on Ubuntu 11.10 64 bit:
+<pre> 
+$ sudo apt-get install build-essential openssl python python-dev python-pexpect ia32-libs
+</pre>
+
+on Ubuntu 10.0.4:
+<pre>
+$ sudo apt-get install build-essential openssl python-pexpect
+</pre>
+
+Now, you'll need to add a repository to get python 2.7, as the VPN client requires this version.
+
+You'll need to edit /etc/apt/sources.list and add the following lines to the bottom of the file and then save the changes:
+
+deb http://ppa.launchpad.net/fkrull/deadsnakes/ubuntu lucid main
+
+deb-src http://ppa.launchpad.net/fkrull/deadsnakes/ubuntu lucid main
+
+Once you have done this, you'll need to open https://launchpad.net/~fkrull/+archive/deadsnakes and then click on the link that reads "Technical details about this PPA".  Look for where it says "Signing key:" and copy the second part of the key, after the slash, e.g. DB82666C.
+
+You'll need to update the repository using the key that you've obtained:
+
+<pre>
+$ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys DB82666C
+</pre>
+
+Now, update the sources:
+
+<pre>
+$ sudo apt-get update
+</pre>
+
+Now, install python 2.7
+
+<pre>
+$ sudo apt-get install python2.7 python2.7-dev
+</pre>
+
+Once you've installed python 2.7, we recommend that you correct the symbolic links for /usr/bin/python and /usr/bin/python2:
+
+<pre>
+$ sudo rm /usr/bin/python
+$ sudo ln -s /usr/bin/python2.7 /usr/bin/python
+$ sudo rm /usr/bin/python2
+$ sudo ln -s /usr/bin/python2.7 /usr/bin/python2
+</pre>
+
+We've also had some reports of users having issues with Python 2.7 breaking other packages which were working previously with Python 2.6.  To correct this, change the symbolic link within /usr/bin/python and /usr/bin/python2 by pointing back to python2.6.  You'll then edit /usr/share/python/debian_defaults and add "python2.7" to the line which reads "all supported python versions".  It should read "supported-versions=python2.6, python2.7".  
+
+Some users may also find that due to intermittent issues with Python 2.6 and its modules (i.e., python-uno, modules not installing, etc.), Python 2.6 may need to be completely re-installed.
+
+Also, if there are still problems connecting with the VPN client, try editing ~/.usfvpn/junipercprompt.py by changing #!/usr/bin/evn python2 to #!/usr/bin/env python2.7.
+
+h4. Installation
+
+This part is super simple.  Simply navigate to the extracted 'usfvpn-0.1' directory and, as a normal user, run
+
+<pre>
+$ ./install
+</pre>
+
+Follow the directions on the screen to complete the installation.
+
+h4. Using the VPN Client
+
+Simply start a terminal and run 'startvpn'.  Enter your NetID and password to connect.  Press 'Ctrl+C' to stop.
+
+h4. Troubleshooting
+
+Problem: Trouble with existing sessions?
+<pre>
+There are existing sessions open
+Uh-oh, we got an exception: 'NoneType' object has no attribute 'getchildren' cleaning up now
+<type 'exceptions.AttributeError'>
+Logging out now
+</pre>
+
+Solution: Go to https://vpn.usf.edu, sign in with your NetID and Password, then click 'Sign Off'.

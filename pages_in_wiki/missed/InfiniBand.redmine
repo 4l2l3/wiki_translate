@@ -1,0 +1,30 @@
+h1. Infiniband Network Information
+
+
+[[PageOutline]]
+USF provides access to 240 processor cores connected by 4x Single-Data-Rate (SDR) Infiniband and over 1200 processors connected by 4x Double-Data-Rate (DDR) !InfiniBand.
+
+h2. SDR Information
+
+SDR Infiniband has a peak theoretical bandwidth of 10Gbps, minus 20% for protocol overhead.  This provides a peak usable bandwidth of roughly 1GB/s.  Latencies across this fabric are roughly 3 microseconds, point-to-point for smaller message sizes.  The bandwidth and low-latency provided by this fabric is generally ample for most parallel workloads.
+
+h2. DDR Information
+
+DDR Infiniband has a peak theoretical bandwidth of 20Gbps, minus 20% for protocol overhead.  This provides a peak usable bandwidth of roughly 2GB/s.  Latencies across this fabric range from 1.3 to 2 microseconds point-to-point for smaller message sizes.  The bandwidth and low-latency provided is quite ample for most parallel workloads.
+
+h2. Using !InfiniBand
+
+To specify the use of Infiniband by your job, regardless of SDR/DDR capabilities, include the following in your job script:
+<pre>
+#$ -l i_ib=true
+</pre>
+This will ensure that your job is placed on nodes in either the SDR or DDR networks.
+
+To specify the use of DDR Infiniband, include the following option instead:
+<pre>
+#$ -l i_ib_ddr=true
+</pre>
+and for SDR !InfiniBand:
+<pre>
+#$ -l i_ib_sdr=true
+</pre>

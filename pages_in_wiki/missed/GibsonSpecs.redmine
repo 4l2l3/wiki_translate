@@ -1,0 +1,65 @@
+h1. MRI Cluster
+ 
+[[PageOutline]]
+*Last Modified*: [[LastModified(GibsonSpecs)]]
+
+h2. Overview
+
+
+The MRI Cluster is a supercomputing cluster that was brought online in June of 2008.  It was purchased through a grant provided by the National Science Foundation for the purpose of facilitating general scientific research which requires the use of High-Performance Computing capabilities.  It relies on a high-speed interconnect to facilitate message-passing between compute nodes. File servers are available for large temporary or permanent file storage.
+
+h2. Hardware Specs
+ 
+h3. Nodes
+
+| *Model* | !SunFire X4150 Server |
+| *Processor* | 2 x Intel(R) Xeon X5460 @ 3.16GHz (Quad Core) |
+| *Memory* | (8x2GB) PC2-5300 667 MHz ECC Fully Buffered DDR2 |
+| *Network* | Four 10/100/1000Base-T Ethernet ports |
+| *Network Management* | One dedicated 10/100Base-T Ethernet port |
+| *Storage* | 73 GB Hot-swappable [[SAS]] Drive with [[SAS]] Host Bus Adapter |
+| *Form Factor* | 1U Rack-mounted chassis |
+| *!InfiniBand Adapter* | Mellanox Technologies MT25418 [ConnectX IB DDR, PCIe 2.0 2.5GT/s] (rev a0) | 
+| *Quantity* | 120 Nodes |
+
+h3. Network Switches
+
+h4. Edge Switches
+
+| *Model* | Force10 S50V |
+| *Features* | 44 ports 10/100/1000Base-T |
+| | 4 ports 10/100/1000Base-T shared with SFP ports|
+| | 2 10Gb Line Cards | 
+| *Form Factor* | 1U Rack-mount |
+| *Quantity* | 4 |
+h4. Core Switch
+
+| *Model* | Force10 Networks S2410 |
+| *Features* | 22 ports, CX4 10Gb; 4 port, XFP, Redundant PS |
+| *Form Factor* | 1U Rack-Mount |
+| *Quantity* | 1 |
+h4. Management Switches
+
+| *Model* | Nortel !BayStack 425 |
+| *Features* | 48 ports, Ethernet 10Base-T, Ethernet 100Base-TX |
+| *Form Factor* | 1U Rack-mount |
+| *Quantity* | 4 | 
+
+h4. !InfiniBand
+
+| *Model* | QLogic !SilverStorm 9120 |
+| *Ports* | 120 x 4X DDR !InfiniBand |
+| *Line Cards* | 12 Leaf Cards |
+
+h3. File Servers
+
+
+| *Model* | !SunFire x4150 |
+| *Processor* | 2 x Intel(R) Xeon X5460 @ 3.16GHz (Quad Core) |
+| *Memory* | (4x2GB) PC2-5300 667 MHz ECC Fully Buffered DDR2 |
+| *Network* | Four 10/100/1000Base-T Ethernet ports, 4-way LACP configuration |
+| *Network Management* | One dedicated 10/100Base-T Ethernet port |
+| *Storage* | Mirrored 73 GB Hot-swappable [[SAS]] Drives with [[SAS]] Host Bus Adapter |
+| *Form Factor* | 1U Rack-mounted chassis |
+| *Quantity* | 3 Nodes |
+| *Attached Storage* | !StorageTek 6140 w/ 12 x 500GB SATA disks @7200 RPM.  !FibreChannel Connected |

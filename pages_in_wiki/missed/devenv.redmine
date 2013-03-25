@@ -1,0 +1,32 @@
+h1. devenv: Modular Development Environments
+
+** *Update*, 07/07/2008: *devenv* will be deprecated in order to deploy the [[Modules]] system.  Documentation for this can be found here: [[Modules]]
+*devenv* provides the user with a very simple system for configuring their environment to use specific libraries and development tools.  In its current configuration, it allows you to set your compiler and MPI library with just a single command.  Below is a table of the available compilers and MPI libraries available through devenv:
+
+| *Compiler*        | *32-bit/64-bit* | *Available MPI Libraries* |
+| Portland Group 7.0-u2 | both                | OpenMPI 1.2.3, MPICH 1.2.7p1  | 
+| GNU C Compiler 4.1.1  | both                | OpenMPI 1.2.3, MPICH 1.2.7p1  |
+| GNU C Compiler 3.4.6  | 64-bit*             | None**                        |      
+| Intel C++/Fortran Compilers 9.1 | both | OpenMPI 1.2.3, MPICH 1.2.7p1  |
+ 1. * 32-bit is available with *-m32* flag
+ 2. ** This is a legacy compiler.  If a user requires and MPI library be built with this version of gcc, the user can build it on their own or request the package from us
+
+As you can see, we try to provide consistent options with each compiler.  This is usually possible, but it may not always be the case.  The following table provides the commands to access the different profiles:
+
+| *Command*      | *Compiler* | *Word Size* | *MPI Library*         | *Interconnect*  |
+| *pgi*          | Portland Group | 64-bit          | OpenMPI 1.2.3             | Auto/Best Available |
+| *pgi.i386*     | Portland Group | 32-bit          | OpenMPI 1.2.3             | TCP/IP              |
+| *pgi.mpichmx*  | Portland Group | 64-bit          | MPICH 1.2.7p1 w/ ch_mx    | Myrinet             |
+| *pgi.mpichp4*  | Portland Group | 32-bit          | MPICH 1.2.7p1 w/ ch_p4    | TCP/IP              |
+| *gnu*          | GNU C Compiler | 64-bit          | OpenMPI 1.2.3             | Auto/Best Available |
+| *gnu.34*       | GNU C Compiler 3.4.6 | 64-bit    | n/a                       | n/a                 |
+| *gnu.i386*     | GNU C Compiler | 32-bit          | OpenMPI 1.2.3             | TCP/IP              |
+| *gnu.mpichmx*  | GNU C Compiler | 64-bit          | MPICH 1.2.7p1 w/ ch_mx    | Myrinet             |
+| *gnu.mpichp4*  | GNU C Compiler | 32-bit          | MPICH 1.2.7p1 w/ ch_p4    | TCP/IP              |
+| *intel*        | Intel C++/Fort | 64-bit          | OpenMPI 1.2.3             | Auto/Best Available |
+| *intel.i386*   | Intel C++/Fort | 32-bit          | OpenMPI 1.2.3             | TCP/IP              |
+| *intel.mpichmx*| Intel C++/Fort | 64-bit          | MPICH 1.2.7p1 w/ ch_mx    | Myrinet             |
+| *intel.mpichp4*| Intel C++/Fort | 32-bit          | MPICH 1.2.7p1 w/ ch_p4    | TCP/IP              |
+
+When you execute one of these commands, you will see that PATH, MANPATH, CC, FC, CXX, F77, and any other required variables have been set to the appropriate values so that you have access to the full man pages for each compiler and library, so that the necessary binaries for each compiler and binary are in your path, and so that an appropriate MPI library is selected to work with.
+ 

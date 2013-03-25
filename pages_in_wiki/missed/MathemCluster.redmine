@@ -1,0 +1,25 @@
+h1. Running Mathematica on Circe
+
+There are two ways to run Mathematica on Circe depending on the runtime of your particular job.
+
+h2. Jobs Shorter than 20 Minutes in Length (most jobs)
+
+Simply type <pre> mathematica </pre> at the command line.  If you have properly configured an X11 session, you should see the full Mathematica interface.  If you haven't configured X11, you will be able to use the console interface.  For users wishing to use the graphical interface over X11, please see our [[XWin32Install|XWin32 Installation]] documentation.
+
+h2. Jobs Longer than 20 Minutes in Length
+
+To run Mathematica jobs on Circe, users will need to submit their jobs to the scheduling environment if their jobs take more than 20 minutes to run on a standard PC.
+
+If, for example, you have a Mathematica script file named example.math with all your functions defined in it, you would set up a submit script to use the Mathematica kernel like this:
+
+<pre><code class="/bin/bash">
+#$ -cwd
+#$ -l h_rt=00:20:00
+#$ -j y
+#$ -N matlab_test
+#$ -o output.$JOB_ID
+
+source /etc/apps.d/mathematica.sh
+math < test.math
+</code></pre>
+

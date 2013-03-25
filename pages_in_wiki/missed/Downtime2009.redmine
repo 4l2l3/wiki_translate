@@ -1,0 +1,30 @@
+h1. Planned Downtime
+
+----
+[[PageOutline]]
+*Last Modified*: [[LastModified(Downtime2009)]]
+
+Downtime dates are picked in advance for planning purposes.  On these dates, the system will enter maintenance mode and will not be accessible.  Generally, the work required on these dates involves driver or kernel updates, software updates, or other changes that will require all jobs to be halted and restarted.  Downtime periods will generally begin at 9a.m. on the day planned and possibly lead into the following day.  The specific times will be announced to the appropriate mailing lists.  Downtimes will be scheduled around Intersession periods in order to facilitate maximum availability while classes are in session.
+
+All proposed changes are tentative and may be changed as the situation warrants.
+
+All dates can be changed by special request to accommodate scheduling needs.  Contact support@rc.usf.edu to request rescheduling. 
+
+h1. 2009 Schedule
+
+This is the list of planned Full downtime dates for 2009.  Other maintenance windows may be opened during the year that do not appear here.
+h2. April 20th - 21st
+
+*** Upgrade S50 Firmwares to FTOS 7.8.1.0 * *Success*
+*** Verify redundant backup link functionality * *Failure.  Will work with IT Networking to resolve*
+
+h2. August 10th
+
+** NIS-to-LDAP migration
+** Integration of ENG and CAS UNIX/Linux users
+** System Updates
+** More to be announced
+
+h2. December 14th
+
+** To be announced
