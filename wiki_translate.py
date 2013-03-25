@@ -8,7 +8,7 @@ def do_headers(text_in):
 	whole_header_pattern = re.compile('=+ [^=\r\n]+ =+') #TODO: modify this regex to make sure starts(^) and ends($) the line?? Because python treats the entire file as one line, this match only works for single-line files. I've modified the regex to just use the trailing newline.
 	all_headers = whole_header_pattern.finditer(text_out)
 	
-	header_text = re.compile('[-a-zA-Z0-9 ]+')
+	header_text = re.compile('[^=\r\n]+')
 	count_eq = re.compile('=+') 
 
 	for header in all_headers:
